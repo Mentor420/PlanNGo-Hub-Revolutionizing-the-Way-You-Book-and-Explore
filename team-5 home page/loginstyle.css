@@ -1,0 +1,137 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  /* Full Page Container */
+  .login-page-container {
+    display: flex;
+    height: 100vh; /* Full screen height */
+  }
+  
+  /* Left Side: Login Form Section */
+  .login-form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .form-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .form-content h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .form-content p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .form-content a {
+    color: #0078ff;
+    text-decoration: none;
+  }
+  
+  /* Input Boxes */
+  .input-box {
+    margin-bottom: 15px;
+  }
+  
+  .input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Remember Me & Forgot Password */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .options label {
+    color: #333;
+  }
+  
+  .options a {
+    color: #0078ff;
+    text-decoration: none;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0078ff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Right Side: Image Section */
+  .login-image-section {
+    flex: 1;
+    background-color: #0078ff; /* Placeholder background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-image-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-page-container {
+      flex-direction: column;
+    }
+  
+    .login-image-section {
+      display: none; /* Hide image on smaller screens */
+    }
+  
+    .login-form-section {
+      flex: unset;
+      padding: 30px;
+    }
+  }
+  
