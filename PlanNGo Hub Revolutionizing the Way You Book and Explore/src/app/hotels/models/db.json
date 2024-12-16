@@ -1,0 +1,84 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "city": "Goa",
+      "name": "Goa Paradise",
+      "pricePerNight": 1500,
+      "roomsAvailable": 5,
+      "checkInDate": "2024-12-20",
+      "checkOutDate": "2024-12-25",
+      "amenities": ["WiFi", "Pool", "Free Breakfast"]
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "name": "Mumbai Grand Hotel",
+      "pricePerNight": 2500,
+      "roomsAvailable": 3,
+      "checkInDate": "2024-12-15",
+      "checkOutDate": "2024-12-18",
+      "amenities": ["Parking", "Spa", "Restaurant"]
+    },
+    {
+      "id": "3",
+      "city": "Delhi",
+      "name": "Delhi Luxury Inn",
+      "pricePerNight": 3000,
+      "roomsAvailable": 7,
+      "checkInDate": "2024-12-22",
+      "checkOutDate": "2024-12-30",
+      "amenities": ["WiFi", "Conference Room", "Gym"]
+    },
+    {
+      "id": "4",
+      "city": "Bangalore",
+      "name": "Bangalore Elite Stay",
+      "pricePerNight": 1800,
+      "roomsAvailable": 4,
+      "checkInDate": "2024-12-10",
+      "checkOutDate": "2024-12-16",
+      "amenities": ["WiFi", "Pool", "Parking"]
+    },
+    {
+      "id": "5",
+      "city": "Chennai",
+      "name": "Chennai Comfort Inn",
+      "pricePerNight": 2000,
+      "roomsAvailable": 6,
+      "checkInDate": "2024-12-05",
+      "checkOutDate": "2024-12-12",
+      "amenities": ["Restaurant", "Spa", "Gym"]
+    },
+    {
+      "id": "6",
+      "city": "Pune",
+      "name": "Pune Garden View",
+      "pricePerNight": 2200,
+      "roomsAvailable": 8,
+      "checkInDate": "2024-12-18",
+      "checkOutDate": "2024-12-22",
+      "amenities": ["WiFi", "Garden", "Gym"]
+    },
+    {
+      "id": "7",
+      "city": "Jaipur",
+      "name": "Jaipur Regal Stay",
+      "pricePerNight": 2700,
+      "roomsAvailable": 10,
+      "checkInDate": "2024-12-10",
+      "checkOutDate": "2024-12-20",
+      "amenities": ["Heritage Decor", "Restaurant", "Parking"]
+    },
+    {
+      "id": "8",
+      "city": "Hyderabad",
+      "name": "Hyderabad Pearl Inn",
+      "pricePerNight": 1900,
+      "roomsAvailable": 5,
+      "checkInDate": "2024-12-15",
+      "checkOutDate": "2024-12-25",
+      "amenities": ["WiFi", "Spa", "Gym"]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+<div class="search-bar">
+
+  <!-- Form Section -->
+  <form (ngSubmit)="onSearch()">
+    <div class="form-group">
+      <label>City, Property Name or Location</label>
+      <input
+        type="text"
+        placeholder="Enter destination"
+        [(ngModel)]="formData.location"
+        name="location"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Check-In</label>
+      <input
+        type="date"
+        [(ngModel)]="formData.checkInDate"
+        name="checkInDate"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Check-Out</label>
+      <input
+        type="date"
+        [(ngModel)]="formData.checkOutDate"
+        name="checkOutDate"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Rooms & Guests</label>
+      <input
+        type="number"
+        [(ngModel)]="formData.rooms"
+        name="rooms"
+        min="1"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Price Per Night</label>
+      <select [(ngModel)]="formData.price" name="price">
+        <option value="">Select a price range</option>
+        <option value="0-1500">₹0-₹1500</option>
+        <option value="1500-2500">₹1500-₹2500</option>
+        <option value="2500-5000">₹2500-₹5000</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Amenities</label>
+      <div class="amenities-options">
+        <label *ngFor="let amenity of amenitiesOptions">
+          <input
+            type="checkbox"
+            [value]="amenity"
+            (change)="updateAmenities($event)"
+          />
+          {{ amenity }}
+        </label>
+      </div>
+    </div>
+
+    <button type="submit">SEARCH</button>
+  </form>
+
+  <!-- Search Results Section -->
+  <hr />
+  <div *ngIf="searchResults.length > 0">
+    <h3>Search Results:</h3>
+    <ul>
+      <li *ngFor="let hotel of searchResults">
+        {{ hotel.name }} - ₹{{ hotel.pricePerNight }} / night 
+        (Rooms Available: {{ hotel.roomsAvailable }})
+        <br />
+        <b>Amenities:</b> {{ hotel.amenities.join(', ') }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- No Results Section -->
+  <div *ngIf="searchResults.length === 0 && formData.location">
+    <p>
+      No hotels found for "<b>{{ formData.location }}</b>"
+      {{ formData.checkInDate ? 'with check-in date ' + formData.checkInDate : '' }}
+      {{ formData.checkOutDate ? 'and check-out date ' + formData.checkOutDate : '' }}
+      {{ formData.rooms ? 'for ' + formData.rooms + ' room(s)' : '' }}.
+      Please adjust your filters and try again.
+    </p>
+  </div>
+</div>
