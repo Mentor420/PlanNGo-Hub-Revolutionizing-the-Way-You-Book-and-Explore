@@ -1,0 +1,81 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px); 
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 20px 20px;
+    position: absolute;
+    width: 100%;
+}
+
+nav h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Navigation list styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+}
+
+nav ul li:hover {
+    background-color: white;
+    color: #299cfa;
+    border-radius: 20px;
+}
+
+/* Dropdown styles */
+nav ul select {
+    margin-left: 15px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+nav ul select option {
+    background-color: #ffffff;
+    color: #003366;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li, nav ul select {
+        margin: 10px 0;
+    }
+}

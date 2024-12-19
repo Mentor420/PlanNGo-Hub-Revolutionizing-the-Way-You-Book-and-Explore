@@ -1,0 +1,17 @@
+<nav>
+    <div>
+        <h1>PLANNGO HUB</h1>
+    </div>
+    <ul>
+        <li routerLink="/">Home</li>
+        <li routerLink="/hotel">Hotel</li>
+        <li routerLink="/flights">Flight</li>
+        <li routerLink="/tour">Tour</li>
+        <li routerLink="/cab">Cab</li>
+        <select (change)="onNavigate($event)">
+            <option disabled selected>Pages</option>
+            <option value="/cancel-booking">Cancel Booking</option>
+            <option value="/booking-history">Booking History</option>
+        </select>
+    </ul>
+</nav>

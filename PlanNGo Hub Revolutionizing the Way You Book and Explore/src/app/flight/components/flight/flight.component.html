@@ -1,0 +1,123 @@
+<div class="flight-container">
+  
+    <!-- Main Content -->
+    <section class="content">
+      <div class="header">
+        <h2>All Flights</h2>
+        
+        <div class="sort-container">
+          <button (click)="onOpenView()"><i class="fa-solid fa-arrow-down-wide-short"></i> All Filters</button>
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <h1>Sort By</h1>
+          <select class="sortPrice" [(ngModel)]="sortOrder" (change)="sortFlights()">
+            <option value="" disabled selected>Select Option</option>
+            <option value="highest">Highest-price</option>
+            <option value="lowest">Lowest-price</option>
+          </select>          
+        </div>
+      </div>
+      <!-- Flight Cards -->
+      <div class="flights">
+        <ul class="booking-list" *ngIf="filteredFlights.length>0">
+            <li *ngFor="let data of filteredFlights" class="booking-item">
+                <div class="route-details">
+                    <div class="departure">
+                        <h1 class="place">{{data.departure.place}}</h1>
+                        <p class="label">Departure Place</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <div class="destination">
+                        <h1 class="place">{{data.destination.place}}</h1>
+                        <p class="label">Destination</p>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="flight-details">
+                    <div class="airline-card">
+                      <img class="airline-img" [src]="data.logo" [alt]="data.airline"/>
+                        <p class="airline-name">{{data.airline}}</p>
+                        <p class="flight-number">FNO: {{data.flightNumber}}</p>
+                    </div>
+                    <div class="airline-card">
+                        <p class="label">Date</p>
+                        <p class="value">{{data.departure.date}}</p>
+                    </div>
+                    <div class="airline-card">
+                        <p class="label">Time</p>
+                        <p class="value">{{data.departure.time}}</p>
+                    </div>
+                    <div class="airline-card">
+                        <p class="label">Duration</p>
+                        <p class="value">{{data.duration}}</p>
+                    </div>
+                    <div class="airline-card">
+                        <p class="label">Price</p>
+                        <p class="value">$ {{data.price}}</p>
+                    </div>
+                </div>
+                <div class="book-btn-container">
+                  <button class="view-details-btn" (click)="onOpenDetails(data)">View Details</button>
+                  <button class="book-btn">Book Flight</button>
+            </div>
+            </li>
+        </ul>
+        <div *ngIf="filteredFlights.length<=0" class="no-found">
+          <img src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-illustration-download-in-svg-png-gif-file-formats--no-results-service-landing-page-security-empty-state-pack-design-development-illustrations-3613889.png?f=webp" alt="No Results"/>
+          <h1>No Results Found</h1>
+          <p>We couldn't find what you searched for. Try searching again</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="modal modal1" *ngIf="isView">
+    <div class="modal-content modal-content1">
+      <span class="close" (click)="onCloseView()">&times;</span>
+      <div class="filters-container">
+      <h2>All Filters</h2>
+      <form (ngSubmit)="onSearch()">
+          <label>Departure</label>
+          <input type="text" [(ngModel)]="departure" name="departure" placeholder="Search place" />
+    
+          <label>Destination</label>
+          <input type="text" [(ngModel)]="destination" name="destination" placeholder="Search place" />
+    
+          <label>Departure Date</label>
+          <input type="date" [(ngModel)]="date" name="date" />
+  
+        <div class="search-clear-btn">
+            <button class="flight-btn" type="submit">Search</button>
+            <button type="button" (click)="clearFilter()">Clear fliter</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <div class="modal modal1" *ngIf="isDetailsView">
+    <div class="modal-content modal-content1">
+      <span class="close" (click)="onCloseDetails()">&times;</span>
+      <div class="popup-container">
+    <div class="popup-header">
+        <img class="popup-logo" [src]="viewDetails?.logo" alt="Air India Logo">
+        <div class="popup-airline-details">
+            <h2 class="popup-airline-name">{{viewDetails?.airline}}</h2>
+            <p class="popup-flight-number">Flight Number: {{viewDetails?.flightNumber}}</p>
+        </div>
+    </div>
+    
+    <div class="popup-info">
+        <p class="popup-departure"><strong>Departure:</strong> {{viewDetails.departure.place}}</p>
+        <p class="popup-departure-date"><strong>Date:</strong> {{viewDetails.departure.date}}</p>
+        <p class="popup-departure-time"><strong>Time:</strong> {{viewDetails.departure.time}}</p>
+
+        <p class="popup-destination"><strong>Destination:</strong> {{viewDetails.destination.place}}</p>
+        <p class="popup-destination-date"><strong>Date:</strong> {{viewDetails.destination.date}}</p>
+        <p class="popup-destination-time"><strong>Time:</strong> {{viewDetails.destination.time}}</p>
+
+        <p class="popup-duration"><strong>Duration:</strong> {{viewDetails.duration}}</p>
+        <p class="popup-price"><strong>Price:</strong> {{viewDetails.price}}</p>
+    </div>
+    
+    <a class="popup-book-btn">Book Now</a>
+</div>
+    </div>
+  </div>

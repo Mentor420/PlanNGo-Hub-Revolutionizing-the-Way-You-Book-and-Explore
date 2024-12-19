@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="booking-container">
+        <h1 class="title">Booking History</h1>
+        <hr class="main-divider" />
+        <ul class="booking-list">
+            <li *ngFor="let data of combinedData" class="booking-item">
+                <div class="route-details">
+                    <div class="departure">
+                        <h1 class="place">{{data.departure.place}}</h1>
+                        <p class="label">Departure Place</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <div class="destination">
+                        <h1 class="place">{{data.destination.place}}</h1>
+                        <p class="label">Destination</p>
+                    </div>
+                </div>
+                <hr class="divider" />
+                <div class="flight-details">
+                    <div class="airline">
+                        <img class="airline-img" [src]="data.logo" [alt]="data.airline"/>
+                        <p class="airline-name">{{data.airline}}</p>
+                        <p class="flight-number">FNO: {{data.flightNumber}}</p>
+                    </div>
+                    <div class="date">
+                        <p class="label">Date</p>
+                        <p class="value">{{data.departure.date}}</p>
+                    </div>
+                    <div class="time">
+                        <p class="label">Time</p>
+                        <p class="value">{{data.departure.time}}</p>
+                    </div>
+                    <div class="duration">
+                        <p class="label">Duration</p>
+                        <p class="value">{{data.duration}}</p>
+                    </div>
+                    <div class="price">
+                        <p class="label">Price</p>
+                        <p class="value">$ {{data.bookings.totalAmount}}</p>
+                    </div>
+                    <div class="price">
+                        <p class="label">Status</p>
+                        <p class="value">{{data.bookings.bookingStatus}}</p>
+                    </div>
+                </div>
+                <button type="button" (click)="onOpenView(data.id)" class="button" >
+              View Details
+            </button>
+            <div>
+
+            </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <div class="modal" *ngIf="isView">
+        <div class="modal-content">
+          <span class="close" (click)="onCloseView()">&times;</span>
+          <h2>Passenger Details</h2>
+          <ul>
+            <li *ngFor="let passenger of selectedPassengers">
+                <p><strong>Name:</strong> {{ passenger.name }}</p>
+                <p><strong>Age:</strong> {{ passenger.age }}</p>
+                <p><strong>Gender:</strong> {{ passenger.gender }}</p>
+                <p><strong>Passport:</strong> {{ passenger.passportNumber }}</p>
+                <p><strong>Phone:</strong> {{ passenger.phoneNumber }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
