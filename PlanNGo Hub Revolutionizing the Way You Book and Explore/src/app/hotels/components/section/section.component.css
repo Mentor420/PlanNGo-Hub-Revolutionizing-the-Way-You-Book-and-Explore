@@ -1,0 +1,257 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: #ecececdb;
+}
+
+.home-image {
+    position: relative;
+    text-align: center;
+  }
+  
+  .home-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .search-bar-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: 50vw;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .search-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+.home-image img {
+    height: 90vh;
+    width: 99vw;
+    opacity: 0.9;
+}
+
+.tag-head {
+    margin-left: auto;
+    margin-top: 50px;
+    max-width: 1280px;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 1250px;
+    margin: 30px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card-list .card-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    color: #000;
+}
+
+.card-list .card-item:hover {
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.card-list .card-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card-list span {
+    display: inline-block;
+    background: #F7DFF5;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.card-list .developer {
+    background-color: #F7DFF5; 
+    color: #B22485;
+}   
+
+.card-list .designer {
+    background-color: #d1e8ff;
+    color: #2968a8;
+}
+
+.card-list .editor {
+    background-color: #d6f8d6; 
+    color: #205c20;
+}
+
+.card-item h3 {
+    color: #000;
+    font-size: 1.3rem;
+    margin-top: 28px;
+    font-weight: 600;
+}
+
+.card-item .price {
+    color:#000;
+    font-size: 1.2rem;
+    padding-top: 9px;
+    font-weight: 500;
+}
+
+.card-item .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-35deg);
+    height: 40px;
+    width: 40px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-top: 40px;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item:hover .arrow  {
+    background: #000;
+    color: #fff; 
+}
+
+
+
+/*  Locations */
+
+.container{
+    position: relative;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.container .search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #323334;
+    padding: 0 15px 0 45px;
+    color: #fff;
+    border-radius: 6px;
+}
+.search-box i{
+    position: absolute;
+    z-index: 2;
+    color: #999;
+    top: 50%;
+    left: 15px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+.container .images .image-box{
+    position: relative;
+    height: 300px;
+    width: 210px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images .image-box{
+    margin: 8px;
+}
+.images .image-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s linear;
+}
+.image-box:hover img{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.image-box h6{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    .card-list .card-item {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .card-list {
+        margin: 0 auto;
+    }
+}
