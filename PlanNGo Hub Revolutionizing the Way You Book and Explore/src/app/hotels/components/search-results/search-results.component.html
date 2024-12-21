@@ -1,0 +1,21 @@
+<div class="results-container">
+  <button class="back-button" (click)="goBack()">Back</button>
+
+  <h2>Search Results</h2>
+  <div *ngIf="searchResults.length > 0; else noResults">
+    <div class="hotel-card" *ngFor="let hotel of searchResults">
+      <img [src]="hotel.image" alt="Hotel Image" />
+      <div class="hotel-details">
+        <h3>{{ hotel.name }}</h3>
+        <p>{{ hotel.city }}</p>
+        <p>₹{{ hotel.pricePerNight }} / night</p>
+        <p><b>Rooms Available:</b> {{ hotel.roomsAvailable }}</p>
+        <p><b>Amenities:</b> {{ hotel.amenities.join(', ') }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <p>No results found. Please try searching again.</p>
+  </ng-template>
+</div>

@@ -1,5 +1,10 @@
 <div class="search-bar">
 
+  <!-- Show Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
   <!-- Form Section -->
   <form (ngSubmit)="onSearch()">
     <div class="form-group">
@@ -48,9 +53,9 @@
       <label>Price Per Night</label>
       <select [(ngModel)]="formData.price" name="price">
         <option value="">Select a price range</option>
-        <option value="0-1500">₹0-₹1500</option>
-        <option value="1500-2500">₹1500-₹2500</option>
-        <option value="2500-5000">₹2500-₹5000</option>
+        <option value="0-1500">&#8377;0-&#8377;1500</option>
+        <option value="1500-2500">&#8377;1500-&#8377;2500</option>
+        <option value="2500-5000">&#8377;2500-&#8377;5000</option>
       </select>
     </div>
 
@@ -68,25 +73,25 @@
       </div>
     </div>
 
-    <button type="submit">SEARCH</button>
+    <button type="submit">Search</button>
   </form>
 
   <!-- Search Results Section -->
   <hr />
-  <div *ngIf="searchResults.length > 0">
+  <!-- <div *ngIf="searchResults.length > 0">
     <h3>Search Results:</h3>
     <ul>
       <li *ngFor="let hotel of searchResults">
-        {{ hotel.name }} - ₹{{ hotel.pricePerNight }} / night 
+        {{ hotel.name }} - &#8377;{{ hotel.pricePerNight }} / night 
         (Rooms Available: {{ hotel.roomsAvailable }})
         <br />
         <b>Amenities:</b> {{ hotel.amenities.join(', ') }}
       </li>
     </ul>
-  </div>
+  </div> -->
 
   <!-- No Results Section -->
-  <div *ngIf="searchResults.length === 0 && formData.location">
+  <div *ngIf="searchResults.length === 0 && formData.rooms === 0" [style.visibility]="searchResults.length === 0 ? 'visible' : 'hidden'">
     <p>
       No hotels found for "<b>{{ formData.location }}</b>"
       {{ formData.checkInDate ? 'with check-in date ' + formData.checkInDate : '' }}

@@ -6,8 +6,10 @@
       "name": "Goa Paradise",
       "pricePerNight": 1500,
       "roomsAvailable": 5,
-      "checkInDate": "2024-12-20",
-      "checkOutDate": "2024-12-25",
+      "bookings": [
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      ],
       "amenities": ["WiFi", "Pool", "Free Breakfast"]
     },
     {
@@ -16,8 +18,10 @@
       "name": "Mumbai Grand Hotel",
       "pricePerNight": 2500,
       "roomsAvailable": 3,
-      "checkInDate": "2024-12-15",
-      "checkOutDate": "2024-12-18",
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-16", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-16", "checkOutDate": "2024-12-18", "roomsBooked": 3 }
+      ],
       "amenities": ["Parking", "Spa", "Restaurant"]
     },
     {
@@ -26,8 +30,10 @@
       "name": "Delhi Luxury Inn",
       "pricePerNight": 3000,
       "roomsAvailable": 7,
-      "checkInDate": "2024-12-22",
-      "checkOutDate": "2024-12-30",
+      "bookings": [
+        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-24", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-24", "checkOutDate": "2024-12-30", "roomsBooked": 5 }
+      ],
       "amenities": ["WiFi", "Conference Room", "Gym"]
     },
     {
@@ -36,8 +42,10 @@
       "name": "Bangalore Elite Stay",
       "pricePerNight": 1800,
       "roomsAvailable": 4,
-      "checkInDate": "2024-12-10",
-      "checkOutDate": "2024-12-16",
+      "bookings": [
+        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 3 }
+      ],
       "amenities": ["WiFi", "Pool", "Parking"]
     },
     {
@@ -46,8 +54,10 @@
       "name": "Chennai Comfort Inn",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-      "checkInDate": "2024-12-05",
-      "checkOutDate": "2024-12-12",
+      "bookings": [
+        { "checkInDate": "2024-12-05", "checkOutDate": "2024-12-08", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-08", "checkOutDate": "2024-12-12", "roomsBooked": 3 }
+      ],
       "amenities": ["Restaurant", "Spa", "Gym"]
     },
     {
@@ -56,8 +66,10 @@
       "name": "Pune Garden View",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-      "checkInDate": "2024-12-18",
-      "checkOutDate": "2024-12-22",
+      "bookings": [
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-20", "roomsBooked": 6 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 4 }
+      ],
       "amenities": ["WiFi", "Garden", "Gym"]
     },
     {
@@ -66,8 +78,10 @@
       "name": "Jaipur Regal Stay",
       "pricePerNight": 2700,
       "roomsAvailable": 10,
-      "checkInDate": "2024-12-10",
-      "checkOutDate": "2024-12-20",
+      "bookings": [
+        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 5 },
+        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 4 }
+      ],
       "amenities": ["Heritage Decor", "Restaurant", "Parking"]
     },
     {
@@ -76,8 +90,10 @@
       "name": "Hyderabad Pearl Inn",
       "pricePerNight": 1900,
       "roomsAvailable": 5,
-      "checkInDate": "2024-12-15",
-      "checkOutDate": "2024-12-25",
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      ],
       "amenities": ["WiFi", "Spa", "Gym"]
     }
   ]
