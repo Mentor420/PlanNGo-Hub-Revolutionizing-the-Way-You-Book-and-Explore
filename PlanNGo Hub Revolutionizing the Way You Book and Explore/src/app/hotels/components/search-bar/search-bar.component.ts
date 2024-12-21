@@ -19,8 +19,8 @@ interface Hotel {
   standalone: true,
   selector: 'app-search-bar',
   imports: [CommonModule, FormsModule],
-  templateUrl: './search-bar.component.html', // External HTML file
-  styleUrls: ['./search-bar.component.css'], // External CSS file
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent {
   formData = {
@@ -33,11 +33,11 @@ export class SearchBarComponent {
 
   searchResults: Hotel[] = [];
   selectedAmenities: string[] = [];
-  amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast']; // Sample amenity options
-  errorMessage: string = ''; // To store error messages
+  amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast'];
+  errorMessage: string = '';
   hasSearched: boolean = false;
 
-  constructor(private hotelSearchService: HotelSearchService, private router: Router) { }
+  constructor(private hotelSearchService: HotelSearchService, private router: Router) {}
 
   // Handle amenity selection
   updateAmenities(event: Event) {
@@ -78,20 +78,21 @@ export class SearchBarComponent {
   // Function to set error messages for validation
   setErrorMessage(message: string) {
     this.errorMessage = message;
-    // setTimeout(() => {
-    //   this.errorMessage = ''; // Clear the error after 5 seconds
-    // }, 5000);
   }
 
   onSearch() {
     if (!this.isValidInput()) {
       return; // Prevent further execution if inputs are invalid
     }
-    const { location, checkInDate, checkOutDate, rooms, price } = this.formData;
+
+    const location = this.formData.location.charAt(0).toUpperCase() + this.formData.location.slice(1).toLowerCase();
+    this.formData.location = location;
+
+    const {checkInDate, checkOutDate, rooms, price } = this.formData;
     const priceRange = price ? price.split('-').map(Number) : undefined;
 
     this.hasSearched = true;
-    
+
     this.hotelSearchService
       .searchHotels(
         location,
@@ -103,9 +104,11 @@ export class SearchBarComponent {
       )
       .subscribe(
         (results: Hotel[]) => {
-          // Filter results based on checkInDate and checkOutDate ranges
-          const filteredResults = this.filterResults(results, checkInDate, checkOutDate);
+          // Filter results based on amenities and price range (if provided)
+          const filteredResults = this.filterResults(results);
+
           this.searchResults = filteredResults;
+          console.log("Result:", results);
 
           // If no results match, display an error message
           if (!this.searchResults.length) {
@@ -113,7 +116,7 @@ export class SearchBarComponent {
           }
 
           console.log('Search Results:', filteredResults);
-          this.router.navigate(['/search-results'], { state: { results: filteredResults } });;
+          this.router.navigate(['/search-results'], { state: { results: filteredResults } });
         },
         (error) => {
           console.error('Error fetching hotels:', error);
@@ -121,41 +124,18 @@ export class SearchBarComponent {
         }
       );
   }
-  // Apply both date range filter and amenities filter (if selected)
-  private filterResults(hotels: Hotel[], checkInDate: string, checkOutDate: string): Hotel[] {
-    // Filter based on the date range
-    const dateFilteredHotels = this.filterByDateRange(hotels, checkInDate, checkOutDate);
 
-    // If no amenities are selected, just return the date-filtered hotels
+  // Apply amenities and price range filter (if selected)
+  private filterResults(hotels: Hotel[]): Hotel[] {
+    // If no amenities are selected, just return the original list of hotels
     if (this.selectedAmenities.length === 0) {
-      return dateFilteredHotels;
+      return hotels;
     }
 
-    // If amenities are selected, filter further based on those amenities
-    return dateFilteredHotels.filter(hotel => {
+    // If amenities are selected, filter based on those amenities
+    return hotels.filter(hotel => {
       // Ensure all selected amenities are present in the hotel's amenities
       return this.selectedAmenities.every(amenity => hotel.amenities.includes(amenity));
-    });
-  }
-
-  // Filter the hotels by checkInDate and checkOutDate ranges
-  private filterByDateRange(
-    hotels: Hotel[],
-    checkInDate: string,
-    checkOutDate: string
-  ): Hotel[] {
-    return hotels.filter((hotel) => {
-      const hotelCheckInDate = new Date(hotel.checkInDate);
-      const hotelCheckOutDate = new Date(hotel.checkOutDate);
-
-      const userCheckInDate = new Date(checkInDate);
-      const userCheckOutDate = new Date(checkOutDate);
-
-      // Check if the hotel's check-in date and check-out date are within the user-provided range
-      return (
-        hotelCheckInDate >= userCheckInDate &&
-        hotelCheckOutDate <= userCheckOutDate
-      );
     });
   }
 }
