@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "82cd",
+      "name": "VISHNU M",
+      "email": "720722106036@hicet.ac.in",
+      "password": "vishnu",
+      "role": "Admin"
+    },
+    {
+      "id": "0659",
+      "name": "xy",
+      "email": "xy123@gmail.com",
+      "password": "123",
+      "role": "Admin"
+    },
+    {
+      "id": "86a5",
+      "name": "vishnu",
+      "email": "vishnumvishnu1718@gmail.com",
+      "password": "vishnu",
+      "role": "Admin"
+    }
+  ]
+}

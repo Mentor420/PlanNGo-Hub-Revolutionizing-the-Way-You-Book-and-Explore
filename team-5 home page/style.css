@@ -30,6 +30,7 @@
   }
   
   .logo {
+    color: white;
     font-size: 1.5em;
     font-weight: bold;
   }
@@ -610,3 +611,59 @@ footer {
   .social-icons {
     padding-left: 150px;
   }
+  nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  nav a:hover {
+    color: #007bff;
+  }
+  
+  .logout-btn {
+    background-color: #ff4d4f;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e63946;
+  }
+  
+  /* General Button Styling */
+.button {
+  display: inline-block;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.button:active {
+  background-color: #3e8e41; /* Even darker green on click */
+  transform: scale(1); /* Reset size on click */
+}
+
+/* For Consistent Button Layout */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}

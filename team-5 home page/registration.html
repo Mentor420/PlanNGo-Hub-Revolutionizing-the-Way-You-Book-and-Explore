@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
   <link rel="stylesheet" href="loginstyle.css">
-  <title>Login</title>
 </head>
 <body ng-controller="AuthController">
   <div class="container">
-    <h2>Login</h2>
-    <form ng-submit="login()">
+    <h2>Register</h2>
+    <form ng-submit="register()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" ng-model="user.name" required />
+
       <label for="email">Email:</label>
       <input type="email" id="email" ng-model="user.email" required />
 
       <label for="password">Password:</label>
       <input type="password" id="password" ng-model="user.password" required />
 
-      <button type="submit">Login</button>
+      <label for="role">Role:</label>
+      <select id="role" ng-model="user.role" required>
+        <option value="Admin">Admin</option>
+        <option value="Customer">Customer</option>
+        <option value="ServiceProvider">Service Provider</option>
+      </select>
+
+      <button type="submit">Register</button>
     </form>
-    <p><a href="registration.html">Don't have an account? Register</a></p>
+    <p><a href="login.html">Already have an account? Login</a></p>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="app.js"></script>

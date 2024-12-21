@@ -13,24 +13,25 @@
 <body ng-controller="MainController">
 
   <!-- Header Section -->
-  <header>
-    <div class="header-container">
-      <div class="logo">Plan<span style="color:red;">N</span><span class="highlight">Go</span> Hub</div>
-      <div class="header-login">
-        <a href="login.html" class="login-btn">Login</a>
-      </div>
-      
-      <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#">Hotel</a>
-        <a href="#">Flight</a>
-        <a href="#">Tour</a>
-        <a href="#">Cab</a>
-        <a href="#">Contact</a>
-        
-      </nav>
+  <div class="header-container">
+    <div class="logo">Plan<span style="color:red;">N</span><span class="highlight">Go</span> Hub</div>
+    <div class="header-login">
+      <a href="login.html" class="login-btn" ng-if="!isLoggedIn" >Login</a>
+      <!-- <button ng-click="logout()" class="logout-btn" ng-if="isLoggedIn"></button> -->
     </div>
-  </header>
+  
+    <nav>
+      <a href="#" class="active" style="color: white;">Home</a>
+      <a href="#" style="color: white;">Hotel</a>
+      <a href="#" style="color: white;">Flight</a>
+      <a href="#" style="color: white;">Tour</a>
+      <a href="#" style="color: white;">Cab</a>
+      <a href="#" style="color: white;">Contact</a>
+      <!-- Dashboard Button -->
+      <a href="dashboard.html" ng-if="isLoggedIn" style="color: white;" class="button">Dashboard</a>
+    </nav>
+  </div>
+  
 
   <!-- Hero Section -->
   <section class="hero">
@@ -63,7 +64,7 @@
           Our mission is to turn your travel dreams into reality with premium services and personalized care.
         </p>
         <ul class="about-features">
-          <li><i class="fa fa-plane"></i> First Class Flights</li>
+          <li><i class="fa fa-plane" style="color: #0078ff;"></i> First Class Flights</li>
           <li><i class="fa fa-hotel"></i> Handpicked Hotels</li>
           <li><i class="fa fa-star"></i> 5 Star Accommodations</li>
           <li><i class="fa fa-car"></i> Latest Model Vehicles</li>
