@@ -35,6 +35,7 @@ export class SearchBarComponent {
   selectedAmenities: string[] = [];
   amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast']; // Sample amenity options
   errorMessage: string = ''; // To store error messages
+  hasSearched: boolean = false;
 
   constructor(private hotelSearchService: HotelSearchService, private router: Router) { }
 
@@ -89,6 +90,8 @@ export class SearchBarComponent {
     const { location, checkInDate, checkOutDate, rooms, price } = this.formData;
     const priceRange = price ? price.split('-').map(Number) : undefined;
 
+    this.hasSearched = true;
+    
     this.hotelSearchService
       .searchHotels(
         location,

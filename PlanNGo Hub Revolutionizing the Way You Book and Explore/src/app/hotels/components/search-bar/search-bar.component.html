@@ -77,7 +77,7 @@
   </form>
 
   <!-- Search Results Section -->
-  <hr />
+
   <!-- <div *ngIf="searchResults.length > 0">
     <h3>Search Results:</h3>
     <ul>
@@ -91,13 +91,14 @@
   </div> -->
 
   <!-- No Results Section -->
-  <div *ngIf="searchResults.length === 0 && formData.rooms === 0" [style.visibility]="searchResults.length === 0 ? 'visible' : 'hidden'">
-    <p>
-      No hotels found for "<b>{{ formData.location }}</b>"
-      {{ formData.checkInDate ? 'with check-in date ' + formData.checkInDate : '' }}
-      {{ formData.checkOutDate ? 'and check-out date ' + formData.checkOutDate : '' }}
-      {{ formData.rooms ? 'for ' + formData.rooms + ' room(s)' : '' }}.
-      Please adjust your filters and try again.
-    </p>
-  </div>
+  <!-- <div *ngIf="searchResults.length === 0" [style.visibility]="searchResults.length === 0 ? 'visible' : 'visible'">
+  <p>
+    No hotels found for "<b>{{ formData.location }}</b>"
+    {{ formData.checkInDate ? 'with check-in date ' + formData.checkInDate : '' }}
+    {{ formData.checkOutDate ? 'and check-out date ' + formData.checkOutDate : '' }}
+    {{ formData.rooms ? 'for ' + formData.rooms + ' room(s)' : '' }}.
+    Please adjust your filters and try again.
+  </p>
+</div> -->
+
 </div>
