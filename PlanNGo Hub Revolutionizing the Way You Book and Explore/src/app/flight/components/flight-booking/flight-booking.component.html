@@ -1,0 +1,82 @@
+<div class="passenger-container">
+  <div class="passenger-form-container">
+    <h2>Flight Booking Form</h2>
+    <form [formGroup]="flightBookingForm" (ngSubmit)="onSubmit()">
+      <!-- Passengers -->
+      <div formArrayName="passengers">
+        <div
+          class="passenger-card"
+          *ngFor="let passenger of passengers.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <h3>Passenger {{ i + 1 }}</h3>
+            <div class="input-group">
+              <label for="name">Name:</label>
+              <input id="name" formControlName="name" />
+              <div *ngIf="passenger.get('name')?.invalid && passenger.get('name')?.touched" class="error">
+                Name is required.
+              </div>
+
+            <div class="input-group">
+              <label for="age">Age:</label>
+              <input id="age" type="number" formControlName="age" />
+              <div *ngIf="passenger.get('age')?.invalid && passenger.get('age')?.touched" class="error">
+                Age is required and must be greater than 0.
+              </div>
+            </div>
+          </div>
+
+          <div class="input-row">
+            <label>Gender:</label>
+            <div class="gender-options">
+              <input type="radio" value="Male" formControlName="gender" id="male-{{ i }}" />
+              <label for="male-{{ i }}">Male</label>
+              <input type="radio" value="Female" formControlName="gender" id="female-{{ i }}" />
+              <label for="female-{{ i }}">Female</label>
+              <input type="radio" value="Others" formControlName="gender" id="others-{{ i }}" />
+              <label for="others-{{ i }}">Others</label>
+            </div>
+          </div>
+
+            <div class="input-group">
+              <label for="passportNumber">Passport Number:</label>
+              <input id="passportNumber" formControlName="passportNumber" />
+              <div *ngIf="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched" class="error">
+                Passport Number is required.
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="phoneNumber">Phone Number:</label>
+              <input id="phoneNumber" formControlName="phoneNumber" />
+              <div *ngIf="passenger.get('phoneNumber')?.invalid && passenger.get('phoneNumber')?.touched" class="error">
+                Phone Number is required.
+              </div>
+            </div>
+
+          <button type="button" (click)="removePassenger(i)" class="remove-btn" *ngIf="passengers.length > 1">
+            <i class="fa-solid fa-trash-can"></i>  
+            Remove
+          </button>
+        </div>
+      </div>
+    <div class="form-btn">
+        <button type="button" class="add-btn" (click)="addPassenger()"><span>+</span>  Add</button>
+        <button type="submit" class="submit-btn">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal modal1" *ngIf="isBooked">
+  <div class="modal-content modal-success">
+    <p>Successfully Booked!</p>
+  </div>
+</div>
+
+<div class="modal modal1" *ngIf="isBookingFailure">
+  <div class="modal-content modal-failure">
+    <span class="close" (click)="onBookingToggle()">&times;</span>
+    <p>Check all the credentials.</p>
+  </div>
+</div>

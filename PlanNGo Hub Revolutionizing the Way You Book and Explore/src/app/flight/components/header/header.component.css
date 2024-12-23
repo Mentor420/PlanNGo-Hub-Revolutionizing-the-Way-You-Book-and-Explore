@@ -14,8 +14,8 @@ nav {
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
       border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 20px 20px;
-    position: absolute;
+    padding: 10px;
+    position: fixed;
     width: 100%;
 }
 
@@ -79,3 +79,24 @@ nav ul select option {
         margin: 10px 0;
     }
 }
+/* .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f0f0f0; 
+  background-color: #1545e2;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  animation: bounce 1.5s infinite;
+  margin: -10px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} */

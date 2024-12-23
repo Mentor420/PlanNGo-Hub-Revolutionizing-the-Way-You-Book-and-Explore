@@ -4,7 +4,7 @@
     <section class="content">
       <div class="header">
         <h2>All Flights</h2>
-        
+        <!-- This Functionality used for Sort Price -->
         <div class="sort-container">
           <button (click)="onOpenView()"><i class="fa-solid fa-arrow-down-wide-short"></i> All Filters</button>
           <i class="fa-solid fa-money-bill-wave"></i>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="book-btn-container">
                   <button class="view-details-btn" (click)="onOpenDetails(data)">View Details</button>
-                  <button class="book-btn">Book Flight</button>
+                  <button class="book-btn" [routerLink]="['/flights',data.id]">Book Flight</button>   
             </div>
             </li>
         </ul>
@@ -69,6 +69,7 @@
       </div>
     </section>
   </div>
+  <!-- Search Filters -->
   <div class="modal modal1" *ngIf="isView">
     <div class="modal-content modal-content1">
       <span class="close" (click)="onCloseView()">&times;</span>
@@ -92,6 +93,7 @@
     </div>
     </div>
   </div>
+  <!-- View Details -->
   <div class="modal modal1" *ngIf="isDetailsView">
     <div class="modal-content modal-content1">
       <span class="close" (click)="onCloseDetails()">&times;</span>
@@ -99,8 +101,8 @@
     <div class="popup-header">
         <img class="popup-logo" [src]="viewDetails?.logo" alt="Air India Logo">
         <div class="popup-airline-details">
-            <h2 class="popup-airline-name">{{viewDetails?.airline}}</h2>
-            <p class="popup-flight-number">Flight Number: {{viewDetails?.flightNumber}}</p>
+            <h2 class="popup-airline-name">{{viewDetails.airline}}</h2>
+            <p class="popup-flight-number">Flight Number: {{viewDetails.flightNumber}}</p>
         </div>
     </div>
     
@@ -117,7 +119,7 @@
         <p class="popup-price"><strong>Price:</strong> {{viewDetails.price}}</p>
     </div>
     
-    <a class="popup-book-btn">Book Now</a>
+    <button class="book-btn" [routerLink]="['/flights',viewDetails.id]">Book Now</button> 
 </div>
     </div>
   </div>

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { FlightBookingService } from '../../services/flight-booking.service';
 
 @Component({
   selector: 'app-flight',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule ],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink ],
   templateUrl: './flight.component.html',
   styleUrl: './flight.component.css'
 })
@@ -31,7 +32,7 @@ export class FlightComponent {
     price: 0,
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private flightBookingService: FlightBookingService) {}
 
   onOpenView(){
     this.isView = !this.isView
@@ -62,7 +63,7 @@ export class FlightComponent {
   }
 
   ngOnInit() {
-    this.http.get<any[]>('http://localhost:3000/flights').subscribe((data) => {
+    this.flightBookingService.getFlights().subscribe((data) => {
       this.flights = data;
       this.filteredFlights = data;
       this.sortFlights();

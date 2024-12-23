@@ -421,14 +421,14 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -40px;
+    margin-top: -50px;
   }
   .no-found h1{
     margin-top: -60px;
-    color: #ffffff;
+    color: #0059ff;
   }
   .no-found p{
-    color: #ffffff;
+    color: #1767fc;
     font-weight: 600;
   }
   .popup-container {

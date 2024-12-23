@@ -33,8 +33,8 @@ export class BookingHistoryComponent {
 
   ngOnInit(): void {
     this.flightBookingService.getCombinedData().subscribe((data:any) => {
-      console.log(data)
-      this.combinedData = data;
+      this.combinedData = data.filter((item: any) => item.bookings?.date)
+      .sort((a: any, b: any) => new Date(b.bookings.date).getTime() - new Date(a.bookings.date).getTime());
     });
   }
 }

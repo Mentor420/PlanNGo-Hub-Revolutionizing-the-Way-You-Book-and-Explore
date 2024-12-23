@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({
@@ -16,6 +16,10 @@ export class FlightBookingService {
 
   getBookings(): Observable<any> {
     return this.http.get(`${this.apiURL}/bookings?userID=U1001`);
+  }
+
+  getSpecificFlights(id:any): Observable<any> {
+    return this.http.get<any[]>(`http://localhost:3000/flights/${id}`)
   }
 
   getCombinedData(): Observable<any[]> {

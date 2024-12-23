@@ -40,11 +40,11 @@
                 </div>
             </div>
             <button 
-          type="button" 
-          class="button" 
+          type="button"
+          class="button"
           [disabled]="data.bookings.bookingStatus === 'Cancelled'"
           (click)="changeBookingStatus(data.bookings.id)">
-          Cancel Booking
+          {{data.bookings.bookingStatus === 'Cancelled'?data.bookings.bookingStatus:'Cancel Booking'}}
         </button>
         </li>
     </ul>

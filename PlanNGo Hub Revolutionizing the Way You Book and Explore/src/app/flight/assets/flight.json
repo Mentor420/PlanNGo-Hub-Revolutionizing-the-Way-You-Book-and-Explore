@@ -1,347 +1,402 @@
 {
-    "flights": [
+  "flights": [
     {
-        "id": "FL12350",
-        "airline": "Vistara",
-        "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
-        "flightNumber": "UK308",
-        "departure": {
-            "place": "Chennai",
-            "date": "2024-12-27",
-            "time": "12:00 PM"
-        },
-        "destination": {
-            "place": "Malé",
-            "date": "2024-12-27",
-            "time": "03:30 PM"
-        },
-        "duration": "3h 30m",
-        "price": 3100
+      "id": "FL12350",
+      "airline": "Vistara",
+      "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
+      "flightNumber": "UK308",
+      "departure": {
+        "place": "Chennai",
+        "date": "2024-12-27",
+        "time": "12:00 PM"
+      },
+      "destination": {
+        "place": "Malé",
+        "date": "2024-12-27",
+        "time": "03:30 PM"
+      },
+      "duration": "3h 30m",
+      "price": 3100
     },
     {
-        "id": "FL12346",
-        "airline": "Air India",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
-        "flightNumber": "AI101",
-        "departure": {
-            "place": "Delhi",
-            "date": "2024-12-26",
-            "time": "09:00 AM"
-        },
-        "destination": {
-            "place": "Dubai",
-            "date": "2024-12-26",
-            "time": "11:40 AM"
-        },
-        "duration": "2h 40m",
-        "price": 4500
+      "id": "FL12346",
+      "airline": "Air India",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
+      "flightNumber": "AI101",
+      "departure": {
+        "place": "Delhi",
+        "date": "2024-12-26",
+        "time": "09:00 AM"
+      },
+      "destination": {
+        "place": "Dubai",
+        "date": "2024-12-26",
+        "time": "11:40 AM"
+      },
+      "duration": "2h 40m",
+      "price": 4500
     },
     {
-        "id": "FL12347",
-        "airline": "SpiceJet",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
-        "flightNumber": "SG405",
-        "departure": {
-            "place": "Hyderabad",
-            "date": "2024-12-27",
-            "time": "07:00 AM"
-        },
-        "destination": {
-            "place": "Bangkok",
-            "date": "2024-12-27",
-            "time": "10:30 AM"
-        },
-        "duration": "3h 30m",
-        "price": 5100
+      "id": "FL12347",
+      "airline": "SpiceJet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
+      "flightNumber": "SG405",
+      "departure": {
+        "place": "Hyderabad",
+        "date": "2024-12-27",
+        "time": "07:00 AM"
+      },
+      "destination": {
+        "place": "Bangkok",
+        "date": "2024-12-27",
+        "time": "10:30 AM"
+      },
+      "duration": "3h 30m",
+      "price": 5100
     },
     {
-        "id": "FL12348",
-        "airline": "GoAir",
-        "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
-        "flightNumber": "G8123",
-        "departure": {
-            "place": "Mumbai",
-            "date": "2024-12-28",
-            "time": "10:00 AM"
-        },
-        "destination": {
-            "place": "Malé",
-            "date": "2024-12-28",
-            "time": "11:40 AM"
-        },
-        "duration": "1h 40m",
-        "price": 3700
+      "id": "FL12348",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "G8123",
+      "departure": {
+        "place": "Mumbai",
+        "date": "2024-12-28",
+        "time": "10:00 AM"
+      },
+      "destination": {
+        "place": "Malé",
+        "date": "2024-12-28",
+        "time": "11:40 AM"
+      },
+      "duration": "1h 40m",
+      "price": 3700
     },
     {
-        "id": "FL12349",
-        "airline": "Vistara",
-        "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
-        "flightNumber": "UK402",
-        "departure": {
-            "place": "Bangalore",
-            "date": "2024-12-29",
-            "time": "06:15 AM"
-        },
-        "destination": {
-            "place": "Colombo",
-            "date": "2024-12-29",
-            "time": "08:15 AM"
-        },
-        "duration": "2h 00m",
-        "price": 2800
+      "id": "FL12349",
+      "airline": "Vistara",
+      "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
+      "flightNumber": "UK402",
+      "departure": {
+        "place": "Bangalore",
+        "date": "2024-12-29",
+        "time": "06:15 AM"
+      },
+      "destination": {
+        "place": "Colombo",
+        "date": "2024-12-29",
+        "time": "08:15 AM"
+      },
+      "duration": "2h 00m",
+      "price": 2800
     },
     {
-        "id": "FL12350",
-        "airline": "Indigo Airlines",
-        "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
-        "flightNumber": "6E503",
-        "departure": {
-            "place": "Ahmedabad",
-            "date": "2024-12-30",
-            "time": "11:30 AM"
-        },
-        "destination": {
-            "place": "Kathmandu",
-            "date": "2024-12-30",
-            "time": "01:20 PM"
-        },
-        "duration": "1h 50m",
-        "price": 3300
+      "id": "FL12350",
+      "airline": "Indigo Airlines",
+      "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
+      "flightNumber": "6E503",
+      "departure": {
+        "place": "Ahmedabad",
+        "date": "2024-12-30",
+        "time": "11:30 AM"
+      },
+      "destination": {
+        "place": "Kathmandu",
+        "date": "2024-12-30",
+        "time": "01:20 PM"
+      },
+      "duration": "1h 50m",
+      "price": 3300
     },
     {
-        "id": "FL12345",
-        "airline": "Indigo Airlines",
-        "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
-        "flightNumber": "6E203",
-        "departure": {
-            "place": "Chennai",
-            "date": "2024-12-25",
-            "time": "08:30 AM"
-        },
-        "destination": {
-            "place": "Singapore",
-            "date": "2024-12-25",
-            "time": "11:50 AM"
-        },
-        "duration": "3h 20m",
-        "price": 3200
+      "id": "FL12345",
+      "airline": "Indigo Airlines",
+      "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
+      "flightNumber": "6E203",
+      "departure": {
+        "place": "Chennai",
+        "date": "2024-12-25",
+        "time": "08:30 AM"
+      },
+      "destination": {
+        "place": "Singapore",
+        "date": "2024-12-25",
+        "time": "11:50 AM"
+      },
+      "duration": "3h 20m",
+      "price": 3200
     },
     {
-        "id": "FL12351",
-        "airline": "Air India",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
-        "flightNumber": "AI202",
-        "departure": {
-            "place": "Pune",
-            "date": "2024-12-31",
-            "time": "03:00 PM"
-        },
-        "destination": {
-            "place": "Doha",
-            "date": "2024-12-31",
-            "time": "04:30 PM"
-        },
-        "duration": "1h 30m",
-        "price": 2500
+      "id": "FL12351",
+      "airline": "Air India",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
+      "flightNumber": "AI202",
+      "departure": {
+        "place": "Pune",
+        "date": "2024-12-31",
+        "time": "03:00 PM"
+      },
+      "destination": {
+        "place": "Doha",
+        "date": "2024-12-31",
+        "time": "04:30 PM"
+      },
+      "duration": "1h 30m",
+      "price": 2500
     },
     {
-        "id": "FL12352",
-        "airline": "SpiceJet",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
-        "flightNumber": "SG101",
-        "departure": {
-            "place": "Lucknow",
-            "date": "2024-12-24",
-            "time": "05:45 PM"
-        },
-        "destination": {
-            "place": "Hanoi",
-            "date": "2024-12-24",
-            "time": "09:30 PM"
-        },
-        "duration": "3h 45m",
-        "price": 3000
+      "id": "FL12352",
+      "airline": "SpiceJet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
+      "flightNumber": "SG101",
+      "departure": {
+        "place": "Lucknow",
+        "date": "2024-12-24",
+        "time": "05:45 PM"
+      },
+      "destination": {
+        "place": "Hanoi",
+        "date": "2024-12-24",
+        "time": "09:30 PM"
+      },
+      "duration": "3h 45m",
+      "price": 3000
     },
     {
-        "id": "FL12353",
-        "airline": "GoAir",
-        "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
-        "flightNumber": "G805",
-        "departure": {
-            "place": "Delhi",
-            "date": "2024-12-26",
-            "time": "02:30 PM"
-        },
-        "destination": {
-            "place": "Kuala Lumpur",
-            "date": "2024-12-26",
-            "time": "07:00 PM"
-        },
-        "duration": "4h 30m",
-        "price": 2200
+      "id": "FL12353",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "G805",
+      "departure": {
+        "place": "Delhi",
+        "date": "2024-12-26",
+        "time": "02:30 PM"
+      },
+      "destination": {
+        "place": "Kuala Lumpur",
+        "date": "2024-12-26",
+        "time": "07:00 PM"
+      },
+      "duration": "4h 30m",
+      "price": 2200
     },
     {
-            "id": "FL45678",
-            "airline": "IndiGo",
-            "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
-            "flightNumber": "6E123",
-            "departure": {
-                "place": "Mumbai",
-                "date": "2024-12-27",
-                "time": "06:00 AM"
-            },
-            "destination": {
-                "place": "Dubai",
-                "date": "2024-12-27",
-                "time": "09:00 AM"
-            },
-            "duration": "3h 30m",
-            "price": 3200
-        },
+      "id": "FL45678",
+      "airline": "IndiGo",
+      "logo": "https://seeklogo.com/images/I/indigo-logo-EDBB4B3C09-seeklogo.com.png",
+      "flightNumber": "6E123",
+      "departure": {
+        "place": "Mumbai",
+        "date": "2024-12-27",
+        "time": "06:00 AM"
+      },
+      "destination": {
+        "place": "Dubai",
+        "date": "2024-12-27",
+        "time": "09:00 AM"
+      },
+      "duration": "3h 30m",
+      "price": 3200
+    },
+    {
+      "id": "FL78901",
+      "airline": "SpiceJet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
+      "flightNumber": "SG908",
+      "departure": {
+        "place": "Chennai",
+        "date": "2024-12-28",
+        "time": "03:45 PM"
+      },
+      "destination": {
+        "place": "Singapore",
+        "date": "2024-12-28",
+        "time": "09:15 PM"
+      },
+      "duration": "5h 30m",
+      "price": 2800
+    },
+    {
+      "id": "FL23456",
+      "airline": "Air India",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
+      "flightNumber": "AI102",
+      "departure": {
+        "place": "Bangalore",
+        "date": "2024-12-29",
+        "time": "11:00 PM"
+      },
+      "destination": {
+        "place": "London",
+        "date": "2024-12-30",
+        "time": "05:30 AM"
+      },
+      "duration": "8h 30m",
+      "price": 5600
+    },
+    {
+      "id": "FL34567",
+      "airline": "Vistara",
+      "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
+      "flightNumber": "UK210",
+      "departure": {
+        "place": "Kolkata",
+        "date": "2024-12-30",
+        "time": "07:30 AM"
+      },
+      "destination": {
+        "place": "Bangkok",
+        "date": "2024-12-30",
+        "time": "11:00 AM"
+      },
+      "duration": "3h 30m",
+      "price": 3700
+    },
+    {
+      "id": "FL98765",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "G802",
+      "departure": {
+        "place": "Hyderabad",
+        "date": "2024-12-31",
+        "time": "09:00 AM"
+      },
+      "destination": {
+        "place": "Colombo",
+        "date": "2024-12-31",
+        "time": "11:30 AM"
+      },
+      "duration": "2h 30m",
+      "price": 2400
+    },
+    {
+      "id": "FL78901",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "GA1908",
+      "departure": {
+        "place": "Chennai",
+        "date": "2024-12-28",
+        "time": "03:45 PM"
+      },
+      "destination": {
+        "place": "Singapore",
+        "date": "2024-12-28",
+        "time": "09:15 PM"
+      },
+      "duration": "5h 30m",
+      "price": 2800
+    }
+  ],
+  "bookings": [
+    {
+      "id": "B001",
+      "flightID": "FL12345",
+      "userID": "U1001",
+      "totalAmount": 350.75,
+      "date": "12/21/2024, 14:31:57",
+      "bookingStatus": "Cancelled",
+      "passengers": [
         {
-            "id": "FL78901",
-            "airline": "SpiceJet",
-            "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
-            "flightNumber": "SG908",
-            "departure": {
-                "place": "Chennai",
-                "date": "2024-12-28",
-                "time": "03:45 PM"
-            },
-            "destination": {
-                "place": "Singapore",
-                "date": "2024-12-28",
-                "time": "09:15 PM"
-            },
-            "duration": "5h 30m",
-            "price": 2800
-        },
-        {
-            "id": "FL23456",
-            "airline": "Air India",
-            "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
-            "flightNumber": "AI102",
-            "departure": {
-                "place": "Bangalore",
-                "date": "2024-12-29",
-                "time": "11:00 PM"
-            },
-            "destination": {
-                "place": "London",
-                "date": "2024-12-30",
-                "time": "05:30 AM"
-            },
-            "duration": "8h 30m",
-            "price": 5600
-        },
-        {
-            "id": "FL34567",
-            "airline": "Vistara",
-            "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
-            "flightNumber": "UK210",
-            "departure": {
-                "place": "Kolkata",
-                "date": "2024-12-30",
-                "time": "07:30 AM"
-            },
-            "destination": {
-                "place": "Bangkok",
-                "date": "2024-12-30",
-                "time": "11:00 AM"
-            },
-            "duration": "3h 30m",
-            "price": 3700
-        },
-        {
-            "id": "FL98765",
-            "airline": "GoAir",
-            "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
-            "flightNumber": "G802",
-            "departure": {
-                "place": "Hyderabad",
-                "date": "2024-12-31",
-                "time": "09:00 AM"
-            },
-            "destination": {
-                "place": "Colombo",
-                "date": "2024-12-31",
-                "time": "11:30 AM"
-            },
-            "duration": "2h 30m",
-            "price": 2400
-        },
-        {
-            "id": "FL78901",
-            "airline": "GoAir",
-            "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
-            "flightNumber": "GA1908",
-            "departure": {
-                "place": "Chennai",
-                "date": "2024-12-28",
-                "time": "03:45 PM"
-            },
-            "destination": {
-                "place": "Singapore",
-                "date": "2024-12-28",
-                "time": "09:15 PM"
-            },
-            "duration": "5h 30m",
-            "price": 2800
+          "id": "P002",
+          "name": "Bob Smith",
+          "age": 35,
+          "gender": "Male",
+          "passportNumber": "B9876543",
+          "phoneNumber": "+1-555-765-4321"
         }
-    
-],
-    "bookings": [
-      {
-        "id": "B001",
-        "flightID": "FL12345",
-        "userID": "U1001",
-        "totalAmount": 350.75,
-        "bookingStatus": "Confirmed",
-        "passengers": [
-          {
-            "id": "P002",
-            "name": "Bob Smith",
-            "age": 35,
-            "gender": "Male",
-            "passportNumber": "B9876543",
-            "phoneNumber": "+1-555-765-4321"
-          }
-        ]
-      },
-      {
-        "id": "B002",
-        "flightID": "FL12346",
-        "userID": "U1001",
-        "totalAmount": 420.50,
-        "bookingStatus": "Cancelled",
-        "passengers": [
-          {
-            "id": "P001",
-            "name": "Alice Johnson",
-            "age": 28,
-            "gender": "Female",
-            "passportNumber": "A1234567",
-            "phoneNumber": "+1-555-123-4567"
-          }
-        ]
-      },
-      {
-        "id": "B003",
-        "flightID": "FL12346",
-        "userID": "U1002",
-        "totalAmount": 420.50,
-        "bookingStatus": "Cancelled",
-        "passengers": [
-          {
-            "id": "P001",
-            "name": "Alice Johnson",
-            "age": 28,
-            "gender": "Female",
-            "passportNumber": "A1234567",
-            "phoneNumber": "+1-555-123-4567"
-          }
-        ]
-      }
-    ]
+      ]
+    },
+    {
+      "id": "B002",
+      "flightID": "FL12346",
+      "userID": "U1001",
+      "totalAmount": 420.5,
+      "date": "12/22/2024, 14:31:57",
+      "bookingStatus": "Confirmed",
+      "passengers": [
+        {
+          "id": "P001",
+          "name": "Alice Johnson",
+          "age": 28,
+          "gender": "Female",
+          "passportNumber": "A1234567",
+          "phoneNumber": "+1-555-123-4567"
+        }
+      ]
+    },
+    {
+      "id": "B003",
+      "flightID": "FL12346",
+      "userID": "U1002",
+      "totalAmount": 420.5,
+      "date": "12/22/2024, 14:31:57",
+      "bookingStatus": "Cancelled",
+      "passengers": [
+        {
+          "id": "P001",
+          "name": "Alice Johnson",
+          "age": 28,
+          "gender": "Female",
+          "passportNumber": "A1234567",
+          "phoneNumber": "+1-555-123-4567"
+        }
+      ]
+    },
+    {
+      "id": "B1734944517742",
+      "flightID": "FL12353",
+      "userID": "U1001",
+      "totalAmount": 2200,
+      "bookingStatus": "Confirmed",
+      "date": "12/23/2024, 14:31:57",
+      "passengers": [
+        {
+          "id": "P1734944509284",
+          "name": "RANKESH",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    },
+    {
+      "id": "B1734948146221",
+      "flightID": "FL98765",
+      "userID": "U1001",
+      "totalAmount": 2400,
+      "bookingStatus": "Confirmed",
+      "date": "12/23/2024, 15:32:26",
+      "passengers": [
+        {
+          "id": "P1734948137368",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    },
+    {
+      "id": "B1734957048889",
+      "flightID": "FL12353",
+      "userID": "U1001",
+      "totalAmount": 2200,
+      "bookingStatus": "Confirmed",
+      "date": "12/23/2024, 18:00:48",
+      "passengers": [
+        {
+          "id": "P1734957012073",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    }
+  ]
 }
-  
