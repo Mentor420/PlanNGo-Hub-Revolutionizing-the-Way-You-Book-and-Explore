@@ -81,55 +81,85 @@ export class SearchBarComponent {
     this.errorMessage = message;
   }
 
-  onSearch() {
+  onSearch(): void {
     if (!this.isValidInput()) {
-      return; // Prevent further execution if inputs are invalid
+      return; // Exit early if inputs are invalid
     }
-
+  
     const location = this.formData.location.charAt(0).toUpperCase() + this.formData.location.slice(1).toLowerCase();
     this.formData.location = location;
-
-    const {checkInDate, checkOutDate, rooms, price } = this.formData;
-    const priceRange = price ? price.split('-').map(Number) : undefined;
-
+  
+    const { checkInDate, checkOutDate, rooms, price } = this.formData;
+    const priceRange = price
+      ? price.split('-').map((val) => {
+          const num = Number(val.trim());
+          return isNaN(num) ? 0 : num;
+        })
+      : undefined;
+  
+    if (priceRange && priceRange.some((num) => num <= 0)) {
+      this.setErrorMessage('Invalid price range. Use format: min-max');
+      return; // Exit early if the price range is invalid
+    }
+  
     this.hasSearched = true;
-
-  this.hotelSearchService
-    .searchHotels(location, checkInDate, checkOutDate, rooms, priceRange, this.selectedAmenities)
-    .subscribe(
-      (results: Hotel[]) => {
-        const filteredResults = this.filterResults(results);
-
-        this.ngZone.run(() => { // Ensure changes are run within Angular's zone
-          this.searchResults = filteredResults;
-
-          if (!this.searchResults.length) {
-            this.setErrorMessage('No hotels match your search criteria.');
-          }
-
-          this.router.navigate(['/search-results'], { state: { results: filteredResults,formData:this.formData } });
-        });
-      },
-      (error) => {
-        this.ngZone.run(() => {
-          console.error('Error fetching hotels:', error);
-          this.setErrorMessage('An error occurred while fetching hotels. Please try again later.');
-        });
-      }
-    );
+  
+    this.hotelSearchService
+      .searchHotels(location, checkInDate, checkOutDate, rooms, priceRange, this.selectedAmenities)
+      .subscribe(
+        (results: Hotel[]) => {
+          const filteredResults = this.filterResults(results);
+  
+          this.ngZone.run(() => {
+            this.searchResults = filteredResults;
+  
+            if (!this.searchResults.length) {
+              this.setErrorMessage('No hotels match your search criteria.');
+            }
+  
+            this.router.navigate(['/search-results'], {
+              state: {
+                results: filteredResults,
+                formData: { ...this.formData, priceRange: priceRange || null },
+              },
+            });
+          });
+        },
+        (error) => {
+          this.ngZone.run(() => {
+            console.error('Error fetching hotels:', error);
+            this.setErrorMessage('An error occurred while fetching hotels. Please try again later.');
+          });
+        }
+      );
   }
+  
 
   // Apply amenities and price range filter (if selected)
   private filterResults(hotels: Hotel[]): Hotel[] {
-    // If no amenities are selected, just return the original list of hotels
-    if (this.selectedAmenities.length === 0) {
-      return hotels;
+    if (!hotels || hotels.length === 0) {
+      return []; // Explicitly return an empty array if no hotels are provided
     }
-
-    // If amenities are selected, filter based on those amenities
-    return hotels.filter(hotel => {
-      // Ensure all selected amenities are present in the hotel's amenities
-      return this.selectedAmenities.every(amenity => hotel.amenities.includes(amenity));
+  
+    return hotels.filter((hotel) => {
+      const matchesAmenities =
+        this.selectedAmenities.length === 0 ||
+        this.selectedAmenities.every((amenity) =>
+          hotel.amenities.includes(amenity)
+        );
+  
+      const priceRange = this.formData.price
+        ? this.formData.price.split('-').map(Number)
+        : null;
+  
+      const matchesPrice =
+        !priceRange ||
+        (hotel.pricePerNight >= priceRange[0] &&
+          hotel.pricePerNight <= priceRange[1]);
+  
+      return matchesAmenities && matchesPrice;
     });
   }
+  
+  
 }
