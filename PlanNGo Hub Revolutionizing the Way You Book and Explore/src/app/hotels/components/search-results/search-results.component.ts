@@ -41,32 +41,38 @@ export class SearchResultsComponent implements OnInit {
       const navigation = history.state as any; // Access browser-specific `history.state`
       this.searchResults = navigation.results || []; // Retrieve all search results
       this.formData = navigation.formData || { location: '' }; // Get search criteria from state
+  
+      // Check if there are no search results
+      if (!this.searchResults.length && isPlatformBrowser(this.platformId)) {
+        console.warn('No results found; ensure client-side navigation passed results.');
+      }
+  
       this.filterResults(); // Filter results based on the formData
       console.log('Navigation State:', history.state);
       console.log('Results:', history.state.results);
       console.log('Form Data:', history.state.formData);
-
     } else {
       console.warn('SSR environment: history.state is not accessible');
       this.searchResults = []; // Fallback for SSR
     }
   }
+  
 
   private filterResults(): void {
     const { location, priceRange } = this.formData;
-
-    // Filter based on location and price range
+  
     this.filteredResults = this.searchResults.filter((hotel) => {
       const matchesLocation =
-        location &&
+        !location ||
         hotel.city.toLowerCase() === location.toLowerCase();
-
+  
       const matchesPrice =
-        priceRange &&
-        hotel.pricePerNight >= priceRange[0] &&
-        hotel.pricePerNight <= priceRange[1];
-
-      return matchesLocation && (matchesPrice || !priceRange);
+        !priceRange ||
+        (hotel.pricePerNight >= priceRange[0] &&
+          hotel.pricePerNight <= priceRange[1]);
+  
+      return matchesLocation && matchesPrice;
     });
   }
+  
 }
