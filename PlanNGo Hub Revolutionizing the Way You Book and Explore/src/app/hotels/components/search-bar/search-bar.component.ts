@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -37,7 +37,8 @@ export class SearchBarComponent {
   errorMessage: string = '';
   hasSearched: boolean = false;
 
-  constructor(private hotelSearchService: HotelSearchService, private router: Router) {}
+  constructor(private hotelSearchService: HotelSearchService, private router: Router,  private ngZone: NgZone
+  ) {}
 
   // Handle amenity selection
   updateAmenities(event: Event) {
@@ -93,36 +94,29 @@ export class SearchBarComponent {
 
     this.hasSearched = true;
 
-    this.hotelSearchService
-      .searchHotels(
-        location,
-        checkInDate,
-        checkOutDate,
-        rooms,
-        priceRange,
-        this.selectedAmenities
-      )
-      .subscribe(
-        (results: Hotel[]) => {
-          // Filter results based on amenities and price range (if provided)
-          const filteredResults = this.filterResults(results);
+  this.hotelSearchService
+    .searchHotels(location, checkInDate, checkOutDate, rooms, priceRange, this.selectedAmenities)
+    .subscribe(
+      (results: Hotel[]) => {
+        const filteredResults = this.filterResults(results);
 
+        this.ngZone.run(() => { // Ensure changes are run within Angular's zone
           this.searchResults = filteredResults;
-          console.log("Result:", results);
 
-          // If no results match, display an error message
           if (!this.searchResults.length) {
             this.setErrorMessage('No hotels match your search criteria.');
           }
 
-          console.log('Search Results:', filteredResults);
-          this.router.navigate(['/search-results'], { state: { results: filteredResults } });
-        },
-        (error) => {
+          this.router.navigate(['/search-results'], { state: { results: filteredResults,formData:this.formData } });
+        });
+      },
+      (error) => {
+        this.ngZone.run(() => {
           console.error('Error fetching hotels:', error);
           this.setErrorMessage('An error occurred while fetching hotels. Please try again later.');
-        }
-      );
+        });
+      }
+    );
   }
 
   // Apply amenities and price range filter (if selected)
