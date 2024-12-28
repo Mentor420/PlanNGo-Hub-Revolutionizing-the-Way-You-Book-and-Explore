@@ -3,7 +3,7 @@
 
   <h2>Search Results</h2>
   <div *ngIf="searchResults.length > 0; else noResults">
-    <div class="hotel-card" *ngFor="let hotel of searchResults">
+    <!-- <div class="hotel-card" *ngFor="let hotel of searchResults">
       <img [src]="hotel.image" alt="Hotel Image" />
       <div class="hotel-details">
         <h3>{{ hotel.name }}</h3>
@@ -12,7 +12,15 @@
         <p><b>Rooms Available:</b> {{ hotel.roomsAvailable }}</p>
         <p><b>Amenities:</b> {{ hotel.amenities.join(', ') }}</p>
       </div>
+    </div> -->
+    <div *ngFor="let hotel of filteredResults" class="hotel-card">
+      <img [src]="hotel.image" alt="Hotel Image" />
+      <h2>{{ hotel.name }}</h2>
+      <p>City: {{ hotel.city }}</p>
+      <p>Price Per Night: {{ hotel.pricePerNight }}</p>
+      <p>Amenities: {{ hotel.amenities.join(', ') }}</p>
     </div>
+  
   </div>
 
   <ng-template #noResults>
