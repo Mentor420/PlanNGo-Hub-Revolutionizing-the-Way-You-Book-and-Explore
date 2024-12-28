@@ -9,48 +9,27 @@
   <form (ngSubmit)="onSearch()">
     <div class="form-group">
       <label>City, Property Name or Location</label>
-      <input
-        type="text"
-        placeholder="Enter destination"
-        [(ngModel)]="formData.location"
-        name="location"
-        required
-      />
+      <input type="text" placeholder="Enter destination" [(ngModel)]="formData.location" name="location" required />
     </div>
 
     <div class="form-group">
       <label>Check-In</label>
-      <input
-        type="date"
-        [(ngModel)]="formData.checkInDate"
-        name="checkInDate"
-        required
-      />
+      <input type="date" [(ngModel)]="formData.checkInDate" name="checkInDate" required />
     </div>
 
     <div class="form-group">
       <label>Check-Out</label>
-      <input
-        type="date"
-        [(ngModel)]="formData.checkOutDate"
-        name="checkOutDate"
-        required
-      />
+      <input type="date" [(ngModel)]="formData.checkOutDate" name="checkOutDate" required />
     </div>
 
     <div class="form-group">
       <label>Rooms & Guests</label>
-      <input
-        type="number"
-        [(ngModel)]="formData.rooms"
-        name="rooms"
-        min="1"
-        required
-      />
+      <input type="number" [(ngModel)]="formData.rooms" name="rooms" min="1" required />
     </div>
 
     <div class="form-group">
       <label>Price Per Night</label>
+      <input type="text" name="price" [(ngModel)]="formData.price" placeholder="Price range (e.g., 1000-5000)" />
       <select [(ngModel)]="formData.price" name="price">
         <option value="">Select a price range</option>
         <option value="0-1500">&#8377;0-&#8377;1500</option>
@@ -63,11 +42,7 @@
       <label>Amenities</label>
       <div class="amenities-options">
         <label *ngFor="let amenity of amenitiesOptions">
-          <input
-            type="checkbox"
-            [value]="amenity"
-            (change)="updateAmenities($event)"
-          />
+          <input type="checkbox" [value]="amenity" (change)="updateAmenities($event)" />
           {{ amenity }}
         </label>
       </div>
