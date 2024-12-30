@@ -15,8 +15,10 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "resolveJsonModule": true,
+    "module": "esnext",
     "target": "ES2022",
-    "module": "ES2022",
+    // "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
