@@ -42,6 +42,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   width: 300px;
   padding: 15px;
+  cursor:pointer;
 }
 
 .hotel-card:hover {
