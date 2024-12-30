@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface Hotel {
   id: string;
@@ -28,8 +29,12 @@ export class SearchResultsComponent implements OnInit {
   constructor(
     private location: Location,
     private route: ActivatedRoute,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object // Inject PLATFORM_ID for environment detection
   ) { }
+  viewHotelDetails(hotel: any): void {
+    this.router.navigate(['/page'], { queryParams: { id: hotel.id } });
+  }
 
   goBack(): void {
     this.location.back(); // Navigates to the previous page
