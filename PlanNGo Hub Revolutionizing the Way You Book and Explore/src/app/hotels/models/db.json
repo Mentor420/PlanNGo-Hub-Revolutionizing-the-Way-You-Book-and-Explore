@@ -25,6 +25,42 @@
       "amenities": ["Beach Access", "Restaurant", "Air Conditioning"]
     },
     {
+      "id": "17",
+      "city": "Goa",
+      "name": "Goa Serenity Resort",
+      "pricePerNight": 1600,
+      "roomsAvailable": 7,
+      "bookings": [
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-23", "checkOutDate": "2024-12-27", "roomsBooked": 3 }
+      ],
+      "amenities": ["WiFi", "Private Beach", "Free Parking"]
+    },
+    {
+      "id": "18",
+      "city": "Goa",
+      "name": "Goa Lagoon Retreat",
+      "pricePerNight": 2000,
+      "roomsAvailable": 5,
+      "bookings": [
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-25", "roomsBooked": 2 }
+      ],
+      "amenities": ["Lagoon View", "Restaurant", "Spa"]
+    },
+    {
+      "id": "19",
+      "city": "Goa",
+      "name": "Goa Tranquil Villa",
+      "pricePerNight": 1800,
+      "roomsAvailable": 6,
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 2 }
+      ],
+      "amenities": ["WiFi", "Terrace Bar", "Pet Friendly"]
+    },    
+    {
       "id": "2",
       "city": "Mumbai",
       "name": "Mumbai Grand Hotel",
@@ -49,6 +85,42 @@
       "amenities": ["Sea View", "Roof-top Bar", "Fitness Center"]
     },
     {
+      "id": "20",
+      "city": "Mumbai",
+      "name": "Mumbai City Luxe",
+      "pricePerNight": 3000,
+      "roomsAvailable": 5,
+      "bookings": [
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-20", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-26", "roomsBooked": 4 }
+      ],
+      "amenities": ["Infinity Pool", "WiFi", "Fitness Center"]
+    },
+    {
+      "id": "21",
+      "city": "Mumbai",
+      "name": "Mumbai Royal Stay",
+      "pricePerNight": 2800,
+      "roomsAvailable": 8,
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 3 }
+      ],
+      "amenities": ["Rooftop Lounge", "Spa", "Free Breakfast"]
+    },
+    {
+      "id": "22",
+      "city": "Mumbai",
+      "name": "Mumbai Oceanfront Suites",
+      "pricePerNight": 3200,
+      "roomsAvailable": 6,
+      "bookings": [
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-24", "checkOutDate": "2024-12-28", "roomsBooked": 3 }
+      ],
+      "amenities": ["Sea View", "WiFi", "Private Dining"]
+    },    
+    {
       "id": "3",
       "city": "Delhi",
       "name": "Delhi Luxury Inn",
@@ -72,6 +144,42 @@
       ],
       "amenities": ["Historical Architecture", "Restaurant", "Free WiFi"]
     },
+    {
+      "id": "26",
+      "city": "Delhi",
+      "name": "Delhi Royal Suites",
+      "pricePerNight": 3200,
+      "roomsAvailable": 8,
+      "bookings": [
+        { "checkInDate": "2024-12-16", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 3 }
+      ],
+      "amenities": ["Gym", "WiFi", "Free Breakfast"]
+    },
+    {
+      "id": "27",
+      "city": "Delhi",
+      "name": "Delhi Comfort Stay",
+      "pricePerNight": 2800,
+      "roomsAvailable": 6,
+      "bookings": [
+        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-18", "roomsBooked": 3 }
+      ],
+      "amenities": ["Conference Room", "Parking", "Restaurant"]
+    },
+    {
+      "id": "28",
+      "city": "Delhi",
+      "name": "Delhi Premium Inn",
+      "pricePerNight": 3500,
+      "roomsAvailable": 5,
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      ],
+      "amenities": ["Pool", "Restaurant", "WiFi"]
+    },    
     {
       "id": "4",
       "city": "Bangalore",
@@ -191,6 +299,43 @@
         { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-17", "roomsBooked": 4 }
       ],
       "amenities": ["Swimming Pool", "City View", "Restaurant"]
+    },
+    {
+      "id": "23",
+      "city": "Hyderabad",
+      "name": "Hyderabad Skyline Inn",
+      "pricePerNight": 2500,
+      "roomsAvailable": 7,
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 4 }
+      ],
+      "amenities": ["WiFi", "Rooftop Lounge", "Gym"]
+    },
+    {
+      "id": "24",
+      "city": "Hyderabad",
+      "name": "Hyderabad Grand Hotel",
+      "pricePerNight": 3000,
+      "roomsAvailable": 6,
+      "bookings": [
+        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 2 },
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 }
+      ],
+      "amenities": ["Spa", "Pool", "Restaurant"]
+    },
+    {
+      "id": "25",
+      "city": "Hyderabad",
+      "name": "Hyderabad Elite Suites",
+      "pricePerNight": 2700,
+      "roomsAvailable": 9,
+      "bookings": [
+        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-19", "checkOutDate": "2024-12-24", "roomsBooked": 3 }
+      ],
+      "amenities": ["Garden View", "Free Breakfast", "WiFi"]
     }
+    
   ]
 }
