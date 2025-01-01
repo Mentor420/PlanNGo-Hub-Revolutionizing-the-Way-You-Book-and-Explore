@@ -5,6 +5,8 @@ import { SearchResultsComponent } from './hotels/components/search-results/searc
 import { PageComponent } from './hotels/components/page/page.component';
 import { AboutComponent } from './hotels/components/about/about.component';
 import { ContactComponent } from './hotels/components/contact/contact.component';
+import { LocationComponent } from './hotels/components/location/location.component';
+
 export const routes: Route[] = [
   { path: '', component: SectionComponent },  
   { path: 'planngo', component: PlanNGoComponent },
@@ -12,4 +14,6 @@ export const routes: Route[] = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'page', component: PageComponent }, 
+  { path: 'location', component: LocationComponent }, 
+
 ];
