@@ -335,6 +335,54 @@
         { "checkInDate": "2024-12-19", "checkOutDate": "2024-12-24", "roomsBooked": 3 }
       ],
       "amenities": ["Garden View", "Free Breakfast", "WiFi"]
+    },
+    {
+      "id": "29",
+      "city": "Rajasthan",
+      "name": "Rajasthan Desert Oasis",
+      "pricePerNight": 2600,
+      "roomsAvailable": 9,
+      "bookings": [
+        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-25", "checkOutDate": "2024-12-28", "roomsBooked": 3 }
+      ],
+      "amenities": ["Desert Safari", "Cultural Performances", "Pool"]
+    },
+    {
+      "id": "30",
+      "city": "Kaashi",
+      "name": "Kaashi Divine Retreat",
+      "pricePerNight": 2000,
+      "roomsAvailable": 6,
+      "bookings": [
+        { "checkInDate": "2024-12-21", "checkOutDate": "2024-12-25", "roomsBooked": 3 },
+        { "checkInDate": "2024-12-27", "checkOutDate": "2024-12-30", "roomsBooked": 2 }
+      ],
+      "amenities": ["River View", "Temple Proximity", "Free Breakfast"]
+    },
+    {
+      "id": "31",
+      "city": "TamilNadu",
+      "name": "Tamil Nadu Ocean Pearl",
+      "pricePerNight": 3200,
+      "roomsAvailable": 8,
+      "bookings": [
+        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 4 },
+        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-26", "roomsBooked": 3 }
+      ],
+      "amenities": ["Beach Access", "Infinity Pool", "Ayurvedic Spa"]
+    },
+    {
+      "id": "32",
+      "city": "Rajasthan",
+      "name": "Rajasthan Royal Heritage",
+      "pricePerNight": 3500,
+      "roomsAvailable": 7,
+      "bookings": [
+        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-15", "roomsBooked": 5 },
+        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 }
+      ],
+      "amenities": ["Heritage Decor", "Roof-top Restaurant", "Free Cultural Tours"]
     }
     
   ]
