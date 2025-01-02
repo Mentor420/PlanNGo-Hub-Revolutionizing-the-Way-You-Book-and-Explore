@@ -5,30 +5,58 @@
     {{ errorMessage }}
   </div>
 
+  <!-- Title Section -->
+  <h2 class="search-title">Find Your Perfect Stay</h2>
+
   <!-- Form Section -->
   <form (ngSubmit)="onSearch()">
-    <div class="form-group">
-      <label>City, Property Name or Location</label>
+    <div class="form-group location">
+      <label><i class="icon fa fa-map-marker"></i>City, Property Name or Location</label>
       <input type="text" placeholder="Enter destination" [(ngModel)]="formData.location" name="location" required />
     </div>
 
-    <div class="form-group">
-      <label>Check-In</label>
-      <input type="date" [(ngModel)]="formData.checkInDate" name="checkInDate" required />
+    <!-- Check-In -->
+    <div class="form-group check-in">
+      <label>
+        <i class="icon fa fa-calendar-check"></i> Check-In
+      </label>
+      <input
+        type="date"
+        [(ngModel)]="formData.checkInDate"
+        name="checkInDate"
+        required
+      />
     </div>
 
-    <div class="form-group">
-      <label>Check-Out</label>
-      <input type="date" [(ngModel)]="formData.checkOutDate" name="checkOutDate" required />
+    <!-- Check-Out -->
+    <div class="form-group check-out">
+      <label>
+        <i class="icon fa fa-calendar-minus"></i> Check-Out
+      </label>
+      <input
+        type="date"
+        [(ngModel)]="formData.checkOutDate"
+        name="checkOutDate"
+        required
+      />
     </div>
 
-    <div class="form-group">
-      <label>Rooms & Guests</label>
-      <input type="number" [(ngModel)]="formData.rooms" name="rooms" min="1" required />
+    <!-- Rooms -->
+    <div class="form-group rooms">
+      <label>
+        <i class="icon fa fa-bed"></i> Rooms & Guests
+      </label>
+      <input
+        type="number"
+        [(ngModel)]="formData.rooms"
+        name="rooms"
+        min="1"
+        required
+      />
     </div>
 
-    <div class="form-group">
-      <label>Price Per Night</label>
+    <div class="form-group price">
+      <label><i class="icon fa fa-tags"></i>Price Per Night</label>
       <!--<input type="text" name="price" [(ngModel)]="formData.price" placeholder="Price range (e.g., 1000-5000)" />-->
       <select [(ngModel)]="formData.price" name="price">
         <option value="">Select a price range</option>
@@ -38,8 +66,8 @@
       </select>
     </div>
 
-    <div class="form-group">
-      <label>Amenities</label>
+    <div class="form-group amenities">
+      <label><i class="icon fa fa-concierge-bell"></i>Amenities</label>
       <div class="amenities-options">
         <label *ngFor="let amenity of amenitiesOptions">
           <input type="checkbox" [value]="amenity" (change)="updateAmenities($event)" />
@@ -48,7 +76,10 @@
       </div>
     </div>
 
-    <button type="submit">Search</button>
+    <!-- Search Button -->
+    <button type="submit" class="btn-search">
+      <i class="fa fa-search"></i> Search
+    </button>
   </form>
 
   <!-- Search Results Section -->
