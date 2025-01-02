@@ -4,10 +4,10 @@
   border-radius: 15px;
   max-width: 850px;
   margin: 30px auto;
-  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to top right, #f0f9ff, #eaf4ff);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   font-family: "Roboto", sans-serif;
-  color: #333;
+  /* color: #333; */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -15,10 +15,19 @@
   transform: scale(1.02);
 }
 
+.search-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
 .error-message {
   color: #d9534f;
   background: #f2dede;
   padding: 15px;
+  margin-top: -10px;
   margin-bottom: 20px;
   border: 1px solid #ebccd1;
   border-radius: 8px;
@@ -28,8 +37,8 @@
 
 form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px 20px;
 }
 
 .form-group {
@@ -67,9 +76,14 @@ input[type="text"]::placeholder {
   font-style: italic;
 }
 
+.icon {
+  margin-right: 10px;
+  color: #0056b3;
+}
+
 .amenities-options {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 15px;
 }
 
@@ -78,6 +92,10 @@ input[type="text"]::placeholder {
   align-items: center;
   font-size: 13px;
   font-weight: 500;
+  background: #f9f9f9;
+  padding: 5px 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .amenities-options input {
@@ -97,6 +115,10 @@ button {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.btn-search i {
+  margin-right: 10px;
 }
 
 button:hover {

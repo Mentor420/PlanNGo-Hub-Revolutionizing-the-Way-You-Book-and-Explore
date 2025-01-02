@@ -228,7 +228,7 @@ body {
 
 /* **********************       About Section       ******************/
 
-.about-us {
+/* .about-us {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -298,11 +298,11 @@ span {
 
 .hire:hover {
   background: #000;
-}
+} */
 
 
 /* **************   Conatact Us   ***********/
-
+/* 
 
 .contact-us {
   min-height: 100vh;
@@ -445,4 +445,4 @@ span {
    width: 100%;
    margin-left: 0;
  }
-}
+} */

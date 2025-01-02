@@ -1,4 +1,4 @@
-<div class="card-list">
+<!-- <div class="card-list">
     <a href="#" class="card-item2">
         <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Card Image">
@@ -11,4 +11,22 @@
     <div class="price">
 
     </div>
+</div> -->
+<div *ngIf="hotels && hotels.length > 0" class="hotel-container">
+    <h3>Hotels in {{ city }}</h3>
+    <div class="card-list">
+        <div *ngFor="let hotel of hotels" class="card-item2">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="{{ hotel.name }} Image">
+            <div class="h-name">
+                <h3 class="hotel-name">{{ hotel.name }}</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> {{ city }}</p>
+                <h4><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night</h4>
+                <p><strong>Rooms Available:</strong> {{ hotel.roomsAvailable }}</p>
+                <p><strong>Amenities:</strong> {{ hotel.amenities }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="hotels && hotels.length === 0" class="no-hotels">
+    <p>No hotels found for {{ city }}</p>
 </div>

@@ -1,24 +1,29 @@
 <div class="results-container">
   <button class="back-button" (click)="goBack()">Back</button>
 
-  <h2>Search Results</h2>
-  <div *ngIf="searchResults.length > 0; else noResults">
-    <div class="hotel-card" *ngFor="let hotel of searchResults">
-      <img [src]="hotel.image" alt="Hotel Image" />
+  <h2>Search Results for {{ formData.location }}</h2>
+  <p *ngIf="formData.priceRange" class="price-range">
+    Price Range: ₹{{ formData.priceRange[0] }} - ₹{{ formData.priceRange[1] }}
+  </p>
+</div>
+
+<div class="results-container">
+  <div *ngIf="filteredResults.length > 0; else noResults" class="hotel-results">
+    <div *ngFor="let hotel of filteredResults" class="hotel-card" (click)="viewHotelDetails(hotel)">
+      <img [src]="hotel.image || 'default.jpg'" alt="{{ hotel.name }}" class="hotel-image"/>
       <div class="hotel-details">
         <h3>{{ hotel.name }}</h3>
-        <p>{{ hotel.city }}</p>
-        <p>₹{{ hotel.pricePerNight }} / night</p>
-        <p><b>Rooms Available:</b> {{ hotel.roomsAvailable }}</p>
-        <p><b>Amenities:</b> {{ hotel.amenities.join(', ') }}</p>
+        <p><strong>City:</strong> {{ hotel.city }}</p>
+        <p><strong>Price per Night:</strong> ₹{{ hotel.pricePerNight }}</p>
+        <p><strong>Rooms Available:</strong> {{ hotel.roomsAvailable }}</p>
+        <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
       </div>
     </div>
   </div>
 
   <ng-template #noResults>
-    <p>No results found. Please try searching again.</p>
+    <p class="no-results-message">
+      No results found matching your criteria. Please try again.
+    </p>
   </ng-template>
 </div>
-
-
-
