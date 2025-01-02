@@ -1,7 +1,7 @@
 {
   "hotels": [
     {
-      "id": "1",
+      "id": "hT01",
       "city": "Goa",
       "name": "Goa Paradise",
       "pricePerNight": 1500,
@@ -13,7 +13,7 @@
       "amenities": ["WiFi", "Pool", "Free Breakfast"]
     },
     {
-      "id": "9",
+      "id": "hT09",
       "city": "Goa",
       "name": "Goa Beachfront Resort",
       "pricePerNight": 1000,
@@ -25,7 +25,7 @@
       "amenities": ["Beach Access", "Restaurant", "Air Conditioning"]
     },
     {
-      "id": "17",
+      "id": "hT017",
       "city": "Goa",
       "name": "Goa Serenity Resort",
       "pricePerNight": 1600,
@@ -37,7 +37,7 @@
       "amenities": ["WiFi", "Private Beach", "Free Parking"]
     },
     {
-      "id": "18",
+      "id": "hT018",
       "city": "Goa",
       "name": "Goa Lagoon Retreat",
       "pricePerNight": 2000,
@@ -49,7 +49,7 @@
       "amenities": ["Lagoon View", "Restaurant", "Spa"]
     },
     {
-      "id": "19",
+      "id": "hT019",
       "city": "Goa",
       "name": "Goa Tranquil Villa",
       "pricePerNight": 1800,
@@ -61,7 +61,7 @@
       "amenities": ["WiFi", "Terrace Bar", "Pet Friendly"]
     },    
     {
-      "id": "2",
+      "id": "hT02",
       "city": "Mumbai",
       "name": "Mumbai Grand Hotel",
       "pricePerNight": 2500,
@@ -73,7 +73,7 @@
       "amenities": ["Parking", "Spa", "Restaurant"]
     },
     {
-      "id": "10",
+      "id": "hT010",
       "city": "Mumbai",
       "name": "Mumbai Bayview Hotel",
       "pricePerNight": 3500,
@@ -85,7 +85,7 @@
       "amenities": ["Sea View", "Roof-top Bar", "Fitness Center"]
     },
     {
-      "id": "20",
+      "id": "hT020",
       "city": "Mumbai",
       "name": "Mumbai City Luxe",
       "pricePerNight": 3000,
@@ -97,7 +97,7 @@
       "amenities": ["Infinity Pool", "WiFi", "Fitness Center"]
     },
     {
-      "id": "21",
+      "id": "hT021",
       "city": "Mumbai",
       "name": "Mumbai Royal Stay",
       "pricePerNight": 2800,
@@ -109,7 +109,7 @@
       "amenities": ["Rooftop Lounge", "Spa", "Free Breakfast"]
     },
     {
-      "id": "22",
+      "id": "hT022",
       "city": "Mumbai",
       "name": "Mumbai Oceanfront Suites",
       "pricePerNight": 3200,
@@ -121,7 +121,7 @@
       "amenities": ["Sea View", "WiFi", "Private Dining"]
     },    
     {
-      "id": "3",
+      "id": "hT03",
       "city": "Delhi",
       "name": "Delhi Luxury Inn",
       "pricePerNight": 3000,
@@ -133,7 +133,7 @@
       "amenities": ["WiFi", "Conference Room", "Gym"]
     },
     {
-      "id": "11",
+      "id": "hT011",
       "city": "Delhi",
       "name": "Delhi Heritage Hotel",
       "pricePerNight": 2800,
@@ -145,7 +145,7 @@
       "amenities": ["Historical Architecture", "Restaurant", "Free WiFi"]
     },
     {
-      "id": "26",
+      "id": "hT026",
       "city": "Delhi",
       "name": "Delhi Royal Suites",
       "pricePerNight": 3200,
@@ -157,7 +157,7 @@
       "amenities": ["Gym", "WiFi", "Free Breakfast"]
     },
     {
-      "id": "27",
+      "id": "hT027",
       "city": "Delhi",
       "name": "Delhi Comfort Stay",
       "pricePerNight": 2800,
@@ -169,7 +169,7 @@
       "amenities": ["Conference Room", "Parking", "Restaurant"]
     },
     {
-      "id": "28",
+      "id": "hT028",
       "city": "Delhi",
       "name": "Delhi Premium Inn",
       "pricePerNight": 3500,
@@ -181,7 +181,7 @@
       "amenities": ["Pool", "Restaurant", "WiFi"]
     },    
     {
-      "id": "4",
+      "id": "hT04",
       "city": "Bangalore",
       "name": "Bangalore Elite Stay",
       "pricePerNight": 1800,
@@ -193,7 +193,7 @@
       "amenities": ["WiFi", "Pool", "Parking"]
     },
     {
-      "id": "12",
+      "id": "hT012",
       "city": "Bangalore",
       "name": "Bangalore Garden Retreat",
       "pricePerNight": 2200,
@@ -205,7 +205,7 @@
       "amenities": ["Garden", "Restaurant", "Parking"]
     },
     {
-      "id": "5",
+      "id": "hT05",
       "city": "Chennai",
       "name": "Chennai Comfort Inn",
       "pricePerNight": 2000,
@@ -217,7 +217,7 @@
       "amenities": ["Restaurant", "Spa", "Gym"]
     },
     {
-      "id": "13",
+      "id": "hT013",
       "city": "Chennai",
       "name": "Chennai Riverside Suites",
       "pricePerNight": 2700,
@@ -229,7 +229,7 @@
       "amenities": ["Riverside View", "Restaurant", "WiFi"]
     },
     {
-      "id": "6",
+      "id": "hT06",
       "city": "Pune",
       "name": "Pune Garden View",
       "pricePerNight": 2200,
@@ -241,7 +241,7 @@
       "amenities": ["WiFi", "Garden", "Gym"]
     },
     {
-      "id": "14",
+      "id": "hT014",
       "city": "Pune",
       "name": "Pune City Plaza",
       "pricePerNight": 2400,
@@ -253,7 +253,7 @@
       "amenities": ["Parking", "Fitness Center", "Free Breakfast"]
     },
     {
-      "id": "7",
+      "id": "hT07",
       "city": "Jaipur",
       "name": "Jaipur Regal Stay",
       "pricePerNight": 2700,
@@ -265,7 +265,7 @@
       "amenities": ["Heritage Decor", "Restaurant", "Parking"]
     },
     {
-      "id": "15",
+      "id": "hT015",
       "city": "Jaipur",
       "name": "Jaipur Heritage Retreat",
       "pricePerNight": 3500,
@@ -277,7 +277,7 @@
       "amenities": ["Palace Style", "Roof Top Lounge", "Restaurant"]
     },
     {
-      "id": "8",
+      "id": "hT08",
       "city": "Hyderabad",
       "name": "Hyderabad Pearl Inn",
       "pricePerNight": 1900,
@@ -289,7 +289,7 @@
       "amenities": ["WiFi", "Spa", "Gym"]
     },
     {
-      "id": "16",
+      "id": "hT016",
       "city": "Hyderabad",
       "name": "Hyderabad Metro Hotel",
       "pricePerNight": 2200,
@@ -301,7 +301,7 @@
       "amenities": ["Swimming Pool", "City View", "Restaurant"]
     },
     {
-      "id": "23",
+      "id": "hT023",
       "city": "Hyderabad",
       "name": "Hyderabad Skyline Inn",
       "pricePerNight": 2500,
@@ -313,7 +313,7 @@
       "amenities": ["WiFi", "Rooftop Lounge", "Gym"]
     },
     {
-      "id": "24",
+      "id": "hT024",
       "city": "Hyderabad",
       "name": "Hyderabad Grand Hotel",
       "pricePerNight": 3000,
@@ -325,7 +325,7 @@
       "amenities": ["Spa", "Pool", "Restaurant"]
     },
     {
-      "id": "25",
+      "id": "hT025",
       "city": "Hyderabad",
       "name": "Hyderabad Elite Suites",
       "pricePerNight": 2700,
@@ -337,7 +337,7 @@
       "amenities": ["Garden View", "Free Breakfast", "WiFi"]
     },
     {
-      "id": "29",
+      "id": "hT029",
       "city": "Rajasthan",
       "name": "Rajasthan Desert Oasis",
       "pricePerNight": 2600,
@@ -349,7 +349,7 @@
       "amenities": ["Desert Safari", "Cultural Performances", "Pool"]
     },
     {
-      "id": "30",
+      "id": "hT030",
       "city": "Kaashi",
       "name": "Kaashi Divine Retreat",
       "pricePerNight": 2000,
@@ -361,7 +361,7 @@
       "amenities": ["River View", "Temple Proximity", "Free Breakfast"]
     },
     {
-      "id": "31",
+      "id": "hT031",
       "city": "TamilNadu",
       "name": "Tamil Nadu Ocean Pearl",
       "pricePerNight": 3200,
@@ -373,7 +373,7 @@
       "amenities": ["Beach Access", "Infinity Pool", "Ayurvedic Spa"]
     },
     {
-      "id": "32",
+      "id": "hT032",
       "city": "Rajasthan",
       "name": "Rajasthan Royal Heritage",
       "pricePerNight": 3500,
