@@ -4,7 +4,8 @@
   height: 100vh;
   width: 100%;
   padding: 90px 0;
-  background: #e3f2fd;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .pic {

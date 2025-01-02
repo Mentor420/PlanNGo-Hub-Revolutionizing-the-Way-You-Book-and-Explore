@@ -1,22 +1,9 @@
-<!-- <div class="card-list">
-    <a href="#" class="card-item2">
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Card Image">
-    </a>
-    <div class="h-name">
-        <h3 class="hotel-name">The Moon Night Hotel</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Shillong, meghalaya</p>
-        <h2><i class="bi bi-currency-rupee"></i>2000/Night</h2>
-    </div>
-    <div class="price">
-
-    </div>
-</div> -->
-<div *ngIf="hotels && hotels.length > 0" class="hotel-container">
+<!-- <div *ngIf="hotels && hotels.length > 0" class="hotel-container">
     <h3>Hotels in {{ city }}</h3>
     <div class="card-list">
         <div *ngFor="let hotel of hotels" class="card-item2">
-            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="{{ hotel.name }} Image">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="{{ hotel.name }} Image">
             <div class="h-name">
                 <h3 class="hotel-name">{{ hotel.name }}</h3>
                 <p class="location"><i class="bi bi-geo-alt-fill"></i> {{ city }}</p>
@@ -29,4 +16,44 @@
 </div>
 <div *ngIf="hotels && hotels.length === 0" class="no-hotels">
     <p>No hotels found for {{ city }}</p>
+</div> -->
+
+
+<div *ngIf="hotels && hotels.length > 0" class="hotel-container">
+    <h3 class="mb-5">Hotels in {{ city }}</h3>
+    <div *ngFor="let hotel of hotels"  class="card-list">
+        <a href="#" class="card-item2">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Card Image">
+        </a>
+        <div class="h-name">
+            <div class="star-name d-flex align-items-center">
+                <h3 class="hotel-name">{{ hotel.name }}</h3>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+            </div>
+            <p class="location mt-1"> Unique and individually decorated rooms, Explore nearby attractions </p>
+            <p class="location mt-1"><i class="bi bi-geo-alt-fill"></i>{{ city }}</p>
+            <div class="d-flex mt-1">
+                <p id="rate">4.5 </p>
+                <p> (354 Rating)</p>
+            </div>
+
+        </div>
+        <div class="price d-flex flex-column">
+            <div class="bank-offer p-1">
+                <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>288 off</p>
+                <hr>
+                <p class="pt-1">Pay using HDFC Credit Card EMI <br>to avail the offer.</p>
+            </div>
+            <div class="div">
+                <h3><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}</h3>
+                <p>+3435 tax & fees</p>
+                <p>per night</p>
+            </div>
+        </div>
+    </div>
 </div>
