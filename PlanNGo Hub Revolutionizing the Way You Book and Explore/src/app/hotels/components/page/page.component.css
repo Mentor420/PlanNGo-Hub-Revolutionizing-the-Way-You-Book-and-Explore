@@ -290,3 +290,45 @@ gap: 20px;
 .rules ul li {
   font-weight: 400;
 }
+
+
+
+/******************************************* Rating ***********************************/
+
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  color: black;
+
+}
+
+.rating-box2 {
+  width: 13%;
+  height: 90%;
+  background-color: #316FF6;
+  color: #fff;
+  border-radius: 8px;
+
+}
+
+.rating-box3 {
+  width: 35%;
+  height: 90%;
+
+}
+
+.star i {
+  margin-right: 2px;
+}
+
+
+
+.rating-box4{
+  width: 50%;
+  border: 1px solid #E2DFD2;
+  height: 90%;
+  border-radius: 12px;
+}
