@@ -6,11 +6,48 @@
       "name": "Goa Paradise",
       "pricePerNight": 1500,
       "roomsAvailable": 5,
-      "bookings": [
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      "amenities": [
+        "WiFi",
+        "Pool",
+        "Free Breakfast",
+        "Parking Facility",
+        "24/7 Room Service",
+        "Spa"
       ],
-      "amenities": ["WiFi", "Pool", "Free Breakfast"]
+      "rating": 4.2,
+      "reviewsCount": 180,
+      "checkin": "10 AM",
+      "checkout": "12 PM",
+      "rules": [
+        "Valid ID proof required at check-in.",
+        "Pets are allowed on request.",
+        "Unmarried couples are allowed."
+      ],
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.5893244156823!2d78.52543974922605!3d25.458768187350046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977710f73d0ffe7%3A0x58576f6140b20d8!2sLahargird%20park!5e0!3m2!1sen!2sin!4v1735927261157!5m2!1sen!2sin",
+      "images": ["https://images.unsplash.com/photo-1586114063639-32931561fa20?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 4
+        }
+      ],
+      "ratings": {
+        "averageRating": 4.2,
+        "ratingsCount": 180,
+        "ratingBreakdown": {
+          "5": 100,
+          "4": 50,
+          "3": 20,
+          "2": 8,
+          "1": 2
+        }
+      }
     },
     {
       "id": "hT09",
@@ -18,372 +55,1272 @@
       "name": "Goa Beachfront Resort",
       "pricePerNight": 1000,
       "roomsAvailable": 10,
-      "bookings": [
-        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-18", "roomsBooked": 5 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 6 }
+      "amenities": [
+        "Beach Access",
+        "Restaurant",
+        "Air Conditioning",
+        "Bar",
+        "Fitness Center",
+        "Free Parking"
       ],
-      "amenities": ["Beach Access", "Restaurant", "Air Conditioning"]
+      "rating": 4.1,
+      "reviewsCount": 220,
+      "checkin": "12 PM",
+      "checkout": "10 AM",
+      "rules": [
+        "Non-refundable bookings only.",
+        "Smoking prohibited in public areas.",
+        "Children below 6 years stay for free."
+      ],
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8551364511376!2d73.92678!3d15.30712!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
+      "images": ["https://images.unsplash.com/photo-1590073242678-d42e94aa7da4?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-14",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 5
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 6
+        }
+      ],
+      "ratings": {
+        "averageRating": 4.1,
+        "ratingsCount": 220,
+        "ratingBreakdown": {
+          "5": 120,
+          "4": 60,
+          "3": 30,
+          "2": 7,
+          "1": 3
+        }
+      }
     },
+    
     {
       "id": "hT017",
       "city": "Goa",
       "name": "Goa Serenity Resort",
       "pricePerNight": 1600,
       "roomsAvailable": 7,
-      "bookings": [
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-23", "checkOutDate": "2024-12-27", "roomsBooked": 3 }
+      "amenities": [
+        "WiFi",
+        "Private Beach",
+        "Free Parking",
+        "Swimming Pool",
+        "Kids Play Area",
+        "Live Entertainment"
       ],
-      "amenities": ["WiFi", "Private Beach", "Free Parking"]
+      "rating": 4.8,
+      "reviewsCount": 300,
+      "checkin": "11 AM",
+      "checkout": "11 AM",
+      "rules": [
+        "Full refund if canceled 7 days in advance.",
+        "Noise restrictions apply after 10 PM.",
+        "Primary guest should be at least 21 years old."
+      ],
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
+      "images": ["https://images.unsplash.com/photo-1553163147-622ab57b4cf0?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-23",
+          "checkOutDate": "2024-12-27",
+          "roomsBooked": 3
+        }
+      ],
+      "ratings": {
+        "averageRating": 4.8,
+        "ratingsCount": 300,
+        "ratingBreakdown": {
+          "5": 180,
+          "4": 80,
+          "3": 25,
+          "2": 10,
+          "1": 5
+        }
+      }
     },
+
     {
       "id": "hT018",
       "city": "Goa",
       "name": "Goa Lagoon Retreat",
+      "description": "Luxury meets natural beauty with stunning lagoon views and spa services.",
       "pricePerNight": 2000,
       "roomsAvailable": 5,
-      "bookings": [
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-25", "roomsBooked": 2 }
+      "starRating": 4.7,
+      "reviewsCount": 215,
+      "checkin": "11 AM",
+      "checkout": "10 AM",
+      "rules": [
+        "Pets are allowed on request.",
+        "Smoking is not permitted in rooms.",
+        "Cancellations up to 5 days before check-in are eligible for a refund."
       ],
-      "amenities": ["Lagoon View", "Restaurant", "Spa"]
+      "location": {
+        "latitude": 15.3023,
+        "longitude": 74.1294
+      },
+      "images": ["https://images.unsplash.com/photo-1610641838149-e5e012292649?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 2
+        }
+      ],
+      "amenities": [
+        "Lagoon View",
+        "Restaurant",
+        "Spa",
+        "Free Breakfast",
+        "Private Balconies",
+        "24-hour Front Desk"
+      ]
     },
     {
       "id": "hT019",
       "city": "Goa",
       "name": "Goa Tranquil Villa",
+      "description": "A cozy getaway with terrace views, perfect for families and pets.",
       "pricePerNight": 1800,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 2 }
+      "starRating": 4.2,
+      "reviewsCount": 180,
+      "checkin": "12 PM",
+      "checkout": "11 AM",
+      "rules": [
+        "Primary guest must be at least 18 years old.",
+        "Pets are welcome at no extra charge.",
+        "Noise levels should be minimized after 10 PM."
       ],
-      "amenities": ["WiFi", "Terrace Bar", "Pet Friendly"]
-    },    
+      "location": {
+        "latitude": 15.3092,
+        "longitude": 74.1217
+      },
+      "images": ["https://images.unsplash.com/photo-1501180981121-17f054ec5e10?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 2
+        }
+      ],
+      "amenities": [
+        "WiFi",
+        "Terrace Bar",
+        "Pet Friendly",
+        "Garden Access",
+        "Free Parking",
+        "BBQ Facilities"
+      ]
+    },
     {
       "id": "hT02",
       "city": "Mumbai",
       "name": "Mumbai Grand Hotel",
+      "description": "Elegance and convenience in the heart of Mumbai, near business hubs.",
       "pricePerNight": 2500,
       "roomsAvailable": 3,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-16", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-16", "checkOutDate": "2024-12-18", "roomsBooked": 3 }
+      "starRating": 4.8,
+      "reviewsCount": 320,
+      "checkin": "10 AM",
+      "checkout": "12 PM",
+      "rules": [
+        "Valid government-issued photo ID is mandatory for check-in.",
+        "Unmarried couples are allowed with proper ID proof.",
+        "Cancellations made 48 hours before check-in are eligible for a 50% refund."
       ],
-      "amenities": ["Parking", "Spa", "Restaurant"]
+      "location": {
+        "latitude": 19.076,
+        "longitude": 72.8777
+      },
+      "images": ["https://images.unsplash.com/photo-1561131547-f8a79bb78801?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-16",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-16",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Parking",
+        "Spa",
+        "Restaurant",
+        "Rooftop Pool",
+        "Fitness Center",
+        "Business Center"
+      ]
     },
+
     {
       "id": "hT010",
       "city": "Mumbai",
       "name": "Mumbai Bayview Hotel",
+      "description": "Wake up to breathtaking views of the bay and world-class amenities.",
       "pricePerNight": 3500,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-11", "checkOutDate": "2024-12-14", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 4 }
+      "starRating": 4.9,
+      "reviewsCount": 400,
+      "checkin": "10 AM",
+      "checkout": "11 AM",
+      "rules": [
+        "No loud noise or music after 10 PM.",
+        "Cancellation 72 hours before check-in will incur a 20% charge.",
+        "All guests must present a valid government ID upon check-in."
       ],
-      "amenities": ["Sea View", "Roof-top Bar", "Fitness Center"]
+      "location": {
+        "latitude": 19.0825,
+        "longitude": 72.8808
+      },
+      "images": ["https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-11",
+          "checkOutDate": "2024-12-14",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "Sea View",
+        "Rooftop Bar",
+        "Fitness Center",
+        "Valet Parking",
+        "Concierge Service"
+      ]
     },
     {
       "id": "hT020",
       "city": "Mumbai",
       "name": "Mumbai City Luxe",
+      "description": "Premium urban living with luxurious touches in the city center.",
       "pricePerNight": 3000,
       "roomsAvailable": 5,
-      "bookings": [
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-20", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-26", "roomsBooked": 4 }
+      "starRating": 4.6,
+      "reviewsCount": 370,
+      "checkin": "11 AM",
+      "checkout": "10 AM",
+      "rules": [
+        "Pets are not allowed.",
+        "Guests must check-in by 7 PM or notify the hotel in advance.",
+        "No refund for cancellations within 48 hours of check-in."
       ],
-      "amenities": ["Infinity Pool", "WiFi", "Fitness Center"]
+      "location": {
+        "latitude": 19.0782,
+        "longitude": 72.8824
+      },
+      "images": ["https://images.unsplash.com/photo-1586070289631-b99d0b00edb1?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-26",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "Infinity Pool",
+        "WiFi",
+        "Fitness Center",
+        "Business Center",
+        "Complimentary Breakfast"
+      ]
     },
     {
       "id": "hT021",
       "city": "Mumbai",
       "name": "Mumbai Royal Stay",
+      "description": "A royal experience with rooftop lounges and relaxing spa facilities.",
       "pricePerNight": 2800,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 3 }
+      "starRating": 4.5,
+      "reviewsCount": 320,
+      "checkin": "9 AM",
+      "checkout": "12 PM",
+      "rules": [
+        "No outside food delivery allowed.",
+        "Non-refundable bookings for check-ins within 24 hours.",
+        "Guests under 18 must be accompanied by an adult."
       ],
-      "amenities": ["Rooftop Lounge", "Spa", "Free Breakfast"]
+      "location": {
+        "latitude": 19.0741,
+        "longitude": 72.8868
+      },
+      "images": ["https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-23",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Rooftop Lounge",
+        "Spa",
+        "Free Breakfast",
+        "Laundry Service",
+        "24-hour Room Service"
+      ]
     },
     {
       "id": "hT022",
       "city": "Mumbai",
       "name": "Mumbai Oceanfront Suites",
+      "description": "Indulge in oceanfront luxury with private dining and serene views.",
       "pricePerNight": 3200,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-24", "checkOutDate": "2024-12-28", "roomsBooked": 3 }
+      "starRating": 4.7,
+      "reviewsCount": 310,
+      "checkin": "10 AM",
+      "checkout": "11 AM",
+      "rules": [
+        "Smoking is prohibited inside the premises.",
+        "Pets are allowed for an additional charge of ₹500 per stay.",
+        "Bookings cancelled within 48 hours of check-in are not refundable."
       ],
-      "amenities": ["Sea View", "WiFi", "Private Dining"]
-    },    
+      "location": {
+        "latitude": 19.0725,
+        "longitude": 72.8855
+      },
+      "images": ["https://images.unsplash.com/photo-1501949997128-70f28aca7a0c?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-24",
+          "checkOutDate": "2024-12-28",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Sea View",
+        "WiFi",
+        "Private Dining",
+        "On-Site Restaurant",
+        "Balcony Access"
+      ]
+    },
+
     {
       "id": "hT03",
       "city": "Delhi",
       "name": "Delhi Luxury Inn",
+      "description": "Exquisite comfort with top-notch facilities, designed for business and leisure.",
       "pricePerNight": 3000,
       "roomsAvailable": 7,
-      "bookings": [
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-24", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-24", "checkOutDate": "2024-12-30", "roomsBooked": 5 }
+      "starRating": 4.4,
+      "reviewsCount": 280,
+      "checkin": "12 PM",
+      "checkout": "10 AM",
+      "rules": [
+        "No pets allowed.",
+        "Guest must provide a valid photo ID at check-in.",
+        "Cancellation 48 hours before check-in without charge."
       ],
-      "amenities": ["WiFi", "Conference Room", "Gym"]
+      "location": {
+        "latitude": 28.6139,
+        "longitude": 77.209
+      },
+      "images": ["https://images.unsplash.com/photo-1560847956-fb098ec2203a?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-24",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-24",
+          "checkOutDate": "2024-12-30",
+          "roomsBooked": 5
+        }
+      ],
+      "amenities": [
+        "WiFi",
+        "Conference Room",
+        "Gym",
+        "Business Lounge",
+        "24/7 Room Service"
+      ]
     },
     {
       "id": "hT011",
       "city": "Delhi",
       "name": "Delhi Heritage Hotel",
+      "description": "Step back in time with this historically rich hotel offering luxurious services.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 2 }
+      "starRating": 4.2,
+      "reviewsCount": 230,
+      "checkin": "1 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Unmarried couples are not allowed.",
+        "Must provide valid identification (Passport, Aadhar, or Govt. ID).",
+        "No smoking in rooms."
       ],
-      "amenities": ["Historical Architecture", "Restaurant", "Free WiFi"]
+      "location": {
+        "latitude": 28.6137,
+        "longitude": 77.2095
+      },
+      "images": ["https://images.unsplash.com/photo-1587172718347-1e02f9dff929?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 2
+        }
+      ],
+      "amenities": [
+        "Historical Architecture",
+        "Restaurant",
+        "Free WiFi",
+        "On-Site Gallery",
+        "Event Space"
+      ]
     },
     {
       "id": "hT026",
       "city": "Delhi",
       "name": "Delhi Royal Suites",
+      "description": "Indulge in a royal stay with impeccable service, ideal for both families and business travelers.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-16", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 3 }
+      "starRating": 4.7,
+      "reviewsCount": 340,
+      "checkin": "12 PM",
+      "checkout": "10 AM",
+      "rules": [
+        "Pets are not allowed.",
+        "Check-in between 1 PM and 7 PM.",
+        "For late check-ins, notify the front desk at least 48 hours in advance."
       ],
-      "amenities": ["Gym", "WiFi", "Free Breakfast"]
+      "location": {
+        "latitude": 28.6135,
+        "longitude": 77.2279
+      },
+      "images": ["https://images.unsplash.com/photo-1606050570137-e57777f92f1d?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-16",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-23",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Gym",
+        "WiFi",
+        "Free Breakfast",
+        "Rooftop Dining",
+        "Luggage Storage"
+      ]
     },
     {
       "id": "hT027",
       "city": "Delhi",
       "name": "Delhi Comfort Stay",
+      "description": "Affordable comfort, with all the essentials for your short-term stay.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-18", "roomsBooked": 3 }
+      "starRating": 4.1,
+      "reviewsCount": 200,
+      "checkin": "11 AM",
+      "checkout": "11 AM",
+      "rules": [
+        "Breakfast not included in all rates.",
+        "Guest identification required during check-in.",
+        "Quiet hours from 10 PM to 7 AM."
       ],
-      "amenities": ["Conference Room", "Parking", "Restaurant"]
+      "location": {
+        "latitude": 28.7041,
+        "longitude": 77.1025
+      },
+      "images": ["https://images.unsplash.com/photo-1605469359757-b9bdb49ce82a?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-14",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Conference Room",
+        "Parking",
+        "Restaurant",
+        "Breakfast Buffet",
+        "Tea/Coffee Maker"
+      ]
     },
     {
       "id": "hT028",
       "city": "Delhi",
       "name": "Delhi Premium Inn",
+      "description": "Luxurious comfort with an emphasis on relaxation and modern style.",
       "pricePerNight": 3500,
       "roomsAvailable": 5,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      "starRating": 4.8,
+      "reviewsCount": 310,
+      "checkin": "10 AM",
+      "checkout": "9 AM",
+      "rules": [
+        "Smoking is allowed in designated areas.",
+        "ID proof required at check-in.",
+        "For cancellations, guests must notify 72 hours prior to arrival."
       ],
-      "amenities": ["Pool", "Restaurant", "WiFi"]
-    },    
+      "location": {
+        "latitude": 28.5273,
+        "longitude": 77.2156
+      },
+      "images": ["https://images.unsplash.com/photo-1599297616982-622a77b24b9b?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "WiFi",
+        "Concierge Service",
+        "Free Shuttle Service"
+      ]
+    },
+
     {
       "id": "hT04",
       "city": "Bangalore",
       "name": "Bangalore Elite Stay",
+      "description": "A premium stay with modern facilities, ideal for both leisure and business travelers.",
       "pricePerNight": 1800,
       "roomsAvailable": 4,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 3 }
+      "starRating": 4.3,
+      "reviewsCount": 150,
+      "checkin": "2 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No pets allowed.",
+        "Valid ID required at check-in.",
+        "Check-out must be completed by 12 PM."
       ],
-      "amenities": ["WiFi", "Pool", "Parking"]
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "images": ["https://images.unsplash.com/photo-1591078486891-3797bc8a3927?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-12",
+          "checkOutDate": "2024-12-16",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "WiFi",
+        "Pool",
+        "Parking",
+        "Room Service",
+        "Business Center"
+      ]
     },
     {
       "id": "hT012",
       "city": "Bangalore",
       "name": "Bangalore Garden Retreat",
+      "description": "Escape to a serene retreat amidst lush gardens, perfect for unwinding with modern comforts.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-25", "roomsBooked": 3 }
+      "starRating": 4.5,
+      "reviewsCount": 210,
+      "checkin": "12 PM",
+      "checkout": "11 AM",
+      "rules": [
+        "Pets are allowed with prior consent.",
+        "Guests must provide ID during check-in.",
+        "Maximum of two children under 12 stay free."
       ],
-      "amenities": ["Garden", "Restaurant", "Parking"]
+      "location": {
+        "latitude": 12.9539,
+        "longitude": 77.6188
+      },
+      "images": ["https://images.unsplash.com/photo-1502905198690-32da4d95dbfa?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Garden",
+        "Restaurant",
+        "Parking",
+        "Free WiFi",
+        "Conference Room"
+      ]
     },
     {
       "id": "hT05",
       "city": "Chennai",
       "name": "Chennai Comfort Inn",
+      "description": "A comfortable stay with premium amenities for a delightful city experience.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-05", "checkOutDate": "2024-12-08", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-08", "checkOutDate": "2024-12-12", "roomsBooked": 3 }
+      "starRating": 4.2,
+      "reviewsCount": 180,
+      "checkin": "1 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Unmarried couples not allowed.",
+        "Guests must provide valid government-issued ID at check-in.",
+        "No pets are allowed."
       ],
-      "amenities": ["Restaurant", "Spa", "Gym"]
+      "location": {
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      },
+      "images": ["https://images.unsplash.com/photo-1603037687981-9db63c49bc6a?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-05",
+          "checkOutDate": "2024-12-08",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-08",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": ["Restaurant", "Spa", "Gym", "Free Parking", "Room Service"]
     },
     {
       "id": "hT013",
       "city": "Chennai",
       "name": "Chennai Riverside Suites",
+      "description": "A tranquil riverside retreat offering luxury rooms and modern conveniences for a peaceful stay.",
       "pricePerNight": 2700,
       "roomsAvailable": 7,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-15", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 5 }
+      "starRating": 4.6,
+      "reviewsCount": 250,
+      "checkin": "2 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No smoking in rooms.",
+        "ID verification required at check-in.",
+        "Children under 5 stay free."
       ],
-      "amenities": ["Riverside View", "Restaurant", "WiFi"]
+      "location": {
+        "latitude": 13.0674,
+        "longitude": 80.2785
+      },
+      "images": ["https://images.unsplash.com/photo-1593202252820-8cb7b349ccf2?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-15",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 5
+        }
+      ],
+      "amenities": [
+        "Riverside View",
+        "Restaurant",
+        "WiFi",
+        "Laundry Service",
+        "Free Breakfast"
+      ]
     },
     {
       "id": "hT06",
       "city": "Pune",
       "name": "Pune Garden View",
+      "description": "Stay amidst lush greenery with easy access to the city’s attractions and modern amenities.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-20", "roomsBooked": 6 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-22", "roomsBooked": 4 }
+      "starRating": 4.4,
+      "reviewsCount": 220,
+      "checkin": "2 PM",
+      "checkout": "11 AM",
+      "rules": [
+        "Pets are welcome with prior approval.",
+        "Guests should present government ID at check-in.",
+        "Check-in outside working hours is subject to availability."
       ],
-      "amenities": ["WiFi", "Garden", "Gym"]
+      "location": {
+        "latitude": 18.5204,
+        "longitude": 73.8567
+      },
+      "images": ["https://images.unsplash.com/photo-1594413161180-c2f8ab433ab7?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 6
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": ["WiFi", "Garden", "Gym", "Outdoor Pool", "24/7 Security"]
     },
+
     {
       "id": "hT014",
       "city": "Pune",
       "name": "Pune City Plaza",
+      "description": "A modern hotel offering comfort and convenience with a range of amenities for business and leisure travelers.",
       "pricePerNight": 2400,
       "roomsAvailable": 9,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 6 }
+      "starRating": 4.3,
+      "reviewsCount": 140,
+      "checkin": "2 PM",
+      "checkout": "11 AM",
+      "rules": [
+        "No pets allowed.",
+        "ID verification required at check-in.",
+        "Children under 6 stay free."
       ],
-      "amenities": ["Parking", "Fitness Center", "Free Breakfast"]
+      "location": {
+        "latitude": 18.5204,
+        "longitude": 73.8567
+      },
+      "images": ["https://images.unsplash.com/photo-1534392921973-98ad7723dc55?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 6
+        }
+      ],
+      "amenities": [
+        "Parking",
+        "Fitness Center",
+        "Free Breakfast",
+        "Room Service",
+        "Business Center"
+      ]
     },
     {
       "id": "hT07",
       "city": "Jaipur",
       "name": "Jaipur Regal Stay",
+      "description": "A heritage hotel offering luxurious accommodations and royal-style decor for an unforgettable stay.",
       "pricePerNight": 2700,
       "roomsAvailable": 10,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-12", "roomsBooked": 5 },
-        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 4 }
+      "starRating": 4.6,
+      "reviewsCount": 220,
+      "checkin": "1 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No pets allowed.",
+        "Valid ID required at check-in.",
+        "Unmarried couples allowed with valid ID."
       ],
-      "amenities": ["Heritage Decor", "Restaurant", "Parking"]
+      "location": {
+        "latitude": 26.9124,
+        "longitude": 75.7873
+      },
+      "images": ["https://images.unsplash.com/photo-1590307864377-bc61dc7bca66?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 5
+        },
+        {
+          "checkInDate": "2024-12-12",
+          "checkOutDate": "2024-12-16",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "Heritage Decor",
+        "Restaurant",
+        "Parking",
+        "Swimming Pool",
+        "Free WiFi"
+      ]
     },
     {
       "id": "hT015",
       "city": "Jaipur",
       "name": "Jaipur Heritage Retreat",
+      "description": "An upscale hotel with palace-style architecture and stunning rooftop lounge, perfect for a royal experience.",
       "pricePerNight": 3500,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-05", "checkOutDate": "2024-12-08", "roomsBooked": 6 },
-        { "checkInDate": "2024-12-09", "checkOutDate": "2024-12-12", "roomsBooked": 7 }
+      "starRating": 4.8,
+      "reviewsCount": 310,
+      "checkin": "3 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No smoking inside the hotel premises.",
+        "ID verification required at check-in.",
+        "Pets allowed with extra charge."
       ],
-      "amenities": ["Palace Style", "Roof Top Lounge", "Restaurant"]
+      "location": {
+        "latitude": 26.9221,
+        "longitude": 75.7789
+      },
+      "images": ["https://images.unsplash.com/photo-1619484526616-12525e65b319?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-05",
+          "checkOutDate": "2024-12-08",
+          "roomsBooked": 6
+        },
+        {
+          "checkInDate": "2024-12-09",
+          "checkOutDate": "2024-12-12",
+          "roomsBooked": 7
+        }
+      ],
+      "amenities": [
+        "Palace Style",
+        "Roof Top Lounge",
+        "Restaurant",
+        "Bar",
+        "Spa"
+      ]
     },
     {
       "id": "hT08",
       "city": "Hyderabad",
       "name": "Hyderabad Pearl Inn",
+      "description": "A chic and modern hotel offering a variety of services, including spa and fitness facilities for ultimate relaxation.",
       "pricePerNight": 1900,
       "roomsAvailable": 5,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-25", "roomsBooked": 4 }
+      "starRating": 4.4,
+      "reviewsCount": 180,
+      "checkin": "1 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No pets allowed.",
+        "Guests must provide valid ID at check-in.",
+        "Early check-in subject to availability."
       ],
-      "amenities": ["WiFi", "Spa", "Gym"]
+      "location": {
+        "latitude": 17.385,
+        "longitude": 78.4867
+      },
+      "images": ["https://images.unsplash.com/photo-1595368571123-b39030dbfaaf?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": ["WiFi", "Spa", "Gym", "Restaurant", "Free Parking"]
     },
     {
       "id": "hT016",
       "city": "Hyderabad",
       "name": "Hyderabad Metro Hotel",
+      "description": "A well-connected city hotel offering comfortable rooms with excellent views and close proximity to major city attractions.",
       "pricePerNight": 2200,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-14", "roomsBooked": 5 },
-        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-17", "roomsBooked": 4 }
+      "starRating": 4.2,
+      "reviewsCount": 200,
+      "checkin": "2 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Guests must present government-issued ID at check-in.",
+        "Pets allowed with extra charge.",
+        "Smoking allowed in designated areas."
       ],
-      "amenities": ["Swimming Pool", "City View", "Restaurant"]
+      "location": {
+        "latitude": 17.385,
+        "longitude": 78.4867
+      },
+      "images": ["https://images.unsplash.com/photo-1567018277-690c95a74bb4?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-14",
+          "roomsBooked": 5
+        },
+        {
+          "checkInDate": "2024-12-14",
+          "checkOutDate": "2024-12-17",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "Swimming Pool",
+        "City View",
+        "Restaurant",
+        "Free Breakfast",
+        "Laundry Service"
+      ]
     },
     {
       "id": "hT023",
       "city": "Hyderabad",
       "name": "Hyderabad Skyline Inn",
+      "description": "Enjoy breathtaking views of the city skyline while staying in our modern rooms equipped with premium amenities.",
       "pricePerNight": 2500,
       "roomsAvailable": 7,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-18", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 4 }
+      "starRating": 4.5,
+      "reviewsCount": 250,
+      "checkin": "3 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Early check-in available upon request.",
+        "Pets allowed with prior approval.",
+        "Unmarried couples with valid ID are allowed."
       ],
-      "amenities": ["WiFi", "Rooftop Lounge", "Gym"]
+      "location": {
+        "latitude": 17.3999,
+        "longitude": 78.4475
+      },
+      "images": ["https://images.unsplash.com/photo-1601148989379-83fc98899be3?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-23",
+          "roomsBooked": 4
+        }
+      ],
+      "amenities": [
+        "WiFi",
+        "Rooftop Lounge",
+        "Gym",
+        "Restaurant",
+        "Free Parking"
+      ]
     },
+
     {
       "id": "hT024",
       "city": "Hyderabad",
       "name": "Hyderabad Grand Hotel",
+      "description": "A luxurious hotel offering first-class facilities and comfort with an emphasis on relaxation and luxury.",
       "pricePerNight": 3000,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-12", "checkOutDate": "2024-12-16", "roomsBooked": 2 },
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 }
+      "starRating": 4.7,
+      "reviewsCount": 180,
+      "checkin": "2 PM",
+      "checkout": "11 AM",
+      "rules": [
+        "No pets allowed.",
+        "ID verification required at check-in.",
+        "Guests must check out by 11 AM."
       ],
-      "amenities": ["Spa", "Pool", "Restaurant"]
+      "location": {
+        "latitude": 17.385,
+        "longitude": 78.4867
+      },
+      "images": ["https://images.unsplash.com/photo-1600451811551-8d7800b26834?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-12",
+          "checkOutDate": "2024-12-16",
+          "roomsBooked": 2
+        },
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": ["Spa", "Pool", "Restaurant", "Free Parking", "Room Service"]
     },
     {
       "id": "hT025",
       "city": "Hyderabad",
       "name": "Hyderabad Elite Suites",
+      "description": "An upscale hotel offering exclusive suites and views of the city, perfect for business and leisure.",
       "pricePerNight": 2700,
       "roomsAvailable": 9,
-      "bookings": [
-        { "checkInDate": "2024-12-14", "checkOutDate": "2024-12-18", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-19", "checkOutDate": "2024-12-24", "roomsBooked": 3 }
+      "starRating": 4.4,
+      "reviewsCount": 210,
+      "checkin": "3 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Pets allowed on request with extra charges.",
+        "ID verification required at check-in.",
+        "Guests must provide valid ID."
       ],
-      "amenities": ["Garden View", "Free Breakfast", "WiFi"]
+      "location": {
+        "latitude": 17.3875,
+        "longitude": 78.4917
+      },
+      "images": ["https://images.unsplash.com/photo-1574695241470-cb3b340a87e1?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-14",
+          "checkOutDate": "2024-12-18",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-19",
+          "checkOutDate": "2024-12-24",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Garden View",
+        "Free Breakfast",
+        "WiFi",
+        "Fitness Center",
+        "Business Center"
+      ]
     },
     {
       "id": "hT029",
       "city": "Rajasthan",
       "name": "Rajasthan Desert Oasis",
+      "description": "A unique desert resort offering a blend of adventure and comfort with an emphasis on cultural experiences and nature.",
       "pricePerNight": 2600,
       "roomsAvailable": 9,
-      "bookings": [
-        { "checkInDate": "2024-12-20", "checkOutDate": "2024-12-23", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-25", "checkOutDate": "2024-12-28", "roomsBooked": 3 }
+      "starRating": 4.5,
+      "reviewsCount": 250,
+      "checkin": "2 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No pets allowed.",
+        "Valid ID required at check-in.",
+        "Smoking prohibited inside rooms."
       ],
-      "amenities": ["Desert Safari", "Cultural Performances", "Pool"]
+      "location": {
+        "latitude": 26.0582,
+        "longitude": 70.7553
+      },
+      "images": ["https://images.unsplash.com/photo-1571129415309-056f7ad47096?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-20",
+          "checkOutDate": "2024-12-23",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-25",
+          "checkOutDate": "2024-12-28",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Desert Safari",
+        "Cultural Performances",
+        "Pool",
+        "Traditional Cuisine",
+        "WiFi"
+      ]
     },
     {
       "id": "hT030",
       "city": "Kaashi",
       "name": "Kaashi Divine Retreat",
+      "description": "A spiritual retreat with scenic river views and close proximity to the famous temples of Varanasi.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-      "bookings": [
-        { "checkInDate": "2024-12-21", "checkOutDate": "2024-12-25", "roomsBooked": 3 },
-        { "checkInDate": "2024-12-27", "checkOutDate": "2024-12-30", "roomsBooked": 2 }
+      "starRating": 4.0,
+      "reviewsCount": 120,
+      "checkin": "12 PM",
+      "checkout": "10 AM",
+      "rules": [
+        "No pets allowed.",
+        "Guests must provide valid ID at check-in.",
+        "Early check-in available on request."
       ],
-      "amenities": ["River View", "Temple Proximity", "Free Breakfast"]
+      "location": {
+        "latitude": 25.3216,
+        "longitude": 82.9875
+      },
+      "images": ["https://images.unsplash.com/photo-1581557442288-57512fc21c91?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-21",
+          "checkOutDate": "2024-12-25",
+          "roomsBooked": 3
+        },
+        {
+          "checkInDate": "2024-12-27",
+          "checkOutDate": "2024-12-30",
+          "roomsBooked": 2
+        }
+      ],
+      "amenities": [
+        "River View",
+        "Temple Proximity",
+        "Free Breakfast",
+        "Meditation Rooms",
+        "Yoga Facilities"
+      ]
     },
     {
       "id": "hT031",
       "city": "TamilNadu",
       "name": "Tamil Nadu Ocean Pearl",
+      "description": "A coastal getaway with serene beaches and world-class amenities including a healing Ayurvedic spa.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
-      "bookings": [
-        { "checkInDate": "2024-12-15", "checkOutDate": "2024-12-20", "roomsBooked": 4 },
-        { "checkInDate": "2024-12-22", "checkOutDate": "2024-12-26", "roomsBooked": 3 }
+      "starRating": 4.9,
+      "reviewsCount": 300,
+      "checkin": "3 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "Pets allowed with prior approval.",
+        "ID verification required at check-in.",
+        "Guests can cancel up to 24 hours before check-in."
       ],
-      "amenities": ["Beach Access", "Infinity Pool", "Ayurvedic Spa"]
+      "location": {
+        "latitude": 8.0883,
+        "longitude": 77.5391
+      },
+      "images": ["https://images.unsplash.com/photo-1588819384262-01d19809c10e?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-15",
+          "checkOutDate": "2024-12-20",
+          "roomsBooked": 4
+        },
+        {
+          "checkInDate": "2024-12-22",
+          "checkOutDate": "2024-12-26",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Beach Access",
+        "Infinity Pool",
+        "Ayurvedic Spa",
+        "Bar",
+        "Private Cabana"
+      ]
     },
     {
       "id": "hT032",
       "city": "Rajasthan",
       "name": "Rajasthan Royal Heritage",
+      "description": "A grand palace-themed hotel offering heritage-style rooms with royal décor and free cultural tours.",
       "pricePerNight": 3500,
       "roomsAvailable": 7,
-      "bookings": [
-        { "checkInDate": "2024-12-10", "checkOutDate": "2024-12-15", "roomsBooked": 5 },
-        { "checkInDate": "2024-12-18", "checkOutDate": "2024-12-22", "roomsBooked": 3 }
+      "starRating": 5.0,
+      "reviewsCount": 350,
+      "checkin": "2 PM",
+      "checkout": "12 PM",
+      "rules": [
+        "No smoking in rooms.",
+        "ID verification required at check-in.",
+        "Special packages available for extended stays."
       ],
-      "amenities": ["Heritage Decor", "Roof-top Restaurant", "Free Cultural Tours"]
+      "location": {
+        "latitude": 26.9157,
+        "longitude": 75.8375
+      },
+      "images": ["https://images.unsplash.com/photo-1571418885424-6e74d0075ab0?w=500"],
+      "bookings": [
+        {
+          "checkInDate": "2024-12-10",
+          "checkOutDate": "2024-12-15",
+          "roomsBooked": 5
+        },
+        {
+          "checkInDate": "2024-12-18",
+          "checkOutDate": "2024-12-22",
+          "roomsBooked": 3
+        }
+      ],
+      "amenities": [
+        "Heritage Decor",
+        "Roof-top Restaurant",
+        "Free Cultural Tours",
+        "Yoga Center",
+        "Spacious Banquet Halls"
+      ]
     }
-    
   ]
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlanNGoComponent } from './planngo.component';
+import { RatingComponent } from './rating.component';
 
-describe('PlanNGoComponent', () => {
-  let component: PlanNGoComponent;
-  let fixture: ComponentFixture<PlanNGoComponent>;
+describe('RatingComponent', () => {
+  let component: RatingComponent;
+  let fixture: ComponentFixture<RatingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlanNGoComponent]
+      imports: [RatingComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PlanNGoComponent);
+    fixture = TestBed.createComponent(RatingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
