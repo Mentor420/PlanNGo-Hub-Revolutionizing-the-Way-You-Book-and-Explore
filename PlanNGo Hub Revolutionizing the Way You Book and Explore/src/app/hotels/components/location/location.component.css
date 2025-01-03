@@ -66,105 +66,113 @@
    */
 
 
-  .hotel-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 8%;
-  }
-  .card-list {
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 75vw;
-    padding: 18px;
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  
-  .card-item2 {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 28%;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-
-  
-  .card-item2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .h-name {
-    width: 45%;
-  }
-  
-  .h-name h3 {
-    margin: 5px 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .star-name {
-    margin: 10px 0;
-  }
-
-  .star-name i {
-    color: #FF9529;
-    gap: 30px;
-  }
-  
-  
-#rate {
-    padding: 0 6px;
-    border-radius: 8px;
-    background-color: green;
-    color: #fff;
-    gap: 20px;
+.hotel-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 8%;
 }
- 
 
-  .bank-offer {
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: small;
- 
-  }
+.card-list {
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 75vw;
+  padding: 18px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .bank-offer p {
-    margin: 0;
-    text-align: end;
-  }
-  hr{
-    margin: 0;
-    padding: 0;
-  }
+.card-list:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-item2 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 28%;
+  text-decoration: none;
+  color: inherit;
+}
 
 
-  .price {
-    width: 25%;
-    padding-left: 12px;
-    border-left: 1px solid #E4E6E8;
-    justify-content: space-between;
-  }
+.card-item2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .price h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    text-align: end;
-  }
+.h-name {
+  width: 45%;
+}
 
-  .price p {
-    font-size: small;
-    margin: 0;
-    padding: 0;
-    text-align: end;
-  }
+.h-name h3 {
+  margin: 5px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.star-name {
+  margin: 10px 0;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.star-name i {
+  color: #FF9529;
+  margin-left: 2px;
+}
+
+#rate {
+  padding: 0 6px;
+  border-radius: 8px;
+  background-color: green;
+  color: #fff;
+  gap: 20px;
+}
+
+.bank-offer {
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: small;
+
+}
+
+.bank-offer p {
+  margin: 0;
+  text-align: end;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+
+.price {
+  width: 25%;
+  padding-left: 12px;
+  border-left: 1px solid #E4E6E8;
+  justify-content: space-between;
+}
+
+.price h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: end;
+}
+
+.price p {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+  text-align: end;
+}
