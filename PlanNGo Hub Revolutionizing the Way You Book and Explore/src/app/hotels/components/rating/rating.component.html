@@ -1,0 +1,101 @@
+<div class="amenities">
+    <h4 class="mb-2">Guest Reviews & Rating </h4>
+    <hr>
+    <div class="rating mt-3">
+        <!-- Rating display for overall rating and review count -->
+        <div class="rating-box2 d-flex flex-column align-items-center justify-content-center">
+            <h4 class="fw-normal">Rating</h4>
+            <div class="rate d-flex align-items-baseline m-1">
+                <h2 class="fw-semibold">{{ hotelDetails?.rating }} /</h2>
+                <h4>5</h4>
+            </div>
+            <h6 class="fw-normal">{{ hotelDetails?.reviewsCount }} Rating(s)</h6>
+        </div>
+
+        <!-- Display the rating breakdown per rating level (1 to 5 stars) -->
+        <div class="rating-box3">
+            <div class="d-flex m-3">
+                <div class="flex-grow-1">
+                    <div class="row d-flex align-items-center mt-1" *ngIf="ratingsData?.ratingBreakdown">
+                        <div class="col-4 text-right star"> 5
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="progress" style="height: 8px;">
+                                <!-- The progress bar width is calculated based on the 5-star rating percentage -->
+                                <div class="progress-bar" role="progressbar"
+                                     [style.width]="getRatingPercentage('5')" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex align-items-center mt-1" *ngIf="ratingsData?.ratingBreakdown">
+                        <div class="col-4 text-right star"> 4
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-info" role="progressbar"
+                                     [style.width]="getRatingPercentage('4')" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex align-items-center mt-1" *ngIf="ratingsData?.ratingBreakdown">
+                        <div class="col-4 text-right star"> 3
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar"
+                                     [style.width]="getRatingPercentage('3')" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex align-items-center mt-1" *ngIf="ratingsData?.ratingBreakdown">
+                        <div class="col-4 text-right star"> 2
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar"
+                                     [style.width]="getRatingPercentage('2')" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex align-items-center mt-1" *ngIf="ratingsData?.ratingBreakdown">
+                        <div class="col-4 text-right star"> 1
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-8">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar"
+                                     [style.width]="getRatingPercentage('1')" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty div for styling purpose -->
+        <div class="rating-box4"></div>
+    </div>
+</div>

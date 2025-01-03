@@ -10,6 +10,15 @@ export class HotelSearchService {
 
   constructor(private http: HttpClient) {}
 
+  getHotelDetails(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+  // Submit a user rating
+  submitRating(hotelId: string, rating: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${hotelId}/rate`, { rating });
+  }
+  
   // Method to fetch hotels based on search criteria
   searchHotels(
     city: string,           // change 'location' to 'city'
