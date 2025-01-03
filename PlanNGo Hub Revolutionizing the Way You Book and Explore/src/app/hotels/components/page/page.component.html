@@ -64,19 +64,10 @@
         </ul>
     </div>
 
-    <div class="amenities">
-        <h4 class="mb-2">Guest Reviews & Rating </h4>
-        <hr>
-        <div class="rating mt-3">
-            <div class="rating-box2 d-flex flex-column align-items-center justify-content-center">
-                <h4 class="fw-normal">Rating</h4>
-                <div class="rate d-flex align-items-baseline m-1">
-                    <h2 class="fw-semibold">4.5/</h2>
-                    <h4>5</h4>
-                </div>
-                <h6 class="fw-normal">240 Rating</h6>
+    <!-- Display Reviews and Rating -->
 
-            </div>
+    <app-rating *ngIf="hotelId" [hotelId]="hotelId"></app-rating>
+            <div>
             <div class="rating-box3">
                 <div class="d-flex m-3">
                     <div class="flex-grow-1">
@@ -161,21 +152,84 @@
 
 
     <div class="amenities loaction">
-        <h4>loaction</h4>
+        <h4>Our Loaction</h4>
+        <hr><br>
+        <div style="width: 100%; height: 400px; margin-bottom: 20px;">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1612.621317037764!2d91.79860622010578!3d26.41784367316285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375bab42307ff1bf%3A0xd988b47207014387!2sHussain%20Hardware!5e0!3m2!1sen!2sin!4v1735925375152!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<!--**********************    Location    ***************-->
+    <div class="amenities location" >
         <h2>Our Location</h2>
         <div style="width: 100%; height: 400px; margin-bottom: 20px;">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+            <iframe 
+                *ngIf="safeMapUrl"
+                [src]="safeMapUrl"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
-        
+    </div>
 
+    <div class="similar-room amenities">
+        <h4 class="m-2">Similar Rooms</h4>
+    <div class="container2 mt-2">
+        <div class="card-list mt-3">
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">The Moon Night Hotel</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> Shillong, meghalaya</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>2000/Night</h2>
+            </a>
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1725345653429-8b3926cc229c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">Mumbai Grand Hotel</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> Mumbai</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>4000/Night</h2>
+            </a>
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">Royal Comfort</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> Bengaluru, Karnataka</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>2500/Night</h2>
+            </a>
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1622396089527-b40d16c63aba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">Delhi Luxury Inn</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> Delhi</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>3000/Night</h2>
+            </a>
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1440151050977-247552660a3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">Hilltop Paradise</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill "></i> Shimla, Himachal Pradesh</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>2200/Night</h2>
+            </a>
+            <a href="#" class="card-item">
+                <img src="https://images.unsplash.com/photo-1506813257165-8c4bffd3a57f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Card Image">
+                <h3 class="hotel-name">City Inn Express</h3>
+                <p class="location"><i class="bi bi-geo-alt-fill"></i> Park Street, Kolkata</p>
+                <h2 class="price"><i class="bi bi-currency-rupee"></i>1400/Night</h2>
+            </a>
+        
+        
+        
         </div>
+    </div>
+    </div>
 
 </div>
+=======
+</div>
+>>>>>>> 1edaba99e7fc9c1fc495eb8360e93d1c01b89880
