@@ -10,6 +10,12 @@ export class HotelSearchService {
 
   constructor(private http: HttpClient) {}
 
+  // Fetch all hotels
+  getHotels(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
+  // Get hotel details by ID
   getHotelDetails(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }

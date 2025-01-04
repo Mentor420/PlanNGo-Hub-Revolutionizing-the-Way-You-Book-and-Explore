@@ -287,6 +287,31 @@
 
 /* ***************** Amitities********8** */
 
+/* Ensure the correct Font Awesome font is applied */
+.amenity-icon {
+  font-family: "Font Awesome 5 Free", "Font Awesome", sans-serif;
+  font-weight: 900; /* Ensure proper weight for solid icons */
+  font-size: 24px; /* Adjust size as needed */
+  color: #000; /* Adjust color as needed */
+  margin-right: 8px; /* Space between icon and name */
+  vertical-align: middle; /* Align icon vertically */
+}
+
+/* Adjust icon size and positioning for small or large icons */
+.amenity-icon.small {
+  font-size: 18px; /* Smaller icons */
+}
+
+.amenity-icon.large {
+  font-size: 32px; /* Larger icons */
+}
+
+/* Optional: You can also add hover effects if needed */
+.amenity-icon:hover {
+  color: #007bff; /* Change color on hover */
+  cursor: pointer;
+}
+
 .amenities {
 
   width: 90vw;

@@ -97,7 +97,7 @@ export class SearchBarComponent {
         })
       : undefined;
   
-    if (priceRange && priceRange.some((num) => num <= 0)) {
+    if (priceRange && priceRange.some((num) => num < 0)) {
       this.setErrorMessage('Invalid price range. Use format: min-max');
       return; // Exit early if the price range is invalid
     }

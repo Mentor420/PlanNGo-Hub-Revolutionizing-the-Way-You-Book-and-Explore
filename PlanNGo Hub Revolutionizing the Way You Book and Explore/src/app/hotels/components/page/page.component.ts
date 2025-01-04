@@ -6,18 +6,26 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
 
+interface Amenity {
+  id: string; // Unique identifier for the amenity
+  name: string; // Name of the amenity
+  description?: string; // Optional description of the amenity
+  icon: string; // FontAwesome or custom icon class (for displaying icons)
+  available: boolean; // Availability status of the amenity
+}
+
 interface Hotel {
   id: string;
   city: string;
   name: string;
   pricePerNight: number;
   roomsAvailable: number;
-  amenities: string[];
+  amenities: Amenity[]; // Array of amenities with detailed structure
   rating: number; // Average rating
   reviewsCount: number; // Total number of reviews
   checkin: string;
   checkout: string;
-  rules: string[];
+  rules: string[]; // List of hotel rules
   location: string; // Google Maps embed URL
   images: string[]; // Array to hold image URLs
   bookings: { // Array of booking details
@@ -31,6 +39,7 @@ interface Hotel {
     ratingBreakdown: { [key: number]: number }; // Number of reviews for each rating (1 to 5 stars)
   };
 }
+
 
 @Component({
   standalone: true,

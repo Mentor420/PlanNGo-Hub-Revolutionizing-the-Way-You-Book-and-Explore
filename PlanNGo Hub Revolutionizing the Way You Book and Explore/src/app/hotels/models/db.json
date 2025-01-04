@@ -325,11 +325,27 @@
       "pricePerNight": 3500,
       "roomsAvailable": 6,
       "amenities": [
-        "Sea View",
-        "Rooftop Bar",
-        "Fitness Center",
-        "Valet Parking",
-        "Concierge Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi throughout the hotel.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor heated pool with lounge area.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped gym.",
+          "icon": "fas fa-dumbbell",
+          "available": false
+        }
       ],
       "rating": 4.8,
       "reviewsCount": 400,

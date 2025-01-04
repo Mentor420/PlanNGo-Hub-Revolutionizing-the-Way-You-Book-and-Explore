@@ -52,59 +52,16 @@
       </div>
     </div>
   </div>
-  
 
-<h2 class="tag-head">Take a dip at these top-rated hotels</h2>
-<div class="card-list">
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">The Moon Night Hotel</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Shillong, meghalaya</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>2000/Night</h2>
-    </a>
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1725345653429-8b3926cc229c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">Mumbai Grand Hotel</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Mumbai</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>4000/Night</h2>
-    </a>
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">Royal Comfort</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Bengaluru, Karnataka</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>2500/Night</h2>
-    </a>
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1622396089527-b40d16c63aba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">Delhi Luxury Inn</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Delhi</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>3000/Night</h2>
-    </a>
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1440151050977-247552660a3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">Hilltop Paradise</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill "></i> Shimla, Himachal Pradesh</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>2200/Night</h2>
-    </a>
-    <a href="#" class="card-item">
-        <img src="https://images.unsplash.com/photo-1506813257165-8c4bffd3a57f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Card Image">
-        <h3 class="hotel-name">City Inn Express</h3>
-        <p class="location"><i class="bi bi-geo-alt-fill"></i> Park Street, Kolkata</p>
-        <h2 class="price"><i class="bi bi-currency-rupee"></i>1400/Night</h2>
-    </a>
-
-
-
-</div>
-
-
-
+  <h2 class="tag-head">Take a dip at these top-rated hotels</h2>
+  <div class="card-list">
+    <div *ngFor="let hotel of topRatedHotels" class="card-item" (click)="viewHotelDetails(hotel)">
+      <img [src]="hotel.images[0]" alt="Hotel Image">
+      <h3 class="hotel-name">{{ hotel.name }}</h3>
+      <p class="location"><i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}</p>
+      <h2 class="price"><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night</h2>
+    </div>
+  </div>
 
 <div class="container">
   <h3 class="text-center mb-4">Top locations</h3>

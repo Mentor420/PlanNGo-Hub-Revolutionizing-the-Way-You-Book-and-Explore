@@ -76,12 +76,15 @@
         <h4 class="mb-2">AMENITIES</h4>
         <ul class="amenity-list mt-3">
             <li *ngFor="let amenity of hotelDetails?.amenities" class="list-item five-column">
-                <div class="dib">
-                    <span class="amenityTxt">{{ amenity }}</span>
+                <!-- Only display amenities that are available -->
+                <div *ngIf="amenity.available" class="dib">
+                    <i [class]="amenity.icon" class="amenity-icon"></i>
+                    <span class="amenityTxt">{{ amenity.name }}</span>
                 </div>
             </li>
         </ul>
     </div>
+    
 
     <!-- Display Rules -->
     <div class="rules mt-0 amenities">
