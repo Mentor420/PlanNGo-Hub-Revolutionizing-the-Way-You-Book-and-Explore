@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import data from '../../models/db.json'; 
 import { Location } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+
 interface Hotel {
   id: string;
   city: string;
@@ -23,7 +25,7 @@ export class LocationComponent implements OnInit {
   city: string = '';
   hotels: Hotel[] = []; // Ensures `hotels` is always an array
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -38,4 +40,11 @@ export class LocationComponent implements OnInit {
       hotel.city.toLowerCase() === this.city.toLowerCase()
     );
   }
+
+  // Add the method to view hotel details
+  viewHotelDetails(hotel: any): void {
+    const hotelId = hotel.id; 
+    console.log('Hotel ID:', hotelId); 
+    this.router.navigate(['/page'], { queryParams: { id: hotelId } });
+  }  
 }

@@ -1,37 +1,54 @@
 <div class="h-page pt-5">
     <section class="page-info pt-2">
         <div class="container mb-5">
-            <!-- Display images dynamically -->
-            <div class="card" *ngFor="let img of hotelDetails?.images">
-                <img [src]="img" alt="Hotel Image" />
+            <!-- Display the first image dynamically -->
+            <div class="card" *ngIf="hotelDetails">
+                <img [src]="hotelDetails.images[0]" alt="Hotel Image" />
             </div>
-        </div>
-        <div class="h-info">
-            <div class="col p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
-                <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
-                <strong class="d-inline-block mb-2 text-primary-emphasis">Superior Room ( Non View)</strong>
+        
+            <div class="h-info">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
+                    <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Superior Room ( Non View)</strong>
 
-                <div class="mb-1 text-body-secondary">Fit 2 Adults</div>
-                <p class="card-text mb-auto">Tick-ImageParking facility (As Per Availability)</p>
-                <p class="card-text mb-auto">Free toiletries</p>
-                <p class="card-text mb-">Public Restroom</p>
-                <div class="mt-2 d-flex align-items-baseline">
-                    <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
-                    <span class="card-text fs-6 fw-lighter">/Per Night</span>
-                </div>
-                <div class="share-book mt-4">
-                    <button class="book">Book</button>
-                    <div class="mainbox">
-                        <input type="checkbox" id="check">
-                        <label for="check" class="share2">Share</label>
-                        <div class="media-icons">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-chat-left-text-fill"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    <div class="mb-1 text-body-secondary">Fit 2 Adults</div>
+                    <p class="card-text mb-auto">Tick-ImageParking facility (As Per Availability)</p>
+                    <p class="card-text mb-auto">Free toiletries</p>
+                    <p class="card-text mb-">Public Restroom</p>
+                    <div class="mt-2 d-flex align-items-baseline">
+                        <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
+                        <span class="card-text fs-6 fw-lighter">/Per Night</span>
+                    </div>
+                    <div class="share-book mt-4">
+                        <button class="book">Book</button>
+                        <div class="mainbox">
+                            <input type="checkbox" id="check">
+                            <label for="check" class="share2">Share</label>
+                            <div class="media-icons">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-chat-left-text-fill"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-whatsapp"></i></a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination for other images below -->
+        <div class="hotel-images-pagination">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-outline-primary" (click)="previousPage()">Previous</button>
+                    <span class="px-3">Page {{ currentPage }} / {{ totalPages }}</span>
+                    <button class="btn btn-outline-primary" (click)="nextPage()">Next</button>
+                </div>
+            </div>
+            <div class="container2 mt-2">
+                <div *ngFor="let img of getImagesForPage()" class="card-list mt-3 mb-3">
+                    <img [src]="img" alt="Hotel Image" class="card-item"/>
                 </div>
             </div>
         </div>
@@ -67,86 +84,7 @@
     <!-- Display Reviews and Rating -->
 
     <app-rating *ngIf="hotelId" [hotelId]="hotelId"></app-rating>
-            <div>
-            <div class="rating-box3">
-                <div class="d-flex m-3">
-                    <div class="flex-grow-1">
-                        <div class="row d-flex align-items-center mt-1">
-                            <div class="col-4 text-right star"> 5
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="col-8">
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar" role="progressbar"
-                                        style="width: 75%; background-color: #ffeb3b;" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d-flex align-items-center mt-1">
-                            <div class="col-4 text-right star"> 4
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="col-8">
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d-flex align-items-center mt-1">
-                            <div class="col-4 text-right star">3
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="col-8">
-                                <div class="progress" style="height: 8px; ">
-                                    <div class="progress-bar" role="progressbar"
-                                        style="width: 55%; background-color: #4caf50;" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d-flex align-items-center mt-1">
-                            <div class="col-4 text-right star"> 2
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="col-8">
-                                <div class="progress" style="height:  8px;">
-                                    <div class="progress-bar" role="progressbar"
-                                        style="width: 25%; background-color: #ff9800" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row d-flex align-items-center mt-1">
-                            <div class="col-4 text-right star"> 1
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <div class="col-8">
-                                <div class="progress" style="height: 8px;">
-                                    <div class="progress-bar" role="progressbar"
-                                        style="width: 25%; background-color: #f44336" aria-valuenow="75"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="rating-box4"></div>
-        </div>
+           
 
     </div>
 

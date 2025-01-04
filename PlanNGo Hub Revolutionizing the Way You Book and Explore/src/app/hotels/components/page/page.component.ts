@@ -42,6 +42,8 @@ interface Hotel {
 export class PageComponent implements OnInit {
   hotelDetails: Hotel | null = null;
   hotelId: string | null = null;
+  currentPage: number = 1;
+  imagesPerPage: number = 4;
   error: string | null = null;
   safeMapUrl: SafeResourceUrl | null = null; // Safe URL for the iframe
 
@@ -92,6 +94,34 @@ export class PageComponent implements OnInit {
     if (this.hotelDetails?.location) {
       const mapUrl = `${this.hotelDetails.location}`;
       this.safeMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(mapUrl); // Use sanitizer
+    }
+  }
+
+  // Calculate total pages based on images available
+  get totalPages(): number {
+    if (!this.hotelDetails) return 0;
+    return Math.ceil((this.hotelDetails.images.length - 1) / this.imagesPerPage);
+  }
+
+  // Get images to display on the current page (except the first image)
+  getImagesForPage(): string[] {
+    if (!this.hotelDetails) return [];
+    const startIndex = (this.currentPage - 1) * this.imagesPerPage + 1;
+    const endIndex = Math.min(startIndex + this.imagesPerPage, this.hotelDetails.images.length);
+    return this.hotelDetails.images.slice(startIndex, endIndex);
+  }
+
+  // Navigate to the previous page of images
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  // Navigate to the next page of images
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
     }
   }
 }

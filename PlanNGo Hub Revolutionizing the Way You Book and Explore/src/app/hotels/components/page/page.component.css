@@ -18,21 +18,22 @@
 .page-info {
   min-height: 100vh;
   width: 90vw;
-  display: flex;
+  /* display: flex; */
   /* border: 2px solid black; */
   margin: 0 auto;
   gap: 30px;
   background-color: #ffff;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
+  /* flex-wrap: wrap; */
 }
 
 .h-info {
-  height: 500px;
-  width: 600px;
-
+  display: flex;
+  flex-direction: column;
+  width: 500px; 
+  padding: 20px;
 }
 
 
@@ -57,14 +58,12 @@
 .container {
   display: flex;
   gap: 9px;
-  max-width: 600px;
-  width: 100%;
-  height: 400px;
+  max-width: 500px;
+  height: 300px;
   padding: 18px;
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
 }
 
 .container .card {
@@ -396,14 +395,16 @@
 
 
 .container2 {
-  width: 99%;
+  width: 100%;
   display: flex;
-  height: 400px;
   padding-bottom: 18px;
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-list {
@@ -425,8 +426,9 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   color: #000;
-  width: 270px;
-
+  width: 220px;
+  height: auto;
+  margin-right: 15px;
 
 }
 
@@ -456,3 +458,6 @@
   font-weight: 500;
 }
 
+.hotel-images-pagination {
+  padding: 20px 0;
+}
