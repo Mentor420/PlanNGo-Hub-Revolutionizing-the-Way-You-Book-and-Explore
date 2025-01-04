@@ -1,5 +1,6 @@
 <div class="h-page pt-5">
     <button class="back-button" (click)="goBack()">Back</button>
+    <div class="main-page">
     <section class="page-info pt-2">
         <div class="container">
             <!-- Display the first image dynamically -->
@@ -59,19 +60,21 @@
 
         <!-- Pagination for other images below -->
         <div class="hotel-images-pagination">
-            <div class="row mt-5">
+            <div class="container3 d-flex">
+                <div *ngFor="let img of getImagesForPage()" class="card-list2 mt-3 mb-3">
+                    <img [src]="img" alt="Hotel Image" class="card-item2" />
+                </div>
+            </div>
+
+            <div class="row mt-5 pb-4">
                 <div class="col-12 d-flex justify-content-center">
                     <button class="btn btn-outline-primary" (click)="previousPage()">Previous</button>
                     <span class="px-3">Page {{ currentPage }} / {{ totalPages }}</span>
                     <button class="btn btn-outline-primary" (click)="nextPage()">Next</button>
                 </div>
             </div>
-            <div class="container2 mt-2">
-                <div *ngFor="let img of getImagesForPage()" class="card-list mt-3 mb-3">
-                    <img [src]="img" alt="Hotel Image" class="card-item" />
-                </div>
-            </div>
         </div>
+    </div>
 
 
     <!-- Display Amenities -->
