@@ -26,7 +26,7 @@
         <a class="card-item2">
             <img [src]="hotel.images[0]" alt="{{ hotel.name }}" />
         </a>
-        <div class="h-name">
+        <div class="h-name mt-2">
             <div class="star-name d-flex align-items-center">
                 <h3 class="hotel-name">{{ hotel.name }}</h3>
                 <div>
@@ -50,9 +50,9 @@
                     ></i>
                 </div>
             </div>
-            <p class="location mt-1">{{ hotel.description }}</p>
-            <p class="location mt-1"><i class="bi bi-geo-alt-fill"></i>{{ city }}</p>
-            <div class="d-flex mt-1">
+            <p class="location mb-2">{{ hotel.desccription }}</p>
+            <p class="location mb-2"><i class="bi bi-geo-alt-fill"></i>{{ city }}</p>
+            <div class="d-flex m-0">
                 <p id="rate">{{ hotel.rating }} </p>
                 <p> ({{ hotel.reviewsCount }} Ratings)</p>
             </div>

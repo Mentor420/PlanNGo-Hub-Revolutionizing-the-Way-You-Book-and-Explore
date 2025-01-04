@@ -1,62 +1,83 @@
 <div class="h-page pt-5">
     <button class="back-button" (click)="goBack()">Back</button>
     <div class="main-page">
-    <section class="page-info pt-2">
-        <div class="container">
-            <!-- Display the first image dynamically -->
-            <div class="card" *ngIf="hotelDetails">
-                <img [src]="hotelDetails.images[0]" alt="Hotel Image" />
-            </div>
-        </div>
-
-        <div class="h-info">
-            <div class="col p-4">
-                <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
-                <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
-                <strong class="d-inline-block mb-2 text-primary-emphasis">Superior Room ( Non View)</strong>
-                <div class="mb-1 text-body-secondary">Fit 2 Adults</div>
-                <p class="card-text mb-auto">Tick-ImageParking facility (As Per Availability)</p>
-                <p class="card-text mb-auto">Free toiletries</p>
-                <p class="card-text mb-">Public Restroom</p>
-                <div class="mt-2 d-flex align-items-baseline">
-                    <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
-                    <span class="card-text fs-6 fw-lighter">/Per Night</span>
-                </div>
-                <div class="share-book mt-4">
-                    <button class="book">Book</button>
-                    <div class="mainbox">
-                        <input type="checkbox" id="check">
-                        <label for="check" class="share2">Share</label>
-                        <div class="media-icons">
-                            <!-- Facebook Share -->
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com"
-                                target="_blank">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-
-                            <!-- WhatsApp Share -->
-                            <a href="https://api.whatsapp.com/send?text=Check%20this%20out%20https://yourwebsite.com"
-                                target="_blank">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
-
-                            <!-- Instagram Share (Instagram doesn't support direct web sharing via a link) -->
-                            <a href="https://www.instagram.com/" target="_blank">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-
-                            <!-- Twitter Share -->
-                            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out"
-                                target="_blank">
-                                <i class="bi bi-twitter"></i>
-                            </a>
+        <section class="page-info pt-2">
+            <div class="container">
+                <!-- Display the first image dynamically -->
+                <!-- <div class="card" *ngIf="hotelDetails">
+                    <img [src]="hotelDetails.images[0]" alt="Hotel Image" />
+                </div> -->
+                <div id="carouselExampleFade" class="carousel slide carousel-fade card" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" *ngFor="let img of getImagesForPage()">
+                            <img [src]="img" alt="Hotel Image" />
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
+
+
+
+            </div>
+
+            <div class="h-info">
+                <div class="col p-4">
+                    <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
+                    <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Superior Room ( Non View)</strong>
+                    <div class="mb-1 text-body-secondary">Fit 2 Adults</div>
+                    <p class="card-text mb-auto">Tick-ImageParking facility (As Per Availability)</p>
+                    <p class="card-text mb-auto">Free toiletries</p>
+                    <p class="card-text mb-">Public Restroom</p>
+                    <div class="mt-2 d-flex align-items-baseline">
+                        <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
+                        <span class="card-text fs-6 fw-lighter">/Per Night</span>
+                    </div>
+                    <div class="share-book mt-4">
+                        <button class="book">Book</button>
+                        <div class="mainbox">
+                            <input type="checkbox" id="check">
+                            <label for="check" class="share2">Share</label>
+                            <div class="media-icons">
+                                <!-- Facebook Share -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com"
+                                    target="_blank">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+
+                                <!-- WhatsApp Share -->
+                                <a href="https://api.whatsapp.com/send?text=Check%20this%20out%20https://yourwebsite.com"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+
+                                <!-- Instagram Share (Instagram doesn't support direct web sharing via a link) -->
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+
+                                <!-- Twitter Share -->
+                                <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out"
+                                    target="_blank">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Pagination for other images below -->
         <div class="hotel-images-pagination">
@@ -112,69 +133,70 @@
     <app-rating *ngIf="hotelId" [hotelId]="hotelId"></app-rating>
 
 
-</div>
 
 
-<!--**********************    Location    ***************-->
 
-<div class="amenities location">
-    <h2>Our Location</h2>
-    <div style="width: 100%; height: 400px; margin-bottom: 20px;">
-        <iframe *ngIf="safeMapUrl" [src]="safeMapUrl" width="100%" height="100%" style="border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!--**********************    Location    ***************-->
+
+    <div class="amenities location">
+        <h2>Our Location</h2>
+        <div style="width: 100%; height: 400px; margin-bottom: 20px;">
+            <iframe *ngIf="safeMapUrl" [src]="safeMapUrl" width="100%" height="100%" style="border:0;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </div>
-</div>
 
-<div class="similar-room amenities">
-    <h4 class="m-2">Similar Rooms</h4>
-    <div class="container2 mt-2">
-        <div class="card-list mt-3 mb-3">
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">The Moon Night Hotel</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill"></i> Shillong, meghalaya</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>2000/Night</h2>
-            </a>
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1725345653429-8b3926cc229c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">Mumbai Grand Hotel</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill"></i> Mumbai</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>4000/Night</h2>
-            </a>
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">Royal Comfort</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill"></i> Bengaluru, Karnataka</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>2500/Night</h2>
-            </a>
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1622396089527-b40d16c63aba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">Delhi Luxury Inn</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill"></i> Delhi</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>3000/Night</h2>
-            </a>
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1440151050977-247552660a3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">Hilltop Paradise</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill "></i> Shimla, Himachal Pradesh</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>2200/Night</h2>
-            </a>
-            <a href="#" class="card-item">
-                <img src="https://images.unsplash.com/photo-1506813257165-8c4bffd3a57f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-                    alt="Card Image">
-                <h3 class="hotel-name">City Inn Express</h3>
-                <p class="location"><i class="bi bi-geo-alt-fill"></i> Park Street, Kolkata</p>
-                <h2 class="price"><i class="bi bi-currency-rupee"></i>1400/Night</h2>
-            </a>
-
+    <div class="similar-room amenities">
+        <h4 class="m-2">Similar Rooms</h4>
+        <div class="container2 mt-2">
+            <div class="card-list mt-3 mb-3">
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">The Moon Night Hotel</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill"></i> Shillong, meghalaya</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>2000/Night</h2>
+                </a>
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1725345653429-8b3926cc229c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">Mumbai Grand Hotel</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill"></i> Mumbai</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>4000/Night</h2>
+                </a>
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">Royal Comfort</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill"></i> Bengaluru, Karnataka</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>2500/Night</h2>
+                </a>
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1622396089527-b40d16c63aba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">Delhi Luxury Inn</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill"></i> Delhi</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>3000/Night</h2>
+                </a>
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1440151050977-247552660a3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">Hilltop Paradise</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill "></i> Shimla, Himachal Pradesh</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>2200/Night</h2>
+                </a>
+                <a href="#" class="card-item">
+                    <img src="https://images.unsplash.com/photo-1506813257165-8c4bffd3a57f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZyZWUlMjBpbWFnZXMlMjBob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Card Image">
+                    <h3 class="hotel-name">City Inn Express</h3>
+                    <p class="location"><i class="bi bi-geo-alt-fill"></i> Park Street, Kolkata</p>
+                    <h2 class="price"><i class="bi bi-currency-rupee"></i>1400/Night</h2>
+                </a>
 
 
+
+            </div>
         </div>
     </div>
 </div>

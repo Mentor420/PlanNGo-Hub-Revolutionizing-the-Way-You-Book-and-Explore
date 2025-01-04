@@ -108,7 +108,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 75vw;
-  padding: 18px;
+  padding: 12px;
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -134,7 +134,7 @@
 
 .card-item2 img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -143,13 +143,11 @@
 }
 
 .h-name h3 {
-  margin: 5px 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .star-name {
-  margin: 10px 0;
   justify-content: space-between;
   padding-right: 20px;
 }
