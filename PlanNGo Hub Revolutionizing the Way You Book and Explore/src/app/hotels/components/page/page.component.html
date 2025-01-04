@@ -1,7 +1,7 @@
 <div class="h-page pt-5">
     <button class="back-button" (click)="goBack()">Back</button>
     <section class="page-info pt-2">
-        <div class="container mb-5">
+        <div class="container">
             <!-- Display the first image dynamically -->
             <div class="card" *ngIf="hotelDetails">
                 <img [src]="hotelDetails.images[0]" alt="Hotel Image" />
