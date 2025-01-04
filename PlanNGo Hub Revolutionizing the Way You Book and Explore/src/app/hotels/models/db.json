@@ -4,6 +4,7 @@
       "id": "hT01",
       "city": "Goa",
       "name": "Goa Paradise",
+      "desccription": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
       "pricePerNight": 1500,
       "roomsAvailable": 5,
       "amenities": [
@@ -14,7 +15,7 @@
         "24/7 Room Service",
         "Spa"
       ],
-      "rating": 4.2,
+      "rating": 4.2,   
       "reviewsCount": 180,
       "checkin": "10 AM",
       "checkout": "12 PM",
@@ -25,7 +26,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.5893244156823!2d78.52543974922605!3d25.458768187350046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977710f73d0ffe7%3A0x58576f6140b20d8!2sLahargird%20park!5e0!3m2!1sen!2sin!4v1735927261157!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D",
         "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D",
         "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D",
@@ -54,6 +55,10 @@
           "2": 8,
           "1": 2
         }
+      },
+      "bankOffer": {
+        "discount": 288,
+        "details": "Pay using HDFC Credit Card EMI to avail the offer."
       }
     },
     {
@@ -361,6 +366,10 @@
           "2": 4,
           "1": 1
         }
+      },
+      "bankOffer": {
+        "discount": 150,
+        "details": "Book with Axis Bank to get 150 INR off."
       }
     },
     {

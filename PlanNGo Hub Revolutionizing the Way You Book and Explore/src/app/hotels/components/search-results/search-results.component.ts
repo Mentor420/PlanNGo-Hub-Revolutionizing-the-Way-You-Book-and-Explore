@@ -11,7 +11,7 @@ interface Hotel {
   pricePerNight: number;
   roomsAvailable: number;
   amenities: string[];
-  image: string; // Add image property
+  images: string; // Add image property
 }
 
 @Component({

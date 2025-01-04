@@ -10,7 +10,7 @@
 <div class="results-container">
   <div *ngIf="filteredResults.length > 0; else noResults" class="hotel-results">
     <div *ngFor="let hotel of filteredResults" class="hotel-card" (click)="viewHotelDetails(hotel)">
-      <img [src]="hotel.image || 'default.jpg'" alt="{{ hotel.name }}" class="hotel-image"/>
+      <img [src]="hotel.images[0] || 'default.jpg'" alt="{{ hotel.name }}" class="hotel-image"/>
       <div class="hotel-details">
         <h3>{{ hotel.name }}</h3>
         <p><strong>City:</strong> {{ hotel.city }}</p>

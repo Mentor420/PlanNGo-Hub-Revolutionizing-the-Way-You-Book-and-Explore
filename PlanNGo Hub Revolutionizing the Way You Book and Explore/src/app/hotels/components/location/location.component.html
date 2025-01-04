@@ -20,42 +20,57 @@
 
 
 <div *ngIf="hotels && hotels.length > 0" class="hotel-container">
+    <button class="back-button" (click)="goBack()">Back</button>
     <h3 class="mb-5">Hotels in {{ city }}</h3>
     <div *ngFor="let hotel of hotels" class="card-list" (click)="viewHotelDetails(hotel)">
         <a class="card-item2">
-            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Card Image">
+            <img [src]="hotel.images[0]" alt="{{ hotel.name }}" />
         </a>
         <div class="h-name">
             <div class="star-name d-flex align-items-center">
                 <h3 class="hotel-name">{{ hotel.name }}</h3>
                 <div>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
+                    <!-- Render full stars -->
+                    <i
+                      class="bi bi-star-fill"
+                      *ngFor="let _ of getStarArray(hotel.rating).fullStars"
+                      style="color: gold;"
+                    ></i>
+                    <!-- Render half stars -->
+                    <i
+                        class="bi bi-star-half"
+                        *ngFor="let _ of getStarArray(hotel.rating).halfStars"
+                        style="color: gold;"
+                    ></i>
+                    <!-- Render empty stars -->
+                    <i
+                      class="bi bi-star"
+                      *ngFor="let _ of getStarArray(hotel.rating).emptyStars"
+                      style="color: gray;"
+                    ></i>
                 </div>
             </div>
-            <p class="location mt-1"> Unique and individually decorated rooms, Explore nearby attractions </p>
+            <p class="location mt-1">{{ hotel.description }}</p>
             <p class="location mt-1"><i class="bi bi-geo-alt-fill"></i>{{ city }}</p>
             <div class="d-flex mt-1">
-                <p id="rate">4.5 </p>
-                <p> (354 Rating)</p>
+                <p id="rate">{{ hotel.rating }} </p>
+                <p> ({{ hotel.reviewsCount }} Ratings)</p>
             </div>
-
         </div>
         <div class="price d-flex flex-column">
-            <div class="bank-offer p-1">
-                <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>288 off</p>
-                <hr>
-                <p class="pt-1">Pay using HDFC Credit Card EMI <br>to avail the offer.</p>
+            <div class="bank-offer p-1" *ngIf="hotel.bankOffer">
+                <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>{{ hotel.bankOffer.discount }} off</p>
+                <hr />
+                <p class="pt-1">{{ hotel.bankOffer.details }}</p>
             </div>
-            <div class="div">
+            <div>
                 <h3><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}</h3>
-                <p>+3435 tax & fees</p>
-                <p>per night</p>
+                <p>+ Taxes & Fees</p>
+                <p>Per Night</p>
             </div>
         </div>
     </div>
+</div>
+<div *ngIf="hotels && hotels.length === 0" class="no-hotels">
+    <p>No hotels found for {{ city }}</p>
 </div>

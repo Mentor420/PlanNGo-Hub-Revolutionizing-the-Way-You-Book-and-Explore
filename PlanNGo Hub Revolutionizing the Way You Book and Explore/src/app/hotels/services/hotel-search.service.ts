@@ -21,7 +21,7 @@ export class HotelSearchService {
   
   // Method to fetch hotels based on search criteria
   searchHotels(
-    city: string,           // change 'location' to 'city'
+    city: string,           
     checkInDate?: string,
     checkOutDate?: string,
     rooms?: number,

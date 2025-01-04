@@ -65,6 +65,35 @@
   }
    */
 
+/* Back button styling */
+.back-button {
+  position: relative; /* Place the back button in the top-left */
+  /* top: 20px;
+  left: 20px; */
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  /* z-index: 100; */
+}
+
+.back-button:hover {
+  background: linear-gradient(45deg, #0056b3, #004085);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.back-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
 
 .hotel-container {
   padding: 20px;

@@ -1,4 +1,5 @@
 <div class="h-page pt-5">
+    <button class="back-button" (click)="goBack()">Back</button>
     <section class="page-info pt-2">
         <div class="container mb-5">
             <!-- Display the first image dynamically -->
@@ -26,12 +27,28 @@
                             <input type="checkbox" id="check">
                             <label for="check" class="share2">Share</label>
                             <div class="media-icons">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-chat-left-text-fill"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-whatsapp"></i></a>
+                                <!-- Facebook Share -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                        
+                                <!-- WhatsApp Share -->
+                                <a href="https://api.whatsapp.com/send?text=Check%20this%20out%20https://yourwebsite.com" target="_blank">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                        
+                                <!-- Instagram Share (Instagram doesn't support direct web sharing via a link) -->
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                        
+                                <!-- Twitter Share -->
+                                <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out" target="_blank">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
