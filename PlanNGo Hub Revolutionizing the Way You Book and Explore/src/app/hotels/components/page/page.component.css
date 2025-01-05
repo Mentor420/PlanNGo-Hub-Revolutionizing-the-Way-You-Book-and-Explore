@@ -3,7 +3,8 @@
 
 /* Back button styling */
 .back-button {
-  position: relative; /* Place the back button in the top-left */
+  position: relative;
+  /* Place the back button in the top-left */
   /* top: 20px;
   left: 20px; */
   padding: 0.7rem 1.5rem;
@@ -57,18 +58,14 @@
 
 .page-info {
   display: flex;
-  /* gap: 30px; */
-  padding-right: 111px;
-  padding-left: 36px;
-  justify-content: space-between;
   /* flex-wrap: wrap; */
 }
 
 .h-info {
   display: flex;
   flex-direction: column;
-  width: 400px; 
-  padding: 10px;
+  width: 400px;
+  height: auto;
 }
 
 
@@ -94,11 +91,11 @@
   display: flex;
   gap: 9px;
   max-width: 700px;
-  height: 400px;
-  padding: 18px;
+  height: 390px;
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
+  
 }
 
 .container .card {
@@ -297,7 +294,7 @@
   text-decoration: none;
   border: 2px solid transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   color: #000;
   width: 95%;
   height: 350px;
@@ -305,7 +302,7 @@
 }
 
 .card-item2:hover {
-  box-shadow: -2px 2px 10px rgba(0,0,0,0.7);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
   transform: scale(1.05);
 }
 
@@ -323,25 +320,33 @@
 /* Ensure the correct Font Awesome font is applied */
 .amenity-icon {
   font-family: "Font Awesome 5 Free", "Font Awesome", sans-serif;
-  font-weight: 900; /* Ensure proper weight for solid icons */
-  font-size: 24px; /* Adjust size as needed */
-  color: #000; /* Adjust color as needed */
-  margin-right: 8px; /* Space between icon and name */
-  vertical-align: middle; /* Align icon vertically */
+  font-weight: 900;
+  /* Ensure proper weight for solid icons */
+  font-size: 24px;
+  /* Adjust size as needed */
+  color: #000;
+  /* Adjust color as needed */
+  margin-right: 8px;
+  /* Space between icon and name */
+  vertical-align: middle;
+  /* Align icon vertically */
 }
 
 /* Adjust icon size and positioning for small or large icons */
 .amenity-icon.small {
-  font-size: 18px; /* Smaller icons */
+  font-size: 18px;
+  /* Smaller icons */
 }
 
 .amenity-icon.large {
-  font-size: 32px; /* Larger icons */
+  font-size: 32px;
+  /* Larger icons */
 }
 
 /* Optional: You can also add hover effects if needed */
 .amenity-icon:hover {
-  color: #007bff; /* Change color on hover */
+  color: #007bff;
+  /* Change color on hover */
   cursor: pointer;
 }
 
@@ -479,7 +484,7 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-button.btn.btn-outline-primary{
+button.btn.btn-outline-primary {
   padding: 3px;
 }
 
@@ -493,16 +498,20 @@ button.btn.btn-outline-primary{
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Smooth sliding */
+  transition: transform 0.5s ease-in-out;
+  /* Smooth sliding */
 }
 
 .carousel-item {
-  min-width: 100%; /* Ensure each item takes full width */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade transition between items */
+  min-width: 100%;
+  /* Ensure each item takes full width */
+  transition: opacity 0.5s ease-in-out;
+  /* Smooth fade transition between items */
 }
 
 .carousel-item img {
-  width: 100%; /* Adjust as per your image size */
+  width: 100%;
+  /* Adjust as per your image size */
   height: auto;
 }
 
@@ -559,7 +568,7 @@ button.btn.btn-outline-primary{
   text-decoration: none;
   border: 2px solid transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   color: #000;
   width: 270px;
   height: auto;
@@ -568,7 +577,7 @@ button.btn.btn-outline-primary{
 }
 
 .card-item:hover {
-  box-shadow: -2px 2px 10px rgba(0,0,0,0.7);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
   transform: scale(1.03);
 }
 
@@ -587,7 +596,7 @@ button.btn.btn-outline-primary{
 }
 
 .card-item .price {
-  color:#000;
+  color: #000;
   font-size: 1.2rem;
   padding-top: 9px;
   font-weight: 500;

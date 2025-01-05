@@ -13,11 +13,11 @@ position: fixed;
 top: 0;
 left: 0;
 width: 100%;
-padding: 20px 15px;
+padding: 10px 15px;
 transition: all 0.4s ease;
-background-color: #fff;
-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+background-color: #FFFFFF;
 z-index: 8;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 nav.sticky{
@@ -50,7 +50,7 @@ margin: 0 8px;
 }
 .nav-links li a{
 text-decoration: none;
-color: #0E2431;
+color: #333333;
 font-size: 18px;
 font-weight: 500;
 padding: 10px 4px;
