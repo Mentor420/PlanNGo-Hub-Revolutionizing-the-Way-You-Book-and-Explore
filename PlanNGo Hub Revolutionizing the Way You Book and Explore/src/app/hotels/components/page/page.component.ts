@@ -5,6 +5,7 @@ import { HotelSearchService } from '../../services/hotel-search.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
+import { Router } from '@angular/router';
 
 interface Amenity {
   id: string; // Unique identifier for the amenity
@@ -66,7 +67,8 @@ export class PageComponent implements OnInit {
     private hotelService: HotelSearchService, // Inject the service here
     private sanitizer: DomSanitizer, // Add DomSanitizer
     @Inject(PLATFORM_ID) private platformId: Object, // Detect SSR/browser
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -182,5 +184,8 @@ export class PageComponent implements OnInit {
     this.transformStyle = `translateX(-${nextIndex * 100}%)`; // Shift images horizontally
   }
 
+  goToPage() {
+    this.router.navigate(['/booking-form']); 
+  }
 
 }
