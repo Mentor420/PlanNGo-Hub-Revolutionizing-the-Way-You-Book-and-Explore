@@ -5,6 +5,7 @@
   max-width: 850px;
   margin: px auto;
   background: linear-gradient(to top right, #f0f9ff, #eaf4ff);
+  /* background: linear-gradient(to top right,#858d93, #4e81ba); */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   font-family: "Roboto", sans-serif;
   /* color: #333; */
