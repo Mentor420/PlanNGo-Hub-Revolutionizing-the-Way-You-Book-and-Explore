@@ -66,13 +66,16 @@ body {
 }
 
 .tag-head {
-    margin-left: auto;
+    margin-left: 145px;
     margin-top: 50px;
     max-width: 1280px;
     font-size: 2.4rem;
     font-weight: 600;
 }
 
+h2.tag-head.text-center.mb-5{
+  margin-left: 125px;
+}
 
 .card-list {
     display: grid;
