@@ -73,6 +73,8 @@ export class PageComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
       this.route.queryParams.subscribe((params) => {
         const hotelId = params['id'];
         if (hotelId) {
