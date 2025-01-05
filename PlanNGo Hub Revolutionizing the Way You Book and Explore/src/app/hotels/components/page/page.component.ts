@@ -51,8 +51,13 @@ interface Hotel {
 export class PageComponent implements OnInit {
   hotelDetails: Hotel | null = null;
   hotelId: string | null = null;
+  currentIndex = 0; // Track the current image index
+  transformStyle = 'translateX(0%)'; // Used to move the carousel left/right
+  transitionStyle = 'transform 0.5s ease-in-out'; // Smooth transition
   currentPage: number = 1;
   imagesPerPage: number = 4;
+  rotatingImages: string[] = [];
+  rotationInterval: any;
   error: string | null = null;
   safeMapUrl: SafeResourceUrl | null = null; // Safe URL for the iframe
 
@@ -80,6 +85,13 @@ export class PageComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(): void {
+    // Clear the interval when the component is destroyed
+    if (this.rotationInterval) {
+      clearInterval(this.rotationInterval);
+    }
+  }
+
   goBack(): void {
     this.location.back();
   }
@@ -89,6 +101,7 @@ export class PageComponent implements OnInit {
       (data) => {
         this.hotelDetails = data; // Use the API response
         this.updateMapUrl(); // Update map URL after fetching details
+        this.initializeRotatingImages();
       },
       (err) => {
         this.error = 'Error fetching hotel data from the backend.';
@@ -103,6 +116,21 @@ export class PageComponent implements OnInit {
     if (this.hotelDetails?.location) {
       const mapUrl = `${this.hotelDetails.location}`;
       this.safeMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(mapUrl); // Use sanitizer
+    }
+  }
+
+  private initializeRotatingImages(): void {
+    if (this.hotelDetails?.images) {
+      // Clone the images array for rotation
+      this.rotatingImages = [...this.hotelDetails.images];
+
+      // Set up interval for rotating images
+      this.rotationInterval = setInterval(() => {
+        const firstImage = this.rotatingImages.shift();
+        if (firstImage) {
+          this.rotatingImages.push(firstImage);
+        }
+      }, 4000); // Rotate every 4 second
     }
   }
 
@@ -133,4 +161,26 @@ export class PageComponent implements OnInit {
       this.currentPage++;
     }
   }
+
+  nextImage() {
+    // Prepare the next index
+    const nextIndex = this.currentIndex + 1 < this.rotatingImages.length ? this.currentIndex + 1 : 0;
+    this.updateTransform(nextIndex);
+    this.currentIndex = nextIndex; // Update currentIndex after transition starts
+  }
+
+  prevImage() {
+    // Prepare the previous index
+    const prevIndex = this.currentIndex - 1 >= 0 ? this.currentIndex - 1 : this.rotatingImages.length - 1;
+    this.updateTransform(prevIndex);
+    this.currentIndex = prevIndex; // Update currentIndex after transition starts
+  }
+
+  private updateTransform(nextIndex: number) {
+    this.transitionStyle = 'transform 0.5s ease-in-out'; // Ensures smooth transition
+    // Move the images based on the index (using percentage for the width of each image)
+    this.transformStyle = `translateX(-${nextIndex * 100}%)`; // Shift images horizontally
+  }
+
+
 }

@@ -57,7 +57,9 @@
 
 .page-info {
   display: flex;
-  gap: 30px;
+  /* gap: 30px; */
+  padding-right: 111px;
+  padding-left: 36px;
   justify-content: space-between;
   /* flex-wrap: wrap; */
 }
@@ -477,6 +479,51 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+button.btn.btn-outline-primary{
+  padding: 3px;
+}
+
+#carouselExample {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding */
+}
+
+.carousel-item {
+  min-width: 100%; /* Ensure each item takes full width */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade transition between items */
+}
+
+.carousel-item img {
+  width: 100%; /* Adjust as per your image size */
+  height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+
+
 
 
 /*********************************** similar********************** */
@@ -486,12 +533,13 @@
   width: 100%;
   display: flex;
   padding-bottom: 18px;
+  padding-left: 10px;
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scroll-padding: 30px;
   height: auto;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .card-list {
