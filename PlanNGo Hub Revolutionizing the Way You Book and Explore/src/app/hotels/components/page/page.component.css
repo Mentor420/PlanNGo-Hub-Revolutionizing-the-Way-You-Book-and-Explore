@@ -59,13 +59,17 @@
 .page-info {
   display: flex;
   /* flex-wrap: wrap; */
+  padding-right: 119px;
+  padding-left: 36px;
+  justify-content: space-between;
 }
 
 .h-info {
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: auto;
+  padding: 10px;
+  padding-top: 32px;
 }
 
 
