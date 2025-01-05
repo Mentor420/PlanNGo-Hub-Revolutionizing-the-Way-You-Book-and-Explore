@@ -65,7 +65,6 @@
           "available": true
         }
       ],
-
       "rating": 4.2,
       "reviewsCount": 180,
       "checkin": "10 AM",
@@ -183,7 +182,6 @@
           "available": true
         }
       ],
-
       "rating": 4.1,
       "reviewsCount": 220,
       "checkin": "12 PM",
@@ -225,7 +223,6 @@
         }
       }
     },
-
     {
       "id": "hT017",
       "city": "Goa",
@@ -290,7 +287,6 @@
           "available": true
         }
       ],
-
       "rating": 4.8,
       "reviewsCount": 300,
       "checkin": "11 AM",
@@ -332,7 +328,6 @@
         }
       }
     },
-
     {
       "id": "hT018",
       "city": "Goa",
@@ -404,7 +399,6 @@
           "available": true
         }
       ],
-
       "rating": 4.7,
       "reviewsCount": 215,
       "checkin": "11 AM",
@@ -517,7 +511,6 @@
           "available": true
         }
       ],
-
       "rating": 4.5,
       "reviewsCount": 180,
       "checkin": "12 PM",
@@ -529,7 +522,11 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.14323!2d74.1217!3d15.3092",
       "images": [
-        "https://images.unsplash.com/photo-1501180981121-17f054ec5e10?w=500"
+        "https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1565031491910-e57fac031c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGhvdGVsfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1561501878-aabd62634533?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -619,7 +616,6 @@
           "available": true
         }
       ],
-
       "rating": 4.9,
       "reviewsCount": 320,
       "checkin": "10 AM",
@@ -631,7 +627,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.76720!2d72.8777!3d19.076",
       "images": [
-        "https://images.unsplash.com/photo-1561131547-f8a79bb78801?w=500"
+        "https://images.unsplash.com/photo-1579762687857-b2f08f7cd067?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -721,7 +717,6 @@
           "available": true
         }
       ],
-
       "rating": 4.8,
       "reviewsCount": 400,
       "checkin": "10 AM",
@@ -733,7 +728,11 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.12943!2d72.8808!3d19.0825",
       "images": [
-        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500"
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -827,7 +826,6 @@
           "available": true
         }
       ],
-
       "rating": 4.6,
       "reviewsCount": 370,
       "checkin": "11 AM",
@@ -839,7 +837,11 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.64323!2d72.8824!3d19.0782",
       "images": [
-        "https://images.unsplash.com/photo-1586070289631-b99d0b00edb1?w=500"
+        "https://images.unsplash.com/photo-1468824357306-a439d58ccb1c?q=80&w=1518&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -865,7 +867,6 @@
         }
       }
     },
-
     {
       "id": "hT021",
       "city": "Mumbai",
@@ -930,7 +931,6 @@
           "available": true
         }
       ],
-
       "rating": 3.8,
       "reviewsCount": 210,
       "checkin": "9 AM",
@@ -942,7 +942,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.12312!2d72.8868!3d19.0741",
       "images": [
-        "https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?w=500"
+        "https://images.unsplash.com/photo-1579625224451-b0ab6ed101f5?q=80&w=1421&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1032,7 +1032,6 @@
           "available": true
         }
       ],
-
       "rating": 4.0,
       "reviewsCount": 275,
       "checkin": "10 AM",
@@ -1044,7 +1043,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.10912!2d72.8855!3d19.0725",
       "images": [
-        "https://images.unsplash.com/photo-1501949997128-70f28aca7a0c?w=500"
+        "https://images.unsplash.com/photo-1709788669736-3d715ac72b2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1134,7 +1133,6 @@
           "available": true
         }
       ],
-
       "rating": 2.9,
       "reviewsCount": 150,
       "checkin": "12 PM",
@@ -1146,7 +1144,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.51789!2d77.209!3d28.6139",
       "images": [
-        "https://images.unsplash.com/photo-1560847956-fb098ec2203a?w=500"
+        "https://images.unsplash.com/photo-1695282339113-c6edef867cfa?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1236,7 +1234,6 @@
           "available": true
         }
       ],
-
       "rating": 3.6,
       "reviewsCount": 195,
       "checkin": "1 PM",
@@ -1248,7 +1245,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.31890!2d77.2095!3d28.6137",
       "images": [
-        "https://images.unsplash.com/photo-1587172718347-1e02f9dff929?w=500"
+        "https://images.unsplash.com/photo-1702942731245-a9fa5abb7082?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1338,7 +1335,6 @@
           "available": true
         }
       ],
-
       "rating": 4.2,
       "reviewsCount": 245,
       "checkin": "12 PM",
@@ -1350,7 +1346,11 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.84399!2d77.2279!3d28.6135",
       "images": [
-        "https://images.unsplash.com/photo-1606050570137-e57777f92f1d?w=500"
+        "https://images.unsplash.com/photo-1715827344360-65c5bb6c7b75?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1565031491910-e57fac031c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGhvdGVsfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1561501878-aabd62634533?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1376,7 +1376,6 @@
         }
       }
     },
-
     {
       "id": "hT027",
       "city": "Delhi",
@@ -1441,7 +1440,6 @@
           "available": true
         }
       ],
-
       "rating": 4.1,
       "reviewsCount": 200,
       "checkin": "11 AM",
@@ -1456,7 +1454,7 @@
         "longitude": 77.1025
       },
       "images": [
-        "https://images.unsplash.com/photo-1605469359757-b9bdb49ce82a?w=500"
+        "https://images.unsplash.com/photo-1661777997486-2ebd73473fcc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1470,7 +1468,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.1,
         "ratingsCount": 200,
@@ -1547,7 +1544,6 @@
           "available": true
         }
       ],
-
       "rating": 4.8,
       "reviewsCount": 310,
       "checkin": "10 AM",
@@ -1562,7 +1558,7 @@
         "longitude": 77.2156
       },
       "images": [
-        "https://images.unsplash.com/photo-1599297616982-622a77b24b9b?w=500"
+        "https://images.unsplash.com/photo-1578522199427-c82a3ff80b4f?q=80&w=1559&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1576,7 +1572,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.8,
         "ratingsCount": 310,
@@ -1653,7 +1648,6 @@
           "available": true
         }
       ],
-
       "rating": 4.3,
       "reviewsCount": 150,
       "checkin": "2 PM",
@@ -1668,7 +1662,7 @@
         "longitude": 77.5946
       },
       "images": [
-        "https://images.unsplash.com/photo-1591078486891-3797bc8a3927?w=500"
+        "https://images.unsplash.com/photo-1667120887698-49408157c640?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1682,7 +1676,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.3,
         "ratingsCount": 150,
@@ -1731,7 +1724,6 @@
           "available": true
         }
       ],
-
       "rating": 4.5,
       "reviewsCount": 210,
       "checkin": "12 PM",
@@ -1746,7 +1738,7 @@
         "longitude": 77.6188
       },
       "images": [
-        "https://images.unsplash.com/photo-1502905198690-32da4d95dbfa?w=500"
+        "https://images.unsplash.com/photo-1734478234596-bb4cba1e351d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1760,7 +1752,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.5,
         "ratingsCount": 210,
@@ -1809,7 +1800,6 @@
           "available": true
         }
       ],
-
       "rating": 4.2,
       "reviewsCount": 180,
       "checkin": "1 PM",
@@ -1824,7 +1814,7 @@
         "longitude": 80.2707
       },
       "images": [
-        "https://images.unsplash.com/photo-1603037687981-9db63c49bc6a?w=500"
+        "https://images.unsplash.com/photo-1715363767320-68f941956b44?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1838,7 +1828,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.2,
         "ratingsCount": 180,
@@ -1851,7 +1840,6 @@
         }
       }
     },
-
     {
       "id": "hT013",
       "city": "Chennai",
@@ -1888,7 +1876,6 @@
           "available": true
         }
       ],
-
       "rating": 4.6,
       "reviewsCount": 250,
       "checkin": "2 PM",
@@ -1903,7 +1890,7 @@
         "longitude": 80.2785
       },
       "images": [
-        "https://images.unsplash.com/photo-1593202252820-8cb7b349ccf2?w=500"
+        "https://images.unsplash.com/photo-1721330536639-8c4b7a4641b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1917,7 +1904,6 @@
           "roomsBooked": 5
         }
       ],
-
       "ratings": {
         "averageRating": 4.6,
         "ratingsCount": 250,
@@ -1966,7 +1952,6 @@
           "available": true
         }
       ],
-
       "rating": 4.4,
       "reviewsCount": 220,
       "checkin": "2 PM",
@@ -1995,7 +1980,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.4,
         "ratingsCount": 220,
@@ -2044,7 +2028,6 @@
           "available": true
         }
       ],
-
       "rating": 4.3,
       "reviewsCount": 140,
       "checkin": "2 PM",
@@ -2059,7 +2042,7 @@
         "longitude": 73.8567
       },
       "images": [
-        "https://images.unsplash.com/photo-1534392921973-98ad7723dc55?w=500"
+        "https://images.unsplash.com/photo-1722937900605-c652f94cf323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2073,7 +2056,6 @@
           "roomsBooked": 6
         }
       ],
-
       "ratings": {
         "averageRating": 4.3,
         "ratingsCount": 140,
@@ -2122,7 +2104,6 @@
           "available": true
         }
       ],
-
       "rating": 4.6,
       "reviewsCount": 220,
       "checkin": "1 PM",
@@ -2137,7 +2118,7 @@
         "longitude": 75.7873
       },
       "images": [
-        "https://images.unsplash.com/photo-1590307864377-bc61dc7bca66?w=500"
+        "https://images.unsplash.com/photo-1669190860033-d69d7ceaa0b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjQ5fHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -2151,7 +2132,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.6,
         "ratingsCount": 220,
@@ -2200,7 +2180,6 @@
           "available": true
         }
       ],
-
       "rating": 4.8,
       "reviewsCount": 310,
       "checkin": "3 PM",
@@ -2229,7 +2208,6 @@
           "roomsBooked": 7
         }
       ],
-
       "ratings": {
         "averageRating": 4.8,
         "ratingsCount": 310,
@@ -2242,7 +2220,6 @@
         }
       }
     },
-
     {
       "id": "hT08",
       "city": "Hyderabad",
@@ -2279,7 +2256,6 @@
           "available": true
         }
       ],
-
       "rating": 4.4,
       "reviewsCount": 180,
       "checkin": "1 PM",
@@ -2308,7 +2284,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.4,
         "ratingsCount": 180,
@@ -2357,7 +2332,6 @@
           "available": true
         }
       ],
-
       "rating": 4.2,
       "reviewsCount": 200,
       "checkin": "2 PM",
@@ -2372,7 +2346,7 @@
         "longitude": 78.4867
       },
       "images": [
-        "https://images.unsplash.com/photo-1567018277-690c95a74bb4?w=500"
+        "https://images.unsplash.com/photo-1693198475395-6945e1f314e1?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2386,7 +2360,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.2,
         "ratingsCount": 200,
@@ -2435,7 +2408,6 @@
           "available": true
         }
       ],
-
       "rating": 4.5,
       "reviewsCount": 250,
       "checkin": "3 PM",
@@ -2450,7 +2422,7 @@
         "longitude": 78.4475
       },
       "images": [
-        "https://images.unsplash.com/photo-1601148989379-83fc98899be3?w=500"
+        "https://images.unsplash.com/photo-1732347210268-0b8c3f993caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2464,7 +2436,6 @@
           "roomsBooked": 4
         }
       ],
-
       "ratings": {
         "averageRating": 4.5,
         "ratingsCount": 250,
@@ -2513,7 +2484,6 @@
           "available": true
         }
       ],
-
       "rating": 4.7,
       "reviewsCount": 180,
       "checkin": "2 PM",
@@ -2528,7 +2498,7 @@
         "longitude": 78.4867
       },
       "images": [
-        "https://images.unsplash.com/photo-1600451811551-8d7800b26834?w=500"
+        "https://images.unsplash.com/photo-1705049186138-f2c0b9db05b5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2542,7 +2512,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.7,
         "ratingsCount": 180,
@@ -2591,7 +2560,6 @@
           "available": true
         }
       ],
-
       "rating": 4.4,
       "reviewsCount": 210,
       "checkin": "3 PM",
@@ -2620,7 +2588,6 @@
           "roomsBooked": 3
         }
       ],
-
       "ratings": {
         "averageRating": 4.4,
         "ratingsCount": 210,
@@ -2633,7 +2600,6 @@
         }
       }
     },
-
     {
       "id": "hT029",
       "city": "Rajasthan",
@@ -2670,10 +2636,8 @@
           "available": true
         }
       ],
-
       "rating": 4.5,
       "reviewsCount": 250,
-
       "checkin": "2 PM",
       "checkout": "12 PM",
       "rules": [
@@ -2748,10 +2712,8 @@
           "available": true
         }
       ],
-
       "rating": 4.0,
       "reviewsCount": 120,
-
       "checkin": "12 PM",
       "checkout": "10 AM",
       "rules": [
@@ -2826,10 +2788,8 @@
           "available": true
         }
       ],
-
       "rating": 4.9,
       "reviewsCount": 300,
-
       "checkin": "3 PM",
       "checkout": "12 PM",
       "rules": [
@@ -2842,7 +2802,7 @@
         "longitude": 77.5391
       },
       "images": [
-        "https://images.unsplash.com/photo-1588819384262-01d19809c10e?w=500"
+        "https://images.unsplash.com/photo-1685040771935-4c8e2792b261?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2904,10 +2864,8 @@
           "available": true
         }
       ],
-
       "rating": 5.0,
       "reviewsCount": 350,
-
       "checkin": "2 PM",
       "checkout": "12 PM",
       "rules": [
@@ -2920,7 +2878,7 @@
         "longitude": 75.8375
       },
       "images": [
-        "https://images.unsplash.com/photo-1571418885424-6e74d0075ab0?w=500"
+        "https://images.unsplash.com/photo-1671683886944-6478e6c84cbc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
