@@ -559,8 +559,8 @@ button.btn.btn-outline-primary {
   overflow-x: scroll;
   scroll-padding: 30px;
   height: auto;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  /* justify-content: space-between; */
 }
 
 .card-list {

@@ -5,7 +5,7 @@ import { HotelSearchService } from '../../services/hotel-search.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd  } from '@angular/router';
 
 interface Amenity {
   id: string; // Unique identifier for the amenity
@@ -56,6 +56,8 @@ interface Hotel {
 })
 export class PageComponent implements OnInit {
   hotelDetails: Hotel | null = null;
+  similarHotels: Hotel[] = []; // Array to store similar hotels
+  allHotels: Hotel[] = []; // Array to store all hotels available (to be fetched from the service)
   hotelId: string | null = null;
   currentIndex = 0; // Track the current image index
   transformStyle = 'translateX(0%)'; // Used to move the carousel left/right
@@ -73,18 +75,28 @@ export class PageComponent implements OnInit {
     private sanitizer: DomSanitizer, // Add DomSanitizer
     @Inject(PLATFORM_ID) private platformId: Object, // Detect SSR/browser
     private location: Location,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Scroll to the top of the page
       window.scrollTo(0, 0);
+
+      // Subscribe to router events to handle scrolling when route changes
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          // This ensures the page scrolls to the top on navigation end
+          window.scrollTo(0, 0);
+        }
+      });
+
       this.route.queryParams.subscribe((params) => {
         const hotelId = params['id'];
         if (hotelId) {
           this.hotelId = hotelId; 
           this.fetchHotelDetails(hotelId);
+          this.getAllHotels(); // Get all hotels for comparison
         } else {
           this.error = 'Hotel ID not provided in the URL.';
         }
@@ -105,6 +117,20 @@ export class PageComponent implements OnInit {
     this.location.back();
   }
 
+  viewHotelDetails(hotel: any): void {
+    const hotelId = hotel.id;  // Get the hotel ID
+    console.log('Hotel ID:', hotelId);  // Log the hotel ID (optional)
+    this.router.navigate(['/page'], { queryParams: { id: hotelId } });  // Navigate with queryParams
+  }
+
+  // Fetch all hotels (or a list of hotels to compare)
+  getAllHotels(): void {
+    this.hotelService.getHotels().subscribe((hotels: Hotel[]) => {
+      this.allHotels = hotels;
+      this.filterSimilarHotels(); // Filter hotels based on similar amenities
+    });
+  }
+
   private fetchHotelDetails(hotelId: string): void {
     this.hotelService.getHotelDetails(hotelId).subscribe(
       (data) => {
@@ -121,6 +147,31 @@ export class PageComponent implements OnInit {
     }
   }
 
+// Filter hotels based on exactly matching amenities (all amenities must match) and exclude the current hotel
+filterSimilarHotels(): void {
+  if (this.hotelDetails && this.allHotels) {
+    // Get the list of available amenities for the current hotel (only if hotelDetails is not null)
+    const currentHotelAmenities = this.hotelDetails.amenities?.filter(amenity => amenity.available) || [];
+
+    this.similarHotels = this.allHotels.filter(hotel => {
+      // Ensure the hotel is not the same as the current hotel
+      if (hotel.id === this.hotelId) {
+        return false; // Exclude the current hotel
+      }
+
+      // Check if all amenities of the current hotel are available in the other hotel
+      const allMatch = currentHotelAmenities.every(currentAmenity => 
+        hotel.amenities?.some(hotelAmenity => 
+          hotelAmenity.id === currentAmenity.id && hotelAmenity.available === currentAmenity.available
+        )
+      );
+
+      return allMatch; // Only include hotels where all amenities match
+    });
+  }
+}
+
+
   private updateMapUrl(): void {
     if (this.hotelDetails?.location) {
       const mapUrl = `${this.hotelDetails.location}`;
@@ -132,7 +183,12 @@ export class PageComponent implements OnInit {
     if (this.hotelDetails?.images) {
       // Clone the images array for rotation
       this.rotatingImages = [...this.hotelDetails.images];
-
+  
+      // Clear any existing interval to prevent multiple intervals running
+      if (this.rotationInterval) {
+        clearInterval(this.rotationInterval);
+      }
+  
       // Set up interval for rotating images
       this.rotationInterval = setInterval(() => {
         const firstImage = this.rotatingImages.shift();
@@ -141,7 +197,7 @@ export class PageComponent implements OnInit {
         }
       }, 4000); // Rotate every 4 second
     }
-  }
+  }  
 
   // Calculate total pages based on images available
   get totalPages(): number {
