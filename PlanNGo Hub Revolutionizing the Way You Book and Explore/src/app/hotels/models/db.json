@@ -8,14 +8,65 @@
       "pricePerNight": 1500,
       "roomsAvailable": 5,
       "amenities": [
-        "WiFi",
-        "Pool",
-        "Free Breakfast",
-        "Parking Facility",
-        "24/7 Room Service",
-        "Spa"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
-      "rating": 4.2,   
+
+      "rating": 4.2,
       "reviewsCount": 180,
       "checkin": "10 AM",
       "checkout": "12 PM",
@@ -27,12 +78,11 @@
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.5893244156823!2d78.52543974922605!3d25.458768187350046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977710f73d0ffe7%3A0x58576f6140b20d8!2sLahargird%20park!5e0!3m2!1sen!2sin!4v1735927261157!5m2!1sen!2sin",
       "images": [
         "https://plus.unsplash.com/premium_photo-1675745329378-5573c360f69f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",        
+        "https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D"
-
       ],
       "bookings": [
         {
@@ -69,13 +119,71 @@
       "pricePerNight": 1000,
       "roomsAvailable": 10,
       "amenities": [
-        "Beach Access",
-        "Restaurant",
-        "Air Conditioning",
-        "Bar",
-        "Fitness Center",
-        "Free Parking"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        },
+        {
+          "id": "9",
+          "name": "Children's Play Area",
+          "description": "Indoor and outdoor play areas for children with toys, games, and activities.",
+          "icon": "fas fa-child",
+          "available": true
+        }
       ],
+
       "rating": 4.1,
       "reviewsCount": 220,
       "checkin": "12 PM",
@@ -87,7 +195,7 @@
       ],
       "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8551364511376!2d73.92678!3d15.30712!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",        
+        "https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1536625737227-92a1fc042e7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGhvdGVsfGVufDB8fDB8fHww",
@@ -125,13 +233,64 @@
       "pricePerNight": 1600,
       "roomsAvailable": 7,
       "amenities": [
-        "WiFi",
-        "Private Beach",
-        "Free Parking",
-        "Swimming Pool",
-        "Kids Play Area",
-        "Live Entertainment"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.8,
       "reviewsCount": 300,
       "checkin": "11 AM",
@@ -181,13 +340,71 @@
       "pricePerNight": 2000,
       "roomsAvailable": 5,
       "amenities": [
-        "Lagoon View",
-        "Restaurant",
-        "Spa",
-        "Free Breakfast",
-        "Private Balconies",
-        "24-hour Front Desk"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        },
+        {
+          "id": "9",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        }
       ],
+
       "rating": 4.7,
       "reviewsCount": 215,
       "checkin": "11 AM",
@@ -204,7 +421,6 @@
         "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
-
       ],
       "bookings": [
         {
@@ -237,13 +453,71 @@
       "pricePerNight": 1800,
       "roomsAvailable": 6,
       "amenities": [
-        "WiFi",
-        "Terrace Bar",
-        "Pet Friendly",
-        "Garden Access",
-        "Free Parking",
-        "BBQ Facilities"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        },
+        {
+          "id": "9",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        }
       ],
+
       "rating": 4.5,
       "reviewsCount": 180,
       "checkin": "12 PM",
@@ -288,13 +562,64 @@
       "pricePerNight": 2500,
       "roomsAvailable": 3,
       "amenities": [
-        "Parking",
-        "Spa",
-        "Restaurant",
-        "Rooftop Pool",
-        "Fitness Center",
-        "Business Center"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.9,
       "reviewsCount": 320,
       "checkin": "10 AM",
@@ -342,25 +667,61 @@
         {
           "id": "1",
           "name": "Wi-Fi",
-          "description": "Free high-speed Wi-Fi throughout the hotel.",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
           "icon": "fas fa-wifi",
           "available": true
         },
         {
           "id": "2",
           "name": "Pool",
-          "description": "Outdoor heated pool with lounge area.",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
           "icon": "fas fa-swimmer",
           "available": true
         },
         {
           "id": "3",
           "name": "Gym",
-          "description": "24/7 access to fully equipped gym.",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
           "icon": "fas fa-dumbbell",
-          "available": false
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
         }
       ],
+
       "rating": 4.8,
       "reviewsCount": 400,
       "checkin": "10 AM",
@@ -409,12 +770,64 @@
       "pricePerNight": 3000,
       "roomsAvailable": 5,
       "amenities": [
-        "Infinity Pool",
-        "WiFi",
-        "Fitness Center",
-        "Business Center",
-        "Complimentary Breakfast"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.6,
       "reviewsCount": 370,
       "checkin": "11 AM",
@@ -460,12 +873,64 @@
       "pricePerNight": 2800,
       "roomsAvailable": 8,
       "amenities": [
-        "Rooftop Lounge",
-        "Spa",
-        "Free Breakfast",
-        "Laundry Service",
-        "24-hour Room Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 3.8,
       "reviewsCount": 210,
       "checkin": "9 AM",
@@ -510,12 +975,64 @@
       "pricePerNight": 3200,
       "roomsAvailable": 6,
       "amenities": [
-        "Sea View",
-        "WiFi",
-        "Private Dining",
-        "On-Site Restaurant",
-        "Balcony Access"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.0,
       "reviewsCount": 275,
       "checkin": "10 AM",
@@ -560,12 +1077,64 @@
       "pricePerNight": 3000,
       "roomsAvailable": 7,
       "amenities": [
-        "WiFi",
-        "Conference Room",
-        "Gym",
-        "Business Lounge",
-        "24/7 Room Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 2.9,
       "reviewsCount": 150,
       "checkin": "12 PM",
@@ -610,12 +1179,64 @@
       "pricePerNight": 2800,
       "roomsAvailable": 6,
       "amenities": [
-        "Historical Architecture",
-        "Restaurant",
-        "Free WiFi",
-        "On-Site Gallery",
-        "Event Space"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 3.6,
       "reviewsCount": 195,
       "checkin": "1 PM",
@@ -660,12 +1281,64 @@
       "pricePerNight": 3200,
       "roomsAvailable": 8,
       "amenities": [
-        "Gym",
-        "WiFi",
-        "Free Breakfast",
-        "Rooftop Dining",
-        "Luggage Storage"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.2,
       "reviewsCount": 245,
       "checkin": "12 PM",
@@ -711,12 +1384,64 @@
       "pricePerNight": 2800,
       "roomsAvailable": 6,
       "amenities": [
-        "Conference Room",
-        "Parking",
-        "Restaurant",
-        "Breakfast Buffet",
-        "Tea/Coffee Maker"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.1,
       "reviewsCount": 200,
       "checkin": "11 AM",
@@ -765,12 +1490,64 @@
       "pricePerNight": 3500,
       "roomsAvailable": 5,
       "amenities": [
-        "Pool",
-        "Restaurant",
-        "WiFi",
-        "Concierge Service",
-        "Free Shuttle Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.8,
       "reviewsCount": 310,
       "checkin": "10 AM",
@@ -819,12 +1596,64 @@
       "pricePerNight": 1800,
       "roomsAvailable": 4,
       "amenities": [
-        "WiFi",
-        "Pool",
-        "Parking",
-        "Room Service",
-        "Business Center"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Spa",
+          "description": "Luxurious spa offering massages, facials, and relaxation therapies.",
+          "icon": "fas fa-spa",
+          "available": true
+        },
+        {
+          "id": "5",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "6",
+          "name": "Business Center",
+          "description": "Fully equipped business center with computers, printers, and meeting rooms.",
+          "icon": "fas fa-briefcase",
+          "available": true
+        },
+        {
+          "id": "7",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        },
+        {
+          "id": "8",
+          "name": "Airport Shuttle",
+          "description": "Complimentary shuttle service to and from the airport.",
+          "icon": "fas fa-shuttle-van",
+          "available": true
+        }
       ],
+
       "rating": 4.3,
       "reviewsCount": 150,
       "checkin": "2 PM",
@@ -873,12 +1702,36 @@
       "pricePerNight": 2200,
       "roomsAvailable": 8,
       "amenities": [
-        "Garden",
-        "Restaurant",
-        "Parking",
-        "Free WiFi",
-        "Conference Room"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        }
       ],
+
       "rating": 4.5,
       "reviewsCount": 210,
       "checkin": "12 PM",
@@ -926,7 +1779,37 @@
       "name": "Chennai Comfort Inn",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-      "amenities": ["Restaurant", "Spa", "Gym", "Free Parking", "Room Service"],
+      "amenities": [
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        }
+      ],
+
       "rating": 4.2,
       "reviewsCount": 180,
       "checkin": "1 PM",
@@ -976,12 +1859,36 @@
       "pricePerNight": 2700,
       "roomsAvailable": 7,
       "amenities": [
-        "Riverside View",
-        "Restaurant",
-        "WiFi",
-        "Laundry Service",
-        "Free Breakfast"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Lounge",
+          "description": "Exclusive lounge area for VIP guests, offering snacks, drinks, and relaxation.",
+          "icon": "fas fa-couch",
+          "available": true
+        }
       ],
+
       "rating": 4.6,
       "reviewsCount": 250,
       "checkin": "2 PM",
@@ -1029,7 +1936,37 @@
       "name": "Pune Garden View",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-      "amenities": ["WiFi", "Garden", "Gym", "Outdoor Pool", "24/7 Security"],
+      "amenities": [
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Pool",
+          "description": "Outdoor pool with a relaxing lounge area and poolside bar.",
+          "icon": "fas fa-swimmer",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Laundry Service",
+          "description": "Laundry and dry cleaning service available upon request.",
+          "icon": "fas fa-tshirt",
+          "available": true
+        }
+      ],
+
       "rating": 4.4,
       "reviewsCount": 220,
       "checkin": "2 PM",
@@ -1078,12 +2015,36 @@
       "pricePerNight": 2400,
       "roomsAvailable": 9,
       "amenities": [
-        "Parking",
-        "Fitness Center",
-        "Free Breakfast",
-        "Room Service",
-        "Business Center"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        }
       ],
+
       "rating": 4.3,
       "reviewsCount": 140,
       "checkin": "2 PM",
@@ -1132,12 +2093,36 @@
       "pricePerNight": 2700,
       "roomsAvailable": 10,
       "amenities": [
-        "Heritage Decor",
-        "Restaurant",
-        "Parking",
-        "Swimming Pool",
-        "Free WiFi"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        }
       ],
+
       "rating": 4.6,
       "reviewsCount": 220,
       "checkin": "1 PM",
@@ -1186,12 +2171,36 @@
       "pricePerNight": 3500,
       "roomsAvailable": 8,
       "amenities": [
-        "Palace Style",
-        "Roof Top Lounge",
-        "Restaurant",
-        "Bar",
-        "Spa"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets with an extra charge and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        }
       ],
+
       "rating": 4.8,
       "reviewsCount": 310,
       "checkin": "3 PM",
@@ -1240,7 +2249,37 @@
       "name": "Hyderabad Pearl Inn",
       "pricePerNight": 1900,
       "roomsAvailable": 5,
-      "amenities": ["WiFi", "Spa", "Gym", "Restaurant", "Free Parking"],
+      "amenities": [
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        }
+      ],
+
       "rating": 4.4,
       "reviewsCount": 180,
       "checkin": "1 PM",
@@ -1289,12 +2328,36 @@
       "pricePerNight": 2200,
       "roomsAvailable": 6,
       "amenities": [
-        "Swimming Pool",
-        "City View",
-        "Restaurant",
-        "Free Breakfast",
-        "Laundry Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Pet-Friendly",
+          "description": "We welcome pets with an extra charge and provide amenities like pet beds, bowls, and pet-sitting services.",
+          "icon": "fas fa-paw",
+          "available": true
+        }
       ],
+
       "rating": 4.2,
       "reviewsCount": 200,
       "checkin": "2 PM",
@@ -1343,12 +2406,36 @@
       "pricePerNight": 2500,
       "roomsAvailable": 7,
       "amenities": [
-        "WiFi",
-        "Rooftop Lounge",
-        "Gym",
-        "Restaurant",
-        "Free Parking"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        }
       ],
+
       "rating": 4.5,
       "reviewsCount": 250,
       "checkin": "3 PM",
@@ -1397,12 +2484,36 @@
       "pricePerNight": 3000,
       "roomsAvailable": 6,
       "amenities": [
-        "Spa",
-        "Pool",
-        "Restaurant",
-        "Free Parking",
-        "Room Service"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        }
       ],
+
       "rating": 4.7,
       "reviewsCount": 180,
       "checkin": "2 PM",
@@ -1451,12 +2562,36 @@
       "pricePerNight": 2700,
       "roomsAvailable": 9,
       "amenities": [
-        "Garden View",
-        "Free Breakfast",
-        "WiFi",
-        "Fitness Center",
-        "Business Center"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        }
       ],
+
       "rating": 4.4,
       "reviewsCount": 210,
       "checkin": "3 PM",
@@ -1506,12 +2641,36 @@
       "pricePerNight": 2600,
       "roomsAvailable": 9,
       "amenities": [
-        "Desert Safari",
-        "Cultural Performances",
-        "Pool",
-        "Traditional Cuisine",
-        "WiFi"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        }
       ],
+
       "rating": 4.5,
       "reviewsCount": 250,
 
@@ -1560,12 +2719,36 @@
       "pricePerNight": 2000,
       "roomsAvailable": 6,
       "amenities": [
-        "River View",
-        "Temple Proximity",
-        "Free Breakfast",
-        "Meditation Rooms",
-        "Yoga Facilities"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        }
       ],
+
       "rating": 4.0,
       "reviewsCount": 120,
 
@@ -1614,12 +2797,36 @@
       "pricePerNight": 3200,
       "roomsAvailable": 8,
       "amenities": [
-        "Beach Access",
-        "Infinity Pool",
-        "Ayurvedic Spa",
-        "Bar",
-        "Private Cabana"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Parking",
+          "description": "Secure on-site parking with valet service and electric vehicle charging stations.",
+          "icon": "fas fa-parking",
+          "available": true
+        }
       ],
+
       "rating": 4.9,
       "reviewsCount": 300,
 
@@ -1668,12 +2875,36 @@
       "pricePerNight": 3500,
       "roomsAvailable": 7,
       "amenities": [
-        "Heritage Decor",
-        "Roof-top Restaurant",
-        "Free Cultural Tours",
-        "Yoga Center",
-        "Spacious Banquet Halls"
+        {
+          "id": "1",
+          "name": "Wi-Fi",
+          "description": "Free high-speed Wi-Fi available in all rooms and public areas.",
+          "icon": "fas fa-wifi",
+          "available": true
+        },
+        {
+          "id": "2",
+          "name": "Restaurant",
+          "description": "Gourmet dining options with both local and international cuisines.",
+          "icon": "fas fa-utensils",
+          "available": true
+        },
+        {
+          "id": "3",
+          "name": "Gym",
+          "description": "24/7 access to fully equipped fitness center with modern equipment.",
+          "icon": "fas fa-dumbbell",
+          "available": true
+        },
+        {
+          "id": "4",
+          "name": "Room Service",
+          "description": "24/7 room service available for meals, snacks, and beverages.",
+          "icon": "fas fa-concierge-bell",
+          "available": true
+        }
       ],
+
       "rating": 5.0,
       "reviewsCount": 350,
 
