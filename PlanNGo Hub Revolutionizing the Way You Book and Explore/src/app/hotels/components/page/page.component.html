@@ -29,12 +29,22 @@
                 <div class="col p-4">
                     <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
                     <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
-                    <strong class="d-inline-block mb-2 text-primary-emphasis">Superior Room ( Non View)</strong>
-                    <div class="mb-1 text-body-secondary">Fit 2 Adults</div>
-                    <p class="card-text mb-auto">Tick-ImageParking facility (As Per Availability)</p>
-                    <p class="card-text mb-auto">Free toiletries</p>
-                    <p class="card-text mb-">Public Restroom</p>
-                    <div class="mt-2 d-flex align-items-baseline">
+                    <p class="hotel-description">
+                        {{ hotelDetails?.description || 'A luxurious hotel providing exceptional services, premium rooms, and world-class amenities for a memorable stay.' }}
+                      </p>
+                      
+                      <!-- <div class="d-flex align-items-center mb-3">
+                        <strong class="d-inline-block text-primary-emphasis">Rating:</strong>
+                        <span class="ms-2">({{ hotelDetails?.ratings?.ratingsCount || 120 }} reviews)</span>
+                      </div> -->
+                    
+                      <!-- <ul class="list-unstyled hotel-rules">
+                        <li *ngFor="let rule of hotelDetails?.rules || ['No pets allowed', 'Check-in after 3 PM', 'Check-out before 11 AM']">
+                          <i class="bi bi-check-circle text-success"></i> {{ rule }}
+                        </li>
+                      </ul> -->
+                      
+                      <div class="mt-2 d-flex align-items-baseline">
                         <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
                         <span class="card-text fs-6 fw-lighter">/Per Night</span>
                     </div>

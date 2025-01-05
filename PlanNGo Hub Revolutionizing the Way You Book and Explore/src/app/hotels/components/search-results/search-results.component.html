@@ -16,7 +16,9 @@
         <p><strong>City:</strong> {{ hotel.city }}</p>
         <p><strong>Price per Night:</strong> ₹{{ hotel.pricePerNight }}</p>
         <p><strong>Rooms Available:</strong> {{ hotel.roomsAvailable }}</p>
-        <p><strong>Amenities:</strong> {{ hotel.amenities.join(', ') }}</p>
+        <p><strong>Amenities:</strong> 
+          {{ getAmenityNames(hotel.amenities) }}
+        </p>
       </div>
     </div>
   </div>

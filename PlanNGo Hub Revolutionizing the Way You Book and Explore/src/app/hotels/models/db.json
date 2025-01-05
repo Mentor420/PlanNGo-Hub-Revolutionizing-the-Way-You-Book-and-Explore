@@ -115,6 +115,8 @@
       "id": "hT09",
       "city": "Goa",
       "name": "Goa Beachfront Resort",
+        "description": "Beachfront hotel in Goa offering vibrant nightlife, water sports, and tropical vibes, perfect for adventure seekers and beach lovers."
+      ,
       "pricePerNight": 1000,
       "roomsAvailable": 10,
       "amenities": [
@@ -191,7 +193,7 @@
         "Smoking prohibited in public areas.",
         "Children below 6 years stay for free."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8551364511376!2d73.92678!3d15.30712!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.5893244156823!2d78.52543974922605!3d25.458768187350046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3977710f73d0ffe7%3A0x58576f6140b20d8!2sLahargird%20park!5e0!3m2!1sen!2sin!4v1735927261157!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -227,6 +229,8 @@
       "id": "hT017",
       "city": "Goa",
       "name": "Goa Serenity Resort",
+      "description": "Luxury resort in Goa with private villas, infinity pools, and direct beach access, ideal for romantic getaways and family vacations."
+  ,
       "pricePerNight": 1600,
       "roomsAvailable": 7,
       "amenities": [
@@ -332,6 +336,7 @@
       "id": "hT018",
       "city": "Goa",
       "name": "Goa Lagoon Retreat",
+      "description": "Eco-friendly hotel in Goa blending nature with comfort, offering organic dining, yoga retreats, and stunning coastal scenery.",
       "pricePerNight": 2000,
       "roomsAvailable": 5,
       "amenities": [
@@ -408,7 +413,7 @@
         "Smoking is not permitted in rooms.",
         "Cancellations up to 5 days before check-in are eligible for a refund."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.12312!2d74.1294!3d15.3023",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1474690455603-a369ec1293f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -444,6 +449,7 @@
       "id": "hT019",
       "city": "Goa",
       "name": "Goa Tranquil Villa",
+      "description": "Charming boutique villa in Goa nestled among coconut groves, featuring cozy cottages, delicious seafood, and serene sunset views.",
       "pricePerNight": 1800,
       "roomsAvailable": 6,
       "amenities": [
@@ -520,7 +526,7 @@
         "Pets are welcome at no extra charge.",
         "Noise levels should be minimized after 10 PM."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.14323!2d74.1217!3d15.3092",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1565031491910-e57fac031c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGhvdGVsfGVufDB8fDB8fHww",
@@ -556,6 +562,7 @@
       "id": "hT02",
       "city": "Mumbai",
       "name": "Mumbai Grand Hotel",
+      "description": "Upscale hotel in Mumbai with panoramic sea views, award-winning restaurants, and seamless connectivity to business hubs and shopping districts.",
       "pricePerNight": 2500,
       "roomsAvailable": 3,
       "amenities": [
@@ -625,9 +632,13 @@
         "Unmarried couples are allowed with proper ID proof.",
         "Cancellations made 48 hours before check-in are eligible for a 50% refund."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.76720!2d72.8777!3d19.076",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21755.099155603166!2d72.81583080378236!3d18.938924861113158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1736096751425!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1579762687857-b2f08f7cd067?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1579762687857-b2f08f7cd067?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -657,6 +668,7 @@
       "id": "hT010",
       "city": "Mumbai",
       "name": "Mumbai Bayview Hotel",
+      "description": "Urban retreat in Mumbai near Marine Drive, offering luxurious suites, a wellness spa, and spectacular city skyline views.",
       "pricePerNight": 3500,
       "roomsAvailable": 6,
       "amenities": [
@@ -726,7 +738,7 @@
         "Cancellation 72 hours before check-in will incur a 20% charge.",
         "All guests must present a valid government ID upon check-in."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.12943!2d72.8808!3d19.0825",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21755.099155603166!2d72.81583080378236!3d18.938924861113158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1736096751425!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -766,6 +778,7 @@
       "id": "hT020",
       "city": "Mumbai",
       "name": "Mumbai City Luxe",
+      "description": "Stylish hotel in Mumbai’s Bandra district offering contemporary rooms, rooftop dining, and easy access to trendy cafes and nightlife.",
       "pricePerNight": 3000,
       "roomsAvailable": 5,
       "amenities": [
@@ -835,7 +848,7 @@
         "Guests must check-in by 7 PM or notify the hotel in advance.",
         "No refund for cancellations within 48 hours of check-in."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.64323!2d72.8824!3d19.0782",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21755.099155603166!2d72.81583080378236!3d18.938924861113158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1736096751425!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1468824357306-a439d58ccb1c?q=80&w=1518&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -871,6 +884,7 @@
       "id": "hT021",
       "city": "Mumbai",
       "name": "Mumbai Royal Stay",
+      "description": "Modern luxury hotel in Mumbai, situated near the Gateway of India, featuring sophisticated interiors and world-class service.",
       "pricePerNight": 2800,
       "roomsAvailable": 8,
       "amenities": [
@@ -940,9 +954,13 @@
         "Non-refundable bookings for check-ins within 24 hours.",
         "Guests under 18 must be accompanied by an adult."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.12312!2d72.8868!3d19.0741",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21755.099155603166!2d72.81583080378236!3d18.938924861113158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1736096751425!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1579625224451-b0ab6ed101f5?q=80&w=1421&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1579625224451-b0ab6ed101f5?q=80&w=1421&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -972,6 +990,7 @@
       "id": "hT022",
       "city": "Mumbai",
       "name": "Mumbai Oceanfront Suites",
+      "description": "Heritage hotel in South Mumbai blending colonial architecture with luxury amenities, ideal for history enthusiasts and modern travelers.",
       "pricePerNight": 3200,
       "roomsAvailable": 6,
       "amenities": [
@@ -1041,9 +1060,13 @@
         "Pets are allowed for an additional charge of ₹500 per stay.",
         "Bookings cancelled within 48 hours of check-in are not refundable."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.10912!2d72.8855!3d19.0725",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21755.099155603166!2d72.81583080378236!3d18.938924861113158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1c06fffffff%3A0xc0290485a4d73f57!2sThe%20Taj%20Mahal%20Palace%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1736096751425!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1709788669736-3d715ac72b2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1709788669736-3d715ac72b2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -1073,6 +1096,8 @@
       "id": "hT03",
       "city": "Delhi",
       "name": "Delhi Luxury Inn",
+      "description": "Lavish hotel in Delhi's Connaught Place with luxurious amenities, rooftop dining, and easy access to iconic landmarks like India Gate."
+  ,
       "pricePerNight": 3000,
       "roomsAvailable": 7,
       "amenities": [
@@ -1142,9 +1167,13 @@
         "Guest must provide a valid photo ID at check-in.",
         "Cancellation 48 hours before check-in without charge."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.51789!2d77.209!3d28.6139",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1695282339113-c6edef867cfa?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1695282339113-c6edef867cfa?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -1174,6 +1203,7 @@
       "id": "hT011",
       "city": "Delhi",
       "name": "Delhi Heritage Hotel",
+      "description": "Elegant hotel near Delhi Airport with contemporary design, international cuisine, and convenient transit services for travelers.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
       "amenities": [
@@ -1243,9 +1273,13 @@
         "Must provide valid identification (Passport, Aadhar, or Govt. ID).",
         "No smoking in rooms."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.31890!2d77.2095!3d28.6137",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1702942731245-a9fa5abb7082?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1702942731245-a9fa5abb7082?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1275,6 +1309,7 @@
       "id": "hT026",
       "city": "Delhi",
       "name": "Delhi Royal Suites",
+      "description": "Resort-style hotel in Delhi featuring lush gardens, opulent rooms, and traditional Indian hospitality, perfect for leisure and business trips.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
       "amenities": [
@@ -1344,7 +1379,7 @@
         "Check-in between 1 PM and 7 PM.",
         "For late check-ins, notify the front desk at least 48 hours in advance."
       ],
-      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.84399!2d77.2279!3d28.6135",
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
         "https://images.unsplash.com/photo-1715827344360-65c5bb6c7b75?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1380,6 +1415,7 @@
       "id": "hT027",
       "city": "Delhi",
       "name": "Delhi Comfort Stay",
+      "description": "Art-inspired hotel in Delhi showcasing curated local art, rooftop lounges, and immersive cultural experiences in the heart of the city.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
       "amenities": [
@@ -1449,12 +1485,13 @@
         "Guest identification required during check-in.",
         "Quiet hours from 10 PM to 7 AM."
       ],
-      "location": {
-        "latitude": 28.7041,
-        "longitude": 77.1025
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1661777997486-2ebd73473fcc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1661777997486-2ebd73473fcc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1484,6 +1521,7 @@
       "id": "hT028",
       "city": "Delhi",
       "name": "Delhi Premium Inn",
+      "description": "Boutique hotel in Delhi's bustling Karol Bagh market, offering chic interiors and proximity to cultural and shopping destinations.",
       "pricePerNight": 3500,
       "roomsAvailable": 5,
       "amenities": [
@@ -1553,12 +1591,13 @@
         "ID proof required at check-in.",
         "For cancellations, guests must notify 72 hours prior to arrival."
       ],
-      "location": {
-        "latitude": 28.5273,
-        "longitude": 77.2156
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1578522199427-c82a3ff80b4f?q=80&w=1559&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1578522199427-c82a3ff80b4f?q=80&w=1559&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1588,6 +1627,7 @@
       "id": "hT04",
       "city": "Bangalore",
       "name": "Bangalore Elite Stay",
+      "description": "Modern hotel in Bangalore's Whitefield area offering spacious suites, co-working spaces, and proximity to IT parks for business travelers.",
       "pricePerNight": 1800,
       "roomsAvailable": 4,
       "amenities": [
@@ -1657,12 +1697,13 @@
         "Valid ID required at check-in.",
         "Check-out must be completed by 12 PM."
       ],
-      "location": {
-        "latitude": 12.9716,
-        "longitude": 77.5946
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.1122834842306!2d77.6089982466793!3d12.957477138689137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae142d8bfdc0fb%3A0x509439e9e6b3c238!2sCMP%20Centre%2C%20Muniswamy%20Garden%2C%20Neelasandra%2C%20Bengaluru%2C%20Karnataka%20560025!5e0!3m2!1sen!2sin!4v1736097074383!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1667120887698-49408157c640?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1667120887698-49408157c640?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1692,6 +1733,7 @@
       "id": "hT012",
       "city": "Bangalore",
       "name": "Bangalore Garden Retreat",
+      "description": "Chic hotel in Bangalore near MG Road, offering rooftop dining, live music, and vibrant nightlife options for urban explorers.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
       "amenities": [
@@ -1733,12 +1775,13 @@
         "Guests must provide ID during check-in.",
         "Maximum of two children under 12 stay free."
       ],
-      "location": {
-        "latitude": 12.9539,
-        "longitude": 77.6188
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.1122834842306!2d77.6089982466793!3d12.957477138689137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae142d8bfdc0fb%3A0x509439e9e6b3c238!2sCMP%20Centre%2C%20Muniswamy%20Garden%2C%20Neelasandra%2C%20Bengaluru%2C%20Karnataka%20560025!5e0!3m2!1sen!2sin!4v1736097074383!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1734478234596-bb4cba1e351d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1734478234596-bb4cba1e351d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -1768,6 +1811,7 @@
       "id": "hT05",
       "city": "Chennai",
       "name": "Chennai Comfort Inn",
+      "description": "Seaside resort in Chennai offering luxurious beachfront villas, fine dining, and access to popular attractions like Marina Beach.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
       "amenities": [
@@ -1809,12 +1853,13 @@
         "Guests must provide valid government-issued ID at check-in.",
         "No pets are allowed."
       ],
-      "location": {
-        "latitude": 13.0827,
-        "longitude": 80.2707
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.066589479973!2d80.0799431282872!3d12.967590804723482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f54485668553%3A0xc1b39bbd13d83453!2sVelayutham%20Nagar%2C%20Tamil%20Nadu%20602109!5e0!3m2!1sen!2sin!4v1736097172322!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1715363767320-68f941956b44?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1715363767320-68f941956b44?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -1844,6 +1889,7 @@
       "id": "hT013",
       "city": "Chennai",
       "name": "Chennai Riverside Suites",
+      "description": "Charming colonial-style hotel in Chennai with sprawling lawns, vintage furnishings, and authentic Chettinad cuisine.",
       "pricePerNight": 2700,
       "roomsAvailable": 7,
       "amenities": [
@@ -1885,12 +1931,13 @@
         "ID verification required at check-in.",
         "Children under 5 stay free."
       ],
-      "location": {
-        "latitude": 13.0674,
-        "longitude": 80.2785
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.066589479973!2d80.0799431282872!3d12.967590804723482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f54485668553%3A0xc1b39bbd13d83453!2sVelayutham%20Nagar%2C%20Tamil%20Nadu%20602109!5e0!3m2!1sen!2sin!4v1736097172322!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1721330536639-8c4b7a4641b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1721330536639-8c4b7a4641b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -1920,6 +1967,7 @@
       "id": "hT06",
       "city": "Pune",
       "name": "Pune Garden View",
+      "description": "Luxury hotel in Pune’s Koregaon Park featuring stylish interiors, gourmet dining options, and easy access to the city’s vibrant nightlife.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
       "amenities": [
@@ -1961,12 +2009,13 @@
         "Guests should present government ID at check-in.",
         "Check-in outside working hours is subject to availability."
       ],
-      "location": {
-        "latitude": 18.5204,
-        "longitude": 73.8567
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15129.823693221892!2d73.81878031434644!3d18.553473050663115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf5e5e2df91d%3A0x44be80fe5a393323!2sRange%20Hills%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1736097243521!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1594413161180-c2f8ab433ab7?w=500"
+        "https://images.unsplash.com/photo-1594413161180-c2f8ab433ab7?w=500",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -1996,6 +2045,7 @@
       "id": "hT014",
       "city": "Pune",
       "name": "Pune City Plaza",
+      "description": "Charming heritage hotel in Pune, showcasing colonial architecture, lush gardens, and proximity to historical landmarks like Shaniwar Wada.",
       "pricePerNight": 2400,
       "roomsAvailable": 9,
       "amenities": [
@@ -2037,12 +2087,13 @@
         "ID verification required at check-in.",
         "Children under 6 stay free."
       ],
-      "location": {
-        "latitude": 18.5204,
-        "longitude": 73.8567
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15129.823693221892!2d73.81878031434644!3d18.553473050663115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf5e5e2df91d%3A0x44be80fe5a393323!2sRange%20Hills%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1736097243521!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1722937900605-c652f94cf323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1722937900605-c652f94cf323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -2072,6 +2123,7 @@
       "id": "hT07",
       "city": "Jaipur",
       "name": "Jaipur Regal Stay",
+      "description": "Rustic heritage hotel in Jaipur surrounded by desert landscapes, offering cultural workshops and luxurious accommodations.",
       "pricePerNight": 2700,
       "roomsAvailable": 10,
       "amenities": [
@@ -2113,12 +2165,13 @@
         "Valid ID required at check-in.",
         "Unmarried couples allowed with valid ID."
       ],
-      "location": {
-        "latitude": 26.9124,
-        "longitude": 75.7873
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15129.823693221892!2d73.81878031434644!3d18.553473050663115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf5e5e2df91d%3A0x44be80fe5a393323!2sRange%20Hills%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1736097243521!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1669190860033-d69d7ceaa0b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjQ5fHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
+        "https://images.unsplash.com/photo-1669190860033-d69d7ceaa0b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjQ5fHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -2148,6 +2201,7 @@
       "id": "hT015",
       "city": "Jaipur",
       "name": "Jaipur Heritage Retreat",
+      "description": "Havelis-style resort in Jaipur with spacious courtyards, handcrafted interiors, and an immersive glimpse into Rajasthan’s royal history.",
       "pricePerNight": 3500,
       "roomsAvailable": 8,
       "amenities": [
@@ -2189,12 +2243,13 @@
         "ID verification required at check-in.",
         "Pets allowed with extra charge."
       ],
-      "location": {
-        "latitude": 26.9221,
-        "longitude": 75.7789
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15129.823693221892!2d73.81878031434644!3d18.553473050663115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf5e5e2df91d%3A0x44be80fe5a393323!2sRange%20Hills%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1736097243521!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1506059612708-99d6c258160e?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -2224,6 +2279,7 @@
       "id": "hT08",
       "city": "Hyderabad",
       "name": "Hyderabad Pearl Inn",
+      "description": "Modern hotel in Hyderabad with plush rooms, a wellness spa, and close proximity to the city’s IT corridor and entertainment hubs.",
       "pricePerNight": 1900,
       "roomsAvailable": 5,
       "amenities": [
@@ -2265,12 +2321,13 @@
         "Guests must provide valid ID at check-in.",
         "Early check-in subject to availability."
       ],
-      "location": {
-        "latitude": 17.385,
-        "longitude": 78.4867
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1621891337421-af0e6b355e2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
       ],
       "bookings": [
         {
@@ -2300,6 +2357,7 @@
       "id": "hT016",
       "city": "Hyderabad",
       "name": "Hyderabad Metro Hotel",
+      "description": "Eco-resort near Hyderabad offering tranquil retreats, farm-fresh meals, and lush green surroundings for nature lovers.",
       "pricePerNight": 2200,
       "roomsAvailable": 6,
       "amenities": [
@@ -2341,12 +2399,13 @@
         "Pets allowed with extra charge.",
         "Smoking allowed in designated areas."
       ],
-      "location": {
-        "latitude": 17.385,
-        "longitude": 78.4867
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1693198475395-6945e1f314e1?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1693198475395-6945e1f314e1?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2376,6 +2435,7 @@
       "id": "hT023",
       "city": "Hyderabad",
       "name": "Hyderabad Skyline Inn",
+      "description": "Urban luxury hotel in Hyderabad’s Banjara Hills offering chic interiors, rooftop dining, and proximity to historic landmarks.",
       "pricePerNight": 2500,
       "roomsAvailable": 7,
       "amenities": [
@@ -2417,12 +2477,13 @@
         "Pets allowed with prior approval.",
         "Unmarried couples with valid ID are allowed."
       ],
-      "location": {
-        "latitude": 17.3999,
-        "longitude": 78.4475
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1732347210268-0b8c3f993caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1732347210268-0b8c3f993caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2452,6 +2513,7 @@
       "id": "hT024",
       "city": "Hyderabad",
       "name": "Hyderabad Grand Hotel",
+      "description": "Charming boutique hotel in Hyderabad’s old city with traditional architecture and easy access to the Charminar and Laad Bazaar.",
       "pricePerNight": 3000,
       "roomsAvailable": 6,
       "amenities": [
@@ -2493,12 +2555,13 @@
         "ID verification required at check-in.",
         "Guests must check out by 11 AM."
       ],
-      "location": {
-        "latitude": 17.385,
-        "longitude": 78.4867
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1705049186138-f2c0b9db05b5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1705049186138-f2c0b9db05b5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2528,6 +2591,7 @@
       "id": "hT025",
       "city": "Hyderabad",
       "name": "Hyderabad Elite Suites",
+      "description": "Heritage-inspired hotel in Hyderabad featuring Nawabi-style decor, traditional Hyderabadi cuisine, and a regal atmosphere.",
       "pricePerNight": 2700,
       "roomsAvailable": 9,
       "amenities": [
@@ -2569,12 +2633,13 @@
         "ID verification required at check-in.",
         "Guests must provide valid ID."
       ],
-      "location": {
-        "latitude": 17.3875,
-        "longitude": 78.4917
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093686!2d-122.4194151846812!3d37.77492927975912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c49bb799b%3A0x8d0a7ed7696a85f3!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1698438506807!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2604,6 +2669,7 @@
       "id": "hT029",
       "city": "Rajasthan",
       "name": "Rajasthan Desert Oasis",
+      "description": "Desert retreat in Rajasthan offering thrilling adventures like dune bashing, stargazing, and traditional Rajasthani dining.",
       "pricePerNight": 2600,
       "roomsAvailable": 9,
       "amenities": [
@@ -2645,12 +2711,13 @@
         "Valid ID required at check-in.",
         "Smoking prohibited inside rooms."
       ],
-      "location": {
-        "latitude": 26.0582,
-        "longitude": 70.7553
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsfGVufDB8fDB8fHww"
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2680,6 +2747,7 @@
       "id": "hT030",
       "city": "Kaashi",
       "name": "Kaashi Divine Retreat",
+      "description": "Eco-friendly lodge in Kaashi surrounded by arid beauty, featuring sustainable accommodations and immersive cultural experiences.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
       "amenities": [
@@ -2721,12 +2789,13 @@
         "Guests must provide valid ID at check-in.",
         "Early check-in available on request."
       ],
-      "location": {
-        "latitude": 25.3216,
-        "longitude": 82.9875
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://plus.unsplash.com/premium_photo-1675745329378-5573c360f69f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://plus.unsplash.com/premium_photo-1675745329378-5573c360f69f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2756,6 +2825,7 @@
       "id": "hT031",
       "city": "TamilNadu",
       "name": "Tamil Nadu Ocean Pearl",
+      "description": "Fort-converted hotel in Tamil Nadu offering historical charm, lavish suites, and a glimpse into the state’s royal heritage.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
       "amenities": [
@@ -2797,12 +2867,13 @@
         "ID verification required at check-in.",
         "Guests can cancel up to 24 hours before check-in."
       ],
-      "location": {
-        "latitude": 8.0883,
-        "longitude": 77.5391
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1685040771935-4c8e2792b261?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1685040771935-4c8e2792b261?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {
@@ -2832,6 +2903,7 @@
       "id": "hT032",
       "city": "Rajasthan",
       "name": "Rajasthan Royal Heritage",
+      "description": "Palatial resort in Rajasthan with luxurious tents, cultural performances, and camel safaris for an authentic desert experience.",
       "pricePerNight": 3500,
       "roomsAvailable": 7,
       "amenities": [
@@ -2873,12 +2945,13 @@
         "ID verification required at check-in.",
         "Special packages available for extended stays."
       ],
-      "location": {
-        "latitude": 26.9157,
-        "longitude": 75.8375
-      },
+      "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224347.08626782146!2d76.89713618290462!3d28.526996104364187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1736096930570!5m2!1sen!2sin",
       "images": [
-        "https://images.unsplash.com/photo-1671683886944-6478e6c84cbc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "https://images.unsplash.com/photo-1671683886944-6478e6c84cbc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1662466819164-f4f9f74e5c00?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "bookings": [
         {

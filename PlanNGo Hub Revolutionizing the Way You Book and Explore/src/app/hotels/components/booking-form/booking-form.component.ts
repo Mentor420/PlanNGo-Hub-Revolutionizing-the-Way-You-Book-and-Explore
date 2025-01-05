@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.css'
 })
-export class BookingFormComponent {
 
+export class BookingFormComponent {
+  
+  constructor(private location: Location) {}
+
+  goBack(): void {
+    this.location.back();
+  }
 }

@@ -73,6 +73,13 @@
   padding-top: 32px;
 }
 
+p.hotel-description{
+  padding-top: 8px;
+}
+
+.mt-2.d-flex.align-items-baseline{
+  padding-top: 14px;
+}
 
 ::-webkit-scrollbar {
   height: 8px;

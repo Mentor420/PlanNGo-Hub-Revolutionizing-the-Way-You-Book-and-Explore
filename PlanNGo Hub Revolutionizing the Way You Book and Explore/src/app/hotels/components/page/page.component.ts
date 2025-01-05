@@ -19,6 +19,7 @@ interface Hotel {
   id: string;
   city: string;
   name: string;
+  description: string;
   pricePerNight: number;
   roomsAvailable: number;
   amenities: Amenity[]; // Array of amenities with detailed structure
@@ -39,6 +40,10 @@ interface Hotel {
     ratingsCount: number;
     ratingBreakdown: { [key: number]: number }; // Number of reviews for each rating (1 to 5 stars)
   };
+  bankOffer: {
+    discount: number;
+    details: string;
+  }[];
 }
 
 
