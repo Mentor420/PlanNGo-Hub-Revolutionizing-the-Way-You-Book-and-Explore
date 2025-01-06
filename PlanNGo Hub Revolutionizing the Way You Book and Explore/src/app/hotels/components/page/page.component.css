@@ -35,6 +35,53 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+.back-button2 {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: blueviolet;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  background: #fff;
+  padding: 0.7rem 1.5rem;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+ }
+ 
+ .back-button2 i {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+ }
+ 
+.back-button2:hover i {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+ }
+ 
+.back-button2:hover {
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+  transform: translateY(-2px);
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+ }
+
+
 * {
   margin: 0;
   padding: 0;
@@ -73,11 +120,11 @@
   padding-top: 32px;
 }
 
-p.hotel-description{
+p.hotel-description {
   padding-top: 8px;
 }
 
-.mt-2.d-flex.align-items-baseline{
+.mt-2.d-flex.align-items-baseline {
   padding-top: 14px;
 }
 
@@ -107,7 +154,7 @@ p.hotel-description{
   scroll-padding: 30px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   flex-grow: 1;
-  
+
 }
 
 .container .card {
@@ -143,6 +190,68 @@ p.hotel-description{
 
 
 
+.book {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+  height: 42px;
+  width: 120px;
+}
+
+.book:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.book:hover .icon {
+  transform: translate(4px);
+}
+
+.book:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.book::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%);
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
 
 
 /* ************************     Share   */
@@ -152,7 +261,7 @@ p.hotel-description{
   gap: 50px;
 }
 
-.book {
+/* .book {
   position: relative;
   background: #fff;
   height: 42px;
@@ -169,7 +278,9 @@ p.hotel-description{
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   border: none;
-}
+} */
+
+  
 
 .mainbox {
   position: relative;
