@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlightBookingService } from '../../services/flight-booking.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-booking-history',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './booking-history.component.html',
   styleUrl: './booking-history.component.css'
 })
@@ -33,6 +34,7 @@ export class BookingHistoryComponent {
 
   ngOnInit(): void {
     this.flightBookingService.getCombinedData().subscribe((data:any) => {
+      console.log(data)
       this.combinedData = data.filter((item: any) => item.bookings?.date)
       .sort((a: any, b: any) => new Date(b.bookings.date).getTime() - new Date(a.bookings.date).getTime());
     });

@@ -4,11 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlightBookingService } from '../../services/flight-booking.service';
+import { HeaderComponent } from '../header/header.component';
+import { ViewSimilarFlightsComponent } from '../view-similar-flights/view-similar-flights.component';
 
 @Component({
   selector: 'app-flight-booking',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, ViewSimilarFlightsComponent],
   templateUrl: './flight-booking.component.html',
   styleUrl: './flight-booking.component.css'
 })
@@ -91,7 +93,7 @@ export class FlightBookingComponent implements OnInit {
         setTimeout(()=>{
           this.isBooked = false
           this.router.navigateByUrl("/booking-history")
-        },5000)
+        },3000)
       })
     } else {
       this.isBookingFailure  = true

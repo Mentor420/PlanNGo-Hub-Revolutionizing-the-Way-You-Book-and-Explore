@@ -4,11 +4,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { FlightBookingService } from '../../services/flight-booking.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-flight',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink ],
+  imports: [CommonModule, FormsModule, HttpClientModule, RouterLink, HeaderComponent ],
   templateUrl: './flight.component.html',
   styleUrl: './flight.component.css'
 })
@@ -101,7 +102,7 @@ export class FlightComponent {
   sortFlights() {
     if (this.sortOrder === 'highest') {
       this.filteredFlights.sort((a, b) => b.price - a.price);
-    } else {
+    } else if(this.sortOrder === 'lowest') {
       this.filteredFlights.sort((a, b) => a.price - b.price);
     }
   }

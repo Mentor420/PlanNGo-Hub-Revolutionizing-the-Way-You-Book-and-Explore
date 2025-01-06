@@ -1,4 +1,3 @@
-/* General styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,9 +13,9 @@ nav {
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
       border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 10px;
     position: fixed;
     width: 100%;
+    padding: 10px;
 }
 
 nav h1 {
@@ -24,7 +23,6 @@ nav h1 {
     margin: 0;
 }
 
-/* Navigation list styles */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -66,37 +64,12 @@ nav ul select option {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
+    nav h1 {
+        font-size: 18px;
+        margin: 0;
     }
 
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li, nav ul select {
-        margin: 10px 0;
+    nav ul li {
+        font-size: 15px;
     }
 }
-/* .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #f0f0f0; 
-  background-color: #1545e2;
-  padding: 10px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  animation: bounce 1.5s infinite;
-  margin: -10px;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-} */

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="flight-container">
   
     <!-- Main Content -->
@@ -23,7 +24,7 @@
                 <div class="route-details">
                     <div class="departure">
                         <h1 class="place">{{data.departure.place}}</h1>
-                        <p class="label">Departure Place</p>
+                        <p class="label">Departure</p>
                     </div>
                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
                     <div class="destination">
@@ -98,26 +99,31 @@
     <div class="modal-content modal-content1">
       <span class="close" (click)="onCloseDetails()">&times;</span>
       <div class="popup-container">
-    <div class="popup-header">
-        <img class="popup-logo" [src]="viewDetails?.logo" alt="Air India Logo">
-        <div class="popup-airline-details">
-            <h2 class="popup-airline-name">{{viewDetails.airline}}</h2>
-            <p class="popup-flight-number">Flight Number: {{viewDetails.flightNumber}}</p>
+        <div class="logo-fl-number">
+          <img class="logo-img" [src]="viewDetails?.logo" alt="Air India Logo">
+          <div>
+              <h2>{{viewDetails.airline}}</h2>
+              <p class="flight-no"><strong>Flight Number:</strong> {{viewDetails.flightNumber}}</p>
+          </div>
+      </div>
+      <div class="flight-details-container">
+        <div class="flight-details-section">
+            <p><strong id="view-details-title">Departure:</strong> {{viewDetails?.departure?.place}}</p>
+            <p><strong id="view-details-title">Date:</strong> {{viewDetails?.departure?.date}}</p>
+            <p><strong id="view-details-title">Time:</strong> {{viewDetails?.departure?.time}}</p>
         </div>
-    </div>
-    
-    <div class="popup-info">
-        <p class="popup-departure"><strong>Departure:</strong> {{viewDetails.departure.place}}</p>
-        <p class="popup-departure-date"><strong>Date:</strong> {{viewDetails.departure.date}}</p>
-        <p class="popup-departure-time"><strong>Time:</strong> {{viewDetails.departure.time}}</p>
-
-        <p class="popup-destination"><strong>Destination:</strong> {{viewDetails.destination.place}}</p>
-        <p class="popup-destination-date"><strong>Date:</strong> {{viewDetails.destination.date}}</p>
-        <p class="popup-destination-time"><strong>Time:</strong> {{viewDetails.destination.time}}</p>
-
-        <p class="popup-duration"><strong>Duration:</strong> {{viewDetails.duration}}</p>
-        <p class="popup-price"><strong>Price:</strong> {{viewDetails.price}}</p>
-    </div>
+      
+        <div class="flight-details-section">
+            <p><strong id="view-details-title">Destination:</strong> {{viewDetails?.destination?.place}}</p>
+            <p><strong id="view-details-title">Date:</strong> {{viewDetails?.destination?.date}}</p>
+            <p><strong id="view-details-title">Time:</strong> {{viewDetails?.destination?.time}}</p>
+        </div>
+      
+        <div class="flight-details-section">
+            <p><strong id="view-details-title">Duration:</strong> {{viewDetails?.duration}}</p>
+            <p><strong id="view-details-title">Price:</strong> {{viewDetails?.price}}</p>
+        </div>
+      </div>
     
     <button class="book-btn" [routerLink]="['/flights',viewDetails.id]">Book Now</button> 
 </div>

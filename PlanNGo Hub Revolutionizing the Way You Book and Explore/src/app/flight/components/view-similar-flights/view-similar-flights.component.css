@@ -1,0 +1,126 @@
+.booking-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    list-style: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.route-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.route-details .departure,
+.route-details .destination {
+    text-align: center;
+}
+
+.route-details .place {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.route-details .label {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 5px;
+}
+
+.route-details i {
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.flight-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flight-details-card{
+    display: flex;
+    align-items: center;
+}
+
+.airline-card {
+    text-align: center;
+    margin: 10px;
+    min-width: 100px;
+}
+
+.airline-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.airline-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.flight-number,
+.label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.value {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.book-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .route-details {
+        flex-direction: column;
+    }
+
+    .flight-details {
+        justify-content: space-between;
+    }
+}

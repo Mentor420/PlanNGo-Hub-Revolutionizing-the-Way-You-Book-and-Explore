@@ -3,11 +3,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FlightBookingService } from '../../services/flight-booking.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-cancel-booking',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule ],
+  imports: [CommonModule, FormsModule, HttpClientModule, HeaderComponent ],
   templateUrl: './cancel-booking.component.html',
   styleUrl: './cancel-booking.component.css'
 })

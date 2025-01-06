@@ -1,6 +1,40 @@
+<app-header></app-header>
 <div class="passenger-container">
+  <div class="passenger-flight-details">
+  <div class="flight-details-bg-container">
+    <img class="passenger-booking-img" src="https://www.cnib.ca/sites/default/files/styles/banner_image_wide/public/images/2020-01/Airport%20Banner.jpg?h=7acbc861&itok=04D3SWly." alt="airport"/>
+  <div class="logo-fl-number">
+    <img class="logo-img" [src]="flights?.logo" alt="Air India Logo">
+    <div>
+        <h2>{{flights.airline}}</h2>
+        <p class="flight-no"><strong>Flight Number:</strong> {{flights.flightNumber}}</p>
+    </div>
+</div>
+<div class="flight-details-container">
+  <div class="flight-details-section">
+      <p><strong>Departure:</strong> {{flights?.departure?.place}}</p>|
+      <p><strong>Date:</strong> {{flights?.departure?.date}}</p>|
+      <p><strong>Time:</strong> {{flights?.departure?.time}}</p>
+  </div>
+
+  <div class="flight-details-section">
+      <p><strong>Destination:</strong> {{flights?.destination?.place}}</p>|
+      <p><strong>Date:</strong> {{flights?.destination?.date}}</p>|
+      <p><strong>Time:</strong> {{flights?.destination?.time}}</p>
+  </div>
+
+  <div class="flight-details-section">
+      <p><strong>Duration:</strong> {{flights?.duration}}</p>|
+      <p><strong>Price:</strong> {{flights?.price}}</p>
+  </div>
+</div>
+  <!-- <ul class="similar-flight-container">
+    <h1>View Similar Flights</h1>
+    <app-view-similar-flights [departurePlace] = "flights.departure?.place"></app-view-similar-flights>
+  </ul> -->
+</div>
   <div class="passenger-form-container">
-    <h2>Flight Booking Form</h2>
+    <h1>Booking Form</h1>
     <form [formGroup]="flightBookingForm" (ngSubmit)="onSubmit()">
       <!-- Passengers -->
       <div formArrayName="passengers">
@@ -67,6 +101,7 @@
     </form>
   </div>
 </div>
+</div>
 
 <div class="modal modal1" *ngIf="isBooked">
   <div class="modal-content modal-success">
@@ -77,6 +112,6 @@
 <div class="modal modal1" *ngIf="isBookingFailure">
   <div class="modal-content modal-failure">
     <span class="close" (click)="onBookingToggle()">&times;</span>
-    <p>Check all the credentials.</p>
+      <p>Check all the credentials.</p>
   </div>
 </div>

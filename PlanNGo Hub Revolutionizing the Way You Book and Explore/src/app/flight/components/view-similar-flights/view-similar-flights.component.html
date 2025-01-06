@@ -1,0 +1,46 @@
+<li *ngFor="let data of filteredFlights" class="booking-item">
+    <div class="route-details">
+        <div class="departure">
+            <h1 class="place">{{data.departure.place}}</h1>
+            <p class="label">Departure</p>
+        </div>
+        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        <div class="destination">
+            <h1 class="place">{{data.destination.place}}</h1>
+            <p class="label">Destination</p>
+        </div>
+    </div>
+    <hr class="divider" />
+    <div class="flight-details">
+        <div class="airline-card">
+          <img class="airline-img" [src]="data.logo" [alt]="data.airline"/>
+            <p class="airline-name">{{data.airline}}</p>
+            <p class="flight-number">FNO: {{data.flightNumber}}</p>
+        </div>
+        <div class="flight-details-cards">
+        <div class="flight-details-card">
+            <div class="airline-card">
+                <p class="label">Date</p>
+                <p class="value">{{data.departure.date}}</p>
+            </div>
+            <div class="airline-card">
+                <p class="label">Time</p>
+                <p class="value">{{data.departure.time}}</p>
+            </div>
+        </div>
+        <div class="flight-details-card">
+            <div class="airline-card">
+                <p class="label">Duration</p>
+                <p class="value">{{data.duration}}</p>
+            </div>
+            <div class="airline-card">
+                <p class="label">Price</p>
+                <p class="value">$ {{data.price}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="book-btn-container">
+      <button class="book-btn" (click)="navigateToFlight(data.id)">Book Flight</button>   
+</div>
+</li>

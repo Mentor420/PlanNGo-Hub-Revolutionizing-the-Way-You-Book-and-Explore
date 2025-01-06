@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
 <div class="booking-container">
     <h1 class="title">Cancel Booking</h1>
@@ -7,7 +8,7 @@
             <div class="route-details">
                 <div class="departure">
                     <h1 class="place">{{data.departure.place}}</h1>
-                    <p class="label">Departure Place</p>
+                    <p class="label">Departure</p>
                 </div>
                 <i class="fa-solid fa-arrow-right-arrow-left"></i>
                 <div class="destination">
@@ -22,19 +23,19 @@
                     <p class="airline-name">{{data.airline}}</p>
                     <p class="flight-number">FNO: {{data.flightNumber}}</p>
                 </div>
-                <div class="date">
+                <div >
                     <p class="label">Date</p>
                     <p class="value">{{data.departure.date}}</p>
                 </div>
-                <div class="time">
+                <div>
                     <p class="label">Time</p>
                     <p class="value">{{data.departure.time}}</p>
                 </div>
-                <div class="duration">
-                    <p class="label">Duration</p>
-                    <p class="value">{{data.duration}}</p>
+                <div>
+                    <p class="label">Tickets</p>
+                    <p class="value">{{data.bookings.passengers.length}}</p>
                 </div>
-                <div class="price">
+                <div>
                     <p class="label">Price</p>
                     <p class="value">$ {{data.bookings.totalAmount}}</p>
                 </div>
