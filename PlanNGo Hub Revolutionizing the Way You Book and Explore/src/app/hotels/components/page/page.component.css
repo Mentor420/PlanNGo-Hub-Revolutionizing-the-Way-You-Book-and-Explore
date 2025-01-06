@@ -213,7 +213,9 @@ h3.mb-0 {
   font-size: 15px;
   cursor: pointer;
   height: 44px;
-  width: 120px;
+  /* width: 120px; */
+  padding-left: 12px;
+  padding-right: 11px;
 }
 
 .book:hover {
