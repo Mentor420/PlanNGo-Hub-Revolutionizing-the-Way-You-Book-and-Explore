@@ -114,18 +114,23 @@
   width: 75vw;
   padding: 12px;
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.25s ease;
 }
 
 .card-list:hover {
   cursor: pointer;
   transform: scale(1.03);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
+  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
 
-.card-item2 {
+
+
+
+}
+  
+  .card-item2 {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
