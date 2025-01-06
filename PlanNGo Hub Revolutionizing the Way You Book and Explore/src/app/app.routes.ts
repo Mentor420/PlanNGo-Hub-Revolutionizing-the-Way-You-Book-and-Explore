@@ -6,6 +6,7 @@ import { AboutComponent } from './hotels/components/about/about.component';
 import { ContactComponent } from './hotels/components/contact/contact.component';
 import { LocationComponent } from './hotels/components/location/location.component';
 import { BookingFormComponent } from './hotels/components/booking-form/booking-form.component';
+import { HotelRoomComponent } from './hotels/components/hotel-room/hotel-room.component';
 
 
 export const routes: Route[] = [
@@ -16,5 +17,6 @@ export const routes: Route[] = [
   { path: 'page', component: PageComponent }, 
   { path: 'location', component: LocationComponent }, 
   { path: 'booking-form', component: BookingFormComponent},
+  { path: 'hotel-room', component: HotelRoomComponent},
 
 ];

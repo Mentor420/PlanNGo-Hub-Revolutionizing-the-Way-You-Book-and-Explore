@@ -6,6 +6,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
 import { Router, NavigationEnd  } from '@angular/router';
+import { HotelRoomComponent } from "../hotel-room/hotel-room.component";
 
 interface Amenity {
   id: string; // Unique identifier for the amenity
@@ -49,7 +50,7 @@ interface Hotel {
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RatingComponent],
+  imports: [CommonModule, RatingComponent, HotelRoomComponent],
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css'],
@@ -248,7 +249,7 @@ filterSimilarHotels(): void {
   }
 
   goToPage() {
-    this.router.navigate(['/booking-form']); 
+    this.router.navigate(['/hotel-room']); 
   }
 
 }
