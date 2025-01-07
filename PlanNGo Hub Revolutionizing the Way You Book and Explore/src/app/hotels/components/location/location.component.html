@@ -20,7 +20,7 @@
 
 
 <div *ngIf="hotels && hotels.length > 0" class="hotel-container">
-    <button class="back-button mb-3" (click)="goBack()">Back</button>
+    <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button>
     <h3 class="mb-3 text-center">Hotels in {{ city }}</h3><hr>
     <div *ngFor="let hotel of hotels" class="card-list" (click)="viewHotelDetails(hotel)">
         <a class="card-item2">
