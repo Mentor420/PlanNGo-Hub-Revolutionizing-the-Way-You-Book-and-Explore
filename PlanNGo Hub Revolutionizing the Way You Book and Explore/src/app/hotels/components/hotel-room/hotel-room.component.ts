@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hotel-room',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class HotelRoomComponent {
 
+  constructor(private location: Location) {}
+
+  goBack(): void {
+    this.location.back(); // Navigates to the previous page
+  }
 }
