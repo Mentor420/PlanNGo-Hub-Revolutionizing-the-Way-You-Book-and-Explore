@@ -1,0 +1,30 @@
+<div class="w-full max-w-screen-xl mx-auto bg-white overflow-hidden">
+  <div class="relative w-full h-[30vh] bg-cover bg-center" style="background-image: url('/assets/top.jpg');">
+    <div class="flex flex-col items-center justify-center h-full text-center text-white">
+      <div class="pt-10 font-bold text-sm md:text-lg tracking-wide">
+        SEARCH TOUR
+      </div>
+      <div class="font-normal text-2xl md:text-4xl lg:text-6xl leading-tight">
+        Our Packages
+      </div>
+    </div>
+  </div>
+  <nav class="bg-white border border-gray-300 w-full mx-auto p-4">
+    <ul class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 sm:justify-center">
+      <li><a [routerLink]="['/info', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Information</a></li>
+      <li><a [routerLink]="['/tour-plan', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tour Plan</a></li>
+      <li><a [routerLink]="['/location', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Location</a></li>
+      <li><a [routerLink]="['/gallery', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Gallery</a></li>
+      <li><a [routerLink]="['/compare', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Compare</a></li>
+    </ul>
+  </nav>
+  <!-- Gallery Section -->
+  <div class="py-8">
+    <h2 class="text-[50px] font-bold text-[#181e4b] mb-8">From our gallery</h2>
+    <div *ngIf="tourImages && tourImages.length > 0" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let image of tourImages">
+        <img [src]="image" alt="Tour Image" class="h-80 w-100 object-cover  rounded-lg">
+      </div>
+    </div>
+  </div>
+</div>

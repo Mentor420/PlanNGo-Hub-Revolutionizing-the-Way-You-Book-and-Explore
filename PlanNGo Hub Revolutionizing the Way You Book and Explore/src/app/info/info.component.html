@@ -1,0 +1,129 @@
+<div class="container mx-auto px-4">
+  <!-- Hero Section -->
+  <div class="w-full">
+    <div class="bg-cover w-full h-[200px] md:h-[400px] lg:h-[300px] bg-[url('/assets/top.jpg')] z-10">
+      <div class="flex flex-col items-center justify-center h-full">
+        <div class="font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] mb-4">
+          TOURS
+        </div>
+        <div class="font-normal text-white text-2xl md:text-4xl lg:text-8xl text-center leading-tight">
+          Our Packages
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="bg-white border border-gray-300 w-full mx-auto p-4">
+    <ul class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 sm:justify-center">
+      <li><a [routerLink]="['/info', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Information</a></li>
+      <li><a [routerLink]="['/tour-plan', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tour Plan</a></li>
+      <li><a [routerLink]="['/location', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Location</a></li>
+      <li><a [routerLink]="['/gallery', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Gallery</a></li>
+      <li><a [routerLink]="['/compare', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Compare</a></li>
+    </ul>
+  </nav>
+  <!-- Tour Info Grid -->
+  <div class="flex justify-evenly gap-6 py-8">
+    <div class="w-1/2">
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <h2 class="text-2xl font-bold text-[#353a61]">Tour Details</h2>
+          <p class="text-[20px] font-medium text-[#df6951]">$ {{tourPrice}}</p>
+          <p class="text-base -mx-3 text-[#7d7d7d]">/Per Couple</p>
+        </div>
+
+        <p class="text-base text-black">{{ tourDescription }}</p>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Tour Name</h2>
+          <p class="text-base text-black">{{ tourName }}</p>        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+          <p class="text-base text-black">{{ tourDestination }}</p>
+        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+          <p class="text-base text-black">{{ tourDestination }}</p>
+        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Departure Time</h2>
+          <p class="text-base text-black">{{ tourDepartureTime }}</p>
+        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Return Time</h2>
+          <p class="text-base text-black">{{ tourReturnTime }}</p>
+        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+          <div class="flex space-x-2 text-lg text-black">
+            <p class="text-base text-black">Gallery Ticket</p>
+            <p class="text-base text-black">5 star Accommodations</p>
+            <p class="text-base text-black">Breakfast</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+          <div class="flex space-x-2 text-lg text-black">
+            <p class="text-base text-black">Lunch</p>
+            <p class="text-base text-black">Airport Transfer</p>
+            <p class="text-base text-black">Personal Guide</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<div>
+  <div class="relative mx-auto p-4 rounded-2xl bg-[#ededed] max-w-[481px] min-h-screen">
+    <div class="text-center">
+      <p class="text-[#181e4b] text-2xl font-bold">Book This Tour</p>
+      <p class="text-base mt-4">Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo quidem neque iste expedita est dolo.</p>
+    </div>
+    <form class="mt-8 space-y-6">
+      <div class="flex flex-col space-y-2">
+        <label for="name" class="text-gray-500 text-sm">Name</label>
+        <input id="name" type="text" class="border w-full  rounded p-2 bg-white" placeholder="Enter your name" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="email" class="text-gray-500 text-sm">Email</label>
+        <input id="email" type="email" class="border w-full  rounded p-2 bg-white" placeholder="Enter your email" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="confirm-email" class="text-gray-500 text-sm">Confirm Email</label>
+        <input id="confirm-email" type="email" class="border   w-full rounded p-2 bg-white" placeholder="Confirm your email" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="phone" class="text-gray-500 text-sm">Phone</label>
+        <input id="phone" type="tel" class="border w-full rounded p-2 bg-white" placeholder="Enter your phone number" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="date" class="text-gray-500 text-sm">Date (dd-mm-yy)</label>
+        <input id="date" type="date" class="border w-full rounded p-2 bg-white" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="tickets" class="text-gray-500 text-sm">Number of tickets</label>
+        <input id="tickets" type="number" class="border w-full rounded p-2 bg-white" placeholder="Enter the number of tickets" />
+      </div>
+      <div class="flex flex-col space-y-2">
+        <label for="message" class="text-gray-500 text-sm">Message</label>
+        <textarea id="message" class="border w-full rounded p-2 bg-white" rows="3" placeholder="Leave a message"></textarea>
+      </div>
+      <div class="flex flex-col items-center space-y-4">
+        <button type="button" class="bg-[#df6951] text-white py-2 px-4 rounded w-full max-w-[176px] shadow-md">Check Availability</button>
+        <button type="submit" class="bg-[#df6951] text-white py-2 px-4 rounded w-full max-w-[176px] shadow-md">Book Now</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+</div>
+
+
+  <!-- Gallery Section -->
+  <div class="py-8">
+    <h2 class="text-[50px] font-bold text-[#181e4b] mb-8">From our gallery</h2>
+    <div *ngIf="tourImages && tourImages.length > 0" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let image of tourImages">
+        <img [src]="image" alt="Tour Image" class="h-80 w-100 object-cover  rounded-lg">
+      </div>
+    </div>
+  </div>
+</div>

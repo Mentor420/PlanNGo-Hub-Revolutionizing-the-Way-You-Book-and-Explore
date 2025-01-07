@@ -1,0 +1,118 @@
+<div class="">
+    <div class=" w-full ">
+      <div class=" w-full h-[600px] bg-[url('/assets/top.jpg')] z-10">
+
+        <div class="pt-40 font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] text-center">
+          SEARCH TOUR
+        </div>
+
+        <div class=" font-normal text-white text-4xl md:text-6xl lg:text-[157.4px] text-center leading-tight">
+          Our Packages
+        </div>
+      </div>
+    </div>
+    <nav class="bg-white border border-gray-300 w-full mx-auto p-4">
+      <ul class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 sm:justify-center">
+        <li><a [routerLink]="['/info', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Information</a></li>
+        <li><a [routerLink]="['/tour-plan', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tour Plan</a></li>
+        <li><a [routerLink]="['/location', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Location</a></li>
+        <li><a [routerLink]="['/gallery', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Gallery</a></li>
+        <li><a [routerLink]="['/compare', tourId]" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Compare</a></li>
+      </ul>
+    </nav>
+  </div>
+
+<div class="flex px-80 pt-10">
+    <div class="w-1/2 text-center px-20">
+    <div for="tourSelect1" class="text-3xl font-bold capitalize py-2">Select Tour for Table 1</div>
+      <select id="tourSelect1" [(ngModel)]="selectedTour1" name="tourSelect1" class="w-full p-2 border-2 border-[#df6951] rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:border-[#ffefeb] focus:ring-2 focus:ring-[#df6951]">
+      <option *ngFor="let tour of tours" [ngValue]="tour">{{ tour.name }}</option>
+    </select>
+    <div *ngIf="selectedTour1" class="px-10 text-left">
+      <img class="rounded-3xl  mx-auto object-cover w-80 h-52" [src]="selectedTour1.image">
+      <p class="text-base text-black">{{ selectedTour1.description }}</p>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Tour Name</h2>
+        <p class="text-base text-black">{{ selectedTour1.name }}</p>        </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Departure</h2>
+        <p class="text-base text-black">{{ selectedTour1.departure }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+        <p class="text-base text-black">{{ selectedTour1.destination }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Departure Time</h2>
+        <p class="text-base text-black">{{ selectedTour1.departureTime }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Return Time</h2>
+        <p class="text-base text-black">{{ selectedTour1.returnTime }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+        <div class="flex space-x-2 text-lg text-black">
+          <p class="text-base text-black">Gallery Ticket</p>
+          <p class="text-base text-black">5 star Accommodations</p>
+          <p class="text-base text-black">Breakfast</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+        <div class="flex space-x-2 text-lg text-black">
+          <p class="text-base text-black">Lunch</p>
+          <p class="text-base text-black">Airport Transfer</p>
+          <p class="text-base text-black">Personal Guide</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="w-1/2 justify-center text-center px-20">
+    <label for="tourSelect2" class="text-3xl font-bold capitalize py-2">Select Tour for Table 2</label>
+    <select id="tourSelect2" [(ngModel)]="selectedTour2" name="tourSelect2" class="w-full p-2 border-2 border-[#df6951] rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:border-[#ffefeb] focus:ring-2 focus:ring-[#df6951]">
+      <option *ngFor="let tour of tours" [ngValue]="tour">{{ tour.name }}</option>
+    </select>
+    <div *ngIf="selectedTour2" class="px-10 text-left">
+      <img class="rounded-3xl  mx-auto object-cover w-80 h-52" [src]="selectedTour2.image">
+      <p class="text-base text-black">{{ selectedTour2.description }}</p>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Tour Name</h2>
+        <p class="text-base text-black">{{ selectedTour2.name }}</p>        </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Departure</h2>
+        <p class="text-base text-black">{{ selectedTour2.departure }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+        <p class="text-base text-black">{{ selectedTour2.destination }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Departure Time</h2>
+        <p class="text-base text-black">{{ selectedTour2.departureTime }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Return Time</h2>
+        <p class="text-base text-black">{{ selectedTour2.returnTime }}</p>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+        <div class="flex space-x-2 text-lg text-black">
+          <p class="text-base text-black">Gallery Ticket</p>
+          <p class="text-base text-black">5 star Accommodations</p>
+          <p class="text-base text-black">Breakfast</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 items-center  gap-2">
+        <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+        <div class="flex space-x-2 text-lg text-black">
+          <p class="text-base text-black">Lunch</p>
+          <p class="text-base text-black">Airport Transfer</p>
+          <p class="text-base text-black">Personal Guide</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+</div>
+

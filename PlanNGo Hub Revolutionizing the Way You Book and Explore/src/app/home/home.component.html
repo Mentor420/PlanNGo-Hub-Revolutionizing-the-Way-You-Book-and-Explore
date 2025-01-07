@@ -1,0 +1,63 @@
+<div class="bg-[#ffffff] flex flex-row justify-center w-full">
+  <div class="bg-[#ffffff] overflow-hidden w-full max-w-[1920px]">
+    <!-- Hero Section -->
+    <div class="relative w-full ">
+      <div class="relative w-full ">
+        <div class=" w-full h-[800px] bg-[url('/assets/top.jpg')] z-10">
+
+          <div class="pt-40 font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] text-center">
+            SEARCH TOUR
+          </div>
+
+          <div class=" font-normal text-white text-4xl md:text-6xl lg:text-[157.4px] text-center leading-tight">
+            Our Packages
+          </div>
+          <app-search></app-search>
+        </div>
+      </div>
+
+      <!-- Search & Filter Section -->
+      <div class="w-full px-4 md:px-8 lg:px-[277px] -mt-16 ">
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Date Filter -->
+          <div class=" z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center">
+            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Date</span>
+          </div>
+
+          <!-- Price Filters -->
+          <div (click)="sortByPrice('low')" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
+            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Price Low To High</span>
+          </div>
+          <div (click)="sortByPrice('high')" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
+            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Price High To Low</span>
+          </div>
+          <div (click)="sortByName()" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
+            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Name(A-Z)</span>
+          </div>        </div>
+      </div>
+
+      <!-- Tour Cards -->
+      <div class="w-full px-4 md:px-8 lg:px-[277px] mt-8 md:mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <div *ngFor="let tour of items" class="tour-card bg-white rounded-[21px] shadow-lg">
+              <div>
+                <img [src]="tour.image" class="w-full h-48 md:h-64 object-cover rounded-t-[21px]" [alt]="tour.name"/>
+                <div class="p-4 md:p-6">
+                  <h3 class="text-2xl md:text-[31.6px] font-bold text-[#181e4b]">{{tour.name}}</h3>
+                  <p class="pt-4 text-sm md:text-base text-[#181e4b]">{{tour.description2}}</p>
+
+                  <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm md:text-base ">₹ {{tour.price}}</span>
+                    <button class="bg-black text-white px-3 py-2" [routerLink]="['/info', tour.id]">View Details</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <mat-paginator [length]=totalItems [pageSize]=pageSize [pageIndex]=currentPage (page)=pageChanged($event)></mat-paginator>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

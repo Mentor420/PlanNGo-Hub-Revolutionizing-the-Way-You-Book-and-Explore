@@ -1,0 +1,93 @@
+<div class="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold mb-4">Enter Tour Details</h1>
+  <form [formGroup]="tourForm" (ngSubmit)="onSubmit($event)" class="space-y-4 grid grid-cols-3">
+    <div>
+      <label for="id" class="block text-sm font-medium text-gray-700">ID</label>
+      <input formControlName="id" type="text" id="id" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="s5e6o7u8l9">
+    </div>
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input formControlName="name" type="text" id="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Seoul City Highlights">
+    </div>
+    <div>
+      <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+      <input formControlName="price" type="number" id="price" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="1299">
+    </div>
+    <div>
+      <label for="duration" class="block text-sm font-medium text-gray-700">Duration</label>
+      <input formControlName="duration" type="text" id="duration" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="3 days">
+    </div>
+    <div>
+      <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+      <textarea formControlName="description" id="description" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="3" placeholder="Experience the vibrant city of Seoul..."></textarea>
+    </div>
+    <div>
+      <label for="description2" class="block text-sm font-medium text-gray-700">Description 2</label>
+      <textarea formControlName="description2" id="description2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Discover the heart of South Korea"></textarea>
+    </div>
+    <div>
+      <label for="image" class="block text-sm font-medium text-gray-700">Main Image URL</label>
+      <input formControlName="image" type="url" id="image" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="https://i.ytimg.com/vi/Zvf60sr7HYA/maxresdefault.jpg">
+    </div>
+    <div>
+      <label for="images" class="block text-sm font-medium text-gray-700">Gallery Images URLs (comma separated)</label>
+      <textarea formControlName="images" id="images" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="3" placeholder="https://images.unsplash.com/photo-1578844021912-4e18a3cfd1a0, https://images.unsplash.com/photo-1534326213578-c7d899132dd0, https://images.unsplash.com/photo-1541560052-34f79d1f9f4d"></textarea>
+    </div>
+    <div>
+      <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
+      <input formControlName="destination" type="text" id="destination" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Seoul, South Korea">
+    </div>
+    <div>
+      <label for="departure" class="block text-sm font-medium text-gray-700">Departure</label>
+      <input formControlName="departure" type="text" id="departure" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Seoul, South Korea">
+    </div>
+    <div>
+      <label for="departureTime" class="block text-sm font-medium text-gray-700">Departure Time</label>
+      <input formControlName="departureTime" type="datetime-local" id="departureTime" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="2024-10-05T09:00:00">
+    </div>
+    <div>
+      <label for="returnTime" class="block text-sm font-medium text-gray-700">Return Time</label>
+      <input formControlName="returnTime" type="datetime-local" id="returnTime" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="2024-10-08T21:00:00">
+    </div>
+    <div>
+      <label for="dressCode" class="block text-sm font-medium text-gray-700">Dress Code</label>
+      <input formControlName="dressCode" type="text" id="dressCode" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Smart Casual">
+    </div>
+
+      <label class="block text-sm font-medium text-gray-700">Tour Plans</label>
+
+        <div>
+          <label for="day1" class="block text-sm font-medium text-gray-700">Day 1</label>
+          <textarea formControlName="day1" id="day1" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Arrival in Seoul and transfer to the hotel..."></textarea>
+        </div>
+        <div>
+          <label for="day2" class="block text-sm font-medium text-gray-700">Day 2</label>
+          <textarea formControlName="day2" id="day2" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Visit Gyeongbokgung Palace..."></textarea>
+        </div>
+        <div>
+          <label for="day3" class="block text-sm font-medium text-gray-700">Day 3</label>
+          <textarea formControlName="day3" id="day3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Explore N Seoul Tower..."></textarea>
+        </div>
+        <div>
+          <label for="day4" class="block text-sm font-medium text-gray-700">Day 4</label>
+          <textarea formControlName="day4" id="day4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Day trip to the DMZ..."></textarea>
+        </div>
+        <div>
+          <label for="day5" class="block text-sm font-medium text-gray-700">Day 5</label>
+          <textarea formControlName="day5" id="day5" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Visit Changdeokgung Palace..."></textarea>
+        </div>
+        <div>
+          <label for="day6" class="block text-sm font-medium text-gray-700">Day 6</label>
+          <textarea formControlName="day6" id="day6" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Free day for shopping..."></textarea>
+        </div>
+        <div>
+          <label for="day7" class="block text-sm font-medium text-gray-700">Day 7</label>
+          <textarea formControlName="day7" id="day7" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="2" placeholder="Check out and transfer to the airport..."></textarea>
+        </div>
+    <div>
+      <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
