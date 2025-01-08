@@ -36,18 +36,36 @@
                     <p class="value">{{data.bookings.passengers.length}}</p>
                 </div>
                 <div>
-                    <p class="label">Price</p>
+                    <p class="label">Total Price</p>
                     <p class="value">$ {{data.bookings.totalAmount}}</p>
                 </div>
             </div>
             <button 
           type="button"
           class="button"
-          [disabled]="data.bookings.bookingStatus === 'Cancelled'"
-          (click)="changeBookingStatus(data.bookings.id)">
-          {{data.bookings.bookingStatus === 'Cancelled'?data.bookings.bookingStatus:'Cancel Booking'}}
+          [disabled]="data.bookings.bookingStatus === 'Cancelled'||data.bookings.bookingStatus === 'Travel Ended'"
+          (click)="onCancellingBooking(data.bookings.id)">
+          {{
+            data.bookings.bookingStatus === 'Cancelled'
+              ? 'Cancelled'
+              : data.bookings.bookingStatus === 'Travel Ended'
+              ? 'Travel Ended'
+              : 'Cancel Booking'
+          }}
         </button>
         </li>
     </ul>
 </div>
 </div>
+
+<div class="modal modal1" *ngIf="isCancelledBooking">
+    <div class="modal-content modal-content1">
+      <span class="close" (click)="onCloseView()">&times;</span>
+      <h2>Are you sure you want to cancel the booking?</h2>
+      <div class="modal-buttons">
+        <button class="cancel-btn" type="button" (click)="onCloseView()">Cancel</button>
+        <button class="confirm-btn" type="button" (click)="changeBookingStatus()">Confirm</button>
+      </div>
+    </div>
+  </div>
+  

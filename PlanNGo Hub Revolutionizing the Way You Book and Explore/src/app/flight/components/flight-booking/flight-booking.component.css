@@ -58,24 +58,48 @@
   border-left: 1px solid #fff;
 }
 
+.flight-details-bg-container {
+  position: relative;
+}
+
+/* Style the image */
 .passenger-booking-img {
+  width: 100%;
   height: auto;
-  width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
-.logo-fl-number{
-  width: 100%;
-  padding: 10px;
+
+.logo-fl-number {
+  position: absolute;
+  top: 30px; 
+  left: 20px;   
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 10px 15px;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  gap: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.logo-img{
-  height: 100px;
-  width: 100px;
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  object-fit: contain;
+}
+
+.logo-fl-number h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.logo-fl-number strong{
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .flight-details-container {
@@ -91,27 +115,33 @@
   
 }
 
+.flight-details-container h2{
+  color: #fff;
+  text-decoration: underline;
+}
+
 .flight-details-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6fc8f1;
+  background-color: #ffffff;
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
-  color: #fff;
+  color: #000000;
 }
 
 .flight-details-section p {
   margin: 8px 0;
   font-size: 14px;
-  color: #ffffff;
+  color: #030303;
 }
 
 .flight-no{
-  color: #20cdf8;
+  color: #23505c;
   font-weight: 550;
+  font-size: 16px;
 }
 
 .flight-no strong{
@@ -119,7 +149,7 @@
 }
 
 .flight-details-section p strong {
-  color: #ffffff;
+  color: #292828;
   font-weight: bold;  
   font-size: 16px;
 }

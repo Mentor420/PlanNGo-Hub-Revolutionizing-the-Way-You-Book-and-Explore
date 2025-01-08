@@ -97,6 +97,7 @@ export class FlightComponent {
     this.destination = '';
     this.date = '';
     this.onSearch() 
+    this.onCloseView()
   }
 
   sortFlights() {

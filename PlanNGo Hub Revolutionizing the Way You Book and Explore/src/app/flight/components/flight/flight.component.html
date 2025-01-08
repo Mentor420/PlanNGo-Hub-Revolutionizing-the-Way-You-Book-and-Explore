@@ -8,6 +8,7 @@
         <!-- This Functionality used for Sort Price -->
         <div class="sort-container">
           <button (click)="onOpenView()"><i class="fa-solid fa-arrow-down-wide-short"></i> All Filters</button>
+          <button type="button" id="clearFilter-btn" (click)="clearFilter()"><i class="fa-solid fa-broom"></i>Clear fliters</button>
           <i class="fa-solid fa-money-bill-wave"></i>
           <h1>Sort By</h1>
           <select class="sortPrice" [(ngModel)]="sortOrder" (change)="sortFlights()">

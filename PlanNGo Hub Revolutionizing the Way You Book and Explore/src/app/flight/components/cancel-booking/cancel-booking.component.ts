@@ -15,6 +15,8 @@ import { HeaderComponent } from '../header/header.component';
 export class CancelBookingComponent implements OnInit{
 
   combinedData: any[] = [];
+  isCancelledBooking = false
+  bookingId:String = ""
 
   constructor(private flightBookingService: FlightBookingService, private http:HttpClient) {}
 
@@ -25,16 +27,26 @@ export class CancelBookingComponent implements OnInit{
       .sort((a: any, b: any) => new Date(b.bookings.date).getTime() - new Date(a.bookings.date).getTime());
     });
   }
+
+  onCancellingBooking(id:String) {
+    this.isCancelledBooking = true
+    this.bookingId = id
+  }
+
+  onCloseView(){
+    this.isCancelledBooking = false
+  }
   
-  changeBookingStatus(id:String){
+  changeBookingStatus(){
     const updatedData = {bookingStatus:'Cancelled'}
-    this.http.patch(`http://localhost:3000/bookings/${id}`, updatedData)
+    this.flightBookingService.changeFlightStatus(this.bookingId, updatedData)
     .subscribe({
       next:() => {
         this.flightBookingService.getCombinedData().subscribe((data:any) => {
           console.log(data)
           this.combinedData = data;
         });
+        this.isCancelledBooking = false
       },
       error: (error) => {
         console.error('Error updating booking status:', error);

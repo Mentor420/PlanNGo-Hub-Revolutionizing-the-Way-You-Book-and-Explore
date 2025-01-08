@@ -11,6 +11,7 @@
     </div>
 </div>
 <div class="flight-details-container">
+  <h2>Flight Details</h2>
   <div class="flight-details-section">
       <p><strong>Departure:</strong> {{flights?.departure?.place}}</p>|
       <p><strong>Date:</strong> {{flights?.departure?.date}}</p>|
@@ -25,13 +26,13 @@
 
   <div class="flight-details-section">
       <p><strong>Duration:</strong> {{flights?.duration}}</p>|
-      <p><strong>Price:</strong> {{flights?.price}}</p>
+      <p><strong>Price:</strong> ${{flights?.price}}</p>
   </div>
 </div>
-  <!-- <ul class="similar-flight-container">
+  <ul class="similar-flight-container">
     <h1>View Similar Flights</h1>
     <app-view-similar-flights [departurePlace] = "flights.departure?.place"></app-view-similar-flights>
-  </ul> -->
+  </ul>
 </div>
   <div class="passenger-form-container">
     <h1>Booking Form</h1>

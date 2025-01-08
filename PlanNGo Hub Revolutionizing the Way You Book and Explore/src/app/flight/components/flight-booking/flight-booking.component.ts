@@ -88,15 +88,18 @@ export class FlightBookingComponent implements OnInit {
         passengers: [...this.flightBookingForm.value.passengers]
       }
       console.log(booking)
-      this.http.post("http://localhost:3000/bookings",booking).subscribe((data:any)=>{
+      this.flightBookingService.postBookingDetails(booking).subscribe((data:any)=>{
         this.isBooked = true
         setTimeout(()=>{
           this.isBooked = false
-          this.router.navigateByUrl("/booking-history")
+          this.router.navigateByUrl("/flight/booking-history")
         },3000)
       })
     } else {
       this.isBookingFailure  = true
+      setTimeout(()=>{
+        this.isBookingFailure  = false
+      },2000)
     }
   }
 }

@@ -201,24 +201,38 @@ margin: 5px 0;
 
 .sort-container button{
   margin-right: 15px;
-  color: #299cfa;
-  background-color: transparent;
+  color: #ffffff;
+  background-color: #299cfa;
   border: none;
   outline: none;
   font-weight: 600;
   font-size: 18px;
   cursor: pointer;
-  border: 2px solid #299cfa;
+  border: 2px solid #ffffff;
   padding:10px;
   border-radius: 30px;
 }
 .sort-container button i {
-  color: #299cfa;
+  color: #fff;
   font-size: 18px;
   margin-right: 8px;
   border:none;
   padding: 0px;
 }
+
+#clearFilter-btn{
+  background-color: transparent;
+  color: #299cfa;
+  border: 2px solid #299cfa;
+}
+
+#clearFliter-btn i {
+  color: #299cfa;
+  font-size: 18px;
+  border:none;
+  padding: 0px;
+}
+
 .sort-container i {
   color: #ffffff;
   font-size: 20px;

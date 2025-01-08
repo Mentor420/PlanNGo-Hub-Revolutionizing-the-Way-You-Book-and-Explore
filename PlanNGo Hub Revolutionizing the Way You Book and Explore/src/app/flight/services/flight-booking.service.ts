@@ -19,7 +19,17 @@ export class FlightBookingService {
   }
 
   getSpecificFlights(id:any): Observable<any> {
-    return this.http.get<any[]>(`http://localhost:3000/flights/${id}`)
+    return this.http.get<any[]>(`${this.apiURL}/flights/${id}`)
+  }
+
+  changeFlightStatus(id:any, data:any): Observable<any> {
+    console.log(id)
+    console.log(data)
+    return this.http.patch(`${this.apiURL}/bookings/${id}`, data)
+  }
+
+  postBookingDetails(booking:any): Observable<any>{
+    return this.http.post(`${this.apiURL}/bookings`,booking)
   }
 
   getCombinedData(): Observable<any[]> {
