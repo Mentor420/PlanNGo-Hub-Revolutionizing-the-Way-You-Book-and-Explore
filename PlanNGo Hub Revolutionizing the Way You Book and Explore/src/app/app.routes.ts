@@ -14,9 +14,13 @@ export const routes: Route[] = [
   { path: 'search-results', component: SearchResultsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page', component: PageComponent }, 
   { path: 'location', component: LocationComponent }, 
-  { path: 'booking-form', component: BookingFormComponent},
-  { path: 'hotel-room', component: HotelRoomComponent},
-
+  { path: 'room/:roomId/booking-form', component: BookingFormComponent },
+  {
+    path: 'page', component: PageComponent,
+    children: [
+      { path: 'hotel-room/:hotelId', 
+        component: HotelRoomComponent, },
+    ]
+  },
 ];

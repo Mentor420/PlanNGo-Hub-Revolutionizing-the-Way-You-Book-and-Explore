@@ -1,12 +1,12 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HotelSearchService } from '../../services/hotel-search.service'; 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
 import { Router, NavigationEnd  } from '@angular/router';
-import { HotelRoomComponent } from "../hotel-room/hotel-room.component";
+import { HotelIdService } from '../../services/hotel-id.service';
 
 interface Amenity {
   id: string; // Unique identifier for the amenity
@@ -50,7 +50,7 @@ interface Hotel {
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RatingComponent, HotelRoomComponent],
+  imports: [CommonModule, RatingComponent, RouterModule],
   selector: 'app-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css'],
@@ -72,7 +72,8 @@ export class PageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private hotelService: HotelSearchService, // Inject the service here
+    private hotelService: HotelSearchService,
+    private hotelIdService: HotelIdService,
     private sanitizer: DomSanitizer, // Add DomSanitizer
     @Inject(PLATFORM_ID) private platformId: Object, // Detect SSR/browser
     private location: Location,
@@ -89,17 +90,28 @@ export class PageComponent implements OnInit {
         if (event instanceof NavigationEnd) {
           // This ensures the page scrolls to the top on navigation end
           window.scrollTo(0, 0);
+          // Smoothly scroll to the #hotel-room-section if it exists
+          const element = document.getElementById('hotel-room-section');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
 
       this.route.queryParams.subscribe((params) => {
         const hotelId = params['id'];
+        console.log('Hotel ID of page:', hotelId);
         if (hotelId) {
           this.hotelId = hotelId; 
           this.fetchHotelDetails(hotelId);
           this.getAllHotels(); // Get all hotels for comparison
         } else {
-          this.error = 'Hotel ID not provided in the URL.';
+          this.hotelId = this.hotelIdService.getHotelId();
+          console.log('Fallback Hotel ID from service:', this.hotelId);
+          if (this.hotelId) {
+            this.fetchHotelDetails(this.hotelId);  
+            this.getAllHotels();
+          }
         }
       });
     } else {
@@ -248,8 +260,10 @@ filterSimilarHotels(): void {
     this.transformStyle = `translateX(-${nextIndex * 100}%)`; // Shift images horizontally
   }
 
-  goToPage() {
-    this.router.navigate(['/hotel-room']); 
-  }
+  // goToPage(hotel: any) : void{
+  //   const hotelId = hotel.id;  // Get the hotel ID
+  //   console.log('Hotel ID:', hotelId);
+  //   this.router.navigate(['/page/hotel-room'], { queryParams: { hotelId: hotelId, roomId: roomId } }); 
+  // }
 
 }

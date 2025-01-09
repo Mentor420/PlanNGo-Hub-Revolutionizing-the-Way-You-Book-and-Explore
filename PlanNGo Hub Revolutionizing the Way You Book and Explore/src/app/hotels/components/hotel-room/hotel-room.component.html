@@ -20,108 +20,58 @@
 
 
 <div class="hotel-container">
-    <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button>
-    <h3 class="m-3 text-center">Available Rooms</h3>
-    <div class="main">
-        <div class="headline d-flex pt-3">
-            <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Room Type</h4>
-            <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Benefits</h4>
-            <h4 class="text-center   p-4 pt-1 pb-2" style="width: 40%;">Per night Price</h4>
-        </div>
-        <div class="card-list">
-            <a class="card-item2 p-4">
-                <h5 class=" pb-2">2 Bedroom Deluxe</h5>
-                <img
-                    src="https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-            </a>
-            <div class="h-name">
-                <div class="star-name">
-                    <h5 class="hotel-name p-4 pb-0"> Room With Breakfast</h5>
-                    <div class="breakfast p-4">
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                        <p><i class="bi bi-check2-circle"></i>Breakfast</p>
-                        <p><i class="bi bi-check2-circle"></i>Parking</p>
-                        <p><i class="bi bi-check2-circle"></i>Free Cancelletion</p>
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                    </div>
-                </div>
+  <!-- <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button> -->
+  <h3 class="m-3 text-center">Available Rooms in {{ hotel.name }}</h3>
 
-                <!-- <p class="location mb-2">H</p>
-            <p class="location mb-2"><i class="bi bi-geo-alt-fill"></i></p>
-            <div class="d-flex m-0">
-                <p id="rate">6 </p>
-                <p>Ratings</p>
-            </div> -->
-            </div>
-            <div class="price d-flex flex-column align-items-end p-4">
-                <div class="bank-offer p-1">
-                    <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>500 off</p>
-                    <hr />
-                    <p class="pt-1">678</p>
-                </div>
-                <div>
-                    <h3><i class="bi bi-currency-rupee"></i>4000</h3>
-                    <p>+ Taxes & Fees</p>
-                    <p>Per Night</p>
-                </div>
-                <div class="cancel-before">
-                    <p>Before : 04-Jan-2025 00:00:00 INR0 (Free Cancellation) </p>
-                    <p>0%</p>
-                    <p>From : 04-Jan-2025 00:00:00 INR 100%</p>
-                </div>
-            </div>
-        </div>
-      
-        <div class="card-list">
-            <a class="card-item2 p-4">
-                <h5 class=" pb-2">2 Bedroom Deluxe</h5>
-                <img
-                    src="https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-            </a>
-            <div class="h-name">
-                <div class="star-name">
-                    <h5 class="hotel-name p-4 pb-0"> Room With Breakfast</h5>
-                    <div class="breakfast p-4">
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                        <p><i class="bi bi-check2-circle"></i>Breakfast</p>
-                        <p><i class="bi bi-check2-circle"></i>Parking</p>
-                        <p><i class="bi bi-check2-circle"></i>Free Cancelletion</p>
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                        <p><i class="bi bi-check2-circle"></i>Free WiFi</p>
-                    </div>
-                </div>
-
-                <!-- <p class="location mb-2">H</p>
-            <p class="location mb-2"><i class="bi bi-geo-alt-fill"></i></p>
-            <div class="d-flex m-0">
-                <p id="rate">6 </p>
-                <p>Ratings</p>
-            </div> -->
-            </div>
-            <div class="price d-flex flex-column align-items-end p-4">
-                <div class="bank-offer p-1">
-                    <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>500 off</p>
-                    <hr />
-                    <p class="pt-1">678</p>
-                </div>
-                <div>
-                    <h3><i class="bi bi-currency-rupee"></i>4000</h3>
-                    <p>+ Taxes & Fees</p>
-                    <p>Per Night</p>
-                </div>
-                <div class="cancel-before">
-                    <p>Before : 04-Jan-2025 00:00:00 INR0 (Free Cancellation) </p>
-                    <p>0%</p>
-                    <p>From : 04-Jan-2025 00:00:00 INR 100%</p>
-                </div>
-            </div>
-        </div>
-      
+  <div class="main">
+    <div class="headline d-flex pt-3">
+      <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Room Type</h4>
+      <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Benefits</h4>
+      <h4 class="text-center p-4 pt-1 pb-2" style="width: 40%;">Per Night Price</h4>
     </div>
 
+    <div class="card-list" *ngFor="let room of rooms">
+      <div class="card-item2 p-4">
+        <h5 class="pb-2">{{ room.type }}</h5>
+        <img [src]="room.images[0]" alt="{{ room.type }} Image">
+      </div>
 
+      <div class="h-name">
+        <div class="star-name">
+          <h5 class="hotel-name p-4 pb-0">{{ room.description }}</h5>
+          <div class="breakfast p-4">
+            <p *ngFor="let benefit of room.benefits">
+              <i class="bi bi-check2-circle"></i>{{ benefit }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="price d-flex flex-column align-items-end p-4">
+        <div class="bank-offer p-1">
+          <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>500 off</p>
+          <hr />
+          <p class="pt-1">{{ room.pricePerNight - 500 }}</p>
+        </div>
+        <div>
+          <h3><i class="bi bi-currency-rupee"></i>{{ room.pricePerNight }}</h3>
+          <p>+ Taxes & Fees</p>
+          <p>Per Night</p>
+        </div>
+        <!-- <div class="cancel-before">
+          <p>Before : {{ hotel.checkin }} INR0 (Free Cancellation) </p>
+          <p>0%</p>
+          <p>From : {{ hotel.checkout }} INR 100%</p>
+        </div> -->
+
+        <!-- Book Now Button -->
+        <button class="btn btn-primary" (click)="goToPage(hotel.id, room.roomId)">Book Now</button>
+        
+      </div>
+    </div>
+  </div>
 </div>
+
 
 
 <!-- <div  class="no-hotels">

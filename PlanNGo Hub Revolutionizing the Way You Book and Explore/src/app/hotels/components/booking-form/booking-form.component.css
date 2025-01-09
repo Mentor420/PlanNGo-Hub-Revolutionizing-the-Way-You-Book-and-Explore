@@ -1,12 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+}
 
-/* Back button styling */
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body and Container Styles */
+body {
+  background-color: #EDEADE;
+  color: hsl(var(--foreground));
+  margin-top: 60px;
+}
+
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Back Button Styles */
 .back-button {
   position: relative;
-  /* Place the back button in the top-left */
-  /* top: 20px;
-  left: 20px; */
   padding: 0.7rem 1.5rem;
   margin-left: 60px;
   margin-bottom: 20px;
@@ -21,7 +83,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  /* z-index: 100; */
 }
 
 .back-button:hover {
@@ -35,150 +96,168 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+.flex.items-center.justify-between {
+  margin-top: 16px;
 }
-.body {
-  margin-top: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background-color: #EDEADE;
 
-}
-.container {
-  position: relative;
-  max-width: 700px;
-  width: 100%;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
+/* Card Styles */
+.card {
+  background-color: hsl(var(--card));
+  border-radius: var(--radius);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-
+  margin-top: 70px;
 }
 
-.close i{
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Close Button Styles */
+.close i {
   font-weight: 700;
   padding: 0 8px;
-  
+  cursor: pointer;
 }
 
-.close:hover i{
-  cursor: pointer;
+.close:hover i {
   color: #fff;
   background-color: red;
-
 }
 
-.container header {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
-}
+/* Layout Utilities */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-#p {
-  font-size: smaller;
+/* Spacing Utilities */
+.space-y-1 > * + * { margin-top: 0.25rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
 
-}
+/* Typography */
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.text-muted-foreground { color: hsl(var(--muted-foreground)); }
 
-.container .form {
-  margin-top: 30px;
-}
-.form .input-box {
+/* Form Elements */
+input, select, textarea {
   width: 100%;
-  margin-top: 20px;
-}
-.input-box label {
-  color: #333;
-}
-.form :where(.input-box input, .select-box) {
-  position: relative;
   height: 50px;
-  width: 100%;
   outline: none;
   font-size: 1rem;
   color: #707070;
   margin-top: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
   padding: 0 15px;
+  background-color: transparent;
 }
-.input-box input:focus {
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
-.form .column {
-  display: flex;
-  column-gap: 15px;
-}
-.form .gender-box {
-  margin-top: 20px;
-}
-.gender-box h3 {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-.form :where(.gender-option, .gender) {
-  display: flex;
+
+/* Button Styles */
+button {
+  display: inline-flex;
   align-items: center;
-  column-gap: 50px;
-  flex-wrap: wrap;
-}
-.form .gender {
-  column-gap: 5px;
-}
-.gender input {
-  accent-color: rgb(130, 106, 251);
-}
-.form :where(.gender input, .gender label) {
-  cursor: pointer;
-}
-.gender label {
-  color: #707070;
-}
-.address :where(input, .select-box) {
-  margin-top: 15px;
-}
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
-  background-color: #fff;
-  font-size: 1rem;
-  padding-left: 2px;
-}
-
-
-.form button {
+  justify-content: center;
   height: 55px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 30px;
-  border: none;
-  cursor: pointer;
+  border-radius: var(--radius);
+  font-weight: 500;
   transition: all 0.2s ease;
-  background: rgb(130, 106, 251);
 }
-.form button:hover {
-  background: rgb(88, 56, 250);
+
+.btn-primary {
+  background-color: rgb(130, 106, 251);
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 30px;
 }
-/*Responsive*/
-@media screen and (max-width: 500px) {
+
+.btn-primary:hover {
+  background-color: rgb(88, 56, 250);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid hsl(var(--input));
+  color: hsl(var(--foreground));
+}
+
+.btn-outline:hover {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* Additional Utilities */
+.w-full { width: 100%; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.p-4 { padding: 1rem; }
+.rounded-md { border-radius: 0.375rem; }
+
+/* Star Rating */
+.text-primary {
+  color: #FFD700;
+}
+
+/* Background Colors */
+.bg-muted {
+  background-color: hsl(var(--muted));
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background-color: hsl(var(--border));
+  margin: 1.5rem 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .sm\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
   .form .column {
     flex-wrap: wrap;
   }
+  
   .form :where(.gender-option, .gender) {
     row-gap: 15px;
   }
