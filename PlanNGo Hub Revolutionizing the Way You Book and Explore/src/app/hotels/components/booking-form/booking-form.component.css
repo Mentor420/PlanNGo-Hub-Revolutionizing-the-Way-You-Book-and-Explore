@@ -102,7 +102,7 @@ body {
 
 /* Card Styles */
 .card {
-  background-color: hsl(var(--card));
+  /* background-color: hsl(var(--card)); */
   border-radius: var(--radius);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-top: 70px;
@@ -111,6 +111,7 @@ body {
 .card-header {
   padding: 1.5rem;
   border-bottom: 1px solid hsl(var(--border));
+  background-color: #fff;
 }
 
 .card-title {
@@ -230,7 +231,12 @@ button {
 
 /* Background Colors */
 .bg-muted {
-  background-color: hsl(var(--muted));
+  /* background-color: hsl(var(--muted)); */
+  background-color: #f5f5f5;
+  border: 1px solid #b8b8b8;
+  padding: 5px;
+  font-size: small;
+  top: 2px;
 }
 
 /* Separator */
@@ -261,4 +267,101 @@ button {
   .form :where(.gender-option, .gender) {
     row-gap: 15px;
   }
+}
+
+/* Grid container for Guest Details */
+.guest-details {
+  background-color: #ffffff; /* Adjust as needed */
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.guest-details .grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .guest-details .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+input {
+  background-color: #f5f5f5;
+  border: 1px solid #b8b8b8;
+  height: 2.5rem;
+  padding-left: 0.75rem;
+  border-radius: var(--radius);
+}
+
+input:focus {
+  border-color: hsl(var(--primary));
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--primary-foreground));
+}
+
+/* Price Details Styling */
+.price-details {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+/* Coupon Section */
+.coupon-section input {
+  background-color: #f8f8f8;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+.coupon-section input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px #ddd6fe;
+}
+
+.coupon-section .btn-outline {
+  background-color: transparent;
+  border: 1px solid #7c3aed;
+  color: #7c3aed;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.coupon-section .btn-outline:hover {
+  background-color: #ede9fe;
+}
+
+/* Submit Button Styling */
+.btn-primary {
+  background-color: #7c3aed;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #6d28d9;
+}
+input#idProof {
+  padding: 5px;
 }

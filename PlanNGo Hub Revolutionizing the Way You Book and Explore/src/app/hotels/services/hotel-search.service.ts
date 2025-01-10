@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
+import { Observable, switchMap, map } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -24,7 +23,81 @@ export class HotelSearchService {
   submitRating(hotelId: string, rating: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/${hotelId}/rate`, { rating });
   }
-  
+
+  //Save booking in db
+  saveBooking(hotelId: string, bookingData: any): Observable<any> {
+    // First, get the hotel
+    return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
+      switchMap((hotel: any) => {
+        // Add the new booking to the hotel's bookings array
+        if (!hotel.bookings) {
+          hotel.bookings = [];
+        }
+        hotel.bookings.push({
+          id: `b00${hotel.bookings.length + 1}`.padStart(3, '0'), // Generate a new booking ID
+          ...bookingData
+        });
+        
+        // Update the entire hotel object
+        return this.http.put(`${this.apiUrl}/${hotelId}`, hotel);
+      })
+    );
+  }
+
+  // Get all bookings for a user across all hotels
+  getUserBookings(userId: string): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((hotels: any[]) => {
+        // Iterate through each hotel and collect bookings for the given userId
+        const userBookings = hotels
+          .filter(hotel => hotel.bookings && hotel.bookings.length > 0)
+          .flatMap(hotel =>
+            hotel.bookings.filter((booking: any) => booking.userId === userId)
+          );
+
+        return userBookings;
+      })
+    );
+  }
+
+  // Cancel a booking using only bookingId
+  cancelBooking(bookingId: string): Observable<any> {
+    // Fetch all hotels
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      switchMap((hotels: any[]) => {
+        // Find the hotel containing the booking with the given bookingId
+        const hotel = hotels.find((hotel: any) =>
+          hotel.bookings && hotel.bookings.some((booking: any) => booking.id === bookingId)
+        );
+
+        if (!hotel) {
+          throw new Error('Booking not found in any hotel');
+        }
+
+        // Find the specific booking and update its status to 'canceled'
+        const booking = hotel.bookings.find((booking: any) => booking.id === bookingId);
+        if (booking) {
+          booking.status = 'Canceled'; // Update the status
+        }
+
+        // // Remove the booking from the hotel's bookings array
+        // hotel.bookings = hotel.bookings.filter((booking: any) => booking.id !== bookingId);
+
+        // Update the hotel with the modified bookings array
+        return this.http.put(`${this.apiUrl}/${hotel.id}`, hotel);
+      })
+    );
+  }
+
+
+  // Get booking history for a user
+  // getBookingHistory(hotelId: string, userId: string): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
+  //     map((hotel: any) => hotel.bookings.filter((booking: any) => booking.userId === userId))
+  //   );
+  // }
+
+
   // Method to fetch hotels based on search criteria
   searchHotels(
     city: string,           

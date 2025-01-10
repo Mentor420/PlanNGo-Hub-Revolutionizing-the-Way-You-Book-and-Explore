@@ -7,6 +7,7 @@ import { ContactComponent } from './hotels/components/contact/contact.component'
 import { LocationComponent } from './hotels/components/location/location.component';
 import { BookingFormComponent } from './hotels/components/booking-form/booking-form.component';
 import { HotelRoomComponent } from './hotels/components/hotel-room/hotel-room.component';
+import { BookingHistoryComponent } from './hotels/components/booking-history/booking-history.component';
 
 
 export const routes: Route[] = [
@@ -23,4 +24,5 @@ export const routes: Route[] = [
         component: HotelRoomComponent, },
     ]
   },
+  { path: 'booking-history', component: BookingHistoryComponent },
 ];

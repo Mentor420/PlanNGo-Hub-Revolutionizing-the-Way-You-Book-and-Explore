@@ -1,0 +1,30 @@
+<div *ngIf="bookingHistory.length > 0; else noBookings">
+  <h2>Your Booking History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Hotel</th>
+        <th>Room</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookingHistory">
+        <td>{{ booking.hotelId }}</td>
+        <td>{{ booking.roomId }}</td>
+        <td>{{ booking.checkInDate }}</td>
+        <td>{{ booking.checkOutDate }}</td>
+        <td>{{ booking.status }}</td>
+        <td>
+          <button *ngIf="booking.status === 'Booked'" (click)="onCancelBooking(booking.id)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noBookings>
+  <p>No bookings found.</p>
+</ng-template>

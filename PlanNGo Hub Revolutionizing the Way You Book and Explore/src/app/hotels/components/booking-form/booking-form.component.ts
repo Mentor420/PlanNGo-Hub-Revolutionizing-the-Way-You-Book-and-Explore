@@ -22,14 +22,14 @@ export class BookingFormComponent implements OnInit {
 
   bookingForm!: FormGroup;
   taxRate = 240;
-  
+
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private hotelSearchService: HotelSearchService,
     private ratingService: RatingService,
     private location: Location,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -57,7 +57,7 @@ export class BookingFormComponent implements OnInit {
       couponCode: [''],
     });
   }
-  
+
   mergeAmenities(): void {
     if (this.roomDetails && this.hotel.amenities) {
       // Combine room benefits and hotel amenities into a single list
@@ -65,17 +65,17 @@ export class BookingFormComponent implements OnInit {
         name: benefit,
         type: 'Room Benefit',
       }));
-  
+
       const hotelAmenities = this.hotel.amenities.map((amenity: any) => ({
         name: amenity.name,
         description: amenity.description,
         type: 'Hotel Amenity',
       }));
-  
+
       this.TotalAmenities = [...roomBenefits, ...hotelAmenities];
     }
   }
-  
+
 
   get total(): number {
     return this.roomDetails.pricePerNight + this.taxRate;
@@ -88,7 +88,54 @@ export class BookingFormComponent implements OnInit {
   onSubmit(): void {
     if (this.bookingForm.valid) {
       console.log(this.bookingForm.value);
+      const bookingData = {
+        userId: 'u001', // Replace with the actual user ID
+        hotelId: this.hotel.id,
+        roomId: this.roomDetails.roomId,
+        ...this.bookingForm.value,
+        checkInDate: new Date().toISOString().split('T')[0], // Add check-in date
+        checkOutDate: new Date(new Date().getTime() + 86400000).toISOString().split('T')[0], // Add check-out date (next day)
+        roomBooked: 3, //Replace and Add number of rooms booked
+        price: this.total,
+        status: 'Booked',
+      };
+
+      // Simulate an API call to save booking
+      this.hotelSearchService.saveBooking(this.hotel.id, bookingData).subscribe(
+        (response) => {
+          console.log('Booking successful:', response);
+          alert('Booking successful!');
+        },
+        (error) => {
+          console.error('Error saving booking:', error);
+          alert('Failed to book. Please try again.');
+        }
+      );
+    } else {
+      console.log('Form Validation Status:', this.bookingForm.status);
+      console.log('Full Name Valid:', this.bookingForm.get('fullName')?.valid);
+      console.log('Email Valid:', this.bookingForm.get('email')?.valid);
+      console.log('Mobile Valid:', this.bookingForm.get('mobile')?.valid);
+      console.log('ID Proof Valid:', this.bookingForm.get('idProof')?.valid);
+      console.log('Errors:', this.bookingForm.errors);
+
+      console.log('Form is invalid:', this.bookingForm.errors);
     }
+  }
+
+
+  onCancelBooking(bookingId: string): void {
+    // Simulate an API call to cancel booking
+    this.hotelSearchService.cancelBooking(bookingId).subscribe(
+      (response) => {
+        console.log('Booking canceled:', response);
+        alert('Booking canceled successfully!');
+      },
+      (error) => {
+        console.error('Error canceling booking:', error);
+        alert('Failed to cancel booking. Please try again.');
+      }
+    );
   }
 
   applyCoupon(): void {

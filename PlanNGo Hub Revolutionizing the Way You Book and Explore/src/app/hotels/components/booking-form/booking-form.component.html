@@ -16,7 +16,7 @@
               <span *ngFor="let star of getStars(hotel.rating).halfStars" class="text-primary">☆</span>
               <!-- Empty stars -->
               <span *ngFor="let star of getStars(hotel.rating).emptyStars" class="text-muted">☆</span>
-            </div>            
+            </div>
             <p class="text-muted-foreground mt-2">{{hotel.description}}</p>
           </div>
           <div class="text-right">
@@ -34,7 +34,7 @@
           <div class="bg-muted p-4 rounded-md">
             <p>{{ roomDetails?.description }}</p>
           </div>
-          
+
           <div>
             <h4 class="font-medium mb-2">Amenities</h4>
             <ul class="grid grid-cols-2 gap-2 text-sm" *ngIf="TotalAmenities.length > 0">
@@ -50,44 +50,24 @@
 
         <!-- Guest Details -->
         <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="space-y-6">
-          <div class="space-y-4">
+          <div class="guest-details space-y-4">
             <h3 class="text-lg font-semibold">Guest Details</h3>
-            <div class="grid gap-4 sm:grid-cols-2">
+            <div class="grid gap-6 md:grid-cols-2">
               <div class="space-y-2">
                 <label for="fullName" class="text-sm font-medium">Full Name</label>
-                <input
-                  id="fullName"
-                  type="text"
-                  formControlName="fullName"
-                  placeholder="Enter your full name"
-                />
+                <input id="fullName" type="text" formControlName="fullName" placeholder="Enter your full name" />
               </div>
               <div class="space-y-2">
                 <label for="email" class="text-sm font-medium">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  formControlName="email"
-                  placeholder="Enter your email"
-                />
+                <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
               </div>
               <div class="space-y-2">
                 <label for="mobile" class="text-sm font-medium">Mobile</label>
-                <input
-                  id="mobile"
-                  type="tel"
-                  formControlName="mobile"
-                  placeholder="Enter your mobile number"
-                />
+                <input id="mobile" type="tel" formControlName="mobile" placeholder="Enter your mobile number" />
               </div>
               <div class="space-y-2">
                 <label for="idProof" class="text-sm font-medium">ID Proof</label>
-                <input
-                  id="idProof"
-                  type="text"
-                  formControlName="idProof"
-                  placeholder="Enter your ID number"
-                />
+                <input id="idProof" type="file" formControlName="idProof" placeholder="Enter your ID number" />
               </div>
             </div>
           </div>
@@ -95,7 +75,7 @@
           <div class="separator"></div>
 
           <!-- Price Details -->
-          <div class="space-y-4">
+          <div class="price-details space-y-4 p-4 bg-white rounded-md shadow-sm">
             <h3 class="text-lg font-semibold">Price Details</h3>
             <div class="space-y-2">
               <div class="flex justify-between">
@@ -104,31 +84,32 @@
               </div>
               <div class="flex justify-between">
                 <span>Taxes</span>
-                <span>₹{{taxRate}}</span>
+                <span>₹{{ taxRate }}</span>
               </div>
-              <div class="separator"></div>
+              <hr class="my-2 border-gray-300">
               <div class="flex justify-between font-semibold">
                 <span>Total</span>
-                <span>₹{{total}}</span>
+                <span>₹{{ total }}</span>
               </div>
             </div>
           </div>
 
           <!-- Coupon Code -->
-          <div class="flex gap-2">
-            <input
-              formControlName="couponCode"
-              placeholder="Enter coupon code"
-            />
-            <button type="button" (click)="applyCoupon()" class="btn-outline">
+          <div class="coupon-section flex items-center gap-2 mt-4">
+            <input formControlName="couponCode" placeholder="Enter coupon code"
+              class="w-full border border-gray-300 rounded-md px-3 py-2" />
+            <button type="button" (click)="applyCoupon()"
+              class="btn-outline px-4 py-2 rounded-md text-purple-600 border border-purple-600 hover:bg-purple-100">
               Apply
             </button>
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn-primary w-full">
+          <button type="submit"
+            class="btn-primary w-full mt-4 bg-purple-500 text-white py-3 rounded-md hover:bg-purple-600">
             Pay Now
           </button>
+
         </form>
       </div>
     </div>
