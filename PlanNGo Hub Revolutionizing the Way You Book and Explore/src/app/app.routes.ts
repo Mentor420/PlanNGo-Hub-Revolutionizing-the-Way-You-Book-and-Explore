@@ -7,6 +7,7 @@ import { ContactComponent } from './hotels/components/contact/contact.component'
 import { LocationComponent } from './hotels/components/location/location.component';
 import { BookingFormComponent } from './hotels/components/booking-form/booking-form.component';
 import { HotelRoomComponent } from './hotels/components/hotel-room/hotel-room.component';
+import { BookingHistoryComponent } from './hotels/components/booking-history/booking-history.component';
 
 
 export const routes: Route[] = [
@@ -14,9 +15,14 @@ export const routes: Route[] = [
   { path: 'search-results', component: SearchResultsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page', component: PageComponent }, 
   { path: 'location', component: LocationComponent }, 
-  { path: 'booking-form', component: BookingFormComponent},
-  { path: 'hotel-room', component: HotelRoomComponent},
-
+  { path: 'room/:roomId/booking-form', component: BookingFormComponent },
+  {
+    path: 'page', component: PageComponent,
+    children: [
+      { path: 'hotel-room/:hotelId', 
+        component: HotelRoomComponent, },
+    ]
+  },
+  { path: 'booking-history', component: BookingHistoryComponent },
 ];

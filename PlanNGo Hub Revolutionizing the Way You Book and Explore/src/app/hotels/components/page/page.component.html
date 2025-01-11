@@ -49,7 +49,9 @@
                         <span class="card-text fs-6 fw-lighter">/Per Night (Starting Price)</span>
                     </div>
                     <div class="share-book mt-4">
-                        <button class="book" (click)="goToPage()">Select Rooms</button>
+                        <a [routerLink]="['/page/hotel-room', hotelDetails?.id]" [queryParams]="{ hotelId: hotelDetails?.id }" id="book-button">
+                            <button class="book">Select Rooms</button>
+                        </a>
                         <div class="mainbox">
                             <input type="checkbox" id="check">
                             <label for="check" class="share2">Share</label>
@@ -102,8 +104,11 @@
         </div>
     </div>
 
-    <!-- Display Rooms -->
-    <app-hotel-room></app-hotel-room>
+    <!-- Dynamic Child Content (Booking Form, etc.) -->
+    <div id="hotel-room-section">
+        <router-outlet></router-outlet>
+    </div>
+    
 
 
     <!-- Display Amenities -->
