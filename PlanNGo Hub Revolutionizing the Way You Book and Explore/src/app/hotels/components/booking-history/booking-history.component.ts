@@ -17,6 +17,7 @@ export class BookingHistoryComponent implements OnInit {
   popupTitle = '';
   popupMessage = '';
   isPopupVisible = false;
+  isConfirmVisible = true;
   confirmCallback: (() => void) | null = null;
 
   constructor(private hotelSearchService: HotelSearchService, private location: Location) { }
@@ -73,15 +74,18 @@ export class BookingHistoryComponent implements OnInit {
 
   onCancelBooking(bookingId: string): void {
     // Show confirmation popup for cancellation
+    this.isConfirmVisible = true;
     this.showPopup('Are you sure you want to cancel this booking?', 'warning', () => {
       // Callback for confirming the cancellation
       this.hotelSearchService.cancelBooking(bookingId).subscribe(
         () => {
           this.loadBookingHistory();
-          this.showPopup('Booking canceled successfully.', 'success');
+          this.isConfirmVisible = false;
+          this.showPopup('Booking cancelled successfully.', 'success');
         },
         (error) => {
           console.error('Error canceling booking:', error);
+          this.isConfirmVisible = false;
           this.showPopup('Error canceling booking. Please try again.', 'error');
         }
       );
@@ -99,9 +103,12 @@ export class BookingHistoryComponent implements OnInit {
   
   closePopup(): void {
     this.isPopupVisible = false;
-    // If a confirm callback was set and the popup is being closed, call it
+  }
+
+  confirmAction(): void {
     if (this.confirmCallback) {
       this.confirmCallback();
+      this.closePopup();
       this.confirmCallback = null; // Reset the callback after execution
     }
   }

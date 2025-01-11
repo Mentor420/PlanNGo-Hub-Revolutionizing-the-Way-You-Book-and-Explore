@@ -292,6 +292,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+    margin-right: 12px;
   }
   
   .close-popup-button:hover {

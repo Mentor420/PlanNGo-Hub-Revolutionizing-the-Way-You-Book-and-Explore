@@ -102,6 +102,7 @@ export class BookingFormComponent implements OnInit {
         ...this.bookingForm.value,
         checkInDate: new Date().toISOString().split('T')[0], // Add check-in date
         checkOutDate: new Date(new Date().getTime() + 86400000).toISOString().split('T')[0], // Add check-out date (next day)
+        bookingDate: new Date().toISOString().split('T')[0], // Add booking date
         roomBooked: 3, //Replace and Add number of rooms booked
         price: this.total,
         status: 'Booked',

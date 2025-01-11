@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, switchMap, map } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 @Injectable({
   providedIn: 'root',
 })
@@ -24,9 +25,8 @@ export class HotelSearchService {
     return this.http.post(`${this.apiUrl}/${hotelId}/rate`, { rating });
   }
 
-  //Save booking in db
+  // Save booking function using UUid
   saveBooking(hotelId: string, bookingData: any): Observable<any> {
-    // First, get the hotel
     return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
       switchMap((hotel: any) => {
         // Initialize bookings array if it doesn't exist
@@ -34,19 +34,8 @@ export class HotelSearchService {
           hotel.bookings = [];
         }
   
-        // Ensure we process only valid bookings
-        const validBookings = hotel.bookings.filter((booking: any) => booking && booking.id);
-  
-        // Find the highest current booking ID or start with 'b001' if no bookings exist
-        const highestId = validBookings.length > 0
-          ? validBookings.reduce((maxId: number, booking: any) => {
-              const numericId = parseInt(booking.id.replace('b', ''), 10); // Extract numeric part of the ID
-              return Math.max(maxId, numericId);
-            }, 0)
-          : 0;
-  
-        // Generate a new booking ID
-        const newBookingId = `b${(highestId + 1).toString().padStart(3, '0')}`;
+        // Generate a UUID for the new booking
+        const newBookingId = uuidv4();
   
         // Add the new booking to the bookings array
         hotel.bookings.push({
@@ -59,6 +48,42 @@ export class HotelSearchService {
       })
     );
   }
+
+  //Save booking function adding hotelId too
+  // saveBooking(hotelId: string, bookingData: any): Observable<any> {
+  //   // First, get the hotel
+  //   return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
+  //     switchMap((hotel: any) => {
+  //       // Initialize bookings array if it doesn't exist
+  //       if (!hotel.bookings) {
+  //         hotel.bookings = [];
+  //       }
+  
+  //       // Ensure we process only valid bookings
+  //       const validBookings = hotel.bookings.filter((booking: any) => booking && booking.id);
+  
+  //       // Find the highest current booking ID or start with 'b001' if no bookings exist
+  //       const highestId = validBookings.length > 0
+  //         ? validBookings.reduce((maxId: number, booking: any) => {
+  //             const numericId = parseInt(booking.id.split('-')[1].replace('b', ''), 10); // Extract numeric part of the ID
+  //             return Math.max(maxId, numericId);
+  //           }, 0)
+  //         : 0;
+  
+  //       // Generate a new booking ID
+  //       const newBookingId = `${hotelId}-b${(highestId + 1).toString().padStart(3, '0')}`;
+  
+  //       // Add the new booking to the bookings array
+  //       hotel.bookings.push({
+  //         id: newBookingId,
+  //         ...bookingData,
+  //       });
+  
+  //       // Update the entire hotel object
+  //       return this.http.put(`${this.apiUrl}/${hotelId}`, hotel);
+  //     })
+  //   );
+  // }
   
 
   // Get all bookings for a user across all hotels

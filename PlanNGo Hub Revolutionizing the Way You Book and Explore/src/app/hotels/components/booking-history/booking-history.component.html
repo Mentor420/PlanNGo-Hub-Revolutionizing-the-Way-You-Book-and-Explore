@@ -55,7 +55,7 @@
           <!-- <p>{{ popupMessage }}</p> -->
           <button (click)="closePopup()" class="close-popup-button">Close</button>
           <p *ngIf="popupMessage === 'Are you sure you want to cancel this booking?'"> </p>
-          <button (click)="closePopup()" class="confirm-popup-button">Confirm</button>
+          <button *ngIf="isConfirmVisible" (click)="confirmAction()" class="confirm-popup-button">Confirm</button>
         </div>
       </div>
       
