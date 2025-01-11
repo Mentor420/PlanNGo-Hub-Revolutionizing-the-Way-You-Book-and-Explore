@@ -7,7 +7,7 @@ import { Observable, switchMap, map } from 'rxjs';
 export class HotelSearchService {
   private apiUrl = 'http://localhost:3000/hotels'; // Mock JSON API URL
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Fetch all hotels
   getHotels(): Observable<any> {
@@ -29,30 +29,37 @@ export class HotelSearchService {
     // First, get the hotel
     return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
       switchMap((hotel: any) => {
-        // Add the new booking to the hotel's bookings array
+        // Initialize bookings array if it doesn't exist
         if (!hotel.bookings) {
           hotel.bookings = [];
         }
-        // Find the highest current booking ID
-        const highestId = hotel.bookings.reduce((maxId: number, booking: any) => {
-          const numericId = parseInt(booking.id.replace('b', ''), 10); // Extract numeric part of the ID
-          return Math.max(maxId, numericId);
-        }, 0);
-
+  
+        // Ensure we process only valid bookings
+        const validBookings = hotel.bookings.filter((booking: any) => booking && booking.id);
+  
+        // Find the highest current booking ID or start with 'b001' if no bookings exist
+        const highestId = validBookings.length > 0
+          ? validBookings.reduce((maxId: number, booking: any) => {
+              const numericId = parseInt(booking.id.replace('b', ''), 10); // Extract numeric part of the ID
+              return Math.max(maxId, numericId);
+            }, 0)
+          : 0;
+  
         // Generate a new booking ID
         const newBookingId = `b${(highestId + 1).toString().padStart(3, '0')}`;
-
+  
         // Add the new booking to the bookings array
         hotel.bookings.push({
           id: newBookingId,
           ...bookingData,
         });
-        
+  
         // Update the entire hotel object
         return this.http.put(`${this.apiUrl}/${hotelId}`, hotel);
       })
     );
   }
+  
 
   // Get all bookings for a user across all hotels
   getUserBookings(userId: string): Observable<any[]> {
@@ -87,7 +94,7 @@ export class HotelSearchService {
         // Find the specific booking and update its status to 'canceled'
         const booking = hotel.bookings.find((booking: any) => booking.id === bookingId);
         if (booking) {
-          booking.status = 'Canceled'; // Update the status
+          booking.status = 'Cancelled'; // Update the status
         }
 
         // // Remove the booking from the hotel's bookings array
@@ -110,7 +117,7 @@ export class HotelSearchService {
 
   // Method to fetch hotels based on search criteria
   searchHotels(
-    city: string,           
+    city: string,
     checkInDate?: string,
     checkOutDate?: string,
     rooms?: number,

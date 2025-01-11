@@ -131,6 +131,11 @@ export class BookingFormComponent implements OnInit {
         },
         (error) => {
           console.error('Error saving booking:', error);
+          console.log('Form Validation Status:', this.bookingForm.status);
+      console.log('Full Name Valid:', this.bookingForm.get('fullName')?.valid);
+      console.log('Email Valid:', this.bookingForm.get('email')?.valid);
+      console.log('Mobile Valid:', this.bookingForm.get('mobile')?.valid);
+      console.log('ID Proof Valid:', this.bookingForm.get('idProof')?.valid);
 
           // Show error popup
           this.showPopup('Booking Failed! Please try again later.', 'error');

@@ -1,3 +1,315 @@
-div {
-    margin-top: 90px;
-}
+.back-button2 {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: blueviolet;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  background: #fff;
+  padding: 0.7rem 1.5rem;
+  margin-left: -20%;
+  margin-bottom: 20px;
+  margin-top: -11px;
+  position: absolute;
+ }
+ 
+ .back-button2 i {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+ }
+ 
+.back-button2:hover i {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+ }
+ 
+.back-button2:hover {
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+  transform: translateY(-2px);
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+ }
+
+.booking-history {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    margin-top: 97px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .booking-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .booking-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+  }
+  
+  .booking-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .status {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .status.booked {
+    background-color: #e6f7ff;
+    color: #0066cc;
+  }
+  
+  .status.completed {
+    background-color: #e6ffe6;
+    color: #008000;
+  }
+  
+  .status.cancelled {
+    background-color: #ffe6e6;
+    color: #cc0000;
+  }
+  
+  .booking-details {
+    padding: 1rem;
+    display: flex;
+    gap: 13px;
+  }
+  .details{
+    padding-left: 5px;
+  }
+  
+  .booking-details p {
+    margin: 0.5rem 0;
+    color: #666;
+  }
+  
+  .booking-actions {
+    padding: 1rem;
+    text-align: right;
+  }
+  
+  .cancel-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #ff3333;
+  }
+  
+  .no-bookings {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .search-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .search-btn:hover {
+    background-color: #45a049;
+  }
+  
+  
+
+  .card-item2 {
+    background-color: #f9fafb; /* Light background */
+    overflow: hidden;
+    max-width: 30%;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e7eb; /* Subtle border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* For image to pop outside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    background-color: #f9fafb;
+    overflow: hidden;
+    flex: 1 1 calc(33% - 20px); /* Responsive cards: 3 per row, with spacing */
+    max-width: calc(33% - 20px); /* Prevent cards from getting too large */
+    margin: 10px; /* Space between the cards */
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-item2:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .card-item2 img {
+    width: 110%; /* Slightly larger than the card width */
+    height: 220px; /* Bigger height */
+    object-fit: cover;
+    border-radius: 12px; /* Keep rounded corners */
+    position: absolute; /* To overlap outside the card */
+    top: -30px; /* Pop the image out of the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Shadow for the popping effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  }
+  
+  .card-item2:hover img {
+    transform: translateX(-50%) scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* More shadow on hover */
+  }
+  
+  .card-item2 h5 {
+    font-size: 1.25rem; /* Bigger font size for emphasis */
+    font-weight: 600; /* Bold text */
+    color: #374151; /* Dark gray */
+    margin-top: 55%; /* Adjust for the popped-out image */
+    text-align: center; /* Center text */
+  }
+  
+  .card-item2 p {
+    font-size: 0.875rem; /* Smaller font for details */
+    color: #6b7280; /* Muted gray */
+    margin-top: 0.5rem; /* Spacing after heading */
+    text-align: center; /* Center text */
+  }
+
+  .popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .popup-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .close-popup-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .close-popup-button:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+  }
+  
+  .confirm-popup-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .confirm-popup-button:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+  }
+  

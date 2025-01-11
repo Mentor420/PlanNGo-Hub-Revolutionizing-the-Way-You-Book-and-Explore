@@ -1,30 +1,71 @@
-<div *ngIf="bookingHistory.length > 0; else noBookings">
+<div class="booking-history">
+  <button class="back-button2" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> Back
+  </button>
   <h2>Your Booking History</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Hotel</th>
-        <th>Room</th>
-        <th>Check-In</th>
-        <th>Check-Out</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let booking of bookingHistory">
-        <td>{{ booking.hotelId }}</td>
-        <td>{{ booking.roomId }}</td>
-        <td>{{ booking.checkInDate }}</td>
-        <td>{{ booking.checkOutDate }}</td>
-        <td>{{ booking.status }}</td>
-        <td>
-          <button *ngIf="booking.status === 'Booked'" (click)="onCancelBooking(booking.id)">Cancel</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+  <ng-container *ngIf="isLoading; else bookingContent">
+    <div class="loading">Loading your bookings...</div>
+  </ng-container>
+
+  <ng-template #bookingContent>
+    <ng-container *ngIf="bookingHistory.length > 0; else noBookings">
+      <div class="booking-list">
+        <div class="booking-card" *ngFor="let booking of bookingHistory">
+          <div class="booking-card-inner">
+
+            <!-- <div class="booking-image">
+              <img [src]="booking.hotelImage" alt="{{ booking.hotelName }}" />
+            </div> -->
+            <div class="booking-info">
+
+              <div class="booking-header">
+                <h3>{{ booking.hotelName }}</h3>
+                <span class="status {{ booking.status.toLowerCase() }}">
+                  {{ booking.status }}
+                </span>
+              </div>
+              <div class="booking-details">
+                <div class="card-item2 p-4">
+                  <img [src]="booking.hotelImage" alt="{{ booking.hotelName }} Image">
+                </div>
+                <div class="details">
+                  <p><strong>Room:</strong> {{ booking.roomDetails.type }}</p>
+                  <p><strong>Check-In:</strong> {{ booking.checkInDate | formatDate }}</p>
+                  <p><strong>Check-Out:</strong> {{ booking.checkOutDate | formatDate }}</p>
+                  <p><strong>Booking Date:</strong> {{ booking.bookingDate | formatDate }}</p>
+                  <p><strong>Rooms Booked:</strong> {{ booking.roomBooked }}</p>
+                  <p><strong>Price:</strong> {{ booking.price }}</p>
+                </div>
+
+              </div>
+              <div class="booking-actions" *ngIf="booking.status === 'Booked'">
+                <button class="cancel-btn" (click)="onCancelBooking(booking.id)">
+                  Cancel Booking
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="isPopupVisible" class="popup-container">
+        <div class="popup-content">
+          <h2>{{ popupTitle }}</h2>
+          <!-- <p>{{ popupMessage }}</p> -->
+          <button (click)="closePopup()" class="close-popup-button">Close</button>
+          <p *ngIf="popupMessage === 'Are you sure you want to cancel this booking?'"> </p>
+          <button (click)="closePopup()" class="confirm-popup-button">Confirm</button>
+        </div>
+      </div>
+      
+    </ng-container>
+  </ng-template>
+
+  <ng-template #noBookings>
+    <div class="no-bookings">
+      <p>You haven't made any bookings yet.</p>
+      <a href="/" class="search-btn">Find a Hotel</a>
+    </div>
+  </ng-template>
 </div>
-<ng-template #noBookings>
-  <p>No bookings found.</p>
-</ng-template>
