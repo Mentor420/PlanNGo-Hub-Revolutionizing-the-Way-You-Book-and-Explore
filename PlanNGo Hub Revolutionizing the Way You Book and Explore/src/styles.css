@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+         margin: 0;
+         padding: 0;
+         /* background-color: #f5f5f5;
+         overflow-x: hidden; */
+}

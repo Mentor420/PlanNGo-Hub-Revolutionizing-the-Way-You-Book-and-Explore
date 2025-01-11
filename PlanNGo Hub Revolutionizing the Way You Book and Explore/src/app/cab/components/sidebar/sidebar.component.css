@@ -1,0 +1,112 @@
+.sidebar {
+
+  
+  position: relative; /* Make the element a containing block for the pseudo-element */
+  min-height: 100vh;
+  height: 100%;
+  min-width: 160px;
+  width: 90%;
+  color: rgb(7, 8, 8);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  z-index: 1; /* Ensure text is above the background image */
+}
+
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://wallpapercave.com/wp/wp13508502.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Apply blur to the background image */
+  z-index: -1; /* Place the background image behind the content */
+}
+
+
+.sidebar .sidebar-comp {
+         text-align: center;
+         font-size: 10px;
+         font-weight: bold;
+         font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    color: aliceblue;
+    font-size: 10px;
+}
+
+.divider {
+         height: 1px;
+         background-color: rgb(8, 2, 31);
+         margin: 2px 0;
+}
+
+.nav-links {
+         list-style-type: none;
+         padding: 0;
+         margin: 5px;
+         flex-grow: 1;
+}
+
+.nav-links li {
+         display: flex;
+         align-items: center;
+         margin-bottom: 20px;
+         color: black;
+}
+
+.nav-links li img {
+         width: 22px;
+         height: 20px;
+}
+
+.nav-links a {
+         text-decoration: none;
+         font-size: 18px;
+         display: block;
+         padding: 10px 6px;
+         border-radius: 4px;
+         transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+         background-color: #4042b8;
+         color: #ffffff;
+}
+
+@media (max-width: 768px) {
+         .sidebar {
+                  width: 200px;
+         }
+
+         .nav-links a {
+                  font-size: 16px;
+         }
+}
+
+@media (max-width: 500px) {
+         .sidebar {
+                  width: 60px;
+                  padding: 10px;
+         }
+
+         .nav-links a {
+                  font-size: 14px;
+                  text-align: center;
+                  padding: 5px;
+         }
+
+         .logo h2 {
+                  font-size: 16px;
+         }
+}

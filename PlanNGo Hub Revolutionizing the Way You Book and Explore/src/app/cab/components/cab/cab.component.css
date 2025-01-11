@@ -1,0 +1,38 @@
+.cabcard-container {
+         margin: auto;
+         max-width: 100dvw;
+         background-color: #f9f9f9;
+         border: 1px solid #929191;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         display: flex;
+         gap: 2rem;
+         min-height: 100vh;
+}
+
+.cabcards-only {
+         display: flex;
+         margin: auto;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-evenly;
+         align-content: flex-start;
+         align-items: flex-start;
+         gap: 0.8rem;
+         padding: 1rem;
+}
+.no-results{
+         width: 100%;
+         min-width: 70dvw;
+         text-align: center;
+         padding: 2rem;
+         color: #4CAF50;
+         font-size: 1.2rem;
+         background: white;
+         border-radius: 10px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         animation: fadeIn 0.3s ease-in-out;
+}
+
+.searchimg{
+    background-image: url(https://img.freepik.com/free-vector/local-tourism-concept_23-2148606915.jpg?t=st=1735568019~exp=1735571619~hmac=c5527481b25e80b441ba0473e94ac310e526a014d42ec59a9d6cd4a235683fcf&w=740);
+}

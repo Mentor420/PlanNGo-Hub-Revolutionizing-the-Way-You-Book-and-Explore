@@ -1,0 +1,17 @@
+<div class="cancellation-container">
+  <h2>Cancel Booking</h2>
+
+  <div *ngIf="cancellationError" class="error-message">{{ cancellationError }}</div>
+  <div *ngIf="isCancelled" class="confirmation-message">Your booking has been cancelled.</div>
+
+  <div *ngIf="bookedCabs.length > 0; else noBookings" class="cab-list">
+    <app-cabcards 
+      *ngFor="let cab of bookedCabs" 
+      [cabCardDetails]="cab"> 
+    </app-cabcards>
+  </div>
+
+  <ng-template #noBookings>
+    <div class="no-bookings-message">You have no active bookings to cancel.</div>
+  </ng-template>
+</div>

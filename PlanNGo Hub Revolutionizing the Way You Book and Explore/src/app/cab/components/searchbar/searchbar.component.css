@@ -1,0 +1,183 @@
+.searchbar {
+  /* position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-49%); */
+
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: #80c0ff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 1rem auto;
+  width: 65rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-image: url(https://images.fastcompany.com/image/upload/f_webp,c_fit,w_1920,q_auto/fc/3038353-poster-p-1-how-vertical-cities-could-save-the-world.jpg); 
+}
+
+.searchbar:hover {
+box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.input-field,
+.select-field {
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  min-width: 120px;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  transform: all 0.4 ease-in-out;
+  background-image: url("data:image/svg+xml,...");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  color: #032142;
+  font-weight: 700;  
+}
+
+.input-field:focus,
+.select-field:focus {
+  border-color: #007bff;
+}
+.select-field:hover {
+border-color: #007bff;
+}
+
+.search-btn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  
+  margin-top: 10px;
+  font-size: 17px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  form {
+           flex-direction: column;
+           align-items: stretch;
+  }
+
+  .input-field,
+  .select-field,
+  .search-btn {
+           width: 100%;
+  }
+}
+.error-message {
+color: #dc3545;
+background-color: #f8d7da;
+border: 1px solid #f5c6cb;
+border-radius: 4px;
+padding: 10px;
+margin: 10px 0;
+width: 100%;
+text-align: center;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+animation: fadeIn 0.3s ease-in-out;
+}
+/* Animation setup */
+.search-btn {
+animation-duration: 0.3s;
+animation-timing-function: ease-out;
+}
+
+/* Click animation trigger */
+.search-btn.animate {
+animation-name: buttonClick;
+transform: scale(0.95);
+}
+
+/* Ripple effect setup */
+.search-btn::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 5px;
+height: 5px;
+background: rgba(255, 255, 255, 0.5);
+opacity: 0;
+border-radius: 100%;
+transform: scale(1, 1) translate(-50%);
+transform-origin: 50% 50%;
+}
+
+/* Ripple animation trigger */
+.search-btn.animate::after {
+animation: ripple 0.6s ease-out;
+}
+
+/* Hover effects */
+.search-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+background: #0056b3;
+}
+
+/* Animations */
+@keyframes buttonClick {
+0% {
+transform: scale(1);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+50% {
+transform: scale(0.95);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+100% {
+transform: scale(1);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+}
+
+@keyframes ripple {
+0% {
+transform: scale(0);
+opacity: 1;
+}
+20% {
+transform: scale(25);
+opacity: 0.8;
+}
+100% {
+opacity: 0;
+transform: scale(40);
+}
+}
+
+/* Icon styling */
+.search-btn i {
+margin-right: 0.5rem;
+}
