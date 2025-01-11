@@ -1,201 +1,376 @@
-
-  .hotel-container {
-    padding: 20px;
-    margin: 0 auto;
-    padding-top: 88px;
-  }
-  
-  .back-button2 {
-    display: flex;
-    height: 3em;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: #eeeeee4b;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    color: blueviolet;
-    border-bottom: 2px solid blueviolet;
-    border-right: 2px solid blueviolet;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    background: #fff;
-    padding: 0.7rem 1.5rem;
-    margin-left: 60px;
-    margin-bottom: 20px;
-    margin-top: 0px;
-   }
-   
-   .back-button2 i {
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 20px;
-    transition: all 0.4s ease-in;
-   }
-   
-  .back-button2:hover i {
-    font-size: 1.2em;
-    transform: translateX(-5px);
-   }
-   
-  .back-button2:hover {
-    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
-    transform: translateY(-2px);
-    border-top: 2px solid blueviolet;
-    border-left: 2px solid blueviolet;
-    border-bottom: 2px solid rgb(238, 103, 238);
-    border-right: 2px solid rgb(238, 103, 238);
-   }
-   
+.hotel-container {
+  padding: 20px;
+  margin: 0 auto;
+  padding-top: 88px;
+  /* width: 70%; */
+  /* max-width: 75%; */
+  padding: 20px;
+  margin: 0 auto;
+  padding-top: 88px;
+  /* width: 90%; */
+  /* max-width: 1200px;  */
+  box-sizing: border-box;
+} 
+.hotel-container h3 {
+  font-size: 1.8rem; /* Larger font size for prominence */
+  font-weight: 600; /* Semi-bold for better readability */
+  color: #2D3748; /* A dark gray color for professional look */
+  margin-bottom: 16px; /* Space below the heading */
+  text-align: center; /* Center the heading for better alignment */
+  letter-spacing: 0.5px; /* Slight spacing for elegance */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  line-height: 1.4; /* Improve spacing between lines if heading wraps */
+  padding-bottom: 8px; /* Space between text and underline */
+  border-radius: 8px; /* Slightly rounded corners */
+}
+.back-button2 {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: blueviolet;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  background: #fff;
+  padding: 0.7rem 1.5rem;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+ }
+ 
+ .back-button2 i {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+ }
+ 
+.back-button2:hover i {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+ }
+ 
+.back-button2:hover {
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+  transform: translateY(-2px);
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+ }
+ 
 .main {
-    box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
-    background-color: #fff;
-    width: 90vw;
-    margin: 0 auto;
-    border-radius: 10px;
-    overflow: hidden;
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
+  background-color: #fff;
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 
 .headline {
-    align-items: center;
-    justify-content: space-around;
-    width: 90vw;
-    margin: 0 auto;
-    background-color: wheat;
+  align-items: center;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: wheat;
 }
 
 .headline h4 {
-    font-size:larger;
-    color: black;
-    /* padding-left: 20px; */
+  font-size:larger;
+  color: black;
+  /* padding-left: 20px; */
 }
-  
+
 h5 {
-    font-size: medium;
+  font-size: medium;
 }
-  .card-list {
-    margin: 0px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 90vw;
-    /* background-color: #fff; */
-    /* box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176); */
-    border-radius: 0px;
-    transition: transform 0.3s ease, box-shadow 0.25s ease;
-  }
-  
-  .card-list:hover {
-    cursor: pointer;
-    /* transform: scale(1.03);
-    box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14); */
-  }
-    
-    .card-item2 {
-    background-color: #fff;
-    overflow: hidden;
-    max-width: 30%;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid #E4E6E8;
-  }
-  
-  
-  .card-item2 img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .h-name {
-    width: 30%;
-    border: 1px solid #E4E6E8;
-  }
-  
-  .h-name h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .star-name {
-    justify-content: space-between;
-    padding-right: 20px;
-
-  }
-  
-.breakfast p {
-    margin-bottom: 0;
+.card-list {
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* width: 90vw; */
+  background-color: #e8e8e87d; 
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.176);
+  border-radius: 0px;
+  transition: transform 0.3s ease, box-shadow 0.25s ease;
+  /* margin-bottom: 25px; */
+  padding: 15px;
+  margin: 20px auto; 
+  display: flex;
+  flex-wrap: wrap; /* Ensures cards wrap to the next line if they overflow */
+  justify-content: space-evenly; /* Space between cards */
+  width: 90%; /* Make it fill the width of its parent container */
+  max-width: 90%; /* Prevent it from exceeding the parent container's width */
+  background-color: #e8e8e87d; 
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.176);
+  border-radius: 8px; /* Added rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.25s ease;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
+.card-list:hover {
+  cursor: pointer;
+  /* transform: scale(1.03);
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14); */
+}
+  
+  /* .card-item2 {
+  background-color: #fff;
+  overflow: hidden;
+  max-width: 30%;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #E4E6E8;
+}
+
+
+.card-item2 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+ */
+
+ .card-item2 {
+  background-color: #f9fafb; /* Light background */
+  overflow: hidden;
+  max-width: 30%;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb; /* Subtle border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative; /* For image to pop outside the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  background-color: #f9fafb;
+  overflow: hidden;
+  flex: 1 1 calc(33% - 20px); /* Responsive cards: 3 per row, with spacing */
+  max-width: calc(33% - 20px); /* Prevent cards from getting too large */
+  margin: 10px; /* Space between the cards */
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item2:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-item2 img {
+  width: 110%; /* Slightly larger than the card width */
+  height: 220px; /* Bigger height */
+  object-fit: cover;
+  border-radius: 12px; /* Keep rounded corners */
+  position: absolute; /* To overlap outside the card */
+  top: -30px; /* Pop the image out of the card */
+  left: 50%;
+  transform: translateX(-50%); /* Center the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Shadow for the popping effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.card-item2:hover img {
+  transform: translateX(-50%) scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* More shadow on hover */
+}
+
+.card-item2 h5 {
+  font-size: 1.25rem; /* Bigger font size for emphasis */
+  font-weight: 600; /* Bold text */
+  color: #374151; /* Dark gray */
+  margin-top: 55%; /* Adjust for the popped-out image */
+  text-align: center; /* Center text */
+}
+
+.card-item2 p {
+  font-size: 0.875rem; /* Smaller font for details */
+  color: #6b7280; /* Muted gray */
+  margin-top: 0.5rem; /* Spacing after heading */
+  text-align: center; /* Center text */
+}
+
+/* Benefits Section */
+.benefits {
+display: flex; /* Arrange lists in columns */
+justify-content: space-between; /* Add space between the two columns */
+margin-top: 1rem; /* Add some spacing from the description */
+gap: 1rem; /* Gap between columns */
+}
+
+.benefits ul {
+list-style: none; /* Remove default bullet points */
+padding: 0; /* Remove padding */
+margin: 0; /* Remove margin */
+}
+
+.benefits li {
+font-size: 0.875rem; /* Smaller font size for compact view */
+color: #4b5563; /* Neutral dark gray color */
+display: flex; /* Align icon and text in one line */
+align-items: center; /* Vertical alignment */
+margin-bottom: 0.5rem; /* Spacing between list items */
+}
+
+.benefits li i {
+color: #10b981; /* Green color for the icon */
+margin-right: 0.5rem; /* Spacing between icon and text */
+}
+
+
+
+.h-name {
+  width: 30%;
+  /* border: 1px solid #E4E6E8; */
+}
+
+.h-name h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.star-name {
+  justify-content: space-between;
+  padding-right: 20px;
+
+}
+
 .breakfast p {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-    font-weight: 400;
+  margin-bottom: 0;
+}
+
+.breakfast p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 
 .breakfast p i {
-    margin-right: 8px;
-    color: forestgreen;
+  margin-right: 8px;
+  color: rgb(123, 139, 34);
 }
 
-  .star-name i {
-    color: #FF9529;
-    margin-left: 2px;
-  }
+.star-name{
+font-weight: 400;
+font-size: 0.875rem; /* Smaller font for details */
+color: #6b7280; /* Muted gray */
+margin-top: 0.5rem; /* Spacing after heading */
+line-height: 3vb;
+}
+.star-name i {
+  color: #452e88;
+  margin-left: 2px;
   
-  #rate {
-    padding: 0 6px;
-    border-radius: 8px;
-    background-color: green;
-    color: #fff;
-    gap: 20px;
-  }
-  
-  .bank-offer {
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: small;
-    width: 60%;
-  
-  }
-  
-  .bank-offer p {
-    margin: 0;
-    text-align: end;
-  }
-  
-  hr {
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  .price {
-    width: 40%;
-    padding-left: 12px;
-    border: 1px solid #E4E6E8;
-    justify-content: space-between;
-  }
-  
-  .price h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    text-align: end;
-  }
-  
-  .price p {
-    font-size: small;
-    margin: 0;
-    padding: 0;
-    text-align: end;
-  }
+}
+.star-name h5{
+  color: black;
+  margin-bottom: -2%;
+  font-weight: 500;
+}
 
-  .cancel-before p{
-    font-weight: lighter;
-  }
+#rate {
+  padding: 0 6px;
+  border-radius: 8px;
+  background-color: green;
+  color: #fff;
+  gap: 20px;
+}
+/*   
+.bank-offer {
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: small;
+  width: 60%;
+
+}
+
+.bank-offer p {
+  margin: 0;
+  text-align: end;
+}
+
+
+
+.price {
+  width: 40%;
+  padding-left: 12px;
+  border: 1px solid #E4E6E8;
+  justify-content: space-between;
+}
+
+.price h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: end;
+}
+
+.price p {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+  text-align: end;
+}
+
+.cancel-before p{
+  font-weight: lighter;
+} */
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+
+.price {
+  text-align: end; 
+  /* border: 1px solid #E4E6E8; */
+  /* padding: 16px; */
+  line-height: 5px;
+}
+
+.room-price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.taxes {
+  font-size: 0.9rem;
+  color: #606060;
+  margin: 4px 0 16px; /* Adds spacing between text and button */
+}
+
+.select-room-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to bottom, #2196F3, #1E88E5);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.select-room-btn:hover {
+  background: #1976D2;
+}

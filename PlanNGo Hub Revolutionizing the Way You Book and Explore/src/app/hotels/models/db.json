@@ -135,19 +135,19 @@
           "status": "Canceled"
         },
         {
-          "id": "b003",
-          "userId": "123",
+          "id": "b004",
+          "userId": "u001",
           "hotelId": "hT01",
-          "roomId": "r002",
-          "fullName": "r",
-          "email": "r@r",
-          "mobile": "1",
-          "idProof": "123",
+          "roomId": "r001",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\WhatsApp Image 2025-01-09 at 19.08.55_43d17f19.jpg",
           "couponCode": "",
-          "checkInDate": "2025-01-09",
-          "checkOutDate": "2025-01-10",
+          "checkInDate": "2025-01-11",
+          "checkOutDate": "2025-01-12",
           "roomBooked": 3,
-          "price": 2740,
+          "price": 4240,
           "status": "Booked"
         }
       ],
@@ -155,11 +155,11 @@
         "averageRating": 4.2,
         "ratingsCount": 180,
         "ratingBreakdown": {
-          "5": 100,
-          "4": 50,
-          "3": 20,
+          "1": 2,
           "2": 8,
-          "1": 2
+          "3": 20,
+          "4": 50,
+          "5": 100
         }
       },
       "bankOffer": {
@@ -196,7 +196,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -301,11 +305,11 @@
         "averageRating": 4.1,
         "ratingsCount": 220,
         "ratingBreakdown": {
-          "5": 120,
-          "4": 60,
-          "3": 30,
+          "1": 3,
           "2": 7,
-          "1": 3
+          "3": 30,
+          "4": 60,
+          "5": 120
         }
       }
     },
@@ -316,7 +320,6 @@
       "description": "Luxury resort in Goa with private villas, infinity pools, and direct beach access, ideal for romantic getaways and family vacations.",
       "pricePerNight": 1600,
       "roomsAvailable": 7,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -339,7 +342,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -437,11 +444,11 @@
         "averageRating": 4.8,
         "ratingsCount": 300,
         "ratingBreakdown": {
-          "5": 180,
-          "4": 80,
-          "3": 25,
+          "1": 5,
           "2": 10,
-          "1": 5
+          "3": 25,
+          "4": 80,
+          "5": 180
         }
       }
     },
@@ -452,7 +459,6 @@
       "description": "Eco-friendly hotel in Goa blending nature with comfort, offering organic dining, yoga retreats, and stunning coastal scenery.",
       "pricePerNight": 2000,
       "roomsAvailable": 5,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -475,7 +481,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -580,11 +590,11 @@
         "averageRating": 4.7,
         "ratingsCount": 215,
         "ratingBreakdown": {
-          "5": 150,
-          "4": 45,
-          "3": 15,
+          "1": 1,
           "2": 4,
-          "1": 1
+          "3": 15,
+          "4": 45,
+          "5": 150
         }
       }
     },
@@ -595,7 +605,6 @@
       "description": "Charming boutique villa in Goa nestled among coconut groves, featuring cozy cottages, delicious seafood, and serene sunset views.",
       "pricePerNight": 1800,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -618,7 +627,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -723,11 +736,11 @@
         "averageRating": 4.5,
         "ratingsCount": 180,
         "ratingBreakdown": {
-          "5": 95,
-          "4": 60,
-          "3": 20,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 20,
+          "4": 60,
+          "5": 95
         }
       }
     },
@@ -738,7 +751,6 @@
       "description": "Upscale hotel in Mumbai with panoramic sea views, award-winning restaurants, and seamless connectivity to business hubs and shopping districts.",
       "pricePerNight": 2500,
       "roomsAvailable": 3,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -761,7 +773,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -859,11 +875,11 @@
         "averageRating": 4.9,
         "ratingsCount": 320,
         "ratingBreakdown": {
-          "5": 250,
-          "4": 50,
-          "3": 15,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 15,
+          "4": 50,
+          "5": 250
         }
       }
     },
@@ -874,7 +890,6 @@
       "description": "Urban retreat in Mumbai near Marine Drive, offering luxurious suites, a wellness spa, and spectacular city skyline views.",
       "pricePerNight": 3500,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -897,7 +912,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -995,11 +1014,11 @@
         "averageRating": 4.8,
         "ratingsCount": 400,
         "ratingBreakdown": {
-          "5": 330,
-          "4": 50,
-          "3": 15,
+          "1": 1,
           "2": 4,
-          "1": 1
+          "3": 15,
+          "4": 50,
+          "5": 330
         }
       },
       "bankOffer": {
@@ -1014,7 +1033,6 @@
       "description": "Stylish hotel in Mumbai’s Bandra district offering contemporary rooms, rooftop dining, and easy access to trendy cafes and nightlife.",
       "pricePerNight": 3000,
       "roomsAvailable": 5,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1037,7 +1055,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1135,11 +1157,11 @@
         "averageRating": 4.6,
         "ratingsCount": 370,
         "ratingBreakdown": {
-          "5": 240,
-          "4": 100,
-          "3": 20,
+          "1": 3,
           "2": 7,
-          "1": 3
+          "3": 20,
+          "4": 100,
+          "5": 240
         }
       }
     },
@@ -1150,7 +1172,6 @@
       "description": "Modern luxury hotel in Mumbai, situated near the Gateway of India, featuring sophisticated interiors and world-class service.",
       "pricePerNight": 2800,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1173,7 +1194,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1271,11 +1296,11 @@
         "averageRating": 3.8,
         "ratingsCount": 210,
         "ratingBreakdown": {
-          "5": 70,
-          "4": 80,
-          "3": 40,
+          "1": 5,
           "2": 15,
-          "1": 5
+          "3": 40,
+          "4": 80,
+          "5": 70
         }
       }
     },
@@ -1286,7 +1311,6 @@
       "description": "Heritage hotel in South Mumbai blending colonial architecture with luxury amenities, ideal for history enthusiasts and modern travelers.",
       "pricePerNight": 3200,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1309,7 +1333,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1374,7 +1402,7 @@
           "available": true
         }
       ],
-      "rating": 4.0,
+      "rating": 4,
       "reviewsCount": 275,
       "checkin": "10 AM",
       "checkout": "11 AM",
@@ -1404,14 +1432,14 @@
         }
       ],
       "ratings": {
-        "averageRating": 4.0,
+        "averageRating": 4,
         "ratingsCount": 275,
         "ratingBreakdown": {
-          "5": 90,
-          "4": 110,
-          "3": 50,
+          "1": 10,
           "2": 15,
-          "1": 10
+          "3": 50,
+          "4": 110,
+          "5": 90
         }
       }
     },
@@ -1422,7 +1450,6 @@
       "description": "Lavish hotel in Delhi's Connaught Place with luxurious amenities, rooftop dining, and easy access to iconic landmarks like India Gate.",
       "pricePerNight": 3000,
       "roomsAvailable": 7,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1445,7 +1472,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1543,11 +1574,11 @@
         "averageRating": 2.9,
         "ratingsCount": 150,
         "ratingBreakdown": {
-          "5": 20,
-          "4": 30,
-          "3": 50,
+          "1": 15,
           "2": 35,
-          "1": 15
+          "3": 50,
+          "4": 30,
+          "5": 20
         }
       }
     },
@@ -1558,7 +1589,6 @@
       "description": "Elegant hotel near Delhi Airport with contemporary design, international cuisine, and convenient transit services for travelers.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1581,7 +1611,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1679,11 +1713,11 @@
         "averageRating": 3.6,
         "ratingsCount": 195,
         "ratingBreakdown": {
-          "5": 60,
-          "4": 85,
-          "3": 30,
+          "1": 5,
           "2": 15,
-          "1": 5
+          "3": 30,
+          "4": 85,
+          "5": 60
         }
       }
     },
@@ -1694,7 +1728,6 @@
       "description": "Resort-style hotel in Delhi featuring lush gardens, opulent rooms, and traditional Indian hospitality, perfect for leisure and business trips.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1717,7 +1750,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1815,11 +1852,11 @@
         "averageRating": 4.2,
         "ratingsCount": 245,
         "ratingBreakdown": {
-          "5": 100,
-          "4": 70,
-          "3": 50,
+          "1": 10,
           "2": 15,
-          "1": 10
+          "3": 50,
+          "4": 70,
+          "5": 100
         }
       }
     },
@@ -1830,7 +1867,6 @@
       "description": "Art-inspired hotel in Delhi showcasing curated local art, rooftop lounges, and immersive cultural experiences in the heart of the city.",
       "pricePerNight": 2800,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1853,7 +1889,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -1951,11 +1991,11 @@
         "averageRating": 4.1,
         "ratingsCount": 200,
         "ratingBreakdown": {
-          "5": 80,
-          "4": 90,
-          "3": 20,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 20,
+          "4": 90,
+          "5": 80
         }
       }
     },
@@ -1966,7 +2006,6 @@
       "description": "Boutique hotel in Delhi's bustling Karol Bagh market, offering chic interiors and proximity to cultural and shopping destinations.",
       "pricePerNight": 3500,
       "roomsAvailable": 5,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -1989,7 +2028,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2087,11 +2130,11 @@
         "averageRating": 4.8,
         "ratingsCount": 310,
         "ratingBreakdown": {
-          "5": 250,
-          "4": 40,
-          "3": 15,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 15,
+          "4": 40,
+          "5": 250
         }
       }
     },
@@ -2102,7 +2145,6 @@
       "description": "Modern hotel in Bangalore's Whitefield area offering spacious suites, co-working spaces, and proximity to IT parks for business travelers.",
       "pricePerNight": 1800,
       "roomsAvailable": 4,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2125,7 +2167,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2223,11 +2269,11 @@
         "averageRating": 4.3,
         "ratingsCount": 150,
         "ratingBreakdown": {
-          "5": 100,
-          "4": 30,
-          "3": 15,
+          "1": 1,
           "2": 4,
-          "1": 1
+          "3": 15,
+          "4": 30,
+          "5": 100
         }
       }
     },
@@ -2238,7 +2284,6 @@
       "description": "Chic hotel in Bangalore near MG Road, offering rooftop dining, live music, and vibrant nightlife options for urban explorers.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2261,7 +2306,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2331,11 +2380,11 @@
         "averageRating": 4.5,
         "ratingsCount": 210,
         "ratingBreakdown": {
-          "5": 160,
-          "4": 40,
-          "3": 5,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 5,
+          "4": 40,
+          "5": 160
         }
       }
     },
@@ -2346,7 +2395,6 @@
       "description": "Seaside resort in Chennai offering luxurious beachfront villas, fine dining, and access to popular attractions like Marina Beach.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2369,7 +2417,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2439,11 +2491,11 @@
         "averageRating": 4.2,
         "ratingsCount": 180,
         "ratingBreakdown": {
-          "5": 130,
-          "4": 30,
-          "3": 15,
+          "1": 1,
           "2": 4,
-          "1": 1
+          "3": 15,
+          "4": 30,
+          "5": 130
         }
       }
     },
@@ -2454,7 +2506,6 @@
       "description": "Charming colonial-style hotel in Chennai with sprawling lawns, vintage furnishings, and authentic Chettinad cuisine.",
       "pricePerNight": 2700,
       "roomsAvailable": 7,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2477,7 +2528,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2547,11 +2602,11 @@
         "averageRating": 4.6,
         "ratingsCount": 250,
         "ratingBreakdown": {
-          "5": 150,
-          "4": 70,
-          "3": 20,
+          "1": 3,
           "2": 7,
-          "1": 3
+          "3": 20,
+          "4": 70,
+          "5": 150
         }
       }
     },
@@ -2562,7 +2617,6 @@
       "description": "Luxury hotel in Pune’s Koregaon Park featuring stylish interiors, gourmet dining options, and easy access to the city’s vibrant nightlife.",
       "pricePerNight": 2200,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2585,7 +2639,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2655,11 +2713,11 @@
         "averageRating": 4.4,
         "ratingsCount": 220,
         "ratingBreakdown": {
-          "5": 110,
-          "4": 85,
-          "3": 15,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 15,
+          "4": 85,
+          "5": 110
         }
       }
     },
@@ -2670,7 +2728,6 @@
       "description": "Charming heritage hotel in Pune, showcasing colonial architecture, lush gardens, and proximity to historical landmarks like Shaniwar Wada.",
       "pricePerNight": 2400,
       "roomsAvailable": 9,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2693,7 +2750,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2763,11 +2824,11 @@
         "averageRating": 4.3,
         "ratingsCount": 140,
         "ratingBreakdown": {
-          "5": 75,
-          "4": 40,
-          "3": 15,
+          "1": 4,
           "2": 6,
-          "1": 4
+          "3": 15,
+          "4": 40,
+          "5": 75
         }
       }
     },
@@ -2800,7 +2861,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2870,11 +2935,11 @@
         "averageRating": 4.6,
         "ratingsCount": 220,
         "ratingBreakdown": {
-          "5": 140,
-          "4": 50,
-          "3": 20,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 20,
+          "4": 50,
+          "5": 140
         }
       }
     },
@@ -2885,7 +2950,6 @@
       "description": "Havelis-style resort in Jaipur with spacious courtyards, handcrafted interiors, and an immersive glimpse into Rajasthan’s royal history.",
       "pricePerNight": 3500,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -2908,7 +2972,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -2978,11 +3046,11 @@
         "averageRating": 4.8,
         "ratingsCount": 310,
         "ratingBreakdown": {
-          "5": 200,
-          "4": 80,
-          "3": 20,
+          "1": 3,
           "2": 7,
-          "1": 3
+          "3": 20,
+          "4": 80,
+          "5": 200
         }
       }
     },
@@ -2993,7 +3061,6 @@
       "description": "Modern hotel in Hyderabad with plush rooms, a wellness spa, and close proximity to the city’s IT corridor and entertainment hubs.",
       "pricePerNight": 1900,
       "roomsAvailable": 5,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3016,7 +3083,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3086,11 +3157,11 @@
         "averageRating": 4.4,
         "ratingsCount": 180,
         "ratingBreakdown": {
-          "5": 90,
-          "4": 50,
-          "3": 30,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 30,
+          "4": 50,
+          "5": 90
         }
       }
     },
@@ -3101,7 +3172,6 @@
       "description": "Eco-resort near Hyderabad offering tranquil retreats, farm-fresh meals, and lush green surroundings for nature lovers.",
       "pricePerNight": 2200,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3124,7 +3194,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3194,11 +3268,11 @@
         "averageRating": 4.2,
         "ratingsCount": 200,
         "ratingBreakdown": {
-          "5": 80,
-          "4": 70,
-          "3": 30,
+          "1": 10,
           "2": 10,
-          "1": 10
+          "3": 30,
+          "4": 70,
+          "5": 80
         }
       }
     },
@@ -3209,7 +3283,6 @@
       "description": "Urban luxury hotel in Hyderabad’s Banjara Hills offering chic interiors, rooftop dining, and proximity to historic landmarks.",
       "pricePerNight": 2500,
       "roomsAvailable": 7,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3232,7 +3305,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3302,11 +3379,11 @@
         "averageRating": 4.5,
         "ratingsCount": 250,
         "ratingBreakdown": {
-          "5": 150,
-          "4": 75,
-          "3": 15,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 15,
+          "4": 75,
+          "5": 150
         }
       }
     },
@@ -3317,7 +3394,6 @@
       "description": "Charming boutique hotel in Hyderabad’s old city with traditional architecture and easy access to the Charminar and Laad Bazaar.",
       "pricePerNight": 3000,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3340,7 +3416,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3410,11 +3490,11 @@
         "averageRating": 4.7,
         "ratingsCount": 180,
         "ratingBreakdown": {
-          "5": 120,
-          "4": 45,
-          "3": 10,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 10,
+          "4": 45,
+          "5": 120
         }
       }
     },
@@ -3425,7 +3505,6 @@
       "description": "Heritage-inspired hotel in Hyderabad featuring Nawabi-style decor, traditional Hyderabadi cuisine, and a regal atmosphere.",
       "pricePerNight": 2700,
       "roomsAvailable": 9,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3448,7 +3527,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3518,11 +3601,11 @@
         "averageRating": 4.4,
         "ratingsCount": 210,
         "ratingBreakdown": {
-          "5": 100,
-          "4": 80,
-          "3": 15,
+          "1": 5,
           "2": 10,
-          "1": 5
+          "3": 15,
+          "4": 80,
+          "5": 100
         }
       }
     },
@@ -3533,7 +3616,6 @@
       "description": "Desert retreat in Rajasthan offering thrilling adventures like dune bashing, stargazing, and traditional Rajasthani dining.",
       "pricePerNight": 2600,
       "roomsAvailable": 9,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3556,7 +3638,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3626,11 +3712,11 @@
         "averageRating": 4.5,
         "ratingsCount": 250,
         "ratingBreakdown": {
-          "5": 120,
-          "4": 80,
-          "3": 30,
+          "1": 5,
           "2": 15,
-          "1": 5
+          "3": 30,
+          "4": 80,
+          "5": 120
         }
       }
     },
@@ -3641,7 +3727,6 @@
       "description": "Eco-friendly lodge in Kaashi surrounded by arid beauty, featuring sustainable accommodations and immersive cultural experiences.",
       "pricePerNight": 2000,
       "roomsAvailable": 6,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3664,7 +3749,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3701,7 +3790,7 @@
           "available": true
         }
       ],
-      "rating": 4.0,
+      "rating": 4,
       "reviewsCount": 120,
       "checkin": "12 PM",
       "checkout": "10 AM",
@@ -3731,14 +3820,14 @@
         }
       ],
       "ratings": {
-        "averageRating": 4.0,
+        "averageRating": 4,
         "ratingsCount": 120,
         "ratingBreakdown": {
-          "5": 50,
-          "4": 40,
-          "3": 20,
+          "1": 5,
           "2": 5,
-          "1": 5
+          "3": 20,
+          "4": 40,
+          "5": 50
         }
       }
     },
@@ -3749,7 +3838,6 @@
       "description": "Fort-converted hotel in Tamil Nadu offering historical charm, lavish suites, and a glimpse into the state’s royal heritage.",
       "pricePerNight": 3200,
       "roomsAvailable": 8,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3772,7 +3860,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3842,11 +3934,11 @@
         "averageRating": 4.9,
         "ratingsCount": 300,
         "ratingBreakdown": {
-          "5": 250,
-          "4": 30,
-          "3": 15,
+          "1": 2,
           "2": 3,
-          "1": 2
+          "3": 15,
+          "4": 30,
+          "5": 250
         }
       }
     },
@@ -3857,7 +3949,6 @@
       "description": "Palatial resort in Rajasthan with luxurious tents, cultural performances, and camel safaris for an authentic desert experience.",
       "pricePerNight": 3500,
       "roomsAvailable": 7,
-
       "rooms": [
         {
           "roomId": "r001",
@@ -3880,7 +3971,11 @@
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
           "pricePerNight": 2500,
-          "benefits": ["Free WiFi", "Room Service", "City View"],
+          "benefits": [
+            "Free WiFi",
+            "Room Service",
+            "City View"
+          ],
           "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
@@ -3917,7 +4012,7 @@
           "available": true
         }
       ],
-      "rating": 5.0,
+      "rating": 5,
       "reviewsCount": 350,
       "checkin": "2 PM",
       "checkout": "12 PM",
@@ -3947,14 +4042,14 @@
         }
       ],
       "ratings": {
-        "averageRating": 5.0,
+        "averageRating": 5,
         "ratingsCount": 350,
         "ratingBreakdown": {
-          "5": 300,
-          "4": 40,
-          "3": 7,
+          "1": 0,
           "2": 3,
-          "1": 0
+          "3": 7,
+          "4": 40,
+          "5": 300
         }
       }
     }

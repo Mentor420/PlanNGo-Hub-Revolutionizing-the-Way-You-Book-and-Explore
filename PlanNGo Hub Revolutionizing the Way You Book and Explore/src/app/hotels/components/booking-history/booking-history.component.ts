@@ -38,6 +38,7 @@ export class BookingHistoryComponent implements OnInit {
         this.loadBookingHistory();
       },
       (error) => {
+        console.log('Booking canceled successfully:', bookingId);
         console.error('Error canceling booking:', error);
       }
     );

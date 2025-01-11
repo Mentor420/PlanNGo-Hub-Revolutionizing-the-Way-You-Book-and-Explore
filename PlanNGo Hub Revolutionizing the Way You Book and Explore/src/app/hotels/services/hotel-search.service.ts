@@ -33,9 +33,19 @@ export class HotelSearchService {
         if (!hotel.bookings) {
           hotel.bookings = [];
         }
+        // Find the highest current booking ID
+        const highestId = hotel.bookings.reduce((maxId: number, booking: any) => {
+          const numericId = parseInt(booking.id.replace('b', ''), 10); // Extract numeric part of the ID
+          return Math.max(maxId, numericId);
+        }, 0);
+
+        // Generate a new booking ID
+        const newBookingId = `b${(highestId + 1).toString().padStart(3, '0')}`;
+
+        // Add the new booking to the bookings array
         hotel.bookings.push({
-          id: `b00${hotel.bookings.length + 1}`.padStart(3, '0'), // Generate a new booking ID
-          ...bookingData
+          id: newBookingId,
+          ...bookingData,
         });
         
         // Update the entire hotel object

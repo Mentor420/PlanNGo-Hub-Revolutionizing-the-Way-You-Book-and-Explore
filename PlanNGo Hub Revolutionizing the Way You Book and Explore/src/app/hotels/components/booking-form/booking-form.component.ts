@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { HotelSearchService } from '../../services/hotel-search.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RatingService } from '../../services/rating.service';
+import { ChangeDetectorRef, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-booking-form',
@@ -19,6 +20,9 @@ export class BookingFormComponent implements OnInit {
   roomId: string = '';
   roomDetails: any = {};
   TotalAmenities: any[] = [];
+  isPopupVisible = false;
+  popupTitle = '';
+  popupMessage = '';
 
   bookingForm!: FormGroup;
   taxRate = 240;
@@ -28,7 +32,10 @@ export class BookingFormComponent implements OnInit {
     private hotelSearchService: HotelSearchService,
     private ratingService: RatingService,
     private location: Location,
-    private fb: FormBuilder
+    private router: Router,
+    private fb: FormBuilder,
+    private zone: NgZone,
+    private cdr: ChangeDetectorRef,
   ) { }
 
   ngOnInit(): void {
@@ -104,11 +111,34 @@ export class BookingFormComponent implements OnInit {
       this.hotelSearchService.saveBooking(this.hotel.id, bookingData).subscribe(
         (response) => {
           console.log('Booking successful:', response);
-          alert('Booking successful!');
+
+          // Show success popup
+          this.showPopup('Booking Successful! Your room has been booked successfully.', 'success');
+
+          // Reset the form
+          this.bookingForm.reset();
+
+          setTimeout(() => {
+            this.isPopupVisible = false; // Hide the popup earlier if needed
+          }, 2000); // Hide popup in 2 seconds
+          
+          setTimeout(() => {
+            this.zone.run(() => {
+              this.router.navigate(['/booking-history'], { queryParams: { bookingId: response.id } });
+            });
+          }, 3000); // Navigate in 3 seconds
+
         },
         (error) => {
           console.error('Error saving booking:', error);
-          alert('Failed to book. Please try again.');
+
+          // Show error popup
+          this.showPopup('Booking Failed! Please try again later.', 'error');
+
+          // Redirect after 3 seconds (optional for error)
+          setTimeout(() => {
+            this.bookingForm.reset();
+          }, 3000);
         }
       );
     } else {
@@ -123,6 +153,16 @@ export class BookingFormComponent implements OnInit {
     }
   }
 
+  // Utility method to show popup
+  showPopup(title: string, message: string): void {
+    this.popupTitle = title;
+    this.popupMessage = message;
+    this.isPopupVisible = true;
+  }
+  
+  closePopup(): void {
+    this.isPopupVisible = false;
+  }
 
   onCancelBooking(bookingId: string): void {
     // Simulate an API call to cancel booking

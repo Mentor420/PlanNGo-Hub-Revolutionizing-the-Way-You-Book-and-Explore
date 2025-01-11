@@ -24,39 +24,55 @@
   <h3 class="m-3 text-center">Available Rooms in {{ hotel.name }}</h3>
 
   <div class="main">
-    <div class="headline d-flex pt-3">
+    <!-- <div class="headline d-flex pt-3">
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Room Type</h4>
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Benefits</h4>
       <h4 class="text-center p-4 pt-1 pb-2" style="width: 40%;">Per Night Price</h4>
-    </div>
+    </div> -->
 
     <div class="card-list" *ngFor="let room of rooms">
       <div class="card-item2 p-4">
-        <h5 class="pb-2">{{ room.type }}</h5>
         <img [src]="room.images[0]" alt="{{ room.type }} Image">
+        <h5 class="pb-2">{{ room.type }}</h5>
+        <p>Comfortable and modern {{ room.type }} to meet your needs.</p>
+        
+        <div class="benefits">
+          <ul>
+            <li *ngFor="let benefit of room.benefits.slice(0, room.benefits.length / 2)">
+              <i class="bi bi-check2-circle"></i>{{ benefit }}
+            </li>
+          </ul>
+          <ul>
+            <li *ngFor="let benefit of room.benefits.slice(room.benefits.length / 2)">
+              <i class="bi bi-check2-circle"></i>{{ benefit }}
+            </li>
+          </ul>
+        </div>
+      
       </div>
-
+      
+      
+      
       <div class="h-name">
         <div class="star-name">
-          <h5 class="hotel-name p-4 pb-0">{{ room.description }}</h5>
+          <h5 class="hotel-name p-4 pb-0">Room with {{room.benefits[0]}}</h5>
           <div class="breakfast p-4">
-            <p *ngFor="let benefit of room.benefits">
-              <i class="bi bi-check2-circle"></i>{{ benefit }}
-            </p>
+            <i class="bi bi-house-door"></i> {{hotel.description}} <br>
+            <i class="bi bi-cup-hot"></i> {{room.description}}
           </div>
         </div>
       </div>
 
       <div class="price d-flex flex-column align-items-end p-4">
         <div class="bank-offer p-1">
-          <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>500 off</p>
+          <!-- <p class="pb-1">Bank Offer | <i class="bi bi-currency-rupee"></i>500 off</p> -->
           <hr />
-          <p class="pt-1">{{ room.pricePerNight - 500 }}</p>
+          <!-- <p class="pt-1">{{ room.pricePerNight - 500 }}</p> -->
         </div>
         <div>
-          <h3><i class="bi bi-currency-rupee"></i>{{ room.pricePerNight }}</h3>
-          <p>+ Taxes & Fees</p>
-          <p>Per Night</p>
+          <h3 class="room-price"><i class="bi bi-currency-rupee"></i>{{ room.pricePerNight }}</h3>
+          <p class="taxes">+ Taxes & Fees</p>
+          <p class="taxes">Per Night</p>
         </div>
         <!-- <div class="cancel-before">
           <p>Before : {{ hotel.checkin }} INR0 (Free Cancellation) </p>
@@ -65,8 +81,7 @@
         </div> -->
 
         <!-- Book Now Button -->
-        <button class="btn btn-primary" (click)="goToPage(hotel.id, room.roomId)">Book Now</button>
-        
+        <button class="btn btn-primary select-room-btn" (click)="goToPage(hotel.id, room.roomId)">Book Now</button>
       </div>
     </div>
   </div>

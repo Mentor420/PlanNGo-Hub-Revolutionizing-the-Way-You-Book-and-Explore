@@ -111,6 +111,15 @@
           </button>
 
         </form>
+
+        <div *ngIf="isPopupVisible" class="popup-container">
+          <div class="popup-content">
+            <h2>{{ popupTitle }}</h2>
+            <!-- <p>{{ popupMessage }}</p> -->
+            <button (click)="closePopup()" class="close-popup-button">Close</button>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
