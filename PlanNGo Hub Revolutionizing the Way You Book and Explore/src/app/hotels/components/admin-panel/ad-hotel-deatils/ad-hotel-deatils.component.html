@@ -12,6 +12,9 @@
             </div>
           </div>
       <h2 class="tag-head mt-5 pt-5">All hotels</h2>
+      <div class="m-2">
+        <a class="btn btn-primary float-end">Add Hotel</a>
+      </div>
       <div class="card-list">
         <div class="card-item" *ngFor="let hotel of filteredHotels">
           <img [src]="hotel.image" alt="Hotel Image" />
