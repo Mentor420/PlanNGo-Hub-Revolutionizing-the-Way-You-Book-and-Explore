@@ -1,67 +1,75 @@
-
-
-
 <div class="home-image">
-    <img src="https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
-    <div class="search-bar-container d-flex">
-      <!-- <input type="text" class="search-bar" placeholder="Search...">
+  <img
+    src="https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    class="img-fluid">
+  <div class="search-bar-container d-flex">
+    <!-- <input type="text" class="search-bar" placeholder="Search...">
       <button class="search-button"><i class="bi bi-search"></i></button> -->
-      <app-search-bar></app-search-bar>
-    </div>
-    
+    <app-search-bar></app-search-bar>
   </div>
 
-  
+</div>
+
+
 
 <h2 class="tag-head text-center mb-5">Exculsive Offers</h2>
 
 <div class="row mb-2 justify-content-evenly">
-    <div class="col-md-4">
-      <div class="p-3 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col 11 flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
-          <h3 class="mb-0">Upto 50% OFF*</h3>
-          <div class="mb-1 text-body-secondary"></div>
-          <p class="card-text mb-auto">Valid till: 30/12/2024</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link mt-4">
-            Continue
-            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-          </a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK5GD1Jud-6zq9zf12z_BKLHazyNN5hutcvg&s" class="bd-placeholder-img rounded" width="120" height="180" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-        </div>
+  <div class="col-md-4">
+    <div class="p-3 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col 11 flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
+        <h3 class="mb-0">Upto 50% OFF*</h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto">Valid till: 30/12/2024</p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link mt-4">
+          Continue
+          <svg class="bi">
+            <use xlink:href="#chevron-right"></use>
+          </svg>
+        </a>
       </div>
-    </div>
-  
-    <div class="col-md-4">
-      <div class="p-3 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col 11 flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
-          <h3 class="mb-0">Upto 30% OFF*</h3>
-          <div class="mb-1 text-body-secondary"></div>
-          <p class="card-text mb-auto">Valid till: 20/02/2025</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link mt-4">
-            Continue
-            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-          </a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="https://img.freepik.com/premium-photo/30-percent-discount-offers-tag-with-red-embossed-style-design_2239-25649.jpg" class="bd-placeholder-img rounded" width="120" height="180" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-        </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK5GD1Jud-6zq9zf12z_BKLHazyNN5hutcvg&s"
+          class="bd-placeholder-img rounded" width="120" height="180" aria-label="Placeholder: Thumbnail"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
       </div>
     </div>
   </div>
 
-  <h2 class="tag-head">Take a dip at these top-rated hotels</h2>
-  <div class="card-list">
-    <div *ngFor="let hotel of topRatedHotels" class="card-item" (click)="viewHotelDetails(hotel)">
-      <img [src]="hotel.images[0]" alt="Hotel Image">
-      <h3 class="hotel-name">{{ hotel.name }}</h3>
-      <p class="location"><i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}</p>
-      <h2 class="price"><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night</h2>
+  <div class="col-md-4">
+    <div class="p-3 row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col 11 flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis"></strong>
+        <h3 class="mb-0">Upto 30% OFF*</h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto">Valid till: 20/02/2025</p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link mt-4">
+          Continue
+          <svg class="bi">
+            <use xlink:href="#chevron-right"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img
+          src="https://img.freepik.com/premium-photo/30-percent-discount-offers-tag-with-red-embossed-style-design_2239-25649.jpg"
+          class="bd-placeholder-img rounded" width="120" height="180" aria-label="Placeholder: Thumbnail"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+      </div>
     </div>
   </div>
+</div>
+
+<h2 class="tag-head">Take a dip at these top-rated hotels</h2>
+<div class="card-list">
+  <div *ngFor="let hotel of topRatedHotels" class="card-item" (click)="viewHotelDetails(hotel)">
+    <img [src]="hotel.images[0]" alt="Hotel Image">
+    <h3 class="hotel-name">{{ hotel.name }}</h3>
+    <p class="location"><i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}</p>
+    <h2 class="price"><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night</h2>
+  </div>
+</div>
 
 <div class="container">
   <h3 class="text-center mb-4">Top locations</h3>
@@ -128,7 +136,7 @@
 
 <!--      ************************* About Section **************** -->
 
-    <!-- <section class="about-us">
+<!-- <section class="about-us">
       <div class="about">
         <img src="https://webrezpro.com/wp-content/uploads/2023/07/HappyStaffHappyEmployees.jpg" class="pic" />
         <div class="text">
@@ -142,7 +150,7 @@
       </div>
     </section> -->
 
-    <!-- *************************    Contact Us    **************************-->
+<!-- *************************    Contact Us    **************************-->
 
 <!-- <section class="contact-us">
   <div class="container2">

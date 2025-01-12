@@ -8,6 +8,10 @@ import { LocationComponent } from './hotels/components/location/location.compone
 import { BookingFormComponent } from './hotels/components/booking-form/booking-form.component';
 import { HotelRoomComponent } from './hotels/components/hotel-room/hotel-room.component';
 import { BookingHistoryComponent } from './hotels/components/booking-history/booking-history.component';
+import { AdminPanelComponent } from './hotels/components/admin-panel/admin-panel.component';
+import { AdHotelDeatilsComponent } from './hotels/components/admin-panel/ad-hotel-deatils/ad-hotel-deatils.component';
+import { AdSidebarComponent } from './hotels/components/admin-panel/ad-sidebar/ad-sidebar.component';
+import { AdRoomDeatilsComponent } from './hotels/components/admin-panel/ad-room-deatils/ad-room-deatils.component';
 
 
 export const routes: Route[] = [
@@ -25,4 +29,8 @@ export const routes: Route[] = [
     ]
   },
   { path: 'booking-history', component: BookingHistoryComponent },
+  { path: 'admin-panel', component: AdminPanelComponent},
+  { path: 'ad-hotel-deatils', component: AdHotelDeatilsComponent},
+  { path: 'ad-sidebar', component: AdSidebarComponent},
+  { path: 'ad-room-details', component:AdRoomDeatilsComponent},
 ];
