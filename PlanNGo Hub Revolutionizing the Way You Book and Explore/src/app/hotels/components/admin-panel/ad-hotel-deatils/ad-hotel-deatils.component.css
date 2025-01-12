@@ -1,10 +1,74 @@
+.top {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  display: flex;
+  width: calc(100% - 250px);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  z-index: 10;
+  height: 60px;
+}
+
+.ad-hotel.collapsed .top {
+  left: 90px;
+  width: calc(100% - 78px);
+}
+
+.search_box {
+  position: relative;
+  height: 45px;
+  /* max-width: 600px; */
+  width: 100%;
+  margin: 0 15px 0 0;
+}
+
+.search_box input {
+  position: absolute;
+  border: 1px solid #CCCCCC;
+  background-color: #F5F5F5;
+  padding: 0 25px 0 50px;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  color: #161a2d;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+}
+
+.search_box i {
+  position: absolute;
+  left: 15px;
+  font-size: 22px;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #161a2d;
+}
+
+.toggle_btn {
+  font-size: 26px;
+  color: #161a2d;
+  cursor: pointer;
+  margin-right: 15px;
+}
 
 .ad-hotel {
-    margin-left: 20%;
+  flex-grow: 1;
+  margin-left: 250px; /* Default width of the sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+.ad-hotel.collapsed {
+  margin-left: 80px; /* Adjust based on collapsed sidebar width */
 }
 
 .tag-head {
-    margin-left: 145px;
+    margin-left: 64px;
     margin-top: 50px;
     max-width: 1280px;
     font-size: 2.4rem;
@@ -72,4 +136,26 @@ h2.tag-head.text-center.mb-5{
     font-size: 1.2rem;
     padding-top: 9px;
     font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .ad-hotel {
+    left: 0;
+    width: 100%;
+  }
+  
+  .ad-hotel.collapsed {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  
+  .top {
+    left: 0;
+    width: 100%;
+  }
+  
+  .ad-hotel.collapsed .top {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
 }

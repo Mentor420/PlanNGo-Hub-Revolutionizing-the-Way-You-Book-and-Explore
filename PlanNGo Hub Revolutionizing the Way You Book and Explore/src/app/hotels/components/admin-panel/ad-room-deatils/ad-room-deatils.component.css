@@ -1,0 +1,101 @@
+.dashboard {
+  position: relative;
+  left: 250px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.dashboard.expanded {
+  left: 95px;
+  width: calc(100% - 100px);
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    display: flex;
+    width: calc(100% - 250px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    z-index: 10;
+    height: 60px;
+  }
+  
+  .dashboard.expanded .top {
+    left: 90px;
+    width: calc(100% - 78px);
+  }
+  
+  .search_box {
+    position: relative;
+    height: 45px;
+    /* max-width: 600px; */
+    width: 100%;
+    margin: 0 15px 0 0;
+  }
+  
+  .search_box input {
+    position: absolute;
+    border: 1px solid #CCCCCC;
+    background-color: #F5F5F5;
+    padding: 0 25px 0 50px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    color: #161a2d;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+  }
+  
+  .search_box i {
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #161a2d;
+  }
+  
+  .toggle_btn {
+    font-size: 26px;
+    color: #161a2d;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  a.btn.btn-success.btn-sm {
+    margin-right: 10px;
+  }
+
+
+  
+  @media screen and (max-width: 768px) {
+    .dashboard {
+      left: 0;
+      width: 100%;
+    }
+    
+    .dashboard.expanded {
+      left: 250px;
+      width: calc(100% - 250px);
+    }
+    
+    .top {
+      left: 0;
+      width: 100%;
+    }
+    
+    .dashboard.expanded .top {
+      left: 250px;
+      width: calc(100% - 250px);
+    }
+  }

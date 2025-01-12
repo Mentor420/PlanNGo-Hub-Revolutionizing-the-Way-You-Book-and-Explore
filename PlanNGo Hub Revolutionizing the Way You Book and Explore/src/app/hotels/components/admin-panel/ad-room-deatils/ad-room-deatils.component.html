@@ -1,69 +1,60 @@
 <div class="d-flex">
-    <app-ad-sidebar></app-ad-sidebar>
+  <app-ad-sidebar [isOpen]="!sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
   
+  <div class="dashboard" [class.expanded]="sidebarCollapsed">
+    <div class="top">
+      <div class="toggle_btn" (click)="toggleSidebar()">
+        <i class="bx bx-menu"></i>
+      </div>
+      <div class="search_box">
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search rooms..." [(ngModel)]="searchQuery" (input)="filterRooms()" />
+      </div>
+    </div>
+
     <div class="container mt-5 pt-5">
+      <h2 class="tag-head mt-5">Room Details</h2>
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4>Room Details
+              <h4>
+                Room Details
                 <a class="btn btn-primary float-end">Add Room</a>
               </h4>
             </div>
             <div class="card-body">
-  
               <table class="table table-bordered table-striped text-center">
                 <thead>
                   <tr>
                     <th>Room ID</th>
                     <th>Location</th>
-                    <th>Describtion</th>
+                    <th>Description</th>
                     <th>Price</th>
                     <th>Available</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>T057</td>
-                    <td>Guwhati</td>
-                    <td class="text-start">adipisicing elit. Et fuga <br>laudantium doloremque magnam, <br>assumenda
-                      initationem sequi!<br>
-                      Aliquid doloremque incidunt id!</td>
-                    <td>6500</td>
-                    <td>Yes</td>
+                  <tr *ngFor="let room of filteredRooms">
+                    <td>{{ room.id }}</td>
+                    <td>{{ room.location }}</td>
+                    <td class="text-start">{{ room.description }}</td>
+                    <td>{{ room.price }}</td>
+                    <td>{{ room.available ? 'Yes' : 'No' }}</td>
                     <td>
-                      <!-- <a class="btn btn-info btn-sm">View</a> -->
                       <a class="btn btn-success btn-sm">Edit</a>
                       <form method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                       </form>
                     </td>
                   </tr>
-  
-                  <tr>
-                    <td>T088</td>
-                    <td>Guwhati</td>
-                    <td class="text-start">adipisicing elit. Et fuga <br>laudantium doloremque magnam, <br>assumenda
-                      initationem sequi!<br>
-                      Aliquid doloremque incidunt id!</td>
-                    <td>7800</td>
-                    <td>Yes</td>
-                    <td>
-                      <!-- <a class="btn btn-info btn-sm">View</a> -->
-                      <a class="btn btn-success btn-sm">Edit</a>
-                      <form method="POST" class="d-inline">
-                        <button type="submit" name="delete_admin" class="btn btn-danger btn-sm">Delete</button>
-                      </form>
-                    </td>
-                  </tr>
-  
                 </tbody>
               </table>
-  
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

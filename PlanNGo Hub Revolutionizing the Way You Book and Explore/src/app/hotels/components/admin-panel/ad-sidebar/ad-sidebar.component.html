@@ -1,50 +1,46 @@
-<div class="d-flex main">
-    <nav class="sidebar locked mt-5 pt-5">
-        <div class="logo_items flex">
-            <span class="nav_image">
-                <img src="images/logo.png" alt="logo_img" />
-            </span>
-            <span class="logo_name">Plan & Go</span>
-            <i class="bx bx-lock-alt" id="lock-icon" title="Unlock Sidebar"></i>
-            <i class="bx bx-x" id="sidebar-close"></i>
-        </div>
-
-        <div class="menu_container">
-            <div class="menu_items">
-                <ul>
-                    <li class="menu_item">
-                        <a href="../../admin-panel" class="link flex">
-                            <i class="bx bx-home-alt"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="menu_item">
-                        <a href="../ad-hotel-deatils" class="link flex">
-                            <i class="bx bx-home-alt"></i>
-                            <span>Hotel Details</span>
-                        </a>
-                    </li>
-                    <li class="menu_item">
-                        <a href="../ad-room-deatils" class="link flex">
-                            <i class="bx bx-home-alt"></i>
-                            <span>Room Deatils</span>
-                        </a>
-                    </li>
-                    <li class="menu_item">
-                        <a href="#" class="link flex">
-                            <i class="bx bx-home-alt"></i>
-                            <span>Booking History</span>
-                        </a>
-                    </li>
-                    <li class="menu_item mt-5">
-                        <a href="#" class="link flex">
-                            <i class="bx bx-home-alt"></i>
-                            <span>Log Out</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-</div>
+<nav class="sidebar" [class.close]="!isOpen">
+    <div class="logo_items flex">
+      <span class="nav_image">
+        <img src="assets/images/logo.png" alt="logo_img" />
+      </span>
+      <span class="logo_name">Plan & Go</span>
+    </div>
+  
+    <div class="menu_container">
+      <div class="menu_items">
+        <ul>
+          <li class="menu_item">
+            <a href="../../admin-panel" class="link flex">
+              <i class="bx bx-home-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="../ad-hotel-deatils" class="link flex">
+              <i class="bx bx-building-house"></i>
+              <span>Hotel Details</span>
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="../ad-room-details" class="link flex">
+              <i class="bx bx-hotel"></i>
+              <span>Room Details</span>
+            </a>
+          </li>
+          <li class="menu_item">
+            <a href="#" class="link flex">
+              <i class="bx bx-history"></i>
+              <span>Booking History</span>
+            </a>
+          </li>
+          <li class="menu_item mt-5">
+            <a href="#" class="link flex">
+              <i class="bx bx-log-out"></i>
+              <span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
