@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
         <nav>
           <ul class="nav-links">
             <li>
-              <img src="/PlanNGo Hub Revolutionizing the Way You Book and Explore/src/app/cab/assets/house-solid.png" alt="">
+              <img src="../../assets/house-solid.svg" alt="">
               <a routerLink="/" routerLinkActive="active" class="tc" >Home</a>
             </li>
             <li>
