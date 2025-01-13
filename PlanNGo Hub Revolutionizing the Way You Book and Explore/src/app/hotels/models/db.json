@@ -9,22 +9,6 @@
       "roomsAvailable": 5,
       "rooms": [
         {
-          "roomId": "r001",
-          "type": "2 Bedroom Deluxe",
-          "description": "Spacious deluxe room with two bedrooms and modern amenities.",
-          "pricePerNight": 4000,
-          "benefits": [
-            "Free WiFi",
-            "Breakfast",
-            "Parking",
-            "Free Cancellation"
-          ],
-          "availableRooms": 2,
-          "images": [
-            "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
-          ]
-        },
-        {
           "roomId": "r002",
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",

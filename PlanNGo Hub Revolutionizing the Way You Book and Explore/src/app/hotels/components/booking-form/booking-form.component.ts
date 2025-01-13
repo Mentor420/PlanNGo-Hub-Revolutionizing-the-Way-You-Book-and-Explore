@@ -66,23 +66,33 @@ export class BookingFormComponent implements OnInit {
   }
 
   mergeAmenities(): void {
-    if (this.roomDetails && this.hotel.amenities) {
-      // Combine room benefits and hotel amenities into a single list
-      const roomBenefits = this.roomDetails.benefits.map((benefit: string) => ({
-        name: benefit,
-        type: 'Room Benefit',
-      }));
-
-      const hotelAmenities = this.hotel.amenities.map((amenity: any) => ({
-        name: amenity.name,
-        description: amenity.description,
-        type: 'Hotel Amenity',
-      }));
-
+    if (this.hotel?.amenities) {
+      const roomBenefits = Array.isArray(this.roomDetails?.benefits)
+        ? this.roomDetails.benefits.map((benefit: string) => ({
+            name: benefit,
+            type: 'Room Benefit',
+          }))
+        : []; // Use an empty array if benefits is not an array
+  
+      const hotelAmenities = Array.isArray(this.hotel.amenities)
+        ? this.hotel.amenities.map((amenity: any) => ({
+            name: amenity.name,
+            description: amenity.description,
+            type: 'Hotel Amenity',
+          }))
+        : []; // Use an empty array if amenities is not an array
+  
       this.TotalAmenities = [...roomBenefits, ...hotelAmenities];
+    } else {
+      this.TotalAmenities = Array.isArray(this.roomDetails?.benefits)
+        ? this.roomDetails.benefits.map((benefit: string) => ({
+            name: benefit,
+            type: 'Room Benefit',
+          }))
+        : []; // Use only room benefits if amenities are missing
     }
   }
-
+  
 
   get total(): number {
     return this.roomDetails.pricePerNight + this.taxRate;

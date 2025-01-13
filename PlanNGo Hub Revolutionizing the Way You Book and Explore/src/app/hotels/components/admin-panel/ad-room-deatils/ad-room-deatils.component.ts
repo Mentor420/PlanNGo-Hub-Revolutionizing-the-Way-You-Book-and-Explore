@@ -23,15 +23,62 @@ export class AdRoomDeatilsComponent implements OnInit {
   rooms: RoomWithHotelId[] = [];
   filteredRooms: RoomWithHotelId[] = [];
   loading = false;
+  hotels: { id: string; name: string }[] = [];
+
+  // Popup state and new room object
+  showAddRoomPopup = false;
+  newRoom: RoomWithHotelId = {
+    hotelId: '', 
+    roomId: '',
+    type: '',
+    description: '',
+    pricePerNight: 0,
+    benefits: [],
+    availableRooms: 0,
+    images: [],
+  };
 
   constructor(private adminService: AdminService) {}
 
   ngOnInit(): void {
     this.fetchRooms();
+    this.getHotels();
+  }
+
+  getHotels(): void {
+    this.adminService.getAllHotels().subscribe({
+      next: (hotels) => {
+        this.hotels = hotels.map((hotel) => ({
+          id: hotel.id,
+          name: hotel.name,
+        }));
+      },
+      error: (error) => {
+        console.error('Failed to fetch hotels:', error);
+      },
+    });
   }
 
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
+  }
+
+  openAddRoomPopup(): void {
+    this.showAddRoomPopup = true;
+    this.newRoom = {
+      hotelId: '', 
+      roomId: '',
+      type: '',
+      description: '',
+      pricePerNight: 0,
+      benefits: [],
+      availableRooms: 0,
+      images: [],
+    };
+  }
+
+  closeAddRoomPopup(): void {
+    this.showAddRoomPopup = false;
   }
 
   filterRooms() {
@@ -61,8 +108,47 @@ export class AdRoomDeatilsComponent implements OnInit {
     });
   }
 
-  deleteRoom(roomId: string): void {
-    const hotelId = 'someHotelId'; // Replace with the actual hotel ID logic
+  // Add a new room to the selected hotel
+  addRoom(): void {
+    if (!this.newRoom.hotelId) {
+      alert('Please select a hotel.');
+      return;
+    }
+  
+    // Ensure benefits and images are arrays
+    const roomData = {
+      ...this.newRoom,
+      benefits: typeof this.newRoom.benefits === 'string'
+        ? (this.newRoom.benefits as string).split(',').map((benefit: string) => benefit.trim())
+        : Array.isArray(this.newRoom.benefits)
+        ? this.newRoom.benefits
+        : [],
+      images: typeof this.newRoom.images === 'string'
+        ? [this.newRoom.images]
+        : Array.isArray(this.newRoom.images)
+        ? this.newRoom.images
+        : [],
+    };
+  
+    this.adminService.addRoomToHotel(this.newRoom.hotelId, roomData).subscribe({
+      next: () => {
+        this.rooms.push({ ...roomData });
+        this.filteredRooms.push({ ...roomData });
+        alert('Room added successfully.');
+        this.closeAddRoomPopup();
+      },
+      error: (err) => {
+        console.error('Error adding room:', err);
+        alert('Failed to add room.');
+      },
+    });
+  }
+  
+  
+
+
+  deleteRoom(hotelid: string, roomId: string): void {
+    const hotelId = hotelid; // Replace with the actual hotel ID logic
     this.adminService.deleteRoomFromHotel(hotelId, roomId).subscribe({
       next: () => {
         // Remove the deleted room from the UI
