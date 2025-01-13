@@ -8,7 +8,9 @@
       </div>
       <div class="search_box">
         <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search here..." />
+        <input type="text" placeholder="Search here..."
+        [(ngModel)]="searchQuery"
+        (input)="filterRecents()" />
       </div>
     </div>
 
@@ -34,9 +36,12 @@
       </div>
 
       <div class="activity">
-        <div class="title">
-          <i class="uil uil-clock-three"></i>
-          <span class="text">Recently Booked</span>
+        <div class="title-r">
+          <div class="title-text">
+            <i class="uil uil-clock-three"></i>
+            <span class="text">Recently Booked</span>
+          </div>
+          <button class="show-all-btn" (click)="goToHotelDetails()">Show All</button>
         </div>
 
         <div class="table-wrapper">
@@ -47,16 +52,18 @@
                 <th>Email</th>
                 <th>Booking Date</th>
                 <th>Arrival Date</th>
+                <th>Hotel ID</th>
                 <th>Room ID</th>
               </tr>
             </thead>
             <tbody>
               <!-- Iterate over recentBookings and display data -->
-              <tr *ngFor="let booking of recentBookings">
+              <tr *ngFor="let booking of recentBookings | slice:0:5">
                 <td>{{ booking.fullName }}</td>
                 <td>{{ booking.email }}</td>
                 <td>{{ booking.bookingDate }}</td>
                 <td>{{ booking.checkInDate }}</td>
+                <td>{{ booking.hotelId }}</td>
                 <td>{{ booking.roomId }}</td>
               </tr>
             </tbody>

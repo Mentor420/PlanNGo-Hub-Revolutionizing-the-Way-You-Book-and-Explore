@@ -33,7 +33,7 @@ export class SearchBarComponent {
 
   searchResults: Hotel[] = [];
   selectedAmenities: string[] = [];
-  amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast'];
+  amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast', 'Gym', 'Spa', 'Airport Shuttle', 'Business Center'];
   errorMessage: string = '';
   hasSearched: boolean = false;
 

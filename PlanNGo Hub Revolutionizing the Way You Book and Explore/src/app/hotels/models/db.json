@@ -3724,6 +3724,23 @@
           "checkInDate": "2024-12-25",
           "checkOutDate": "2024-12-28",
           "roomsBooked": 3
+        },
+        {
+          "id": "d46b3e5b-e5e4-4803-90e2-4c058a231ed0",
+          "userId": "u001",
+          "hotelId": "hT029",
+          "roomId": "r002",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\vmware.log",
+          "couponCode": "",
+          "checkInDate": "2025-01-13",
+          "checkOutDate": "2025-01-14",
+          "bookingDate": "2025-01-13T12:00:00Z",
+          "roomBooked": 3,
+          "price": 2740,
+          "status": "Cancelled"
         }
       ],
       "ratings": {
@@ -3835,6 +3852,23 @@
           "checkInDate": "2024-12-27",
           "checkOutDate": "2024-12-30",
           "roomsBooked": 2
+        },
+        {
+          "id": "df65d96d-6381-45df-ae8d-c330dd7fda29",
+          "userId": "u001",
+          "hotelId": "hT030",
+          "roomId": "r001",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\vmware-0.log",
+          "couponCode": "",
+          "checkInDate": "2025-01-13",
+          "checkOutDate": "2025-01-14",
+          "bookingDate": "2025-01-13T12:01:00Z",
+          "roomBooked": 3,
+          "price": 4240,
+          "status": "Cancelled"
         }
       ],
       "ratings": {

@@ -122,7 +122,7 @@ export class BookingFormComponent implements OnInit {
           setTimeout(() => {
             this.isPopupVisible = false; // Hide the popup earlier if needed
           }, 2000); // Hide popup in 2 seconds
-          
+
           setTimeout(() => {
             this.zone.run(() => {
               this.router.navigate(['/booking-history'], { queryParams: { bookingId: response.id } });
@@ -133,10 +133,10 @@ export class BookingFormComponent implements OnInit {
         (error) => {
           console.error('Error saving booking:', error);
           console.log('Form Validation Status:', this.bookingForm.status);
-      console.log('Full Name Valid:', this.bookingForm.get('fullName')?.valid);
-      console.log('Email Valid:', this.bookingForm.get('email')?.valid);
-      console.log('Mobile Valid:', this.bookingForm.get('mobile')?.valid);
-      console.log('ID Proof Valid:', this.bookingForm.get('idProof')?.valid);
+          console.log('Full Name Valid:', this.bookingForm.get('fullName')?.valid);
+          console.log('Email Valid:', this.bookingForm.get('email')?.valid);
+          console.log('Mobile Valid:', this.bookingForm.get('mobile')?.valid);
+          console.log('ID Proof Valid:', this.bookingForm.get('idProof')?.valid);
 
           // Show error popup
           this.showPopup('Booking Failed! Please try again later.', 'error');
@@ -165,7 +165,7 @@ export class BookingFormComponent implements OnInit {
     this.popupMessage = message;
     this.isPopupVisible = true;
   }
-  
+
   closePopup(): void {
     this.isPopupVisible = false;
   }

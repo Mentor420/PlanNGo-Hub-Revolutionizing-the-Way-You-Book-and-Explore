@@ -5,6 +5,11 @@ import { AdSidebarComponent } from '../ad-sidebar/ad-sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+  // Extended Room interface to include hotelId
+  interface RoomWithHotelId extends Room {
+    hotelId: string;
+  }
+
 @Component({
   selector: 'app-ad-room-details',
   standalone: true,
@@ -15,8 +20,8 @@ import { CommonModule } from '@angular/common';
 export class AdRoomDeatilsComponent implements OnInit {
   sidebarCollapsed = false;
   searchQuery = '';
-  rooms: Room[] = [];
-  filteredRooms: Room[] = [];
+  rooms: RoomWithHotelId[] = [];
+  filteredRooms: RoomWithHotelId[] = [];
   loading = false;
 
   constructor(private adminService: AdminService) {}
@@ -32,9 +37,12 @@ export class AdRoomDeatilsComponent implements OnInit {
   filterRooms() {
     const query = this.searchQuery.toLowerCase();
     this.filteredRooms = this.rooms.filter(room =>
+      room.hotelId.toLowerCase().includes(query) ||
       room.roomId.toLowerCase().includes(query) ||
       room.type.toLowerCase().includes(query) ||
-      room.description.toLowerCase().includes(query)
+      room.description.toLowerCase().includes(query) ||
+      room.pricePerNight.toString().includes(query) ||
+      room.availableRooms.toString().includes(query) 
     );
   }
 

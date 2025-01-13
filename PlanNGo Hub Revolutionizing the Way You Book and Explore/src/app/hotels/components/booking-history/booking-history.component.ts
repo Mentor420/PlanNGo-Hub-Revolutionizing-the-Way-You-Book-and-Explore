@@ -55,7 +55,10 @@ export class BookingHistoryComponent implements OnInit {
         // Combine all hotel detail requests
         forkJoin(bookingRequests).subscribe(
           (updatedBookings) => {
-            this.bookingHistory = updatedBookings;
+            // Sort bookings in descending order by bookingDate
+            this.bookingHistory = updatedBookings.sort(
+              (a: any, b: any) => new Date(b.bookingDate).getTime() - new Date(a.bookingDate).getTime()
+            );
             this.isLoading = false;
           },
           (error) => {

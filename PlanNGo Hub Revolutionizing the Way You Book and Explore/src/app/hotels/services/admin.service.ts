@@ -2,73 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Room } from '../models/interfaces';
+import { Hotel } from '../models/interfaces';
 
-interface Amenity {
-  id: string;
-  name: string;
-  description?: string;
-  icon: string;
-  available: boolean;
-}
-
-interface Room {
-  roomId: string;
-  type: string;
-  description: string;
-  pricePerNight: number;
-  benefits: string[];
-  availableRooms: number;
-  images: string[];
-}
-
-interface Booking {
-  id: string;
-  userId: string;
+// Extended Room interface to include hotelId
+interface RoomWithHotelId extends Room {
   hotelId: string;
-  roomId: string;
-  fullName: string;
-  email: string;
-  mobile: string;
-  idProof: string;
-  couponCode: string;
-  checkInDate: string;
-  checkOutDate: string;
-  bookingDate: string;
-  roomBooked: number;
-  price: number;
-  status: string;
-}
-
-interface Ratings {
-  averageRating: number;
-  ratingsCount: number;
-  ratingBreakdown: { [key: number]: number };
-}
-
-interface BankOffer {
-  discount: number;
-  details: string;
-}
-
-interface Hotel {
-  id: string;
-  city: string;
-  name: string;
-  description: string;
-  pricePerNight: number;
-  roomsAvailable: number;
-  rooms: Room[];
-  amenities: Amenity[];
-  rating: number;
-  reviewsCount: number;
-  checkin: string;
-  checkout: string;
-  rules: string[];
-  location: string;
-  images: string[];
-  bookings: Booking[];
-  ratings: Ratings;
-  bankOffer: BankOffer[];
 }
 
 @Injectable({
@@ -95,10 +34,15 @@ export class AdminService {
     );
   }
 
-  // Get all bookings
-  getRecentBookings(): Observable<any> {
+  // Get all bookings excluding empty ones
+  getRecentBookings(): Observable<any[]> {
     return this.getAllHotels().pipe(
-      map((data) => data.flatMap((hotel) => hotel.bookings) || [])
+      map((hotels) => 
+        hotels
+          .flatMap((hotel) => hotel.bookings)
+          .filter((booking) => booking.userId && booking.roomId && booking.fullName && booking.email)
+          .sort((a, b) => new Date(b.bookingDate).getTime() - new Date(a.bookingDate).getTime())
+      )
     );
   }
 
@@ -133,9 +77,16 @@ export class AdminService {
   }
 
   // Get all rooms across all hotels
-  getAllRooms(): Observable<Room[]> {
+  getAllRooms(): Observable<RoomWithHotelId[]> {
     return this.getAllHotels().pipe(
-      map((hotels) => hotels.flatMap((hotel) => hotel.rooms))
+      map((hotels) =>
+        hotels.flatMap((hotel) =>
+          hotel.rooms.map((room) => ({
+            ...room,
+            hotelId: hotel.id, // Include hotelId for each room
+          }))
+        )
+      )
     );
   }
 }

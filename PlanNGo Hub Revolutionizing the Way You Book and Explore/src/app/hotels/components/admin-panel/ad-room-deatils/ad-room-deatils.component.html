@@ -29,6 +29,7 @@
               <table class="table table-bordered table-striped text-center">
                 <thead>
                   <tr>
+                    <th>Hotel ID</th>
                     <th>Room ID</th>
                     <th>Type</th>
                     <th>Description</th>
@@ -39,11 +40,12 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let room of filteredRooms">
+                    <td>{{ room.hotelId }}</td>
                     <td>{{ room.roomId }}</td>
                     <td>{{ room.type }}</td>
                     <td class="text-start">{{ room.description }}</td>
                     <td>{{ room.pricePerNight }}</td>
-                    <td>{{ room.availableRooms? 'Yes' : 'No' }}</td>
+                    <td>{{ room.availableRooms }}</td>
                     <td>
                       <a class="btn btn-success btn-sm">Edit</a>
                       <button class="btn btn-danger btn-sm" (click)="deleteRoom(room.roomId)">Delete</button>
