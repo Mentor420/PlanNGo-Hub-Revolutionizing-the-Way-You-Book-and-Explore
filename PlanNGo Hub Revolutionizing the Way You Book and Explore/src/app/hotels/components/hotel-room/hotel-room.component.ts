@@ -4,16 +4,7 @@ import { HotelSearchService } from './../../services/hotel-search.service';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { HotelIdService } from '../../services/hotel-id.service';
-
-interface Room {
-  roomId: string;
-  type: string;
-  description: string;
-  pricePerNight: number;
-  benefits: string[];
-  availableRooms: number;
-  images: string[];
-}
+import { Room } from '../../models/interfaces'; 
 
 @Component({
   standalone: true,

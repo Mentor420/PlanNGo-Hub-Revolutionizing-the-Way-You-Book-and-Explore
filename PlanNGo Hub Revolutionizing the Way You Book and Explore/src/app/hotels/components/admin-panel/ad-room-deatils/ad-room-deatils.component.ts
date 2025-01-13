@@ -1,23 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../../services/admin.service'; 
+import { Room } from '../../../models/interfaces'; 
 import { AdSidebarComponent } from '../ad-sidebar/ad-sidebar.component';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ad-room-details',
   standalone: true,
-  imports: [AdSidebarComponent, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AdSidebarComponent],
   templateUrl: './ad-room-deatils.component.html',
   styleUrls: ['./ad-room-deatils.component.css']
 })
-export class AdRoomDeatilsComponent {
-  sidebarCollapsed = false; // To manage sidebar state
-  searchQuery = ''; // For search functionality
-  rooms = [
-    { id: 'T057', location: 'Guwahati', description: 'Lorem ipsum dolor sit amet...', price: 6500, available: true },
-    { id: 'T088', location: 'Guwahati', description: 'Consectetur adipiscing elit...', price: 7800, available: true }
-  ];
-  filteredRooms = [...this.rooms]; // Initialize with all rooms
+export class AdRoomDeatilsComponent implements OnInit {
+  sidebarCollapsed = false;
+  searchQuery = '';
+  rooms: Room[] = [];
+  filteredRooms: Room[] = [];
+  loading = false;
+
+  constructor(private adminService: AdminService) {}
+
+  ngOnInit(): void {
+    this.fetchRooms();
+  }
 
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
@@ -26,9 +32,40 @@ export class AdRoomDeatilsComponent {
   filterRooms() {
     const query = this.searchQuery.toLowerCase();
     this.filteredRooms = this.rooms.filter(room =>
-      room.id.toLowerCase().includes(query) ||
-      room.location.toLowerCase().includes(query) ||
+      room.roomId.toLowerCase().includes(query) ||
+      room.type.toLowerCase().includes(query) ||
       room.description.toLowerCase().includes(query)
     );
+  }
+
+  fetchRooms(): void {
+    this.loading = true;
+    this.adminService.getAllRooms().subscribe({
+      next: (rooms) => {
+        this.rooms = rooms;
+        this.filteredRooms = [...rooms];
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Error fetching rooms:', err);
+        this.loading = false;
+      }
+    });
+  }
+
+  deleteRoom(roomId: string): void {
+    const hotelId = 'someHotelId'; // Replace with the actual hotel ID logic
+    this.adminService.deleteRoomFromHotel(hotelId, roomId).subscribe({
+      next: () => {
+        // Remove the deleted room from the UI
+        this.rooms = this.rooms.filter(room => room.roomId !== roomId);
+        this.filteredRooms = this.filteredRooms.filter(room => room.roomId !== roomId);
+        alert('Room deleted successfully.');
+      },
+      error: (err) => {
+        console.error('Error deleting room:', err);
+        alert('Failed to delete room.');
+      }
+    });
   }
 }

@@ -159,3 +159,7 @@ h2.tag-head.text-center.mb-5{
     width: calc(100% - 250px);
   }
 }
+
+.m-2 {
+  display: list-item;
+}

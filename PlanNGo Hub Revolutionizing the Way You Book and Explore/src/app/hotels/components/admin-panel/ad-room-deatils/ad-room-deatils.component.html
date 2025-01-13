@@ -1,6 +1,6 @@
 <div class="d-flex">
   <app-ad-sidebar [isOpen]="!sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
-  
+
   <div class="dashboard" [class.expanded]="sidebarCollapsed">
     <div class="top">
       <div class="toggle_btn" (click)="toggleSidebar()">
@@ -12,9 +12,11 @@
       </div>
     </div>
 
-    <div class="container mt-4   pt-2">
+    <div class="container mt-4 pt-2">
       <h2 class="tag-head mt-5">Room Details</h2>
-      <div class="row">
+      <div *ngIf="loading" class="text-center">Loading...</div>
+      <div *ngIf="!loading && filteredRooms.length === 0" class="text-center">No rooms available.</div>
+      <div class="row" *ngIf="!loading && filteredRooms.length > 0">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
@@ -28,25 +30,23 @@
                 <thead>
                   <tr>
                     <th>Room ID</th>
-                    <th>Location</th>
+                    <th>Type</th>
                     <th>Description</th>
-                    <th>Price</th>
-                    <th>Available</th>
+                    <th>Price Per Night</th>
+                    <th>Available Rooms</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let room of filteredRooms">
-                    <td>{{ room.id }}</td>
-                    <td>{{ room.location }}</td>
+                    <td>{{ room.roomId }}</td>
+                    <td>{{ room.type }}</td>
                     <td class="text-start">{{ room.description }}</td>
-                    <td>{{ room.price }}</td>
-                    <td>{{ room.available ? 'Yes' : 'No' }}</td>
+                    <td>{{ room.pricePerNight }}</td>
+                    <td>{{ room.availableRooms? 'Yes' : 'No' }}</td>
                     <td>
                       <a class="btn btn-success btn-sm">Edit</a>
-                      <form method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                      </form>
+                      <button class="btn btn-danger btn-sm" (click)="deleteRoom(room.roomId)">Delete</button>
                     </td>
                   </tr>
                 </tbody>

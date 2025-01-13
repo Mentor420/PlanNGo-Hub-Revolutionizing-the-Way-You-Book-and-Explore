@@ -1,32 +1,35 @@
 <div class="d-flex">
-    <app-ad-sidebar [isOpen]="!sidebarCollapsed" 
-    (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
-    <div class="ad-hotel" [class.collapsed]="sidebarCollapsed">
-        <div class="top">
-            <div class="toggle_btn" (click)="toggleSidebar()">
-              <i class="bx bx-menu"></i>
-            </div>
-            <div class="search_box">
-              <i class="bx bx-search"></i>
-              <input type="text" placeholder="Search here..." />
-            </div>
-          </div>
-      <h2 class="tag-head mt-5 pt-5">All hotels</h2>
-      <div class="m-2">
-        <a class="btn btn-primary float-end">Add Hotel</a>
+  <app-ad-sidebar [isOpen]="!sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
+  <div class="ad-hotel" [class.collapsed]="sidebarCollapsed">
+    <div class="top">
+      <div class="toggle_btn" (click)="toggleSidebar()">
+        <i class="bx bx-menu"></i>
       </div>
-      <div class="card-list">
-        <div class="card-item" *ngFor="let hotel of filteredHotels">
-          <img [src]="hotel.image" alt="Hotel Image" />
-          <h3 class="hotel-name">{{ hotel.name }}</h3>
-          <p class="location">
-            <i class="bi bi-geo-alt-fill"></i> {{ hotel.location }}
-          </p>
-          <h2 class="price">
-            <i class="bi bi-currency-rupee"></i>{{ hotel.price }}/Night
-          </h2>
-        </div>
+      <div class="search_box">
+        <i class="bx bx-search"></i>
+        <input
+          type="text"
+          placeholder="Search here..."
+          [(ngModel)]="searchQuery"
+          (input)="filterHotels()"
+        />
+      </div>
+    </div>
+    <h2 class="tag-head mt-5 pt-5">All Hotels</h2>
+    <div class="m-2">
+      <button class="btn btn-primary float-end">Add Hotel</button>
+    </div>
+    <div class="card-list">
+      <div class="card-item" *ngFor="let hotel of filteredHotels">
+        <img [src]="hotel.images[0]" alt="Hotel Image" />
+        <h3 class="hotel-name">{{ hotel.name }}</h3>
+        <p class="location">
+          <i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}
+        </p>
+        <h2 class="price">
+          <i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night
+        </h2>
       </div>
     </div>
   </div>
-  
+</div>

@@ -23,12 +23,12 @@
           <div class="box box1">
             <i class="fa-solid fa-hotel"></i>
             <span class="text">Total Hotels</span>
-            <span class="number">120</span>
+            <span class="number">{{ totalHotels }}</span>
           </div>
           <div class="box box2">
             <i class="uil uil-comment"></i>
             <span class="text">Total Rooms</span>
-            <span class="number">20,120</span>
+            <span class="number">{{ totalRooms }}</span>
           </div>
         </div>
       </div>
@@ -39,7 +39,6 @@
           <span class="text">Recently Booked</span>
         </div>
 
-        <!-- Replacing div-based structure with a table -->
         <div class="table-wrapper">
           <table class="table">
             <thead>
@@ -52,54 +51,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Prem Shahi</td>
-                <td>premshahi&#64;gmail.com</td>
-                <td>2022-02-12</td>
-                <td>2022-02-12</td>
-                <td>T0026</td>
-              </tr>
-              <tr>
-                <td>Deepa Chand</td>
-                <td>deepachand&#64;gmail.com</td>
-                <td>2022-02-12</td>
-                <td>2022-02-12</td>
-                <td>T0084</td>
-              </tr>
-              <tr>
-                <td>Manisha Chand</td>
-                <td>prakash&#64;gmail.com</td>
-                <td>2022-02-13</td>
-                <td>2022-02-13</td>
-                <td>T0898</td>
-              </tr>
-              <tr>
-                <td>Pratima Shahi</td>
-                <td>manishachand&#64;gmail.com</td>
-                <td>2022-02-13</td>
-                <td>2022-02-13</td>
-                <td>T9989</td>
-              </tr>
-              <tr>
-                <td>Man Shahi</td>
-                <td>pratimashahi&#64;gmail.com</td>
-                <td>2022-02-14</td>
-                <td>2022-02-14</td>
-                <td>T0799</td>
-              </tr>
-              <tr>
-                <td>Ganesh Chand</td>
-                <td>manshahi&#64;gmail.com</td>
-                <td>2022-02-14</td>
-                <td>2022-02-14</td>
-                <td>T8970</td>
-              </tr>
-              <tr>
-                <td>Bikash Chand</td>
-                <td>ganeshchand&#64;gmail.com</td>
-                <td>2022-02-15</td>
-                <td>2022-02-15</td>
-                <td>T9980</td>
+              <!-- Iterate over recentBookings and display data -->
+              <tr *ngFor="let booking of recentBookings">
+                <td>{{ booking.fullName }}</td>
+                <td>{{ booking.email }}</td>
+                <td>{{ booking.bookingDate }}</td>
+                <td>{{ booking.checkInDate }}</td>
+                <td>{{ booking.roomId }}</td>
               </tr>
             </tbody>
           </table>

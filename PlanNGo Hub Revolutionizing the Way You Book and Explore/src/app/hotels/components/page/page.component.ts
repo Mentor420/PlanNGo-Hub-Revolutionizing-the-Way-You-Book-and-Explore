@@ -7,46 +7,7 @@ import { Location } from '@angular/common';
 import { RatingComponent } from '../rating/rating.component';
 import { Router, NavigationEnd  } from '@angular/router';
 import { HotelIdService } from '../../services/hotel-id.service';
-
-interface Amenity {
-  id: string; // Unique identifier for the amenity
-  name: string; // Name of the amenity
-  description?: string; // Optional description of the amenity
-  icon: string; // FontAwesome or custom icon class (for displaying icons)
-  available: boolean; // Availability status of the amenity
-}
-
-interface Hotel {
-  id: string;
-  city: string;
-  name: string;
-  description: string;
-  pricePerNight: number;
-  roomsAvailable: number;
-  amenities: Amenity[]; // Array of amenities with detailed structure
-  rating: number; // Average rating
-  reviewsCount: number; // Total number of reviews
-  checkin: string;
-  checkout: string;
-  rules: string[]; // List of hotel rules
-  location: string; // Google Maps embed URL
-  images: string[]; // Array to hold image URLs
-  bookings: { // Array of booking details
-    checkInDate: string;
-    checkOutDate: string;
-    roomsBooked: number;
-  }[];
-  ratings: { 
-    averageRating: number;
-    ratingsCount: number;
-    ratingBreakdown: { [key: number]: number }; // Number of reviews for each rating (1 to 5 stars)
-  };
-  bankOffer: {
-    discount: number;
-    details: string;
-  }[];
-}
-
+import { Hotel } from '../../models/interfaces'; 
 
 @Component({
   standalone: true,
