@@ -47,6 +47,7 @@ export class HotelRoomComponent implements OnInit {
           (hotel) => {
             this.hotel = hotel;
             this.rooms = hotel.rooms;
+            this.applyFilter(); // Apply the filter with current data
           },
           (error) => {
             console.error('Error fetching hotel data:', error);
@@ -60,11 +61,11 @@ export class HotelRoomComponent implements OnInit {
     this.location.back(); // Navigates to the previous page
   }
 
-  goToPage(hotelId: string, roomId: string) : void{
-      console.log('Hotel ID:', hotelId);
-      console.log('Room ID:', roomId);
-      this.hotelIdService.setHotelId(hotelId);
-      this.router.navigate([`/room/${roomId}/booking-form`], { queryParams: 
+  goToPage(hotelId: string, roomId: string): void {
+    console.log('Hotel ID:', hotelId);
+    console.log('Room ID:', roomId);
+    this.hotelIdService.setHotelId(hotelId);
+    this.router.navigate([`/room/${roomId}/booking-form`], { queryParams: 
       { 
         hotelId,
         roomId, 

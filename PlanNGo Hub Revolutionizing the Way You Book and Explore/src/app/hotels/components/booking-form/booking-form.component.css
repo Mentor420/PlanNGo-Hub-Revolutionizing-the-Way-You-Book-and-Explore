@@ -462,3 +462,62 @@ input#idProof {
 .close-popup-button:hover {
   background: linear-gradient(45deg, #0056b3, #004085);
 }
+
+.booking-details {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .booking-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.booking-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.booking-item i {
+  font-size: 1.5rem;
+  color: #826afb;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.room-type {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.room-type h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
