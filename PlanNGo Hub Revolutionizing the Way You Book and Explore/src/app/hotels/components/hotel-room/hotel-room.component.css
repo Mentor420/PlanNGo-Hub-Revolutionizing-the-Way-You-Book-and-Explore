@@ -374,3 +374,66 @@ hr {
 .select-room-btn:hover {
   background: #1976D2;
 }
+
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item label {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.filter-item input[type="date"],
+.filter-item select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-item,
+  .filter-button {
+    width: 100%;
+  }
+}
+
+.no-rooms {
+  margin-left: 37%;
+}

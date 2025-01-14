@@ -23,7 +23,28 @@
   <!-- <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button> -->
   <h3 class="m-3 text-center">Available Rooms in {{ hotel.name }}</h3>
 
-  <div class="main">
+  <div class="filter-container">
+    <div class="filter-item">
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" [(ngModel)]="checkInDate" name="checkInDate">
+    </div>
+    <div class="filter-item">
+      <label for="checkOutDate">Check-out Date:</label>
+      <input type="date" id="checkOutDate" [(ngModel)]="checkOutDate" name="checkOutDate">
+    </div>
+    <div class="filter-item">
+      <label for="roomCount">Number of Rooms:</label>
+      <select id="roomCount" [(ngModel)]="roomCount" name="roomCount">
+        <option [ngValue]="1">1 Room</option>
+        <option [ngValue]="2">2 Rooms</option>
+        <option [ngValue]="3">3 Rooms</option>
+        <option [ngValue]="4">4 Rooms</option>
+        <option [ngValue]="5">5 Rooms</option>
+      </select>
+    </div>
+    <button class="filter-button" (click)="applyFilter()">Search</button>
+  </div>
+  <div *ngIf="rooms && rooms.length > 0" class="main">
     <!-- <div class="headline d-flex pt-3">
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Room Type</h4>
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Benefits</h4>
@@ -84,6 +105,9 @@
         <button class="btn btn-primary select-room-btn" (click)="goToPage(hotel.id, room.roomId)">Book Now</button>
       </div>
     </div>
+  </div>
+  <div *ngIf="rooms && rooms.length === 0" class="no-rooms">
+    <p>No available rooms matching your criteria.</p>
   </div>
 </div>
 

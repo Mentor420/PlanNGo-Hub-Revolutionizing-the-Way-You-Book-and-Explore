@@ -18,15 +18,15 @@
       <div *ngIf="!loading && filteredRooms.length === 0" class="text-center">No rooms available.</div>
 
       <!-- Delete Confirmation Popup -->
-<div *ngIf="showDeletePopup" class="popup-overlay">
-  <div class="popup-content">
-    <h3>Are you sure you want to delete this room?</h3>
-    <div class="popup-actions">
-      <button type="button" class="btn btn-secondary" (click)="closeDeletePopup()">Cancel</button>
-      <button type="button" class="btn btn-danger del" (click)="confirmDelete()">Delete</button>
-    </div>
-  </div>
-</div>
+      <div *ngIf="showDeletePopup" class="popup-overlay">
+        <div class="popup-content">
+          <h3>Are you sure you want to delete this room?</h3>
+          <div class="popup-actions">
+            <button type="button" class="btn btn-secondary" (click)="closeDeletePopup()">Cancel</button>
+            <button type="button" class="btn btn-danger del" (click)="confirmDelete()">Delete</button>
+          </div>
+        </div>
+      </div>
 
       <div class="row" *ngIf="!loading && filteredRooms.length > 0">
         <div class="col-md-12">
@@ -61,7 +61,7 @@
                     <td>
                       <a class="btn btn-success btn-sm" (click)="openEditRoomPopup(room)">Edit</a>
                       <button class="btn btn-danger btn-sm"
-                      (click)="openDeletePopup(room.hotelId, room.roomId)">Delete</button>
+                        (click)="openDeletePopup(room.hotelId, room.roomId)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -74,7 +74,7 @@
   </div>
 
   <div *ngIf="showAddRoomPopup" class="popup-overlay">
-    <div class="popup-content">
+    <div class="popup-content-add">
       <h3>Add New Room</h3>
       <form (ngSubmit)="addRoom()" class="form-horizontal">
         <div class="form-row">
@@ -87,8 +87,8 @@
           </div>
           <div class="form-group">
             <label for="roomId">Room ID</label>
-            <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" required 
-            (ngModelChange)="checkRoomIdAvailability()" />
+            <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" placeholder="Add 'r0' at start. ex: r001" required
+              (ngModelChange)="checkRoomIdAvailability()" />
             <div *ngIf="roomIdDuplicate" class="error-message">
               This Room ID already exists for the selected hotel.
             </div>
@@ -111,7 +111,8 @@
           </div>
           <div class="form-group">
             <label for="availableRooms">Available Rooms</label>
-            <input type="number" id="availableRooms" [(ngModel)]="newRoom.availableRooms" name="availableRooms" required />
+            <input type="number" id="availableRooms" [(ngModel)]="newRoom.availableRooms" name="availableRooms"
+              required />
           </div>
         </div>
         <div class="form-row">
@@ -131,7 +132,7 @@
       </form>
     </div>
   </div>
-  
+
   <div *ngIf="showEditRoomPopup" class="popup-overlay">
     <div class="popup-content-edit">
       <h3>Edit Room</h3>
@@ -139,7 +140,7 @@
         <div class="form-row">
           <div class="form-group">
             <label for="hotel">Hotel</label>
-            <select id="hotel" [(ngModel)]="selectedRoom.hotelId" name="hotelId" required>
+            <select id="hotel" [(ngModel)]="selectedRoom.hotelId" name="hotelId" required disabled>
               <option value="" disabled selected>Select a hotel</option>
               <option *ngFor="let hotel of hotels" [value]="hotel.id">{{ hotel.name }}</option>
             </select>
@@ -162,11 +163,13 @@
         <div class="form-row">
           <div class="form-group">
             <label for="pricePerNight">Price Per Night</label>
-            <input type="number" id="pricePerNight" [(ngModel)]="selectedRoom.pricePerNight" name="pricePerNight" required />
+            <input type="number" id="pricePerNight" [(ngModel)]="selectedRoom.pricePerNight" name="pricePerNight"
+              required />
           </div>
           <div class="form-group">
             <label for="availableRooms">Available Rooms</label>
-            <input type="number" id="availableRooms" [(ngModel)]="selectedRoom.availableRooms" name="availableRooms" required />
+            <input type="number" id="availableRooms" [(ngModel)]="selectedRoom.availableRooms" name="availableRooms"
+              required />
           </div>
         </div>
         <div class="form-row">
@@ -191,5 +194,5 @@
       </form>
     </div>
   </div>
-  
+
 </div>

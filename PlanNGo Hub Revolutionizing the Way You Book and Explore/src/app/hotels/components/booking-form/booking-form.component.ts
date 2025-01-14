@@ -18,6 +18,9 @@ export class BookingFormComponent implements OnInit {
   hotel: any = {};
   hotelId: string = '';
   roomId: string = '';
+  checkInDate: string = '';
+  checkOutDate: string = '';
+  roomsBooked: number = 1;
   roomDetails: any = {};
   TotalAmenities: any[] = [];
   isPopupVisible = false;
@@ -42,6 +45,9 @@ export class BookingFormComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       const hotelId = params['hotelId'];
       const roomId = params['roomId'];
+      this.checkInDate = params['checkInDate'];
+      this.checkOutDate = params['checkOutDate'];
+      this.roomsBooked = params['roomCount'];
       if (hotelId && roomId) {
         this.hotelSearchService.getHotelDetails(hotelId).subscribe(
           (hotel) => {
@@ -110,10 +116,10 @@ export class BookingFormComponent implements OnInit {
         hotelId: this.hotel.id,
         roomId: this.roomDetails.roomId,
         ...this.bookingForm.value,
-        checkInDate: new Date().toISOString().split('T')[0], // Add check-in date
-        checkOutDate: new Date(new Date().getTime() + 86400000).toISOString().split('T')[0], // Add check-out date (next day)
-        bookingDate: new Date().toISOString().split('T')[0], // Add booking date
-        roomBooked: 3, //Replace and Add number of rooms booked
+        checkInDate: this.checkInDate,
+        checkOutDate: this.checkOutDate,
+        bookingDate: new Date().toISOString(), // Add booking date
+        roomBooked: this.roomsBooked,
         price: this.total,
         status: 'Booked',
       };

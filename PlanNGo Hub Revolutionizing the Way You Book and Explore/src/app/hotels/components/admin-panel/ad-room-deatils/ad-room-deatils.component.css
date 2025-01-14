@@ -159,6 +159,16 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  .popup-content-add {
+    /* max-width: 800px; */
+    width: auto;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
   
   .form-horizontal {
     display: flex;
