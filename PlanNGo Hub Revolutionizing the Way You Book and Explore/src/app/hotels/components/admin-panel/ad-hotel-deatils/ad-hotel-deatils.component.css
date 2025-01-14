@@ -163,3 +163,124 @@ h2.tag-head.text-center.mb-5{
 .m-2 {
   display: list-item;
 }
+button.btn.btn-primary.float-end {
+  margin-right: 2%;
+}
+
+.hotel-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  overflow-y: auto;
+}
+
+.popup-content img {
+  width: 100%;
+  margin-top: 10px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.popup-content button {
+  margin-top: 20px;
+}
+
+.hotel-add-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content-add {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  max-height: 80vh; /* 80% of the viewport height */
+  overflow-y: auto; /* Enables scroll if content exceeds height */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 5px 0;
+}
+
+input, textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+.delete-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content-del {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+.delete-icon {
+  position: absolute;
+  margin-top: -8px;
+  margin-left: 16%;
+  background-color: #f00; /* Red background for the circle */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Circle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.delete-icon i {
+  font-size: 16px;
+  color: #fff; /* White icon color */
+}
+

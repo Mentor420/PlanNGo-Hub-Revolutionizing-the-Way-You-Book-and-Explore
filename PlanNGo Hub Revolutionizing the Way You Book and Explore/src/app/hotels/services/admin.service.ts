@@ -48,7 +48,7 @@ export class AdminService {
 
   // Add a new hotel
   addHotel(hotelData: Hotel): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, { hotel: hotelData });
+    return this.http.post(`${this.apiUrl}`, hotelData );
   }
 
   // Delete a hotel by ID
