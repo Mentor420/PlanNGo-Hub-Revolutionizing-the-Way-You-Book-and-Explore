@@ -152,7 +152,7 @@
 
   .popup-content {
     /* max-width: 800px; */
-    width: auto;
+    width: 25%;
     margin: auto;
     background-color: #fff;
     padding: 20px;
@@ -215,3 +215,9 @@
     padding: 5px;
   }
   
+  button.btn.btn-danger.del {
+    margin-left: 10px;
+}
+.popup-actions {
+  margin-left: 88px;
+}

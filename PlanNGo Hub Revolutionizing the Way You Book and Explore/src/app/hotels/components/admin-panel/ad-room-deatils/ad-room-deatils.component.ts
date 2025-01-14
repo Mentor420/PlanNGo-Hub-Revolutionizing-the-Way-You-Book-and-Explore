@@ -27,6 +27,8 @@ export class AdRoomDeatilsComponent implements OnInit {
   showEditRoomPopup: boolean = false;
   selectedRoom: any = {}; // Holds the room to be edited
   hotels: { id: string; name: string }[] = [];
+  showDeletePopup: boolean = false;
+  roomToDelete: any = null;
 
   // Popup state and new room object
   showAddRoomPopup = false;
@@ -232,6 +234,31 @@ export class AdRoomDeatilsComponent implements OnInit {
       Number(this.newRoom.pricePerNight) > 0 && Number(this.newRoom.availableRooms) > 0;
   
     return allFieldsPresent && validNumericValues;
+  }
+
+  // Open delete confirmation popup
+  openDeletePopup(hotelId: string, roomId: string): void {
+    this.roomToDelete = { hotelId, roomId };
+    this.showDeletePopup = true;
+  }
+
+  // Close the delete popup
+  closeDeletePopup(): void {
+    this.showDeletePopup = false;
+    this.roomToDelete = null;
+  }
+
+  // Confirm delete and delete the room
+  confirmDelete(): void {
+    if (this.roomToDelete) {
+      const { hotelId, roomId } = this.roomToDelete;
+
+      // Call your delete function here (ensure to handle the actual deletion logic)
+      this.deleteRoom(hotelId, roomId);
+
+      // Close the popup
+      this.closeDeletePopup();
+    }
   }
 
   deleteRoom(hotelid: string, roomId: string): void {
