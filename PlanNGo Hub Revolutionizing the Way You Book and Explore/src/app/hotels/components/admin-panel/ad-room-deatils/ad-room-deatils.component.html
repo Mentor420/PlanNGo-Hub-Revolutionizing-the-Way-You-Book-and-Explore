@@ -47,7 +47,7 @@
                     <td>{{ room.pricePerNight }}</td>
                     <td>{{ room.availableRooms }}</td>
                     <td>
-                      <a class="btn btn-success btn-sm">Edit</a>
+                      <a class="btn btn-success btn-sm" (click)="openEditRoomPopup(room)">Edit</a>
                       <button class="btn btn-danger btn-sm"
                         (click)="deleteRoom(room.hotelId, room.roomId)">Delete</button>
                     </td>
@@ -75,7 +75,11 @@
           </div>
           <div class="form-group">
             <label for="roomId">Room ID</label>
-            <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" required />
+            <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" required 
+            (ngModelChange)="checkRoomIdAvailability()" />
+            <div *ngIf="roomIdDuplicate" class="error-message">
+              This Room ID already exists for the selected hotel.
+            </div>
           </div>
         </div>
         <div class="form-row">
@@ -109,12 +113,71 @@
           </div>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-success">Add Room</button>
           <button type="button" class="btn btn-secondary" (click)="closeAddRoomPopup()">Cancel</button>
+          <button type="submit" class="btn btn-success">Add Room</button>
         </div>
       </form>
     </div>
   </div>
   
-
+  <div *ngIf="showEditRoomPopup" class="popup-overlay">
+    <div class="popup-content-edit">
+      <h3>Edit Room</h3>
+      <form (ngSubmit)="editRoom()" class="form-horizontal">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="hotel">Hotel</label>
+            <select id="hotel" [(ngModel)]="selectedRoom.hotelId" name="hotelId" required>
+              <option value="" disabled selected>Select a hotel</option>
+              <option *ngFor="let hotel of hotels" [value]="hotel.id">{{ hotel.name }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="roomId">Room ID</label>
+            <input type="text" id="roomId" [(ngModel)]="selectedRoom.roomId" name="roomId" readonly />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" id="type" [(ngModel)]="selectedRoom.type" name="type" required />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" [(ngModel)]="selectedRoom.description" name="description" required></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pricePerNight">Price Per Night</label>
+            <input type="number" id="pricePerNight" [(ngModel)]="selectedRoom.pricePerNight" name="pricePerNight" required />
+          </div>
+          <div class="form-group">
+            <label for="availableRooms">Available Rooms</label>
+            <input type="number" id="availableRooms" [(ngModel)]="selectedRoom.availableRooms" name="availableRooms" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="benefits">Benefits</label>
+            <textarea id="benefits" [(ngModel)]="selectedRoom.benefits" name="benefits"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image">Image URL</label>
+            <input type="file" id="image" (change)="onImageChange($event)" />
+            <!-- Preview the existing image -->
+            <div *ngIf="selectedRoom.images" class="image-preview">
+              <p>Current Image:</p>
+              <img [src]="selectedRoom.images" alt="Room Image" class="preview-img" />
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="closeEditRoomPopup()">Cancel</button>
+          <button type="submit" class="btn btn-success">Update Room</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
 </div>

@@ -57,9 +57,33 @@ export class AdminService {
   }
 
   // Add a room to a specific hotel
-  addRoomToHotel(hotelId: string, roomData: Omit<Room, 'hotelId'>): Observable<any> {
-    console.log('Adding room to hotel:', hotelId, roomData);
-    
+  updateRoom(hotelId: string, updatedRoom: Room): Observable<any> {
+    return this.getAllHotels().pipe(
+      map((hotels) => {
+        const hotel = hotels.find((h) => h.id === hotelId);
+        if (!hotel) {
+          throw new Error('Hotel not found');
+        }
+        const roomIndex = hotel.rooms.findIndex((room) => room.roomId === updatedRoom.roomId);
+        if (roomIndex === -1) {
+          throw new Error('Room not found');
+        }
+        hotel.rooms[roomIndex] = updatedRoom; // Update the specific room
+        return hotel;
+      }),
+      switchMap((updatedHotel) => 
+        this.http.put(`${this.apiUrl}/${hotelId}`, updatedHotel)
+      ),
+      catchError((error) => {
+        console.error('Error updating room:', error.message);
+        return throwError(error);
+      })
+    );
+  }
+
+  
+  // Add a room to a specific hotel
+  addRoomToHotel(hotelId: string, roomData: Room): Observable<any> {
     return this.http.get<Hotel>(`${this.apiUrl}/${hotelId}`).pipe(
       map((hotel) => {
         if (!hotel) {

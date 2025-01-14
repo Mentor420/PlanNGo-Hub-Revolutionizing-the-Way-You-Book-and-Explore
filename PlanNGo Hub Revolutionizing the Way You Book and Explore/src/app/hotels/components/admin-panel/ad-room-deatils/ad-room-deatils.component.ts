@@ -23,6 +23,9 @@ export class AdRoomDeatilsComponent implements OnInit {
   rooms: RoomWithHotelId[] = [];
   filteredRooms: RoomWithHotelId[] = [];
   loading = false;
+  roomIdDuplicate = false;
+  showEditRoomPopup: boolean = false;
+  selectedRoom: any = {}; // Holds the room to be edited
   hotels: { id: string; name: string }[] = [];
 
   // Popup state and new room object
@@ -62,6 +65,54 @@ export class AdRoomDeatilsComponent implements OnInit {
   toggleSidebar() {
     this.sidebarCollapsed = !this.sidebarCollapsed;
   }
+
+  onImageChange(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedRoom.images = e.target.result; // Update the image preview
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  openEditRoomPopup(room: any): void {
+    this.selectedRoom = { ...room }; // Clone the room data to avoid direct binding
+    this.showEditRoomPopup = true;
+  }
+  
+  closeEditRoomPopup(): void {
+    this.showEditRoomPopup = false;
+  }
+  
+  editRoom(): void {
+    if (this.selectedRoom) {
+      const { hotelId, ...roomData } = this.selectedRoom;
+  
+      // Ensure 'benefits' is an array
+      if (typeof roomData.benefits === 'string') {
+        roomData.benefits = roomData.benefits.split(',').map((benefit: string) => benefit.trim());
+      }
+  
+      // Ensure 'images' is an array
+      if (typeof roomData.images === 'string') {
+        roomData.images = [roomData.images];
+      }
+  
+      this.adminService.updateRoom(hotelId, roomData).subscribe({
+        next: (response) => {
+          alert('Room updated successfully!');
+          this.closeEditRoomPopup();
+          this.fetchRooms(); // Refresh the room list
+        },
+        error: (err) => {
+          console.error('Error updating room:', err);
+          alert('Failed to update the room.');
+        },
+      });
+    }
+  }  
 
   openAddRoomPopup(): void {
     this.showAddRoomPopup = true;
@@ -110,11 +161,17 @@ export class AdRoomDeatilsComponent implements OnInit {
 
   // Add a new room to the selected hotel
   addRoom(): void {
-    if (!this.newRoom.hotelId) {
-      alert('Please select a hotel.');
+    if (!this.isRoomDetailsComplete()) {
+      alert('Please fill in all required details and ensure valid values.');
       return;
     }
-  
+
+    // Check if room ID already exists for the same hotel
+    if (this.isRoomIdDuplicate()) {
+      alert('This Room ID already exists in the selected hotel.');
+      return;
+    }
+
     // Ensure benefits and images are arrays
     const roomData = {
       ...this.newRoom,
@@ -135,6 +192,7 @@ export class AdRoomDeatilsComponent implements OnInit {
         this.rooms.push({ ...roomData });
         this.filteredRooms.push({ ...roomData });
         alert('Room added successfully.');
+        this.ngOnInit();
         this.closeAddRoomPopup();
       },
       error: (err) => {
@@ -144,8 +202,37 @@ export class AdRoomDeatilsComponent implements OnInit {
     });
   }
   
-  
+  // Helper method to check if room ID already exists for the same hotel
+  checkRoomIdAvailability(): void {
+    this.roomIdDuplicate = this.isRoomIdDuplicate();
+  }
 
+  // Method to check if room ID already exists for the same hotel
+  isRoomIdDuplicate(): boolean {
+    return this.rooms.some(room => room.hotelId === this.newRoom.hotelId && room.roomId === this.newRoom.roomId);
+  }
+
+  // Updated helper method to validate room details
+  isRoomDetailsComplete(): boolean {
+    const requiredFields = [
+      this.newRoom.hotelId,
+      this.newRoom.roomId,
+      this.newRoom.type,
+      this.newRoom.description,
+      this.newRoom.pricePerNight,
+      this.newRoom.availableRooms,
+      this.newRoom.images,
+    ];
+  
+    // Check if all required fields are present and not empty
+    const allFieldsPresent = requiredFields.every((field) => field !== null && field !== undefined && field !== '');
+  
+    // Ensure pricePerNight and availableRooms are greater than zero
+    const validNumericValues =
+      Number(this.newRoom.pricePerNight) > 0 && Number(this.newRoom.availableRooms) > 0;
+  
+    return allFieldsPresent && validNumericValues;
+  }
 
   deleteRoom(hotelid: string, roomId: string): void {
     const hotelId = hotelid; // Replace with the actual hotel ID logic
