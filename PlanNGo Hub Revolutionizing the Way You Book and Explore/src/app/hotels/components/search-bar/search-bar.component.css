@@ -85,7 +85,7 @@ input[type="text"]::placeholder {
 .amenities-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 2px;
 }
 
 .amenities-options label {
