@@ -1,4 +1,6 @@
 <app-header></app-header>
+<ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
+
 <div class="flight-container">
   
     <!-- Main Content -->
@@ -22,6 +24,7 @@
       <div class="flights">
         <ul class="booking-list" *ngIf="filteredFlights.length>0">
             <li *ngFor="let data of filteredFlights" class="booking-item">
+              <p id="class-type"><span [class]="'class-circle ' + (data.classType === 'First Class' ? 'First-class' : data.classType)" >.</span>{{data.classType}}</p>
                 <div class="route-details">
                     <div class="departure">
                         <h1 class="place">{{data.departure.place}}</h1>
@@ -85,7 +88,16 @@
           <input type="text" [(ngModel)]="destination" name="destination" placeholder="Search place" />
     
           <label>Departure Date</label>
-          <input type="date" [(ngModel)]="date" name="date" />
+          <div class="range-date">
+            <div>
+              <label>Start Date</label>
+              <input type="date" [(ngModel)]="startDate" name="date" />
+            </div>
+            <div>
+              <label>End Date</label>
+              <input type="date" [(ngModel)]="endDate" name="date" />
+            </div>
+          </div>
   
         <div class="search-clear-btn">
             <button class="flight-btn" type="submit">Search</button>

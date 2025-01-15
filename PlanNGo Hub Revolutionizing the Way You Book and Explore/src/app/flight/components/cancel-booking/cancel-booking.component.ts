@@ -4,11 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FlightBookingService } from '../../services/flight-booking.service';
 import { HeaderComponent } from '../header/header.component';
+import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cancel-booking',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule, HeaderComponent ],
+  imports: [CommonModule, FormsModule, HttpClientModule, HeaderComponent, NgxSpinnerComponent ],
   templateUrl: './cancel-booking.component.html',
   styleUrl: './cancel-booking.component.css'
 })
@@ -17,14 +18,21 @@ export class CancelBookingComponent implements OnInit{
   combinedData: any[] = [];
   isCancelledBooking = false
   bookingId:String = ""
+  isFetched = false;
 
-  constructor(private flightBookingService: FlightBookingService, private http:HttpClient) {}
+  constructor(private flightBookingService: FlightBookingService, private http:HttpClient, private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
+    this.combinedData = []
+    this.spinner.show();
     this.flightBookingService.getCombinedData().subscribe((data:any) => {
       console.log(data)
       this.combinedData = data.filter((item: any) => item.bookings?.date)
       .sort((a: any, b: any) => new Date(b.bookings.date).getTime() - new Date(a.bookings.date).getTime());
+      setTimeout(()=>{
+        this.isFetched = true;
+        this.spinner.hide();
+      },1000) 
     });
   }
 

@@ -1,9 +1,19 @@
 <app-header></app-header>
-<div class="container">
+<ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
+
+<div class="container" *ngIf="isFetched">
 <div class="booking-container">
     <h1 class="title">Cancel Booking</h1>
     <hr class="main-divider" />
-    <ul class="booking-list">
+    <div class="no-result-found" *ngIf="combinedData.length < 1">
+        <img
+          src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-illustration-download-in-svg-png-gif-file-formats--no-results-service-landing-page-security-empty-state-pack-design-development-illustrations-3613889.png?f=webp"
+          alt="No Results Found"
+          class="no-results-image"
+        />
+        <h2>Cancel Booking Empty</h2>
+      </div>
+    <ul class="booking-list" *ngIf="combinedData.length > 0">
         <li *ngFor="let data of combinedData" class="booking-item">
             <div class="route-details">
                 <div class="departure">

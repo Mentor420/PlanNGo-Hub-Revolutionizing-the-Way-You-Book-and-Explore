@@ -5,12 +5,12 @@ import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Va
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlightBookingService } from '../../services/flight-booking.service';
 import { HeaderComponent } from '../header/header.component';
-import { ViewSimilarFlightsComponent } from '../view-similar-flights/view-similar-flights.component';
+import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-flight-booking',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, ViewSimilarFlightsComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent, NgxSpinnerComponent],
   templateUrl: './flight-booking.component.html',
   styleUrl: './flight-booking.component.css'
 })
@@ -19,17 +19,22 @@ export class FlightBookingComponent implements OnInit {
   flights:any = {}
   isBooked = false
   isBookingFailure = false
+  similerFlights:any[] = []
+  id:any = ""
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.flightBookingService.getSpecificFlights(id).subscribe((data:any) => {
-      this.flights = data;
-    });
+    this.getFlightsDetails()
   }
 
-  constructor(private fb: FormBuilder, private router:Router, private route:ActivatedRoute, private http:HttpClient, private flightBookingService: FlightBookingService) {
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private spinner: NgxSpinnerService, private http: HttpClient, private flightBookingService: FlightBookingService) {
     this.flightBookingForm = this.fb.group({
       passengers: this.fb.array([this.createPassengerForm()])
+    });
+  
+    this.route.paramMap.subscribe((params) => {
+      this.id = params.get('id');
+      console.log("Route parameter changed, new ID:", this.id);
+      this.getFlightsDetails();
     });
   }
 
@@ -101,5 +106,41 @@ export class FlightBookingComponent implements OnInit {
         this.isBookingFailure  = false
       },2000)
     }
+  }
+
+  getSmilarFlights(departure: any){
+    const id = this.route.snapshot.paramMap.get('id')
+    
+    this.http.get(`http://localhost:3000/flights?departure.place=${departure}`).subscribe((data:any)=>{
+      this.similerFlights = data.filter((eachItem:any) => eachItem.id !== id);
+      console.log(data)
+    })
+  }
+
+  navigateToFlight(id: string): void {
+    console.log("Navigating to flight:", id);
+    this.id = id;
+    this.router.navigate(['/flights', id]);
+    this.getFlightsDetails();
+    setTimeout(()=>{
+      location.reload()
+    },100)
+  }
+
+  getFlightsDetails() {
+    this.spinner.show()
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log("Getting details for flight ID:", this.id);
+    this.flightBookingService.getSpecificFlights(this.id).subscribe(
+      (data: any) => {
+        console.log("Flight details:", data);
+        this.flights = data;
+        this.getSmilarFlights(data.departure.place);
+        setTimeout(()=>{
+          this.spinner.hide()
+        }, 1000)
+      },
+      (error) => console.error("Error fetching flight details:", error)
+    );
   }
 }

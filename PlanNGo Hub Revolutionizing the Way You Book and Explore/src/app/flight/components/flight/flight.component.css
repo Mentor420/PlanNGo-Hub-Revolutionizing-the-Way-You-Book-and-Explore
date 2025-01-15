@@ -111,7 +111,6 @@ padding: 20px;
 border-radius: 8px;
 width: 400px;
 max-height: 80%;
-overflow-y: hidden;
 position: relative;
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -269,6 +268,15 @@ margin: 5px 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.range-date{
+  display: flex;
+  gap: 10px;
+}
+
+.range-date div{
+  width: 48%;
 }
 
 .filters-container h2 {
@@ -439,6 +447,45 @@ margin: 5px 0;
   border-radius: 50px;
 }
 
+#class-type{
+  text-align: right;
+  color: #666;
+  background-color: white;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.class-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.Economy {
+  background-color: rgb(52, 202, 52);
+  color: rgb(52, 202, 52);
+}
+
+.Business {
+  background-color: rgb(47, 47, 230);
+  color: rgb(47, 47, 230);
+}
+
+.First-class {
+  background-color: gold;
+  color: gold;
+}
+
 .booking-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px,1fr)); 
@@ -458,6 +505,7 @@ margin: 5px 0;
   transform-origin: center;
   color: #555; 
   font-weight: bold; 
+  padding-top: 40px;
 }
 
 .booking-item:hover {
@@ -651,4 +699,51 @@ margin: 5px 0;
       flex: 1 1 100%; 
   }
 }
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  text-align: center;
+  color: #555;
+}
 
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-result-found{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-result-found img{
+  width: 300px;
+  height: 300px;
+}
+
+.no-result-found h2{
+  color: #fdc713;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -40px;
+}

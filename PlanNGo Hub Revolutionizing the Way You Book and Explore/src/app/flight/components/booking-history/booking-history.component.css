@@ -280,4 +280,51 @@
     padding-right: 40px;
     border-radius: 10px;
   }
+  .loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+    color: #555;
+  }
   
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .no-result-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .no-result-found img{
+    width: 300px;
+    height: 300px;
+  }
+
+  .no-result-found h2{
+    color: #fdc713;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: -40px;
+  }
