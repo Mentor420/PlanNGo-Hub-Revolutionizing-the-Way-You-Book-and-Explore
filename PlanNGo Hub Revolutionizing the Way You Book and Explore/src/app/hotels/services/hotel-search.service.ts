@@ -172,7 +172,7 @@ export class HotelSearchService {
 
     if (amenities && amenities.length > 0) {
       amenities.forEach((amenity) => {
-        url += `&amenities_like=${encodeURIComponent(amenity)}`; // filter by amenities
+        url += `&amenities.name_like=${encodeURIComponent(amenity)}`; // filter by amenities
       });
     }
 

@@ -3,17 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotelSearchService } from '../../services/hotel-search.service';
-
-interface Hotel {
-  id: string;
-  city: string;
-  name: string;
-  pricePerNight: number;
-  roomsAvailable: number;
-  checkInDate: string;
-  checkOutDate: string;
-  amenities: string[];
-}
+import { Hotel } from '../../models/interfaces';
 
 @Component({
   standalone: true,
@@ -145,9 +135,9 @@ export class SearchBarComponent {
       const matchesAmenities =
         this.selectedAmenities.length === 0 ||
         this.selectedAmenities.every((amenity) =>
-          hotel.amenities.includes(amenity)
+          hotel.amenities.some((hotelAmenity) => hotelAmenity.name === amenity)
         );
-  
+      
       const priceRange = this.formData.price
         ? this.formData.price.split('-').map(Number)
         : null;
