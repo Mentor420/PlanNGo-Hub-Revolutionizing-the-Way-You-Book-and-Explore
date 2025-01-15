@@ -28,7 +28,7 @@ body {
   .search-bar-container {
     position: absolute;
     top: 20%;
-    left: 23%;
+    left: 21%;
     /* transform: translate(-50%, 30%); */
     display: flex;
     justify-content: center;

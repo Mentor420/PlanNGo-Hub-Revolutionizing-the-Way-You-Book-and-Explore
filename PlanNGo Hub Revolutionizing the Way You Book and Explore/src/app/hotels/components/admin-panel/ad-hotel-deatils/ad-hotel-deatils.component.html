@@ -22,6 +22,7 @@
         </div>
         <img [src]="hotel.images && hotel.images.length > 0 ? hotel.images[0] : 'assets/default-hotel.jpg'"
           alt="{{ hotel.name || 'Hotel Image Unavailable' }}" />
+          <h3 class="hotel-name">{{ hotel.id }}</h3>
         <h3 class="hotel-name">{{ hotel.name }}</h3>
         <p class="location">
           <i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}
@@ -164,18 +165,27 @@
 <!-- Hotel Details Popup -->
 <div class="hotel-popup" *ngIf="selectedHotel" (click)="closePopup()">
   <div class="popup-content" (click)="$event.stopPropagation()">
-    <h3>{{ selectedHotel.name }}</h3>
-    <p>{{ selectedHotel.description }}</p>
-    <h4>Price per Night: <i class="bi bi-currency-rupee"></i>{{ selectedHotel.pricePerNight }}</h4>
-    <h4>Rooms Available: {{ selectedHotel.roomsAvailable }}</h4>
-    <div *ngFor="let room of selectedHotel.rooms">
-      <h5>{{ room.type }}</h5>
-      <p>{{ room.description }}</p>
-      <img [src]="room.images[0]" alt="Room Image" />
+    <button class="close-btn" (click)="closePopup()">&times;</button>
+    <h3 class="hotel-name">{{ selectedHotel.name }}</h3>
+    <p class="hotel-description">{{ selectedHotel.description }}</p>
+    <h4 class="hotel-price">
+      Price per Night: <i class="bi bi-currency-rupee"></i>{{ selectedHotel.pricePerNight }}
+    </h4>
+    <h4 class="hotel-rooms">Rooms Available: {{ selectedHotel.roomsAvailable }}</h4>
+    <div class="rooms-container">
+      <div class="room-card" *ngFor="let room of selectedHotel.rooms">
+        <h5 class="room-type">{{ room.type }}</h5>
+        <p class="room-description">{{ room.description }}</p>
+        <div class="room-image-wrapper">
+          <img [src]="room.images[0]" alt="Room Image" class="room-image" />
+        </div>
+      </div>
     </div>
-    <button class="btn btn-danger" (click)="closePopup()">Close</button>
+    <button class="btn btn-danger close-btn" (click)="closePopup()">Close</button>
   </div>
 </div>
+
+
 
 <!-- Hotel Delete Confirmation Popup -->
 <div class="delete-popup" *ngIf="showDeletePopup" (click)="closeDeletePopup()">
