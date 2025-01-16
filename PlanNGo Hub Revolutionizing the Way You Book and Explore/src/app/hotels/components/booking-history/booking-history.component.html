@@ -13,12 +13,7 @@
       <div class="booking-list">
         <div class="booking-card" *ngFor="let booking of bookingHistory">
           <div class="booking-card-inner">
-
-            <!-- <div class="booking-image">
-              <img [src]="booking.hotelImage" alt="{{ booking.hotelName }}" />
-            </div> -->
             <div class="booking-info">
-
               <div class="booking-header">
                 <h3>{{ booking.hotelName }}</h3>
                 <span class="status {{ booking.status.toLowerCase() }}">
@@ -37,10 +32,10 @@
                   <p><strong>Rooms Booked:</strong> {{ booking.roomBooked }}</p>
                   <p><strong>Price:</strong> {{ booking.price }}</p>
                 </div>
-
               </div>
-              <div class="booking-actions" *ngIf="booking.status === 'Booked'">
-                <button class="cancel-btn" (click)="onCancelBooking(booking.id)">
+              <div class="booking-actions">
+                <button class="details-btn" (click)="setSelectedBooking(booking)">More Details</button>
+                <button class="cancel-btn" *ngIf="booking.status === 'Booked'" (click)="onCancelBooking(booking.id)">
                   Cancel Booking
                 </button>
               </div>
@@ -49,16 +44,41 @@
         </div>
       </div>
 
-      <div *ngIf="isPopupVisible" class="popup-container">
-        <div class="popup-content">
-          <h2>{{ popupTitle }}</h2>
-          <!-- <p>{{ popupMessage }}</p> -->
-          <button (click)="closePopup()" class="close-popup-button">Close</button>
-          <p *ngIf="popupMessage === 'Are you sure you want to cancel this booking?'"> </p>
-          <button *ngIf="isConfirmVisible" (click)="confirmAction()" class="confirm-popup-button">Confirm</button>
+      <!-- Dialog for Booking Details -->
+      <div class="dialog-overlay" *ngIf="selectedBooking" (click)="clearSelectedBooking()">
+        <div class="dialog" (click)="$event.stopPropagation()">
+          <div class="dialog-header">
+            <h2>Booking Details</h2>
+            <button class="close-dialog-btn" (click)="clearSelectedBooking()">×</button>
+          </div>
+          <div class="dialog-content">
+            <div class="dialog-item">
+              <span class="dialog-label">Booking ID:</span> {{ selectedBooking.id }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Name:</span> {{ selectedBooking.fullName }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-envelope"></i> {{ selectedBooking.email }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-telephone"></i> {{ selectedBooking.mobile }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-calendar-date"></i> Check-in: {{ selectedBooking.checkInDate | formatDate }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-calendar-date"></i> Check-out: {{ selectedBooking.checkOutDate | formatDate }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Room(s) Booked:</span> {{ selectedBooking.roomBooked }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Price:</span> ₹{{ selectedBooking.price }}
+            </div>
+          </div>
         </div>
       </div>
-      
     </ng-container>
   </ng-template>
 

@@ -1,0 +1,80 @@
+<div class="admin-container" [class.sidebar-collapsed]="sidebarCollapsed">
+    <app-ad-sidebar [isOpen]="!sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
+  
+    <main class="main-content">
+      <header class="main-header">
+        <button class="toggle-sidebar" (click)="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <h1>Booking Management</h1>
+        <div class="search-container">
+          <input 
+            type="text" 
+            placeholder="Search bookings..." 
+            [(ngModel)]="searchQuery" 
+            (ngModelChange)="filterBookings()"
+          >
+          <i class="fas fa-search"></i>
+        </div>
+      </header>
+  
+      <section class="content">
+        <div class="card">
+          <div class="card-header">
+            <h2>Booking Details</h2>
+          </div>
+          <div class="card-content">
+            <div *ngIf="loading" class="loading">Loading...</div>
+            <div *ngIf="!loading && filteredBookings.length === 0" class="no-bookings">No bookings available.</div>
+            <table *ngIf="!loading && filteredBookings.length > 0">
+              <thead>
+                <tr>
+                  <th>Full Name/th>
+                  <th>Email ID</th>
+                  <th>Hotel Name</th>
+                  <th>Check-In</th>
+                  <th>Check-Out</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let booking of filteredBookings">
+                  <td>{{ booking.fullName }}</td>
+                  <td>{{ booking.email }}</td>
+                  <td>{{ booking.hotelName }}</td>
+                  <td>{{ booking.checkInDate }}</td>
+                  <td>{{ booking.checkOutDate }}</td>
+                  <td>{{ booking.status }}</td>
+                  <td>
+                    <button class="btn-view" (click)="openBookingDetailsPopup(booking)">View Details</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <div class="popup-overlay" *ngIf="selectedBooking">
+    <div class="popup-content">
+      <h3>Booking Details</h3>
+      <div class="booking-details">
+        <p><strong>Booking ID:</strong> {{ selectedBooking.id }}</p>
+        <p><strong>User ID:</strong> {{ selectedBooking.userId }}</p>
+        <p><strong>Hotel Name:</strong> {{ selectedBooking.hotelName }}</p>
+        <!-- <p><strong>Room Type:</strong> {{ selectedBooking.roomType }}</p> -->
+        <p><strong>Check-In Date:</strong> {{ selectedBooking.checkInDate }}</p>
+        <p><strong>Check-Out Date:</strong> {{ selectedBooking.checkOutDate }}</p>
+        <p><strong>Rooms Booked:</strong> {{ selectedBooking.roomBooked }}</p>
+        <p><strong>Total Price:</strong> ${{ selectedBooking.price }}</p>
+        <p><strong>Status:</strong> {{ selectedBooking.status }}</p>
+        <p><strong>Booking Date:</strong> {{ selectedBooking.bookingDate }}</p>
+      </div>
+      <div class="popup-actions">
+        <button class="btn-close" (click)="closeBookingDetailsPopup()">Close</button>
+      </div>
+    </div>
+  </div>

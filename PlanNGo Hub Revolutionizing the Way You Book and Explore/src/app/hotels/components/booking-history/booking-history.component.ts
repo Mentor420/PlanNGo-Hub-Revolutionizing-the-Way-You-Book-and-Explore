@@ -3,6 +3,7 @@ import { HotelSearchService } from '../../services/hotel-search.service';
 import { CommonModule, Location } from '@angular/common';
 import { forkJoin, map } from 'rxjs';
 import { FormatDatePipe } from '../pipe/format-date.pipe';
+import { Booking } from '../../models/interfaces';
 
 @Component({
   selector: 'app-booking-history',
@@ -18,6 +19,7 @@ export class BookingHistoryComponent implements OnInit {
   popupMessage = '';
   isPopupVisible = false;
   isConfirmVisible = true;
+  selectedBooking: Booking | null = null;
   confirmCallback: (() => void) | null = null;
 
   constructor(private hotelSearchService: HotelSearchService, private location: Location) { }
@@ -116,5 +118,12 @@ export class BookingHistoryComponent implements OnInit {
     }
   }
   
+  setSelectedBooking(booking: Booking): void {
+    this.selectedBooking = booking;
+  }
+
+  clearSelectedBooking(): void {
+    this.selectedBooking = null;
+  }
 }
 

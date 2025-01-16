@@ -34,12 +34,18 @@ export class AdminService {
     );
   }
 
-  // Get all bookings excluding empty ones
+  // Get all bookings across hotels including the hotel name
   getRecentBookings(): Observable<any[]> {
     return this.getAllHotels().pipe(
-      map((hotels) => 
+      map((hotels) =>
         hotels
-          .flatMap((hotel) => hotel.bookings)
+          .flatMap((hotel) =>
+            hotel.bookings.map((booking) => ({
+              ...booking,
+              hotelName: hotel.name, 
+              hotelId: hotel.id,     
+            }))
+          )
           .filter((booking) => booking.userId && booking.roomId && booking.fullName && booking.email)
           .sort((a, b) => new Date(b.bookingDate).getTime() - new Date(a.bookingDate).getTime())
       )

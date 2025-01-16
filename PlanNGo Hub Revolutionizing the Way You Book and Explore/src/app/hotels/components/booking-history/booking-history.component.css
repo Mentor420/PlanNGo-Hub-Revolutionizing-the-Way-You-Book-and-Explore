@@ -314,3 +314,102 @@
     background: linear-gradient(45deg, #0056b3, #004085);
   }
   
+
+  .booking-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .details-btn, .cancel-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .details-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #da190b;
+  }
+  
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .dialog-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .close-dialog-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .dialog-content {
+    padding: 20px;
+  }
+  
+  .dialog-item {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  .dialog-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .dialog-item i {
+    margin-right: 10px;
+    color: #4CAF50;
+  
+  }

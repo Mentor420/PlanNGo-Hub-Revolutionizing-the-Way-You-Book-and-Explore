@@ -33,7 +33,7 @@ export class AdminPanelComponent implements OnInit {
     // Check if we're on a child route (ad-hotel-details or ad-room-details)
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
       const currentRoute = this.router.url;
-      this.isChildRouteActive = currentRoute.includes('ad-hotel-deatils') || currentRoute.includes('ad-room-details');
+      this.isChildRouteActive = currentRoute.includes('ad-hotel-deatils') || currentRoute.includes('ad-room-details') || currentRoute.includes('ad-booking-history');
       console.log("currentRoute",currentRoute);
       console.log("component",this.isChildRouteActive);
 

@@ -32,6 +32,7 @@ export interface Amenity {
     roomBooked: number;
     price: number;
     status: string;
+    hotelName?: string;
   }
   
   export interface Ratings {
