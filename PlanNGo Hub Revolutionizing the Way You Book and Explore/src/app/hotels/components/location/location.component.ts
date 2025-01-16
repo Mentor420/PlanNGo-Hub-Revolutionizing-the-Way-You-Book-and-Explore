@@ -30,7 +30,7 @@ export class LocationComponent implements OnInit {
   }
 
   loadHotels(city: string): void {
-    this.hotelService.searchHotels(city).subscribe(
+    this.hotelService.fetchHotelsByCity(city).subscribe(
       (data) => {
         this.hotels = data;
       },

@@ -139,6 +139,11 @@ export class HotelSearchService {
   //   );
   // }
 
+  // Method to fetch hotels by city
+  fetchHotelsByCity(city: string): Observable<any[]> {
+    const url = `${this.apiUrl}?city=${city}`;
+    return this.http.get<any[]>(url);  // Simply return all hotels for the city
+  }  
 
   // Method to fetch hotels based on search criteria
   searchHotels(

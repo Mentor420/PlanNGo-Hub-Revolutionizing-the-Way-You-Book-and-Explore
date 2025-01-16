@@ -81,8 +81,8 @@ export class HotelRoomComponent implements OnInit {
       alert("Please select both check-in and check-out dates.");
       return;
     }
-
-    if(this.checkInDate > this.checkOutDate){
+  
+    if (this.checkInDate > this.checkOutDate) {
       alert("Check-in date cannot be greater than check-out date.");
       return;
     }
@@ -90,22 +90,55 @@ export class HotelRoomComponent implements OnInit {
     const checkIn = new Date(this.checkInDate);
     const checkOut = new Date(this.checkOutDate);
   
+    // Filter rooms based on availability and booking overlap
     this.rooms = this.hotel.rooms.filter((room: Room) => {
-      // Check if there are enough available rooms
-      if (room.availableRooms < this.roomCount) {
-        return false;
+      const totalAvailableRooms = room.availableRooms;
+  
+      // Check if the room has enough available rooms
+      if (totalAvailableRooms < this.roomCount) {
+        return false; // Not enough rooms available
       }
   
-      // Check if the room is booked for the selected date range
-      const isBooked = this.hotel.bookings.some((booking: Booking) => {
+      // Check if there are any overlapping bookings for this room
+      const isRoomBooked = this.hotel.bookings.some((booking: Booking) => {
+        const bookingStart = new Date(booking.checkInDate);
+        const bookingEnd = new Date(booking.checkOutDate);
+  
+        // Check if the booking overlaps with the requested check-in and check-out dates
         return (
           booking.roomId === room.roomId &&
-          ((new Date(booking.checkInDate) <= checkOut &&
-            new Date(booking.checkOutDate) >= checkIn))
+          !(checkOut <= bookingStart || checkIn >= bookingEnd) // No overlap condition
         );
       });
   
-      return !isBooked; // Include the room only if it's not booked
+      if (isRoomBooked) {
+        // If the room is booked for the requested dates, we need to calculate the remaining available rooms
+        const overlappingBookings = this.hotel.bookings.filter((booking: Booking) => {
+          const bookingStart = new Date(booking.checkInDate);
+          const bookingEnd = new Date(booking.checkOutDate);
+          
+          // Filter bookings that overlap with the requested dates
+          return (
+            booking.roomId === room.roomId &&
+            !(checkOut <= bookingStart || checkIn >= bookingEnd) // Overlap condition
+          );
+        });
+  
+        const totalBookedRooms = overlappingBookings.reduce(
+          (sum: number, booking: Booking) => sum + booking.roomBooked,
+          0
+        );
+  
+        // Calculate the remaining rooms after the bookings
+        const remainingRooms = totalAvailableRooms - totalBookedRooms;
+  
+        // If there are enough remaining rooms, include this room in the filtered results
+        return remainingRooms >= this.roomCount;
+      }
+  
+      // If the room is not booked for the requested dates, include it in the result
+      return true;
     });
-  } 
+  }
+   
 }
