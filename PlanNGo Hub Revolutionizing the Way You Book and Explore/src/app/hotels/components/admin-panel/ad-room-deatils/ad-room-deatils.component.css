@@ -214,20 +214,27 @@
   
   .image-preview {
     margin-top: 10px;
+    text-align: center; /* To center align the image preview */
   }
   
   .preview-img {
-    max-width: 52%;
-    max-height: 68%;
-    height: auto;
-    border: 1px solid #ddd;
+    width: 100%; /* Fixed width */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensures the image fits while maintaining aspect ratio */
+    border: 1px solid #ddd; /* Optional: Adds a border for a clean look */
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px; /* Space between the border and image */
+    background-color: #f8f8f8; /* Optional: Adds a background for a cleaner look with transparent images */
   }
+  
   
   button.btn.btn-danger.del {
     margin-left: 10px;
 }
 .popup-actions {
   margin-left: 88px;
+}
+
+.popup-content-edit .form-actions{
+  margin-top: -5%;
 }

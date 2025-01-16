@@ -1,24 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from '../../services/admin.service'; // Import AdminService
 import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AdRoomDeatilsComponent } from './ad-room-deatils/ad-room-deatils.component';
+import { AdHotelDeatilsComponent } from './ad-hotel-deatils/ad-hotel-deatils.component';
 
 @Component({
   selector: 'app-admin-panel',
   standalone: true,
-  imports: [AdSidebarComponent, CommonModule, FormsModule],
+  imports: [AdSidebarComponent, AdHotelDeatilsComponent, AdRoomDeatilsComponent, CommonModule, FormsModule, RouterModule],
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.css']
 })
 export class AdminPanelComponent implements OnInit {
   isSidebarOpen = true;
+  showMainContent = true;
   searchQuery: string = '';
   totalHotels: number = 0;
   totalRooms: number = 0;
   recentBookings: any[] = [];
   allRecentBookings: any[] = []; // Backup for unfiltered bookings
+
+  @ViewChild(AdHotelDeatilsComponent) hotelDetails!: AdHotelDeatilsComponent;
+  @ViewChild(AdRoomDeatilsComponent) roomDetails!: AdRoomDeatilsComponent;
 
   constructor(private adminService: AdminService, private router: Router) {}
 
@@ -38,6 +44,20 @@ export class AdminPanelComponent implements OnInit {
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  filterContentBySearch() {
+    // Implement search behavior based on current page or data
+    if (this.showMainContent) {
+      // Filter for main content
+      console.log('Filtering dashboard content');
+      this.filterRecents();
+    } else {
+      // Filter for other pages
+      console.log('Filtering page-specific content');
+      this.hotelDetails?.filterHotels();
+      this.roomDetails?.filterRooms();
+    }
   }
 
   filterRecents(): void {

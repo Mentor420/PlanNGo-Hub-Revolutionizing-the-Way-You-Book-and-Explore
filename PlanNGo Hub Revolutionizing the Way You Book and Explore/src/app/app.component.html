@@ -1,6 +1,10 @@
-<app-header></app-header>
-
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>
-
+<ng-container *ngIf="showHeaderAndFooter">
+    <app-header></app-header>
+  </ng-container>
+  
+  <router-outlet></router-outlet>
+  
+  <ng-container *ngIf="showHeaderAndFooter">
+    <app-footer></app-footer>
+  </ng-container>
+  

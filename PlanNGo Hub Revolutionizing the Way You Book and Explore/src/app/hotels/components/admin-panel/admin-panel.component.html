@@ -1,6 +1,11 @@
 <div class="main">
   <app-ad-sidebar [isOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
 
+  <!-- Dynamic Child Content (Booking Form, etc.) -->
+  <div id="hotel-and-room-section">
+    <router-outlet></router-outlet>
+  </div>
+  
   <section class="dashboard" [class.expanded]="!isSidebarOpen">
     <div class="top">
       <div class="toggle_btn" (click)="toggleSidebar()">
@@ -15,7 +20,7 @@
     </div>
 
     <div class="dash-content">
-      <div class="overview">
+     <div class="overview">
         <div class="title">
           <i class="uil uil-tachometer-fast-alt"></i>
           <span class="text">Dashboard</span>
