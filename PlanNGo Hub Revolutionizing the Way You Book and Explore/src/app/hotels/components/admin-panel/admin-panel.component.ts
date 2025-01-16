@@ -3,9 +3,10 @@ import { AdminService } from '../../services/admin.service'; // Import AdminServ
 import { AdSidebarComponent } from './ad-sidebar/ad-sidebar.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { AdRoomDeatilsComponent } from './ad-room-deatils/ad-room-deatils.component';
 import { AdHotelDeatilsComponent } from './ad-hotel-deatils/ad-hotel-deatils.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-admin-panel',
@@ -16,12 +17,12 @@ import { AdHotelDeatilsComponent } from './ad-hotel-deatils/ad-hotel-deatils.com
 })
 export class AdminPanelComponent implements OnInit {
   isSidebarOpen = true;
-  showMainContent = true;
   searchQuery: string = '';
   totalHotels: number = 0;
   totalRooms: number = 0;
   recentBookings: any[] = [];
   allRecentBookings: any[] = []; // Backup for unfiltered bookings
+  isChildRouteActive = false;
 
   @ViewChild(AdHotelDeatilsComponent) hotelDetails!: AdHotelDeatilsComponent;
   @ViewChild(AdRoomDeatilsComponent) roomDetails!: AdRoomDeatilsComponent;
@@ -29,6 +30,23 @@ export class AdminPanelComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) {}
 
   ngOnInit(): void {
+    // Check if we're on a child route (ad-hotel-details or ad-room-details)
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+      const currentRoute = this.router.url;
+      this.isChildRouteActive = currentRoute.includes('ad-hotel-deatils') || currentRoute.includes('ad-room-details');
+      console.log("currentRoute",currentRoute);
+      console.log("component",this.isChildRouteActive);
+
+      // Store the route state in sessionStorage
+      sessionStorage.setItem('isChildRouteActive', JSON.stringify(this.isChildRouteActive));
+    });
+
+    // Retrieve the stored value from sessionStorage if it exists
+    const storedRouteState = sessionStorage.getItem('isChildRouteActive');
+    if (storedRouteState) {
+      this.isChildRouteActive = JSON.parse(storedRouteState);
+    }
+
     // Fetch the total number of hotels and rooms
     this.adminService.getAllHotels().subscribe(hotels => {
       this.totalHotels = hotels.length;
@@ -46,20 +64,6 @@ export class AdminPanelComponent implements OnInit {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
-  filterContentBySearch() {
-    // Implement search behavior based on current page or data
-    if (this.showMainContent) {
-      // Filter for main content
-      console.log('Filtering dashboard content');
-      this.filterRecents();
-    } else {
-      // Filter for other pages
-      console.log('Filtering page-specific content');
-      // this.hotelDetails?.filterHotels();
-      // this.roomDetails?.filterRooms();
-    }
-  }
-
   filterRecents(): void {
     const query = this.searchQuery.toLowerCase();
     this.recentBookings = this.allRecentBookings.filter(
@@ -72,6 +76,6 @@ export class AdminPanelComponent implements OnInit {
   }
 
   goToHotelDetails(): void {
-    this.router.navigate(['/ad-room-details']);
+    this.router.navigate(['/admin-panel/ad-room-details']);
   }
 }

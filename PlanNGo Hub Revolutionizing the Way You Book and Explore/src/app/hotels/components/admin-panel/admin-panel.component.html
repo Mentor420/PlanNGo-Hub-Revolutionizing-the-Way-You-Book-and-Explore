@@ -1,80 +1,81 @@
 <div class="main">
-  <app-ad-sidebar [isOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
-
-  <!-- Dynamic Child Content (Booking Form, etc.) -->
   <div id="hotel-and-room-section">
+    <!-- Conditionally Display the Parent Content or Child Route -->
+    <div *ngIf="!isChildRouteActive">
+      <!-- Sidebar -->
+      <app-ad-sidebar [isOpen]="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
+      <!-- Parent content only shown when child routes are not active -->
+      <section class="dashboard" [class.expanded]="!isSidebarOpen">
+        <div class="top">
+          <div class="toggle_btn" (click)="toggleSidebar()">
+            <i class="bx bx-menu"></i>
+          </div>
+          <div class="search_box">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search here..." [(ngModel)]="searchQuery" (input)="filterRecents()" />
+          </div>
+        </div>
+
+        <div class="dash-content">
+          <div class="overview">
+            <div class="title">
+              <i class="uil uil-tachometer-fast-alt"></i>
+              <span class="text">Dashboard</span>
+            </div>
+
+            <div class="boxes">
+              <div class="box box1">
+                <i class="fa-solid fa-hotel"></i>
+                <span class="text">Total Hotels</span>
+                <span class="number">{{ totalHotels }}</span>
+              </div>
+              <div class="box box2">
+                <i class="uil uil-comment"></i>
+                <span class="text">Total Rooms</span>
+                <span class="number">{{ totalRooms }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity">
+            <div class="title-r">
+              <div class="title-text">
+                <i class="uil uil-clock-three"></i>
+                <span class="text">Recently Booked</span>
+              </div>
+              <button class="show-all-btn" (click)="goToHotelDetails()">Show All</button>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Booking Date</th>
+                    <th>Arrival Date</th>
+                    <th>Hotel ID</th>
+                    <th>Room ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let booking of recentBookings | slice:0:5">
+                    <td>{{ booking.fullName }}</td>
+                    <td>{{ booking.email }}</td>
+                    <td>{{ booking.bookingDate }}</td>
+                    <td>{{ booking.checkInDate }}</td>
+                    <td>{{ booking.hotelId }}</td>
+                    <td>{{ booking.roomId }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Child Route Components -->
     <router-outlet></router-outlet>
   </div>
-  
-  <section class="dashboard" [class.expanded]="!isSidebarOpen">
-    <div class="top">
-      <div class="toggle_btn" (click)="toggleSidebar()">
-        <i class="bx bx-menu"></i>
-      </div>
-      <div class="search_box">
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search here..."
-        [(ngModel)]="searchQuery"
-        (input)="filterRecents()" />
-      </div>
-    </div>
-
-    <div class="dash-content">
-     <div class="overview">
-        <div class="title">
-          <i class="uil uil-tachometer-fast-alt"></i>
-          <span class="text">Dashboard</span>
-        </div>
-
-        <div class="boxes">
-          <div class="box box1">
-            <i class="fa-solid fa-hotel"></i>
-            <span class="text">Total Hotels</span>
-            <span class="number">{{ totalHotels }}</span>
-          </div>
-          <div class="box box2">
-            <i class="uil uil-comment"></i>
-            <span class="text">Total Rooms</span>
-            <span class="number">{{ totalRooms }}</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="activity">
-        <div class="title-r">
-          <div class="title-text">
-            <i class="uil uil-clock-three"></i>
-            <span class="text">Recently Booked</span>
-          </div>
-          <button class="show-all-btn" (click)="goToHotelDetails()">Show All</button>
-        </div>
-
-        <div class="table-wrapper">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Booking Date</th>
-                <th>Arrival Date</th>
-                <th>Hotel ID</th>
-                <th>Room ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Iterate over recentBookings and display data -->
-              <tr *ngFor="let booking of recentBookings | slice:0:5">
-                <td>{{ booking.fullName }}</td>
-                <td>{{ booking.email }}</td>
-                <td>{{ booking.bookingDate }}</td>
-                <td>{{ booking.checkInDate }}</td>
-                <td>{{ booking.hotelId }}</td>
-                <td>{{ booking.roomId }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>

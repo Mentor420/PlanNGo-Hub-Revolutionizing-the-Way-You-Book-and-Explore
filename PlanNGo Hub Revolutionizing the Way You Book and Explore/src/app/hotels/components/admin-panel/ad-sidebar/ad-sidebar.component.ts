@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ad-sidebar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './ad-sidebar.component.html',
   styleUrls: ['./ad-sidebar.component.css']
 })

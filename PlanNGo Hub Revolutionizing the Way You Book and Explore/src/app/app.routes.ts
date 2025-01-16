@@ -29,8 +29,16 @@ export const routes: Route[] = [
     ]
   },
   { path: 'booking-history', component: BookingHistoryComponent },
-  { path: 'admin-panel', component: AdminPanelComponent},
-  { path: 'ad-hotel-deatils', component: AdHotelDeatilsComponent},
   { path: 'ad-sidebar', component: AdSidebarComponent},
-  { path: 'ad-room-details', component:AdRoomDeatilsComponent},
+  {
+    path: 'admin-panel', component: AdminPanelComponent,
+    children: [
+      { path: 'ad-hotel-deatils', component: AdHotelDeatilsComponent },
+      { path: 'ad-room-details', component: AdRoomDeatilsComponent },
+    ]
+  },
+  {
+    path: '**', 
+    redirectTo: '',  // Redirect for undefined routes to main page
+  }
 ];
