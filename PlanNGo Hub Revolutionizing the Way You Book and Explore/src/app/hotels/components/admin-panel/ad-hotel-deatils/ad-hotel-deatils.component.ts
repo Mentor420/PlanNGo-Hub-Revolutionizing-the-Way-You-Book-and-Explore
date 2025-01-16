@@ -79,7 +79,8 @@ export class AdHotelDeatilsComponent implements OnInit {
 
   filterHotels(): void {
     this.filteredHotels = this.hotels.filter((hotel) =>
-      hotel.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      hotel.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      hotel.id.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
 

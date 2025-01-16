@@ -156,6 +156,4 @@ export class SearchBarComponent {
       return matchesAmenities && matchesPrice;
     });
   }
-
-
 }

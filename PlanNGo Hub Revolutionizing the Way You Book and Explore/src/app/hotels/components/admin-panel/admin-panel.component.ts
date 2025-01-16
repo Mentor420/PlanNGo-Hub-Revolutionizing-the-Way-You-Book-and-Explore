@@ -10,7 +10,7 @@ import { AdHotelDeatilsComponent } from './ad-hotel-deatils/ad-hotel-deatils.com
 @Component({
   selector: 'app-admin-panel',
   standalone: true,
-  imports: [AdSidebarComponent, AdHotelDeatilsComponent, AdRoomDeatilsComponent, CommonModule, FormsModule, RouterModule],
+  imports: [AdSidebarComponent, CommonModule, FormsModule, RouterModule],
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.css']
 })
@@ -55,8 +55,8 @@ export class AdminPanelComponent implements OnInit {
     } else {
       // Filter for other pages
       console.log('Filtering page-specific content');
-      this.hotelDetails?.filterHotels();
-      this.roomDetails?.filterRooms();
+      // this.hotelDetails?.filterHotels();
+      // this.roomDetails?.filterRooms();
     }
   }
 
@@ -66,7 +66,8 @@ export class AdminPanelComponent implements OnInit {
       (booking) =>
         booking.fullName.toLowerCase().includes(query) ||
         booking.email.toLowerCase().includes(query) ||
-        booking.roomId.toString().includes(query)
+        booking.roomId.toString().includes(query) ||
+        booking.hotelId.toLowerCase().includes(query)
     );
   }
 

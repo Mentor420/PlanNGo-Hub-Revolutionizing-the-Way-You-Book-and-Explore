@@ -9,6 +9,22 @@
       "roomsAvailable": 5,
       "rooms": [
         {
+          "roomId": "r001",
+          "type": "2 Bedroom Deluxe",
+          "description": "Spacious deluxe room with two bedrooms and modern amenities.",
+          "pricePerNight": 4000,
+          "benefits": [
+            "Free WiFi",
+            "Breakfast",
+            "Parking",
+            "Free Cancellation"
+          ],
+          "availableRooms": 3,
+          "images": [
+            "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
+          ]
+        },
+        {
           "roomId": "r002",
           "type": "Single Deluxe",
           "description": "Cozy room for solo travelers with premium amenities.",
@@ -18,7 +34,7 @@
             "Room Service",
             "City View"
           ],
-          "availableRooms": 3,
+          "availableRooms": 4,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
           ]
@@ -105,18 +121,18 @@
           "id": "cf0e0c1c-6303-4206-8a69-5eab42d3b53b",
           "userId": "u001",
           "hotelId": "hT01",
-          "roomId": "r002",
+          "roomId": "r001",
           "fullName": "r",
           "email": "r@r",
           "mobile": "1",
           "idProof": "C:\\fakepath\\Capture001.png",
           "couponCode": "",
-          "checkInDate": "2025-01-14",
-          "checkOutDate": "2025-01-15",
+          "checkInDate": "2025-01-15",
+          "checkOutDate": "2025-01-17",
           "bookingDate": "2025-01-14T16:31:30.179Z",
-          "roomBooked": 3,
+          "roomBooked": "3",
           "price": 2740,
-          "status": "Cancelled"
+          "status": "Booked"
         },
         {
           "id": "da113747-6d47-4d57-b7b1-a036fdfc5378",
@@ -128,12 +144,12 @@
           "mobile": "09532911742",
           "idProof": "C:\\fakepath\\Capture001.png",
           "couponCode": "",
-          "checkInDate": "2025-01-02",
-          "checkOutDate": "2025-01-13",
+          "checkInDate": "2025-01-15",
+          "checkOutDate": "2025-01-17",
           "bookingDate": "2025-01-14T17:25:44.029Z",
-          "roomBooked": "3",
+          "roomBooked": 3,
           "price": 2740,
-          "status": "Cancelled"
+          "status": "Booked"
         }
       ],
       "ratings": {

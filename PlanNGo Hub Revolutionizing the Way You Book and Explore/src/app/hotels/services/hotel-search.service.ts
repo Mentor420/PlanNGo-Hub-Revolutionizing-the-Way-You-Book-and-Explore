@@ -156,16 +156,6 @@ export class HotelSearchService {
       url += `&pricePerNight_gte=${priceRange[0]}&pricePerNight_lte=${priceRange[1]}`;
     }
 
-    if (checkInDate) {
-      // Add condition to use '=' for the checkInDate query parameter
-      url += `&checkInDate=${checkInDate}`; // directly pass the checkInDate
-    }
-
-    if (checkOutDate) {
-      // Add condition to use '=' for the checkOutDate query parameter
-      url += `&checkOutDate=${checkOutDate}`; // directly pass the checkOutDate
-    }
-
     if (rooms) {
       url += `&roomsAvailable_gte=${rooms}`; // filter for available rooms
     }
@@ -177,6 +167,67 @@ export class HotelSearchService {
     }
 
     console.log('Final URL:', url); // Check if URL is constructed correctly
-    return this.http.get<any[]>(url); // Make the HTTP request
+    return this.http.get<any[]>(url).pipe(
+      map((hotels) =>
+        hotels.filter((hotel) => this.isHotelAvailable(hotel, checkInDate, checkOutDate, rooms))
+      )
+    );
   }
+
+  // Helper method to check if a hotel is available for the given date range and number of rooms
+  private isHotelAvailable(
+    hotel: any,
+    checkInDate?: string,
+    checkOutDate?: string,
+    requestedRooms: number = 1,
+  ): boolean {
+
+    if (!checkInDate || !checkOutDate) {
+      console.error('Invalid check-in or check-out date provided.');
+      return false;
+    }
+
+    const requestedStart = new Date(checkInDate);
+    const requestedEnd = new Date(checkOutDate);
+  
+    if (requestedEnd <= requestedStart) {
+      console.error('Invalid date range: check-out date must be after check-in date.');
+      return false;
+    }
+  
+    // Check availability for each room type
+    for (const room of hotel.rooms) {
+      const roomId = room.roomId;
+      const totalAvailableRooms = room.availableRooms;
+  
+      // Calculate how many rooms of this type are already booked for the requested period
+      const overlappingBookings = hotel.bookings?.filter((booking: any) => {
+        const bookingStart = new Date(booking.checkInDate);
+        const bookingEnd = new Date(booking.checkOutDate);
+  
+        // Check if booking overlaps with the requested dates and is for the same room type
+        return (
+          booking.roomId === roomId &&
+          !(requestedEnd <= bookingStart || requestedStart >= bookingEnd) // Overlapping condition
+        );
+      }) || [];
+  
+      const totalBookedRooms = overlappingBookings.reduce(
+        (sum: number, booking: any) => sum + booking.roomBooked,
+        0
+      );
+  
+      // Calculate remaining rooms of this type
+      const remainingRooms = totalAvailableRooms - totalBookedRooms;
+  
+      // If this room type has enough rooms left, return true
+      if (remainingRooms >= requestedRooms) {
+        return true;
+      }
+    }
+  
+    // If no room type has enough availability, return false
+    return false;
+  }
+  
 }
