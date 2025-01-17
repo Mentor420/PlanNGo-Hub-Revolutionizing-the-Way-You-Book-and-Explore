@@ -79,7 +79,18 @@ export class SearchBarComponent {
     const location = this.formData.location.charAt(0).toUpperCase() + this.formData.location.slice(1).toLowerCase();
     this.formData.location = location;
 
-    const { checkInDate, checkOutDate, rooms, price } = this.formData;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const checkInDate = new Date(this.formData.checkInDate);
+    const checkOutDate = new Date(this.formData.checkOutDate);
+    const { rooms, price } = this.formData;
+
+    // Check if the check-in or check-out date is before today's date
+    if (checkInDate < today || checkOutDate < today) {
+      alert("Dates must be today or a future date. Please select valid dates.");
+      return;
+    }
+
     const priceRange = price
       ? price.split('-').map((val) => {
         const num = Number(val.trim());
@@ -92,10 +103,14 @@ export class SearchBarComponent {
       return; // Exit early if the price range is invalid
     }
 
+     // Convert dates to string format for API call
+    const checkInDateStr = checkInDate.toISOString(); 
+    const checkOutDateStr = checkOutDate.toISOString();
+
     this.hasSearched = true;
 
     this.hotelSearchService
-      .searchHotels(location, checkInDate, checkOutDate, rooms, priceRange, this.selectedAmenities)
+      .searchHotels(location, checkInDateStr, checkOutDateStr, rooms, priceRange, this.selectedAmenities)
       .subscribe(
         (results: Hotel[]) => {
           const filteredResults = this.filterResults(results);

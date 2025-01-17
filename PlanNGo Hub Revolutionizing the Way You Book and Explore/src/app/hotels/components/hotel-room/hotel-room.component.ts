@@ -87,9 +87,17 @@ export class HotelRoomComponent implements OnInit {
       return;
     }
   
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     const checkIn = new Date(this.checkInDate);
     const checkOut = new Date(this.checkOutDate);
   
+    // Check if the check-in or check-out date is before today's date
+    if (checkIn < today || checkOut < today) {
+      alert("Dates must be today or a future date. Please select valid dates.");
+      return;
+    }
+
     // Filter rooms based on availability and booking overlap
     this.rooms = this.hotel.rooms.filter((room: Room) => {
       const totalAvailableRooms = room.availableRooms;
