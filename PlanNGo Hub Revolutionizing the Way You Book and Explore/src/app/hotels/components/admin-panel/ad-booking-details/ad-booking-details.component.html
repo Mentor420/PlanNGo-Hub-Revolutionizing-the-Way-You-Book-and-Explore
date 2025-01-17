@@ -1,35 +1,27 @@
 <div class="admin-container" [class.sidebar-collapsed]="sidebarCollapsed">
     <app-ad-sidebar [isOpen]="!sidebarCollapsed" (toggleSidebar)="toggleSidebar()"></app-ad-sidebar>
   
-    <main class="main-content">
-      <header class="main-header">
-        <button class="toggle-sidebar" (click)="toggleSidebar()">
-          <i class="fas fa-bars"></i>
-        </button>
-        <h1>Booking Management</h1>
-        <div class="search-container">
-          <input 
-            type="text" 
-            placeholder="Search bookings..." 
-            [(ngModel)]="searchQuery" 
-            (ngModelChange)="filterBookings()"
-          >
-          <i class="fas fa-search"></i>
+    <main class="main-content" [class.expanded]="sidebarCollapsed">
+      <div class="top">
+        <div class="toggle_btn" (click)="toggleSidebar()">
+          <i class="bx bx-menu"></i>
         </div>
-      </header>
+        <div class="search_box">
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search bookings..." [(ngModel)]="searchQuery" (input)="filterBookings()" />
+        </div>
+      </div>
   
       <section class="content">
+        <h2 class="tag-head mt-5">Recent Bookings</h2>
         <div class="card">
-          <div class="card-header">
-            <h2>Booking Details</h2>
-          </div>
           <div class="card-content">
             <div *ngIf="loading" class="loading">Loading...</div>
             <div *ngIf="!loading && filteredBookings.length === 0" class="no-bookings">No bookings available.</div>
             <table *ngIf="!loading && filteredBookings.length > 0">
               <thead>
                 <tr>
-                  <th>Full Name/th>
+                  <th>Full Name</th>
                   <th>Email ID</th>
                   <th>Hotel Name</th>
                   <th>Check-In</th>
@@ -61,6 +53,7 @@
   <div class="popup-overlay" *ngIf="selectedBooking">
     <div class="popup-content">
       <h3>Booking Details</h3>
+      <button class="btn-close" (click)="closeBookingDetailsPopup()"></button>
       <div class="booking-details">
         <p><strong>Booking ID:</strong> {{ selectedBooking.id }}</p>
         <p><strong>User ID:</strong> {{ selectedBooking.userId }}</p>
@@ -69,12 +62,9 @@
         <p><strong>Check-In Date:</strong> {{ selectedBooking.checkInDate }}</p>
         <p><strong>Check-Out Date:</strong> {{ selectedBooking.checkOutDate }}</p>
         <p><strong>Rooms Booked:</strong> {{ selectedBooking.roomBooked }}</p>
-        <p><strong>Total Price:</strong> ${{ selectedBooking.price }}</p>
+        <p><strong>Total Price:</strong> ₹{{ selectedBooking.price }}</p>
         <p><strong>Status:</strong> {{ selectedBooking.status }}</p>
         <p><strong>Booking Date:</strong> {{ selectedBooking.bookingDate }}</p>
-      </div>
-      <div class="popup-actions">
-        <button class="btn-close" (click)="closeBookingDetailsPopup()">Close</button>
       </div>
     </div>
   </div>

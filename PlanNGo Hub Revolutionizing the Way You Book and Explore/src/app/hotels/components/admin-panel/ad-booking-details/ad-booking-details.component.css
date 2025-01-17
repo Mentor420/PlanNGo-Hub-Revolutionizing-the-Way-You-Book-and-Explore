@@ -1,86 +1,81 @@
-.admin-container {
+.main-content {
+  position: relative;
+  left: 250px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  /* padding: 10px 14px; */
+  transition: all 0.3s ease;
+}
+
+.main-content.expanded {
+  left: 95px;
+  width: calc(100% - 100px);
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 250px;
     display: flex;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: #333;
-    color: white;
-    transition: all 0.3s ease;
-  }
-  
-  .sidebar.collapsed {
-    width: 60px;
-  }
-  
-  .sidebar-header {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .sidebar-nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar-nav li {
-    padding: 10px 20px;
-  }
-  
-  .sidebar-nav a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-  }
-  
-  .sidebar-nav i {
-    margin-right: 10px;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-    transition: all 0.3s ease;
-  }
-  
-  .sidebar-collapsed .main-content {
-    margin-left: 60px;
-  }
-  
-  .main-header {
-    display: flex;
+    width: calc(100% - 250px);
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 10px 14px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    z-index: 10;
+    height: 60px;
   }
   
-  .toggle-sidebar {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
+  .main-content.expanded .top {
+    left: 90px;
+    width: calc(100% - 78px);
   }
   
-  .search-container {
+  .search_box {
     position: relative;
+    height: 45px;
+    /* max-width: 600px; */
+    width: 100%;
+    margin: 0 15px 0 0;
   }
   
-  .search-container input {
-    padding: 10px 30px 10px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .search-container i {
+  .search_box input {
     position: absolute;
-    right: 10px;
+    border: 1px solid #CCCCCC;
+    background-color: #F5F5F5;
+    padding: 0 25px 0 50px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    color: #161a2d;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+  }
+  
+  .search_box i {
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    z-index: 10;
     top: 50%;
     transform: translateY(-50%);
+    color: #161a2d;
   }
   
+  .toggle_btn {
+    font-size: 26px;
+    color: #161a2d;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  a.btn.btn-success.btn-sm {
+    margin-right: 10px;
+  }
+
   .card {
     background-color: white;
     border-radius: 4px;
@@ -138,6 +133,9 @@
     border-radius: 4px;
     max-width: 500px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   
   .popup-actions {
@@ -158,3 +156,14 @@
     text-align: center;
     padding: 20px;
   }
+
+  section.content {
+    margin: 15px;
+    padding-top: 10px;
+}
+
+.booking-details {
+  line-height: 15px;
+  margin-top: 20px;
+}
+
