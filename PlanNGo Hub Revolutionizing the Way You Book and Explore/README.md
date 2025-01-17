@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## clone team2
+git clone -b Team2 --single-branch https://github.com/Mentor420/PlanNGo-Hub-Revolutionizing-the-Way-You-Book-and-Explore.git
