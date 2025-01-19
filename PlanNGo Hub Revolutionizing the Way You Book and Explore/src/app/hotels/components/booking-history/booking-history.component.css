@@ -413,3 +413,68 @@
     color: #4CAF50;
   
   }
+
+
+  .review-popup {
+    max-width: 500px;
+  }
+  
+  .review-popup h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .rating {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+  }
+  
+  .rating span {
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .rating span:hover,
+  .rating span.filled {
+    color: #ffd700;
+  }
+  
+  .review-popup textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .review-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  input#author {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.error-message-comment {
+  color: red;
+  font-size: 15px;
+  margin-top: -16px;
+}
+
+.input-field {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.input-field.ng-invalid {
+  border-color: red;
+}

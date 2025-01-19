@@ -24,7 +24,7 @@ export class SectionComponent {
   getTopRatedHotels(): void {
     this.hotelSearchService.getHotels().subscribe((hotels: any[]) => {
       // Sort hotels by rating in descending order
-      this.topRatedHotels = hotels.sort((a, b) => b.rating - a.rating).slice(0, 8); // Top 8 hotels
+      this.topRatedHotels = hotels.sort((a, b) => b.ratings.averageRating - a.ratings.averageRating).slice(0, 8); // Top 8 hotels
     });
   }
 

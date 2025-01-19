@@ -44,7 +44,7 @@
     </div>
     <button class="filter-button" (click)="applyFilter()">Search</button>
   </div>
-  <div *ngIf="rooms && rooms.length > 0" class="main">
+  <div *ngIf="rooms && rooms.length > 0 && showrooms" class="main">
     <!-- <div class="headline d-flex pt-3">
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Room Type</h4>
       <h4 class="text-start p-4 pt-1 pb-2" style="width: 30%;">Benefits</h4>

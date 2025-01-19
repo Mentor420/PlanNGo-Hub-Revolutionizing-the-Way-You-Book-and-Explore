@@ -33,19 +33,19 @@
                     <!-- Render full stars -->
                     <i
                       class="bi bi-star-fill"
-                      *ngFor="let _ of getStarArray(hotel.rating).fullStars"
+                      *ngFor="let _ of getStarArray(hotel.ratings.averageRating).fullStars"
                       style="color: gold;"
                     ></i>
                     <!-- Render half stars -->
                     <i
                         class="bi bi-star-half"
-                        *ngFor="let _ of getStarArray(hotel.rating).halfStars"
+                        *ngFor="let _ of getStarArray(hotel.ratings.averageRating).halfStars"
                         style="color: gold;"
                     ></i>
                     <!-- Render empty stars -->
                     <i
                       class="bi bi-star"
-                      *ngFor="let _ of getStarArray(hotel.rating).emptyStars"
+                      *ngFor="let _ of getStarArray(hotel.ratings.averageRating).emptyStars"
                       style="color: gray;"
                     ></i>
                 </div>
@@ -53,8 +53,8 @@
             <p class="location mb-2">{{ hotel.description }}</p>
             <p class="location mb-2"><i class="bi bi-geo-alt-fill"></i>{{ city }}</p>
             <div class="d-flex m-0">
-                <p id="rate">{{ hotel.rating }} </p>
-                <p> ({{ hotel.reviewsCount }} Ratings)</p>
+                <p id="rate">{{ hotel.ratings.averageRating }} </p>
+                <p> ({{ hotel.ratings.ratingsCount }} Ratings)</p>
             </div>
         </div>
         <div class="price d-flex flex-column">

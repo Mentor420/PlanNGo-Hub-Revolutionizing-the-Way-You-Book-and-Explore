@@ -6,10 +6,10 @@
         <div class="rating-box2 d-flex flex-column align-items-center justify-content-center">
             <h4 class="fw-normal">Rating</h4>
             <div class="rate d-flex align-items-baseline m-1">
-                <h2 class="fw-semibold">{{ hotelDetails?.rating }} /</h2>
+                <h2 class="fw-semibold">{{ hotelDetails?.ratings?.averageRating }} /</h2>
                 <h5>5</h5>
             </div>
-            <h6 class="fw-normal">{{ hotelDetails?.reviewsCount }} Rating(s)</h6>
+            <h6 class="fw-normal">{{ hotelDetails?.ratings?.ratingsCount }} Rating(s)</h6>
         </div>
 
         <!-- Display the rating breakdown per rating level (1 to 5 stars) -->
@@ -95,7 +95,25 @@
             </div>
         </div>
 
-        <!-- Empty div for styling purpose -->
-        <div class="rating-box4"></div>
+        <!-- Display the reviews -->
+        <div class="rating-box4">
+            <div class="reviews-container" *ngIf="sortedReviews.length > 0; else noReviews">
+                <div *ngFor="let review of sortedReviews" class="review">
+                <h5 class="review-author">{{ review.author }}</h5>
+                <div class="review-rating">
+                    <i class="bi bi-star-fill" *ngFor="let star of [].constructor(review.rating)"></i>
+                </div>
+                <p class="review-comment">{{ review.comment }}</p>
+                <span class="review-date">{{ review.date | date: 'medium' }}</span>
+                </div>
+            </div> 
+            <ng-template #noReviews>
+                <div class="no-reviews">
+                <i class="bi bi-emoji-frown"></i>
+                <p>No reviews available for this hotel yet.</p>
+                <p>Be the first to review this hotel.</p>
+                </div>
+            </ng-template>
+        </div>  
     </div>
 </div>

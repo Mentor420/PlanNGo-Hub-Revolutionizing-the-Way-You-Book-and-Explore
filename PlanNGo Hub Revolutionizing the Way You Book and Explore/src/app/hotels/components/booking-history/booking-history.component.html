@@ -44,6 +44,17 @@
         </div>
       </div>
 
+      <!-- Popup for Cancel Booking -->
+      <div *ngIf="isPopupVisible" class="popup-container">
+        <div class="popup-content">
+          <h2>{{ popupTitle }}</h2>
+          <!-- <p>{{ popupMessage }}</p> -->
+          <button (click)="closePopup()" class="close-popup-button">Close</button>
+          <p *ngIf="popupMessage === 'Are you sure you want to cancel this booking?'"> </p>
+          <button *ngIf="isConfirmVisible && isreview" (click)="confirmAction()" class="confirm-popup-button">Confirm</button>
+        </div>
+      </div>
+
       <!-- Dialog for Booking Details -->
       <div class="dialog-overlay" *ngIf="selectedBooking" (click)="clearSelectedBooking()">
         <div class="dialog" (click)="$event.stopPropagation()">
@@ -88,4 +99,33 @@
       <a href="/" class="search-btn">Find a Hotel</a>
     </div>
   </ng-template>
+
+  <!-- Review Popup -->
+  <div *ngIf="showReviewPopup" class="popup-container">
+    <div class="popup-content review-popup">
+      <h2>Review Your Stay</h2>
+      <p>How was your stay at {{ reviewBooking?.hotelName }}?</p>
+      <div class="rating">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="reviewRating = star" [class.filled]="star <= reviewRating">
+          ★
+        </span>
+      </div>
+      <!-- Input for Name -->
+      <div class="input-group">
+        <input id="author" [(ngModel)]="author" type="text" placeholder="Enter your name" class="input-field" />
+        <div *ngIf="nameError" class="error-message">{{ nameError }}</div>
+      </div>
+      <!-- Input for Comment -->
+      <div class="input-group">
+        <textarea [(ngModel)]="reviewComment" placeholder="Share your experience (optional)" rows="4"
+          class="input-field"></textarea>
+        <div *ngIf="commentError" class="error-message-comment">{{ commentError }}</div>
+      </div>
+      <div class="review-actions">
+        <button (click)="closeReviewPopup()" class="close-popup-button">Cancel</button>
+        <button (click)="submitReview()" class="confirm-popup-button" [disabled]="reviewRating === 0">Submit
+          Review</button>
+      </div>
+    </div>
+  </div>
 </div>

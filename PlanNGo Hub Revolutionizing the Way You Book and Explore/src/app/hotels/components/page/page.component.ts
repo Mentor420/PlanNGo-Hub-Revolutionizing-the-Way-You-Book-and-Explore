@@ -64,20 +64,28 @@ export class PageComponent implements OnInit {
         console.log('Hotel ID of page:', hotelId);
         if (hotelId) {
           this.hotelId = hotelId; 
-          this.fetchHotelDetails(hotelId);
-          this.getAllHotels(); // Get all hotels for comparison
+          this.initializeHotelData(hotelId);
         } else {
+          // Start a loop to keep checking until a valid hotelId is found
+          const interval = setInterval(() => {
           this.hotelId = this.hotelIdService.getHotelId();
-          console.log('Fallback Hotel ID from service:', this.hotelId);
+          console.log('Checking for Hotel ID from service:', this.hotelId);
+
           if (this.hotelId) {
-            this.fetchHotelDetails(this.hotelId);  
-            this.getAllHotels();
+            clearInterval(interval); // Stop the loop when hotelId is found
+            this.initializeHotelData(this.hotelId);
           }
+        }, 500); // Check every 500ms
         }
       });
     } else {
       console.warn('SSR environment: Skipping browser-specific logic.');
     }
+  }
+
+  private initializeHotelData(hotelId: string): void {
+    this.fetchHotelDetails(hotelId);
+    this.getAllHotels(); // Fetch all hotels for comparison
   }
 
   ngOnDestroy(): void {

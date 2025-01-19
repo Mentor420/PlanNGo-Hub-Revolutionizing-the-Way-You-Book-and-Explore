@@ -129,3 +129,47 @@
     font-weight: 400;
   }
   
+
+  .reviews-container {
+    max-height: 180px; 
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.review {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.review-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review-rating {
+    color: #FFD700; /* Gold color for stars */
+    margin-bottom: 5px;
+}
+
+.review-comment {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.no-reviews {
+  font-size: 16px;
+  color: #480404;
+  text-align: center;
+  margin-top: 20px;
+  margin: 37px;
+}

@@ -51,6 +51,7 @@ export class AdHotelDeatilsComponent implements OnInit {
     images: [], // Empty array for now
     bookings: [], // Empty array for now
     ratings: { averageRating: 0, ratingsCount: 0, ratingBreakdown: {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0} },
+    reviews: [], // Empty array for now
     bankOffer: [] // Empty array for now
   };
   

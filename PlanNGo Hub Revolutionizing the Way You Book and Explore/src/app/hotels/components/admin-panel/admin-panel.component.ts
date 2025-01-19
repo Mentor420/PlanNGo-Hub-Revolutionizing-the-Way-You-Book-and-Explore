@@ -30,21 +30,23 @@ export class AdminPanelComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) {}
 
   ngOnInit(): void {
-    // Check if we're on a child route (ad-hotel-details or ad-room-details)
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
-      const currentRoute = this.router.url;
-      this.isChildRouteActive = currentRoute.includes('ad-hotel-deatils') || currentRoute.includes('ad-room-details') || currentRoute.includes('ad-booking-history');
-      console.log("currentRoute",currentRoute);
-      console.log("component",this.isChildRouteActive);
+    if (typeof window !== 'undefined') {
+      // Check if we're on a child route (ad-hotel-details or ad-room-details)
+      this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+        const currentRoute = this.router.url;
+        this.isChildRouteActive = currentRoute.includes('ad-hotel-deatils') || currentRoute.includes('ad-room-details') || currentRoute.includes('ad-booking-history');
+        console.log("currentRoute",currentRoute);
+        console.log("component",this.isChildRouteActive);
 
-      // Store the route state in sessionStorage
-      sessionStorage.setItem('isChildRouteActive', JSON.stringify(this.isChildRouteActive));
-    });
+        // Store the route state in sessionStorage
+        sessionStorage.setItem('isChildRouteActive', JSON.stringify(this.isChildRouteActive));
+      });
 
-    // Retrieve the stored value from sessionStorage if it exists
-    const storedRouteState = sessionStorage.getItem('isChildRouteActive');
-    if (storedRouteState) {
-      this.isChildRouteActive = JSON.parse(storedRouteState);
+      // Retrieve the stored value from sessionStorage if it exists
+      const storedRouteState = sessionStorage.getItem('isChildRouteActive');
+      if (storedRouteState) {
+        this.isChildRouteActive = JSON.parse(storedRouteState);
+      }
     }
 
     // Fetch the total number of hotels and rooms
@@ -76,6 +78,6 @@ export class AdminPanelComponent implements OnInit {
   }
 
   goToHotelDetails(): void {
-    this.router.navigate(['/admin-panel/ad-room-details']);
+    this.router.navigate(['/admin-panel/ad-booking-history']);
   }
 }

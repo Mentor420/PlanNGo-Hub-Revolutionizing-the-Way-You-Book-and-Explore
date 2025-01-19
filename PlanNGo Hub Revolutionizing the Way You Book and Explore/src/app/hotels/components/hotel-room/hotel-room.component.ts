@@ -22,6 +22,7 @@ export class HotelRoomComponent implements OnInit {
   checkInDate: string = '';
   checkOutDate: string = '';
   roomCount: number = 1;
+  showrooms: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,6 +42,7 @@ export class HotelRoomComponent implements OnInit {
 
     this.route.queryParams.subscribe((params) => {
       const hotelId = params['hotelId'];
+      this.hotelIdService.setHotelId(hotelId);
       console.log('Hotel ID:', hotelId);
       if (hotelId) {
         this.hotelSearchService.getHotelDetails(hotelId).subscribe(
@@ -65,15 +67,17 @@ export class HotelRoomComponent implements OnInit {
     console.log('Hotel ID:', hotelId);
     console.log('Room ID:', roomId);
     this.hotelIdService.setHotelId(hotelId);
-    this.router.navigate([`/room/${roomId}/booking-form`], { queryParams: 
-      { 
-        hotelId,
-        roomId, 
-        checkInDate: this.checkInDate,
-        checkOutDate: this.checkOutDate,
-        roomCount: this.roomCount 
-      } 
+
+    console.log({ hotelId, roomId, checkInDate: this.checkInDate, checkOutDate: this.checkOutDate, roomCount: this.roomCount });
+
+    this.hotelIdService.setBookingData({
+      hotelId,
+      roomId,
+      checkInDate: this.checkInDate,
+      checkOutDate: this.checkOutDate,
+      roomCount: this.roomCount,
     });
+    this.router.navigate([`/room/${roomId}/booking-form`]);
   }
 
   applyFilter() {
@@ -95,58 +99,64 @@ export class HotelRoomComponent implements OnInit {
     // Check if the check-in or check-out date is before today's date
     if (checkIn < today || checkOut < today) {
       alert("Dates must be today or a future date. Please select valid dates.");
+      this.showrooms = false;
       return;
+    }else{
+      this.showrooms = true;
     }
 
-    // Filter rooms based on availability and booking overlap
-    this.rooms = this.hotel.rooms.filter((room: Room) => {
-      const totalAvailableRooms = room.availableRooms;
-  
-      // Check if the room has enough available rooms
-      if (totalAvailableRooms < this.roomCount) {
-        return false; // Not enough rooms available
-      }
-  
-      // Check if there are any overlapping bookings for this room
-      const isRoomBooked = this.hotel.bookings.some((booking: Booking) => {
-        const bookingStart = new Date(booking.checkInDate);
-        const bookingEnd = new Date(booking.checkOutDate);
-  
-        // Check if the booking overlaps with the requested check-in and check-out dates
-        return (
-          booking.roomId === room.roomId &&
-          !(checkOut <= bookingStart || checkIn >= bookingEnd) // No overlap condition
-        );
-      });
-  
-      if (isRoomBooked) {
-        // If the room is booked for the requested dates, we need to calculate the remaining available rooms
-        const overlappingBookings = this.hotel.bookings.filter((booking: Booking) => {
+    if (this.showrooms == true) {
+
+      // Filter rooms based on availability and booking overlap
+      this.rooms = this.hotel.rooms.filter((room: Room) => {
+        const totalAvailableRooms = room.availableRooms;
+    
+        // Check if the room has enough available rooms
+        if (totalAvailableRooms < this.roomCount) {
+          return false; // Not enough rooms available
+        }
+    
+        // Check if there are any overlapping bookings for this room
+        const isRoomBooked = this.hotel.bookings.some((booking: Booking) => {
           const bookingStart = new Date(booking.checkInDate);
           const bookingEnd = new Date(booking.checkOutDate);
-          
-          // Filter bookings that overlap with the requested dates
+    
+          // Check if the booking overlaps with the requested check-in and check-out dates
           return (
             booking.roomId === room.roomId &&
-            !(checkOut <= bookingStart || checkIn >= bookingEnd) // Overlap condition
+            !(checkOut <= bookingStart || checkIn >= bookingEnd) // No overlap condition
           );
         });
-  
-        const totalBookedRooms = overlappingBookings.reduce(
-          (sum: number, booking: Booking) => sum + booking.roomBooked,
-          0
-        );
-  
-        // Calculate the remaining rooms after the bookings
-        const remainingRooms = totalAvailableRooms - totalBookedRooms;
-  
-        // If there are enough remaining rooms, include this room in the filtered results
-        return remainingRooms >= this.roomCount;
-      }
-  
-      // If the room is not booked for the requested dates, include it in the result
-      return true;
-    });
+    
+        if (isRoomBooked) {
+          // If the room is booked for the requested dates, we need to calculate the remaining available rooms
+          const overlappingBookings = this.hotel.bookings.filter((booking: Booking) => {
+            const bookingStart = new Date(booking.checkInDate);
+            const bookingEnd = new Date(booking.checkOutDate);
+            
+            // Filter bookings that overlap with the requested dates
+            return (
+              booking.roomId === room.roomId &&
+              !(checkOut <= bookingStart || checkIn >= bookingEnd) // Overlap condition
+            );
+          });
+    
+          const totalBookedRooms = overlappingBookings.reduce(
+            (sum: number, booking: Booking) => sum + booking.roomBooked,
+            0
+          );
+    
+          // Calculate the remaining rooms after the bookings
+          const remainingRooms = totalAvailableRooms - totalBookedRooms;
+    
+          // If there are enough remaining rooms, include this room in the filtered results
+          return remainingRooms >= this.roomCount;
+        }
+    
+        // If the room is not booked for the requested dates, include it in the result
+        return true;
+      });
+    }
   }
    
 }

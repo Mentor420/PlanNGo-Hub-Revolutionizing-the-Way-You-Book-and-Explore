@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { HotelSearchService } from '../../services/hotel-search.service'; // adjust as per your setup
 import { CommonModule } from '@angular/common';
+import { Review } from '../../models/interfaces';
 
 @Component({
   standalone: true,
@@ -14,22 +15,32 @@ export class RatingComponent implements OnInit {
   hotelDetails: any = {}; // data from backend
   userRating: number = 0; // store user rating input
   ratingsData: any = {}; // store ratings data breakdown from backend
+  sortedReviews: Review[] = [];
 
   constructor(private hotelService: HotelSearchService) {}
 
   ngOnInit() {
     if (this.hotelId) {
       this.loadHotelData();
+      this.loadHotelReviews();
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['hotelId']) {
+      // Reset or reload the data when hotelId changes
+      console.log('Hotel ID changed to:', this.hotelId);
+      this.ngOnInit();
     }
   }
 
   // rating.component.ts
-getRatingPercentage(starLevel: string): string {
-  const totalRatings = this.ratingsData?.ratingsCount || 1;  // Avoid division by 0
-  const ratingCount = this.ratingsData?.ratingBreakdown[starLevel] || 0;
-  const percentage = (ratingCount / totalRatings) * 100;
-  return `${percentage}%`;
-}
+  getRatingPercentage(starLevel: string): string {
+    const totalRatings = this.ratingsData?.ratingsCount || 1;  // Avoid division by 0
+    const ratingCount = this.ratingsData?.ratingBreakdown[starLevel] || 0;
+    const percentage = (ratingCount / totalRatings) * 100;
+    return `${percentage}%`;
+  }
 
 
   // Fetch hotel data
@@ -40,13 +51,15 @@ getRatingPercentage(starLevel: string): string {
     });
   }
 
-  // User submits a rating
-  submitRating() {
-    if (this.userRating > 0) {
-      this.hotelService.submitRating(this.hotelId, this.userRating).subscribe(response => {
-        // After submission, refresh the rating data
-        this.loadHotelData();
-      });
-    }
+  // Fetch hotel-specific reviews
+  loadHotelReviews() {
+    this.hotelService.getReviewsForHotel(this.hotelId).subscribe((reviews) => {
+      this.sortedReviews = this.sortReviewsByDate(reviews);
+    });
+  }
+
+  // Sort reviews by date
+  sortReviewsByDate(reviews: any[]): any[] {
+    return reviews.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }
 }

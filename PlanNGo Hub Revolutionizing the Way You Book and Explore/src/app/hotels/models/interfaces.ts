@@ -11,9 +11,19 @@ export interface Amenity {
     type: string;
     description: string;
     pricePerNight: number;
+    currentCoupon: string;
+    currentDiscount: number;
     benefits: string[];
     availableRooms: number;
     images: string[];
+  }
+  
+  export interface Review {
+    id: string;
+    author: string;
+    rating: number;
+    comment: string;
+    date: string;
   }
   
   export interface Booking {
@@ -32,6 +42,7 @@ export interface Amenity {
     roomBooked: number;
     price: number;
     status: string;
+    reviewSubmitted: boolean;
     hotelName?: string;
   }
   
@@ -64,6 +75,7 @@ export interface Amenity {
     images: string[];
     bookings: Booking[];
     ratings: Ratings;
+    reviews: Review[];
     bankOffer: BankOffer[];
   }
   
