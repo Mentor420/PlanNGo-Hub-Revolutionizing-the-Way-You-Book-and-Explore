@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { HotelSearchService } from '../../services/hotel-search.service';
 import { CommonModule, isPlatformBrowser, Location } from '@angular/common';
-import { forkJoin, map } from 'rxjs';
+import { catchError, forkJoin, map } from 'rxjs';
 import { FormatDatePipe } from '../pipe/format-date.pipe';
 import { Booking } from '../../models/interfaces';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +31,7 @@ export class BookingHistoryComponent implements OnInit {
   author = '';
   nameError = '';
   commentError = '';
+  cancelledDueToRoomDeletion: { [key: string]: boolean } = {}
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private hotelSearchService: HotelSearchService, private location: Location) { }
 
@@ -56,8 +57,13 @@ export class BookingHistoryComponent implements OnInit {
           this.hotelSearchService.getHotelDetails(booking.hotelId).pipe(
             map((hotelDetails) => {
               // Find the room details for the current booking
-              const roomDetails = hotelDetails.rooms.find((room:{ roomId: string }) => room.roomId === booking.roomId);
-  
+              const roomDetails = hotelDetails.rooms.find((room:{ roomId: string }) => room.roomId === booking.roomId) || { type: "Room details unavailable", status: "Deleted" };
+
+              // Check if the booking was cancelled due to room deletion
+              this.cancelledDueToRoomDeletion[booking.id] = booking.status === "Cancelled" && roomDetails.status === "Deleted";
+
+              console.log('Room details:', this.cancelledDueToRoomDeletion);
+
               // Check and update status based on checkout date
               const currentDate = new Date();
               const checkOutDate = new Date(booking.checkOutDate);
@@ -78,6 +84,16 @@ export class BookingHistoryComponent implements OnInit {
                 hotelLocation: hotelDetails.location, 
                 roomDetails: roomDetails, 
               };
+            }),
+            catchError(() => {
+              // Return fallback booking data if fetching hotel details fails
+              return [
+                {
+                  ...booking,
+                  hotelName: "Unknown Hotel",
+                  roomDetails: { type: "Room details unavailable" },
+                },
+              ];
             })
           )
         );
@@ -131,6 +147,7 @@ export class BookingHistoryComponent implements OnInit {
     this.author = '';
     this.reviewRating = 0;
     this.reviewComment = '';
+    this.ngOnInit();
   }
 
   submitReview(): void {

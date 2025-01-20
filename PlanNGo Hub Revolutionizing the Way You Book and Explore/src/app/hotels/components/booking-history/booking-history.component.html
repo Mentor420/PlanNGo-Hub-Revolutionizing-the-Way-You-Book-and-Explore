@@ -32,6 +32,9 @@
                   <p><strong>Rooms Booked:</strong> {{ booking.roomBooked }}</p>
                   <p><strong>Price:</strong> {{ booking.price }}</p>
                 </div>
+                <span *ngIf="cancelledDueToRoomDeletion[booking.id]" class="cancellation-notice">
+                  <i class="bi bi-exclamation-triangle-fill" title="This booking was cancelled due to room unavailability. A refund will be processed."></i>
+                </span>
               </div>
               <div class="booking-actions">
                 <button class="details-btn" (click)="setSelectedBooking(booking)">More Details</button>

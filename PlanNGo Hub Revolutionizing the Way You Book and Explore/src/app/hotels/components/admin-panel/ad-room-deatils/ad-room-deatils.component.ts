@@ -272,7 +272,18 @@ export class AdRoomDeatilsComponent implements OnInit {
         // Remove the deleted room from the UI
         this.rooms = this.rooms.filter(room => room.roomId !== roomId);
         this.filteredRooms = this.filteredRooms.filter(room => room.roomId !== roomId);
-        alert('Room deleted successfully.');
+
+        // Notify affected bookings
+        this.adminService.notifyAffectedBookings(hotelId, roomId).subscribe({
+          next: (response) => {
+            console.log("Affected bookings notified:", response)
+            alert("Room deleted successfully and affected bookings have been notified.")
+          },
+          error: (err) => {
+            console.error("Error notifying affected bookings:", err)
+            alert("Room deleted, but there was an error notifying affected bookings.")
+          },
+        })
       },
       error: (err) => {
         console.error('Error deleting room:', err);

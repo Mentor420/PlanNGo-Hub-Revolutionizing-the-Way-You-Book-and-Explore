@@ -66,8 +66,6 @@ export interface Amenity {
     roomsAvailable: number;
     rooms: Room[];
     amenities: Amenity[];
-    rating: number;
-    reviewsCount: number;
     checkin: string;
     checkout: string;
     rules: string[];

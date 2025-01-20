@@ -6,7 +6,7 @@
       "name": "Goa Paradise",
       "description": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
       "pricePerNight": 1500,
-      "roomsAvailable": 5,
+      "roomsAvailable": 9,
       "rooms": [
         {
           "roomId": "r002",
@@ -20,10 +20,24 @@
             "Room Service",
             "City View"
           ],
-          "availableRooms": 4,
+          "availableRooms": 5,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
           ]
+        },
+        {
+          "roomId": "r008",
+          "type": "1 bedroom hall ",
+          "description": "AirBNB type room with bhut saari facility",
+          "pricePerNight": 4700,
+          "currentCoupon": "",
+          "currentDiscount": 0,
+          "benefits": [
+            "pet",
+            "wifi"
+          ],
+          "availableRooms": 4,
+          "images": []
         }
       ],
       "amenities": [
@@ -116,7 +130,7 @@
           "bookingDate": "2025-01-18T18:18:10.437Z",
           "roomBooked": "1",
           "price": 2740,
-          "status": "Cancelled",
+          "status": "Completed",
           "reviewSubmitted": false
         },
         {
@@ -135,6 +149,24 @@
           "roomBooked": "1",
           "price": 2740,
           "status": "Completed",
+          "reviewSubmitted": false
+        },
+        {
+          "id": "hT01-b003",
+          "userId": "u001",
+          "hotelId": "hT01",
+          "roomId": "r002",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\Capture001.png",
+          "couponCode": "DISCOUNT10",
+          "checkInDate": "2025-01-20",
+          "checkOutDate": "2025-01-21",
+          "bookingDate": "2025-01-20T07:02:21.996Z",
+          "roomBooked": 1,
+          "price": 2490,
+          "status": "Booked",
           "reviewSubmitted": false
         }
       ],

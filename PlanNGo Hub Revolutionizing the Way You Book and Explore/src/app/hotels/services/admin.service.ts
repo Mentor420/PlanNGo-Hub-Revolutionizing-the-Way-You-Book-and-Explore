@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { Room } from '../models/interfaces';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { Booking, Room } from '../models/interfaces';
 import { Hotel } from '../models/interfaces';
 
 // Extended Room interface to include hotelId
@@ -62,6 +62,12 @@ export class AdminService {
     return this.http.delete(`${this.apiUrl}/${hotelId}`);
   }
 
+  // Utility function to check the rooms available in the hotel
+  private updateRoomsAvailable(hotel: Hotel): Hotel {
+    hotel.roomsAvailable = hotel.rooms.reduce((sum, room) => sum + room.availableRooms, 0);
+    return hotel;
+  }
+  
   // Add a room to a specific hotel
   updateRoom(hotelId: string, updatedRoom: Room): Observable<any> {
     return this.getAllHotels().pipe(
@@ -75,6 +81,7 @@ export class AdminService {
           throw new Error('Room not found');
         }
         hotel.rooms[roomIndex] = updatedRoom; // Update the specific room
+        this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
         return hotel;
       }),
       switchMap((updatedHotel) => 
@@ -96,6 +103,7 @@ export class AdminService {
           throw new Error('Hotel not found');
         }
         hotel.rooms.push(roomData); // Add the room to the hotel's rooms array
+        this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
         return hotel;
       }),
       switchMap((updatedHotel) => 
@@ -119,7 +127,9 @@ export class AdminService {
         if (updatedRooms.length === hotel.rooms.length) {
           throw new Error('Room not found');
         }
-        return { ...hotel, rooms: updatedRooms };
+        hotel.rooms = updatedRooms;
+        this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
+        return hotel;
       }),
       switchMap((updatedHotel) => 
         this.http.put(`${this.apiUrl}/${hotelId}`, updatedHotel)
@@ -131,6 +141,58 @@ export class AdminService {
     );
   }
   
+  // Notify affected bookings
+  notifyAffectedBookings(hotelId: string, roomId: string): Observable<Booking[]> {
+    return this.getHotelById(hotelId).pipe(
+      map((hotel) => {
+        const affectedBookings = hotel.bookings.filter(
+          (booking) => booking.roomId === roomId && booking.status === 'Booked'
+        );
+  
+        // Update the status of affected bookings to 'Cancelled'
+        affectedBookings.forEach((booking) => {
+          booking.status = 'Cancelled';
+        });
+  
+        // Update the hotel bookings in the hotel object
+        hotel.bookings = hotel.bookings.map((booking) =>
+          affectedBookings.includes(booking)
+            ? { ...booking, status: 'Cancelled' }
+            : booking
+        );
+  
+        // Return both updated hotel and affected bookings
+        return { hotel, affectedBookings };
+      }),
+      switchMap(({ hotel, affectedBookings }) =>
+        this.updateHotel(hotel).pipe(
+          map(() => affectedBookings),
+          tap((bookings) => {
+            if (bookings.length === 0) {
+              console.warn('No affected bookings found for room deletion.');
+            }
+          })
+        )
+      )
+    );
+  }
+
+  private updateHotel(hotel: Hotel): Observable<Hotel> {
+    return this.http.put<Hotel>(`${this.apiUrl}/${hotel.id}`, hotel).pipe(
+      map((updatedHotel) => updatedHotel)
+    );
+  }
+
+  getHotelById(hotelId: string): Observable<Hotel> {
+    return this.http.get<Hotel>(`${this.apiUrl}/${hotelId}`).pipe(
+      map((hotel) => {
+        if (!hotel) {
+          throw new Error('Hotel not found');
+        }
+        return hotel;
+      })
+    );
+  }
 
   // Get rooms of a specific hotel
   getHotelRooms(hotelId: string): Observable<Room[]> {

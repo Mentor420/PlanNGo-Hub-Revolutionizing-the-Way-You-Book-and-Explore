@@ -42,8 +42,6 @@ export class AdHotelDeatilsComponent implements OnInit {
     roomsAvailable: 0,
     rooms: [], // Empty array for now
     amenities: [], // Empty array for now
-    rating: 0,
-    reviewsCount: 0,
     checkin: '',
     checkout: '',
     rules: [], // Empty array for now
@@ -104,8 +102,6 @@ export class AdHotelDeatilsComponent implements OnInit {
       city: '',
       roomsAvailable: 0,
       amenities: [],
-      rating: 0,
-      reviewsCount: 0,
       checkin: '',
       checkout: '',
       location: '',

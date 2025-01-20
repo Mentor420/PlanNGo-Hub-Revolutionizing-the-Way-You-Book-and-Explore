@@ -478,3 +478,14 @@
 .input-field.ng-invalid {
   border-color: red;
 }
+
+.cancellation-notice {
+  margin-left: 200px;
+  font-size: 20px;
+  margin-top: -10px;
+  color: #ff4d4d;
+}
+
+.cancellation-notice i {
+  cursor: help;
+}
