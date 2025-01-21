@@ -1,0 +1,80 @@
+<div class="container">
+    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+      <h2>Edit Flight Information</h2>
+  
+      <div>
+        <label for="airline">Airline:</label>
+        <input id="airline" type="text" formControlName="airline" placeholder="Enter airline name" />
+      </div>
+  
+      <div>
+        <label for="logo">Logo URL:</label>
+        <input id="logo" type="text" formControlName="logo" placeholder="Enter logo URL" />
+      </div>
+  
+      <div>
+        <label for="flightNumber">Flight Number:</label>
+        <input id="flightNumber" type="text" formControlName="flightNumber" placeholder="Enter flight number" />
+      </div>
+  
+      <fieldset formGroupName="departure">
+        <legend>Departure Details</legend>
+  
+        <div>
+          <label for="departurePlace">Place:</label>
+          <input id="departurePlace" type="text" formControlName="place" />
+        </div>
+  
+        <div>
+          <label for="departureDate">Date:</label>
+          <input id="departureDate" type="date" formControlName="date" />
+        </div>
+  
+        <div>
+          <label for="departureTime">Time:</label>
+          <input id="departureTime" type="time" formControlName="time" />
+        </div>
+      </fieldset>
+  
+      <fieldset formGroupName="destination">
+        <legend>Destination Details</legend>
+  
+        <div>
+          <label for="destinationPlace">Place:</label>
+          <input id="destinationPlace" type="text" formControlName="place" />
+        </div>
+  
+        <div>
+          <label for="destinationDate">Date:</label>
+          <input id="destinationDate" type="date" formControlName="date" />
+        </div>
+  
+        <div>
+          <label for="destinationTime">Time:</label>
+          <input id="destinationTime" type="time" formControlName="time" />
+        </div>
+      </fieldset>
+  
+      <div>
+        <label for="duration">Duration:</label>
+        <input id="duration" type="text" formControlName="duration" />
+      </div>
+  
+      <div>
+        <label for="price">Price:</label>
+        <input id="price" type="number" formControlName="price" />
+      </div>
+  
+      <div>
+        <label for="classType">Class Type:</label>
+        <select id="classType" formControlName="classType">
+          <option value="Economy">Economy</option>
+          <option value="Business">Business</option>
+          <option value="First Class">First Class</option>
+        </select>
+      </div>
+  
+      <button type="submit" [disabled]="flightForm.invalid">Update Flight</button>
+    </form>
+  </div>
+  

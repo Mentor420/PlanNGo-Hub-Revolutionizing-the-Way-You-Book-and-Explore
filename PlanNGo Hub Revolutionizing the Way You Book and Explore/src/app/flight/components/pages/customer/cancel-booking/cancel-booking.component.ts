@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FlightBookingService } from '../../services/flight-booking.service';
+import { FlightBookingService } from '../../../../services/customer/flight-booking.service';
 import { HeaderComponent } from '../header/header.component';
 import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
 
@@ -17,6 +17,7 @@ export class CancelBookingComponent implements OnInit{
 
   combinedData: any[] = [];
   isCancelledBooking = false
+  isFailure = false
   bookingId:String = ""
   isFetched = false;
 
@@ -54,11 +55,17 @@ export class CancelBookingComponent implements OnInit{
           console.log(data)
           this.combinedData = data;
         });
+        this.isFailure = false
         this.isCancelledBooking = false
       },
       error: (error) => {
         console.error('Error updating booking status:', error);
+        this.isFailure = true
       }
     });
+  }
+
+  onRetry(){
+    this.changeBookingStatus();
   }
 }

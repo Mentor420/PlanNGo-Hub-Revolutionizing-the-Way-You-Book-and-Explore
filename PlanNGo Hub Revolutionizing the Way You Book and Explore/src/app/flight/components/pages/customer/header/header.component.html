@@ -5,13 +5,13 @@
     <ul>
         <li routerLink="/">Home</li>
         <li routerLink="/hotel">Hotel</li>
-        <li routerLink="/flights">Flight</li>
+        <li routerLink="/flight">Flight</li>
         <li routerLink="/tour">Tour</li>
         <li routerLink="/cab">Cab</li>
         <select (change)="onNavigate($event)">
             <option disabled selected>Pages</option>
-            <option value="/cancel-booking">Cancel Booking</option>
-            <option value="/booking-history">Booking History</option>
+            <option value="/flight/booking/cancel">Cancel Booking</option>
+            <option value="/flight/booking/history">Booking History</option>
         </select>
     </ul>
 </nav>

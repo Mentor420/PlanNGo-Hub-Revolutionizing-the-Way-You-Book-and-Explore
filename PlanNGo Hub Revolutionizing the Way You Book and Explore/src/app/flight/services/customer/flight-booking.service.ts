@@ -32,6 +32,10 @@ export class FlightBookingService {
     return this.http.post(`${this.apiURL}/bookings`,booking)
   }
 
+  getSpecificDeparture(departure:any): Observable<any>{
+    return this.http.get(`http://localhost:3000/flights?departure.place=${departure}`)
+  }
+
   getCombinedData(): Observable<any[]> {
     return forkJoin({
       flights: this.getFlights(),

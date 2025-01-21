@@ -1,7 +1,7 @@
 <app-header></app-header>
 <ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
 
-<div class="passenger-container">
+<div class="passenger-container" *ngIf="!isFailure">
   <div class="passenger-flight-details">
   <div class="flight-details-bg-container">
     <img class="passenger-booking-img" src="https://www.cnib.ca/sites/default/files/styles/banner_image_wide/public/images/2020-01/Airport%20Banner.jpg?h=7acbc861&itok=04D3SWly." alt="airport"/>
@@ -15,24 +15,24 @@
 <div class="flight-details-container">
   <h2>Flight Details</h2>
   <div class="flight-details-section">
-      <p><strong>Departure:</strong> {{flights?.departure?.place}}</p>|
-      <p><strong>Date:</strong> {{flights?.departure?.date}}</p>|
-      <p><strong>Time:</strong> {{flights?.departure?.time}}</p>
+      <p id="place"><strong>Departure:</strong> {{flights?.departure?.place}}</p>|
+      <p id="date"><strong>Date:</strong> {{flights?.departure?.date}}</p>|
+      <p class="time"><strong>Time:</strong> {{flights?.departure?.time}}</p>
   </div>
 
   <div class="flight-details-section">
-      <p><strong>Destination:</strong> {{flights?.destination?.place}}</p>|
-      <p><strong>Date:</strong> {{flights?.destination?.date}}</p>|
-      <p><strong>Time:</strong> {{flights?.destination?.time}}</p>
+      <p id="place"><strong>Destination:</strong> {{flights?.destination?.place}}</p>|
+      <p id="date"><strong>Date:</strong> {{flights?.destination?.date}}</p>|
+      <p class="time"><strong>Time:</strong> {{flights?.destination?.time}}</p>
   </div>
 
   <div class="flight-details-section">
-      <p><strong>Duration:</strong> {{flights?.duration}}</p>|
-      <p><strong>Price:</strong> ${{flights?.price}}</p>
+      <p class="price-duration"><strong>Duration:</strong> {{flights?.duration}}</p>|
+      <p class="price-duration"><strong>Price:</strong> ${{flights?.price}}</p>
   </div>
 </div>
-  <ul class="similar-flight-container">
-    <h1>View Similar Flights</h1>
+  <ul class="similar-flight-container" *ngIf="similerFlights.length > 0">
+    <h1>Similar Flights</h1>
     <li *ngFor="let data of similerFlights" class="booking-item">
       <div class="route-details">
           <div class="departure">
@@ -149,6 +149,11 @@
     </form>
   </div>
 </div>
+</div>
+
+<div class="failure-container" *ngIf="isFailure">
+  <img src="https://forum.hestiacp.com/uploads/default/original/2X/9/9aae76309a614c85f880512d8fe7df158fec52cc.png" alt="failure view"/>
+  <button (click)="onRetry()">Retry</button>
 </div>
 
 <div class="modal modal1" *ngIf="isBooked">

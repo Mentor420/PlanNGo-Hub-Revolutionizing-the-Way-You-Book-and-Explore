@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FlightBookingService } from '../../services/flight-booking.service';
+import { FlightBookingService } from '../../../../services/customer/flight-booking.service';
 import { HeaderComponent } from '../header/header.component';
 import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
 
@@ -20,6 +20,7 @@ export class FlightBookingComponent implements OnInit {
   isBooked = false
   isBookingFailure = false
   similerFlights:any[] = []
+  isFailure = false
   id:any = ""
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class FlightBookingComponent implements OnInit {
     });
   
     this.route.paramMap.subscribe((params) => {
-      this.id = params.get('id');
+      this.id = this.route.snapshot.paramMap.get("id");
       console.log("Route parameter changed, new ID:", this.id);
       this.getFlightsDetails();
     });
@@ -97,7 +98,7 @@ export class FlightBookingComponent implements OnInit {
         this.isBooked = true
         setTimeout(()=>{
           this.isBooked = false
-          this.router.navigateByUrl("/flight/booking-history")
+          this.router.navigateByUrl("flight/booking/history")
         },3000)
       })
     } else {
@@ -111,7 +112,7 @@ export class FlightBookingComponent implements OnInit {
   getSmilarFlights(departure: any){
     const id = this.route.snapshot.paramMap.get('id')
     
-    this.http.get(`http://localhost:3000/flights?departure.place=${departure}`).subscribe((data:any)=>{
+    this.flightBookingService.getSpecificDeparture(departure).subscribe((data:any)=>{
       this.similerFlights = data.filter((eachItem:any) => eachItem.id !== id);
       console.log(data)
     })
@@ -120,11 +121,11 @@ export class FlightBookingComponent implements OnInit {
   navigateToFlight(id: string): void {
     console.log("Navigating to flight:", id);
     this.id = id;
-    this.router.navigate(['/flights', id]);
+    this.router.navigate(['/flight', id]);
     this.getFlightsDetails();
-    setTimeout(()=>{
-      location.reload()
-    },100)
+    // setTimeout(()=>{
+    //   location.reload()
+    // },100)
   }
 
   getFlightsDetails() {
@@ -136,11 +137,19 @@ export class FlightBookingComponent implements OnInit {
         console.log("Flight details:", data);
         this.flights = data;
         this.getSmilarFlights(data.departure.place);
+        this.isFailure = false
         setTimeout(()=>{
           this.spinner.hide()
         }, 1000)
       },
-      (error) => console.error("Error fetching flight details:", error)
+      (error) => {
+        console.error("Error fetching flight details:", error)
+        this.isFailure = true
+      }
     );
+  }
+
+  onRetry(){
+    this.getFlightsDetails();
   }
 }

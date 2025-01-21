@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlightBookingService } from '../../services/flight-booking.service';
+import { FlightBookingService } from '../../../../services/customer/flight-booking.service';
 import { HeaderComponent } from '../header/header.component';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerComponent, NgxSpinnerService } from 'ngx-spinner';
@@ -17,6 +17,7 @@ export class BookingHistoryComponent implements OnInit {
   isView = false;
   selectedPassengers: any[] = [];
   isFetched = false;
+  isFailure = false
 
   constructor(
     private flightBookingService: FlightBookingService,
@@ -64,7 +65,11 @@ export class BookingHistoryComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  onRetry(){
+    this.onFetchBooking();
+  }
+
+  onFetchBooking(){
     this.combinedData = []
     this.spinner.show();
     this.flightBookingService.getCombinedData().subscribe({
@@ -89,5 +94,9 @@ export class BookingHistoryComponent implements OnInit {
         this.spinner.hide(); 
       },
     });
+  }
+
+  ngOnInit(): void {
+    this.onFetchBooking();
   }
 }

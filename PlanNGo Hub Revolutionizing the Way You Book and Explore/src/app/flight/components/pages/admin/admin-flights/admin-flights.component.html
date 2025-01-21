@@ -1,0 +1,142 @@
+<nav class="navbar">
+  <h1>Plan N Go Hub</h1>
+  <div id="search-input-container">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input
+      type="text"
+      class="search-input"
+      [(ngModel)]="searchInput"
+      (input)="onSearch()"
+      placeholder="Enter airline or flight number"
+    />
+  </div>
+  <div class="navbar-section">
+    <button (click)="onBookingAnalysis()">OverAll Analysis</button>
+  </div>
+</nav>
+<div class="container">
+  <div class="table-container">
+    <table class="flights-table">
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>FNO</th>
+          <th>Departure</th>
+          <th>Destination</th>
+          <th></th>
+          <th>Dept Date</th>
+          <th>Dept Time</th>
+          <th>Price $</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of paginatedFlights">
+          <td><div><img [src]="data.logo" alt="Logo" class="logo-img" /><p>{{ data.airline }}</p></div></td>
+          <td>{{ data.flightNumber }}</td>
+          
+          <td>{{ data.departure.place }}</td>
+          <td>{{ data.destination.place }}</td>
+          <td><button class="view-btn" (click)="onOpenDetails(data)">View Details</button></td>
+          <td>{{ data.departure.date }}</td>
+          <td>{{ data.departure.time }}</td>
+          <td>{{ data.price }}</td>
+          <td>
+             <!-- Edit Button with Hover Pop-up -->
+    <button class="edit-btn" [routerLink]="['/admin/flight/edit',data.id]" (mouseenter)="showPopup($event, 'edit', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button class="delete-btn">Cancel</button>
+    <button class="analysis-btn" (click)="onAnalysisView(data.id)" (mouseenter)="showPopup($event, 'analysis', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-chart-column"></i></button>
+
+  <!-- Hover Pop-up -->
+  <div 
+    class="popup" 
+    *ngIf="isPopupVisible" 
+    [ngStyle]="{ left: popupPosition.left + 'px', top: popupPosition.top + 'px' }">
+    {{ popupContent }}
+  </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="filteredFlights.length<=0" class="no-found">
+      <img src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-illustration-download-in-svg-png-gif-file-formats--no-results-service-landing-page-security-empty-state-pack-design-development-illustrations-3613889.png?f=webp" alt="No Results"/>
+      <h1>No Results Found</h1>
+      <p>We couldn't find what you searched for. Try searching again</p>
+    </div>
+  </div>
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1"><i class="fa-solid fa-chevron-left"></i></button>
+    <span>Page {{ currentPage }} of {{ getTotalPages() }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === getTotalPages()"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+  </div>
+  
+  
+
+  <div class="modal" *ngIf="isView">
+    <div class="modal-content">
+      <span class="close" (click)="onViewToggle()">&times;</span>
+      <h2>Flight Details</h2>
+      <div class="details">
+        <img [src]="viewDetails?.logo" alt="Airline Logo" class="logo" />
+        <p><strong>Airline:</strong> {{ viewDetails?.airline }}</p>
+        <p><strong>Flight Number:</strong> {{ viewDetails?.flightNumber }}</p>
+        <p><strong>Departure:</strong> {{ viewDetails?.departure.place }} on {{ viewDetails?.departure.date }} at {{ viewDetails?.departure.time }}</p>
+        <p><strong>Destination:</strong> {{ viewDetails?.destination.place }} on {{ viewDetails?.destination.date }} at {{ viewDetails?.destination.time }}</p>
+        <p><strong>Duration:</strong> {{ viewDetails?.duration }}</p>
+        <p><strong>Class:</strong> {{ viewDetails?.classType }}</p>
+        <p><strong>Price:</strong> ${{ viewDetails?.price }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="isShowAnalysis">
+    <div class="modal-content">
+      <span class="close" (click)="onAnalysisToggle()">&times;</span>
+      <div class="booking-summary-card">
+        <h3 class="card-title">Analysis</h3>
+        <div class="summary-stat">
+          <p class="stat-title">Total Bookings</p>
+          <p class="stat-value">{{ totalBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Confirmed Bookings</p>
+          <p class="stat-value">{{ confirmedBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Canceled Bookings</p>
+          <p class="stat-value">{{ canceledBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Total Revenue</p>
+          <p class="stat-value">{{ totalRevenue | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="modal" *ngIf="isBookingAnalysis">
+    <div class="modal-content">
+      <span class="close" (click)="onBookingAnalysisToggle()">&times;</span>
+      <div class="booking-summary-card">
+        <h3 class="card-title">Analysis</h3>
+        <div class="summary-stat">
+          <p class="stat-title">Total Bookings</p>
+          <p class="stat-value">{{ totalBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Confirmed Bookings</p>
+          <p class="stat-value">{{ confirmedBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Canceled Bookings</p>
+          <p class="stat-value">{{ canceledBookings }}</p>
+        </div>
+        <div class="summary-stat">
+          <p class="stat-title">Total Revenue</p>
+          <p class="stat-value">{{ totalRevenue | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -127,7 +127,7 @@
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 95%;
   color: #000000;
 }
 
@@ -135,6 +135,20 @@
   margin: 8px 0;
   font-size: 14px;
   color: #030303;
+  width: 300px;
+  text-align: center;
+}
+
+#place {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #030303;
+  width: 500px;
+  text-align: center;
+}
+
+#date{
+  width: 350px;
 }
 
 .flight-no{
@@ -678,4 +692,28 @@ margin: 5px 0;
   padding: 5px;
   border-radius: 5px;
   margin-top: -40px;
+}
+
+.failure-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-size: cover;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.failure-container button{
+  color: white;
+    background-color: #225af5;
+    border: none;
+    outline: none;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
 }

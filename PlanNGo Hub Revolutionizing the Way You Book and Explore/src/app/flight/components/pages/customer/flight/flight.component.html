@@ -1,7 +1,8 @@
+<div>
 <app-header></app-header>
 <ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
 
-<div class="flight-container">
+<div class="flight-container" *ngIf="!isfailure">
   
     <!-- Main Content -->
     <section class="content">
@@ -62,7 +63,7 @@
                 </div>
                 <div class="book-btn-container">
                   <button class="view-details-btn" (click)="onOpenDetails(data)">View Details</button>
-                  <button class="book-btn" [routerLink]="['/flights',data.id]">Book Flight</button>   
+                  <button class="book-btn" [routerLink]="['/flight',data.id]">Book Flight</button>   
             </div>
             </li>
         </ul>
@@ -73,6 +74,12 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <!-- Failure view -->
+  <div class="failure-container" *ngIf="isfailure">
+    <img src="https://forum.hestiacp.com/uploads/default/original/2X/9/9aae76309a614c85f880512d8fe7df158fec52cc.png" alt="failure view"/>
+    <button (click)="onRetry()">Retry</button>
   </div>
   <!-- Search Filters -->
   <div class="modal modal1" *ngIf="isView">
@@ -97,6 +104,16 @@
               <label>End Date</label>
               <input type="date" [(ngModel)]="endDate" name="date" />
             </div>
+            
+          </div>
+          <div class="class-type-container">
+            <label>Class Type</label>
+            <select [(ngModel)]="classType" name="classType" class="class-type">
+              <option value="" disabled selected>Select Option</option>
+              <option value="First Class">First Class</option>
+              <option value="Business">Business</option>
+              <option value="Economy">Economy</option>
+            </select>            
           </div>
   
         <div class="search-clear-btn">
@@ -138,7 +155,9 @@
         </div>
       </div>
     
-    <button class="book-btn" [routerLink]="['/flights',viewDetails.id]">Book Now</button> 
+    <button class="book-btn" [routerLink]="['/flight',viewDetails.id]">Book Now</button> 
 </div>
     </div>
   </div>
+</div>
+<router-outlet></router-outlet>

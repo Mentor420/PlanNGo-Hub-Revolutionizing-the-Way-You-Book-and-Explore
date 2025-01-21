@@ -1,7 +1,7 @@
 <app-header></app-header>
 <ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
 
-<div class="container" *ngIf="isFetched">
+<div class="container" *ngIf="isFetched && !isFailure">
 <div class="booking-container">
     <h1 class="title">Cancel Booking</h1>
     <hr class="main-divider" />
@@ -66,6 +66,11 @@
         </li>
     </ul>
 </div>
+</div>
+
+<div class="failure-container" *ngIf="isFailure">
+  <img src="https://forum.hestiacp.com/uploads/default/original/2X/9/9aae76309a614c85f880512d8fe7df158fec52cc.png" alt="failure view"/>
+  <button (click)="onRetry()">Retry</button>
 </div>
 
 <div class="modal modal1" *ngIf="isCancelledBooking">

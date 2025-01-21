@@ -1,23 +1,23 @@
 {
   "flights": [
     {
-      "id": "FL12350",
       "airline": "Vistara",
       "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
       "flightNumber": "UK308",
       "departure": {
         "place": "Chennai",
         "date": "2025-01-27",
-        "time": "12:00 PM"
+        "time": "12:30"
       },
       "destination": {
         "place": "Malé",
         "date": "2025-01-27",
-        "time": "03:30 PM"
+        "time": "16:00"
       },
       "duration": "3h 30m",
       "price": 3100,
-      "classType": "Economy"
+      "classType": "Business",
+      "id": "FL12350"
     },
     {
       "id": "FL12346",
@@ -27,12 +27,12 @@
       "departure": {
         "place": "Delhi",
         "date": "2025-01-26",
-        "time": "09:00 AM"
+        "time": "09:00"
       },
       "destination": {
         "place": "Dubai",
         "date": "2025-01-26",
-        "time": "11:40 AM"
+        "time": "11:40"
       },
       "duration": "2h 40m",
       "price": 4500,
@@ -46,12 +46,12 @@
       "departure": {
         "place": "Hyderabad",
         "date": "2025-01-27",
-        "time": "07:00 AM"
+        "time": "07:00"
       },
       "destination": {
         "place": "Bangkok",
         "date": "2025-01-27",
-        "time": "10:30 AM"
+        "time": "10:30"
       },
       "duration": "3h 30m",
       "price": 5100,
@@ -65,12 +65,12 @@
       "departure": {
         "place": "Mumbai",
         "date": "2025-01-28",
-        "time": "10:00 AM"
+        "time": "10:00"
       },
       "destination": {
         "place": "Malé",
         "date": "2025-01-28",
-        "time": "11:40 AM"
+        "time": "11:40"
       },
       "duration": "1h 40m",
       "price": 3700,
@@ -84,16 +84,16 @@
       "departure": {
         "place": "Bangalore",
         "date": "2025-01-29",
-        "time": "06:15 AM"
+        "time": "06:15"
       },
       "destination": {
         "place": "Colombo",
         "date": "2025-01-29",
-        "time": "08:15 AM"
+        "time": "08:15"
       },
       "duration": "2h 00m",
       "price": 2800,
-      "classType": "Economy"
+      "classType": "First Class"
     },
     {
       "id": "FL12350",
@@ -103,12 +103,12 @@
       "departure": {
         "place": "Ahmedabad",
         "date": "2025-01-30",
-        "time": "11:30 AM"
+        "time": "11:30"
       },
       "destination": {
         "place": "Kathmandu",
         "date": "2025-01-30",
-        "time": "01:20 PM"
+        "time": "13:20"
       },
       "duration": "1h 50m",
       "price": 3300,
@@ -122,16 +122,16 @@
       "departure": {
         "place": "Chennai",
         "date": "2025-01-25",
-        "time": "08:30 AM"
+        "time": "08:30"
       },
       "destination": {
         "place": "Singapore",
         "date": "2025-01-25",
-        "time": "11:50 AM"
+        "time": "11:50"
       },
       "duration": "3h 20m",
       "price": 3200,
-      "classType": "Economy"
+      "classType": "First Class"
     },
     {
       "id": "FL12351",
@@ -141,16 +141,16 @@
       "departure": {
         "place": "Pune",
         "date": "2025-01-31",
-        "time": "03:00 PM"
+        "time": "03:00"
       },
       "destination": {
         "place": "Doha",
         "date": "2025-01-31",
-        "time": "04:30 PM"
+        "time": "04:30"
       },
       "duration": "1h 30m",
       "price": 2500,
-      "classType": "Economy"
+      "classType": "Business"
     },
     {
       "id": "FL12352",
@@ -160,16 +160,16 @@
       "departure": {
         "place": "Lucknow",
         "date": "2025-01-24",
-        "time": "05:45 PM"
+        "time": "05:45"
       },
       "destination": {
         "place": "Hanoi",
         "date": "2025-01-24",
-        "time": "09:30 PM"
+        "time": "09:30"
       },
       "duration": "3h 45m",
       "price": 3000,
-      "classType": "Economy"
+      "classType": "Business"
     },
     {
       "id": "FL12353",
@@ -179,12 +179,12 @@
       "departure": {
         "place": "Delhi",
         "date": "2025-01-26",
-        "time": "02:30 PM"
+        "time": "02:30"
       },
       "destination": {
         "place": "Kuala Lumpur",
         "date": "2025-01-26",
-        "time": "07:00 PM"
+        "time": "07:00"
       },
       "duration": "4h 30m",
       "price": 2200,
@@ -198,12 +198,12 @@
       "departure": {
         "place": "Mumbai",
         "date": "2025-02-01",
-        "time": "08:00 AM"
+        "time": "08:00"
       },
       "destination": {
         "place": "Singapore",
         "date": "2025-02-01",
-        "time": "02:00 PM"
+        "time": "02:00"
       },
       "duration": "6h 00m",
       "price": 7200,
@@ -217,12 +217,12 @@
       "departure": {
         "place": "Kolkata",
         "date": "2025-01-29",
-        "time": "10:30 PM"
+        "time": "10:30"
       },
       "destination": {
         "place": "Doha",
         "date": "2025-01-30",
-        "time": "01:45 AM"
+        "time": "13:45"
       },
       "duration": "3h 15m",
       "price": 6800,
@@ -236,12 +236,12 @@
       "departure": {
         "place": "Hyderabad",
         "date": "2025-01-28",
-        "time": "09:15 AM"
+        "time": "09:15"
       },
       "destination": {
         "place": "Dubai",
         "date": "2025-01-28",
-        "time": "12:45 PM"
+        "time": "12:45"
       },
       "duration": "3h 30m",
       "price": 5200,
@@ -255,12 +255,12 @@
       "departure": {
         "place": "Delhi",
         "date": "2025-02-02",
-        "time": "12:00 AM"
+        "time": "12:00"
       },
       "destination": {
         "place": "Hong Kong",
         "date": "2025-02-02",
-        "time": "06:15 AM"
+        "time": "18:15"
       },
       "duration": "6h 15m",
       "price": 8300,
@@ -274,12 +274,12 @@
       "departure": {
         "place": "Chennai",
         "date": "2025-01-27",
-        "time": "10:15 PM"
+        "time": "10:15"
       },
       "destination": {
         "place": "Kuala Lumpur",
         "date": "2025-01-28",
-        "time": "03:45 AM"
+        "time": "15:45"
       },
       "duration": "5h 30m",
       "price": 3100,
@@ -350,20 +350,38 @@
       ]
     },
     {
-      "id": "B1736258037366",
-      "flightID": "FL12346",
+      "id": "B1737190191612",
+      "flightID": "FL12352",
       "userID": "U1001",
-      "totalAmount": 4500,
+      "totalAmount": 3000,
       "bookingStatus": "Confirmed",
-      "date": "01/07/2025, 19:23:57",
+      "date": "01/18/2025, 14:19:51",
       "passengers": [
         {
-          "id": "P1736258028146",
+          "id": "P1737190172626",
           "name": "RANKESH ",
           "age": 20,
           "gender": "Male",
-          "passportNumber": "3265357466345",
-          "phoneNumber": "6374752527"
+          "passportNumber": "23719352476",
+          "phoneNumber": "7823642475"
+        }
+      ]
+    },
+    {
+      "id": "B1737383106642",
+      "flightID": "FL12350",
+      "userID": "U1001",
+      "totalAmount": 3100,
+      "bookingStatus": "Confirmed",
+      "date": "01/20/2025, 19:55:06",
+      "passengers": [
+        {
+          "id": "P1737383075647",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "7823642475"
         }
       ]
     }
