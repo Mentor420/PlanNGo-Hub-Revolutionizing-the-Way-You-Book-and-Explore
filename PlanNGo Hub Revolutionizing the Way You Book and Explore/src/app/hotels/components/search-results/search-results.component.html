@@ -1,31 +1,130 @@
-<div class="results-container">
-  <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button>
-
-  <h2>Search Results for {{ formData.location }}</h2>
-  <p *ngIf="formData.priceRange" class="price-range">
-    Price Range: ₹{{ formData.priceRange[0] }} - ₹{{ formData.priceRange[1] }}
-  </p>
-</div>
-
-<div class="results-container">
-  <div *ngIf="filteredResults.length > 0; else noResults" class="hotel-results">
-    <div *ngFor="let hotel of filteredResults" class="hotel-card" (click)="viewHotelDetails(hotel)">
-      <img [src]="hotel.images[0] || 'default.jpg'" alt="{{ hotel.name }}" class="hotel-image"/>
-      <div class="hotel-details">
-        <h3>{{ hotel.name }}</h3>
-        <p><strong>City:</strong> {{ hotel.city }}</p>
-        <p><strong>Price per Night:</strong> ₹{{ hotel.pricePerNight }}</p>
-        <p><strong>Rooms Available:</strong> {{ hotel.roomsAvailable }}</p>
-        <p><strong>Amenities:</strong> 
-          {{ getAmenityNames(hotel.amenities) }}
-        </p>
+<div class="search-results-container">
+  <div class="filter-panel">
+    <h3>Refine Your Search</h3>
+    <form [formGroup]="filterForm" (ngSubmit)="onNewSearch()">
+      <div class="form-group">
+        <label for="location">
+          <i class="fas fa-map-marker-alt"></i> Location
+        </label>
+        <input type="text" id="location" formControlName="location" (input)="onFilterChange()" placeholder="Enter city or hotel name">
       </div>
-    </div>
+
+      <div class="form-group">
+        <label for="checkInDate">
+          <i class="far fa-calendar-alt"></i> Check-In Date
+        </label>
+        <input type="date" id="checkInDate" formControlName="checkInDate" (change)="onFilterChange()">
+      </div>
+
+      <div class="form-group">
+        <label for="checkOutDate">
+          <i class="far fa-calendar-alt"></i> Check-Out Date
+        </label>
+        <input type="date" id="checkOutDate" formControlName="checkOutDate" (change)="onFilterChange()">
+      </div>
+
+      <div class="form-group">
+        <label for="rooms">
+          <i class="fas fa-bed"></i> Rooms
+        </label>
+        <input type="number" id="rooms" formControlName="rooms" min="1" (change)="onFilterChange()">
+      </div>
+
+      <div class="form-group">
+        <label for="price">
+          <i class="fas fa-rupee-sign"></i> Price Range
+        </label>
+        <select id="price" formControlName="price" (change)="onFilterChange()">
+          <option value="">Any price</option>
+          <option value="0-1500">₹0 - ₹1,500</option>
+          <option value="1500-2500">₹1,500 - ₹2,500</option>
+          <option value="2500-5000">₹2,500 - ₹5,000</option>
+          <option value="5000-999999">₹5,000+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <i class="fas fa-star"></i> Star Rating
+        </label>
+        <div class="star-rating-filter">
+          <label *ngFor="let star of [5,4,3,2,1]">
+            <input type="checkbox" [formControlName]="'star' + star" (change)="onFilterChange()">
+            <span class="star-rating">
+              <i class="fas fa-star" *ngFor="let i of [].constructor(star)"></i>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <i class="fas fa-concierge-bell"></i> Amenities
+        </label>
+        <div class="amenities-options" formArrayName="amenities">
+          <label *ngFor="let amenity of amenitiesOptions; let i = index">
+            <input type="checkbox" [formControlName]="i" (change)="onFilterChange()">
+            {{ amenity }}
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-search">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </form>
   </div>
 
-  <ng-template #noResults>
-    <p class="no-results-message">
-      No results found matching your criteria. Please try again.
+  <div class="results-content">
+    <button class="back-button2" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+
+    <h2 id="t">Search Results for {{ formData.location }}</h2>
+    <p *ngIf="formData.priceRange" class="price-range">
+      Price Range: ₹{{ formData.priceRange[0] }} - ₹{{ formData.priceRange[1] }}
     </p>
-  </ng-template>
+
+    <div *ngIf="filteredResults.length > 0; else noResults" class="hotel-results">
+      <div *ngFor="let hotel of filteredResults" class="hotel-card" (click)="viewHotelDetails(hotel)">
+        <img [src]="hotel.images[0] || 'default.jpg'" alt="{{ hotel.name }}" class="hotel-image"/>
+        <div class="hotel-details">
+          <h3>{{ hotel.name }}</h3>
+          <div class="hotel-stars">
+            <!-- Render full stars -->
+            <i
+            class="bi bi-star-fill"
+            *ngFor="let _ of getStarArray(hotel.ratings.averageRating).fullStars"
+            style="color: gold;"
+          ></i>
+          <!-- Render half stars -->
+          <i
+              class="bi bi-star-half"
+              *ngFor="let _ of getStarArray(hotel.ratings.averageRating).halfStars"
+              style="color: gold;"
+          ></i>
+          <!-- Render empty stars -->
+          <i
+            class="bi bi-star"
+            *ngFor="let _ of getStarArray(hotel.ratings.averageRating).emptyStars"
+            style="color: gray;"
+          ></i>
+          </div>
+          <p><strong>City:</strong> {{ hotel.city }}</p>
+          <p><strong>Price per Night:</strong> ₹{{ hotel.pricePerNight | number:'1.0-0' }}</p>
+          <p><strong>Rooms Available:</strong> {{ hotel.roomsAvailable }}</p>
+          <p><strong>Amenities:</strong> 
+            {{ getAmenityNames(hotel.amenities) }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noResults>
+      <p class="no-results-message">
+        No results found matching your criteria. Please try again.
+      </p>
+    </ng-template>
+  </div>
 </div>
+
