@@ -152,7 +152,9 @@ getTotalPages(): number {
     this.popupContent = '';
   }
 
-  constructor(private manageFlightsService: ManageFlightsService) {}
+  constructor(private manageFlightsService: ManageFlightsService) {
+    
+  }
 
   ngOnInit() {
     this.getFlightDetails();
@@ -163,6 +165,7 @@ getTotalPages(): number {
     this.manageFlightsService.getFlights().subscribe((data:any) => {
       this.flightList = data
       this.filteredFlights = data
+      this.updatePaginatedFlights()
     });
   }
 
@@ -175,7 +178,10 @@ getTotalPages(): number {
     this.isView = !this.isView
   }
 
-  // deleteData(id: string) {
-  //   this.dataService.deleteData(id).subscribe(() => this.loadData());
-  // }
+  onCancelService(id: string) {
+    this.manageFlightsService.cancelFlightAndBookings(id).subscribe((data)=>{
+      console.log(data)
+      location.reload()
+    })
+  }
 }

@@ -23,8 +23,6 @@ export class FlightBookingService {
   }
 
   changeFlightStatus(id:any, data:any): Observable<any> {
-    console.log(id)
-    console.log(data)
     return this.http.patch(`${this.apiURL}/bookings/${id}`, data)
   }
 

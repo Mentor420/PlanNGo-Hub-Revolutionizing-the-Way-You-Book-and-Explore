@@ -1,16 +1,18 @@
 .container {
-    max-width: 600px;
-    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-image: url("https://www.rosenaviation.com/wp-content/uploads/2024/02/Longest-commercial-flights-Rosen-Aviation-scaled.jpeg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
   }
   
   h2 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
   }
@@ -19,12 +21,48 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow-y: scroll;
+    padding: 30px;
+  }
+
+  form::-webkit-scrollbar {
+    width: 8px;
   }
   
-  label {
+  form::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255);
+    border:1px solid white;
+    border-radius: 10px;
+  }
+  
+  form::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  .back{
+    justify-content: flex-start;
+    width: 80px;
+    background-color: transparent;
+    border: none;
+    outline: none;
     font-size: 14px;
+  }
+
+  .back i {
+    margin-right: 5px;
+  }
+
+  label {
+    font-size: 16px;
     font-weight: bold;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 5px;
     font-family: 'Arial', sans-serif;
   }
@@ -33,13 +71,18 @@
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 30px;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
   }
+
+  select{
+    border-right: 10px solid #fff;
+    outline: none;
+  }
   
-  input:focus, select:focus {
+  input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -49,13 +92,12 @@
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 8px;
-    background-color: #fff;
   }
   
   legend {
     font-weight: bold;
-    color: #333;
-    font-size: 16px;
+    color: #ffffff;
+    font-size: 18px;
   }
   
   button {

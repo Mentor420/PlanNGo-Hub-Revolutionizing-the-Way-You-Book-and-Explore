@@ -1,8 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { ManageFlightsService } from '../../../../services/admin/manage-flights.service';
 
 @Component({
   selector: 'app-edit-service',
@@ -11,11 +12,11 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './edit-service.component.html',
   styleUrl: './edit-service.component.css'
 })
-export class EditServiceComponent {
+export class EditServiceComponent implements OnInit {
   flightForm: FormGroup;
   flightId: string = "";
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private route:ActivatedRoute) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private route:ActivatedRoute, private location:Location, private manageBookingComponent:ManageFlightsService) {
     this.flightForm = this.fb.group({
       airline: ['', [Validators.required, Validators.minLength(3)]],
       logo: ['', [Validators.required, Validators.pattern(/https?:\/\/.+/)]],
@@ -42,7 +43,7 @@ export class EditServiceComponent {
 
   fetchFlightDetails(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.http.get(`http://localhost:3000/flights/${id}`).subscribe(
+    this.manageBookingComponent.getSpecificFlights(id).subscribe(
       (data: any) => {
         // Populate the form with fetched data
         this.flightForm.patchValue({
@@ -60,6 +61,10 @@ export class EditServiceComponent {
         console.error('Error fetching flight details:', error);
       }
     );
+  }
+
+  goBack(): void {
+    this.location.back(); // Navigates to the previous page
   }
 
   onSubmit(): void {

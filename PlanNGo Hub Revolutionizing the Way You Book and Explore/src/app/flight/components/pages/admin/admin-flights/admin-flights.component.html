@@ -44,7 +44,7 @@
           <td>
              <!-- Edit Button with Hover Pop-up -->
     <button class="edit-btn" [routerLink]="['/admin/flight/edit',data.id]" (mouseenter)="showPopup($event, 'edit', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="delete-btn">Cancel</button>
+    <button class="cancel-btn" (click)="onCancelService(data.id)" [disabled]="!data.isActive">Cancel</button>
     <button class="analysis-btn" (click)="onAnalysisView(data.id)" (mouseenter)="showPopup($event, 'analysis', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-chart-column"></i></button>
 
   <!-- Hover Pop-up -->

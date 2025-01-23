@@ -1,0 +1,84 @@
+<div class="flex justify-content-center align-items-center min-h-screen bg-gray-100 bg-cover bg-center" 
+  style="background-image: url('https://i.pinimg.com/1200x/21/a9/4e/21a94e76ff3d47278a03590fd344c7d6.jpg');">
+  
+  <p-card header="Login" [style]="{ width: '400px' }" >
+    <h1 class="text-6x1 font-bold text-black mb-6 shadow-2xl  bg-opacity-40 px-6 py-2 rounded-lg">
+      Welcome to PlanNGo
+    </h1>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off" >
+      <div class="field" autocomplete="off">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="login.email"
+          class="w-full"
+          id="email"
+          autocomplete="off"
+          name="email"
+          #email="ngModel"
+          required
+          pattern="[a-z0-9\._%\+\-]+@[a-z0-9\.\-]+\.[a-z]{2,}$"
+          
+          
+        />
+        @if(email.invalid && (email.dirty || email.touched)){
+          <small class="block p-error">
+            @if(email.hasError('required')) {
+              <span>Email is required</span>
+            } @else if(email.hasError('pattern')) {
+              <span>Email is invalid</span>
+            }
+          </small>
+        }
+      </div>
+      <div class="field" autocomplete="off">
+        <label for="password">Password</label>
+        <p-password
+          [(ngModel)]="login.password"
+          [feedback]="false"
+          [toggleMask]="true"
+          inputId="password"
+          name="password"
+          #password="ngModel"
+          inputStyleClass="w-full"
+          styleClass="w-full"
+          required
+          autocomplete="new-password"
+          
+        />
+        @if(password.invalid && (password.dirty || password.touched)) {
+          <small class="block p-error"> Password is required </small>
+        }
+      </div>
+      <p-button
+        label="SIGN IN"
+        styleClass="w-full"
+        [disabled]="!!loginForm.invalid"
+        type="submit"
+      ></p-button>
+      <div class="mt-2">
+        Not a member? <a routerLink="/register">Register</a>
+      </div>
+    </form>
+    
+  </p-card>
+  
+</div>
+
+<script>
+  export class LoginComponent {
+    login = {
+      email: '',
+      password: '',
+    }
+
+    clearEmail() {
+      this.login.email = '';
+    }
+
+    clearPassword() {
+      this.login.password = '';
+    }
+  }
+</script>

@@ -1,0 +1,25 @@
+<div class="profile-container">
+  <div *ngIf="!isEditing" class="profile-view">
+    <h2>{{ profile.name }}</h2>
+    <p>Email: {{ profile.email }}</p>
+    <p>Phone: {{ profile.phone }}</p>
+    <img [src]="profile.picture || 'default-pic.jpg'" alt="Profile Picture" />
+    <button (click)="startEditing()">Edit</button>
+  </div>
+
+  <div *ngIf="isEditing" class="profile-edit">
+    <label for="name">Name:</label>
+    <input [(ngModel)]="profile.name" id="name" />
+    
+    <label for="email">Email:</label>
+    <input [(ngModel)]="profile.email" id="email" disabled />
+    
+    <label for="phone">Phone:</label>
+    <input [(ngModel)]="profile.phone" id="phone" />
+
+    <label for="picture">Profile Picture:</label>
+    <input type="file" (change)="onFileChange($event)" />
+
+    <button (click)="saveProfile()">Save Changes</button>
+  </div>
+</div>

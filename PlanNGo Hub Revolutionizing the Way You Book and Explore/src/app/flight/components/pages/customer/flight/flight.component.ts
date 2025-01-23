@@ -54,7 +54,7 @@ export class FlightComponent {
   loadFlightsAndBookings() {
     this.flightBookingService.getFlights().subscribe({
       next: (flightsData) => {
-        this.flights = flightsData;
+        this.flights = flightsData.filter((data:any)=>(data.isActive !== false));
         this.isfailure = false;
   
         // Fetch user bookings

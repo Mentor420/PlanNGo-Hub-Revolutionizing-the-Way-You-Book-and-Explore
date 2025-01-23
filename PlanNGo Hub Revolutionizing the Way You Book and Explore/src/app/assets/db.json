@@ -1,6 +1,20 @@
 {
+  "users": [
+    {
+      "id": "455f",
+      "fullName": "vishnu m",
+      "email": "vishnumvishnu1718@gmail.com",
+      "password": "@Vish18numvk17",
+      "gender": "Male",
+      "age": 20,
+      "name": "VISHNU M",
+      "phone": "08220494831",
+      "role": "Customer"
+    }
+  ],
   "flights": [
     {
+      "id": "FL12350",
       "airline": "Vistara",
       "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
       "flightNumber": "UK308",
@@ -17,9 +31,10 @@
       "duration": "3h 30m",
       "price": 3100,
       "classType": "Business",
-      "id": "FL12350"
+      "isActive": true
     },
     {
+      "id": "FL12346",
       "airline": "Air India",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
       "flightNumber": "AI101",
@@ -36,7 +51,7 @@
       "duration": "2h 40m",
       "price": 4500,
       "classType": "Business",
-      "id": "FL12346"
+      "isActive": true
     },
     {
       "id": "FL12347",
@@ -55,7 +70,8 @@
       },
       "duration": "3h 30m",
       "price": 5100,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true
     },
     {
       "id": "FL12348",
@@ -74,7 +90,8 @@
       },
       "duration": "1h 40m",
       "price": 3700,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true
     },
     {
       "id": "FL12349",
@@ -93,7 +110,8 @@
       },
       "duration": "2h 00m",
       "price": 2800,
-      "classType": "First Class"
+      "classType": "First Class",
+      "isActive": true
     },
     {
       "id": "FL12350",
@@ -112,7 +130,8 @@
       },
       "duration": "1h 50m",
       "price": 3300,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true
     },
     {
       "id": "FL12345",
@@ -131,7 +150,8 @@
       },
       "duration": "3h 20m",
       "price": 3200,
-      "classType": "First Class"
+      "classType": "First Class",
+      "isActive": true
     },
     {
       "id": "FL12351",
@@ -150,7 +170,8 @@
       },
       "duration": "1h 30m",
       "price": 2500,
-      "classType": "Business"
+      "classType": "Business",
+      "isActive": true
     },
     {
       "id": "FL12352",
@@ -169,7 +190,8 @@
       },
       "duration": "3h 45m",
       "price": 3000,
-      "classType": "Business"
+      "classType": "Business",
+      "isActive": true
     },
     {
       "id": "FL12353",
@@ -188,7 +210,8 @@
       },
       "duration": "4h 30m",
       "price": 2200,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true
     },
     {
       "id": "FL12354",
@@ -207,7 +230,8 @@
       },
       "duration": "6h 00m",
       "price": 7200,
-      "classType": "Business"
+      "classType": "Business",
+      "isActive": true
     },
     {
       "id": "FL12355",
@@ -226,10 +250,10 @@
       },
       "duration": "3h 15m",
       "price": 6800,
-      "classType": "First Class"
+      "classType": "First Class",
+      "isActive": true
     },
     {
-      "id": "FL12356",
       "airline": "Emirates",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/967px-Emirates_logo.svg.png",
       "flightNumber": "EK501",
@@ -245,7 +269,9 @@
       },
       "duration": "3h 30m",
       "price": 5200,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true,
+      "id": "FL12356"
     },
     {
       "id": "FL12357",
@@ -264,7 +290,8 @@
       },
       "duration": "6h 15m",
       "price": 8300,
-      "classType": "Business"
+      "classType": "Business",
+      "isActive": true
     },
     {
       "id": "FL12358",
@@ -283,7 +310,8 @@
       },
       "duration": "5h 30m",
       "price": 3100,
-      "classType": "Economy"
+      "classType": "Economy",
+      "isActive": true
     }
   ],
   "bookings": [
@@ -320,68 +348,6 @@
           "gender": "Male",
           "passportNumber": "23719352476",
           "phoneNumber": "94875646"
-        }
-      ]
-    },
-    {
-      "id": "B1736249168907",
-      "flightID": "FL12347",
-      "userID": "U1001",
-      "totalAmount": 10200,
-      "bookingStatus": "Confirmed",
-      "date": "01/07/2025, 16:56:08",
-      "passengers": [
-        {
-          "id": "P1736249144408",
-          "name": "RANKESH",
-          "age": 20,
-          "gender": "Male",
-          "passportNumber": "23719352476",
-          "phoneNumber": "94875646"
-        },
-        {
-          "id": "P1736249147398",
-          "name": "siva",
-          "age": 20,
-          "gender": "Male",
-          "passportNumber": "23719352476",
-          "phoneNumber": "94875646"
-        }
-      ]
-    },
-    {
-      "id": "B1737190191612",
-      "flightID": "FL12352",
-      "userID": "U1001",
-      "totalAmount": 3000,
-      "bookingStatus": "Confirmed",
-      "date": "01/18/2025, 14:19:51",
-      "passengers": [
-        {
-          "id": "P1737190172626",
-          "name": "RANKESH ",
-          "age": 20,
-          "gender": "Male",
-          "passportNumber": "23719352476",
-          "phoneNumber": "7823642475"
-        }
-      ]
-    },
-    {
-      "id": "B1737383106642",
-      "flightID": "FL12350",
-      "userID": "U1001",
-      "totalAmount": 3100,
-      "bookingStatus": "Confirmed",
-      "date": "01/20/2025, 19:55:06",
-      "passengers": [
-        {
-          "id": "P1737383075647",
-          "name": "RANKESH ",
-          "age": 20,
-          "gender": "Male",
-          "passportNumber": "23719352476",
-          "phoneNumber": "7823642475"
         }
       ]
     }
