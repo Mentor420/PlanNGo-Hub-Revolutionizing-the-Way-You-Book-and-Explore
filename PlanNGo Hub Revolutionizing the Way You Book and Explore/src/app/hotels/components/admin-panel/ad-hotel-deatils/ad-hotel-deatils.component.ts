@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../services/admin.service'; 
-import { Hotel } from '../../../models/interfaces';
+import { Hotel, Provider } from '../../../models/interfaces';
 import { Amenity } from '../../../models/interfaces';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,6 +21,8 @@ export class AdHotelDeatilsComponent implements OnInit {
   selectedHotel: Hotel | null = null;
   showDeletePopup = false;
   hotelToDeleteId: string | null = null;
+  providers: Provider[] = [];
+  groupedHotels: { providerName: string; hotels: Hotel[] }[] = [];
 
   hours: string[] = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
   minutes: string[] = ['00', '15', '30', '45'];
@@ -35,6 +37,7 @@ export class AdHotelDeatilsComponent implements OnInit {
   showAddHotelPopup: boolean = false; 
   newHotel: Hotel = {
     id: '', 
+    provider_id: '',
     city: '',
     name: '',
     description: '',
@@ -59,15 +62,40 @@ export class AdHotelDeatilsComponent implements OnInit {
   ngOnInit(): void {
     this.fetchHotels();
   }
-
+  
   fetchHotels(): void {
-    this.adminService.getAllHotels().subscribe(
-      (data: Hotel[]) => {
-        this.hotels = data;
-        this.filteredHotels = this.hotels; // Initialize filteredHotels
+    this.adminService.getAllProviders().subscribe(
+      (providers: Provider[]) => {
+        this.providers = providers;
+  
+        this.adminService.getAllHotels().subscribe(
+          (hotels: Hotel[]) => {
+            // Group hotels by provider
+            const grouped = hotels.reduce((acc, hotel) => {
+              const provider = providers.find(p => p.provider_id === hotel.provider_id);
+              const providerName = provider?.name || 'Unknown Provider';
+  
+              if (!acc[providerName]) {
+                acc[providerName] = [];
+              }
+              acc[providerName].push(hotel);
+  
+              return acc;
+            }, {} as { [key: string]: Hotel[] });
+  
+            // Convert grouped object into an array
+            this.groupedHotels = Object.entries(grouped).map(([providerName, hotels]) => ({
+              providerName,
+              hotels,
+            }));
+          },
+          error => {
+            console.error('Error fetching hotels:', error);
+          }
+        );
       },
-      (error) => {
-        console.error('Error fetching hotels:', error);
+      error => {
+        console.error('Error fetching providers:', error);
       }
     );
   }

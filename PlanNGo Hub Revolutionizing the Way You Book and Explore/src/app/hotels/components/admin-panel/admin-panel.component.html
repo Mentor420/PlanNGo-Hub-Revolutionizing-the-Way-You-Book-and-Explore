@@ -30,10 +30,37 @@
                 <span class="number">{{ totalHotels }}</span>
               </div>
               <div class="box box2">
-                <i class="uil uil-comment"></i>
+                <i class="uil uil-bed"></i>
                 <span class="text">Total Rooms</span>
                 <span class="number">{{ totalRooms }}</span>
               </div>
+              <div class="box box3">
+                <i class="uil uil-users-alt"></i>
+                <span class="text">Total Bookings</span>
+                <span class="number">{{ totalBookings }}</span>
+              </div>
+              <div class="box box4">
+                <i class="uil uil-rupee-sign"></i>
+                <span class="text">Total Revenue</span>
+                <span class="number">{{ totalRevenue | currency: 'INR':'symbol':'1.0-0' }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="charts">
+            <div class="chart-container">
+              <div class="chart-content">
+                <div class="chart-details">
+                  <h3>Bookings by Provider</h3>
+                  <ul class="chart-legend"></ul>
+                </div>
+                <div class="chart-canvas">
+                  <canvas id="bookingsByProviderChart"></canvas>
+                </div>
+              </div>
+            </div>                       
+            <div class="chart-container">
+              <canvas id="monthlyBookingsChart"></canvas>
             </div>
           </div>
 
@@ -56,16 +83,20 @@
                     <th>Arrival Date</th>
                     <th>Hotel ID</th>
                     <th>Room ID</th>
+                    <th>Price</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let booking of recentBookings | slice:0:5">
                     <td>{{ booking.fullName }}</td>
                     <td>{{ booking.email }}</td>
-                    <td>{{ booking.bookingDate }}</td>
-                    <td>{{ booking.checkInDate }}</td>
+                    <td>{{ booking.bookingDate | date:'short' }}</td>
+                    <td>{{ booking.checkInDate | date:'mediumDate' }}</td>
                     <td>{{ booking.hotelId }}</td>
                     <td>{{ booking.roomId }}</td>
+                    <td>{{ booking.price | currency: 'INR':'symbol':'1.0-0' }}</td>
+                    <td>{{ booking.status }}</td>
                   </tr>
                 </tbody>
               </table>

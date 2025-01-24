@@ -14,24 +14,30 @@
     <div class="m-2">
       <button class="btn btn-primary float-end" (click)="openAddHotelPopup()">Add Hotel</button>
     </div>
-    <div class="card-list">
-      <div class="card-item" *ngFor="let hotel of filteredHotels" (click)="openHotelDetails(hotel)">
-        <!-- Circle delete icon -->
-        <div class="delete-icon" (click)="confirmDelete(hotel.id); $event.stopPropagation();">
-          <i class="bx bx-trash"></i>
-        </div>
-        <img [src]="hotel.images && hotel.images.length > 0 ? hotel.images[0] : 'assets/default-hotel.jpg'"
-          alt="{{ hotel.name || 'Hotel Image Unavailable' }}" />
+    
+    <div class="provider-group" *ngFor="let group of groupedHotels">
+      <h2 class="provider-name">
+        <i class="bi bi-building"></i> {{ group.providerName }}
+      </h2>
+    
+      <div class="card-list">
+        <div class="card-item" *ngFor="let hotel of group.hotels" (click)="openHotelDetails(hotel)">
+          <div class="delete-icon" (click)="confirmDelete(hotel.id); $event.stopPropagation();">
+            <i class="bx bx-trash"></i>
+          </div>
+          <img [src]="hotel.images && hotel.images.length > 0 ? hotel.images[0] : 'assets/default-hotel.jpg'"
+            alt="{{ hotel.name || 'Hotel Image Unavailable' }}" />
           <h3 class="hotel-name">{{ hotel.id }}</h3>
-        <h3 class="hotel-name">{{ hotel.name }}</h3>
-        <p class="location">
-          <i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}
-        </p>
-        <h2 class="price">
-          <i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night
-        </h2>
+          <h3 class="hotel-name">{{ hotel.name }}</h3>
+          <p class="location">
+            <i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}
+          </p>
+          <h2 class="price">
+            <i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night
+          </h2>
+        </div>
       </div>
-    </div>
+    </div>    
   </div>
 
 <!-- Hotel Add Popup -->

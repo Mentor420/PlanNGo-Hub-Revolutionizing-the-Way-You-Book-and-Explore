@@ -13,6 +13,8 @@ import { AdHotelDeatilsComponent } from './hotels/components/admin-panel/ad-hote
 import { AdSidebarComponent } from './hotels/components/admin-panel/ad-sidebar/ad-sidebar.component';
 import { AdRoomDeatilsComponent } from './hotels/components/admin-panel/ad-room-deatils/ad-room-deatils.component';
 import { AdminBookingDetailsComponent } from './hotels/components/admin-panel/ad-booking-details/ad-booking-details.component';
+import { ServiceProviderComponent } from './hotels/components/service-provider-panel/service-provider/s-provider.component';
+import { ServiceHotelComponent } from './hotels/components/service-provider-panel/s-hotel/s-hotel.component';
 
 
 export const routes: Route[] = [
@@ -37,6 +39,15 @@ export const routes: Route[] = [
       { path: 'ad-hotel-deatils', component: AdHotelDeatilsComponent },
       { path: 'ad-room-details', component: AdRoomDeatilsComponent },
       { path: 'ad-booking-history', component: AdminBookingDetailsComponent},
+    ]
+  },
+  {
+    path: 'service-provider', component: ServiceProviderComponent,
+    children: [
+      {
+        path: 'service-hotel',
+        component: ServiceHotelComponent,
+      },
     ]
   },
   {

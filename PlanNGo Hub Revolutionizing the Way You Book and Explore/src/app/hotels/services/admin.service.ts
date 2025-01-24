@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { forkJoin, Observable, throwError } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { Booking, Room } from '../models/interfaces';
-import { Hotel } from '../models/interfaces';
+import { Hotel, Provider } from '../models/interfaces';
 
 // Extended Room interface to include hotelId
 interface RoomWithHotelId extends Room {
@@ -217,4 +217,165 @@ export class AdminService {
       )
     );
   }
+
+  /* BELOW FUNCTIONS IS FOR THE TESTING PURPOSE */
+
+  getAllProviders(): Observable<Provider[]> {
+    return this.http.get<Provider[]>('http://localhost:3000/providers');
+  }  
+
+  getProviderBookings(): Observable<{ provider: string; bookings: number }[]> {
+    return forkJoin({
+      hotels: this.getAllHotels(),
+      providers: this.http.get<{ provider_id: string; name: string }[]>('http://localhost:3000/providers'),
+    }).pipe(
+      map(({ hotels, providers }) => {
+        // Create a map of provider_id to provider name
+        const providerNameMap = providers.reduce((acc, provider) => {
+          acc[provider.provider_id] = provider.name;
+          return acc;
+        }, {} as Record<string, string>);
+  
+        // Group hotels by provider_id and count bookings
+        const providerBookingsMap = hotels.reduce((acc, hotel) => {
+          if (!hotel.provider_id) return acc; // Skip hotels without a provider_id
+          if (!acc[hotel.provider_id]) {
+            acc[hotel.provider_id] = 0;
+          }
+          acc[hotel.provider_id] += hotel.bookings.length;
+          return acc;
+        }, {} as Record<string, number>);
+  
+        // Convert grouped data to an array of { provider, bookings }
+        return Object.entries(providerBookingsMap).map(([providerId, bookings]) => ({
+          provider: providerNameMap[providerId] || providerId, // Use name from map or fallback to id
+          bookings,
+        }));
+      }),
+    );
+  }
+  
+  
+  
+
+  getTotalRevenue(): Observable<number> {
+    return this.getAllHotels().pipe(
+      map((hotels) =>
+        hotels.reduce(
+          (total, hotel) => total + hotel.bookings.reduce((hotelTotal, booking) => hotelTotal + booking.price, 0),
+          0,
+        ),
+      ),
+    )
+  }
+
+  getMonthlyBookings(): Observable<{ month: string; count: number, revenue: number }[]> {
+    return this.getAllHotels().pipe(
+      map((hotels) => {
+        const bookings = hotels.flatMap((hotel) => hotel.bookings);
+  
+        // Filter out bookings without a valid bookingDate
+        const validBookings = bookings.filter(booking => booking.bookingDate);
+  
+        // Initialize an object to store the count of bookings and revenue for each month
+        const monthlyBookings = validBookings.reduce(
+          (acc, booking) => {
+            const month = new Date(booking.bookingDate).toLocaleString("default", { month: "short" });
+            acc[month] = acc[month] || { count: 0, revenue: 0 };
+            acc[month].count += 1;
+            acc[month].revenue += booking.price || 0;  // Add price to revenue
+            return acc;
+          },
+          {} as Record<string, { count: number, revenue: number }>,
+        );
+  
+        // Get all months (January to December) to ensure they are all present in the result
+        const allMonths = [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ];
+  
+        // Ensure all months are included, even if some have no bookings or revenue
+        return allMonths.map(month => ({
+          month,
+          count: monthlyBookings[month]?.count || 0,   // If no bookings for this month, set count to 0
+          revenue: monthlyBookings[month]?.revenue || 0 // If no revenue for this month, set revenue to 0
+        }));
+      }),
+    );
+  }
+  
+  
+
+  getMonthlyRevenue(): Observable<{ month: string; revenue: number }[]> {
+    return this.getAllHotels().pipe(
+      map((hotels) => {
+        const bookings = hotels.flatMap((hotel) => hotel.bookings);
+  
+        const monthlyRevenue = bookings.reduce(
+          (acc, booking) => {
+            const month = new Date(booking.bookingDate).toLocaleString("default", { month: "short" });
+            acc[month] = (acc[month] || 0) + booking.price;
+            return acc;
+          },
+          {} as Record<string, number>,
+        );
+  
+        return Object.entries(monthlyRevenue).map(([month, revenue]) => ({
+          month,
+          revenue,
+        }));
+      })
+    );
+  }
+  
+  getAverageRatings(): Observable<{ hotelName: string; averageRating: number }[]> {
+    return this.getAllHotels().pipe(
+      map((hotels) =>
+        hotels.map((hotel) => ({
+          hotelName: hotel.name,
+          averageRating: hotel.ratings.averageRating,
+        }))
+      )
+    );
+  }
+
+  calculateMonthlyBookings(hotelId: string): Observable<{ monthYear: string; totalBookings: number; totalRevenue: number }[]> {
+    return this.getHotelById(hotelId).pipe(
+      map((hotel) => {
+        if (!hotel || !hotel.bookings) {
+          return [];
+        }
+  
+        const bookings = hotel.bookings;
+        const monthlyData: Record<string, { totalBookings: number; totalRevenue: number }> = {};
+  
+        bookings.forEach((booking) => {
+          const checkInDate = new Date(booking.checkInDate);
+          const month = checkInDate.getMonth() + 1; // Months are 0-indexed
+          const year = checkInDate.getFullYear();
+          const monthYear = `${year}-${month.toString().padStart(2, '0')}`;
+  
+          if (!monthlyData[monthYear]) {
+            monthlyData[monthYear] = { totalBookings: 0, totalRevenue: 0 };
+          }
+  
+          monthlyData[monthYear].totalBookings += 1;
+          monthlyData[monthYear].totalRevenue += booking.price;
+        });
+  
+        return Object.entries(monthlyData).map(([monthYear, data]) => ({
+          monthYear,
+          totalBookings: data.totalBookings,
+          totalRevenue: data.totalRevenue,
+        }));
+      }),
+      catchError((error) => {
+        console.error(`Error calculating monthly bookings for hotel ${hotelId}:`, error.message);
+        return throwError(error);
+      })
+    );
+  }
+  
+  
 }

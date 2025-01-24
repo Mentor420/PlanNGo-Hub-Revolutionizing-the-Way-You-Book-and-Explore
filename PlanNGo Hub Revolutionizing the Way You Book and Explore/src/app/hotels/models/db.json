@@ -2,6 +2,7 @@
   "hotels": [
     {
       "id": "hT01",
+      "provider_id": "Provider1",
       "city": "Goa",
       "name": "Goa Paradise",
       "description": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
@@ -127,7 +128,7 @@
           "couponCode": "",
           "checkInDate": "2025-01-18",
           "checkOutDate": "2025-01-19",
-          "bookingDate": "2025-01-18T18:18:10.437Z",
+          "bookingDate": "2025-02-18T18:18:10.437Z",
           "roomBooked": "1",
           "price": 2740,
           "status": "Completed",
@@ -166,7 +167,7 @@
           "bookingDate": "2025-01-20T07:02:21.996Z",
           "roomBooked": 1,
           "price": 2490,
-          "status": "Booked",
+          "status": "Completed",
           "reviewSubmitted": false
         }
       ],
@@ -260,6 +261,7 @@
     },
     {
       "id": "hT09",
+      "provider_id": "Provider1",
       "city": "Goa",
       "name": "Goa Beachfront Resort",
       "description": "Beachfront hotel in Goa offering vibrant nightlife, water sports, and tropical vibes, perfect for adventure seekers and beach lovers.",
@@ -380,14 +382,22 @@
       ],
       "bookings": [
         {
-          "checkInDate": "2024-12-14",
-          "checkOutDate": "2024-12-18",
-          "roomsBooked": 5
-        },
-        {
-          "checkInDate": "2024-12-20",
-          "checkOutDate": "2024-12-22",
-          "roomsBooked": 6
+          "id": "hT09-b001",
+          "userId": "u001",
+          "hotelId": "hT09",
+          "roomId": "r002",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\Capture001.png",
+          "couponCode": "DISCOUNT20",
+          "checkInDate": "2025-01-23",
+          "checkOutDate": "2025-01-24",
+          "bookingDate": "2025-01-23T17:27:44.812Z",
+          "roomBooked": 1,
+          "price": 2740,
+          "status": "Completed",
+          "reviewSubmitted": false
         }
       ],
       "ratings": {
@@ -545,7 +555,7 @@
       "name": "Goa Lagoon Retreat",
       "description": "Eco-friendly hotel in Goa blending nature with comfort, offering organic dining, yoga retreats, and stunning coastal scenery.",
       "pricePerNight": 2000,
-      "roomsAvailable": 5,
+      "roomsAvailable": 2,
       "rooms": [
         {
           "roomId": "r001",
@@ -559,21 +569,6 @@
             "Free Cancellation"
           ],
           "availableRooms": 2,
-          "images": [
-            "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
-          ]
-        },
-        {
-          "roomId": "r002",
-          "type": "Single Deluxe",
-          "description": "Cozy room for solo travelers with premium amenities.",
-          "pricePerNight": 2500,
-          "benefits": [
-            "Free WiFi",
-            "Room Service",
-            "City View"
-          ],
-          "availableRooms": 3,
           "images": [
             "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
           ]
@@ -669,6 +664,24 @@
           "checkInDate": "2024-12-22",
           "checkOutDate": "2024-12-25",
           "roomsBooked": 2
+        },
+        {
+          "id": "hT018-b001",
+          "userId": "u001",
+          "hotelId": "hT018",
+          "roomId": "r002",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\Capture001.png",
+          "couponCode": "DISCOUNT20",
+          "checkInDate": "2025-01-23",
+          "checkOutDate": "2025-01-24",
+          "bookingDate": "2025-01-23T12:38:28.670Z",
+          "roomBooked": 2,
+          "price": 2240,
+          "status": "Cancelled",
+          "reviewSubmitted": false
         }
       ],
       "ratings": {
@@ -966,6 +979,7 @@
     },
     {
       "id": "hT010",
+      "provider_id": "Provider2",
       "city": "Mumbai",
       "name": "Mumbai Bayview Hotel",
       "description": "Urban retreat in Mumbai near Marine Drive, offering luxurious suites, a wellness spa, and spectacular city skyline views.",
@@ -1079,14 +1093,40 @@
       ],
       "bookings": [
         {
-          "checkInDate": "2024-12-11",
-          "checkOutDate": "2024-12-14",
-          "roomsBooked": 3
+          "id": "hT010-b001",
+          "userId": "u001",
+          "hotelId": "hT010",
+          "roomId": "r001",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\Capture001.png",
+          "couponCode": "DISCOUNT10",
+          "checkInDate": "2025-01-22",
+          "checkOutDate": "2025-01-23",
+          "bookingDate": "2025-01-22T14:33:18.765Z",
+          "roomBooked": 1,
+          "price": 4240,
+          "status": "Cancelled",
+          "reviewSubmitted": false
         },
         {
-          "checkInDate": "2024-12-15",
-          "checkOutDate": "2024-12-20",
-          "roomsBooked": 4
+          "id": "hT010-b002",
+          "userId": "u001",
+          "hotelId": "hT010",
+          "roomId": "r002",
+          "fullName": "Ridam Aditya Sinha",
+          "email": "ridamsinha20@gmail.com",
+          "mobile": "09532911742",
+          "idProof": "C:\\fakepath\\Capture001.png",
+          "couponCode": "DISCOUNT10",
+          "checkInDate": "2025-01-22",
+          "checkOutDate": "2025-01-23",
+          "bookingDate": "2025-01-22T14:33:47.466Z",
+          "roomBooked": 1,
+          "price": 2740,
+          "status": "Cancelled",
+          "reviewSubmitted": false
         }
       ],
       "ratings": {
@@ -4116,6 +4156,16 @@
           "5": 300
         }
       }
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "Provider1",
+      "name": "Travel Agency X"
+    },
+    {
+      "provider_id": "Provider2",
+      "name": "Travel Agency Y"
     }
   ]
 }

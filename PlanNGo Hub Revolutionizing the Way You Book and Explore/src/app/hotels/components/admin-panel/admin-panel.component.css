@@ -37,7 +37,6 @@
 .search_box {
   position: relative;
   height: 45px;
-  /* max-width: 600px; */
   width: 100%;
   margin: 0 15px 0 0;
 }
@@ -74,11 +73,10 @@
 }
 
 .dash-content {
-  padding-top: 30px;
+  padding-top: 70px;
 }
 
 .show-all-btn {
-  margin-left: auto;
   padding: 8px 16px;
   background-color: #2b56cd;
   color: #fff;
@@ -87,7 +85,6 @@
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: relative;
 }
 
 .show-all-btn:hover {
@@ -98,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 60px 0 30px 0;
+  margin: 30px 0;
 }
 
 .title-r i {
@@ -118,17 +115,13 @@
   font-size: 24px;
   font-weight: 500;
   display: flex;
-  gap: 11px
-}
-
-button.show-all-btn {
-  margin-left: 890px;
+  gap: 11px;
 }
 
 .title {
   display: flex;
   align-items: center;
-  margin: 60px 0 30px 0;
+  margin: 30px 0;
 }
 
 .title i {
@@ -152,9 +145,9 @@ button.show-all-btn {
 }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .box {
@@ -162,7 +155,6 @@ button.show-all-btn {
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
-  width: calc(100% / 3 - 15px);
   padding: 15px 20px;
   transition: all 0.5s ease;
 }
@@ -187,6 +179,7 @@ button.show-all-btn {
 
 .box1 {
   background-color: #4DA3FF;
+  padding-top: 27px;
 }
 
 .box2 {
@@ -197,31 +190,8 @@ button.show-all-btn {
   background-color: #E7D1FC;
 }
 
-.activity-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  margin: 0 15px;
-}
-
-.data-title {
-  font-size: 20px;
-  font-weight: 500;
-  color: #000;
-}
-
-.data-list {
-  font-size: 18px;
-  font-weight: 400;
-  margin-top: 20px;
-  white-space: nowrap;
-  color: #000;
+.box4 {
+  background-color: #FFD1D1;
 }
 
 .table-wrapper {
@@ -268,7 +238,6 @@ button.show-all-btn {
   color: #777;
 }
 
-
 @media screen and (max-width: 768px) {
   .dashboard {
     left: 0;
@@ -290,22 +259,120 @@ button.show-all-btn {
     width: calc(100% - 250px);
   }
   
-  .activity-data {
-    flex-direction: column;
+  .boxes {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   
-  .data {
-    margin: 15px 0;
-  }
-  
-  .boxes .box {
-    width: calc(100% / 2 - 15px);
-    margin-top: 15px;
+  .charts {
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 560px) {
-  .boxes .box {
+  .boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px;
+  justify-content: center;
+}
+
+.chart-container {
+  flex: 1 1 calc(50% - 20px);
+  max-width: 600px;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chart-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.chart-details {
+  flex: 0 0 40%;
+  padding-right: 20px;
+}
+
+.chart-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.chart-canvas {
+  flex: 0 0 60%;
+  height: 250px;
+}
+
+.chart-container canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .charts {
+    margin: 15px;
+  }
+
+  .chart-container {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .chart-content {
+    flex-direction: column;
+  }
+
+  .chart-details {
+    flex: 0 0 auto;
+    padding-right: 0;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  .chart-canvas {
+    flex: 0 0 auto;
     width: 100%;
   }
 }
+

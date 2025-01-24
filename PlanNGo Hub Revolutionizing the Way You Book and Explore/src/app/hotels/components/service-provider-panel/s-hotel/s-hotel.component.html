@@ -1,0 +1,138 @@
+<div class="p-8">
+  <button class="back-button2" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> Back
+  </button>
+    <h1 class="text-3xl font-bold mb-6">{{ hotelData?.name }} </h1>
+  
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Total Rooms</h2>
+          <i class="icon-bed"></i>
+        </div>
+        <div class="card-content">
+          <div class="text-2xl font-bold">{{ hotelData ? getTotalAvailableRooms(hotelData) : 0 }}</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Available Rooms</h2>
+          <i class="icon-bed"></i>
+        </div>
+        <div class="card-content">
+          <div class="text-2xl font-bold">{{ hotelData ? getAvailableRooms(hotelData) : 0 }}</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Total Bookings</h2>
+          <i class="icon-users"></i>
+        </div>
+        <div class="card-content">
+          <div class="text-2xl font-bold">{{ hotelData?.bookings.length }}</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Total Revenue</h2>
+          <i class="icon-dollar"></i>
+        </div>
+        <div class="card-content">
+          <div class="text-2xl font-bold">
+            {{ hotelData ? (getHotelRevenue(hotelData) | currency: 'INR':'symbol':'1.0-0') : (0 | currency: 'INR':'symbol':'1.0-0') }}
+          </div>          
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid gap-4 md:grid-cols-2 mb-8">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Bookings Trend</h2>
+        </div>
+        <div class="card-content">
+          <div class="h-[300px]">
+            <canvas id="bookingChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Revenue Trend</h2>
+        </div>
+        <div class="card-content">
+          <div class="h-[300px]">
+            <canvas id="revenueChartt"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card mb-8">
+      <div class="card-header">
+        <h2 class="card-title">Room Types Overview</h2>
+      </div>
+      <div class="card-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Room Type</th>
+              <th>Available</th>
+              <th>Booked</th>
+              <th>Price</th>
+              <th>Occupancy Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of hotelData?.rooms">
+              <td>{{ room.type }}</td>
+              <td>{{ room.availableRooms }}</td>
+              <td>{{ getBookedCount(room.roomId) }}</td>
+              <td>{{ room.pricePerNight | currency: 'INR':'symbol':'1.0-0' }}</td>
+              <td>
+                <div class="flex items-center">
+                  <i class="icon-percent mr-2"></i>
+                  {{
+                    (getBookedCount(room.roomId) /
+                      (room.availableRooms + getBookedCount(room.roomId)) *
+                      100) | number: '1.2-2'
+                  }}%
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Recent Bookings</h2>
+      </div>
+      <div class="card-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Guest Name</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Room Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of hotelData?.bookings">
+              <td>{{ booking.fullName }}</td>
+              <td>{{ booking.checkInDate }}</td>
+              <td>{{ booking.checkOutDate }}</td>
+              <td>{{ booking.roomType }}</td>
+              <td>{{ booking.price | currency: 'INR':'symbol':'1.0-0' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  

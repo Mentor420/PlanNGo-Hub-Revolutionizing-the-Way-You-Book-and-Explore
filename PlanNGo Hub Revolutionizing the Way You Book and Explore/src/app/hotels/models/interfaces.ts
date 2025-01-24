@@ -57,8 +57,14 @@ export interface Amenity {
     details: string;
   }
   
+  export interface Provider {
+    provider_id: string;
+    name: string;
+  }
+  
   export interface Hotel {
     id: string;
+    provider_id: string,
     city: string;
     name: string;
     description: string;
