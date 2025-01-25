@@ -2,53 +2,69 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, switchMap } from 'rxjs';
 import { Provider, Hotel, Booking } from '../models/interfaces'; // Adjust the path if necessary
+import { response } from 'express';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceProviderService {
-  private apiUrl = 'http://localhost:3000'; // Base URL of your mock JSON server
+  private apiUrl = 'http://localhost:3000/4'; // Base URL of your mock JSON server
 
   constructor(private http: HttpClient) {}
 
   // Fetch providers
   getProviders(): Observable<Provider[]> {
-    return this.http.get<Provider[]>(`${this.apiUrl}/providers`);
+    return this.http.get<{ providers: Provider[] }>(`${this.apiUrl}`).pipe(
+      map(response => response.providers)
+    );
   }
 
   // Fetch provider by ID
   getProviderDetails(providerId: string): Observable<Provider | null> {
-    return this.http.get<Provider[]>(`${this.apiUrl}/providers`).pipe(
-      map((providers) => providers.find((provider) => provider.provider_id === providerId) || null)
+    return this.http.get<{ providers: Provider[] }>(this.apiUrl).pipe(
+      map((response) => {
+        const provider = response.providers.find((provider) => provider.provider_id === providerId);
+        if (!provider) {
+          throw new Error('Provider not found');
+        }
+        return provider;
+      })
     );
   }
 
   // Fetch hotels by provider ID
   getHotelsByProvider(providerId: string): Observable<Hotel[]> {
-    return this.http.get<Hotel[]>(`${this.apiUrl}/hotels`).pipe(
-      map((hotels) => hotels.filter((hotel) => hotel.provider_id === providerId))
+    return this.http.get<{hotels :Hotel[]}>(this.apiUrl).pipe(
+      map((response) => {
+        const hotel = response.hotels.filter((hotel) => hotel.provider_id === providerId);
+        if (!hotel) {
+          throw new Error('Hotel not found');
+        }
+        return hotel;
+      })
     );
   }
 
-  // Fetch specific hotel details by provider ID and hotel ID
+ // Fetch specific hotel details by provider ID and hotel ID
   getHotelDetailsByProviderId(providerId: string, hotelId: string): Observable<Hotel | undefined> {
-    // Fetch all providers and hotels
-    return this.http.get<Provider[]>(`${this.apiUrl}/providers`).pipe(
-      switchMap((providers) => 
-        this.http.get<Hotel[]>(`${this.apiUrl}/hotels`).pipe(
-          map((hotels) => 
-            hotels.find((hotel) => hotel.provider_id === providerId && hotel.id === hotelId)
-          )
-        )
-      )
+    // Fetch all data from the new endpoint
+    return this.http.get<{ hotels: Hotel[]; providers: Provider[] }>(`${this.apiUrl}`).pipe(
+      map((response) => {
+        // Filter the hotels to match the provider ID and hotel ID
+        return response.hotels.find(
+          (hotel) => hotel.provider_id === providerId && hotel.id === hotelId
+        );
+      })
     );
   }
-  
 
   // Fetch specific hotel details by hotel ID
-  getHotelDetails(hotelId: string): Observable<Hotel | null> {
-    return this.http.get<Hotel[]>(`${this.apiUrl}/hotels`).pipe(
-      map((hotels) => hotels.find((hotel) => hotel.id === hotelId) || null)
+  getHotelDetails(hotelId: string): Observable<Hotel[]> {
+    return this.http.get<{hotel: Hotel[]}>(this.apiUrl).pipe(
+      map((response) => {
+        const hotel = response.hotel.find((hotel) => hotel.id === hotelId);
+        return hotel ? [hotel] : []; // Return an array containing the hotel, or an empty array
+      })
     );
   }
 
@@ -76,6 +92,4 @@ export class ServiceProviderService {
       })
     );
   }
-
-
 }

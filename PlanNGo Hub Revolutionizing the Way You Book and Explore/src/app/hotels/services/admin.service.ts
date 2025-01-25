@@ -14,13 +14,15 @@ interface RoomWithHotelId extends Room {
   providedIn: 'root',
 })
 export class AdminService {
-  private apiUrl = 'http://localhost:3000/hotels'; // Updated API URL
+  private apiUrl = 'http://localhost:3000/4'; // Updated API URL
 
   constructor(private http: HttpClient) {}
 
   // Get all hotels
   getAllHotels(): Observable<Hotel[]> {
-    return this.http.get<Hotel[]>(this.apiUrl);
+    return this.http.get<{ hotels: Hotel[] }>(`${this.apiUrl}`).pipe(
+      map(response => response.hotels) 
+    );
   }
 
   // Get total number of users
@@ -42,8 +44,8 @@ export class AdminService {
           .flatMap((hotel) =>
             hotel.bookings.map((booking) => ({
               ...booking,
-              hotelName: hotel.name, 
-              hotelId: hotel.id,     
+              hotelName: hotel.name,
+              hotelId: hotel.id,
             }))
           )
           .filter((booking) => booking.userId && booking.roomId && booking.fullName && booking.email)
@@ -54,12 +56,35 @@ export class AdminService {
 
   // Add a new hotel
   addHotel(hotelData: Hotel): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, hotelData );
+    return this.http.get<{ hotels: any[]; providers: any[] }>(`${this.apiUrl}`).pipe(
+      switchMap((response) => {
+        // Update the hotels array by adding the new hotel
+        const updatedHotels = [...response.hotels, hotelData];
+  
+        // Send the updated data back to the server using POST
+        return this.http.put(`${this.apiUrl}`, {
+          hotels: updatedHotels, // Updated hotels array
+          providers: response.providers, // Keep providers array unchanged
+        });
+      })
+    );
   }
+  
 
   // Delete a hotel by ID
   deleteHotel(hotelId: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${hotelId}`);
+    return this.http.get<{ hotels: any[],providers: any[] }>(`${this.apiUrl}`).pipe(
+      switchMap((response) => {
+        // Filter out the hotel to be deleted
+        const updatedHotels = response.hotels.filter((hotel) => hotel.id !== hotelId);
+
+        // Update the dataset on the new endpoint
+        return this.http.put(`${this.apiUrl}`, {
+          hotels: updatedHotels,
+          providers: response.providers,
+        });
+      })
+    );
   }
 
   // Utility function to check the rooms available in the hotel
@@ -70,22 +95,31 @@ export class AdminService {
   
   // Add a room to a specific hotel
   updateRoom(hotelId: string, updatedRoom: Room): Observable<any> {
-    return this.getAllHotels().pipe(
-      map((hotels) => {
-        const hotel = hotels.find((h) => h.id === hotelId);
+    return this.http.get<any>(`${this.apiUrl}`).pipe( // Fetch data from /4 endpoint
+      map((data) => {
+        // Find the hotel containing the hotelId
+        const hotel = data.hotels.find((h: any) => h.id === hotelId);
         if (!hotel) {
           throw new Error('Hotel not found');
         }
-        const roomIndex = hotel.rooms.findIndex((room) => room.roomId === updatedRoom.roomId);
+  
+        // Find the room inside the hotel
+        const roomIndex = hotel.rooms.findIndex((room: any) => room.roomId === updatedRoom.roomId);
         if (roomIndex === -1) {
           throw new Error('Room not found');
         }
-        hotel.rooms[roomIndex] = updatedRoom; // Update the specific room
-        this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
-        return hotel;
+  
+        // Update the specific room
+        hotel.rooms[roomIndex] = updatedRoom;
+  
+        // Optionally, update the roomsAvailable count
+        this.updateRoomsAvailable(hotel);
+  
+        // Return the updated data object
+        return data;
       }),
-      switchMap((updatedHotel) => 
-        this.http.put(`${this.apiUrl}/${hotelId}`, updatedHotel)
+      switchMap((updatedData) =>
+        this.http.put(`${this.apiUrl}`, updatedData) // Send the whole data structure back to the root endpoint
       ),
       catchError((error) => {
         console.error('Error updating room:', error.message);
@@ -93,46 +127,61 @@ export class AdminService {
       })
     );
   }
+  
 
   
   // Add a room to a specific hotel
   addRoomToHotel(hotelId: string, roomData: Room): Observable<any> {
-    return this.http.get<Hotel>(`${this.apiUrl}/${hotelId}`).pipe(
-      map((hotel) => {
+    return this.http.get<any>(`${this.apiUrl}`).pipe( // Fetch the entire data from /4 endpoint
+      map((data) => {
+        // Find the hotel by its ID
+        const hotel = data.hotels.find((h: any) => h.id === hotelId);
         if (!hotel) {
           throw new Error('Hotel not found');
         }
-        hotel.rooms.push(roomData); // Add the room to the hotel's rooms array
-        this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
-        return hotel;
+  
+        // Add the new room to the hotel
+        hotel.rooms.push(roomData); 
+  
+        // Optionally, update the roomsAvailable count
+        this.updateRoomsAvailable(hotel);
+  
+        // Return the updated data structure
+        return data;
       }),
-      switchMap((updatedHotel) => 
-        this.http.put(`${this.apiUrl}/${hotelId}`, updatedHotel) // Update only the specific hotel
+      switchMap((updatedData) =>
+        this.http.put(`${this.apiUrl}`, updatedData) // Send the whole updated structure back to the /4 endpoint
       ),
       catchError((error) => {
         console.error('Error adding room to hotel:', error.message);
         return throwError(error);
       })
     );
-  }
+  }  
 
   deleteRoomFromHotel(hotelId: string, roomId: string): Observable<any> {
-    return this.getAllHotels().pipe(
-      map((hotels) => {
-        const hotel = hotels.find((h) => h.id === hotelId);
+    return this.http.get<any>(`${this.apiUrl}`).pipe( // Fetch the entire data from the /4 endpoint
+      map((data) => {
+        const hotel = data.hotels.find((h: any) => h.id === hotelId);
         if (!hotel) {
           throw new Error('Hotel not found');
         }
-        const updatedRooms = hotel.rooms.filter((room) => room.roomId !== roomId);
+  
+        // Filter out the room to be deleted
+        const updatedRooms = hotel.rooms.filter((room: any) => room.roomId !== roomId);
         if (updatedRooms.length === hotel.rooms.length) {
           throw new Error('Room not found');
         }
+  
+        // Update the hotel with the new rooms list
         hotel.rooms = updatedRooms;
         this.updateRoomsAvailable(hotel); // Update the roomsAvailable count
-        return hotel;
+  
+        // Return the updated data structure
+        return data;
       }),
-      switchMap((updatedHotel) => 
-        this.http.put(`${this.apiUrl}/${hotelId}`, updatedHotel)
+      switchMap((updatedData) =>
+        this.http.put(`${this.apiUrl}`, updatedData) // Send the updated full data back to the /4 endpoint
       ),
       catchError((error) => {
         console.error('Error deleting room:', error.message);
@@ -141,51 +190,85 @@ export class AdminService {
     );
   }
   
-  // Notify affected bookings
-  notifyAffectedBookings(hotelId: string, roomId: string): Observable<Booking[]> {
-    return this.getHotelById(hotelId).pipe(
-      map((hotel) => {
-        const affectedBookings = hotel.bookings.filter(
-          (booking) => booking.roomId === roomId && booking.status === 'Booked'
-        );
   
-        // Update the status of affected bookings to 'Cancelled'
-        affectedBookings.forEach((booking) => {
-          booking.status = 'Cancelled';
-        });
-  
-        // Update the hotel bookings in the hotel object
-        hotel.bookings = hotel.bookings.map((booking) =>
-          affectedBookings.includes(booking)
-            ? { ...booking, status: 'Cancelled' }
-            : booking
-        );
-  
-        // Return both updated hotel and affected bookings
-        return { hotel, affectedBookings };
-      }),
-      switchMap(({ hotel, affectedBookings }) =>
-        this.updateHotel(hotel).pipe(
-          map(() => affectedBookings),
-          tap((bookings) => {
-            if (bookings.length === 0) {
-              console.warn('No affected bookings found for room deletion.');
-            }
-          })
-        )
+// Notify affected bookings
+notifyAffectedBookings(hotelId: string, roomId: string): Observable<Booking[]> {
+  return this.http.get<any>(`${this.apiUrl}`).pipe( // Get full data from /4
+    map((data) => {
+      const hotel = data.hotels.find((h: any) => h.id === hotelId);
+      if (!hotel) {
+        throw new Error('Hotel not found');
+      }
+
+      const affectedBookings = hotel.bookings.filter(
+        (booking: any) => booking.roomId === roomId && booking.status === 'Booked'
+      );
+
+      // Update the status of affected bookings to 'Cancelled'
+      affectedBookings.forEach((booking: any) => {
+        booking.status = 'Cancelled';
+      });
+
+      // Update the hotel bookings in the hotel object
+      hotel.bookings = hotel.bookings.map((booking: any) =>
+        affectedBookings.includes(booking)
+          ? { ...booking, status: 'Cancelled' }
+          : booking
+      );
+
+      // Return both updated hotel and affected bookings
+      return { hotel, affectedBookings };
+    }),
+    switchMap(({ hotel, affectedBookings }) =>
+      this.updateHotel(hotel).pipe( // Update the full data at /4
+        map(() => affectedBookings),
+        tap((bookings) => {
+          if (bookings.length === 0) {
+            console.warn('No affected bookings found for room deletion.');
+          }
+        })
       )
-    );
-  }
+    ),
+    catchError((error) => {
+      console.error('Error notifying affected bookings:', error.message);
+      return throwError(error);
+    })
+  );
+}
 
-  private updateHotel(hotel: Hotel): Observable<Hotel> {
-    return this.http.put<Hotel>(`${this.apiUrl}/${hotel.id}`, hotel).pipe(
-      map((updatedHotel) => updatedHotel)
-    );
-  }
 
+  // Update the hotel information
+private updateHotel(hotel: Hotel): Observable<Hotel> {
+  return this.http.get<any>(`${this.apiUrl}`).pipe( // Fetch full data from /4
+    map((data) => {
+      const hotelIndex = data.hotels.findIndex((h: any) => h.id === hotel.id);
+      if (hotelIndex === -1) {
+        throw new Error('Hotel not found');
+      }
+
+      // Update the specific hotel with the new data
+      data.hotels[hotelIndex] = hotel;
+
+      // Return the full updated data
+      return data;
+    }),
+    switchMap((updatedData) =>
+      this.http.put(`${this.apiUrl}`, updatedData).pipe( // Send the updated data back to /4
+        map(() => hotel)
+      )
+    ),
+    catchError((error) => {
+      console.error('Error updating hotel:', error.message);
+      return throwError(error);
+    })
+  );
+}
+
+  // Get hotel by id
   getHotelById(hotelId: string): Observable<Hotel> {
-    return this.http.get<Hotel>(`${this.apiUrl}/${hotelId}`).pipe(
-      map((hotel) => {
+    return this.http.get<{ hotels: Hotel[] }>(this.apiUrl).pipe(
+      map((response) => {
+        const hotel = response.hotels.find((h: any) => h.id === hotelId);
         if (!hotel) {
           throw new Error('Hotel not found');
         }
@@ -218,16 +301,18 @@ export class AdminService {
     );
   }
 
-  /* BELOW FUNCTIONS IS FOR THE TESTING PURPOSE */
-
+  // Get all providers
   getAllProviders(): Observable<Provider[]> {
-    return this.http.get<Provider[]>('http://localhost:3000/providers');
-  }  
+    return this.http.get<{ providers: Provider[] }>(`${this.apiUrl}`).pipe(
+      map(response => response.providers) // Adjust to access providers from the new API response structure
+    );
+  }
 
+  // Get provider bookings
   getProviderBookings(): Observable<{ provider: string; bookings: number }[]> {
     return forkJoin({
       hotels: this.getAllHotels(),
-      providers: this.http.get<{ provider_id: string; name: string }[]>('http://localhost:3000/providers'),
+      providers: this.getAllProviders(),
     }).pipe(
       map(({ hotels, providers }) => {
         // Create a map of provider_id to provider name
@@ -235,7 +320,7 @@ export class AdminService {
           acc[provider.provider_id] = provider.name;
           return acc;
         }, {} as Record<string, string>);
-  
+
         // Group hotels by provider_id and count bookings
         const providerBookingsMap = hotels.reduce((acc, hotel) => {
           if (!hotel.provider_id) return acc; // Skip hotels without a provider_id
@@ -245,18 +330,15 @@ export class AdminService {
           acc[hotel.provider_id] += hotel.bookings.length;
           return acc;
         }, {} as Record<string, number>);
-  
+
         // Convert grouped data to an array of { provider, bookings }
         return Object.entries(providerBookingsMap).map(([providerId, bookings]) => ({
           provider: providerNameMap[providerId] || providerId, // Use name from map or fallback to id
           bookings,
         }));
-      }),
+      })
     );
-  }
-  
-  
-  
+  } 
 
   getTotalRevenue(): Observable<number> {
     return this.getAllHotels().pipe(
@@ -338,44 +420,5 @@ export class AdminService {
         }))
       )
     );
-  }
-
-  calculateMonthlyBookings(hotelId: string): Observable<{ monthYear: string; totalBookings: number; totalRevenue: number }[]> {
-    return this.getHotelById(hotelId).pipe(
-      map((hotel) => {
-        if (!hotel || !hotel.bookings) {
-          return [];
-        }
-  
-        const bookings = hotel.bookings;
-        const monthlyData: Record<string, { totalBookings: number; totalRevenue: number }> = {};
-  
-        bookings.forEach((booking) => {
-          const checkInDate = new Date(booking.checkInDate);
-          const month = checkInDate.getMonth() + 1; // Months are 0-indexed
-          const year = checkInDate.getFullYear();
-          const monthYear = `${year}-${month.toString().padStart(2, '0')}`;
-  
-          if (!monthlyData[monthYear]) {
-            monthlyData[monthYear] = { totalBookings: 0, totalRevenue: 0 };
-          }
-  
-          monthlyData[monthYear].totalBookings += 1;
-          monthlyData[monthYear].totalRevenue += booking.price;
-        });
-  
-        return Object.entries(monthlyData).map(([monthYear, data]) => ({
-          monthYear,
-          totalBookings: data.totalBookings,
-          totalRevenue: data.totalRevenue,
-        }));
-      }),
-      catchError((error) => {
-        console.error(`Error calculating monthly bookings for hotel ${hotelId}:`, error.message);
-        return throwError(error);
-      })
-    );
-  }
-  
-  
+  } 
 }

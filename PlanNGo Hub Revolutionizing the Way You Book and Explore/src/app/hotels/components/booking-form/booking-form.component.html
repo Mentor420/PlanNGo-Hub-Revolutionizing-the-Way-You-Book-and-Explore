@@ -11,11 +11,11 @@
             <h1 class="card-title">{{hotel.name}}</h1>
             <div class="flex items-center gap-1 mt-1">
               <!-- Full stars -->
-              <span *ngFor="let star of getStars(hotel.ratings.averageRating).fullStars" class="text-primary">★</span>
+              <span *ngFor="let star of getStars(hotel.ratings?.averageRating).fullStars" class="text-primary">★</span>
               <!-- Half stars -->
-              <span *ngFor="let star of getStars(hotel.ratings.averageRating).halfStars" class="text-primary">☆</span>
+              <span *ngFor="let star of getStars(hotel.ratings?.averageRating).halfStars" class="text-primary">☆</span>
               <!-- Empty stars -->
-              <span *ngFor="let star of getStars(hotel.ratings.averageRating).emptyStars" class="text-muted">☆</span>
+              <span *ngFor="let star of getStars(hotel.ratings?.averageRating).emptyStars" class="text-muted">☆</span>
             </div>
             <p class="text-muted-foreground mt-2">{{hotel.description}}</p>
           </div>

@@ -18,7 +18,7 @@ import { ServiceHotelComponent } from './hotels/components/service-provider-pane
 
 
 export const routes: Route[] = [
-  { path: '', component: SectionComponent },  
+  { path: 'hotel', component: SectionComponent },  
   { path: 'search-results', component: SearchResultsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
@@ -42,7 +42,7 @@ export const routes: Route[] = [
     ]
   },
   {
-    path: 'service-provider', component: ServiceProviderComponent,
+    path: 's-provider', component: ServiceProviderComponent,
     children: [
       {
         path: 'service-hotel',
@@ -52,6 +52,6 @@ export const routes: Route[] = [
   },
   {
     path: '**', 
-    redirectTo: '',  // Redirect for undefined routes to main page
+    redirectTo: 'hotel',  // Redirect for undefined routes to main page
   }
 ];

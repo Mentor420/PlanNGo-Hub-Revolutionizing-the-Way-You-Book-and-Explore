@@ -145,7 +145,7 @@ export class ServiceProviderComponent implements OnInit {
   }  
 
   viewDetails(providerId: string, hotelId: string): void {
-    this.router.navigate(['/service-provider/service-hotel'], {
+    this.router.navigate(['/s-provider/service-hotel'], {
       queryParams: { providerId, hotelId },
     });
   }

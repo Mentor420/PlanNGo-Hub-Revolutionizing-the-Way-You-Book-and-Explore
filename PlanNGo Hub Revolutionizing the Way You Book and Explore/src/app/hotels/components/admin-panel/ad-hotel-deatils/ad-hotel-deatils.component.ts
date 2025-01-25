@@ -16,13 +16,12 @@ import { AdSidebarComponent } from '../ad-sidebar/ad-sidebar.component';
 export class AdHotelDeatilsComponent implements OnInit {
   sidebarCollapsed: boolean = false;
   searchQuery: string = '';
-  hotels: Hotel[] = [];
-  filteredHotels: Hotel[] = [];
   selectedHotel: Hotel | null = null;
   showDeletePopup = false;
   hotelToDeleteId: string | null = null;
   providers: Provider[] = [];
   groupedHotels: { providerName: string; hotels: Hotel[] }[] = [];
+  originalGroupedHotels: { providerName: string; hotels: Hotel[] }[] = [];
 
   hours: string[] = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
   minutes: string[] = ['00', '15', '30', '45'];
@@ -88,6 +87,7 @@ export class AdHotelDeatilsComponent implements OnInit {
               providerName,
               hotels,
             }));
+            this.originalGroupedHotels = [...this.groupedHotels];
           },
           error => {
             console.error('Error fetching hotels:', error);
@@ -105,11 +105,22 @@ export class AdHotelDeatilsComponent implements OnInit {
   }
 
   filterHotels(): void {
-    this.filteredHotels = this.hotels.filter((hotel) =>
-      hotel.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      hotel.id.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
-  }
+    if (this.searchQuery.trim() === '') {
+      // If the search query is empty, restore the original groupedHotels list
+      this.groupedHotels = [...this.originalGroupedHotels];
+    } else {
+      // Otherwise, filter hotels based on the search query
+      this.groupedHotels = this.originalGroupedHotels.map(group => {
+        return {
+          ...group,
+          hotels: group.hotels.filter(hotel =>
+            hotel.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+            hotel.id.toLowerCase().includes(this.searchQuery.toLowerCase())
+          )
+        };
+      });
+    }
+  }  
 
   openHotelDetails(hotel: Hotel): void {
     this.selectedHotel = hotel; 
@@ -257,7 +268,12 @@ export class AdHotelDeatilsComponent implements OnInit {
     if (this.hotelToDeleteId) {
       this.adminService.deleteHotel(this.hotelToDeleteId).subscribe(
         () => {
-          this.filteredHotels = this.filteredHotels.filter(hotel => hotel.id !== this.hotelToDeleteId);
+          this.groupedHotels = this.groupedHotels.map(group => {
+            return {
+              ...group,
+              hotels: group.hotels.filter(hotel => hotel.id !== this.hotelToDeleteId) // Filter hotels within the group
+            };
+          });
           this.closeDeletePopup(); // Close popup after deletion
         },
         (error) => {
