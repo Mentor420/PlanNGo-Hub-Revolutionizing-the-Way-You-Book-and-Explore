@@ -42,6 +42,7 @@ export class AuthService {
 
   getUser(): Observable<User> {
     const userId = sessionStorage.getItem('userId'); 
+    console.log(userId)
     if (!userId) {
       throw new Error('User is not logged in.');
     }

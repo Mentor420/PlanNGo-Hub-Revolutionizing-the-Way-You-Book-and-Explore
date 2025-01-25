@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     const userId = sessionStorage.getItem('userId');
+    console.log(userId)
     if (!userId) {
       this.router.navigate(['/login']);
       return;
@@ -28,6 +29,7 @@ export class DashboardComponent implements OnInit {
 
     this.authService.getUser().subscribe({
       next: (user) => {
+        console.log(user)
         this.profile = user;
         this.profilePicture = user.profileImage || DEFAULT_PROFILE_IMAGE; // Use default image
       },
