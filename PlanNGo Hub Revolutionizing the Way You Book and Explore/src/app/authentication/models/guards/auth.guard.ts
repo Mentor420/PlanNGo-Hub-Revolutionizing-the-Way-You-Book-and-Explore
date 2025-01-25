@@ -2,11 +2,12 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  if (sessionStorage.getItem('email')) {
-    return true;
+  const router = inject(Router);
+  console.log('UserId from auth guard:', sessionStorage.getItem('userId'));
+  if (sessionStorage.getItem('userId')) {
+    return true; // Allow access to the route
   } else {
-    const router = inject(Router);
-    router.navigate(['login']);
-    return false;
+    router.navigate(['login'], { queryParams: { returnUrl: state.url } });
+    return false; // Deny access
   }
 };

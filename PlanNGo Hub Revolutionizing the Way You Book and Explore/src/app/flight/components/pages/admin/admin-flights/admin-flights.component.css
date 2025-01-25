@@ -210,6 +210,12 @@ body, html {
     background-color: #c82333;
   }
   
+  .modal-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .view-btn {
     background-color: #28a745;
     margin-right: 8px;

@@ -1,85 +1,10 @@
-
-<!-- <div class="flex justify-content-center align-items-center min-h-screen">
+<div class="flex justify-content-center align-items-center min-h-screen"
+  style="background-image: url('assets/images/service-provider-login-image.webp'); 
+         background-size: cover; 
+         background-position: center; 
+         background-repeat: no-repeat; 
+         height: 100vh;">
   <p-card header="Register" [style]="{ width: '400px' }">
-    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-      <div class="field">
-        <label for="fullName">Full Name</label>
-        <input
-          pInputText
-          class="w-full"
-          id="fullName"
-          formControlName="fullName"
-        />
-        @if(fullName.invalid && (fullName.dirty || fullName.touched)){
-        <small class="block p-error">Full name is required</small>
-        }
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input pInputText class="w-full" id="email" formControlName="email" />
-        @if(email.invalid && (email.dirty || email.touched)){
-        <small class="block p-error">
-          @if(email.hasError('required')) {
-          <span>Email is required</span>
-          } @else if(email.hasError('pattern')) {
-          <span>Email is invalid</span>
-          }
-        </small>
-        }
-      </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <p-password
-          formControlName="password"
-          [feedback]="false"
-          [toggleMask]="true"
-          inputId="password"
-          inputStyleClass="w-full"
-          styleClass="w-full"
-        />
-        @if(password.invalid && (password.dirty || password.touched)) {
-        <small class="block p-error"> Password is required </small>
-        }
-      </div>
-      <div class="field">
-        <label for="confirmPassword">Confirm Password</label>
-        <p-password
-          formControlName="confirmPassword"
-          [feedback]="false"
-          [toggleMask]="true"
-          inputId="confirmPassword"
-          inputStyleClass="w-full"
-          styleClass="w-full"
-        />
-        @if(confirmPassword.invalid && (confirmPassword.dirty ||
-        confirmPassword.touched)) {
-        <small class="block p-error"> Confirm Password is required </small>
-        } @if(registerForm.hasError('passwordMismatch') && password.valid &&
-        confirmPassword.valid) {
-        <small class="block p-error"> Password mismatch </small>
-        }
-      </div>
-      <p-button
-        type="submit"
-        label="Register"
-        styleClass="w-full"
-        [disabled]="registerForm.invalid"
-      ></p-button>
-      <div class="mt-2">Already a member? <a routerLink="/login">Login</a></div>
-    </form>
-  </p-card>
-</div> -->
-
-<div
-  class="flex justify-content-center align-items-center min-h-screen bg-gray-100 bg-cover bg-center"
-  style="background-image: url('https://i.pinimg.com/1200x/ab/53/64/ab5364ef45d7ba0d9a881a5d334f6440.jpg');"
->
-  <p-card header="Register" [style]="{ width: '500px' }">
-    <h1
-      class="text-6x1 font-bold text-black mb-6 shadow-2xl bg-opacity-40 px-6 py-2 rounded-lg"
-    >
-      Welcome to PlanNGo
-    </h1>
     <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
       <!-- Full Name -->
       <div class="field">
@@ -101,7 +26,12 @@
       <!-- Email -->
       <div class="field">
         <label for="email">Email</label>
-        <input pInputText class="w-full" id="email" formControlName="email" />
+        <input
+          pInputText
+          class="w-full"
+          id="email"
+          formControlName="email"
+        />
         <small
           class="block p-error"
           *ngIf="email.invalid && (email.dirty || email.touched)"
@@ -126,11 +56,7 @@
           class="block p-error"
           *ngIf="password.invalid && (password.dirty || password.touched)"
         >
-          <span *ngIf="password.hasError('required')">Password is required</span>
-          <span *ngIf="password.hasError('pattern')">
-            Password must be at least 8 characters long, contain at least one
-            uppercase letter, one number, and one special character.
-          </span>
+          Password is required
         </small>
       </div>
 
@@ -147,10 +73,7 @@
         ></p-password>
         <small
           class="block p-error"
-          *ngIf="
-            confirmPassword.invalid &&
-            (confirmPassword.dirty || confirmPassword.touched)
-          "
+          *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
         >
           Confirm Password is required
         </small>
@@ -163,6 +86,75 @@
           "
         >
           Password mismatch
+        </small>
+      </div>
+
+      <!-- Role Selection -->
+      <div class="field">
+        <label for="role">Role</label>
+        <div>
+          <p-radioButton
+            name="role"
+            value="Customer"
+            formControlName="role"
+            label="Customer"
+          ></p-radioButton>
+          <p-radioButton
+            name="role"
+            value="Service Provider"
+            formControlName="role"
+            label="Service Provider"
+          ></p-radioButton>
+        </div>
+        <small
+          class="block p-error"
+          *ngIf="role.invalid && (role.dirty || role.touched)"
+        >
+          Please select a role
+        </small>
+      </div>
+
+      <!-- Service Type (Visible only for Service Providers) -->
+      <div class="field" *ngIf="role.value === 'Service Provider'">
+        <label for="serviceType">Service Type</label>
+        <select
+          pInputText
+          formControlName="serviceType"
+          class="w-full"
+          id="serviceType"
+        >
+          <option value="Cab Service">Cab Service</option>
+          <option value="Flight Service">Flight Service</option>
+          <option value="Hotel Service">Hotel Service</option>
+          <option value="Tour Service">Tour Service</option>
+        </select>
+        <small
+          class="block p-error"
+          *ngIf="serviceType.invalid && (serviceType.dirty || serviceType.touched)"
+        >
+          Service type is required
+        </small>
+      </div>
+
+      <!-- Age -->
+      <div class="field">
+        <label for="age">Age</label>
+        <input
+          type="number"
+          pInputText
+          class="w-full"
+          id="age"
+          formControlName="age"
+          min="18"
+          max="100"
+        />
+        <small
+          class="block p-error"
+          *ngIf="age.invalid && (age.dirty || age.touched)"
+        >
+          <span *ngIf="age.hasError('required')">Age is required</span>
+          <span *ngIf="age.hasError('min')">Age must be at least 18</span>
+          <span *ngIf="age.hasError('max')">Age must be below 100</span>
         </small>
       </div>
 
@@ -191,33 +183,13 @@
         </small>
       </div>
 
-      <!-- Age -->
-      <div class="field">
-        <label for="age">Age</label>
-        <input
-          type="number"
-          pInputText
-          class="w-full"
-          id="age"
-          formControlName="age"
-        />
-        <small
-          class="block p-error"
-          *ngIf="age.invalid && (age.dirty || age.touched)"
-        >
-          <span *ngIf="age.hasError('required')">Age is required</span>
-          <span *ngIf="age.hasError('min')">Age must be at least 18</span>
-          <span *ngIf="age.hasError('max')">Age must be below 100</span>
-        </small>
-      </div>
-
-      <!-- Submit Button -->
       <p-button
-        type="submit"
         label="Register"
         styleClass="w-full"
         [disabled]="registerForm.invalid"
+        type="submit"
       ></p-button>
+
       <div class="mt-2">
         Already a member? <a routerLink="/login">Login</a>
       </div>

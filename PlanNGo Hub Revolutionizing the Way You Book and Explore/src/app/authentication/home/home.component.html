@@ -1,24 +1,21 @@
-<p>home works!</p>
-<p>home works!</p>
 
-<!-- Header Section -->
+
 <div class="header-container">
   <div class="logo">Plan<span style="color:red;">N</span><span class="highlight">Go</span> Hub</div>
   <div class="header-login"></div>
   <nav>
     <a href="#" class="active" style="color: white;">Home</a>
     <a href="#" style="color: white;">Hotel</a>
-    <a href="#" style="color: white;">Flight</a>
+    <a href="/flight" style="color: white;">Flight</a>
     <a href="#" style="color: white;">Tour</a>
     <a href="#" style="color: white;">Cab</a>
     <a href="#" style="color: white;">Contact</a>
-    <!-- Dashboard Button -->
-    <a routerLink="/dashboard" class="button" >Dashboard</a>
+    <button class="button" (click)="goToDashboard()">Dashboard</button>
     <p-button label="sign out" (onClick)="logout()"></p-button>
   </nav>
 </div>
 
-<!-- Hero Section -->
+
 <section class="hero">
   <div class="overlay">
     <div class="hero-text">

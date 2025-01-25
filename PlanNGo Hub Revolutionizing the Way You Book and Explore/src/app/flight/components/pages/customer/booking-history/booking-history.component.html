@@ -61,6 +61,7 @@
             <p class="value">{{ data.bookings.bookingStatus }}</p>
           </div>
         </div>
+        <p class="reason" *ngIf="!data.isActive">Due to a technical issue, the service has been stopped.Within 7 days, you will receive the refund.</p>
         <button type="button" (click)="onOpenView(data.id)" class="button">
           View Details
         </button>

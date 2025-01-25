@@ -1,55 +1,73 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { User } from '../../models/interfaces/auth';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { RegisterPostData, User } from '../../models/interfaces/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000';
-  private currentUserSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  private baseUrl = 'http://localhost:3000'; 
 
   constructor(private http: HttpClient) {}
 
-  // Register a new user
-  registerUser(postData: User): Observable<any> {
+  registerUser(postData: RegisterPostData) {
     return this.http.post(`${this.baseUrl}/users`, postData);
   }
 
-  // Get user details by email and password
-  getUserDetails(email: string, password: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/users?email=${email}&password=${password}`);
+  getUserDetails(email: string, password: string): Observable<User[]> {
+    return this.http
+      .get<User[]>(`${this.baseUrl}/users?email=${email}&password=${password}`)
+      .pipe(
+        map((users) =>
+          users.map((user) => ({
+            ...user,
+            serviceType: user.serviceType ?? null, 
+          }))
+        ),
+        catchError((error) => {
+          console.error('Login failed:', error);
+          throw new Error('Failed to fetch user details');
+        })
+      );
   }
 
-  // Get user by email (for fetching user details)
-  getUserByEmail(email: string): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}`);
+  // Check if an email is unique
+  isEmailUnique(email: string): Observable<boolean> {
+    return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}`).pipe(
+      map((users) => users.length === 0)
+    );
   }
 
-  // Fetch current user from sessionStorage or API
-  getUser(): User | null {
-    const email = sessionStorage.getItem('email');
-    if (email && !this.currentUserSubject.value) {
-      this.getUserByEmail(email).subscribe((response) => {
-        if (response.length > 0) {
-          const user = response[0];
-          this.currentUserSubject.next(user);
-          sessionStorage.setItem('user', JSON.stringify(user));  // Save user in sessionStorage
-        }
-      });
+  getUser(): Observable<User> {
+    const userId = sessionStorage.getItem('userId'); 
+    if (!userId) {
+      throw new Error('User is not logged in.');
     }
-    return this.currentUserSubject.value || JSON.parse(sessionStorage.getItem('user') || '{}');
+    return this.http.get<User>(`${this.baseUrl}/users/${userId}`).pipe(
+      catchError((error) => {
+        console.error('Failed to fetch user details:', error);
+        throw new Error('User not found.');
+      })
+    );
   }
 
-  // Update user details by user ID
-  updateUserDetails(userId: number, updatedData: Partial<User>): Observable<any> {
-    return this.http.patch(`${this.baseUrl}/users/${userId}`, updatedData);
+ 
+  updateUserDetails(id: number, updatedProfile: any): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/users/${id}`, updatedProfile).pipe(
+      catchError((error) => {
+        console.error('Failed to update user details:', error);
+        throw new Error('Failed to update user.');
+      })
+    );
   }
 
-  // Update the current user session data
-  updateUser(updatedUser: User): void {
-    this.currentUserSubject.next(updatedUser);
-    sessionStorage.setItem('user', JSON.stringify(updatedUser)); // Store updated user in sessionStorage
+  updateUser(updatedProfile: User): void {
+    sessionStorage.setItem('user', JSON.stringify(updatedProfile));
+  }
+
+  logout(): void {
+    sessionStorage.clear(); 
   }
 }

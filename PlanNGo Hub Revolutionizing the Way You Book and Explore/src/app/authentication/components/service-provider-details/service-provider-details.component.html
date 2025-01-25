@@ -1,0 +1,35 @@
+<div class="service-provider-details">
+    <h1>Service Provider Details</h1>
+  
+    <div *ngIf="!isEditing" class="details-view">
+      <p><strong>Name:</strong> {{ provider.fullName }}</p>
+      <p><strong>Email:</strong> {{ provider.email }}</p>
+      <p><strong>Phone:</strong> {{ provider.phone }}</p>
+      <p><strong>Service Type:</strong> {{ provider.serviceType }}</p>
+      
+      <!-- Edit and Delete Buttons -->
+      <button (click)="startEditing()">Edit</button>
+      <button (click)="deleteProvider()">Delete</button>
+    </div>
+  
+    <div *ngIf="isEditing" class="details-edit">
+      <h2>Edit Provider</h2>
+  
+      <label for="fullName">Full Name:</label>
+      <input [(ngModel)]="provider.fullName" id="fullName" />
+  
+      <label for="email">Email:</label>
+      <input [(ngModel)]="provider.email" id="email" />
+  
+      <label for="phone">Phone:</label>
+      <input [(ngModel)]="provider.phone" id="phone" />
+  
+      <label for="serviceType">Service Type:</label>
+      <input [(ngModel)]="provider.serviceType" id="serviceType" />
+  
+      <!-- Save and Cancel Buttons -->
+      <button (click)="saveChanges()">Save Changes</button>
+      <button (click)="cancelEditing()">Cancel</button>
+    </div>
+  </div>
+  

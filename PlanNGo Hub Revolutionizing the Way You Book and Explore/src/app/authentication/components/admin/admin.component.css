@@ -1,0 +1,255 @@
+/* Admin Page Container */
+.admin-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Admin Header */
+  .admin-header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-header h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  /* Admin Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-header h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Footer */
+  .admin-footer {
+    margin-top: 40px;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .admin-footer p {
+    margin: 0;
+    color: #333;
+  }
+  
+  
+  /* Service Boxes Section */
+  .service-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four boxes in a row */
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .service-box {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .service-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .service-box a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .service-box a .arrow {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  
+  .service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Specific Colors for Each Service Box */
+  .cab-service {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .hotel-service {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .flight-service {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .tour-package {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  /* Charts Section */
+  .charts-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .chart-container {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .chart-container h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .customer-table {
+    margin-top: 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-table h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+ /* Customer Table Section */
+.customer-table {
+    margin-top: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-table h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  
+  canvas {
+    max-width: 100%;
+    height: 300px !important;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .service-boxes {
+      grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
+    }
+  
+    .charts-section {
+      flex-direction: column;
+    }
+  
+    .chart-container {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-boxes {
+      grid-template-columns: 1fr; /* One box per row */
+    }
+  }
+  

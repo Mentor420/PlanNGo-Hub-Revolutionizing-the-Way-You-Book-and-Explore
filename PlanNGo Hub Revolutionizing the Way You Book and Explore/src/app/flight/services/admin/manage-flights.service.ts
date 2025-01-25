@@ -45,6 +45,10 @@ export class ManageFlightsService {
     return this.http.patch(`${this.apiURL}/bookings/${bookingId}`, { bookingStatus });
   }
 
+  updateFlight(id: any, flightData: any): Observable<any> {
+    return this.http.patch(`${this.apiURL}/flights/${id}`, flightData);
+  }
+
   // Cancel bookings and deactivate flight
   cancelFlightAndBookings(flightId: string): Observable<any> {
     return this.getFlightById(flightId).pipe(

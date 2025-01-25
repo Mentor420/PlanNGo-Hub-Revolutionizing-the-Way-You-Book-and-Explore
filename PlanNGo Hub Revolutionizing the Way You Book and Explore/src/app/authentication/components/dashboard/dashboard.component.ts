@@ -1,27 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Import CommonModule
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/services/auth.service';
+import { DEFAULT_PROFILE_IMAGE } from '../../models/interfaces/auth';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Add CommonModule here
+  imports: [CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  profile: any = {};
-  isEditing: boolean = false;
-  profilePicture: string | ArrayBuffer | null = '';
+  profile: any = {}; // User profile data
+  isEditing: boolean = false; // Edit mode
+  profilePicture: string | null = ''; // Profile picture
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    // Load user details (from session storage or directly from service)
-    this.profile = this.authService.getUser();
-    this.profilePicture = this.profile.picture || '';
+    const userId = sessionStorage.getItem('userId');
+    if (!userId) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    this.authService.getUser().subscribe({
+      next: (user) => {
+        this.profile = user;
+        this.profilePicture = user.profileImage || DEFAULT_PROFILE_IMAGE; // Use default image
+      },
+      error: (err) => {
+        console.error('Failed to load user data:', err);
+      },
+    });
   }
 
   startEditing() {
@@ -29,41 +42,26 @@ export class DashboardComponent implements OnInit {
   }
 
   saveProfile() {
-    // Create a new object with updated profile details, including the picture
     const updatedProfile = {
       ...this.profile,
-      picture: this.profilePicture || this.profile.picture, // Ensure picture is updated
+      profileImage: this.profilePicture,
     };
 
-    // Call the service to update the user's profile in the backend
     this.authService.updateUserDetails(this.profile.id, updatedProfile).subscribe({
-      next: (response) => {
-        // Update the current user profile in the service after updating backend
-        this.authService.updateUser(updatedProfile);
-        console.log('Profile updated:', updatedProfile);
+      next: () => {
+        this.profile = updatedProfile;
         alert('Profile updated successfully!');
         this.isEditing = false;
       },
       error: (err) => {
-        console.error('Error updating profile:', err);
+        console.error('Failed to update profile:', err);
         alert('Failed to update profile.');
       },
     });
   }
 
-  onFileChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.profilePicture = e.target.result;
-        this.profile.picture = e.target.result; // Update the profile picture
-      };
-      reader.readAsDataURL(file);
-    }
-  }
-
   logout() {
+    this.authService.logout();
     this.router.navigate(['/login']);
   }
 }

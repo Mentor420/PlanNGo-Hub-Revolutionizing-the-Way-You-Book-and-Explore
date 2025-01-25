@@ -2,7 +2,7 @@ import { CommonModule, Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ManageFlightsService } from '../../../../services/admin/manage-flights.service';
 
 @Component({
@@ -15,8 +15,10 @@ import { ManageFlightsService } from '../../../../services/admin/manage-flights.
 export class EditServiceComponent implements OnInit {
   flightForm: FormGroup;
   flightId: string = "";
+  isUpdated = false
+  isUpdateFailure = false
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private route:ActivatedRoute, private location:Location, private manageBookingComponent:ManageFlightsService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router:Router, private route:ActivatedRoute, private manageFlightsService:ManageFlightsService, private location:Location, private manageBookingComponent:ManageFlightsService) {
     this.flightForm = this.fb.group({
       airline: ['', [Validators.required, Validators.minLength(3)]],
       logo: ['', [Validators.required, Validators.pattern(/https?:\/\/.+/)]],
@@ -43,10 +45,11 @@ export class EditServiceComponent implements OnInit {
 
   fetchFlightDetails(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.manageBookingComponent.getSpecificFlights(id).subscribe(
+    this.manageBookingComponent.getSpecificFlights(id).subscribe(  
       (data: any) => {
         // Populate the form with fetched data
         this.flightForm.patchValue({
+          id: data.id,
           airline: data.airline,
           logo: data.logo,
           flightNumber: data.flightNumber,
@@ -54,7 +57,8 @@ export class EditServiceComponent implements OnInit {
           destination: data.destination,
           duration: data.duration,
           price: data.price,
-          classType: data.classType
+          classType: data.classType,
+          isActive: data.isActive
         });
       },
       (error) => {
@@ -64,7 +68,7 @@ export class EditServiceComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back(); // Navigates to the previous page
+    this.location.back();
   }
 
   onSubmit(): void {
@@ -73,16 +77,28 @@ export class EditServiceComponent implements OnInit {
 
       // Send updated data to the server
       const id = this.route.snapshot.paramMap.get('id')
-      this.http.put(`http://localhost:3000/flights/${id}`, this.flightForm.value).subscribe(
+      this.manageFlightsService.updateFlight(id, this.flightForm.value).subscribe(
         (response) => {
-          console.log('Flight updated successfully:', response);
+          this.isUpdated = true
+        setTimeout(()=>{
+          this.isUpdated = false
+          this.router.navigateByUrl("admin/flight")
+        },2000)
         },
         (error) => {
           console.error('Error updating flight:', error);
         }
       );
     } else {
-      console.error('Form is invalid');
+      this.isUpdateFailure = true
+      setTimeout(()=>{
+        this.isUpdateFailure = false
+        this.router.navigateByUrl("admin/flight")
+      },2000)
     }
+  }
+
+  onFlightToggle(){
+    this.isUpdateFailure = !this.isUpdateFailure
   }
 }

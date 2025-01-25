@@ -9,7 +9,20 @@
       "age": 20,
       "name": "VISHNU M",
       "phone": "08220494831",
-      "role": "Customer"
+      "role": "Admin",
+      "serviceType": null
+    },
+    {
+      "id": "U1234",
+      "fullName": "Rankesh R",
+      "email": "rankesh1718@gmail.com",
+      "password": "@rankesh17",
+      "gender": "Male",
+      "age": 20,
+      "name": "RANKESH R",
+      "phone": "08220494831",
+      "role": "Customer",
+      "serviceType": null
     }
   ],
   "flights": [

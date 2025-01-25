@@ -1,25 +1,43 @@
 <div class="profile-container">
   <div *ngIf="!isEditing" class="profile-view">
-    <h2>{{ profile.name }}</h2>
-    <p>Email: {{ profile.email }}</p>
-    <p>Phone: {{ profile.phone }}</p>
-    <img [src]="profile.picture || 'default-pic.jpg'" alt="Profile Picture" />
-    <button (click)="startEditing()">Edit</button>
+    <div class="profile-logo">
+      <img [src]="profilePicture" alt="User Logo" class="profile-img" />
+    </div>
+    <h2>{{ profile.fullName || 'Full Name' }}</h2>
+    <p>Email: {{ profile.email || 'example@mail.com' }}</p>
+    <p>Phone: {{ profile.phone || 'Not Provided' }}</p>
+    <p>Gender: {{ profile.gender || 'Not Provided' }}</p>
+    <p>Age: {{ profile.age || 'Not Provided' }}</p>
+    <button (click)="startEditing()" class="edit-btn">Edit Profile</button>
   </div>
 
   <div *ngIf="isEditing" class="profile-edit">
-    <label for="name">Name:</label>
-    <input [(ngModel)]="profile.name" id="name" />
-    
+    <h2>Edit Profile</h2>
+
+    <label for="fullName">Full Name:</label>
+    <input [(ngModel)]="profile.fullName" id="fullName" placeholder="Enter your full name" />
+
     <label for="email">Email:</label>
     <input [(ngModel)]="profile.email" id="email" disabled />
-    
+
     <label for="phone">Phone:</label>
-    <input [(ngModel)]="profile.phone" id="phone" />
+    <input [(ngModel)]="profile.phone" id="phone" placeholder="Enter your phone number" />
 
-    <label for="picture">Profile Picture:</label>
-    <input type="file" (change)="onFileChange($event)" />
+    <label for="gender">Gender:</label>
+    <select [(ngModel)]="profile.gender" id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
 
-    <button (click)="saveProfile()">Save Changes</button>
+    <label for="age">Age:</label>
+    <input type="number" [(ngModel)]="profile.age" id="age" placeholder="Enter your age" />
+
+    <label for="profileImage">Profile Picture URL:</label>
+    <input [(ngModel)]="profilePicture" id="profileImage" placeholder="Enter profile picture URL" />
+
+    <div class="button-container">
+      <button (click)="saveProfile()" class="save-btn">Save</button>
+      <button (click)="isEditing = false" class="cancel-btn">Cancel</button>
+    </div>
   </div>
 </div>

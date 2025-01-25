@@ -352,3 +352,7 @@
       font-weight: 600;
       cursor: pointer;
   }
+
+  .reason{
+    text-align: center;
+  }

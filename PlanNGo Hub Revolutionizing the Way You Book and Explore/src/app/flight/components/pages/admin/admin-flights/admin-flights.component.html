@@ -44,7 +44,7 @@
           <td>
              <!-- Edit Button with Hover Pop-up -->
     <button class="edit-btn" [routerLink]="['/admin/flight/edit',data.id]" (mouseenter)="showPopup($event, 'edit', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button class="cancel-btn" (click)="onCancelService(data.id)" [disabled]="!data.isActive">Cancel</button>
+    <button class="cancel-btn" (click)="onCancelledToggle(data.id)" [disabled]="!data.isActive">Cancel</button>
     <button class="analysis-btn" (click)="onAnalysisView(data.id)" (mouseenter)="showPopup($event, 'analysis', data)" (mouseleave)="hidePopup()"><i class="fa-solid fa-chart-column"></i></button>
 
   <!-- Hover Pop-up -->
@@ -137,6 +137,17 @@
           <p class="stat-title">Total Revenue</p>
           <p class="stat-value">{{ totalRevenue | currency }}</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal1" *ngIf="isCancelled">
+    <div class="modal-content modal-content1">
+      <span class="close" (click)="closeCancelpop()">&times;</span>
+      <h2>Are you sure you want to stop the service?</h2>
+      <div class="modal-buttons">
+        <button class="cancel-btn" type="button" (click)="closeCancelpop()">Cancel</button>
+        <button class="view-btn" type="button" (click)="onCancelService()">Confirm</button>
       </div>
     </div>
   </div>

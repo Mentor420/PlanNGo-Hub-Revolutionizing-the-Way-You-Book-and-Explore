@@ -40,35 +40,45 @@ export class AdminFlightsComponent implements OnInit {
   currentPage: number = 1; 
   itemsPerPage: number = 6; 
   paginatedFlights: any[] = []; 
+  isCancelled = false
+  cancelID:string = ""
 
-// Update flights for the current page
-updatePaginatedFlights() {
-  const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-  const endIndex = startIndex + this.itemsPerPage;
-  this.paginatedFlights = this.filteredFlights.slice(startIndex, endIndex);
-}
-
-// Navigate to the next page
-nextPage() {
-  if (this.currentPage < this.getTotalPages()) {
-    this.currentPage++;
-    this.updatePaginatedFlights();
+  // Update flights for the current page
+  updatePaginatedFlights() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedFlights = this.filteredFlights.slice(startIndex, endIndex);
   }
-}
 
-// Navigate to the previous page
-previousPage() {
-  if (this.currentPage > 1) {
-    this.currentPage--;
-    this.updatePaginatedFlights();
+  // Navigate to the next page
+  nextPage() {
+    if (this.currentPage < this.getTotalPages()) {
+      this.currentPage++;
+      this.updatePaginatedFlights();
+    }
   }
-}
 
-// Get the total number of pages
-getTotalPages(): number {
-  return Math.ceil(this.filteredFlights.length / this.itemsPerPage);
-}
+  // Navigate to the previous page
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePaginatedFlights();
+    }
+  }
 
+  // Get the total number of pages
+  getTotalPages(): number {
+    return Math.ceil(this.filteredFlights.length / this.itemsPerPage);
+  }
+
+  onCancelledToggle(id:string){
+    this.cancelID = id
+    this.isCancelled = true
+  }
+
+  closeCancelpop(){
+    this.isCancelled = false
+  }
 
   onSearch() {
     const searchTerm = this.searchInput.toLowerCase();
@@ -178,8 +188,8 @@ getTotalPages(): number {
     this.isView = !this.isView
   }
 
-  onCancelService(id: string) {
-    this.manageFlightsService.cancelFlightAndBookings(id).subscribe((data)=>{
+  onCancelService() {
+    this.manageFlightsService.cancelFlightAndBookings(this.cancelID).subscribe((data)=>{
       console.log(data)
       location.reload()
     })

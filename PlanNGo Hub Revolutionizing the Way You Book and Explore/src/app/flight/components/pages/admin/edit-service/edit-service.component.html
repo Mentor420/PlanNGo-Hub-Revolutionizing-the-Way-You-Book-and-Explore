@@ -79,3 +79,16 @@
     </form>
   </div>
   
+
+  <div class="modal modal1" *ngIf="isUpdated">
+    <div class="modal-content modal-success">
+      <p>Successfully Updated!</p>
+    </div>
+  </div>
+  
+  <div class="modal modal1" *ngIf="isUpdateFailure">
+    <div class="modal-content modal-failure">
+      <span class="close" (click)="onFlightToggle()">&times;</span>
+        <p>Check all the credentials.</p>
+    </div>
+  </div>

@@ -99,7 +99,7 @@ export class FlightBookingComponent implements OnInit {
         setTimeout(()=>{
           this.isBooked = false
           this.router.navigateByUrl("flight/booking/history")
-        },3000)
+        },2000)
       })
     } else {
       this.isBookingFailure  = true
@@ -111,9 +111,12 @@ export class FlightBookingComponent implements OnInit {
 
   getSmilarFlights(departure: any){
     const id = this.route.snapshot.paramMap.get('id')
-    
+    let bookingDetails = []
+    this.flightBookingService.getSpecificBooking(id).subscribe((data)=>{
+      bookingDetails = data
+    })
     this.flightBookingService.getSpecificDeparture(departure).subscribe((data:any)=>{
-      this.similerFlights = data.filter((eachItem:any) => eachItem.id !== id);
+      this.similerFlights = data.filter((eachItem:any) => eachItem.id !== id && eachItem.isActive!==false);
       console.log(data)
     })
   }

@@ -1,202 +1,115 @@
-.dashboard-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #0078ff;
-  padding-bottom: 10px;
-}
-
-.dashboard-header h1 {
-  color: #0078ff;
-}
-
-.logout-btn {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.profile-management {
-  margin-top: 20px;
-}
-
-.profile-management h2 {
-  color: #0078ff;
-  margin-bottom: 15px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-textarea {
-  resize: none;
-}
-
-.btn-save {
-  background-color: #0078ff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-save:hover {
-  background-color: #0056b3;
-}
-/* Dashboard Container */
-.dashboard-container {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #f4f6f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Title */
-.dashboard-title {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-  color: #333;
-}
-
 /* Profile Container */
 .profile-container {
-  margin-top: 20px;
-}
-
-.profile-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.profile-header h2 {
-  font-size: 20px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.profile-view {
-  margin-top: 20px;
+  max-width: 700px;
+  margin: 50px auto;
   padding: 20px;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.profile-info p {
+/* Profile View */
+.profile-view {
+  text-align: center;
+}
+
+/* Profile Logo */
+.profile-logo {
+  margin-bottom: 20px;
+}
+
+.profile-logo .profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Information */
+.profile-view h2 {
+  font-size: 24px;
+  color: #333;
   margin-bottom: 10px;
 }
 
-.profile-info p strong {
-  font-weight: 600;
+.profile-view p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
 }
 
-.profile-edit {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-img-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-
-.profile-fields {
-  margin-bottom: 20px;
-}
-
-.profile-fields label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.profile-fields input,
-.profile-fields textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+/* Edit Button */
+.edit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
-.profile-fields textarea {
-  resize: vertical;
-  height: 100px;
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Profile Edit */
+.profile-edit {
+  margin-top: 30px;
+}
+
+/* Input Fields */
+.profile-edit input, .profile-edit select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.profile-edit input:focus, .profile-edit select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.save-btn, .cancel-btn {
+  width: 48%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .save-btn {
   background-color: #28a745;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .save-btn:hover {
   background-color: #218838;
 }
 
-.logout-btn {
-  width: 100%;
-  padding: 10px;
+.cancel-btn {
   background-color: #dc3545;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
 }
 
-.logout-btn:hover {
+.cancel-btn:hover {
   background-color: #c82333;
+}
+
+/* Layout for Buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
 }

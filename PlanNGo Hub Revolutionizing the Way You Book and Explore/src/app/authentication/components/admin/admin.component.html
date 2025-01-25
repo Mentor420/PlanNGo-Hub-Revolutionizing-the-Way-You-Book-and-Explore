@@ -1,0 +1,114 @@
+<div class="admin-container">
+    <!-- Admin Header -->
+    <div class="admin-header">
+      <h1>Plan<span style="color: red;">N</span>Go Hub - Admin</h1>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  
+    <!-- Service Boxes Section -->
+    <div class="service-boxes">
+      <!-- Cab Service Box -->
+      <div class="service-box cab-service">
+        <h2>Cab Service</h2>
+        <a [routerLink]="['/admin-cab-details']" class="details-link">
+          <span>Details</span> <span class="arrow">→</span>
+        </a>
+      </div>
+  
+      <!-- Hotel Service Box -->
+      <div class="service-box hotel-service">
+        <h2>Hotel Service</h2>
+        <a [routerLink]="['/admin-hotel-details']" class="details-link">
+          <span>Details</span> <span class="arrow">→</span>
+        </a>
+      </div>
+  
+      <!-- Flight Service Box -->
+      <div class="service-box flight-service">
+        <h2>Flight Service</h2>
+        <a [routerLink]="['/admin-flight-details']" class="details-link">
+          <span>Details</span> <span class="arrow">→</span>
+        </a>
+      </div>
+  
+      <!-- Tour Package Box -->
+      <div class="service-box tour-package">
+        <h2>Tour Package</h2>
+        <a [routerLink]="['/admin-tour-details']" class="details-link">
+          <span>Details</span> <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Chart Section -->
+    <div class="charts-section">
+      <div class="chart-container">
+        <h3>Customer Distribution</h3>
+        <div style="display: block;">
+          <canvas baseChart 
+                  [data]="doughnutChartData" 
+                  [options]="doughnutChartOptions" 
+                  chartType="doughnut">
+          </canvas>
+        </div>
+      </div>
+  
+      <div class="chart-container">
+        <h3>Service Types</h3>
+        <div style="display: block;">
+          <canvas baseChart 
+                  [data]="barChartData" 
+                  [options]="barChartOptions" 
+                  chartType="bar">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Customer Table -->
+    <div class="customer-table">
+      <h3>Customer Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Password</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Edit Row -->
+          <tr *ngIf="isEditing">
+            <td><input [(ngModel)]="editingCustomer.fullName" /></td>
+            <td><input [(ngModel)]="editingCustomer.email" disabled /></td>
+            <td><input [(ngModel)]="editingCustomer.gender" /></td>
+            <td><input [(ngModel)]="editingCustomer.password" /></td>
+            <td>
+              <button (click)="saveChanges()">Save</button>
+              <button (click)="cancelEditing()">Cancel</button>
+            </td>
+          </tr>
+  
+          <!-- Display Customers -->
+          <tr *ngFor="let customer of customers">
+            <td>{{ customer.fullName }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.gender }}</td>
+            <td>{{ customer.password }}</td>
+            <td>
+              <button (click)="startEditing(customer)">Edit</button>
+              <button (click)="deleteCustomer(customer.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Footer -->
+    <footer class="admin-footer">
+      <p>&copy; 2025 Plan<span style="color: red;">N</span>Go Hub. All rights reserved.</p>
+    </footer>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="admin-service-details">
+    <h1>Hotel Service Providers</h1>
+  
+    <div class="table-headers">
+      <span>User</span>
+      <span>Email</span>
+      <span>Actions</span>
+    </div>
+  
+    <div class="provider-row" *ngFor="let provider of serviceProviders">
+      <span>{{ provider.fullName }}</span>
+      <span>{{ provider.email }}</span>
+      <div class="actions">
+        <a [routerLink]="['/service-provider-details', provider.id]" class="details-link">
+          Details
+        </a>
+      </div>
+    </div>
+  </div>
+  
