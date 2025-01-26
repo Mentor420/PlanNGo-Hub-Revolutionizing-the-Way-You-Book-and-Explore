@@ -2,35 +2,35 @@
   <div class="filter-panel">
     <h3>Refine Your Search</h3>
     <form [formGroup]="filterForm" (ngSubmit)="onNewSearch()">
-      <div class="form-group">
+      <div class="form-group-l">
         <label for="location">
           <i class="fas fa-map-marker-alt"></i> Location
         </label>
-        <input type="text" id="location" formControlName="location" (input)="onFilterChange()" placeholder="Enter city or hotel name">
+        <input type="text" id="location" formControlName="location" placeholder="Enter city or hotel name">
       </div>
 
-      <div class="form-group">
+      <div class="form-group-l">
         <label for="checkInDate">
           <i class="far fa-calendar-alt"></i> Check-In Date
         </label>
-        <input type="date" id="checkInDate" formControlName="checkInDate" (change)="onFilterChange()">
+        <input type="date" id="checkInDate" formControlName="checkInDate">
       </div>
 
-      <div class="form-group">
+      <div class="form-group-l">
         <label for="checkOutDate">
           <i class="far fa-calendar-alt"></i> Check-Out Date
         </label>
-        <input type="date" id="checkOutDate" formControlName="checkOutDate" (change)="onFilterChange()">
+        <input type="date" id="checkOutDate" formControlName="checkOutDate">
       </div>
 
-      <div class="form-group">
+      <div class="form-group-l">
         <label for="rooms">
           <i class="fas fa-bed"></i> Rooms
         </label>
         <input type="number" id="rooms" formControlName="rooms" min="1" (change)="onFilterChange()">
       </div>
 
-      <div class="form-group">
+      <div class="form-group-l">
         <label for="price">
           <i class="fas fa-rupee-sign"></i> Price Range
         </label>
@@ -48,10 +48,10 @@
           <i class="fas fa-star"></i> Star Rating
         </label>
         <div class="star-rating-filter">
-          <label *ngFor="let star of [5,4,3,2,1]">
+          <label *ngFor="let star of [1,2,3,4,5]">
             <input type="checkbox" [formControlName]="'star' + star" (change)="onFilterChange()">
             <span class="star-rating">
-              <i class="fas fa-star" *ngFor="let i of [].constructor(star)"></i>
+              <i class="fas fa-star" *ngFor="let i of [].constructor(star)"style="margin: 0; padding: 0;"></i>
             </span>
           </label>
         </div>
@@ -80,10 +80,10 @@
       <i class="fas fa-arrow-left"></i> Back
     </button>
 
-    <h2 id="t">Search Results for {{ formData.location }}</h2>
-    <p *ngIf="formData.priceRange" class="price-range">
+    <h2 id="t">Search Results for {{ hotelcity }}</h2>
+    <!-- <p *ngIf="formData.priceRange" class="price-range">
       Price Range: ₹{{ formData.priceRange[0] }} - ₹{{ formData.priceRange[1] }}
-    </p>
+    </p> -->
 
     <div *ngIf="filteredResults.length > 0; else noResults" class="hotel-results">
       <div *ngFor="let hotel of filteredResults" class="hotel-card" (click)="viewHotelDetails(hotel)">

@@ -6,6 +6,7 @@ import { Router } from "@angular/router"
 import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms"
 import { Hotel, Amenity } from "../../models/interfaces"
 import { HotelSearchService } from "../../services/hotel-search.service"
+import { subscribe } from "diagnostics_channel"
 
 @Component({
   standalone: true,
@@ -15,12 +16,13 @@ import { HotelSearchService } from "../../services/hotel-search.service"
   styleUrls: ["./search-results.component.css"],
 })
 export class SearchResultsComponent implements OnInit {
+  hotelcity: string = ""
   searchResults: Hotel[] = []
   filteredResults: Hotel[] = []
-  formData: { location: string; checkInDate: string; checkOutDate: string; rooms: number; priceRange?: number[] } = { location: "" , checkInDate: "", checkOutDate: "", rooms: 1 }
+  formData: { location: string; checkInDate: string; checkOutDate: string; rooms: number; priceRange?: number[]; amenities?: string[]; } = { location: "" , checkInDate: "", checkOutDate: "", rooms: 1 }
   filterForm: FormGroup
   amenitiesOptions: string[] = [
-    "WiFi",
+    "Wi-Fi",
     "Pool",
     "Parking",
     "Breakfast",
@@ -28,7 +30,7 @@ export class SearchResultsComponent implements OnInit {
     "Spa",
     "Airport Shuttle",
     "Business Center",
-    "Pet Friendly",
+    "Pet-Friendly",
   ];
 
   constructor(
@@ -101,40 +103,58 @@ export class SearchResultsComponent implements OnInit {
   }
 
   private filterResults(): void {
-    const formValues = this.filterForm.value
-    const selectedAmenities = this.amenitiesOptions.filter((_, index) => formValues.amenities[index])
-    const selectedStars = [5, 4, 3, 2, 1].filter((star) => formValues[`star${star}`])
+    const formValues = this.filterForm.value;
+
+    // Update hotelcity whenever the filter changes
+    this.hotelcity = this.toProperCase(formValues.location);
+
+    // Get selected amenities from the filter form
+    const selectedAmenities = this.amenitiesOptions.filter((_, index) => formValues.amenities[index]);
+
+    // Get selected star ratings
+    const selectedStars = [5, 4, 3, 2, 1].filter((star) => formValues[`star${star}`]);
 
     this.filteredResults = this.searchResults.filter((hotel) => {
       const matchesLocation =
-        !formValues.location || hotel.city.toLowerCase().includes(formValues.location.toLowerCase())
+        !formValues.location || hotel.city.toLowerCase().includes(formValues.location.toLowerCase());
+      
+      const matchesRooms = !formValues.rooms || hotel.roomsAvailable >= formValues.rooms;
+
       const matchesPrice =
         !formValues.price ||
         (hotel.pricePerNight >= Number(formValues.price.split("-")[0]) &&
-          hotel.pricePerNight <= Number(formValues.price.split("-")[1]))
+          hotel.pricePerNight <= Number(formValues.price.split("-")[1]));
       const matchesAmenities =
-        selectedAmenities.length === 0 ||
-        selectedAmenities.every((amenity) =>
+        selectedAmenities.length === 0 || selectedAmenities.every((amenity) =>
           hotel.amenities.some((hotelAmenity) => hotelAmenity.name.toLowerCase() === amenity.toLowerCase()),
-        )
+        );
       const matchesStarRating =
-        selectedStars.length === 0 || selectedStars.includes(Math.round(hotel.ratings.averageRating))
+        selectedStars.length === 0 || selectedStars.includes(Math.round(hotel.ratings.averageRating));
 
-      return matchesLocation && matchesPrice && matchesAmenities && matchesStarRating
-    })
+      return matchesLocation && matchesPrice && matchesRooms && matchesAmenities && matchesStarRating;
+    });
   }
 
   onFilterChange(): void {
     this.filterResults()
   }
 
+  private toProperCase(city: string): string {
+    if (!city) return ""; // Handle empty or undefined input
+    return city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+  }
+
   onNewSearch(): void {
     const formValues = this.filterForm.value
+
+    // Update hotelcity to reflect the current filter and Convert the city name to proper case before updating hotelcity
+    this.hotelcity = this.toProperCase(formValues.location);
+
     const selectedAmenities = this.amenitiesOptions.filter((_, index) => formValues.amenities[index])
 
     this.hotelSearchService
       .searchHotels(
-        formValues.location,
+        this.hotelcity,
         formValues.checkInDate,
         formValues.checkOutDate,
         formValues.rooms,
@@ -152,17 +172,25 @@ export class SearchResultsComponent implements OnInit {
       )
   }
 
- private initializeFilterForm(): void {
+  private initializeFilterForm(): void {
+    // Initialize the form with formData.amenities if they exist
     this.filterForm.patchValue({
       location: this.formData.location,
       checkInDate: this.formData.checkInDate,
       checkOutDate: this.formData.checkOutDate,
       rooms: this.formData.rooms,
       price: this.formData.priceRange ? `${this.formData.priceRange[0]}-${this.formData.priceRange[1]}` : "",
-      amenities: this.amenitiesOptions.map((amenity) =>
-        this.searchResults.some((hotel) => hotel.amenities.some((a) => a.name.toLowerCase() === amenity.toLowerCase())),
-      ),
-    })
+    });
+
+    // Set the amenities checkboxes based on formData.amenities
+    const amenitiesFormArray = this.filterForm.get('amenities') as any;  // Get the amenities FormArray
+    const amenitiesSelections = this.amenitiesOptions.map((amenity) =>
+      this.formData.amenities?.includes(amenity) || false // Preselect amenities based on formData
+    );
+
+    amenitiesSelections.forEach((selected: boolean, index: number) => {
+      amenitiesFormArray.push(this.formBuilder.control(selected)); // Set initial values based on formData.amenities
+    });
   }
 }
 

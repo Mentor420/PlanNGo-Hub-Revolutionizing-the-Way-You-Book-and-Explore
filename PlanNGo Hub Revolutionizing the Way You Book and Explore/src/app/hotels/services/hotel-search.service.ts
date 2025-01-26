@@ -370,7 +370,7 @@ export class HotelSearchService {
     const requestedStart = new Date(checkInDate);
     const requestedEnd = new Date(checkOutDate);
 
-    if (requestedEnd <= requestedStart) {
+    if (requestedEnd < requestedStart) {
       // alert('Invalid date range: check-out date must be after check-in date.');
       console.error('Invalid date range: check-out date must be after check-in date.');
       return false;

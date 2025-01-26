@@ -13,17 +13,25 @@ import { Hotel } from '../../models/interfaces';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent {
-  formData = {
+  formData: {
+    location: string;
+    checkInDate: string;
+    checkOutDate: string;
+    rooms: number;
+    price: string;
+    amenities: string[]; // Explicitly specify the type as an array of strings
+  } = {
     location: '',
     checkInDate: '',
     checkOutDate: '',
     rooms: 1,
     price: '',
-  };
+    amenities: [],
+  };  
 
   searchResults: Hotel[] = [];
   selectedAmenities: string[] = [];
-  amenitiesOptions: string[] = ['WiFi', 'Pool', 'Parking', 'Breakfast', 'Gym', 'Spa', 'Airport Shuttle', 'Business Center', 'Pet Friendly'];
+  amenitiesOptions: string[] = ['Wi-Fi', 'Pool', 'Parking', 'Breakfast', 'Gym', 'Spa', 'Airport Shuttle', 'Business Center', 'Pet-Friendly'];
   errorMessage: string = '';
   hasSearched: boolean = false;
 
@@ -107,10 +115,13 @@ export class SearchBarComponent {
     const checkInDateStr = checkInDate.toISOString(); 
     const checkOutDateStr = checkOutDate.toISOString();
 
+    // Update formData with selected amenities
+    this.formData.amenities = [...this.selectedAmenities];
+
     this.hasSearched = true;
 
     this.hotelSearchService
-      .searchHotels(location, checkInDateStr, checkOutDateStr, rooms, priceRange, this.selectedAmenities)
+      .searchHotels(location, checkInDateStr, checkOutDateStr, rooms, priceRange, this.formData.amenities)
       .subscribe(
         (results: Hotel[]) => {
           const filteredResults = this.filterResults(results);

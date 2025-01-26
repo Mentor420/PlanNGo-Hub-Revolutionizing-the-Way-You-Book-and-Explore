@@ -36,7 +36,7 @@
 
 .form-group input,
 .form-group select {
-  width: 100%;
+  width: auto;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -172,23 +172,34 @@
 
 .star-rating-filter {
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 8px; /* Adds spacing between each line */
 }
 
 .star-rating-filter label {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  gap: 8px; /* Spacing between the checkbox and stars */
 }
 
 .star-rating-filter input[type="checkbox"] {
   margin-right: 8px;
 }
 
+
 .star-rating {
-  color: #ffc107;
+  display: flex;
+  gap: 5px;
+  margin-right: 40px;
+}
+
+.star-rating i {
+  font-size: 16px; /* Adjust size of the stars */
+  color: gold; /* Star color */
+}
+
+.form-group label i {
+  margin-right: 8px; /* Adds spacing after the label's icon */
 }
 
 .back-button2 {
@@ -256,3 +267,15 @@
   margin-left: 35%;
 } */
 
+.form-group-l input,
+.form-group-l select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+  margin-top:8px;
+}
