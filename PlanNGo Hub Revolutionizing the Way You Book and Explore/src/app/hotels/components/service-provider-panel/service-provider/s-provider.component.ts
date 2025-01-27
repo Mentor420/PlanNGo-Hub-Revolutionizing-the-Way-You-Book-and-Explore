@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import Chart from 'chart.js/auto';
 import { ServiceProviderService } from '../../../services/service-provider.service';
-import { Amenity, Booking, Hotel, Provider } from '../../../models/interfaces';
+import { Amenity, Booking, Hotel, Provider, Room } from '../../../models/interfaces';
 import { filter } from 'rxjs';
 import { AdminService } from '../../../services/admin.service';
 
+// Extended Room interface to include hotelId
+  interface RoomWithHotelId extends Room {
+    hotelId: string;
+  }
 @Component({
   selector: 'app-service-provider',
   standalone: true,
@@ -38,7 +42,7 @@ export class ServiceProviderComponent implements OnInit {
   showAddHotelPopup: boolean = false;
   isChildRoute = false;
 
-  providerId = ''; // Set dynamically based on the logged-in provider or selection
+  providerId = ''; 
 
   newHotel: Hotel = {
     id: '', 
@@ -61,6 +65,25 @@ export class ServiceProviderComponent implements OnInit {
     bankOffer: [] // Empty array for now
   };
 
+  // Popup state and new room object
+  showAddRoomPopup = false;
+  newRoom: RoomWithHotelId = {
+    hotelId: '', 
+    roomId: '',
+    type: '',
+    description: '',
+    pricePerNight: 0,
+    currentCoupon: '',
+    currentDiscount: 0,
+    benefits: [],
+    availableRooms: 0,
+    images: [],
+  };
+  rooms: RoomWithHotelId[] = [];
+  roomIdDuplicate = false;
+  hotels: { id: string; name: string }[] = [];
+  showMenu = false;
+
   constructor(private router: Router, private route: ActivatedRoute, private serviceProviderService: ServiceProviderService, private adminService: AdminService) { }
 
   async ngOnInit(): Promise<void> {
@@ -70,6 +93,7 @@ export class ServiceProviderComponent implements OnInit {
       if(this.providerId){
         this.fetchProviderData(); // Execute after the providerId is initialized
         this.fetchRecentBookings();
+        this.fetchRooms();
       }
     } catch (error) {
       console.error('Error during initialization:', error);
@@ -96,6 +120,10 @@ export class ServiceProviderComponent implements OnInit {
         this.isChildRoute = JSON.parse(storedRouteState);
       }
     }
+  }
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
 
   // Function to check the user's role and email, and initialize provider
@@ -171,6 +199,7 @@ export class ServiceProviderComponent implements OnInit {
             0
           );
 
+          this.getHotels();
           // Initialize both charts after data is fetched
           this.createBookingsChart();
           this.createRevenueChart();
@@ -185,6 +214,34 @@ export class ServiceProviderComponent implements OnInit {
       this.providerData.recentBookings = bookings;
     });
   }
+
+  fetchRooms(): void {
+    this.adminService.getAllRooms().subscribe({
+      next: (rooms) => {
+        this.rooms = rooms;
+      },
+      error: (err) => {
+        console.error('Error fetching rooms:', err);
+      }
+    });
+  }
+
+  getHotels(): void {
+    this.adminService.getAllHotels().subscribe({
+      next: (hotels) => {
+        this.hotels = hotels
+          .filter((hotel) => hotel.provider_id === this.providerId) // Filter hotels by provider_id
+          .map((hotel) => ({
+            id: hotel.id,
+            name: hotel.name,
+          }));
+      },
+      error: (error) => {
+        console.error('Failed to fetch hotels:', error);
+      },
+    });
+  }
+  
 
   // Open the Add Hotel Popup
   openAddHotelPopup(): void {
@@ -205,6 +262,7 @@ export class ServiceProviderComponent implements OnInit {
       bankOffer: [],
     };
     this.showAddHotelPopup = true;
+    this.showMenu = false;
   }
 
   // Close the Add Hotel Popup
@@ -319,6 +377,151 @@ export class ServiceProviderComponent implements OnInit {
     removeImage(index: number) {
       this.newHotel.images.splice(index, 1);
     }
+
+    openAddRoomPopup(): void {
+      this.showAddRoomPopup = true;
+      this.newRoom = {
+        hotelId: '', 
+        roomId: '',
+        type: '',
+        description: '',
+        pricePerNight: 0,
+        currentCoupon: '',
+        currentDiscount: 0,
+        benefits: [],
+        availableRooms: 0,
+        images: [],
+      };
+      this.showMenu = false;
+    }
+  
+    closeAddRoomPopup(): void {
+      this.showAddRoomPopup = false;
+    }
+    
+     // Add a new room to the selected hotel
+  addRoom(): void {
+    if (!this.isRoomDetailsComplete()) {
+      alert('Please fill in all required details and ensure valid values.');
+      return;
+    }
+
+    // Check if room ID already exists for the same hotel
+    if (this.isRoomIdDuplicate()) {
+      alert('This Room ID already exists in the selected hotel.');
+      return;
+    }
+  
+    if (!this.newRoom.roomId) {
+      this.generateUniqueRoomId((uniqueId: string) => {
+        this.newRoom.roomId = uniqueId;
+        this.submitNewRoom(); // Proceed to add the hotel with the unique ID
+      });
+    } else {
+      this.submitNewRoom(); // If ID already exists, directly submit the hotel
+    }
+  }
+  
+  // Generate a unique room ID
+generateUniqueRoomId(callback: (uniqueId: string) => void): void {
+  const prefix = 'r0';
+
+  // Function to generate a random ID
+  const generateRandomId = (): string => {
+    const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
+    return `${prefix}${randomNum}`;
+  };
+
+  // Recursive function to check if ID is unique
+  const checkUniqueId = (generatedId: string): void => {
+    this.adminService.getAllHotels().subscribe(
+      (hotels) => {
+        // Check if any hotel already has this room ID
+        const idExists = hotels.some((hotel) =>
+          hotel.rooms.some((room: any) => room.roomId === generatedId)
+        );
+
+        if (idExists) {
+          // If ID exists, generate a new one and check again
+          const newId = generateRandomId();
+          checkUniqueId(newId);
+        } else {
+          // If ID is unique, return it via the callback
+          callback(generatedId);
+        }
+      },
+      (error) => {
+        console.error('Error checking unique ID:', error);
+      }
+    );
+  };
+
+  // Start with an initial generated ID
+  const initialId = generateRandomId();
+  checkUniqueId(initialId);
+}
+
+  // Submit the new hotel room
+  submitNewRoom(): void {
+    // Ensure benefits and images are arrays
+    const roomData = {
+      ...this.newRoom,
+      benefits: typeof this.newRoom.benefits === 'string'
+        ? (this.newRoom.benefits as string).split(',').map((benefit: string) => benefit.trim())
+        : Array.isArray(this.newRoom.benefits)
+        ? this.newRoom.benefits
+        : [],
+      images: typeof this.newRoom.images === 'string'
+        ? [this.newRoom.images]
+        : Array.isArray(this.newRoom.images)
+        ? this.newRoom.images
+        : [],
+    };
+    this.adminService.addRoomToHotel(this.newRoom.hotelId, roomData).subscribe({
+      next: () => {
+        this.rooms.push({ ...roomData });
+        alert('Room added successfully.');
+        this.ngOnInit();
+        this.closeAddRoomPopup();
+      },
+      error: (err) => {
+        console.error('Error adding room:', err);
+        alert('Failed to add room.');
+      },
+    });
+  }
+
+  // Helper method to check if room ID already exists for the same hotel
+  checkRoomIdAvailability(): void {
+    this.roomIdDuplicate = this.isRoomIdDuplicate();
+  }
+
+  // Method to check if room ID already exists for the same hotel
+  isRoomIdDuplicate(): boolean {
+    return this.rooms.some(room => room.hotelId === this.newRoom.hotelId && room.roomId === this.newRoom.roomId);
+  }
+
+  // Updated helper method to validate room details
+  isRoomDetailsComplete(): boolean {
+    const requiredFields = [
+      this.newRoom.hotelId,
+      // this.newRoom.roomId,
+      this.newRoom.type,
+      this.newRoom.description,
+      this.newRoom.pricePerNight,
+      this.newRoom.availableRooms,
+      this.newRoom.images,
+    ];
+  
+    // Check if all required fields are present and not empty
+    const allFieldsPresent = requiredFields.every((field) => field !== null && field !== undefined && field !== '');
+  
+    // Ensure pricePerNight and availableRooms are greater than zero
+    const validNumericValues =
+      Number(this.newRoom.pricePerNight) > 0 && Number(this.newRoom.availableRooms) > 0;
+  
+    return allFieldsPresent && validNumericValues;
+  }
 
   createBookingsChart(): void {
     if (typeof document !== 'undefined') {

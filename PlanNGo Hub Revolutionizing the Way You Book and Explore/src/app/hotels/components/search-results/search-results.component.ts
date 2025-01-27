@@ -187,10 +187,13 @@ export class SearchResultsComponent implements OnInit {
     const amenitiesSelections = this.amenitiesOptions.map((amenity) =>
       this.formData.amenities?.includes(amenity) || false // Preselect amenities based on formData
     );
-
+    console.log("Amenities:", amenitiesSelections);
     amenitiesSelections.forEach((selected: boolean, index: number) => {
-      amenitiesFormArray.push(this.formBuilder.control(selected)); // Set initial values based on formData.amenities
+      if (amenitiesFormArray.at(index)) {
+        amenitiesFormArray.at(index).setValue(selected); // Set the initial value of the checkbox
+      }
     });
+    console.log("Updated Amenities:", this.filterForm.value.amenities);
   }
 }
 

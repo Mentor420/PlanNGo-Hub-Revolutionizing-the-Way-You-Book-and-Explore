@@ -177,7 +177,58 @@ export class AdRoomDeatilsComponent implements OnInit {
       alert('This Room ID already exists in the selected hotel.');
       return;
     }
+  
+    if (!this.newRoom.roomId) {
+      this.generateUniqueRoomId((uniqueId: string) => {
+        this.newRoom.roomId = uniqueId;
+        this.submitNewRoom(); // Proceed to add the hotel with the unique ID
+      });
+    } else {
+      this.submitNewRoom(); // If ID already exists, directly submit the hotel
+    }
+  }
+  
+  // Generate a unique room ID
+generateUniqueRoomId(callback: (uniqueId: string) => void): void {
+  const prefix = 'r0';
 
+  // Function to generate a random ID
+  const generateRandomId = (): string => {
+    const randomNum = Math.floor(Math.random() * 1000); // Generate a random number
+    return `${prefix}${randomNum}`;
+  };
+
+  // Recursive function to check if ID is unique
+  const checkUniqueId = (generatedId: string): void => {
+    this.adminService.getAllHotels().subscribe(
+      (hotels) => {
+        // Check if any hotel already has this room ID
+        const idExists = hotels.some((hotel) =>
+          hotel.rooms.some((room: any) => room.roomId === generatedId)
+        );
+
+        if (idExists) {
+          // If ID exists, generate a new one and check again
+          const newId = generateRandomId();
+          checkUniqueId(newId);
+        } else {
+          // If ID is unique, return it via the callback
+          callback(generatedId);
+        }
+      },
+      (error) => {
+        console.error('Error checking unique ID:', error);
+      }
+    );
+  };
+
+  // Start with an initial generated ID
+  const initialId = generateRandomId();
+  checkUniqueId(initialId);
+}
+
+  // Submit the new hotel room
+  submitNewRoom(): void {
     // Ensure benefits and images are arrays
     const roomData = {
       ...this.newRoom,
@@ -192,7 +243,6 @@ export class AdRoomDeatilsComponent implements OnInit {
         ? this.newRoom.images
         : [],
     };
-  
     this.adminService.addRoomToHotel(this.newRoom.hotelId, roomData).subscribe({
       next: () => {
         this.rooms.push({ ...roomData });
@@ -207,7 +257,7 @@ export class AdRoomDeatilsComponent implements OnInit {
       },
     });
   }
-  
+
   // Helper method to check if room ID already exists for the same hotel
   checkRoomIdAvailability(): void {
     this.roomIdDuplicate = this.isRoomIdDuplicate();
@@ -222,7 +272,7 @@ export class AdRoomDeatilsComponent implements OnInit {
   isRoomDetailsComplete(): boolean {
     const requiredFields = [
       this.newRoom.hotelId,
-      this.newRoom.roomId,
+      // this.newRoom.roomId,
       this.newRoom.type,
       this.newRoom.description,
       this.newRoom.pricePerNight,

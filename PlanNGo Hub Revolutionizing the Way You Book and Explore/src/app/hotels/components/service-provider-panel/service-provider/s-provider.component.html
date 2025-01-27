@@ -1,6 +1,6 @@
-  <div *ngIf="!isChildRoute">
-    <div class="container">
-      <h1 class="title">{{ providerData.name }} Dashboard</h1>
+<div *ngIf="!isChildRoute">
+  <div class="container">
+    <h1 class="title">{{ providerData.name }} Dashboard</h1>
 
     <div class="stats-grid">
       <div class="stat-card">
@@ -57,46 +57,54 @@
     </table>
 
     <h2>Recent Bookings</h2>
-      <table>
-          <thead>
-              <tr>
-                  <th>Hotel</th>
-                  <th>Guest</th>
-                  <th>Check-in</th>
-                  <th>Check-out</th>
-                  <th>Amount</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let booking of providerData.recentBookings">
-                  <td>{{ booking.hotelName }}</td>
-                  <td>{{ booking.fullName }}</td>
-                  <td>{{ booking.checkInDate }}</td>
-                  <td>{{ booking.checkOutDate }}</td>
-                  <td>{{ booking.price| currency: 'INR':'symbol':'1.0-0' }}</td>
-              </tr>
-          </tbody>
-      </table>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Hotel</th>
+          <th>Guest</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of providerData.recentBookings">
+          <td>{{ booking.hotelName }}</td>
+          <td>{{ booking.fullName }}</td>
+          <td>{{ booking.checkInDate }}</td>
+          <td>{{ booking.checkOutDate }}</td>
+          <td>{{ booking.price| currency: 'INR':'symbol':'1.0-0' }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
-  <!-- Full-page outlet for child routes -->
-  <div class="container">
-    <router-outlet *ngIf="isChildRoute"></router-outlet>
-  </div>
+<!-- Full-page outlet for child routes -->
+<div class="container">
+  <router-outlet *ngIf="isChildRoute"></router-outlet>
+</div>
 
-  <!-- Floating Button -->
-  <button class="floating-btn" (click)="openAddHotelPopup()">
+<!-- Floating Button -->
+<div class="floating-menu">
+  <button class="floating-btn" (click)="toggleMenu()">
     <i class="fa-solid fa-plus"></i>
   </button>
 
-  <!-- Hotel Add Popup -->
+  <div *ngIf="showMenu" class="menu-options">
+    <button class="menu-option" (click)="openAddHotelPopup()">Add Hotel</button>
+    <button class="menu-option" (click)="openAddRoomPopup()">Add Room</button>
+  </div>
+</div>
+
+<!-- Hotel Add Popup -->
 <div class="hotel-add-popup" *ngIf="showAddHotelPopup">
-  <div class="popup-content-add" (click)="$event.stopPropagation()">
+  <div class="popup-content-add-h" (click)="$event.stopPropagation()">
     <h3>Add New Hotel</h3>
     <form (ngSubmit)="addHotel()" #hotelForm="ngForm" novalidate>
-      
+
       <!-- Hotel Name -->
+       <br>
       <label for="hotelName">Hotel Name</label>
       <input type="text" id="hotelName" [(ngModel)]="newHotel.name" name="name" required />
       <div *ngIf="hotelForm.submitted && !hotelForm.controls['name']?.valid">
@@ -112,7 +120,8 @@
 
       <!-- Price Per Night -->
       <label for="hotelPricePerNight">Price Per Night</label>
-      <input type="number" id="hotelPricePerNight" [(ngModel)]="newHotel.pricePerNight" name="pricePerNight" required [min]="1" />
+      <input type="number" id="hotelPricePerNight" [(ngModel)]="newHotel.pricePerNight" name="pricePerNight" required
+        [min]="1" />
       <div *ngIf="hotelForm.submitted && !hotelForm.controls['pricePerNight']?.valid">
         <small class="error-message">Price per night is required and should be a positive number.</small>
       </div>
@@ -151,6 +160,7 @@
       </div>
 
       <!-- Checkout Time -->
+      <br>
       <label for="checkout">Checkout Time</label>
       <div class="time-select">
         <select id="checkoutHour" [(ngModel)]="checkoutHour" name="checkoutHour" required>
@@ -170,50 +180,123 @@
       </div>
 
       <!-- Location -->
+      <br>
       <label for="location">Location</label>
-      <input type="text" id="location" [(ngModel)]="newHotel.location" name="location" placeholder="Share only the url of embeded map" required />
+      <input type="text" id="location" [(ngModel)]="newHotel.location" name="location"
+        placeholder="Share only the url of embeded map" required />
       <div *ngIf="hotelForm.submitted && !hotelForm.controls['location']?.valid">
         <small class="error-message">Location is required.</small>
       </div>
 
       <!-- Rules -->
-      <label for="rules">Rules</label>
-      <div class="dynamic-input" *ngFor="let rule of newHotel.rules; let i = index">
-        <input type="text" [(ngModel)]="newHotel.rules[i]" name="rules-{{i}}" placeholder="Enter a rule" required />
-        <div *ngIf="hotelForm.submitted && !hotelForm.controls['rules-' + i]?.valid">
-          <small class="error-message">Each rule is required.</small>
+      <div class="changes">
+        <label for="rules">Rules</label>
+        <div class="dynamic-input" *ngFor="let rule of newHotel.rules; let i = index">
+          <input type="text" [(ngModel)]="newHotel.rules[i]" name="rules-{{i}}" placeholder="Enter a rule" required />
+          <div *ngIf="hotelForm.submitted && !hotelForm.controls['rules-' + i]?.valid">
+            <small class="error-message">Each rule is required.</small>
+          </div>
+          <button type="button" (click)="removeRule(i)">Remove</button> <br> <br>
+
         </div>
-        <button type="button" (click)="removeRule(i)">Remove</button>
-      </div>
-      <button type="button" (click)="addRule()">Add Rule</button>
+        <button type="button" (click)="addRule()">Add Rule</button>
+        <br>
+        <!-- Amenities -->
+        <label for="amenities">Amenities</label>
+        <div class="dynamic-input" *ngFor="let amenity of newHotel.amenities; let i = index">
+          <input type="text" [(ngModel)]="newHotel.amenities[i].name" name="amenity-name-{{i}}"
+            placeholder="Amenity Name" required />
+          <input type="text" [(ngModel)]="newHotel.amenities[i].description" name="amenity-description-{{i}}"
+            placeholder="Amenity Description" required />
+          <input type="text" [(ngModel)]="newHotel.amenities[i].icon" name="amenity-icon-{{i}}"
+            placeholder="Icon Class (e.g., 'fas fa-wifi')" />
+          <button type="button" (click)="removeAmenity(i)">Remove</button> <br> <br>
 
-      <!-- Amenities -->
-      <label for="amenities">Amenities</label>
-      <div class="dynamic-input" *ngFor="let amenity of newHotel.amenities; let i = index">
-        <input type="text" [(ngModel)]="newHotel.amenities[i].name" name="amenity-name-{{i}}"
-          placeholder="Amenity Name" required />
-        <input type="text" [(ngModel)]="newHotel.amenities[i].description" name="amenity-description-{{i}}"
-          placeholder="Amenity Description" required />
-        <input type="text" [(ngModel)]="newHotel.amenities[i].icon" name="amenity-icon-{{i}}"
-          placeholder="Icon Class (e.g., 'fas fa-wifi')" />
-        <button type="button" (click)="removeAmenity(i)">Remove</button>
-      </div>
-      <button type="button" (click)="addAmenity()">Add Amenity</button>
-
-      <!-- Images -->
-      <label for="images">Hotel Images</label>
-      <div class="dynamic-input" *ngFor="let image of newHotel.images; let i = index">
-        <input type="url" [(ngModel)]="newHotel.images[i]" name="images-{{i}}" placeholder="Image URL" required />
-        <div *ngIf="hotelForm.submitted && !hotelForm.controls['images-' + i]?.valid">
-          <small class="error-message">Image URL is required.</small>
         </div>
-        <button type="button" (click)="removeImage(i)">Remove</button>
+        <button type="button" (click)="addAmenity()">Add Amenity</button>
+        <br>
+        <!-- Images -->
+        <label for="images">Hotel Images</label>
+        <div class="dynamic-input" *ngFor="let image of newHotel.images; let i = index">
+          <input type="url" [(ngModel)]="newHotel.images[i]" name="images-{{i}}" placeholder="Image URL" required />
+          <div *ngIf="hotelForm.submitted && !hotelForm.controls['images-' + i]?.valid">
+            <small class="error-message">Image URL is required.</small>
+          </div>
+          <button type="button" (click)="removeImage(i)">Remove</button>
+          <br> <br>
+        </div>
+        <button type="button" (click)="addImage()">Add Image</button>
       </div>
-      <button type="button" (click)="addImage()">Add Image</button>
-
+      <br>
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0">Add Hotel</button>
-      <button type="button" class="btn btn-danger" (click)="closeAddHotelPopup()">Cancel</button>
+       <div id="space">
+        <button type="button" class="btn btn-danger" (click)="closeAddHotelPopup()">Cancel</button>
+        <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0">Add
+          Hotel</button>
+       </div>
+      
+    </form>
+  </div>
+</div>
+
+<!-- Room Add Popup -->
+<div *ngIf="showAddRoomPopup" class="popup-overlay">
+  <div class="popup-content-add">
+    <h3>Add New Room</h3>
+    <form (ngSubmit)="addRoom()" class="form-horizontal">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hotel">Hotel</label>
+          <select id="hotel" [(ngModel)]="newRoom.hotelId" name="hotelId" required>
+            <option value="" disabled selected>Select a hotel</option>
+            <option *ngFor="let hotel of hotels" [value]="hotel.id">{{ hotel.name }}</option>
+          </select>
+        </div>
+        <!-- <div class="form-group">
+          <label for="roomId">Room ID</label>
+          <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" placeholder="Add 'r0' at start. ex: r001" readonly
+            (ngModelChange)="checkRoomIdAvailability()" />
+          <div *ngIf="roomIdDuplicate" class="error-message">
+            This Room ID already exists for the selected hotel.
+          </div>
+        </div> -->
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input type="text" id="type" [(ngModel)]="newRoom.type" name="type" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" [(ngModel)]="newRoom.description" name="description" required></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pricePerNight">Price Per Night</label>
+          <input type="number" id="pricePerNight" [(ngModel)]="newRoom.pricePerNight" name="pricePerNight" required />
+        </div>
+        <div class="form-group">
+          <label for="availableRooms">Available Rooms</label>
+          <input type="number" id="availableRooms" [(ngModel)]="newRoom.availableRooms" name="availableRooms"
+            required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="benefits">Benefits</label>
+          <textarea id="benefits" [(ngModel)]="newRoom.benefits" name="benefits"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Image URL</label>
+          <input type="file" id="image" [(ngModel)]="newRoom.images" name="image" required />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" (click)="closeAddRoomPopup()">Cancel</button>
+        <button type="submit" class="btn btn-success">Add Room</button>
+      </div>
     </form>
   </div>
 </div>
