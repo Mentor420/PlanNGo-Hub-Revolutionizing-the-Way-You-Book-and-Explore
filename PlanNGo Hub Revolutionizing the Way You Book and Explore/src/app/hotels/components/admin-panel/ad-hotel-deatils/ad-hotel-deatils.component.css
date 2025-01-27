@@ -59,83 +59,124 @@
 
 .ad-hotel {
   flex-grow: 1;
-  margin-left: 250px; /* Default width of the sidebar */
+  margin-left: 250px;
+  /* Default width of the sidebar */
   transition: margin-left 0.3s ease;
 }
 
 .ad-hotel.collapsed {
-  margin-left: 80px; /* Adjust based on collapsed sidebar width */
+  margin-left: 80px;
+  /* Adjust based on collapsed sidebar width */
 }
 
 .tag-head {
-    margin-left: 64px;
-    margin-top: 50px;
-    max-width: 1280px;
-    font-size: 2.4rem;
-    font-weight: 600;
-    text-align: center;
+  margin-left: 64px;
+  margin-top: 50px;
+  max-width: 1280px;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-h2.tag-head.text-center.mb-5{
+h2.tag-head.text-center.mb-5 {
   margin-left: 125px;
 }
 
 .card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    max-width: 1250px;
-    margin: 30px auto;
-    padding: 20px;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 1250px;
+  margin: 30px auto;
+  padding: 20px;
+  gap: 20px;
 }
 
-.card-list .card-item {
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
-    list-style: none;
-    cursor: pointer;
-    text-decoration: none;
-    border: 2px solid transparent;
-    transition: border 0.5s ease;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    color: #000;
+.card-item {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .card-list .card-item:hover {
-    box-shadow: -2px 2px 10px rgba(0,0,0,0.7);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+  z-index: 2; /* Set z-index for hovered card */
+}
+
+.inactive-banner {
+  /* position: absolute; */
+  top: 10px;
+  left: 10px;
+  background-color: #ffe4e4;
+  border: 2px solid #ff0000;
+  border-radius: 12px;
+  /* padding: 5px 10px; */
+  display: flex;
+  align-items: center;
+  color: #ff0000;
+  font-weight: bold;
+  z-index: 2;
+  min-height: 12%;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+}
+
+.red-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  margin-right: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .card-list .card-item img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: 8px;
-    object-fit: cover;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .card-list span {
-    display: inline-block;
-    background: #F7DFF5;
-    margin-top: 32px;
-    padding: 8px 15px;
-    font-size: 0.75rem;
-    border-radius: 50px;
-    font-weight: 600;
+  display: inline-block;
+  background: #F7DFF5;
+  /* margin-top: 32px; */
+  padding: 8px 15px;
+  /* font-size: 0.75rem; */
+  border-radius: 50px;
+  /* font-weight: 600; */
 }
 
 .card-item h3 {
-    color: #000;
-    font-size: 1.3rem;
-    margin-top: 28px;
-    font-weight: 600;
+  color: #000;
+  font-size: 1.3rem;
+  margin-top: 28px;
+  font-weight: 600;
 }
- 
+
 .card-item .price {
-    color:#000;
-    font-size: 1.2rem;
-    padding-top: 9px;
-    font-weight: 500;
+  color: #000;
+  font-size: 1.2rem;
+  padding-top: 9px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 768px) {
@@ -143,17 +184,17 @@ h2.tag-head.text-center.mb-5{
     left: 0;
     width: 100%;
   }
-  
+
   .ad-hotel.collapsed {
     left: 250px;
     width: calc(100% - 250px);
   }
-  
+
   .top {
     left: 0;
     width: 100%;
   }
-  
+
   .ad-hotel.collapsed .top {
     left: 250px;
     width: calc(100% - 250px);
@@ -163,6 +204,7 @@ h2.tag-head.text-center.mb-5{
 .m-2 {
   display: list-item;
 }
+
 button.btn.btn-primary.float-end {
   margin-right: 2%;
 }
@@ -263,7 +305,8 @@ button.btn.btn-primary.float-end {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
-  width: calc(50% - 10px); /* Display 2 rooms per row */
+  width: calc(50% - 10px);
+  /* Display 2 rooms per row */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -338,8 +381,8 @@ button.btn.btn-primary.float-end {
   padding: 20px;
   border-radius: 8px;
   width: 30%;
-  max-height: 80vh; 
-  overflow-y: auto; 
+  max-height: 80vh;
+  overflow-y: auto;
 
 }
 
@@ -352,7 +395,8 @@ label {
   margin: 5px 0;
 }
 
-input, textarea {
+input,
+textarea {
   margin-bottom: 10px;
   padding: 8px;
   border: 1px solid #ccc;
@@ -375,6 +419,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 .popup-content-del {
@@ -388,11 +433,13 @@ button {
 .delete-icon {
   position: absolute;
   margin-top: -8px;
-  margin-left: 16%;
-  background-color: #f00; /* Red background for the circle */
+  margin-left: 80%;
+  background-color: #f00;
+  /* Red background for the circle */
   width: 30px;
   height: 30px;
-  border-radius: 50%; /* Circle shape */
+  border-radius: 50%;
+  /* Circle shape */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -402,7 +449,8 @@ button {
 
 .delete-icon i {
   font-size: 16px;
-  color: #fff; /* White icon color */
+  color: #fff;
+  /* White icon color */
 }
 
 .provider-name {
@@ -410,4 +458,44 @@ button {
   margin: 20px 0;
   color: #333;
   margin-left: 23px;
+}
+
+.more-options-btn {
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+  position: absolute;
+  margin-top: -8px;
+  margin-left: 80%;
+  background-color: #ddd0d0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /* Circle shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.more-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: -13px;
+  right: -105px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 3; /* Higher z-index to stay on top */
+}
+
+.more-options button {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
 }

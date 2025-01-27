@@ -44,14 +44,29 @@
           <th>Total Bookings</th>
           <th>Revenue</th>
           <th>Action</th>
+          <th>Details</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let hotel of providerData.hotels">
+      <tbody *ngFor="let hotel of providerData.hotels" [ngClass]="{ 'inactive-hotel': hotel.status === 'Inactive' }">
+        <tr>
           <td>{{ hotel.name }}</td>
           <td>{{ hotel.bookings.length }}</td>
           <td>{{ getHotelRevenue(hotel) | currency: 'INR':'symbol':'1.0-0' }}</td>
-          <button class="details-btn" (click)="viewDetails(providerId, hotel.id)">Details</button>
+          <td>
+            <!-- Display warning message in the action column for inactive hotels -->
+            <div *ngIf="hotel.status === 'Inactive'">
+              <span class="warning-message">This hotel has been deleted by the admin.</span>
+            </div>
+            <div *ngIf="hotel.status !== 'Inactive'">
+              <span>N.A.</span>
+            </div>
+          </td>
+          <td>
+            <!-- Always show Details button in the Details column -->
+            <button class="details-btn" (click)="viewDetails(providerId, hotel.id)">
+              Details
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -104,7 +119,7 @@
     <form (ngSubmit)="addHotel()" #hotelForm="ngForm" novalidate>
 
       <!-- Hotel Name -->
-       <br>
+      <br>
       <label for="hotelName">Hotel Name</label>
       <input type="text" id="hotelName" [(ngModel)]="newHotel.name" name="name" required />
       <div *ngIf="hotelForm.submitted && !hotelForm.controls['name']?.valid">
@@ -229,12 +244,12 @@
       </div>
       <br>
       <!-- Submit Button -->
-       <div id="space">
+      <div id="space">
         <button type="button" class="btn btn-danger" (click)="closeAddHotelPopup()">Cancel</button>
         <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0">Add
           Hotel</button>
-       </div>
-      
+      </div>
+
     </form>
   </div>
 </div>

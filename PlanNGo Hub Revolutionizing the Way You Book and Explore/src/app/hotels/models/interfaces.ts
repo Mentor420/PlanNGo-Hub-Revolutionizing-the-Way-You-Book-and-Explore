@@ -86,5 +86,6 @@ export interface Amenity {
     ratings: Ratings;
     reviews: Review[];
     bankOffer: BankOffer[];
+    status: string;
   }
   

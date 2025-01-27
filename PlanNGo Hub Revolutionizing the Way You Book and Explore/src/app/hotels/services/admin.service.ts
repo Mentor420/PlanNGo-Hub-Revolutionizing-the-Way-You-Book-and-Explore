@@ -71,9 +71,34 @@ export class AdminService {
     );
   }
   
-
-  // Delete a hotel by ID
+  //Function to soft deleting the hotel by changing its status                     [SOFT DELETE BY ADMIN]
   deleteHotel(hotelId: string): Observable<any> {
+    return this.http.get<{ hotels: any[]; providers: any[]; users: User[] }>(`${this.apiUrl}`).pipe(
+      switchMap((response) => {
+        // Update the status of the specific hotel to 'Inactive'
+        const updatedHotels = response.hotels.map((hotel) => {
+          if (hotel.id === hotelId) {
+            return { ...hotel, status: 'Inactive' }; // Update the status
+          }
+          return hotel;
+        });
+  
+        // Send the updated dataset back to the server
+        return this.http.put(`${this.apiUrl}`, {
+          hotels: updatedHotels,
+          providers: response.providers,
+          users: response.users,
+        });
+      }),
+      catchError((error) => {
+        console.error('Error updating hotel status:', error);
+        return throwError(() => new Error('Failed to update hotel status.'));
+      })
+    );
+  }  
+
+  // Delete a hotel by ID                                 [HARD DELETE FROM ADMIN]
+  PermanentdeleteHotel(hotelId: string): Observable<any> {
     return this.http.get<{ hotels: any[]; providers: any[]; users: User[]  }>(`${this.apiUrl}`).pipe(
       switchMap((response) => {
         // Filter out the hotel to be deleted
@@ -238,6 +263,31 @@ notifyAffectedBookings(hotelId: string, roomId: string): Observable<Booking[]> {
   );
 }
 
+// Function to update the status of a hotel
+updateHotelStatus(hotelId: string, newStatus: string): Observable<any> {
+  return this.http.get<{ hotels: any[]; providers: any[]; users: User[] }>(`${this.apiUrl}`).pipe(
+    switchMap((response) => {
+      // Find the hotel with the specified ID and update its status
+      const updatedHotels = response.hotels.map((hotel) => {
+        if (hotel.id === hotelId) {
+          return { ...hotel, status: newStatus }; // Update the status of the hotel
+        }
+        return hotel;
+      });
+
+      // Send the updated data back to the server
+      return this.http.put(`${this.apiUrl}`, {
+        hotels: updatedHotels,
+        providers: response.providers,
+        users: response.users,
+      });
+    }),
+    catchError((error) => {
+      console.error('Error updating hotel status:', error);
+      return throwError(() => new Error('Failed to update hotel status.'));
+    })
+  );
+}
 
   // Update the hotel information
 private updateHotel(hotel: Hotel): Observable<Hotel> {

@@ -115,6 +115,7 @@ export class SearchResultsComponent implements OnInit {
     const selectedStars = [5, 4, 3, 2, 1].filter((star) => formValues[`star${star}`]);
 
     this.filteredResults = this.searchResults.filter((hotel) => {
+      const matchesStatus = hotel.status !== 'Inactive'; // Exclude inactive hotels
       const matchesLocation =
         !formValues.location || hotel.city.toLowerCase().includes(formValues.location.toLowerCase());
       
@@ -131,7 +132,7 @@ export class SearchResultsComponent implements OnInit {
       const matchesStarRating =
         selectedStars.length === 0 || selectedStars.includes(Math.round(hotel.ratings.averageRating));
 
-      return matchesLocation && matchesPrice && matchesRooms && matchesAmenities && matchesStarRating;
+      return matchesStatus && matchesLocation && matchesPrice && matchesRooms && matchesAmenities && matchesStarRating;
     });
   }
 
@@ -163,7 +164,8 @@ export class SearchResultsComponent implements OnInit {
       )
       .subscribe(
         (results: Hotel[]) => {
-          this.searchResults = results
+          // Filter out inactive hotels after fetching results
+          this.searchResults = results.filter((hotel) => hotel.status !== 'Inactive');
           this.filterResults()
         },
         (error) => {

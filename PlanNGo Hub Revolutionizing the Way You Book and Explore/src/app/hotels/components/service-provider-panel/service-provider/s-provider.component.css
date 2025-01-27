@@ -96,6 +96,7 @@ table tr:nth-child(even) {
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
+    /* margin-top: 8px; */
 }
 
 .details-btn:hover {
@@ -361,3 +362,18 @@ div#space{
     transform: translateY(0);
   }
 }
+
+/* Highlight the inactive hotel's entire tbody in red */
+.inactive-hotel {
+  background-color: rgba(255, 0, 0, 0.1); /* Light red background for visibility */
+  border: 1px solid red;
+}
+
+/* Style for the warning message */
+.warning-message {
+  color: red;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px; /* Space between the message and button */
+}
+

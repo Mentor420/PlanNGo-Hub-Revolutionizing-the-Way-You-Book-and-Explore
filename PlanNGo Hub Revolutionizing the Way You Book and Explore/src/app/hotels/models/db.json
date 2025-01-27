@@ -12,7 +12,7 @@
         "name": "Goa Paradise",
         "description": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
         "pricePerNight": 1500,
-        "roomsAvailable": 6,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r002",
@@ -26,7 +26,7 @@
               "Room Service",
               "City View"
             ],
-            "availableRooms": 6,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -196,6 +196,24 @@
             "price": 4940,
             "status": "Cancelled",
             "reviewSubmitted": false
+          },
+          {
+            "id": "hT01-b006",
+            "userId": "User786293721",
+            "hotelId": "hT01",
+            "roomId": "r002",
+            "fullName": "Ridam Aditya Sinha",
+            "email": "ridamsinha20@gmail.com",
+            "mobile": "9532911742",
+            "idProof": "C:\\fakepath\\Capture001.png",
+            "couponCode": "",
+            "checkInDate": "2025-01-28",
+            "checkOutDate": "2025-01-28",
+            "bookingDate": "2025-01-27T19:26:35.861Z",
+            "roomBooked": 1,
+            "price": 2740,
+            "status": "Booked",
+            "reviewSubmitted": false
           }
         ],
         "ratings": {
@@ -284,7 +302,8 @@
         "bankOffer": {
           "discount": 288,
           "details": "Pay using HDFC Credit Card EMI to avail the offer."
-        }
+        },
+        "status": "Active"
       },
       {
         "id": "hT09",
@@ -874,7 +893,8 @@
             "4": 60,
             "5": 95
           }
-        }
+        },
+        "status": "Active"
       },
       {
         "id": "hT02",
@@ -1179,7 +1199,8 @@
         "bankOffer": {
           "discount": 150,
           "details": "Book with Axis Bank to get 150 INR off."
-        }
+        },
+        "status": "Active"
       },
       {
         "id": "hT020",
@@ -4192,6 +4213,37 @@
             "5": 300
           }
         }
+      },
+      {
+        "id": "hT0925",
+        "provider_id": "Provider1218206823",
+        "city": "G",
+        "name": "Hotel Hi",
+        "description": "g",
+        "pricePerNight": 1110,
+        "roomsAvailable": 0,
+        "rooms": [],
+        "amenities": [],
+        "checkin": "10:00 AM",
+        "checkout": "12:00 PM",
+        "rules": [],
+        "location": "g",
+        "images": [],
+        "bookings": [],
+        "ratings": {
+          "averageRating": 0,
+          "ratingsCount": 0,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0
+          }
+        },
+        "reviews": [],
+        "bankOffer": [],
+        "status": "Inactive"
       }
     ],
     "providers": [

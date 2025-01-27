@@ -18,6 +18,7 @@ export class AdHotelDeatilsComponent implements OnInit {
   searchQuery: string = '';
   selectedHotel: Hotel | null = null;
   showDeletePopup = false;
+  showPermaDeletePopup = false;
   hotelToDeleteId: string | null = null;
   providers: Provider[] = [];
   groupedHotels: { providerName: string; provider_id: string; hotels: Hotel[] }[] = [];
@@ -52,9 +53,11 @@ export class AdHotelDeatilsComponent implements OnInit {
     bookings: [], // Empty array for now
     ratings: { averageRating: 0, ratingsCount: 0, ratingBreakdown: {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0} },
     reviews: [], // Empty array for now
-    bankOffer: [] // Empty array for now
+    bankOffer: [], // Empty array for now
+    status: 'Active',
   };
-  
+  showMoreOptions: { [hotelId: string]: boolean } = {};
+  selectedHotelId: string | null = null;
 
   constructor(private adminService: AdminService) {}
 
@@ -106,6 +109,55 @@ export class AdHotelDeatilsComponent implements OnInit {
 
   toggleSidebar(): void {
     this.sidebarCollapsed = !this.sidebarCollapsed;
+  }
+
+  // Toggle the visibility of more options for a hotel
+  toggleMoreOptions(hotelId: string) {
+    this.showMoreOptions[hotelId] = !this.showMoreOptions[hotelId];
+  }
+
+  // Revoke the hotel, changing its status back to Active
+  revokeHotel(hotelId: string) {
+    // Call your service to update the hotel status
+    this.adminService.updateHotelStatus(hotelId, 'Active').subscribe(() => {
+      // Update the UI or perform necessary actions after revocation
+      console.log('Hotel status changed to Active');
+      this.ngOnInit();
+      this.showMoreOptions[hotelId] = false;
+    });
+  }
+
+  // Confirm deletion of the hotel (hard delete)
+  confirmHardDelete(hotelId: string) {
+    this.showPermaDeletePopup = true;
+    this.selectedHotelId = hotelId; // Set the hotel to be deleted
+  }
+
+  closeHardDeletePopup(): void {
+    this.showPermaDeletePopup = false;
+    this.selectedHotelId = null;
+  }
+
+  ParmanentdeleteHotel(): void {
+    if (this.selectedHotelId) {
+      this.adminService.PermanentdeleteHotel(this.selectedHotelId).subscribe(
+        () => {
+          this.groupedHotels = this.groupedHotels.map(group => {
+            return {
+              ...group,
+              hotels: group.hotels.filter(hotel => hotel.id !== this.selectedHotelId) // Filter hotels within the group
+            };
+          });
+          console.log("Hotel status changed successfully");
+          this.ngOnInit();
+          this.closeHardDeletePopup(); // Close popup after deletion
+        },
+        (error) => {
+          console.error('Error deleting hotel:', error);
+          this.closeHardDeletePopup(); // Close popup even if error occurs
+        }
+      );
+    }
   }
 
   filterHotels(): void {
@@ -286,12 +338,14 @@ export class AdHotelDeatilsComponent implements OnInit {
     if (this.hotelToDeleteId) {
       this.adminService.deleteHotel(this.hotelToDeleteId).subscribe(
         () => {
-          this.groupedHotels = this.groupedHotels.map(group => {
-            return {
-              ...group,
-              hotels: group.hotels.filter(hotel => hotel.id !== this.hotelToDeleteId) // Filter hotels within the group
-            };
-          });
+          // this.groupedHotels = this.groupedHotels.map(group => {
+          //   return {
+          //     ...group,
+          //     hotels: group.hotels.filter(hotel => hotel.id !== this.hotelToDeleteId) // Filter hotels within the group
+          //   };
+          // });
+          console.log("Hotel status changed successfully");
+          this.ngOnInit();
           this.closeDeletePopup(); // Close popup after deletion
         },
         (error) => {

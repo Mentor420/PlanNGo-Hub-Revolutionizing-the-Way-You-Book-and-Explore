@@ -23,8 +23,10 @@ export class SectionComponent {
   // Fetch and sort hotels by rating
   getTopRatedHotels(): void {
     this.hotelSearchService.getHotels().subscribe((hotels: any[]) => {
+      // Filter out hotels with status "Inactive"
+      const activeHotels = hotels.filter(hotel => hotel.status !== 'Inactive');
       // Sort hotels by rating in descending order
-      this.topRatedHotels = hotels.sort((a, b) => b.ratings.averageRating - a.ratings.averageRating).slice(0, 8); // Top 8 hotels
+      this.topRatedHotels = activeHotels.sort((a, b) => b.ratings.averageRating - a.ratings.averageRating).slice(0, 8); // Top 8 hotels
     });
   }
 

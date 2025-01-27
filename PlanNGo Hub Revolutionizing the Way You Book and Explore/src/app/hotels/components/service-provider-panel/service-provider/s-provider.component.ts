@@ -62,7 +62,8 @@ export class ServiceProviderComponent implements OnInit {
     bookings: [], // Empty array for now
     ratings: { averageRating: 0, ratingsCount: 0, ratingBreakdown: {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0} },
     reviews: [], // Empty array for now
-    bankOffer: [] // Empty array for now
+    bankOffer: [], // Empty array for now
+    status: 'Active',
   };
 
   // Popup state and new room object
@@ -230,7 +231,7 @@ export class ServiceProviderComponent implements OnInit {
     this.adminService.getAllHotels().subscribe({
       next: (hotels) => {
         this.hotels = hotels
-          .filter((hotel) => hotel.provider_id === this.providerId) // Filter hotels by provider_id
+          .filter((hotel) => hotel.provider_id === this.providerId && hotel.status !== 'Inactive') // Filter hotels by provider_id
           .map((hotel) => ({
             id: hotel.id,
             name: hotel.name,
