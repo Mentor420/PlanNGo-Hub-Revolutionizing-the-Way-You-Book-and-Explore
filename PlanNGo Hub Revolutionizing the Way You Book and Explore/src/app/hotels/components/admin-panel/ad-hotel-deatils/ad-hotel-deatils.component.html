@@ -45,7 +45,21 @@
   <div class="popup-content-add" (click)="$event.stopPropagation()">
     <h3>Add New Hotel</h3>
     <form (ngSubmit)="addHotel()" #hotelForm="ngForm" novalidate>
-      
+
+        <!-- Provider ID Dropdown -->
+        <label for="providerSelect">Select Provider:</label>
+        <select
+          id="providerSelect"
+          [(ngModel)]="newHotel.provider_id"
+          name="provider"
+          required
+        >
+          <option value="" disabled>Select Provider</option>
+          <option *ngFor="let provider of providers" [value]="provider.provider_id">
+            {{ provider.name }} (ID: {{ provider.provider_id }})
+          </option>
+        </select>
+
       <!-- Hotel Name -->
       <label for="hotelName">Hotel Name</label>
       <input type="text" id="hotelName" [(ngModel)]="newHotel.name" name="name" required />
@@ -75,11 +89,11 @@
       </div>
 
       <!-- Rooms Available -->
-      <label for="roomsAvailable">Rooms Available</label>
+      <!-- <label for="roomsAvailable">Rooms Available</label>
       <input type="number" id="roomsAvailable" [(ngModel)]="newHotel.roomsAvailable" name="roomsAvailable" required [min]="1" />
       <div *ngIf="hotelForm.submitted && !hotelForm.controls['roomsAvailable']?.valid">
         <small class="error-message">Rooms available is required and should be a positive number.</small>
-      </div>
+      </div> -->
 
       <!-- Check-in Time -->
       <label for="checkin">Check-in Time</label>
@@ -162,7 +176,7 @@
       <button type="button" (click)="addImage()">Add Image</button>
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0 || newHotel.roomsAvailable <= 0">Add Hotel</button>
+      <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0">Add Hotel</button>
       <button type="button" class="btn btn-danger" (click)="closeAddHotelPopup()">Cancel</button>
     </form>
   </div>

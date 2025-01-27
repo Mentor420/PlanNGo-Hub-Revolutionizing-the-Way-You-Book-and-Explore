@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, switchMap } from 'rxjs';
-import { Provider, Hotel, Booking } from '../models/interfaces'; // Adjust the path if necessary
+import { Observable, catchError, map, switchMap, throwError } from 'rxjs';
+import { Provider, Hotel, Booking, User } from '../models/interfaces'; // Adjust the path if necessary
 import { response } from 'express';
 
 @Injectable({
@@ -16,6 +16,27 @@ export class ServiceProviderService {
   getProviders(): Observable<Provider[]> {
     return this.http.get<{ providers: Provider[] }>(`${this.apiUrl}`).pipe(
       map(response => response.providers)
+    );
+  }
+
+  // Add a new provider
+  addProvider(providerData: Provider): Observable<any> {
+    return this.http.get<{ hotels: any[]; providers: Provider[]; users: User[] }>(`${this.apiUrl}`).pipe(
+      switchMap((response) => {
+        // Update the providers array by adding the new provider
+        const updatedProviders = [...response.providers, providerData];
+
+        // Send the updated data back to the server using PUT
+        return this.http.put(`${this.apiUrl}`, {
+          hotels: response.hotels, // Keep hotels array unchanged
+          providers: updatedProviders, // Updated providers array
+          users: response.users, // Keep users array unchanged  
+        });
+      }),
+      catchError((error) => {
+        console.error('Error adding provider:', error.message);
+        return throwError(error);
+      })
     );
   }
 

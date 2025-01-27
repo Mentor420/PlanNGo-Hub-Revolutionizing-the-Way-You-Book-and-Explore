@@ -3,7 +3,7 @@ import { HotelSearchService } from '../../services/hotel-search.service';
 import { CommonModule, isPlatformBrowser, Location } from '@angular/common';
 import { catchError, forkJoin, map } from 'rxjs';
 import { FormatDatePipe } from '../pipe/format-date.pipe';
-import { Booking } from '../../models/interfaces';
+import { Booking, User } from '../../models/interfaces';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class BookingHistoryComponent implements OnInit {
   bookingHistory: any[] = [];
-  isLoading = true;
+  isLoading = false;
   popupTitle = '';
   popupMessage = '';
   isPopupVisible = false;
@@ -32,6 +32,7 @@ export class BookingHistoryComponent implements OnInit {
   nameError = '';
   commentError = '';
   cancelledDueToRoomDeletion: { [key: string]: boolean } = {}
+  userId: string = '';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private hotelSearchService: HotelSearchService, private location: Location) { }
 
@@ -40,8 +41,73 @@ export class BookingHistoryComponent implements OnInit {
       // Load previously closed bookings from localStorage
       const closedBookings = JSON.parse(localStorage.getItem('closedBookings') || '[]');
       this.reviewClosedBookings = new Set(closedBookings);
-      this.loadBookingHistory();
+
+      try {
+        // Check user and fetch data
+        this.checkUserAndInitializeUser().then(() => {
+          // console.log('User ID:', this.userId);
+          if (this.userId) {
+            this.loadBookingHistory();
+          }
+        });
+      } catch (error) {
+        console.error('Error during initialization:', error);
+      }
     }
+  }
+
+  // Function to check the user's role and email, and initialize user
+  async checkUserAndInitializeUser(): Promise<void> {
+    try {
+      if (typeof window !== 'undefined') {
+        const email = localStorage.getItem('email');
+        const role = localStorage.getItem('role');
+
+        if (role === 'User' && email) {
+          const userId = this.generateUniqueUserId(email);
+
+          // Use toPromise to wait for the response from getUsers
+          const users = await this.hotelSearchService.getUsers().toPromise();
+
+          if (users) {
+            const existingUsers = users.find((user) => user.user_id === userId);
+
+            if (!existingUsers) {
+              // Add new user to the backend
+              const newUser: User = {
+                user_id: userId,
+                name: `User for ${email}`, // Adjust naming convention as needed
+              };
+
+              await this.hotelSearchService.addUser(newUser).toPromise();
+              console.log('New user added:', newUser);
+            } else {
+              console.log('User already exists:', existingUsers);
+            }
+
+            // Set the userId to be used throughout the component
+            this.userId = userId;
+            // console.log('User ID initialized:', this.providerId);
+          } else {
+            console.error('Failed to fetch users: Data is undefined.');
+          }
+        }
+      }
+    } catch (error: any) {
+      console.error('Failed to initialize provider:', error.message);
+      throw new Error('Failed to initialize provider: ' + error.message);
+    }
+  }
+
+  // Generate a unique user ID using the email
+  generateUniqueUserId(email: string): string {
+    // Simple hash function to create a unique user ID
+    let hash = 0;
+    for (let i = 0; i < email.length; i++) {
+      hash = (hash << 5) - hash + email.charCodeAt(i);
+      hash |= 0; // Convert to 32bit integer
+    }
+    return `User${Math.abs(hash)}`; // Ensure positive ID
   }
 
   goBack(): void {
@@ -49,7 +115,8 @@ export class BookingHistoryComponent implements OnInit {
   }
 
   loadBookingHistory(): void {
-    const userId = 'u001'; // Replace with dynamic user ID
+    // console.log('Loading booking history for user:', this.userId);
+    const userId = this.userId;
     this.isLoading = true;
     this.hotelSearchService.getUserBookings(userId).subscribe(
       (bookings) => {
@@ -57,7 +124,7 @@ export class BookingHistoryComponent implements OnInit {
           this.hotelSearchService.getHotelDetails(booking.hotelId).pipe(
             map((hotelDetails) => {
               // Find the room details for the current booking
-              const roomDetails = hotelDetails.rooms.find((room:{ roomId: string }) => room.roomId === booking.roomId) || { type: "Room details unavailable", status: "Deleted" };
+              const roomDetails = hotelDetails.rooms.find((room: { roomId: string }) => room.roomId === booking.roomId) || { type: "Room details unavailable", status: "Deleted" };
 
               // Check if the booking was cancelled due to room deletion
               this.cancelledDueToRoomDeletion[booking.id] = booking.status === "Cancelled" && roomDetails.status === "Deleted";
@@ -70,7 +137,9 @@ export class BookingHistoryComponent implements OnInit {
 
               if (currentDate > checkOutDate && booking.status == 'Booked') {
                 // If the checkout date has passed, update the booking status to Completed
-                this.hotelSearchService.updateBookingStatus(booking.id, 'Completed').subscribe(() => {
+                this.hotelSearchService.updateBookingStatusAndAvailability(booking.id, 'Completed',booking.hotelId,
+                  booking.roomId,
+                  booking.roomBooked).subscribe(() => {
                   console.log('Booking status updated to Completed:', booking.id);
                 }, (error) => {
                   console.error('Error updating booking status:', error);
@@ -80,9 +149,9 @@ export class BookingHistoryComponent implements OnInit {
               return {
                 ...booking,
                 hotelImage: hotelDetails.images[0],
-                hotelName: hotelDetails.name, 
-                hotelLocation: hotelDetails.location, 
-                roomDetails: roomDetails, 
+                hotelName: hotelDetails.name,
+                hotelLocation: hotelDetails.location,
+                roomDetails: roomDetails,
               };
             }),
             catchError(() => {
@@ -97,7 +166,7 @@ export class BookingHistoryComponent implements OnInit {
             })
           )
         );
-  
+
         // Combine all hotel detail requests
         forkJoin(bookingRequests).subscribe(
           (updatedBookings) => {
@@ -120,9 +189,9 @@ export class BookingHistoryComponent implements OnInit {
       }
     );
   }
-  
+
   checkForCompletedBookings(): void {
-    const completedBooking = this.bookingHistory.find(booking => 
+    const completedBooking = this.bookingHistory.find(booking =>
       booking.status === 'Completed' && !booking.reviewSubmitted && !this.reviewClosedBookings.has(booking.id)
     );
     if (completedBooking) {
@@ -182,7 +251,7 @@ export class BookingHistoryComponent implements OnInit {
         comment: this.reviewComment.trim(),
         date: new Date().toISOString(),
       };
-  
+
       this.hotelSearchService.submitReview(reviewData).subscribe(
         (updatedRatings) => {
           this.closeReviewPopup();
@@ -197,7 +266,7 @@ export class BookingHistoryComponent implements OnInit {
         }
       );
     }
-  }  
+  }
 
   onCancelBooking(bookingId: string): void {
     // Show confirmation popup for cancellation
@@ -221,7 +290,7 @@ export class BookingHistoryComponent implements OnInit {
       );
     });
   }
-  
+
   // Utility method to show popup
   showPopup(title: string, message: string, confirmCallback?: () => void): void {
     this.popupTitle = title;
@@ -230,7 +299,7 @@ export class BookingHistoryComponent implements OnInit {
     // Store the confirmation callback if it's provided
     this.confirmCallback = confirmCallback || null;
   }
-  
+
   closePopup(): void {
     this.isPopupVisible = false;
   }
@@ -242,7 +311,7 @@ export class BookingHistoryComponent implements OnInit {
       this.confirmCallback = null; // Reset the callback after execution
     }
   }
-  
+
   setSelectedBooking(booking: Booking): void {
     this.selectedBooking = booking;
   }

@@ -7,14 +7,14 @@
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
       <div class="card">
         <div class="card-header">
-          <h2 class="card-title">Total Rooms</h2>
+          <h2 class="card-title">Total Available Rooms</h2>
           <i class="icon-bed"></i>
         </div>
         <div class="card-content">
           <div class="text-2xl font-bold">{{ hotelData ? getTotalAvailableRooms(hotelData) : 0 }}</div>
         </div>
       </div>
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-header">
           <h2 class="card-title">Available Rooms</h2>
           <i class="icon-bed"></i>
@@ -22,7 +22,7 @@
         <div class="card-content">
           <div class="text-2xl font-bold">{{ hotelData ? getAvailableRooms(hotelData) : 0 }}</div>
         </div>
-      </div>
+      </div> -->
       <div class="card">
         <div class="card-header">
           <h2 class="card-title">Total Bookings</h2>

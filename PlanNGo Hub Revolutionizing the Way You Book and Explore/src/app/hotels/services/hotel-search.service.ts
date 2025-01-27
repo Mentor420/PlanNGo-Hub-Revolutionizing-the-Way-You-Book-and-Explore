@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, switchMap, map } from 'rxjs';
+import { Observable, switchMap, map, catchError, throwError } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
-import { Hotel } from '../models/interfaces';
+import { Hotel, Provider, User } from '../models/interfaces';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,10 +11,39 @@ export class HotelSearchService {
 
   constructor(private http: HttpClient) { }
 
+  // Fetch users
+  getUsers(): Observable<User[]> {
+    return this.http.get<{ users: User[] }>(`${this.apiUrl}`).pipe(
+      map(response => response.users)
+    );
+  }
+
+  // Add a new user
+  addUser(userData: User): Observable<any> {
+    return this.http.get<{ hotels: any[]; providers: Provider; users: User[] }>(`${this.apiUrl}`).pipe(
+      switchMap((response) => {
+        // Update the providers array by adding the new provider
+        const updatedUsers = [...response.users, userData];
+
+        // Send the updated data back to the server using PUT
+        return this.http.put(`${this.apiUrl}`, {
+          hotels: response.hotels, // Keep hotels array unchanged
+          providers: response.providers, // Keep providers array unchanged
+          users: updatedUsers, // Updated users array
+        });
+      }),
+      catchError((error) => {
+        console.error('Error adding user:', error.message);
+        return throwError(error);
+      })
+    );
+  }
+
+  
   // Fetch all hotels
   getHotels(): Observable<Hotel[]> {
     return this.http.get<{ hotels: Hotel[] }>(`${this.apiUrl}`).pipe(
-      map(response => response.hotels) 
+      map(response => response.hotels)
     );
   }
 
@@ -40,14 +69,17 @@ export class HotelSearchService {
     const { hotelId, bookingId, rating, author, comment, date } = reviewData;
   
     // Fetch the data from the new endpoint
-    return this.http.get<{ hotels: any[] }>(`${this.apiUrl}`).pipe(
+    return this.http.get<{ hotels: any[]; providers: any[]; users: any[] }>(`${this.apiUrl}`).pipe(
       switchMap((response) => {
         // Extract the specific hotel
-        const hotel = response.hotels.find((h: any) => h.id === hotelId);
+        const hotels = [...response.hotels];
+        const hotelIndex = hotels.findIndex((h: any) => h.id === hotelId);
   
-        if (!hotel) {
+        if (hotelIndex === -1) {
           throw new Error('Hotel not found');
         }
+  
+        const hotel = hotels[hotelIndex];
   
         const currentRatings = hotel.ratings || {
           averageRating: 0,
@@ -90,9 +122,9 @@ export class HotelSearchService {
         // Generate a new review ID
         const highestReviewId = currentReviews.length > 0
           ? currentReviews.reduce((maxId: number, review: any) => {
-              const numericId = parseInt(review.id.split('-')[1].replace('rW', ''), 10);
-              return Math.max(maxId, numericId);
-            }, 0)
+            const numericId = parseInt(review.id.split('-')[1].replace('rW', ''), 10);
+            return Math.max(maxId, numericId);
+          }, 0)
           : 0;
   
         const newReviewId = `${hotelId}-rW${(highestReviewId + 1).toString().padStart(3, '0')}`;
@@ -108,18 +140,19 @@ export class HotelSearchService {
   
         const updatedReviews = [...currentReviews, newReview];
   
-        // Update the hotel data
-        return this.http.patch(`${this.apiUrl}`, {
-          hotels: response.hotels.map((h) =>
-            h.id === hotelId
-              ? {
-                  ...h,
-                  ratings: updatedRatings,
-                  reviews: updatedReviews,
-                  bookings: currentBookings,
-                }
-              : h
-          ),
+        // Update the hotel data directly in the hotels array
+        hotels[hotelIndex] = {
+          ...hotel,
+          ratings: updatedRatings,
+          reviews: updatedReviews,
+          bookings: currentBookings,
+        };
+  
+        // Send the updated hotels array back to the server
+        return this.http.put(`${this.apiUrl}`, { 
+          hotels: hotels,
+          providers: response.providers,
+          users: response.users,
         });
       })
     );
@@ -198,9 +231,9 @@ export class HotelSearchService {
         // Find the highest current booking ID or start with 'b001' if no bookings exist
         const highestId = hotel.bookings.length > 0
           ? hotel.bookings.reduce((maxId: number, booking: any) => {
-              const numericId = parseInt(booking.id.split('-')[1].replace('b', ''), 10);
-              return Math.max(maxId, numericId);
-            }, 0)
+            const numericId = parseInt(booking.id.split('-')[1].replace('b', ''), 10);
+            return Math.max(maxId, numericId);
+          }, 0)
           : 0;
   
         // Generate a new booking ID
@@ -212,14 +245,44 @@ export class HotelSearchService {
           ...bookingData,
         });
   
+        // Update room availability for the booked room
+        const room = hotel.rooms?.find((r: any) => r.roomId === bookingData.roomId);
+        if (!room) {
+          throw new Error('Room not found');
+        }
+  
+        // Check if enough rooms are available for booking
+        if (room.availableRooms < bookingData.roomBooked) {
+          throw new Error('Not enough rooms available');
+        }
+  
+        // Deduct the booked rooms from the room's availability
+        room.availableRooms -= bookingData.roomBooked;
+  
+        // Recalculate the total available rooms for the hotel
+        hotel.roomsAvailable = hotel.rooms.reduce(
+          (total: number, currentRoom: any) => total + currentRoom.availableRooms,
+          0
+        );
+  
         // Update the hotel object in the data structure
         return this.http.put(`${this.apiUrl}`, data);
+      }),
+      catchError((error) => {
+        console.error('Error saving booking:', error.message);
+        return throwError(error);
       })
     );
-  }
-  
+  }  
+
   // Update booking status function
-  updateBookingStatus(bookingId: string, newStatus: string): Observable<any> {
+  updateBookingStatusAndAvailability(
+    bookingId: string,
+    newStatus: string,
+    hotelId: string,
+    roomId: string,
+    roomBooked: number
+  ): Observable<any> {
     return this.http.get<{ hotels: any[] }>(`${this.apiUrl}`).pipe(
       switchMap((data) => {
         const hotel = data.hotels.find((h: any) =>
@@ -227,19 +290,40 @@ export class HotelSearchService {
         );
   
         if (!hotel) {
-          throw new Error('Booking not found in any hotel');
+          throw new Error("Booking not found in any hotel");
         }
   
         const booking = hotel.bookings.find((b: any) => b.id === bookingId);
-        if (booking) {
-          booking.status = newStatus; // Update the status
+        if (!booking) {
+          throw new Error("Booking not found");
+        }
+  
+        const room = hotel.rooms.find((r: any) => r.roomId === roomId);
+        if (!room) {
+          throw new Error("Room not found");
+        }
+  
+        // Update booking status
+        booking.status = newStatus;
+  
+        // Update room and hotel availability only if status is 'Completed'
+        if (newStatus === "Completed") {
+          room.availableRooms += roomBooked; // Increase room availability
+          hotel.roomsAvailable = hotel.rooms.reduce(
+            (total: number, r: any) => total + r.availableRooms,
+            0
+          );
         }
   
         // Update the hotel object in the data structure
         return this.http.put(`${this.apiUrl}`, data);
+      }),
+      catchError((error) => {
+        console.error("Error updating booking status and room availability:", error);
+        return throwError(error);
       })
     );
-  }
+  }  
 
   // Get all bookings for a user across all hotels
   getUserBookings(userId: string): Observable<any[]> {
@@ -264,16 +348,16 @@ export class HotelSearchService {
         const hotel = data.hotels.find((hotel: any) =>
           hotel.bookings && hotel.bookings.some((booking: any) => booking.id === bookingId)
         );
-  
+
         if (!hotel) {
           throw new Error('Booking not found in any hotel');
         }
-  
+
         const booking = hotel.bookings.find((booking: any) => booking.id === bookingId);
         if (booking) {
           booking.status = 'Cancelled'; // Update the status
         }
-  
+
         // Update the hotel object in the data structure
         return this.http.put(`${this.apiUrl}`, data);
       })

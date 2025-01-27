@@ -7,7 +7,7 @@
     "hotels": [
       {
         "id": "hT01",
-        "provider_id": "Provider1",
+        "provider_id": "Provider1218206823",
         "city": "Goa",
         "name": "Goa Paradise",
         "description": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
@@ -725,11 +725,12 @@
       },
       {
         "id": "hT019",
+        "provider_id": "Provider1218206823",
         "city": "Goa",
         "name": "Goa Tranquil Villa",
         "description": "Charming boutique villa in Goa nestled among coconut groves, featuring cozy cottages, delicious seafood, and serene sunset views.",
         "pricePerNight": 1800,
-        "roomsAvailable": 6,
+        "roomsAvailable": 4,
         "rooms": [
           {
             "roomId": "r001",
@@ -757,7 +758,7 @@
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 2,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -845,14 +846,22 @@
         ],
         "bookings": [
           {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 2
+            "id": "hT019-b001",
+            "userId": "User786293721",
+            "hotelId": "hT019",
+            "roomId": "r002",
+            "fullName": "Ridam Aditya Sinha",
+            "email": "ridamsinha20@gmail.com",
+            "mobile": "9532911742",
+            "idProof": "C:\\fakepath\\Capture001.png",
+            "couponCode": "DISCOUNT10",
+            "checkInDate": "2025-01-27",
+            "checkOutDate": "2025-01-28",
+            "bookingDate": "2025-01-27T05:50:59.111Z",
+            "roomBooked": 1,
+            "price": 2490,
+            "status": "Booked",
+            "reviewSubmitted": false
           }
         ],
         "ratings": {
@@ -4188,11 +4197,21 @@
     "providers": [
       {
         "provider_id": "Provider1",
-        "name": "Travel Agency X"
+        "name": "Hotel Agency X"
       },
       {
         "provider_id": "Provider2",
-        "name": "Travel Agency Y"
+        "name": "Hotel Agency Y"
+      },
+      {
+        "provider_id": "Provider1218206823",
+        "name": "Provider for ridamsinha20+01@gmail.com"
+      }
+    ],
+    "users": [
+      {
+        "user_id": "User786293721",
+        "name": "User for ridamsinha20@gmail.com"
       }
     ]
   }

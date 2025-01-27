@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin, Observable, throwError } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { Booking, Room } from '../models/interfaces';
+import { Booking, Room, User } from '../models/interfaces';
 import { Hotel, Provider } from '../models/interfaces';
 
 // Extended Room interface to include hotelId
@@ -56,7 +56,7 @@ export class AdminService {
 
   // Add a new hotel
   addHotel(hotelData: Hotel): Observable<any> {
-    return this.http.get<{ hotels: any[]; providers: any[] }>(`${this.apiUrl}`).pipe(
+    return this.http.get<{ hotels: any[]; providers: any[]; users: User[] }>(`${this.apiUrl}`).pipe(
       switchMap((response) => {
         // Update the hotels array by adding the new hotel
         const updatedHotels = [...response.hotels, hotelData];
@@ -65,6 +65,7 @@ export class AdminService {
         return this.http.put(`${this.apiUrl}`, {
           hotels: updatedHotels, // Updated hotels array
           providers: response.providers, // Keep providers array unchanged
+          users: response.users, // Keep users array unchanged
         });
       })
     );
@@ -73,7 +74,7 @@ export class AdminService {
 
   // Delete a hotel by ID
   deleteHotel(hotelId: string): Observable<any> {
-    return this.http.get<{ hotels: any[],providers: any[] }>(`${this.apiUrl}`).pipe(
+    return this.http.get<{ hotels: any[]; providers: any[]; users: User[]  }>(`${this.apiUrl}`).pipe(
       switchMap((response) => {
         // Filter out the hotel to be deleted
         const updatedHotels = response.hotels.filter((hotel) => hotel.id !== hotelId);
@@ -82,6 +83,7 @@ export class AdminService {
         return this.http.put(`${this.apiUrl}`, {
           hotels: updatedHotels,
           providers: response.providers,
+          users: response.users,
         });
       })
     );

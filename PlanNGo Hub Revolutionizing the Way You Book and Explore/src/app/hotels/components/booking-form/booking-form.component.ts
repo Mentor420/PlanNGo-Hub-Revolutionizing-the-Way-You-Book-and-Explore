@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RatingService } from '../../services/rating.service';
 import { ChangeDetectorRef, NgZone } from '@angular/core';
 import { HotelIdService } from '../../services/hotel-id.service';
+import { User } from '../../models/interfaces';
 
 @Component({
   selector: 'app-booking-form',
@@ -30,6 +31,7 @@ export class BookingFormComponent implements OnInit {
   bookingData: any;
   bookingForm!: FormGroup;
   taxRate = 240;
+  userId: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -44,20 +46,42 @@ export class BookingFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    try {
+      // Initialize bookingForm immediately to prevent template errors
+      this.bookingForm = this.fb.group({
+        fullName: [''],
+        email: [''],
+        mobile: [''],
+        idProof: [''],
+        couponCode: ['']
+      });
+  
+      // Check user and fetch data
+      this.checkUserAndInitializeUser().then(() => {
+        if (this.userId) {
+          this.fetchData();
+        }
+      });
+    } catch (error) {
+      console.error('Error during initialization:', error);
+    }
+  }
+  
+  fetchData(): void {
     this.bookingData = this.hotelIdService.getBookingData();
-
+  
     if (this.bookingData) {
       this.hotelId = this.bookingData.hotelId;
       this.roomId = this.bookingData.roomId;
       this.checkInDate = this.bookingData.checkInDate;
       this.checkOutDate = this.bookingData.checkOutDate;
       this.roomsBooked = this.bookingData.roomCount;
+  
       if (this.hotelId && this.roomId) {
         this.hotelSearchService.getHotelDetails(this.hotelId).subscribe(
           (hotel) => {
             this.hotel = hotel;
             this.roomDetails = hotel.rooms.find((room: any) => room.roomId === this.roomId);
-            // Merge amenities and room benefits
             this.mergeAmenities();
           },
           (error) => {
@@ -66,15 +90,16 @@ export class BookingFormComponent implements OnInit {
         );
       }
     }
-   
+  
+    // Reinitialize bookingForm with validators
     this.bookingForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      mobile: ['', Validators.required],
+      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       idProof: ['', Validators.required],
-      couponCode: [''],
+      couponCode: ['']
     });
-  }
+  }  
 
   mergeAmenities(): void {
     if (this.hotel?.amenities) {
@@ -104,7 +129,60 @@ export class BookingFormComponent implements OnInit {
     }
   }
   
+  // Function to check the user's role and email, and initialize user
+  async checkUserAndInitializeUser(): Promise<void> {
+    try {
+      if (typeof window !== 'undefined') {
+        const email = localStorage.getItem('email');
+        const role = localStorage.getItem('role');
+  
+        if (role === 'User' && email) {
+          const userId = this.generateUniqueUserId(email);
+  
+          // Use toPromise to wait for the response from getUsers
+          const users = await this.hotelSearchService.getUsers().toPromise();
+  
+          if (users) {
+            const existingUsers = users.find((user) => user.user_id === userId);
+  
+            if (!existingUsers) {
+              // Add new user to the backend
+              const newUser: User = {
+                user_id: userId,
+                name: `User for ${email}`, // Adjust naming convention as needed
+              };
+  
+              await this.hotelSearchService.addUser(newUser).toPromise();
+              console.log('New user added:', newUser);
+            } else {
+              console.log('User already exists:', existingUsers);
+            }
+  
+            // Set the userId to be used throughout the component
+            this.userId = userId;
+            // console.log('User ID initialized:', this.userId);
+          } else {
+            console.error('Failed to fetch users: Data is undefined.');
+          }
+        }
+      }
+    } catch (error: any) {
+      console.error('Failed to initialize user:', error.message);
+      throw new Error('Failed to initialize user: ' + error.message);
+    }
+  }  
 
+  // Generate a unique user ID using the email
+  generateUniqueUserId(email: string): string {
+    // Simple hash function to create a unique user ID
+    let hash = 0;
+    for (let i = 0; i < email.length; i++) {
+      hash = (hash << 5) - hash + email.charCodeAt(i);
+      hash |= 0; // Convert to 32bit integer
+    }
+    return `User${Math.abs(hash)}`; // Ensure positive ID
+  }
+  
   get total(): number {
     return this.roomDetails.pricePerNight + this.taxRate;
   }
@@ -114,10 +192,17 @@ export class BookingFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (!this.userId || this.userId.trim() === '') {
+      this.showPopup(
+        'Booking Restricted!! Booking can only be done with a valid user ID. Please log in or sign up to proceed.', 'error'
+      );
+      return; // Exit the method to prevent further execution
+    }
+
     if (this.bookingForm.valid) {
       console.log(this.bookingForm.value);
       const bookingData = {
-        userId: 'u001', // Replace with the actual user ID
+        userId: this.userId,
         hotelId: this.hotel.id,
         roomId: this.roomDetails.roomId,
         ...this.bookingForm.value,

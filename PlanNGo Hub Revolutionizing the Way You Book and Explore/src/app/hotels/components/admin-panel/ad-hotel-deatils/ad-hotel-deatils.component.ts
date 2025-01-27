@@ -20,8 +20,8 @@ export class AdHotelDeatilsComponent implements OnInit {
   showDeletePopup = false;
   hotelToDeleteId: string | null = null;
   providers: Provider[] = [];
-  groupedHotels: { providerName: string; hotels: Hotel[] }[] = [];
-  originalGroupedHotels: { providerName: string; hotels: Hotel[] }[] = [];
+  groupedHotels: { providerName: string; provider_id: string; hotels: Hotel[] }[] = [];
+  originalGroupedHotels: { providerName: string; provider_id: string; hotels: Hotel[] }[] = [];
 
   hours: string[] = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
   minutes: string[] = ['00', '15', '30', '45'];
@@ -75,17 +75,21 @@ export class AdHotelDeatilsComponent implements OnInit {
               const providerName = provider?.name || 'Unknown Provider';
   
               if (!acc[providerName]) {
-                acc[providerName] = [];
+                acc[providerName] = {
+                  provider_id: provider?.provider_id || 'Unknown Provider ID',
+                  hotels: [],
+                };
               }
-              acc[providerName].push(hotel);
+              acc[providerName].hotels.push(hotel);
   
               return acc;
-            }, {} as { [key: string]: Hotel[] });
+            }, {} as { [key: string]: { provider_id: string; hotels: Hotel[] } });
   
             // Convert grouped object into an array
-            this.groupedHotels = Object.entries(grouped).map(([providerName, hotels]) => ({
+            this.groupedHotels = Object.entries(grouped).map(([providerName, data]) => ({
               providerName,
-              hotels,
+              provider_id: data.provider_id,
+              hotels: data.hotels,
             }));
             this.originalGroupedHotels = [...this.groupedHotels];
           },
@@ -135,10 +139,11 @@ export class AdHotelDeatilsComponent implements OnInit {
     // Initialize newHotel with the required properties
     this.newHotel = {
       ...this.newHotel,
-      name: '',
+      provider_id: '',
+      name: this.capitalizeEachWord(''),
       description: '',
       pricePerNight: 0,
-      city: '',
+      city: this.capitalizeEachWord(''),
       roomsAvailable: 0,
       amenities: [],
       checkin: '',
@@ -157,9 +162,22 @@ export class AdHotelDeatilsComponent implements OnInit {
     this.showAddHotelPopup = false;
   }
 
-  
+  capitalizeEachWord(str: string): string {
+    return str
+      .split(' ') // Split the string into words
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
+      .join(' '); // Join the words back into a single string
+  } 
+
   // Add a new hotel to the database
   addHotel(): void {
+    if (!this.newHotel.provider_id) {
+      alert('Please select a provider.');
+      return;
+    }
+    
+    this.newHotel.name = this.capitalizeEachWord(this.newHotel.name);
+    this.newHotel.city = this.capitalizeEachWord(this.newHotel.city);
     this.newHotel.checkin = `${this.checkinHour}:${this.checkinMinute} ${this.checkinPeriod}`;
     this.newHotel.checkout = `${this.checkoutHour}:${this.checkoutMinute} ${this.checkoutPeriod}`;
     
