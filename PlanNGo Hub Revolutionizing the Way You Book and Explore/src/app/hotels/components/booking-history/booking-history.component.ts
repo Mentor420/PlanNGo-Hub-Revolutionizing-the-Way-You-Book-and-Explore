@@ -63,7 +63,7 @@ export class BookingHistoryComponent implements OnInit {
         const email = localStorage.getItem('email');
         const role = localStorage.getItem('role');
 
-        if (role === 'User' && email) {
+        if (role === 'Customer' && email) {
           const userId = this.generateUniqueUserId(email);
 
           // Use toPromise to wait for the response from getUsers
