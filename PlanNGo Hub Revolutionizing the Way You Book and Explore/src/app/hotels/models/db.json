@@ -12,7 +12,7 @@
         "name": "Goa Paradise",
         "description": "Luxurious hotel in Goa offering modern amenities, serene ambiance, and proximity to beaches, perfect for relaxation and adventure.",
         "pricePerNight": 1500,
-        "roomsAvailable": 5,
+        "roomsAvailable": 6,
         "rooms": [
           {
             "roomId": "r002",
@@ -26,7 +26,7 @@
               "Room Service",
               "City View"
             ],
-            "availableRooms": 5,
+            "availableRooms": 6,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -212,7 +212,7 @@
             "bookingDate": "2025-01-27T19:26:35.861Z",
             "roomBooked": 1,
             "price": 2740,
-            "status": "Booked",
+            "status": "Completed",
             "reviewSubmitted": false
           }
         ],
@@ -311,8 +311,8 @@
         "city": "Goa",
         "name": "Goa Beachfront Resort",
         "description": "Beachfront hotel in Goa offering vibrant nightlife, water sports, and tropical vibes, perfect for adventure seekers and beach lovers.",
-        "pricePerNight": 1000,
-        "roomsAvailable": 10,
+        "pricePerNight": 2000,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r001",
@@ -447,30 +447,35 @@
           }
         ],
         "ratings": {
-          "averageRating": 4.1,
-          "ratingsCount": 220,
+          "averageRating": 0,
+          "ratingsCount": 0,
           "ratingBreakdown": {
-            "1": 3,
-            "2": 7,
-            "3": 30,
-            "4": 60,
-            "5": 120
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0
           }
-        }
+        },
+        "reviews": [],
+        "status": "Active"
       },
       {
         "id": "hT017",
+        "provider_id": "Provider2",
         "city": "Goa",
         "name": "Goa Serenity Resort",
         "description": "Luxury resort in Goa with private villas, infinity pools, and direct beach access, ideal for romantic getaways and family vacations.",
-        "pricePerNight": 1600,
-        "roomsAvailable": 7,
+        "pricePerNight": 2500,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -487,6 +492,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -571,36 +578,50 @@
           "https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.5,
+          "ratingsCount": 3,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 2
+            "id": "hT017-rW001",
+            "author": "John Doe",
+            "rating": 5,
+            "comment": "Absolutely stunning resort with impeccable service!",
+            "date": "2025-01-15T10:30:00Z"
           },
           {
-            "checkInDate": "2024-12-23",
-            "checkOutDate": "2024-12-27",
-            "roomsBooked": 3
+            "id": "hT017-rW002",
+            "author": "Jane Smith",
+            "rating": 4,
+            "comment": "Beautiful location, but the food could be improved.",
+            "date": "2025-01-10T14:45:00Z"
+          },
+          {
+            "id": "hT017-rW003",
+            "author": "Mike Johnson",
+            "rating": 5,
+            "comment": "Perfect getaway for couples. The private villa was amazing!",
+            "date": "2025-01-05T09:15:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 4.8,
-          "ratingsCount": 300,
-          "ratingBreakdown": {
-            "1": 5,
-            "2": 10,
-            "3": 25,
-            "4": 80,
-            "5": 180
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT018",
+        "provider_id": "Provider1",
         "city": "Goa",
         "name": "Goa Lagoon Retreat",
         "description": "Eco-friendly hotel in Goa blending nature with comfort, offering organic dining, yoga retreats, and stunning coastal scenery.",
-        "pricePerNight": 2000,
+        "pricePerNight": 4000,
         "roomsAvailable": 2,
         "rooms": [
           {
@@ -608,6 +629,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -702,16 +725,6 @@
         ],
         "bookings": [
           {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 3
-          },
-          {
-            "checkInDate": "2024-12-22",
-            "checkOutDate": "2024-12-25",
-            "roomsBooked": 2
-          },
-          {
             "id": "hT018-b001",
             "userId": "u001",
             "hotelId": "hT018",
@@ -731,16 +744,44 @@
           }
         ],
         "ratings": {
-          "averageRating": 4.7,
-          "ratingsCount": 215,
+          "averageRating": 4.5,
+          "ratingsCount": 3,
           "ratingBreakdown": {
-            "1": 1,
-            "2": 4,
-            "3": 15,
-            "4": 45,
-            "5": 150
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT018-rW001",
+            "author": "Emily Johnson",
+            "rating": 5,
+            "comment": "Incredible eco-friendly retreat! The yoga sessions were fantastic.",
+            "date": "2025-01-20T11:30:00Z"
+          },
+          {
+            "id": "hT018-rW002",
+            "author": "David Lee",
+            "rating": 4,
+            "comment": "Beautiful location and great organic food. Rooms could use some updating.",
+            "date": "2025-01-18T09:45:00Z"
+          },
+          {
+            "id": "hT018-rW003",
+            "author": "Sarah Thompson",
+            "rating": 5,
+            "comment": "Perfect place to reconnect with nature. The staff was incredibly friendly!",
+            "date": "2025-01-15T14:20:00Z"
+          }
+        ],
+        "bankOffer": {
+          "discount": 400,
+          "details": "Get 10% off on bookings made with SBI Credit Cards"
+        },
+        "status": "Active"
       },
       {
         "id": "hT019",
@@ -748,7 +789,7 @@
         "city": "Goa",
         "name": "Goa Tranquil Villa",
         "description": "Charming boutique villa in Goa nestled among coconut groves, featuring cozy cottages, delicious seafood, and serene sunset views.",
-        "pricePerNight": 1800,
+        "pricePerNight": 2500,
         "roomsAvailable": 4,
         "rooms": [
           {
@@ -756,6 +797,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -772,6 +815,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -879,36 +924,62 @@
             "bookingDate": "2025-01-27T05:50:59.111Z",
             "roomBooked": 1,
             "price": 2490,
-            "status": "Booked",
+            "status": "Cancelled",
             "reviewSubmitted": false
           }
         ],
         "ratings": {
-          "averageRating": 4.5,
-          "ratingsCount": 180,
+          "averageRating": 4,
+          "ratingsCount": 3,
           "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 20,
-            "4": 60,
-            "5": 95
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 0
           }
         },
+        "reviews": [
+          {
+            "id": "hT019-rW001",
+            "author": "Michael Brown",
+            "rating": 3,
+            "comment": "Absolutely loved the cozy cottages and the delicious seafood!",
+            "date": "2025-01-22T16:45:00Z"
+          },
+          {
+            "id": "hT019-rW002",
+            "author": "Lisa Chen",
+            "rating": 4,
+            "comment": "Beautiful sunset views, but the Wi-Fi could be improved.",
+            "date": "2025-01-19T10:30:00Z"
+          },
+          {
+            "id": "hT019-rW003",
+            "author": "Robert Taylor",
+            "rating": 4,
+            "comment": "Perfect getaway spot! The staff was incredibly friendly and helpful.",
+            "date": "2025-01-16T13:15:00Z"
+          }
+        ],
         "status": "Active"
       },
       {
         "id": "hT02",
+        "provider_id": "Provider1",
         "city": "Mumbai",
         "name": "Mumbai Grand Hotel",
         "description": "Upscale hotel in Mumbai with panoramic sea views, award-winning restaurants, and seamless connectivity to business hubs and shopping districts.",
         "pricePerNight": 2500,
-        "roomsAvailable": 3,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -925,6 +996,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1009,29 +1082,42 @@
           "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1694931537977-8da9c06b1709?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdvYXxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.5,
+          "ratingsCount": 3,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-16",
-            "roomsBooked": 2
+            "id": "hT02-rW001",
+            "author": "Priya Sharma",
+            "rating": 5,
+            "comment": "Exceptional service and breathtaking views of the Arabian Sea!",
+            "date": "2025-01-15T09:30:00Z"
           },
           {
-            "checkInDate": "2024-12-16",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 3
+            "id": "hT02-rW002",
+            "author": "Rahul Mehta",
+            "rating": 4,
+            "comment": "Great location, but the breakfast could have more variety.",
+            "date": "2025-01-10T14:15:00Z"
+          },
+          {
+            "id": "hT02-rW003",
+            "author": "Sarah Johnson",
+            "rating": 5,
+            "comment": "Luxurious rooms and impeccable attention to detail. Will definitely return!",
+            "date": "2025-01-05T11:45:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 4.9,
-          "ratingsCount": 320,
-          "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 15,
-            "4": 50,
-            "5": 250
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT010",
@@ -1047,13 +1133,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -1063,6 +1151,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1186,16 +1276,39 @@
           }
         ],
         "ratings": {
-          "averageRating": 4.8,
-          "ratingsCount": 400,
+          "averageRating": 4.5,
+          "ratingsCount": 3,
           "ratingBreakdown": {
-            "1": 1,
-            "2": 4,
-            "3": 15,
-            "4": 50,
-            "5": 330
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
           }
         },
+        "reviews": [
+          {
+            "id": "hT010-rW001",
+            "author": "Amit Patel",
+            "rating": 5,
+            "comment": "Stunning views of Marine Drive and excellent service!",
+            "date": "2025-01-18T16:30:00Z"
+          },
+          {
+            "id": "hT010-rW002",
+            "author": "Emily Wong",
+            "rating": 4,
+            "comment": "Luxurious stay, but the spa treatments were a bit pricey.",
+            "date": "2025-01-12T10:45:00Z"
+          },
+          {
+            "id": "hT010-rW003",
+            "author": "Rajesh Kumar",
+            "rating": 5,
+            "comment": "Perfect location for business travelers. Will definitely return!",
+            "date": "2025-01-08T14:20:00Z"
+          }
+        ],
         "bankOffer": {
           "discount": 150,
           "details": "Book with Axis Bank to get 150 INR off."
@@ -1204,9 +1317,10 @@
       },
       {
         "id": "hT020",
+        "provider_id": "Provider1218206823",
         "city": "Mumbai",
         "name": "Mumbai City Luxe",
-        "description": "Stylish hotel in Mumbai’s Bandra district offering contemporary rooms, rooftop dining, and easy access to trendy cafes and nightlife.",
+        "description": "Stylish hotel in Mumbai's Bandra district offering contemporary rooms, rooftop dining, and easy access to trendy cafes and nightlife.",
         "pricePerNight": 3000,
         "roomsAvailable": 5,
         "rooms": [
@@ -1215,6 +1329,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -1231,6 +1347,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1315,32 +1433,46 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.2,
+          "ratingsCount": 3,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 1
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 3
+            "id": "hT020-rW001",
+            "author": "Neha Gupta",
+            "rating": 5,
+            "comment": "Fantastic rooftop dining experience with a great view of Bandra!",
+            "date": "2025-01-20T19:15:00Z"
           },
           {
-            "checkInDate": "2024-12-22",
-            "checkOutDate": "2024-12-26",
-            "roomsBooked": 4
+            "id": "hT020-rW002",
+            "author": "Mark Thompson",
+            "rating": 4,
+            "comment": "Stylish rooms and great location, but the gym could use more equipment.",
+            "date": "2025-01-16T11:30:00Z"
+          },
+          {
+            "id": "hT020-rW003",
+            "author": "Ananya Desai",
+            "rating": 4,
+            "comment": "Perfect for exploring Mumbai's nightlife. Staff was incredibly helpful!",
+            "date": "2025-01-11T09:45:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 4.6,
-          "ratingsCount": 370,
-          "ratingBreakdown": {
-            "1": 3,
-            "2": 7,
-            "3": 20,
-            "4": 100,
-            "5": 240
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT021",
+        "provider_id": "Provider1",
         "city": "Mumbai",
         "name": "Mumbai Royal Stay",
         "description": "Modern luxury hotel in Mumbai, situated near the Gateway of India, featuring sophisticated interiors and world-class service.",
@@ -1352,13 +1484,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -1368,6 +1502,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1452,32 +1588,46 @@
           "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-23",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 3.8,
-          "ratingsCount": 210,
+          "ratingsCount": 3,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 15,
-            "3": 40,
-            "4": 80,
-            "5": 70
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 1,
+            "5": 1
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT021-rW001",
+            "author": "Vikram Singh",
+            "rating": 4,
+            "comment": "Excellent location near Gateway of India. Room service was prompt.",
+            "date": "2025-01-19T13:20:00Z"
+          },
+          {
+            "id": "hT021-rW002",
+            "author": "Lisa Chen",
+            "rating": 3,
+            "comment": "Nice interiors, but the noise from the street was a bit disturbing.",
+            "date": "2025-01-14T10:15:00Z"
+          },
+          {
+            "id": "hT021-rW003",
+            "author": "Rajesh Khanna",
+            "rating": 5,
+            "comment": "Impeccable service and the view from the rooftop restaurant is breathtaking!",
+            "date": "2025-01-09T18:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT022",
+        "provider_id": "Provider2",
         "city": "Mumbai",
         "name": "Mumbai Oceanfront Suites",
         "description": "Heritage hotel in South Mumbai blending colonial architecture with luxury amenities, ideal for history enthusiasts and modern travelers.",
@@ -1489,13 +1639,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -1505,6 +1657,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1589,32 +1743,46 @@
           "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 2
-          },
-          {
-            "checkInDate": "2024-12-24",
-            "checkOutDate": "2024-12-28",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4,
-          "ratingsCount": 275,
+          "ratingsCount": 3,
           "ratingBreakdown": {
-            "1": 10,
-            "2": 15,
-            "3": 50,
-            "4": 110,
-            "5": 90
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT022-rW001",
+            "author": "Arjun Kapoor",
+            "rating": 5,
+            "comment": "A perfect blend of heritage and luxury. The colonial architecture is stunning!",
+            "date": "2025-01-21T15:45:00Z"
+          },
+          {
+            "id": "hT022-rW002",
+            "author": "Sophie Williams",
+            "rating": 4,
+            "comment": "Beautiful oceanfront views, but the Wi-Fi was a bit slow at times.",
+            "date": "2025-01-17T11:20:00Z"
+          },
+          {
+            "id": "hT022-rW003",
+            "author": "Ravi Shankar",
+            "rating": 5,
+            "comment": "Exceptional service and the guided heritage tour was fascinating!",
+            "date": "2025-01-13T09:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT03",
+        "provider_id": "Provider1",
         "city": "Delhi",
         "name": "Delhi Luxury Inn",
         "description": "Lavish hotel in Delhi's Connaught Place with luxurious amenities, rooftop dining, and easy access to iconic landmarks like India Gate.",
@@ -1626,13 +1794,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 4,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -1642,6 +1812,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1726,32 +1898,74 @@
           "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 3.1,
+          "ratingsCount": 7,
+          "ratingBreakdown": {
+            "1": 1,
+            "2": 1,
+            "3": 2,
+            "4": 2,
+            "5": 1
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-22",
-            "checkOutDate": "2024-12-24",
-            "roomsBooked": 4
+            "id": "hT03-rW001",
+            "author": "Rahul Sharma",
+            "rating": 4,
+            "comment": "Great location, but the breakfast could use more variety.",
+            "date": "2025-01-15T10:30:00Z"
           },
           {
-            "checkInDate": "2024-12-24",
-            "checkOutDate": "2024-12-30",
-            "roomsBooked": 5
+            "id": "hT03-rW002",
+            "author": "Emily Johnson",
+            "rating": 2,
+            "comment": "Disappointing stay. Room cleanliness was not up to par.",
+            "date": "2025-01-10T14:45:00Z"
+          },
+          {
+            "id": "hT03-rW001",
+            "author": "Rahul Sharma",
+            "rating": 4,
+            "comment": "Great location, but the breakfast could use more variety.",
+            "date": "2025-01-15T10:30:00Z"
+          },
+          {
+            "id": "hT03-rW002",
+            "author": "Emily Johnson",
+            "rating": 2,
+            "comment": "Disappointing stay. Room cleanliness was not up to par.",
+            "date": "2025-01-10T14:45:00Z"
+          },
+          {
+            "id": "hT03-rW001",
+            "author": "Rahul Sharma",
+            "rating": 4,
+            "comment": "Great location, but the breakfast could use more variety.",
+            "date": "2025-01-15T10:30:00Z"
+          },
+          {
+            "id": "hT03-rW002",
+            "author": "Emily Johnson",
+            "rating": 2,
+            "comment": "Disappointing stay. Room cleanliness was not up to par.",
+            "date": "2025-01-10T14:45:00Z"
+          },
+          {
+            "id": "hT03-rW002",
+            "author": "Emily Johnson",
+            "rating": 2,
+            "comment": "Disappointing stay. Room cleanliness was not up to par.",
+            "date": "2025-01-10T14:45:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 2.9,
-          "ratingsCount": 150,
-          "ratingBreakdown": {
-            "1": 15,
-            "2": 35,
-            "3": 50,
-            "4": 30,
-            "5": 20
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT011",
+        "provider_id": "Provider2",
         "city": "Delhi",
         "name": "Delhi Heritage Hotel",
         "description": "Elegant hotel near Delhi Airport with contemporary design, international cuisine, and convenient transit services for travelers.",
@@ -1763,13 +1977,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -1779,6 +1995,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -1863,43 +2081,66 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.5,
+          "ratingsCount": 4,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 2
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 3
+            "id": "hT011-rW001",
+            "author": "Priya Patel",
+            "rating": 5,
+            "comment": "Excellent service and convenient location near the airport!",
+            "date": "2025-01-18T09:15:00Z"
           },
           {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 2
+            "id": "hT011-rW002",
+            "author": "Michael Chang",
+            "rating": 4,
+            "comment": "Very comfortable stay, but the restaurant menu could use more variety.",
+            "date": "2025-01-14T16:30:00Z"
+          },
+          {
+            "id": "hT011-rW001",
+            "author": "Priya Patel",
+            "rating": 5,
+            "comment": "Excellent service and convenient location near the airport!",
+            "date": "2025-01-18T09:15:00Z"
+          },
+          {
+            "id": "hT011-rW002",
+            "author": "Michael Chang",
+            "rating": 4,
+            "comment": "Very comfortable stay, but the restaurant menu could use more variety.",
+            "date": "2025-01-14T16:30:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 3.6,
-          "ratingsCount": 195,
-          "ratingBreakdown": {
-            "1": 5,
-            "2": 15,
-            "3": 30,
-            "4": 85,
-            "5": 60
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT026",
+        "provider_id": "Provider1218206823",
         "city": "Delhi",
         "name": "Delhi Royal Suites",
         "description": "Resort-style hotel in Delhi featuring lush gardens, opulent rooms, and traditional Indian hospitality, perfect for leisure and business trips.",
         "pricePerNight": 3200,
-        "roomsAvailable": 8,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -1916,6 +2157,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -2000,43 +2243,80 @@
           "https://images.unsplash.com/photo-1565031491910-e57fac031c41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fGhvdGVsfGVufDB8fDB8fHww",
           "https://images.unsplash.com/photo-1561501878-aabd62634533?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.3,
+          "ratingsCount": 6,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 3
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-16",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 4
+            "id": "hT026-rW001",
+            "author": "Aisha Khan",
+            "rating": 5,
+            "comment": "Absolutely stunning property with impeccable service!",
+            "date": "2025-01-20T11:45:00Z"
           },
           {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-23",
-            "roomsBooked": 3
+            "id": "hT026-rW002",
+            "author": "David Wilson",
+            "rating": 4,
+            "comment": "Beautiful gardens and rooms, but the Wi-Fi was a bit slow at times.",
+            "date": "2025-01-16T14:20:00Z"
+          },
+          {
+            "id": "hT026-rW003",
+            "author": "Neha Gupta",
+            "rating": 5,
+            "comment": "The perfect blend of luxury and traditional Indian hospitality.",
+            "date": "2025-01-12T09:30:00Z"
+          },
+          {
+            "id": "hT026-rW001",
+            "author": "Aisha Khan",
+            "rating": 5,
+            "comment": "Absolutely stunning property with impeccable service!",
+            "date": "2025-01-20T11:45:00Z"
+          },
+          {
+            "id": "hT026-rW002",
+            "author": "David Wilson",
+            "rating": 4,
+            "comment": "Beautiful gardens and rooms, but the Wi-Fi was a bit slow at times.",
+            "date": "2025-01-16T14:20:00Z"
+          },
+          {
+            "id": "hT026-rW003",
+            "author": "Neha Gupta",
+            "rating": 5,
+            "comment": "The perfect blend of luxury and traditional Indian hospitality.",
+            "date": "2025-01-12T09:30:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 4.2,
-          "ratingsCount": 245,
-          "ratingBreakdown": {
-            "1": 10,
-            "2": 15,
-            "3": 50,
-            "4": 70,
-            "5": 100
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT027",
+        "provider_id": "Provider1",
         "city": "Delhi",
         "name": "Delhi Comfort Stay",
         "description": "Art-inspired hotel in Delhi showcasing curated local art, rooftop lounges, and immersive cultural experiences in the heart of the city.",
         "pricePerNight": 2800,
-        "roomsAvailable": 6,
+        "roomsAvailable": 3,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -2053,12 +2333,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 1,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2137,32 +2419,46 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
+        "bookings": [],
+        "ratings": {
+          "averageRating": 4.7,
+          "ratingsCount": 3,
+          "ratingBreakdown": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 2
+          }
+        },
+        "reviews": [
           {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 2
+            "id": "hT027-rW001",
+            "author": "Sophie Lee",
+            "rating": 5,
+            "comment": "Absolutely loved the art-inspired decor and cultural experiences!",
+            "date": "2025-01-19T13:00:00Z"
           },
           {
-            "checkInDate": "2024-12-14",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 3
+            "id": "hT027-rW002",
+            "author": "Rajesh Kumar",
+            "rating": 4,
+            "comment": "Great location and ambiance, but the room service was a bit slow.",
+            "date": "2025-01-15T10:30:00Z"
+          },
+          {
+            "id": "hT027-rW003",
+            "author": "Emma Thompson",
+            "rating": 5,
+            "comment": "The rooftop lounge offers breathtaking views of Delhi!",
+            "date": "2025-01-11T18:45:00Z"
           }
         ],
-        "ratings": {
-          "averageRating": 4.1,
-          "ratingsCount": 200,
-          "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 20,
-            "4": 90,
-            "5": 80
-          }
-        }
+        "status": "Active"
       },
       {
         "id": "hT028",
+        "provider_id": "Provider2",
         "city": "Delhi",
         "name": "Delhi Premium Inn",
         "description": "Boutique hotel in Delhi's bustling Karol Bagh market, offering chic interiors and proximity to cultural and shopping destinations.",
@@ -2174,6 +2470,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -2190,6 +2488,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -2274,32 +2574,60 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-25",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.8,
-          "ratingsCount": 310,
+          "ratingsCount": 5,
           "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 15,
-            "4": 40,
-            "5": 250
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 4
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT028-rW001",
+            "author": "Amit Sharma",
+            "rating": 5,
+            "comment": "Perfect location for shopping enthusiasts! The hotel's modern design is impressive.",
+            "date": "2025-01-21T12:15:00Z"
+          },
+          {
+            "id": "hT028-rW002",
+            "author": "Linda Chen",
+            "rating": 5,
+            "comment": "Exceptional service and the rooms are beautifully decorated.",
+            "date": "2025-01-17T09:45:00Z"
+          },
+          {
+            "id": "hT028-rW003",
+            "author": "John Smith",
+            "rating": 4,
+            "comment": "Great hotel overall, but the surrounding area can be quite noisy.",
+            "date": "2025-01-13T16:30:00Z"
+          },
+          {
+            "id": "hT028-rW004",
+            "author": "Priya Reddy",
+            "rating": 5,
+            "comment": "Loved the proximity to Karol Bagh market. The staff was incredibly helpful!",
+            "date": "2025-01-09T14:00:00Z"
+          },
+          {
+            "id": "hT028-rW005",
+            "author": "Mark Johnson",
+            "rating": 5,
+            "comment": "A hidden gem in Delhi! The rooftop restaurant offers amazing views of the city.",
+            "date": "2025-01-05T20:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT04",
+        "provider_id": "Provider1",
         "city": "Bangalore",
         "name": "Bangalore Elite Stay",
         "description": "Modern hotel in Bangalore's Whitefield area offering spacious suites, co-working spaces, and proximity to IT parks for business travelers.",
@@ -2311,6 +2639,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -2327,12 +2657,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 2,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2411,43 +2743,80 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 2
-          },
-          {
-            "checkInDate": "2024-12-12",
-            "checkOutDate": "2024-12-16",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.3,
-          "ratingsCount": 150,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 1,
-            "2": 4,
-            "3": 15,
-            "4": 30,
-            "5": 100
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 3
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT04-rW001",
+            "author": "Vikram Mehta",
+            "rating": 5,
+            "comment": "Excellent location for business travelers. The co-working spaces are a great touch!",
+            "date": "2025-01-22T14:30:00Z"
+          },
+          {
+            "id": "hT04-rW002",
+            "author": "Sarah Johnson",
+            "rating": 4,
+            "comment": "Modern amenities and comfortable rooms. The breakfast could use more variety.",
+            "date": "2025-01-18T09:15:00Z"
+          },
+          {
+            "id": "hT04-rW003",
+            "author": "Rahul Sharma",
+            "rating": 5,
+            "comment": "Spacious suites and great service. Will definitely stay here again on my next business trip.",
+            "date": "2025-01-14T16:45:00Z"
+          },
+          {
+            "id": "hT04-rW001",
+            "author": "Vikram Mehta",
+            "rating": 5,
+            "comment": "Excellent location for business travelers. The co-working spaces are a great touch!",
+            "date": "2025-01-22T14:30:00Z"
+          },
+          {
+            "id": "hT04-rW002",
+            "author": "Sarah Johnson",
+            "rating": 4,
+            "comment": "Modern amenities and comfortable rooms. The breakfast could use more variety.",
+            "date": "2025-01-18T09:15:00Z"
+          },
+          {
+            "id": "hT04-rW003",
+            "author": "Rahul Sharma",
+            "rating": 5,
+            "comment": "Spacious suites and great service. Will definitely stay here again on my next business trip.",
+            "date": "2025-01-14T16:45:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT012",
+        "provider_id": "Provider2",
         "city": "Bangalore",
         "name": "Bangalore Garden Retreat",
         "description": "Chic hotel in Bangalore near MG Road, offering rooftop dining, live music, and vibrant nightlife options for urban explorers.",
         "pricePerNight": 2200,
-        "roomsAvailable": 8,
+        "roomsAvailable": 5,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -2464,6 +2833,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -2520,32 +2891,53 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-22",
-            "checkOutDate": "2024-12-25",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.5,
-          "ratingsCount": 210,
+          "ratingsCount": 4,
           "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 5,
-            "4": 40,
-            "5": 160
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT012-rW001",
+            "author": "Priya Patel",
+            "rating": 5,
+            "comment": "Amazing rooftop dining experience with stunning city views!",
+            "date": "2025-01-20T19:30:00Z"
+          },
+          {
+            "id": "hT012-rW002",
+            "author": "Michael Chang",
+            "rating": 4,
+            "comment": "Great location and vibrant atmosphere. The live music was a bit loud for my taste.",
+            "date": "2025-01-16T22:15:00Z"
+          },
+          {
+            "id": "hT012-rW001",
+            "author": "Priya Patel",
+            "rating": 5,
+            "comment": "Amazing rooftop dining experience with stunning city views!",
+            "date": "2025-01-20T19:30:00Z"
+          },
+          {
+            "id": "hT012-rW002",
+            "author": "Michael Chang",
+            "rating": 4,
+            "comment": "Great location and vibrant atmosphere. The live music was a bit loud for my taste.",
+            "date": "2025-01-16T22:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT05",
+        "provider_id": "Provider1218206823",
         "city": "Chennai",
         "name": "Chennai Comfort Inn",
         "description": "Seaside resort in Chennai offering luxurious beachfront villas, fine dining, and access to popular attractions like Marina Beach.",
@@ -2557,13 +2949,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2573,6 +2967,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -2629,32 +3025,60 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-05",
-            "checkOutDate": "2024-12-08",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-08",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.2,
-          "ratingsCount": 180,
+          "ratingsCount": 5,
           "ratingBreakdown": {
-            "1": 1,
-            "2": 4,
-            "3": 15,
-            "4": 30,
-            "5": 130
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT05-rW001",
+            "author": "Rajesh Kumar",
+            "rating": 5,
+            "comment": "Breathtaking beachfront views and excellent service. A perfect getaway!",
+            "date": "2025-01-21T10:45:00Z"
+          },
+          {
+            "id": "hT05-rW002",
+            "author": "Emily Wilson",
+            "rating": 4,
+            "comment": "Lovely resort with great amenities. The beach access was fantastic.",
+            "date": "2025-01-17T14:30:00Z"
+          },
+          {
+            "id": "hT05-rW003",
+            "author": "Arun Sharma",
+            "rating": 3,
+            "comment": "Nice location, but the rooms could use some updating.",
+            "date": "2025-01-13T09:15:00Z"
+          },
+          {
+            "id": "hT05-rW001",
+            "author": "Rajesh Kumar",
+            "rating": 5,
+            "comment": "Breathtaking beachfront views and excellent service. A perfect getaway!",
+            "date": "2025-01-21T10:45:00Z"
+          },
+          {
+            "id": "hT05-rW002",
+            "author": "Emily Wilson",
+            "rating": 4,
+            "comment": "Lovely resort with great amenities. The beach access was fantastic.",
+            "date": "2025-01-17T14:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT013",
+        "provider_id": "Provider1",
         "city": "Chennai",
         "name": "Chennai Riverside Suites",
         "description": "Charming colonial-style hotel in Chennai with sprawling lawns, vintage furnishings, and authentic Chettinad cuisine.",
@@ -2666,13 +3090,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 4,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2682,6 +3108,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -2738,43 +3166,80 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-15",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 5
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.6,
-          "ratingsCount": 250,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 3,
-            "2": 7,
-            "3": 20,
-            "4": 70,
-            "5": 150
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 4
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT013-rW001",
+            "author": "Sophia Lee",
+            "rating": 5,
+            "comment": "Absolutely loved the colonial charm and the sprawling lawns. A true heritage experience!",
+            "date": "2025-01-23T11:30:00Z"
+          },
+          {
+            "id": "hT013-rW002",
+            "author": "Vikram Reddy",
+            "rating": 4,
+            "comment": "The Chettinad cuisine was outstanding. Rooms are spacious but could use better lighting.",
+            "date": "2025-01-19T16:45:00Z"
+          },
+          {
+            "id": "hT013-rW003",
+            "author": "Emma Thompson",
+            "rating": 5,
+            "comment": "Felt like stepping back in time. The vintage furnishings are exquisite!",
+            "date": "2025-01-15T09:00:00Z"
+          },
+          {
+            "id": "hT013-rW001",
+            "author": "Sophia Lee",
+            "rating": 5,
+            "comment": "Absolutely loved the colonial charm and the sprawling lawns. A true heritage experience!",
+            "date": "2025-01-23T11:30:00Z"
+          },
+          {
+            "id": "hT013-rW002",
+            "author": "Vikram Reddy",
+            "rating": 4,
+            "comment": "The Chettinad cuisine was outstanding. Rooms are spacious but could use better lighting.",
+            "date": "2025-01-19T16:45:00Z"
+          },
+          {
+            "id": "hT013-rW003",
+            "author": "Emma Thompson",
+            "rating": 5,
+            "comment": "Felt like stepping back in time. The vintage furnishings are exquisite!",
+            "date": "2025-01-15T09:00:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT06",
+        "provider_id": "Provider2",
         "city": "Pune",
         "name": "Pune Garden View",
-        "description": "Luxury hotel in Pune’s Koregaon Park featuring stylish interiors, gourmet dining options, and easy access to the city’s vibrant nightlife.",
+        "description": "Luxury hotel in Pune's Koregaon Park featuring stylish interiors, gourmet dining options, and easy access to the city's vibrant nightlife.",
         "pricePerNight": 2200,
-        "roomsAvailable": 8,
+        "roomsAvailable": 3,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -2791,12 +3256,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 1,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2847,32 +3314,74 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 6
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.4,
-          "ratingsCount": 220,
+          "ratingsCount": 7,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 15,
-            "4": 85,
-            "5": 110
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 3,
+            "5": 3
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT06-rW001",
+            "author": "Anita Desai",
+            "rating": 5,
+            "comment": "Absolutely loved the stylish interiors and the gourmet dining options. Perfect for a luxurious stay!",
+            "date": "2025-01-24T20:30:00Z"
+          },
+          {
+            "id": "hT06-rW002",
+            "author": "Mark Johnson",
+            "rating": 4,
+            "comment": "Great location with easy access to nightlife. The rooms were comfortable but a bit small.",
+            "date": "2025-01-20T14:15:00Z"
+          },
+          {
+            "id": "hT06-rW003",
+            "author": "Ravi Patel",
+            "rating": 5,
+            "comment": "Exceptional service and beautiful garden views. Will definitely return!",
+            "date": "2025-01-16T11:45:00Z"
+          },
+          {
+            "id": "hT06-rW004",
+            "author": "Sarah Thompson",
+            "rating": 3,
+            "comment": "Nice hotel overall, but the noise from nearby nightclubs can be bothersome at night.",
+            "date": "2025-01-12T09:30:00Z"
+          },
+          {
+            "id": "hT06-rW001",
+            "author": "Anita Desai",
+            "rating": 5,
+            "comment": "Absolutely loved the stylish interiors and the gourmet dining options. Perfect for a luxurious stay!",
+            "date": "2025-01-24T20:30:00Z"
+          },
+          {
+            "id": "hT06-rW002",
+            "author": "Mark Johnson",
+            "rating": 4,
+            "comment": "Great location with easy access to nightlife. The rooms were comfortable but a bit small.",
+            "date": "2025-01-20T14:15:00Z"
+          },
+          {
+            "id": "hT06-rW003",
+            "author": "Ravi Patel",
+            "rating": 5,
+            "comment": "Exceptional service and beautiful garden views. Will definitely return!",
+            "date": "2025-01-16T11:45:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT014",
+        "provider_id": "Provider1218206823",
         "city": "Pune",
         "name": "Pune City Plaza",
         "description": "Charming heritage hotel in Pune, showcasing colonial architecture, lush gardens, and proximity to historical landmarks like Shaniwar Wada.",
@@ -2884,13 +3393,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2900,12 +3411,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 4,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -2956,32 +3469,60 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 3
-          },
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 6
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.3,
-          "ratingsCount": 140,
+          "ratingsCount": 5,
           "ratingBreakdown": {
-            "1": 4,
-            "2": 6,
-            "3": 15,
-            "4": 40,
-            "5": 75
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT014-rW001",
+            "author": "Aarav Patel",
+            "rating": 5,
+            "comment": "Beautiful heritage hotel with stunning colonial architecture. The gardens are a peaceful retreat.",
+            "date": "2025-01-25T14:30:00Z"
+          },
+          {
+            "id": "hT014-rW002",
+            "author": "Emily Chen",
+            "rating": 4,
+            "comment": "Loved the proximity to historical landmarks. The rooms could use a bit more modern touches.",
+            "date": "2025-01-20T09:45:00Z"
+          },
+          {
+            "id": "hT014-rW003",
+            "author": "Raj Sharma",
+            "rating": 3,
+            "comment": "Nice ambiance, but the service was a bit slow during peak hours.",
+            "date": "2025-01-15T18:15:00Z"
+          },
+          {
+            "id": "hT014-rW001",
+            "author": "Aarav Patel",
+            "rating": 5,
+            "comment": "Beautiful heritage hotel with stunning colonial architecture. The gardens are a peaceful retreat.",
+            "date": "2025-01-25T14:30:00Z"
+          },
+          {
+            "id": "hT014-rW002",
+            "author": "Emily Chen",
+            "rating": 4,
+            "comment": "Loved the proximity to historical landmarks. The rooms could use a bit more modern touches.",
+            "date": "2025-01-20T09:45:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT07",
+        "provider_id": "Provider2",
         "city": "Jaipur",
         "name": "Jaipur Regal Stay",
         "description": "Rustic heritage hotel in Jaipur surrounded by desert landscapes, offering cultural workshops and luxurious accommodations.",
@@ -2993,13 +3534,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3009,12 +3552,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3065,35 +3610,70 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 5
-          },
-          {
-            "checkInDate": "2024-12-12",
-            "checkOutDate": "2024-12-16",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.6,
-          "ratingsCount": 220,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 20,
-            "4": 50,
-            "5": 140
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 4
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT07-rW001",
+            "author": "Sarah Thompson",
+            "rating": 5,
+            "comment": "An incredible experience! The cultural workshops were enlightening and the desert views breathtaking.",
+            "date": "2025-01-26T16:45:00Z"
+          },
+          {
+            "id": "hT07-rW002",
+            "author": "Rahul Mehta",
+            "rating": 4,
+            "comment": "Luxurious accommodations with a rustic charm. The staff was exceptionally friendly.",
+            "date": "2025-01-22T11:30:00Z"
+          },
+          {
+            "id": "hT07-rW002",
+            "author": "Rahul Mehta",
+            "rating": 4,
+            "comment": "Luxurious accommodations with a rustic charm. The staff was exceptionally friendly.",
+            "date": "2025-01-22T11:30:00Z"
+          },
+          {
+            "id": "hT07-rW003",
+            "author": "Emma Wilson",
+            "rating": 5,
+            "comment": "A perfect blend of heritage and modern comfort. The cultural immersion was unforgettable.",
+            "date": "2025-01-18T09:15:00Z"
+          },
+          {
+            "id": "hT07-rW003",
+            "author": "Emma Wilson",
+            "rating": 5,
+            "comment": "A perfect blend of heritage and modern comfort. The cultural immersion was unforgettable.",
+            "date": "2025-01-18T09:15:00Z"
+          },
+          {
+            "id": "hT07-rW003",
+            "author": "Emma Wilson",
+            "rating": 5,
+            "comment": "A perfect blend of heritage and modern comfort. The cultural immersion was unforgettable.",
+            "date": "2025-01-18T09:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT015",
+        "provider_id": "Provider1",
         "city": "Jaipur",
         "name": "Jaipur Heritage Retreat",
-        "description": "Havelis-style resort in Jaipur with spacious courtyards, handcrafted interiors, and an immersive glimpse into Rajasthan’s royal history.",
+        "description": "Havelis-style resort in Jaipur with spacious courtyards, handcrafted interiors, and an immersive glimpse into Rajasthan's royal history.",
         "pricePerNight": 3500,
         "roomsAvailable": 8,
         "rooms": [
@@ -3102,6 +3682,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -3118,12 +3700,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 6,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3174,35 +3758,77 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-05",
-            "checkOutDate": "2024-12-08",
-            "roomsBooked": 6
-          },
-          {
-            "checkInDate": "2024-12-09",
-            "checkOutDate": "2024-12-12",
-            "roomsBooked": 7
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.8,
-          "ratingsCount": 310,
+          "ratingsCount": 7,
           "ratingBreakdown": {
-            "1": 3,
-            "2": 7,
-            "3": 20,
-            "4": 80,
-            "5": 200
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 5
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT015-rW001",
+            "author": "Priya Sharma",
+            "rating": 5,
+            "comment": "Absolutely stunning resort! The handcrafted interiors are a work of art. Felt like royalty during our stay.",
+            "date": "2025-01-27T13:30:00Z"
+          },
+          {
+            "id": "hT015-rW002",
+            "author": "Michael Johnson",
+            "rating": 5,
+            "comment": "An authentic Rajasthani experience. The cultural activities and courtyard dinners were highlights of our trip.",
+            "date": "2025-01-23T10:45:00Z"
+          },
+          {
+            "id": "hT015-rW003",
+            "author": "Anita Desai",
+            "rating": 4,
+            "comment": "Beautiful property with excellent service. The only downside was the slightly slow WiFi in some areas.",
+            "date": "2025-01-19T16:20:00Z"
+          },
+          {
+            "id": "hT015-rW001",
+            "author": "Priya Sharma",
+            "rating": 5,
+            "comment": "Absolutely stunning resort! The handcrafted interiors are a work of art. Felt like royalty during our stay.",
+            "date": "2025-01-27T13:30:00Z"
+          },
+          {
+            "id": "hT015-rW001",
+            "author": "Priya Sharma",
+            "rating": 5,
+            "comment": "Absolutely stunning resort! The handcrafted interiors are a work of art. Felt like royalty during our stay.",
+            "date": "2025-01-27T13:30:00Z"
+          },
+          {
+            "id": "hT015-rW003",
+            "author": "Anita Desai",
+            "rating": 4,
+            "comment": "Beautiful property with excellent service. The only downside was the slightly slow WiFi in some areas.",
+            "date": "2025-01-19T16:20:00Z"
+          },
+          {
+            "id": "hT015-rW001",
+            "author": "Priya Sharma",
+            "rating": 5,
+            "comment": "Absolutely stunning resort! The handcrafted interiors are a work of art. Felt like royalty during our stay.",
+            "date": "2025-01-27T13:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT08",
+        "provider_id": "Provider1218206823",
         "city": "Hyderabad",
         "name": "Hyderabad Pearl Inn",
-        "description": "Modern hotel in Hyderabad with plush rooms, a wellness spa, and close proximity to the city’s IT corridor and entertainment hubs.",
+        "description": "Modern hotel in Hyderabad with plush rooms, a wellness spa, and close proximity to the city's IT corridor and entertainment hubs.",
         "pricePerNight": 1900,
         "roomsAvailable": 5,
         "rooms": [
@@ -3211,6 +3837,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -3227,6 +3855,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -3283,32 +3913,60 @@
           "https://images.unsplash.com/photo-1501117716987-c8c394bb29df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxob3RlbHxlbnwwfHwwfHx8MA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 3
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-25",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.4,
-          "ratingsCount": 180,
+          "ratingsCount": 5,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 30,
-            "4": 50,
-            "5": 90
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT08-rW001",
+            "author": "Ravi Kumar",
+            "rating": 5,
+            "comment": "Excellent location for business travelers. The wellness spa was a great way to unwind after meetings.",
+            "date": "2025-01-28T18:30:00Z"
+          },
+          {
+            "id": "hT08-rW002",
+            "author": "Lisa Chen",
+            "rating": 4,
+            "comment": "Modern amenities and comfortable rooms. The proximity to entertainment hubs was convenient.",
+            "date": "2025-01-24T14:15:00Z"
+          },
+          {
+            "id": "hT08-rW003",
+            "author": "Arun Reddy",
+            "rating": 3,
+            "comment": "Decent stay overall, but the restaurant menu could use more variety.",
+            "date": "2025-01-20T09:45:00Z"
+          },
+          {
+            "id": "hT08-rW001",
+            "author": "Ravi Kumar",
+            "rating": 5,
+            "comment": "Excellent location for business travelers. The wellness spa was a great way to unwind after meetings.",
+            "date": "2025-01-28T18:30:00Z"
+          },
+          {
+            "id": "hT08-rW002",
+            "author": "Lisa Chen",
+            "rating": 4,
+            "comment": "Modern amenities and comfortable rooms. The proximity to entertainment hubs was convenient.",
+            "date": "2025-01-24T14:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT016",
+        "provider_id": "Provider2",
         "city": "Hyderabad",
         "name": "Hyderabad Metro Hotel",
         "description": "Eco-resort near Hyderabad offering tranquil retreats, farm-fresh meals, and lush green surroundings for nature lovers.",
@@ -3320,6 +3978,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -3336,12 +3996,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 4,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3392,43 +4054,80 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-14",
-            "roomsBooked": 5
-          },
-          {
-            "checkInDate": "2024-12-14",
-            "checkOutDate": "2024-12-17",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.2,
-          "ratingsCount": 200,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 10,
-            "2": 10,
-            "3": 30,
-            "4": 70,
-            "5": 80
+            "1": 0,
+            "2": 1,
+            "3": 0,
+            "4": 3,
+            "5": 2
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT016-rW001",
+            "author": "Neha Gupta",
+            "rating": 5,
+            "comment": "A perfect getaway from the city hustle. The farm-fresh meals were absolutely delicious!",
+            "date": "2025-01-29T12:00:00Z"
+          },
+          {
+            "id": "hT016-rW001",
+            "author": "Neha Gupta",
+            "rating": 5,
+            "comment": "A perfect getaway from the city hustle. The farm-fresh meals were absolutely delicious!",
+            "date": "2025-01-29T12:00:00Z"
+          },
+          {
+            "id": "hT016-rW002",
+            "author": "Tom Wilson",
+            "rating": 4,
+            "comment": "Loved the eco-friendly approach and the lush surroundings. The rooms could use better soundproofing.",
+            "date": "2025-01-25T15:30:00Z"
+          },
+          {
+            "id": "hT016-rW003",
+            "author": "Sanjay Reddy",
+            "rating": 2,
+            "comment": "Beautiful location, but the service was slow and unresponsive at times.",
+            "date": "2025-01-21T09:00:00Z"
+          },
+          {
+            "id": "hT016-rW002",
+            "author": "Tom Wilson",
+            "rating": 4,
+            "comment": "Loved the eco-friendly approach and the lush surroundings. The rooms could use better soundproofing.",
+            "date": "2025-01-25T15:30:00Z"
+          },
+          {
+            "id": "hT016-rW002",
+            "author": "Tom Wilson",
+            "rating": 4,
+            "comment": "Loved the eco-friendly approach and the lush surroundings. The rooms could use better soundproofing.",
+            "date": "2025-01-25T15:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT023",
+        "provider_id": "Provider1",
         "city": "Hyderabad",
         "name": "Hyderabad Skyline Inn",
-        "description": "Urban luxury hotel in Hyderabad’s Banjara Hills offering chic interiors, rooftop dining, and proximity to historic landmarks.",
+        "description": "Urban luxury hotel in Hyderabad's Banjara Hills offering chic interiors, rooftop dining, and proximity to historic landmarks.",
         "pricePerNight": 2500,
-        "roomsAvailable": 7,
+        "roomsAvailable": 3,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -3445,12 +4144,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 1,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3501,35 +4202,70 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 3
-          },
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-23",
-            "roomsBooked": 4
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.5,
-          "ratingsCount": 250,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 15,
-            "4": 75,
-            "5": 150
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 3
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT023-rW001",
+            "author": "Arjun Reddy",
+            "rating": 5,
+            "comment": "Stunning rooftop views and excellent service. The proximity to landmarks made sightseeing a breeze.",
+            "date": "2025-01-28T10:15:00Z"
+          },
+          {
+            "id": "hT023-rW002",
+            "author": "Priya Sharma",
+            "rating": 4,
+            "comment": "Chic interiors and great location. The rooftop dining experience was memorable.",
+            "date": "2025-01-24T14:30:00Z"
+          },
+          {
+            "id": "hT023-rW001",
+            "author": "Arjun Reddy",
+            "rating": 5,
+            "comment": "Stunning rooftop views and excellent service. The proximity to landmarks made sightseeing a breeze.",
+            "date": "2025-01-28T10:15:00Z"
+          },
+          {
+            "id": "hT023-rW002",
+            "author": "Priya Sharma",
+            "rating": 4,
+            "comment": "Chic interiors and great location. The rooftop dining experience was memorable.",
+            "date": "2025-01-24T14:30:00Z"
+          },
+          {
+            "id": "hT023-rW003",
+            "author": "Michael Chang",
+            "rating": 3,
+            "comment": "Good amenities, but the noise from nearby construction was a bit disruptive.",
+            "date": "2025-01-20T09:45:00Z"
+          },
+          {
+            "id": "hT023-rW001",
+            "author": "Arjun Reddy",
+            "rating": 5,
+            "comment": "Stunning rooftop views and excellent service. The proximity to landmarks made sightseeing a breeze.",
+            "date": "2025-01-28T10:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT024",
+        "provider_id": "Provider2",
         "city": "Hyderabad",
         "name": "Hyderabad Grand Hotel",
-        "description": "Charming boutique hotel in Hyderabad’s old city with traditional architecture and easy access to the Charminar and Laad Bazaar.",
+        "description": "Charming boutique hotel in Hyderabad's old city with traditional architecture and easy access to the Charminar and Laad Bazaar.",
         "pricePerNight": 3000,
         "roomsAvailable": 6,
         "rooms": [
@@ -3538,13 +4274,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3554,6 +4292,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -3610,32 +4350,74 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-12",
-            "checkOutDate": "2024-12-16",
-            "roomsBooked": 2
-          },
-          {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.7,
-          "ratingsCount": 180,
+          "ratingsCount": 7,
           "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 10,
-            "4": 45,
-            "5": 120
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 5
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT024-rW001",
+            "author": "Rahul Mehta",
+            "rating": 5,
+            "comment": "Exceptional stay! The traditional architecture and proximity to Charminar made it a perfect cultural experience.",
+            "date": "2025-01-29T11:30:00Z"
+          },
+          {
+            "id": "hT024-rW001",
+            "author": "Rahul Mehta",
+            "rating": 5,
+            "comment": "Exceptional stay! The traditional architecture and proximity to Charminar made it a perfect cultural experience.",
+            "date": "2025-01-29T11:30:00Z"
+          },
+          {
+            "id": "hT024-rW001",
+            "author": "Rahul Mehta",
+            "rating": 5,
+            "comment": "Exceptional stay! The traditional architecture and proximity to Charminar made it a perfect cultural experience.",
+            "date": "2025-01-29T11:30:00Z"
+          },
+          {
+            "id": "hT024-rW002",
+            "author": "Sarah Thompson",
+            "rating": 4,
+            "comment": "Lovely boutique hotel with great character. The Laad Bazaar nearby was a shopper's paradise.",
+            "date": "2025-01-25T16:45:00Z"
+          },
+          {
+            "id": "hT024-rW002",
+            "author": "Sarah Thompson",
+            "rating": 4,
+            "comment": "Lovely boutique hotel with great character. The Laad Bazaar nearby was a shopper's paradise.",
+            "date": "2025-01-25T16:45:00Z"
+          },
+          {
+            "id": "hT024-rW003",
+            "author": "Anita Desai",
+            "rating": 5,
+            "comment": "Impeccable service and beautiful rooms. Felt like stepping back in time in the best way possible.",
+            "date": "2025-01-21T09:15:00Z"
+          },
+          {
+            "id": "hT024-rW003",
+            "author": "Anita Desai",
+            "rating": 5,
+            "comment": "Impeccable service and beautiful rooms. Felt like stepping back in time in the best way possible.",
+            "date": "2025-01-21T09:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT025",
+        "provider_id": "Provider1218206823",
         "city": "Hyderabad",
         "name": "Hyderabad Elite Suites",
         "description": "Heritage-inspired hotel in Hyderabad featuring Nawabi-style decor, traditional Hyderabadi cuisine, and a regal atmosphere.",
@@ -3647,13 +4429,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3663,12 +4447,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 4,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3719,32 +4505,74 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-14",
-            "checkOutDate": "2024-12-18",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-19",
-            "checkOutDate": "2024-12-24",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.4,
-          "ratingsCount": 210,
+          "ratingsCount": 7,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 10,
-            "3": 15,
-            "4": 80,
-            "5": 100
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 3,
+            "5": 3
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT025-rW001",
+            "author": "Vikram Singh",
+            "rating": 5,
+            "comment": "Absolutely regal experience! The Nawabi-style decor transported us to a bygone era.",
+            "date": "2025-01-30T14:00:00Z"
+          },
+          {
+            "id": "hT025-rW002",
+            "author": "Emily Chen",
+            "rating": 4,
+            "comment": "Loved the traditional Hyderabadi cuisine. The ambiance was perfect for a cultural getaway.",
+            "date": "2025-01-26T10:30:00Z"
+          },
+          {
+            "id": "hT025-rW003",
+            "author": "Mohammed Ali",
+            "rating": 3,
+            "comment": "Beautiful hotel, but the service was a bit slow during peak hours.",
+            "date": "2025-01-22T18:45:00Z"
+          },
+          {
+            "id": "hT025-rW001",
+            "author": "Vikram Singh",
+            "rating": 5,
+            "comment": "Absolutely regal experience! The Nawabi-style decor transported us to a bygone era.",
+            "date": "2025-01-30T14:00:00Z"
+          },
+          {
+            "id": "hT025-rW002",
+            "author": "Emily Chen",
+            "rating": 4,
+            "comment": "Loved the traditional Hyderabadi cuisine. The ambiance was perfect for a cultural getaway.",
+            "date": "2025-01-26T10:30:00Z"
+          },
+          {
+            "id": "hT025-rW001",
+            "author": "Vikram Singh",
+            "rating": 5,
+            "comment": "Absolutely regal experience! The Nawabi-style decor transported us to a bygone era.",
+            "date": "2025-01-30T14:00:00Z"
+          },
+          {
+            "id": "hT025-rW002",
+            "author": "Emily Chen",
+            "rating": 4,
+            "comment": "Loved the traditional Hyderabadi cuisine. The ambiance was perfect for a cultural getaway.",
+            "date": "2025-01-26T10:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT029",
+        "provider_id": "Provider1",
         "city": "Rajasthan",
         "name": "Rajasthan Desert Oasis",
         "description": "Desert retreat in Rajasthan offering thrilling adventures like dune bashing, stargazing, and traditional Rajasthani dining.",
@@ -3756,13 +4584,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 6,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3772,6 +4602,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -3828,49 +4660,67 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-20",
-            "checkOutDate": "2024-12-23",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-25",
-            "checkOutDate": "2024-12-28",
-            "roomsBooked": 3
-          },
-          {
-            "id": "d46b3e5b-e5e4-4803-90e2-4c058a231ed0",
-            "userId": "u001",
-            "hotelId": "hT029",
-            "roomId": "r002",
-            "fullName": "Ridam Aditya Sinha",
-            "email": "ridamsinha20@gmail.com",
-            "mobile": "09532911742",
-            "idProof": "C:\\fakepath\\vmware.log",
-            "couponCode": "",
-            "checkInDate": "2025-01-13",
-            "checkOutDate": "2025-01-14",
-            "bookingDate": "2025-01-13T12:00:00Z",
-            "roomBooked": 3,
-            "price": 2740,
-            "status": "Cancelled"
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.5,
-          "ratingsCount": 250,
+          "ratingsCount": 6,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 15,
-            "3": 30,
-            "4": 80,
-            "5": 120
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 2,
+            "5": 3
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT029-rW001",
+            "author": "John Smith",
+            "rating": 5,
+            "comment": "Incredible desert experience! The dune bashing was exhilarating and the stargazing was breathtaking.",
+            "date": "2025-01-31T20:00:00Z"
+          },
+          {
+            "id": "hT029-rW002",
+            "author": "Priya Patel",
+            "rating": 4,
+            "comment": "Loved the traditional Rajasthani dining. The desert ambiance was truly magical.",
+            "date": "2025-01-27T12:15:00Z"
+          },
+          {
+            "id": "hT029-rW003",
+            "author": "David Lee",
+            "rating": 3,
+            "comment": "Great location and activities, but the rooms could use better air conditioning.",
+            "date": "2025-01-23T09:30:00Z"
+          },
+          {
+            "id": "hT029-rW001",
+            "author": "John Smith",
+            "rating": 5,
+            "comment": "Incredible desert experience! The dune bashing was exhilarating and the stargazing was breathtaking.",
+            "date": "2025-01-31T20:00:00Z"
+          },
+          {
+            "id": "hT029-rW001",
+            "author": "John Smith",
+            "rating": 5,
+            "comment": "Incredible desert experience! The dune bashing was exhilarating and the stargazing was breathtaking.",
+            "date": "2025-01-31T20:00:00Z"
+          },
+          {
+            "id": "hT029-rW002",
+            "author": "Priya Patel",
+            "rating": 4,
+            "comment": "Loved the traditional Rajasthani dining. The desert ambiance was truly magical.",
+            "date": "2025-01-27T12:15:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT030",
+        "provider_id": "Provider2",
         "city": "Kaashi",
         "name": "Kaashi Divine Retreat",
         "description": "Eco-friendly lodge in Kaashi surrounded by arid beauty, featuring sustainable accommodations and immersive cultural experiences.",
@@ -3882,13 +4732,15 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
               "Parking",
               "Free Cancellation"
             ],
-            "availableRooms": 2,
+            "availableRooms": 3,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -3898,6 +4750,8 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
@@ -3954,61 +4808,80 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-21",
-            "checkOutDate": "2024-12-25",
-            "roomsBooked": 3
-          },
-          {
-            "checkInDate": "2024-12-27",
-            "checkOutDate": "2024-12-30",
-            "roomsBooked": 2
-          },
-          {
-            "id": "df65d96d-6381-45df-ae8d-c330dd7fda29",
-            "userId": "u001",
-            "hotelId": "hT030",
-            "roomId": "r001",
-            "fullName": "Ridam Aditya Sinha",
-            "email": "ridamsinha20@gmail.com",
-            "mobile": "09532911742",
-            "idProof": "C:\\fakepath\\vmware-0.log",
-            "couponCode": "",
-            "checkInDate": "2025-01-13",
-            "checkOutDate": "2025-01-14",
-            "bookingDate": "2025-01-13T12:01:00Z",
-            "roomBooked": 3,
-            "price": 4240,
-            "status": "Completed",
-            "reviewSubmitted": false
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4,
-          "ratingsCount": 120,
+          "ratingsCount": 5,
           "ratingBreakdown": {
-            "1": 5,
-            "2": 5,
-            "3": 20,
-            "4": 40,
-            "5": 50
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 3,
+            "5": 1
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT030-rW001",
+            "author": "Samantha Green",
+            "rating": 5,
+            "comment": "A truly immersive cultural experience. The eco-friendly approach and sustainable accommodations were impressive.",
+            "date": "2025-02-01T15:45:00Z"
+          },
+          {
+            "id": "hT030-rW002",
+            "author": "Rajesh Kumar",
+            "rating": 4,
+            "comment": "Peaceful retreat with beautiful surroundings. The cultural activities were enlightening.",
+            "date": "2025-01-28T11:00:00Z"
+          },
+          {
+            "id": "hT030-rW003",
+            "author": "Lisa Wong",
+            "rating": 3,
+            "comment": "Unique experience, but the amenities were a bit basic for the price point.",
+            "date": "2025-01-24T17:30:00Z"
+          },
+          {
+            "id": "hT030-rW002",
+            "author": "Rajesh Kumar",
+            "rating": 4,
+            "comment": "Peaceful retreat with beautiful surroundings. The cultural activities were enlightening.",
+            "date": "2025-01-28T11:00:00Z"
+          },
+          {
+            "id": "hT030-rW002",
+            "author": "Rajesh Kumar",
+            "rating": 4,
+            "comment": "Peaceful retreat with beautiful surroundings. The cultural activities were enlightening.",
+            "date": "2025-01-28T11:00:00Z"
+          },
+          {
+            "id": "hT030-rW002",
+            "author": "Rajesh Kumar",
+            "rating": 4,
+            "comment": "Peaceful retreat with beautiful surroundings. The cultural activities were enlightening.",
+            "date": "2025-01-28T11:00:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT031",
+        "provider_id": "Provider1",
         "city": "TamilNadu",
         "name": "Tamil Nadu Ocean Pearl",
-        "description": "Fort-converted hotel in Tamil Nadu offering historical charm, lavish suites, and a glimpse into the state’s royal heritage.",
+        "description": "Fort-converted hotel in Tamil Nadu offering historical charm, lavish suites, and a glimpse into the state's royal heritage.",
         "pricePerNight": 3200,
-        "roomsAvailable": 8,
+        "roomsAvailable": 3,
         "rooms": [
           {
             "roomId": "r001",
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -4025,12 +4898,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 1,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -4081,32 +4956,74 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-15",
-            "checkOutDate": "2024-12-20",
-            "roomsBooked": 4
-          },
-          {
-            "checkInDate": "2024-12-22",
-            "checkOutDate": "2024-12-26",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 4.9,
-          "ratingsCount": 300,
+          "ratingsCount": 7,
           "ratingBreakdown": {
-            "1": 2,
-            "2": 3,
-            "3": 15,
-            "4": 30,
-            "5": 250
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 6
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT031-rW001",
+            "author": "Arun Kumar",
+            "rating": 5,
+            "comment": "Absolutely stunning hotel! The historical charm and lavish suites exceeded our expectations.",
+            "date": "2025-02-02T09:30:00Z"
+          },
+          {
+            "id": "hT031-rW002",
+            "author": "Emma Thompson",
+            "rating": 5,
+            "comment": "A truly royal experience. The fort's conversion into a hotel is beautifully done.",
+            "date": "2025-01-29T14:15:00Z"
+          },
+          {
+            "id": "hT031-rW001",
+            "author": "Arun Kumar",
+            "rating": 5,
+            "comment": "Absolutely stunning hotel! The historical charm and lavish suites exceeded our expectations.",
+            "date": "2025-02-02T09:30:00Z"
+          },
+          {
+            "id": "hT031-rW001",
+            "author": "Arun Kumar",
+            "rating": 5,
+            "comment": "Absolutely stunning hotel! The historical charm and lavish suites exceeded our expectations.",
+            "date": "2025-02-02T09:30:00Z"
+          },
+          {
+            "id": "hT031-rW003",
+            "author": "Raj Patel",
+            "rating": 4,
+            "comment": "Excellent service and amenities. The historical tours were fascinating.",
+            "date": "2025-01-25T11:45:00Z"
+          },
+          {
+            "id": "hT031-rW001",
+            "author": "Arun Kumar",
+            "rating": 5,
+            "comment": "Absolutely stunning hotel! The historical charm and lavish suites exceeded our expectations.",
+            "date": "2025-02-02T09:30:00Z"
+          },
+          {
+            "id": "hT031-rW001",
+            "author": "Arun Kumar",
+            "rating": 5,
+            "comment": "Absolutely stunning hotel! The historical charm and lavish suites exceeded our expectations.",
+            "date": "2025-02-02T09:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT032",
+        "provider_id": "Provider2",
         "city": "Rajasthan",
         "name": "Rajasthan Royal Heritage",
         "description": "Palatial resort in Rajasthan with luxurious tents, cultural performances, and camel safaris for an authentic desert experience.",
@@ -4118,6 +5035,8 @@
             "type": "2 Bedroom Deluxe",
             "description": "Spacious deluxe room with two bedrooms and modern amenities.",
             "pricePerNight": 4000,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Breakfast",
@@ -4134,12 +5053,14 @@
             "type": "Single Deluxe",
             "description": "Cozy room for solo travelers with premium amenities.",
             "pricePerNight": 2500,
+            "currentCoupon": "",
+            "currentDiscount": 0,
             "benefits": [
               "Free WiFi",
               "Room Service",
               "City View"
             ],
-            "availableRooms": 3,
+            "availableRooms": 5,
             "images": [
               "https://images.unsplash.com/photo-1661872952496-e4e3833d2fdf?q=80&w=1632&auto=format&fit=crop"
             ]
@@ -4190,29 +5111,77 @@
           "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
-        "bookings": [
-          {
-            "checkInDate": "2024-12-10",
-            "checkOutDate": "2024-12-15",
-            "roomsBooked": 5
-          },
-          {
-            "checkInDate": "2024-12-18",
-            "checkOutDate": "2024-12-22",
-            "roomsBooked": 3
-          }
-        ],
+        "bookings": [],
         "ratings": {
           "averageRating": 5,
-          "ratingsCount": 350,
+          "ratingsCount": 8,
           "ratingBreakdown": {
             "1": 0,
-            "2": 3,
-            "3": 7,
-            "4": 40,
-            "5": 300
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 8
           }
-        }
+        },
+        "reviews": [
+          {
+            "id": "hT032-rW001",
+            "author": "Sophie Chen",
+            "rating": 5,
+            "comment": "An unforgettable experience! The luxurious tents and camel safari were highlights of our trip.",
+            "date": "2025-02-03T16:00:00Z"
+          },
+          {
+            "id": "hT032-rW002",
+            "author": "Ahmed Khan",
+            "rating": 5,
+            "comment": "Truly royal treatment. The cultural performances were mesmerizing and authentic.",
+            "date": "2025-01-30T13:30:00Z"
+          },
+          {
+            "id": "hT032-rW003",
+            "author": "Isabella Martinez",
+            "rating": 5,
+            "comment": "Exceptional service and breathtaking desert views. A must-visit for luxury seekers!",
+            "date": "2025-01-26T10:45:00Z"
+          },
+          {
+            "id": "hT032-rW001",
+            "author": "Sophie Chen",
+            "rating": 5,
+            "comment": "An unforgettable experience! The luxurious tents and camel safari were highlights of our trip.",
+            "date": "2025-02-03T16:00:00Z"
+          },
+          {
+            "id": "hT032-rW002",
+            "author": "Ahmed Khan",
+            "rating": 5,
+            "comment": "Truly royal treatment. The cultural performances were mesmerizing and authentic.",
+            "date": "2025-01-30T13:30:00Z"
+          },
+          {
+            "id": "hT032-rW003",
+            "author": "Isabella Martinez",
+            "rating": 5,
+            "comment": "Exceptional service and breathtaking desert views. A must-visit for luxury seekers!",
+            "date": "2025-01-26T10:45:00Z"
+          },
+          {
+            "id": "hT032-rW002",
+            "author": "Ahmed Khan",
+            "rating": 5,
+            "comment": "Truly royal treatment. The cultural performances were mesmerizing and authentic.",
+            "date": "2025-01-30T13:30:00Z"
+          },
+          {
+            "id": "hT032-rW002",
+            "author": "Ahmed Khan",
+            "rating": 5,
+            "comment": "Truly royal treatment. The cultural performances were mesmerizing and authentic.",
+            "date": "2025-01-30T13:30:00Z"
+          }
+        ],
+        "status": "Active"
       },
       {
         "id": "hT0925",
