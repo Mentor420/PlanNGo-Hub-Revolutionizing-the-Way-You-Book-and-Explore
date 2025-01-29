@@ -77,7 +77,7 @@ export class HotelRoomComponent implements OnInit {
       checkOutDate: this.checkOutDate,
       roomCount: this.roomCount,
     });
-    this.router.navigate([`/room/${roomId}/booking-form`]);
+    this.router.navigate([`/hotel/room/${roomId}/booking-form`]);
   }
 
   applyFilter() {

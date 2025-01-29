@@ -23,7 +23,7 @@ export const routes: Route[] = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'location', component: LocationComponent }, 
-  { path: 'room/:roomId/booking-form', component: BookingFormComponent },
+  { path: 'hotel/room/:roomId/booking-form', component: BookingFormComponent },
   {
     path: 'page', component: PageComponent,
     children: [

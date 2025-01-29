@@ -98,10 +98,14 @@
 }
 
 .nav_image img {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  object-fit: cover;
+  /* height: 35px;
+  width: 35px; */
+  /* border-radius: 50%; */
+  /* object-fit: cover; */
+  height: 69px;
+  width: 228px;
+  margin-left: 0px;
+  border-radius: 10px;
 }
 
 .sidebar ul {

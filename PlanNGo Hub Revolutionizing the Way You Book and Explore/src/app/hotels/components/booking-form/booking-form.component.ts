@@ -95,7 +95,7 @@ export class BookingFormComponent implements OnInit {
     this.bookingForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      mobile: ['', [Validators.required]],
       idProof: ['', Validators.required],
       couponCode: ['']
     });
