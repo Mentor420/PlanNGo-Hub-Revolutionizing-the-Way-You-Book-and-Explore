@@ -3,12 +3,10 @@
   padding: 25px;
   border-radius: 15px;
   max-width: 850px;
-  margin: px auto;
+  margin: 0 auto;
   background: linear-gradient(to top right, #f0f9ff, #eaf4ff);
-  /* background: linear-gradient(to top right,#858d93, #4e81ba); */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   font-family: "Roboto", sans-serif;
-  /* color: #333; */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -38,8 +36,8 @@
 
 form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .form-group {
@@ -52,6 +50,9 @@ label {
   font-size: 14px;
   font-weight: bold;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 input[type="text"],
@@ -78,14 +79,13 @@ input[type="text"]::placeholder {
 }
 
 .icon {
-  margin-right: 10px;
   color: #0056b3;
 }
 
 .amenities-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px;
+  gap: 5px;
 }
 
 .amenities-options label {
@@ -94,7 +94,7 @@ input[type="text"]::placeholder {
   font-size: 13px;
   font-weight: 500;
   background: #f9f9f9;
-  padding: 5px 5px;
+  padding: 6px 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
@@ -115,57 +115,50 @@ button {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn-search i {
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 button:hover {
-  background-color: #004495;
+  background: #004495;
 }
 
 button:active {
   transform: scale(0.98);
 }
 
-hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 30px 0;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    grid-column: span 1;
+    width: 100%;
+  }
 }
 
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #444;
-}
+@media (max-width: 480px) {
+  .search-title {
+    font-size: 20px;
+  }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+  input,
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
 
-li {
-  background: #f7f7f7;
-  margin-bottom: 10px;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-
-p {
-  font-size: 15px;
-  color: #555;
-  text-align: center;
-  line-height: 1.8;
-}
-
-p b {
-  color: #0056b3;
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

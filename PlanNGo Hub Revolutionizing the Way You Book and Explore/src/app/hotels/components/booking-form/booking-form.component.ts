@@ -232,7 +232,8 @@ export class BookingFormComponent implements OnInit {
 
           setTimeout(() => {
             this.zone.run(() => {
-              this.router.navigate(['/booking-history']);
+              // this.router.navigate(['/hotel']);
+              this.goBack();
             });
           }, 3000); // Navigate in 3 seconds
 

@@ -364,6 +364,29 @@ export class HotelSearchService {
     );
   }
 
+   // Cancel a review using only bookingId
+   cancelBookingReview(bookingId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}`).pipe(
+      switchMap((data: any) => {
+        const hotel = data.hotels.find((hotel: any) =>
+          hotel.bookings && hotel.bookings.some((booking: any) => booking.id === bookingId)
+        );
+
+        if (!hotel) {
+          throw new Error('Booking not found in any hotel');
+        }
+
+        const booking = hotel.bookings.find((booking: any) => booking.id === bookingId);
+        if (booking) {
+          booking.reviewSubmitted = 'Rejected'; // Update the status
+        }
+
+        // Update the hotel object in the data structure
+        return this.http.put(`${this.apiUrl}`, data);
+      })
+    );
+  }
+
   // Get booking history for a user
   // getBookingHistory(hotelId: string, userId: string): Observable<any> {
   //   return this.http.get(`${this.apiUrl}/${hotelId}`).pipe(
