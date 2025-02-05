@@ -1,0 +1,61 @@
+<div class="history-container">
+  <ul class="snip1217">
+    <li><a routerLink="/" routerLinkActive="active" class="tc">Home</a></li>
+    <li><a routerLink="/search" routerLinkActive="active" class="tc">Search And Book</a></li>
+    <li class="current"><a routerLink="/history" routerLinkActive="active">History</a></li>
+    <li><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
+    <li><a routerLink="/updates" routerLinkActive="active">Update</a></li>
+  </ul>
+  <h2 class="history-title">Booking History</h2>
+
+  <div *ngIf="userBookings.length > 0; else noBookings" class="bookings-list">
+    <div *ngFor="let booking of paginatedBookings" class="booking-item">
+      <div class="booking-card">
+        <app-cabcards [cabCardDetails]="booking.cab"></app-cabcards>
+        <div class="booking-info">
+          <p class="booking-timestamp">
+            <i class="fas fa-calendar"></i>
+            Booked on: {{ booking.timestamp | date:'medium' }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls" *ngIf="totalPages > 1">
+      <button 
+        [disabled]="currentPage === 1"
+        (click)="previousPage()"
+        class="pagination-button"
+      >
+        Previous
+      </button>
+
+      <div class="page-numbers">
+        <button 
+          *ngFor="let page of getPageNumbers()"
+          (click)="goToPage(page)"
+          class="page-number"
+          [class.active]="currentPage === page"
+        >
+          {{ page }}
+        </button>
+      </div>
+
+      <button 
+        [disabled]="currentPage === totalPages"
+        (click)="nextPage()"
+        class="pagination-button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+
+  <ng-template #noBookings>
+    <div class="no-bookings">
+      <i class="fas fa-calendar-times"></i>
+      <p>No past bookings found.</p>
+    </div>
+  </ng-template>
+</div>

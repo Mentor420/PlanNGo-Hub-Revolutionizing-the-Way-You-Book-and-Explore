@@ -1,0 +1,39 @@
+<div class="">
+    <div class="tw-w-full">
+        <div class="tw-w-full tw-h-[600px] tw-bg-[url('/assets/top.jpg')] tw-z-10">
+            <div class="tw-pt-40 tw-font-bold tw-text-[#ffefeb] tw-text-base md:tw-text-lg tw-tracking-[1.80px] tw-text-center">
+                SEARCH TOUR
+            </div>
+            <div class="tw-font-normal tw-text-white tw-text-4xl md:tw-text-6xl lg:tw-text-[157.4px] tw-text-center tw-leading-tight">
+                Our Packages
+            </div>
+        </div>
+    </div>
+    <nav class="tw-bg-white tw-border tw-border-gray-300 tw-w-full tw-mx-auto tw-p-4">
+        <ul class="tw-flex tw-flex-col tw-space-y-4 sm:tw-flex-row sm:tw-space-y-0 sm:tw-space-x-4 sm:tw-justify-center">
+            <li><a [routerLink]="['/info', tourId]" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Information</a></li>
+            <li><a [routerLink]="['/tour-plan', tourId]" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Tour Plan</a></li>
+            <li><a [routerLink]="['/location', tourId]" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Location</a></li>
+            <li><a [routerLink]="['/gallery', tourId]" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Gallery</a></li>
+            <li><a [routerLink]="['/compare', tourId]" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Compare</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="tw-flex tw-px-80 tw-pt-10">
+    <div class="tw-w-1/2 tw-text-center tw-px-20">
+        <div class="tw-text-3xl tw-font-bold tw-capitalize tw-py-2">Select Tour for Table 1</div>
+        <select [(ngModel)]="selectedTour1" name="tourSelect1" class="tw-w-[60%] tw-my-5 tw-p-2 tw-border-2 tw-border-[#df6951] tw-rounded-lg tw-bg-gray-100 tw-text-gray-700 focus:tw-outline-none focus:tw-border-[#ffefeb] focus:tw-ring-2 focus:tw-ring-[#df6951]">
+            <option *ngFor="let tour of tours" [ngValue]="tour">{{ tour.name }}</option>
+        </select>
+        <div *ngIf="selectedTour1" class="tw-px-10 tw-text-left">
+            <img class="tw-rounded-xl tw-mx-auto tw-object-cover tw-w-[900px] tw-h-60" [src]="selectedTour1.image">
+            <p class="tw-text-base tw-text-black tw-text-center tw-pt-5">{{ selectedTour1.description }}</p>
+            <div class="tw-grid tw-grid-cols-2 tw-items-center tw-gap-2">
+                <h2 class="tw-text-xl tw-font-bold tw-text-[#df6951]">Tour Name</h2>
+                <p class="tw-text-base tw-text-black">{{ selectedTour1.name }}</p>
+            </div>
+            <!-- Rest of the content follows the same pattern with tw- prefix -->
+        </div>
+    </div>
+</div>

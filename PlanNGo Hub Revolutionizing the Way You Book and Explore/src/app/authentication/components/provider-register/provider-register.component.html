@@ -1,0 +1,199 @@
+<div class="tw-flex tw-justify-center tw-items-center tw-bg-gray-100 tw-min-h-screen">
+    <div class="tw-bg-white tw-shadow-xl tw-rounded-lg tw-p-8 tw-w-full tw-max-w-md tw-transform tw-transition-all tw-duration-300 hover:tw-shadow-2xl">
+        <h2 class="tw-text-3xl tw-font-extrabold tw-mb-6 tw-text-center tw-text-gray-800">Register</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <!-- Previous form fields remain unchanged until the Type selection -->
+            <!-- Full Name -->
+            <div class="tw-mb-5">
+                <label for="fullName" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Full Name</label>
+                <input
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="fullName"
+                        formControlName="fullName"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+                >
+                    Full name is required
+                </small>
+            </div>
+
+            <!-- Email -->
+            <div class="tw-mb-5">
+                <label for="email" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Email</label>
+                <input
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="email"
+                        formControlName="email"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="email.invalid && (email.dirty || email.touched)"
+                >
+                    <span *ngIf="email.hasError('required')">Email is required</span>
+                    <span *ngIf="email.hasError('pattern')">Email is invalid</span>
+                </small>
+            </div>
+
+            <!-- Password -->
+            <div class="tw-mb-5">
+                <label for="password" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Password</label>
+                <p-password
+                        formControlName="password"
+                        [feedback]="false"
+                        [toggleMask]="true"
+                        inputId="password"
+                        inputStyleClass="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        styleClass="tw-w-full"
+                ></p-password>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="password.invalid && (password.dirty || password.touched)"
+                >
+                    Password is required
+                </small>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="tw-mb-5">
+                <label for="confirmPassword" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Confirm Password</label>
+                <p-password
+                        formControlName="confirmPassword"
+                        [feedback]="false"
+                        [toggleMask]="true"
+                        inputId="confirmPassword"
+                        inputStyleClass="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        styleClass="tw-w-full"
+                ></p-password>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+                >
+                    Confirm Password is required
+                </small>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="
+            registerForm.hasError('passwordMismatch') &&
+            password.valid &&
+            confirmPassword.valid
+          "
+                >
+                    Password mismatch
+                </small>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="tw-mb-5">
+                <label for="phone" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Phone Number</label>
+                <p-password
+                        formControlName="phone"
+                        [feedback]="false"
+                        [toggleMask]="true"
+                        inputId="phone"
+                        inputStyleClass="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        styleClass="tw-w-full"
+                ></p-password>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                >
+                    Phone number is required
+                </small>
+            </div>
+            <!-- Website Address -->
+            <div class="tw-mb-5">
+                <label for="website" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Website Address</label>
+                <input
+                        type="text"
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="website"
+                        formControlName="website"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="website.invalid && (website.dirty || website.touched)"
+                >
+                    Website address is required
+                </small>
+            </div>
+
+            <div class="tw-mb-5">
+                <label for="description" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Description</label>
+                <input
+                        type="text"
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="description"
+                        formControlName="description"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="description.invalid && (description.dirty || description.touched)"
+                >
+                    Description is required
+                </small>
+            </div>
+            <!-- Address -->
+            <div class="tw-mb-5">
+                <label for="address" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Description</label>
+                <input
+                        type="text"
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="address"
+                        formControlName="description"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="description.invalid && (description.dirty || description.touched)"
+                >
+                    Description is required
+                </small>
+            </div>
+
+
+            <!-- Gender & type of Dashboard -->
+            <div class="flex">
+                <div>
+                    <label for="type" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Type Of Service</label>
+                    <p-dropdown
+                            [options]="types"
+                            formControlName="type"
+                            optionLabel="name"
+                            placeholder="Select Service Type"
+                            styleClass="tw-w-full"
+                    ></p-dropdown>
+                    <small
+                            class="tw-text-red-500"
+                            *ngIf="type.invalid && (type.dirty || type.touched)"
+                    >
+                        Please select a service type
+                    </small>
+                </div>
+                </div>
+
+
+
+            <!-- Submit Button -->
+            <p-button
+                    type="submit"
+                    label="Register"
+                    styleClass="tw-w-full tw-bg-purple-600 tw-text-white tw-py-2 tw-rounded-md hover:tw-bg-purple-700 tw-transition-colors tw-duration-300"
+                    [disabled]="registerForm.invalid"
+            ></p-button>
+            <div class="">
+            <div class="tw-mt-4 tw-text-center">
+                Already a member? <a routerLink="/login" class="tw-text-purple-600 hover:tw-underline">Login</a>
+            </div>
+            <div class="tw-mt-4 tw-text-center">
+                <a routerLink="/register" class="tw-text-purple-600 hover:tw-underline">Register as a User</a>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>

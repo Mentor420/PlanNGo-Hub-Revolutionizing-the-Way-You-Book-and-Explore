@@ -1,0 +1,276 @@
+
+
+/* Back button styling */
+.back-button {
+  position: relative; /* Place the back button in the top-left */
+  /* top: 20px;
+  left: 20px; */
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  /* z-index: 100; */
+}
+
+.back-button:hover {
+  background: linear-gradient(45deg, #0056b3, #004085);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.back-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button2 {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: blueviolet;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  background: #fff;
+  padding: 0.7rem 1.5rem;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+ }
+ 
+ .back-button2 i {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+ }
+ 
+.back-button2:hover i {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+ }
+ 
+.back-button2:hover {
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+  transform: translateY(-2px);
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+ }
+
+.hotel-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+/* .hotel-name {
+  
+} */
+
+.card-list {
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 75vw;
+  padding: 12px;
+  background-color: #fff;
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.25s ease;
+}
+
+.card-list:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+
+
+
+
+}
+  
+  .card-item2 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 28%;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.card-item2 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.h-name {
+  width: 45%;
+}
+
+.h-name h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.star-name {
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.star-name i {
+  color: #FF9529;
+  margin-left: 2px;
+}
+
+#rate {
+  padding: 0 6px;
+  border-radius: 8px;
+  background-color: green;
+  color: #fff;
+  gap: 20px;
+}
+
+.bank-offer {
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: small;
+
+}
+
+.bank-offer p {
+  margin: 0;
+  text-align: end;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+
+.price {
+  width: 25%;
+  padding-left: 12px;
+  border-left: 1px solid #E4E6E8;
+  justify-content: space-between;
+}
+
+.price h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: end;
+}
+
+.price p {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+  text-align: end;
+}
+
+
+
+/* @media (max-width: 1024px) {
+  .hotel-container {
+    padding: 10px;
+  }
+  .card-list {
+    width: 48%;
+  }
+  .card-item2 {
+    max-width: 48%;
+  }
+  .price {
+    width: 35%;
+  }
+  .back-button2 {
+    margin-left: 10px;
+  }
+} */
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hotel-container {
+    padding: 30px;
+  }
+  .hotel-head {
+    margin-top: 30px;
+  }
+  .card-list {
+    width: 100%;
+  }
+  .card-item2 {
+    max-width: 100%;
+  }
+  .price {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+  }
+  .back-button2 {
+    display: none;
+  }
+  .h-name {
+    width: 100%;
+  }
+  .h-name h3 {
+    font-size: 1.2rem;
+  }
+  .price h3 {
+    font-size: 1.4rem;
+  }
+  .star-name i {
+    font-size: 1.2rem;
+  }
+  #rate {
+    font-size: 14px;
+  }
+}
+
+/* Extra small mobile view */
+@media (max-width: 480px) {
+  .back-button2 {
+    display: none;
+    margin-bottom: 20px;
+  }
+  .card-item2 img {
+    height: 150px;
+  }
+  .h-name h3 {
+    font-size: 1rem;
+  }
+  .price h3 {
+    font-size: 1.2rem;
+  }
+  .star-name i {
+    font-size: 1.1rem;
+  }
+  #rate {
+    font-size: 12px;
+  }
+}

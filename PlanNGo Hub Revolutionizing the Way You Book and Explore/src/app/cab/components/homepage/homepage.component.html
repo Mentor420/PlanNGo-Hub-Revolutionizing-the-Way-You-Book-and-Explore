@@ -1,0 +1,147 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Hero Section -->
+  <div class="relative h-[600px]">
+    <img 
+      src="https://images.unsplash.com/photo-1624049321569-f483adecb8fa" 
+      alt="Cityscape" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-75"></div>
+    
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+      <h1 class="text-6xl font-bold text-white mb-6 leading-tight">
+        Transform Your Travel Experience
+      </h1>
+      <p class="text-xl text-white mb-8">
+        Book cabs, flights, hotels, and tours with us
+      </p>
+      <div class="flex space-x-4">
+        <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+          <RouterLink to="/search">Search Now</RouterLink>
+        </button>
+        <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold">TravelHub</div>
+      <div class="hidden md:flex space-x-8">
+        <RouterLink to="/" class="hover:text-purple-200">Home</RouterLink>
+        <RouterLink to="/search" class="hover:text-purple-200">Search</RouterLink>
+        <RouterLink to="/bookings" class="hover:text-purple-200">Bookings</RouterLink>
+        <RouterLink to="/history" class="hover:text-purple-200">History</RouterLink>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Features Section -->
+  <div class="container mx-auto py-16">
+    <h2 class="text-4xl font-bold text-center mb-12">Why Choose Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="text-blue-600 text-4xl mb-4">
+          <i class="fas fa-car"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">24/7 Availability</h3>
+        <p class="text-gray-600">Book anytime, anywhere</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="text-purple-600 text-4xl mb-4">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
+        <p class="text-gray-600">Safe and secure transactions</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="text-green-600 text-4xl mb-4">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Verified Drivers</h3>
+        <p class="text-gray-600">Professional and verified drivers</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="bg-gray-100 py-16">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Cab Booking</h3>
+          <p class="text-gray-600">Book a ride in minutes</p>
+          <RouterLink to="/cab" class="text-blue-600 hover:text-blue-700">Learn More →</RouterLink>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-purple-600 text-4xl mb-4">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Hotel Booking</h3>
+          <p class="text-gray-600">Find your perfect stay</p>
+          <RouterLink to="/hotel" class="text-purple-600 hover:text-purple-700">Learn More →</RouterLink>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-green-600 text-4xl mb-4">
+            <i class="fas fa-plane"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Flight Booking</h3>
+          <p class="text-gray-600">Domestic and international flights</p>
+          <RouterLink to="/flight" class="text-green-600 hover:text-green-700">Learn More →</RouterLink>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-yellow-600 text-4xl mb-4">
+            <i class="fas fa-map"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Tour Packages</h3>
+          <p class="text-gray-600">Explore new destinations</p>
+          <RouterLink to="/tour" class="text-yellow-600 hover:text-yellow-700">Learn More →</RouterLink>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="container mx-auto py-16">
+    <h2 class="text-4xl font-bold text-center mb-12">What Our Customers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="flex items-center mb-4">
+          <img src="https://via.placeholder.com/60" alt="Customer" class="rounded-full w-12 h-12">
+          <div class="ml-4">
+            <p class="font-semibold">John Doe</p>
+            <p class="text-gray-600">San Francisco</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"The best travel experience I've ever had. Highly recommended!"</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="flex items-center mb-4">
+          <img src="https://via.placeholder.com/60" alt="Customer" class="rounded-full w-12 h-12">
+          <div class="ml-4">
+            <p class="font-semibold">Jane Smith</p>
+            <p class="text-gray-600">New York</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"Quick, easy, and affordable. Love using this service!"</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <div class="flex items-center mb-4">
+          <img src="https://via.placeholder.com/60" alt="Customer" class="rounded-full w-12 h-12">
+          <div class="ml-4">
+            <p class="font-semibold">Mike Johnson</p>
+            <p class="text-gray-600">Los Angeles</p>
+          </div>
+        </div>
+        <p class="text-gray-600 italic">"Professional drivers and excellent service. Five stars!"</p>
+      </div>
+    </div>
+  </div>
+</div>

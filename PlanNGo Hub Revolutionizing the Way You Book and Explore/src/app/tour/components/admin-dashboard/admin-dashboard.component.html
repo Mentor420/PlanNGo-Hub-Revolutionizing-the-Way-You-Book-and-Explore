@@ -1,0 +1,108 @@
+<div class="-tw-mt-[128px] tw-z-20 tw-bg-white fixed w-[200px] h-screen tw-shadow-lg tw-p-6 tw-border-r-2 tw-border-gray-400">
+    <div class="tw-mb-8 tw-pr-16">
+        <h1 class="tw-font-bold tw-text-xl tw-text-blue-600">PlanHubGo</h1>
+        <p class="tw-text-gray-500 tw-text-sm tw-mt-1">Dashboard</p>
+    </div>
+
+    <nav class="tw-space-y-4">
+        <a href="/admin/hotel" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-700 tw-rounded-lg hover:tw-bg-blue-50 hover:tw-text-blue-600 tw-transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-5 tw-h-5 tw-mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <span>Hotel</span>
+        </a>
+
+        <a href="/admin/flight" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-700 tw-rounded-lg hover:tw-bg-blue-50 hover:tw-text-blue-600 tw-transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-5 tw-h-5 tw-mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+            <span>Flight</span>
+        </a>
+
+        <a href="/admin/tour" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-700 tw-rounded-lg hover:tw-bg-blue-50 hover:tw-text-blue-600 tw-transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-5 tw-h-5 tw-mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+            <span>Tour</span>
+        </a>
+
+        <a href="/admin/cab" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-700 tw-rounded-lg hover:tw-bg-blue-50 hover:tw-text-blue-600 tw-transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-5 tw-h-5 tw-mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+            <span>Cab</span>
+        </a>
+    </nav>
+</div>
+
+<div class="tw-ml-64 tw-mt-12 tw-p-4">
+    <div class="tw-max-w-7xl tw-mx-auto">
+        <!-- Charts Section -->
+        <div class="tw-grid tw-grid-cols-2 tw-gap-10 tw-mb-10">
+            <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-6">
+                <div class="tw-font-bold tw-text-2xl tw-mb-4">Total Bookings per Agency</div>
+                <canvas id="chart1" class="tw-w-full tw-h-64">{{jourchart}}</canvas>
+            </div>
+            
+            <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-6">
+                <div class="tw-font-bold tw-text-2xl tw-mb-4">Bookings per Tour</div>
+                <canvas id="chart2" class="tw-w-full tw-h-64">{{agencies}}</canvas>
+            </div>
+            
+            <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-6">
+                <div class="tw-font-bold tw-text-2xl tw-mb-4">Tours by Agencies</div>
+                <canvas id="chart3" class="tw-w-full tw-h-64">{{tours}}</canvas>
+            </div>
+        </div>
+
+        <!-- Users Section -->
+        <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-6 tw-mb-10">
+            <div class="tw-font-bold tw-text-2xl tw-mb-4">Users</div>
+            <div class="tw-border-b-2 tw-border-gray-200">
+                <div class="tw-grid tw-grid-cols-6 tw-gap-4 tw-justify-between tw-items-center tw-p-4">
+                    <div>Full Name</div>
+                    <div>ID</div>
+                    <div>Email</div>
+                    <div>Gender</div>
+                    <div>Age</div>
+                    <div>Role</div>
+                </div>
+                
+                <div *ngFor="let user of users" class="tw-grid tw-grid-cols-6 tw-gap-4 tw-justify-between tw-items-center tw-p-4 tw-border-b">
+                    <div>{{user.fullName}}</div>
+                    <div>{{user.id}}</div>
+                    <div>{{user.email}}</div>
+                    <div>{{user.gender}}</div>
+                    <div>{{user.age}}</div>
+                    <div>{{user.role}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tours Section -->
+        <div class="tw-bg-white tw-shadow-md tw-rounded-lg tw-p-6">
+            <div class="tw-font-bold tw-text-2xl tw-mb-4">Total Tours</div>
+            <div class="tw-border-b-2 tw-border-gray-200">
+                <div class="tw-grid tw-grid-cols-7 tw-gap-4 tw-justify-between tw-items-center tw-p-4">
+                    <div>Name</div>
+                    <div>Image</div>
+                    <div>Description</div>
+                    <div>Price</div>
+                    <div>Destination</div>
+                    <div>Departure</div>
+                    <div>Dress Code</div>
+                </div>
+                
+                <div *ngFor="let tour of toursdata" class="tw-grid tw-grid-cols-7 tw-gap-4 tw-justify-between tw-items-center tw-p-4 tw-border-b">
+                    <div>{{tour.name}}</div>
+                    <img [src]="tour.image" alt="Tour Image" class="tw-w-20 tw-h-20 tw-rounded-full">
+                    <div>{{tour.description}}</div>
+                    <div>{{tour.price}}</div>
+                    <div>{{tour.destination}}</div>
+                    <div>{{tour.departure}}</div>
+                    <div>{{tour.dressCode}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

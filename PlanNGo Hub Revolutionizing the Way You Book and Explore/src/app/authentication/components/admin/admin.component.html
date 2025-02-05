@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="tw-bg-gray-100">
+    <div class="tw-min-h-screen tw-font-sans">
+        <!-- Navigation -->
+        <nav class="tw-bg-white tw-shadow-lg">
+            <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
+                <div class="tw-flex tw-justify-between tw-h-16">
+                    <div class="tw-flex tw-items-center tw-space-x-8">
+                        <div class="tw-flex-shrink-0">
+                            <span class="tw-text-2xl tw-font-bold tw-text-blue-600">Admin Panel</span>
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-items-center tw-space-x-3">
+                        <a href="/admin/users" class="tw-px-3 tw-py-2 tw-rounded-md tw-text-gray-600 hover:tw-text-gray-800 hover:tw-bg-gray-100">Users</a>
+                        <a href="/admin/services" class="tw-px-3 tw-py-2 tw-rounded-md tw-text-gray-600 hover:tw-text-gray-800 hover:tw-bg-gray-100">Services</a>
+                        <a href="/admin/bookings" class="tw-px-3 tw-py-2 tw-rounded-md tw-text-gray-600 hover:tw-text-gray-800 hover:tw-bg-gray-100">Bookings</a>
+                        <a href="/admin/reports" class="tw-px-3 tw-py-2 tw-rounded-md tw-text-gray-600 hover:tw-text-gray-800 hover:tw-bg-gray-100">Reports</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="tw-max-w-7xl tw-mx-auto tw-p-4 sm:tw-p-6 lg:tw-p-8">
+            <!-- Dashboard Header -->
+            <div class="tw-mb-8">
+                <h1 class="tw-text-3xl tw-font-bold tw-text-gray-900">Admin Dashboard</h1>
+                <p class="tw-text-gray-600 tw-mt-2">Manage all aspects of your travel services from one place</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-6">
+                <!-- Total Users -->
+                <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <div>
+                            <p class="tw-text-gray-600">Total Users</p>
+                            <p class="tw-text-2xl tw-font-bold tw-text-gray-900">1,234</p>
+                        </div>
+                        <div class="tw-bg-blue-100 tw-p-3 tw-rounded-full">
+                            <svg class="tw-w-6 tw-h-6 tw-text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Bookings -->
+                <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <div>
+                            <p class="tw-text-gray-600">Total Bookings</p>
+                            <p class="tw-text-2xl tw-font-bold tw-text-gray-900">567</p>
+                        </div>
+                        <div class="tw-bg-green-100 tw-p-3 tw-rounded-full">
+                            <svg class="tw-w-6 tw-h-6 tw-text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Services -->
+                <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <div>
+                            <p class="tw-text-gray-600">Active Services</p>
+                            <p class="tw-text-2xl tw-font-bold tw-text-gray-900">89</p>
+                        </div>
+                        <div class="tw-bg-purple-100 tw-p-3 tw-rounded-full">
+                            <svg class="tw-w-6 tw-h-6 tw-text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revenue -->
+                <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <div>
+                            <p class="tw-text-gray-600">Total Revenue</p>
+                            <p class="tw-text-2xl tw-font-bold tw-text-gray-900">$45,234</p>
+                        </div>
+                        <div class="tw-bg-yellow-100 tw-p-3 tw-rounded-full">
+                            <svg class="tw-w-6 tw-h-6 tw-text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="tw-mt-8">
+                <h2 class="tw-text-2xl tw-font-bold tw-text-gray-900">Recent Activity</h2>
+                <div class="tw-mt-4">
+                    <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                        <div class="tw-flex tw-items-center tw-justify-between tw-p-4">
+                            <div>
+                                <p class="tw-text-gray-600">New User Registration</p>
+                                <p class="tw-text-sm tw-text-gray-900">2 new users registered today</p>
+                            </div>
+                            <div class="tw-bg-blue-100 tw-p-2 tw-rounded-full">
+                                <svg class="tw-w-5 tw-h-5 tw-text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="tw-mt-8">
+                <h2 class="tw-text-2xl tw-font-bold tw-text-gray-900">Quick Actions</h2>
+                <div class="tw-mt-4">
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
+                        <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                            <div class="tw-flex tw-items-center tw-justify-between">
+                                <div>
+                                    <p class="tw-text-gray-600">Add New Service</p>
+                                    <p class="tw-text-sm tw-text-gray-900">Create new service listing</p>
+                                </div>
+                                <div class="tw-bg-green-100 tw-p-3 tw-rounded-full">
+                                    <svg class="tw-w-6 tw-h-6 tw-text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <a href="/admin/add-service" class="tw-block tw-mt-4 tw-text-sm tw-font-medium tw-text-green-600 hover:tw-text-green-800">
+                                Add Service →
+                            </a>
+                        </div>
+
+                        <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                            <div class="tw-flex tw-items-center tw-justify-between">
+                                <div>
+                                    <p class="tw-text-gray-600">View Bookings</p>
+                                    <p class="tw-text-sm tw-text-gray-900">Manage all bookings</p>
+                                </div>
+                                <div class="tw-bg-blue-100 tw-p-3 tw-rounded-full">
+                                    <svg class="tw-w-6 tw-h-6 tw-text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <a href="/admin/bookings" class="tw-block tw-mt-4 tw-text-sm tw-font-medium tw-text-blue-600 hover:tw-text-blue-800">
+                                View Bookings →
+                            </a>
+                        </div>
+
+                        <div class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-sm">
+                            <div class="tw-flex tw-items-center tw-justify-between">
+                                <div>
+                                    <p class="tw-text-gray-600">Generate Reports</p>
+                                    <p class="tw-text-sm tw-text-gray-900">Create detailed reports</p>
+                                </div>
+                                <div class="tw-bg-purple-100 tw-p-3 tw-rounded-full">
+                                    <svg class="tw-w-6 tw-h-6 tw-text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-6M5 7h10M5 11h10M5 15h10"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <a href="/admin/reports" class="tw-block tw-mt-4 tw-text-sm tw-font-medium tw-text-purple-600 hover:tw-text-purple-800">
+                                Generate Reports →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

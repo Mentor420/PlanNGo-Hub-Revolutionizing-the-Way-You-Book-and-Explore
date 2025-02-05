@@ -1,0 +1,97 @@
+<div class="tw-z-10  fixed tw-w-full tw-top-0 tw-left-0  tw-bg-white tw-shadow-lg" *ngIf="showHeaderAndFooter">
+    <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6">
+        <div class="tw-flex tw-justify-between tw-items-center tw-py-4">
+            <!-- Logo -->
+            <div >
+                <img src="/assets/images/planngohublogo.PNG" alt="PlanngoHub Logo" class="tw-h-16">
+            </div>
+
+            <!-- Navigation -->
+            <nav class="tw-flex tw-space-x-6 tw-align-end " *ngIf="localStorage.getItem('email')  && localStorage.getItem('role')=='Customer'">
+                <a href="/home" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors ">Home</a>
+                <a href="/hotel" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Hotel</a>
+                <a href="/flight" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Flight</a>
+                <a href="/tour" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Tour</a>
+                <a href="/cab" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Cab</a>
+                <a href="/contact" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Contact</a>
+
+                <!-- Dashboard Button -->
+                <a href="/dashboard" class="tw-px-4 tw-py-2 tw-bg-blue-600 tw-text-white tw-rounded-lg tw-hover:bg-blue-700 tw-transition-colors">
+                    Dashboard
+                </a>
+
+                <p-button  label="Sign Out"
+                          class="tw-bg-red-600 tw-hover:bg-red-700 tw-text-white tw-rounded-lg tw-px-4 tw-py-2"
+                          (onClick)="logout()">
+                </p-button>
+
+            </nav>
+            <nav class="tw-flex tw-space-x-6 tw-align-end " *ngIf="localStorage.getItem('email')  && localStorage.getItem('role')=='Service Provider'">
+                <a href="/home" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors ">Home</a>
+                <a href="/service-hotel" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Hotel</a>
+                <a href="/tour/tourcompany" class="nav-link my-2 tw-hover:text-blue-600 tw-transition-colors">Tour</a>
+
+                <p-button  label="Sign Out"
+                           class="tw-bg-red-600 tw-hover:bg-red-700 tw-text-white tw-rounded-lg tw-px-4 tw-py-2"
+                           (onClick)="logout()">
+                </p-button>
+
+            </nav>
+            <p-button *ngIf="!localStorage.getItem('email')" routerLink="/login" label="Sign In" class="tw-bg-blue-600 tw-hover:bg-blue-700 tw-text-white tw-rounded-lg tw-px-4 tw-py-2">
+
+            </p-button>
+        </div>
+    </div>
+</div>
+<div class="tw-mt-[56px]">
+<router-outlet ></router-outlet>
+<p-toast></p-toast>
+</div>
+<!-- Footer -->
+<footer class="tw-z-50 tw-bg-[#123462] tw-text-white tw-mt-20" *ngIf="showHeaderAndFooter">
+    <div class="tw-max-w-7xl tw-mx-auto tw-px-4 tw-py-12 sm:tw-px-6">
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-8">
+            <div class="tw-space-y-4">
+                <div >
+                    <img src="/assets/images/footerlogo.png" alt="PlanngoHub Logo" class="tw-h-16">
+                </div>
+                <ul class="tw-space-y-2">
+                    <li class="tw-flex tw-items-center tw-space-x-2">
+                        <svg class="tw-w-5 tw-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        </svg>
+                        <span>123 Street, Tamil Nadu, India</span>
+                    </li>
+                    <li class="tw-flex tw-items-center tw-space-x-2">
+                        <svg class="tw-w-5 tw-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span>info&#64;example.com</span>
+                    </li>
+                    <li class="tw-flex tw-items-center tw-space-x-2">
+                        <svg class="tw-w-5 tw-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <span>+012 345 67890</span>
+                    </li>
+                </ul>
+
+                <div class="tw-flex tw-space-x-4 tw-mt-4">
+                    <a href="#" class="tw-hover:text-blue-400 tw-transition-colors"><i class="fa fa-facebook tw-text-xl"></i></a>
+                    <a href="#" class="tw-hover:text-blue-400 tw-transition-colors"><i class="fa fa-twitter tw-text-xl"></i></a>
+                    <a href="#" class="tw-hover:text-pink-400 tw-transition-colors"><i class="fa fa-instagram tw-text-xl"></i></a>
+                    <a href="#" class="tw-hover:text-blue-400 tw-transition-colors"><i class="fa fa-linkedin tw-text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-border-t tw-border-gray-800">
+        <div class="tw-max-w-7xl tw-mx-auto tw-px-4 tw-py-6">
+            <p class="tw-text-center tw-text-gray-400">&copy; 2024 PlanGo Hub. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,56 @@
+<div class="tw-mx-auto tw-px-4">
+    <!-- Hero Section -->
+    <div class="tw-flex tw-gap-x-20 tw-py-28">
+        <div class="tw-w-1/2">
+            <div class="carousel-container">
+                <div class="carousel tw-flex" >
+                    <button class="carousel-btn prev" (click)="previousImage()">❮</button>
+
+                    <img *ngIf="tourImages && tourImages.length > 0"
+                         [src]="tourImages[currentImageIndex]"
+                         [alt]="tourName"
+                         class="carousel-image tw-rounded-2xl tw-w-[600px] tw-h-[400px] tw-mx-5">
+
+                    <button class="carousel-btn next" (click)="nextImage()">❯</button>
+                </div>
+                <div class="carousel-dots tw-text-center tw-w-[640px]">
+    <span *ngFor="let image of tourImages; let i = index"
+          [class.active]="i === currentImageIndex"
+          (click)="currentImageIndex = i">
+          ●
+    </span>
+                </div>
+            </div>
+        </div>
+        <div class="tw-w-1/2">
+            <div class="tw-space-y-2 tw-pr-20">
+                <p class="tw-text-4xl tw-font-bold tw-capitalize">{{tourName }}</p>
+                <div class="tw-flex tw-items-center tw-gap-6">
+                    <p class="tw-text-[20px] tw-font-medium tw-text-[#df6951]">$ {{tourPrice}}</p>
+                    <p class="tw-text-[20px] tw--mx-3 tw-text-[#7d7d7d]">/Per Couple</p>
+                </div>
+
+                <p class="tw-text-[16px] tw-text-justify tw-w-[600px]">{{tourDescription2}}</p>
+                <div class="tw-grid tw-grid-cols-3 tw-items-center tw-gap-2">
+                    <h2 class="tw-text-xl tw-font-bold tw-text-[#df6951]">Destination</h2>
+                    <p class="tw-text-base tw-text-black">{{ tourDestination }}</p>
+                </div>
+                <div class="tw-grid tw-grid-cols-3 tw-items-center tw-gap-2">
+                    <h2 class="tw-text-xl tw-font-bold tw-text-[#df6951]">Departure</h2>
+                    <p class="tw-text-base tw-text-black">{{ tourDeparture }}</p>
+                </div>
+                <div class="tw-grid tw-grid-cols-3 tw-items-center tw-gap-2">
+                    <h2 class="tw-text-xl tw-font-bold tw-text-[#df6951]">Departure Time</h2>
+                    <p class="tw-text-base tw-text-black">{{ tourDepartureTime }}</p>
+                </div>
+                <div class="tw-grid tw-grid-cols-3 tw-items-center tw-gap-2">
+                    <h2 class="tw-text-xl tw-font-bold tw-text-[#df6951]">Return Time</h2>
+                    <p class="tw-text-base tw-text-black">{{ tourReturnTime }}</p>
+                </div>
+                <div>
+                    <button class="tw-bg-black tw-rounded-xl tw-text-[18px] tw-text-white tw-px-6 tw-py-4" [routerLink]="['/tour/booking', tourId]">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

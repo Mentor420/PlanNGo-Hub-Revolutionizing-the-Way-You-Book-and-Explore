@@ -1,0 +1,166 @@
+<div class="h-page pt-3">
+    <button class="back-button2" (click)="goBack()"><i class="bi bi-arrow-left"></i>Back</button>
+    <div class="main-page">
+        <section class="page-info">
+            <div class="container p-4">
+                <div id="carouselExample" class="carousel slide card">
+                    <div class="carousel-inner">
+                        <div class="carousel-item" *ngFor="let img of rotatingImages; let i = index"
+                            [class.active]="i === currentIndex" [style.transition]="transitionStyle">
+                            <img [src]="img" alt="Hotel Image" />
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" (click)="prevImage()">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" (click)="nextImage()">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="h-info">
+                <div class="col p-4">
+                    <h3 class="mb-0">{{ hotelDetails?.name }}</h3>
+                    <h6 class="mb-2"><i class="bi bi-geo-alt"></i> {{ hotelDetails?.city }}</h6>
+                    <p class="hotel-description">
+                        {{ hotelDetails?.description || 'A luxurious hotel providing exceptional services, premium rooms, and world-class amenities for a memorable stay.' }}
+                      </p>
+                    
+                      
+                      <div class="mt-2 d-flex align-items-baseline">
+                        <h2 class="h-price"><i class="bi bi-currency-rupee"></i>{{ hotelDetails?.pricePerNight }}</h2>
+                        <span class="card-text fs-6 fw-lighter">/Per Night (Starting Price)</span>
+                    </div>
+                    <div class="share-book mt-4">
+                        <a [routerLink]="['/page/hotel-room', hotelDetails?.id]" [queryParams]="{ hotelId: hotelDetails?.id }" id="book-button">
+                            <button class="book">Select Rooms</button>
+                        </a>
+                        <div class="mainbox">
+                            <input type="checkbox" id="check">
+                            <label for="check" class="share2">Share</label>
+                            <div class="media-icons">
+                                <!-- Facebook Share -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com"
+                                    target="_blank">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+
+                                <!-- WhatsApp Share -->
+                                <a href="https://api.whatsapp.com/send?text=Check%20this%20out%20https://yourwebsite.com"
+                                    target="_blank">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+
+                                <!-- Instagram Share (Instagram doesn't support direct web sharing via a link) -->
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+
+                                <!-- Twitter Share -->
+                                <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out"
+                                    target="_blank">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pagination for other images below -->
+        <div class="hotel-images-pagination">
+            <div class="row mt-5 pb-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-outline-primary" (click)="previousPage()">Previous</button>
+                    <span class="px-3">Page {{ currentPage }} / {{ totalPages }}</span>
+                    <button class="btn btn-outline-primary" (click)="nextPage()">Next</button>
+                </div>
+            </div>
+            <div class="container3 d-flex pb-4">
+                <div *ngFor="let img of getImagesForPage()" class="card-list2 mt-3 mb-3">
+                    <img [src]="img" alt="Hotel Image" class="card-item2" />
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Child Content (Booking Form, etc.) -->
+    <div id="hotel-room-section">
+        <router-outlet></router-outlet>
+    </div>
+    
+
+
+    <!-- Display Amenities -->
+    <div class="amenities">
+        <h4 class="mb-2 fw-bold fs-5">AMENITIES</h4>
+        <ul class="amenity-list mt-3">
+            <li *ngFor="let amenity of hotelDetails?.amenities" class="list-item five-column">
+                <!-- Only display amenities that are available -->
+                <div *ngIf="amenity.available" class="dib">
+                    <i [class]="amenity.icon" class="amenity-icon"></i>
+                    <span class="amenityTxt">{{ amenity.name }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Display Rules -->
+    <div class="rules mt-0 amenities">
+        <h4 class="mb-3 fw-bold fs-5">Property Rules</h4>
+        <div class="checkin-out mb-3">
+            <h5 class="fw-nomal">Check-in: {{ hotelDetails?.checkin }}</h5>
+            <h5 class="fw-nomal">Check-out: {{ hotelDetails?.checkout }}</h5>
+        </div>
+        <hr>
+        <ul class="mt-4">
+            <li *ngFor="let rule of hotelDetails?.rules">
+                <i class="bi bi-arrow-right"></i> {{ rule }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Display Reviews and Rating -->
+
+    <app-rating *ngIf="hotelId" [hotelId]="hotelId"></app-rating>
+
+
+
+
+
+    <!--**********************    Location    ***************-->
+
+    <div class="amenities">
+        <h2 class="fs-4 mb-2 fw-bold">Our Location</h2>
+        <div class="location">
+            <iframe *ngIf="safeMapUrl" [src]="safeMapUrl" width="100%" height="100%" style="border:0;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="similar-room amenities">
+        <h4 class="m-2">Similar Hotels</h4>
+        <div class="container2 mt-2">
+            <div class="card-list mt-3 mb-3" *ngFor="let hotel of similarHotels" (click)="viewHotelDetails(hotel)">
+                <a class="card-item">
+                  <img [src]="hotel.images[0]"  alt="{{ hotel.name }}" >
+                  <h3 class="hotel-name">{{ hotel.name }}</h3>
+                  <p id="location"><i class="bi bi-geo-alt-fill"></i> {{ hotel.city }}</p>
+                  <h2 class="price"><i class="bi bi-currency-rupee"></i>{{ hotel.pricePerNight }}/Night</h2>
+                </a>
+            </div>
+        </div>
+        <!-- If no similar hotels are found -->
+        <div *ngIf="similarHotels && similarHotels.length === 0">
+            <p>No similar hotels found based on your current hotel's amenities.</p>
+        </div>
+    </div>
+</div>

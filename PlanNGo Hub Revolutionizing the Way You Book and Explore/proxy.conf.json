@@ -1,0 +1,13 @@
+{
+  "/ors": {
+    "target": "https://api.openrouteservice.org",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/ors": ""
+    },
+    "headers": {
+      "Authorization": "5b3ce3597851110001cf6248272ae34258f84ea8b2d4f287297e09fb"
+    }
+  }
+} 

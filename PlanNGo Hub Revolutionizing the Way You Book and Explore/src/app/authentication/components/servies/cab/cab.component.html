@@ -1,0 +1,95 @@
+<div class="cab-page">
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Drive with Us and Start Earning Today</h1>
+    <p>Join the leading cab service platform and enjoy flexible working hours and great earnings!</p>
+  </header>
+
+  <!-- First Section: New Driver Registration -->
+  <section class="register-section">
+    <div class="form-container">
+      <h2>New Driver Registration</h2>
+      <p>Fill in the details to start your journey with us.</p>
+      <form (submit)="registerDriver()" class="driver-form">
+        <div class="form-group">
+          <label for="driver-name">Driver Name</label>
+          <input
+            type="text"
+            id="driver-name"
+            [(ngModel)]="newDriver.name"
+            name="name"
+            required
+            placeholder="Enter your full name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="driver-contact">Contact Number</label>
+          <input
+            type="text"
+            id="driver-contact"
+            [(ngModel)]="newDriver.contact"
+            name="contact"
+            required
+            placeholder="Enter your contact number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vehicle-details">Vehicle Details</label>
+          <input
+            type="text"
+            id="vehicle-details"
+            [(ngModel)]="newDriver.vehicle"
+            name="vehicle"
+            required
+            placeholder="Enter your vehicle details"
+          />
+        </div>
+        <div class="form-group">
+          <label for="availability">Availability</label>
+          <select id="availability" [(ngModel)]="newDriver.available" name="available">
+            <option value="true">Available</option>
+            <option value="false">Not Available</option>
+          </select>
+        </div>
+        <button type="submit">Submit Registration</button>
+      </form>
+    </div>
+    <div class="image-container">
+      <img src="assets/images/driver.jpg" alt="Driver" />
+    </div>
+  </section>
+
+  <!-- Second Section: Features of Cab Services -->
+  <section class="features-section">
+    <h2>Why Drive with Us?</h2>
+    <div class="features-container">
+      <div class="feature-card">
+        <h3>Flexible Hours</h3>
+        <p>Work when you want! Full-time or part-time, you choose.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Attractive Earnings</h3>
+        <p>The more you drive, the more you earn! Competitive rates for drivers.</p>
+      </div>
+      <div class="feature-card">
+        <h3>24/7 Support</h3>
+        <p>We offer round-the-clock support to help you whenever you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Third Section: Greeting Message -->
+  <section class="greeting-section">
+    <h2>Thank You for Joining Our Platform!</h2>
+    <p>
+      We appreciate you being part of our network. Together, we’ll create a
+      trusted transportation service that connects people and places. We’re
+      excited to have you on board!
+    </p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 Cab Service Platform. All rights reserved.</p>
+  </footer>
+</div>

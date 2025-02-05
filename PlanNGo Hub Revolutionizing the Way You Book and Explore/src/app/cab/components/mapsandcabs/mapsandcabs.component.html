@@ -1,0 +1,40 @@
+<ul class="snip1217">
+         <li><a routerLink="/" routerLinkActive="active" class="tc">Home</a></li>
+         <li><a routerLink="/search" routerLinkActive="active" class="tc">Search And Book</a></li>
+         <li><a routerLink="/history" routerLinkActive="active">History</a></li>
+         <li><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
+         <li class="current"><a routerLink="/updates" routerLinkActive="active">Update</a></li>
+</ul>
+<div class="map-and-cabs-container">
+         <div class="map-section">
+                  <app-update></app-update>
+         </div>
+         <div class="cabs-section">
+                  <h3>Booked Cabs</h3>
+                  <div *ngIf="bookedCabs.length > 0; else noBookings">
+                           <app-cabcards *ngFor="let cab of displayedCabs" [cabCardDetails]="cab">
+                           </app-cabcards>
+
+                           <div class="pagination">
+                                    <button class="nav-button" (click)="previousPage()" [disabled]="currentPage === 1"
+                                             [class.disabled]="currentPage === 1">
+                                             &lt;
+                                    </button>
+
+                                    <button *ngFor="let page of getPaginationArray()" (click)="onPageChange(page)"
+                                             [class.active]="currentPage === page" class="page-number">
+                                             {{ page }}
+                                    </button>
+
+                                    <button class="nav-button" (click)="nextPage()"
+                                             [disabled]="currentPage === totalPages"
+                                             [class.disabled]="currentPage === totalPages">
+                                             &gt;
+                                    </button>
+                           </div>
+                  </div>
+                  <ng-template #noBookings>
+                           <p>No booked cabs found.</p>
+                  </ng-template>
+         </div>
+</div>

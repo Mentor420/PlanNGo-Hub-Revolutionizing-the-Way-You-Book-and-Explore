@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+.mat-mdc-paginator-container {
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: var(--mat-paginator-container-size);
+}

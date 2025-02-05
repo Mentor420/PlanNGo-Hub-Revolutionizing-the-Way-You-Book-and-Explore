@@ -1,0 +1,153 @@
+<div class="tw-container tw-mx-auto tw-px-4 tw-py-8">
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-lg tw-mb-20 tw-p-6">
+        <h3 class="tw-text-xl tw-font-bold tw-text-gray-800 tw-mb-4">Current Bookings</h3>
+        <div class="tw-overflow-x-auto">
+            <table class="tw-min-w-full tw-divide-y tw-divide-gray-200">
+                <thead class="tw-bg-gray-50">
+                <tr>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Name</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Image</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Departure</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Destination</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Date of Departure</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Date of Booking</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Tickets</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Price</th>
+                </tr>
+                </thead>
+                <tbody class="tw-bg-white tw-divide-y tw-divide-gray-200">
+                <tr *ngFor="let booking of tours">
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">{{booking.name}}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <img [src]="booking.image" alt="Tour Image" class="tw-w-16 tw-h-16 tw-object-cover tw-rounded-full">
+                    </td>
+                    <td>
+                        {{booking.departure}}<br>
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">{{booking.destination}}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">{{booking.departureTime}}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <div *ngFor="let book of bookingFinal">
+                            <div *ngIf="book.tourId === booking.id">{{book.date}}</div>
+                        </div>
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <div *ngFor="let book of bookingFinal">
+                            <div *ngIf="book.tourId === booking.id">{{book.tickets}}</div>
+                        </div>
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">$ {{booking.price}}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <div *ngFor="let book of bookingFinal">
+                            <div class="tw-flex tw-gap-2" *ngIf="book.tourId === booking.id">
+                                <button (click)="editBooking(book)"
+                                        class="tw-px-3 tw-py-1 tw-bg-green-600 tw-text-white tw-rounded hover:tw-bg-green-700">
+                                    Edit
+                                </button>
+                                <button (click)="deleteBooking(book.bookingId)"
+                                        class="tw-px-3 tw-py-1 tw-bg-red-600 tw-text-white tw-rounded hover:tw-bg-red-700">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Booking Form -->
+<div *ngIf="isEditing" class="tw-bg-white tw-rounded-lg tw-shadow-lg tw-p-6 tw-mb-8">
+    <form [formGroup]="bookingForm"  (ngSubmit)="onSubmit()">
+        <h2 class="tw-text-2xl tw-font-bold tw-text-gray-800 tw-mb-6">Manage Booking</h2>
+
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-6">
+            <!-- Name Field -->
+            <div class="tw-col-span-2">
+                <label for="name" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Full Name</label>
+                <input type="text" id="name" formControlName="name"
+                       class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500">
+                <div *ngIf="bookingForm.get('name')?.invalid && bookingForm.get('name')?.touched"
+                     class="tw-mt-1 tw-text-sm tw-text-red-600">
+                    Name is required
+                </div>
+            </div>
+
+            <!-- Email Fields -->
+            <div>
+                <label for="email" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Email Address</label>
+                <input type="email" id="email" formControlName="email"
+                       class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500">
+                <div *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched"
+                     class="tw-mt-1 tw-text-sm tw-text-red-600">
+                    Please enter a valid email
+                </div>
+            </div>
+
+            <div>
+                <label for="confirmEmail" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Confirm Email</label>
+                <input type="email" id="confirmEmail" formControlName="confirmEmail"
+                       class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500">
+                <div *ngIf="bookingForm.get('confirmEmail')?.invalid && bookingForm.get('confirmEmail')?.touched"
+                     class="tw-mt-1 tw-text-sm tw-text-red-600">
+                    Emails must match
+                </div>
+            </div>
+
+            <!-- Phone & Date Fields -->
+            <div>
+                <label for="phone" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phone"
+                       class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500">
+                <div *ngIf="bookingForm.get('phone')?.invalid && bookingForm.get('phone')?.touched"
+                     class="tw-mt-1 tw-text-sm tw-text-red-600">
+                    Enter valid 10-digit number
+                </div>
+            </div>
+
+            <div>
+                <label for="date" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Booking Date</label>
+                <input type="date" id="date" formControlName="date"
+                       class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500">
+            </div>
+
+            <!-- Tickets Field -->
+            <div>
+                <label for="tickets" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Number of Tickets</label>
+                <div class="tw-flex tw-items-center " >
+                    <input type="number" id="tickets" formControlName="tickets" min="1"
+                           class="tw-w-20 tw-px-3 tw-py-2 tw-text-center tw-border-t tw-border-b tw-border-gray-300">
+                    <div *ngIf="bookingForm.get('tickets')?.invalid && bookingForm.get('tickets')?.touched">
+                        1
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Field -->
+            <div class="tw-col-span-2">
+                <label for="message" class="tw-block tw-text-sm tw-font-medium tw-text-gray-700 tw-mb-1">Additional Message</label>
+                <textarea id="message" formControlName="message" rows="3"
+                          class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-md focus:tw-ring-blue-500 focus:tw-border-blue-500"></textarea>
+            </div>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="tw-flex tw-gap-4 tw-mt-6">
+            <button type="submit" [disabled]="!bookingForm.valid"
+                    class="tw-px-6 tw-py-2 tw-bg-blue-600 tw-text-white tw-rounded-md hover:tw-bg-blue-700 disabled:tw-opacity-50">
+                Save Booking
+            </button>
+            <button type="button" (click)="resetForm()"
+                    class="tw-px-6 tw-py-2 tw-bg-gray-600 tw-text-white tw-rounded-md hover:tw-bg-gray-700">
+                Reset
+            </button>
+            <button type="button" (click)="isEditing = false"
+                    class="tw-px-6 tw-py-2 tw-bg-red-600 tw-text-white tw-rounded-md hover:tw-bg-red-700">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>

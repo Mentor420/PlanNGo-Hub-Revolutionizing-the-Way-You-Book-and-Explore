@@ -1,0 +1,245 @@
+.map-and-cabs-container {
+         display: flex;
+         width: 100inch;
+         gap: 20px;
+         padding: 2rem;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+         background: linear-gradient(to right, #ffffff, #f8f9fa);
+         border-radius: 15px;
+}
+
+.map-section {
+         flex: 2;
+         width: 30vw;
+         box-shadow: 0 8px 25px rgba(8, 153, 189, 0.26);
+         overflow: hidden;
+         border-radius: 12px;
+         background: #ffffff;
+}
+
+.cabs-section {
+         flex: 1;
+         padding: 2rem;
+         justify-content: center;
+         align-items: center;
+         box-shadow: 0 8px 25px rgba(8, 149, 231, 0.329);
+         background: #ffffff;
+         border-radius: 15px;
+         transition: transform 0.3s ease;
+}
+
+.cabs-section:hover {
+         transform: translateY(-2px);
+}
+
+.cabs-section h3 {
+         color: #2d3748;
+         margin-bottom: 1.5rem;
+         font-size: 1.5rem;
+         font-weight: 600;
+         position: relative;
+}
+
+.cabs-section h3::after {
+         content: '';
+         position: absolute;
+         bottom: -8px;
+         left: 0;
+         width: 34%;
+         height: 3px;
+         background: linear-gradient(to right, #007bff, #00c6ff);
+         border-radius: 2px;
+}
+
+.no-bookings-message {
+         text-align: center;
+         padding: 2rem;
+         color: #64748b;
+         font-size: 1.1rem;
+         background: #f8fafc;
+         border-radius: 8px;
+         border: 1px dashed #cbd5e1;
+}
+
+/* Enhanced pagination styles */
+.pagination {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 2rem;
+         gap: 10px;
+         padding: 1rem;
+         background: #f8fafc;
+         border-radius: 12px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.pagination button {
+         min-width: 40px;
+         height: 40px;
+         border: none;
+         border-radius: 10px;
+         background: white;
+         cursor: pointer;
+         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 15px;
+         font-weight: 500;
+         color: #4a5568;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+         position: relative;
+         overflow: hidden;
+}
+
+.pagination button::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(45deg, #007bff, #00c6ff);
+         opacity: 0;
+         transition: opacity 0.3s ease;
+         z-index: 1;
+}
+
+.pagination button:hover:not(.disabled) {
+         transform: translateY(-2px);
+         box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+         color: #007bff;
+}
+
+.pagination button.active {
+         background: linear-gradient(45deg, #007bff, #00c6ff);
+         color: white;
+         font-weight: 600;
+         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25);
+}
+
+.pagination .nav-button {
+         font-weight: bold;
+         padding: 0 15px;
+         background: linear-gradient(to right, #f8f9fa, #ffffff);
+         border: 1px solid #e2e8f0;
+}
+
+.pagination .nav-button:hover:not(.disabled) {
+         background: white;
+         border-color: #007bff;
+}
+
+.pagination .nav-button.disabled {
+         cursor: not-allowed;
+         opacity: 0.5;
+         background: #f1f5f9;
+         transform: none;
+         box-shadow: none;
+}
+
+.pagination .page-number {
+         position: relative;
+         z-index: 2;
+}
+
+.pagination .page-number:hover:not(.active) {
+         background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+/* Add subtle animation for button clicks */
+.pagination button:active:not(.disabled) {
+         transform: translateY(0);
+         transition: transform 0.1s;
+}
+
+/* Add focus styles for accessibility */
+.pagination button:focus {
+         outline: none;
+         box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+         .pagination {
+                  gap: 6px;
+         }
+
+         .pagination button {
+                  min-width: 36px;
+                  height: 36px;
+                  font-size: 14px;
+         }
+}
+.snip1217 {
+         font-family: 'Raleway', Arial, sans-serif;
+         text-align: center;
+         text-transform: uppercase;
+         font-weight: 500;
+         letter-spacing: 1px;
+         background: linear-gradient(135deg, #4299e1a1 0%, #667eeaa6 100%);
+
+}
+
+.snip1217 * {
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         -webkit-transition: all 0.35s ease;
+         transition: all 0.35s ease;
+}
+
+.snip1217 li {
+         display: inline-block;
+         list-style: outside none none;
+         margin: 0.5em 1.5em;
+         padding: 0;
+}
+
+.snip1217 a {
+         padding: 0.1em 0;
+         color: rgba(34, 34, 34, 0.607);
+         position: relative;
+         text-decoration: none;
+         display: inline-block;
+}
+
+.snip1217 a:before,
+.snip1217 a:after {
+         height: 1px;
+         position: absolute;
+         content: '';
+         -webkit-transition: all 0.35s ease;
+         transition: all 0.35s ease;
+         background-color: #3b80f8;
+         width: 0;
+}
+
+.snip1217 a:before {
+         top: 0;
+         left: 0;
+}
+
+.snip1217 a:after {
+         bottom: 0;
+         right: 0;
+}
+
+.snip1217 a:hover,
+.snip1217 .current a {
+         color: #f77272;
+}
+
+.snip1217 a:hover:before,
+.snip1217 .current a:before,
+.snip1217 a:hover:after,
+.snip1217 .current a:after {
+         width: 100%;
+}
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+         color: #3f51b5;
+}

@@ -1,0 +1,15 @@
+<div *ngFor="let tour of tours">
+    <div *ngIf="tourId == tour.id">
+        <div *ngFor="let companyDetails of companies" class="bg-white rounded-lg shadow-md p-4 mb-4">
+            <div *ngIf="tour.tourcompany==companyDetails.nameOfCompany" class="bg-gray-100 border border-gray-300 rounded-lg p-6 m-5">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">{{ companyDetails.nameOfCompany }}</h2>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Description:</strong> {{ companyDetails.description }}</p>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Address:</strong> {{ companyDetails.address }}</p>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Phone:</strong> <a href="tel:{{ companyDetails.phone }}" class="text-blue-600 hover:underline">{{ companyDetails.phone }}</a></p>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Email:</strong> <a href="mailto:{{ companyDetails.email }}" class="text-blue-600 hover:underline">{{ companyDetails.email }}</a></p>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Website:</strong> <a href="{{ companyDetails.website }}" target="_blank" class="text-blue-600 hover:underline">{{ companyDetails.website }}</a></p>
+                <p class="mb-2"><strong class="font-medium text-gray-700">Registration ID:</strong> {{ companyDetails.registrationId }}</p>
+            </div>
+        </div>
+    </div>
+</div>

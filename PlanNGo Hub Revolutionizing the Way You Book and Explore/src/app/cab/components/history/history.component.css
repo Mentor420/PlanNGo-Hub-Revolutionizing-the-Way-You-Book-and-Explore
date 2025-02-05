@@ -1,0 +1,429 @@
+:host {
+         display: block;
+         min-height: 100vh;
+         background: linear-gradient(135deg, #8fa9cc 0%, #3867b8 100%);
+         position: relative;
+         overflow: hidden;
+}
+
+:host::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background:
+                  radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                  radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                  radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+         pointer-events: none;
+}
+
+.history-container {
+         padding: 30px;
+         margin: 20px auto;
+         max-width: 1200px;
+         background: rgba(255, 255, 255, 0.95);
+         border-radius: 16px;
+         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+         backdrop-filter: blur(10px);
+         border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.history-title {
+         font-size: 2.5rem;
+         background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+         -webkit-background-clip: text;
+         background-clip: text;
+         -webkit-text-fill-color: transparent;
+         text-align: center;
+         margin :40px 0;
+         padding-bottom: 20px;
+         border-bottom: 3px solid #e2e8f0;
+         position: relative;
+}
+
+.history-title::after {
+         content: '';
+         position: absolute;
+         bottom: -3px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 100px;
+         height: 3px;
+         background: linear-gradient(to right, #4299e1, #667eea);
+         transition: width 0.3s ease;
+}
+
+.history-title:hover::after {
+         width: 200px;
+}
+
+.bookings-list {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+}
+
+.booking-item {
+         transition: all 0.3s ease-in-out;
+         animation: cardEntrance 0.5s ease forwards;
+         animation-delay: calc(var(--item-index) * 0.1s);
+}
+
+.booking-item:hover {
+         transform: translateY(-2px);
+}
+
+.booking-card {
+         background: white;
+         border-radius: 12px;
+         padding: 25px;
+         margin-bottom: 20px;
+         border: 1px solid #e2e8f0;
+         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         position: relative;
+         overflow: hidden;
+}
+
+.booking-card:hover {
+         transform: translateY(-5px) scale(1.01);
+         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+         border-color: #4299e1;
+}
+
+.booking-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 4px;
+         background: linear-gradient(to right, #4299e1, #667eea);
+         transform: scaleX(0);
+         transform-origin: left;
+         transition: transform 0.3s ease;
+}
+
+.booking-card:hover::before {
+         transform: scaleX(1);
+}
+
+.booking-card::after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 50%;
+         height: 100%;
+         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+         transform: skewX(-20deg);
+         animation: shimmer 3s infinite;
+         opacity: 0;
+}
+
+.booking-card:hover::after {
+         opacity: 1;
+}
+
+.booking-info {
+         padding: 15px 0;
+         margin-top: 15px;
+         border-top: 1px solid #e2e8f0;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         transition: all 0.3s ease;
+}
+
+.booking-timestamp {
+         color: #4a5568;
+         font-size: 0.95rem;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         transition: color 0.3s ease;
+}
+
+.booking-card:hover .booking-timestamp {
+         color: #4299e1;
+}
+
+/* Pagination Styles */
+.pagination-controls {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 12px;
+         margin-top: 40px;
+         padding: 20px 0;
+}
+
+.pagination-button {
+         padding: 10px 20px;
+         background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+         color: white;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         transition: all 0.3s ease;
+         position: relative;
+         overflow: hidden;
+}
+
+.pagination-button:not(:disabled):hover {
+         transform: translateY(-2px);
+         box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+.pagination-button:disabled {
+         background: #e2e8f0;
+         cursor: not-allowed;
+}
+
+.pagination-button::after {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 0;
+         height: 0;
+         background: rgba(255, 255, 255, 0.3);
+         border-radius: 50%;
+         transform: translate(-50%, -50%);
+         transition: width 0.6s ease, height 0.6s ease;
+}
+
+.pagination-button:hover::after {
+         transform: scale(1);
+}
+
+.pagination-button:not(:disabled):active::after {
+         width: 200px;
+         height: 200px;
+         opacity: 0;
+}
+
+.page-numbers {
+         display: flex;
+         gap: 8px;
+}
+
+.page-number {
+         min-width: 40px;
+         height: 40px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 8px;
+         border: 2px solid #e2e8f0;
+         background: white;
+         color: #4a5568;
+         font-weight: 500;
+         transition: all 0.3s ease;
+}
+
+.page-number.active {
+         background: linear-gradient(135deg, #4299e1 0%, #667eea 100%);
+         color: white;
+         border: none;
+         box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+.page-number:hover:not(.active) {
+         border-color: #4299e1;
+         color: #4299e1;
+         transform: translateY(-2px);
+}
+
+.no-bookings {
+         text-align: center;
+         padding: 60px 40px;
+         background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+         border-radius: 12px;
+         border: 2px dashed #cbd5e0;
+         margin: 40px 0;
+         transition: all 0.3s ease;
+}
+
+.no-bookings:hover {
+         border-color: #4299e1;
+         transform: scale(1.02);
+}
+
+.no-bookings i {
+         font-size: 3.5rem;
+         color: #4299e1;
+         margin-bottom: 20px;
+         display: block;
+}
+
+/* Animated Background Elements */
+@keyframes float {
+         0% {
+                  transform: translateY(0px) rotate(0deg);
+         }
+
+         50% {
+                  transform: translateY(-20px) rotate(5deg);
+         }
+
+         100% {
+                  transform: translateY(0px) rotate(0deg);
+         }
+}
+
+.floating-bg {
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         pointer-events: none;
+         z-index: 0;
+}
+
+.floating-bg::before,
+.floating-bg::after {
+         content: '';
+         position: absolute;
+         width: 300px;
+         height: 300px;
+         border-radius: 50%;
+         background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+         animation: float 15s infinite ease-in-out;
+}
+
+.floating-bg::before {
+         top: -150px;
+         right: -150px;
+}
+
+.floating-bg::after {
+         bottom: -150px;
+         left: -150px;
+         animation-delay: -7.5s;
+}
+
+@keyframes cardEntrance {
+         from {
+                  opacity: 0;
+                  transform: translateY(25px);
+         }
+
+         to {
+                  opacity: 1;
+                  transform: translateY(0);
+         }
+}
+
+@keyframes shimmer {
+         0% {
+                  transform: translateX(-100%);
+         }
+
+         100% {
+                  transform: translateX(100%);
+         }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+         .history-container {
+                  padding: 15px;
+                  margin: 10px;
+         }
+
+         .history-title {
+                  font-size: 1.5rem;
+         }
+
+         .pagination-controls {
+                  flex-direction: column;
+                  gap: 10px;
+         }
+
+         .page-numbers {
+                  flex-wrap: wrap;
+                  justify-content: center;
+         }
+
+         .floating-bg::before,
+         .floating-bg::after {
+                  width: 200px;
+                  height: 200px;
+         }
+}
+.snip1217 {
+         font-family: 'Raleway', Arial, sans-serif;
+         text-align: center;
+         text-transform: uppercase;
+         font-weight: 500;
+         letter-spacing: 1px;
+         background: linear-gradient(135deg, #4299e1a1 0%, #667eeaa6 100%);
+         border-radius: 50px;
+}
+
+.snip1217 * {
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         -webkit-transition: all 0.35s ease;
+         transition: all 0.35s ease;
+}
+
+.snip1217 li {
+         display: inline-block;
+         list-style: outside none none;
+         margin: 0.5em 1.5em;
+         padding: 0;
+}
+
+.snip1217 a {
+         padding: 0.1em 0;
+         color: rgba(34, 34, 34, 0.607);
+         position: relative;
+         text-decoration: none;
+         display: inline-block;
+}
+
+.snip1217 a:before,
+.snip1217 a:after {
+         height: 1px;
+         position: absolute;
+         content: '';
+         -webkit-transition: all 0.35s ease;
+         transition: all 0.35s ease;
+         background-color: #3b80f8;
+         width: 0;
+}
+
+.snip1217 a:before {
+         top: 0;
+         left: 0;
+}
+
+.snip1217 a:after {
+         bottom: 0;
+         right: 0;
+}
+
+.snip1217 a:hover,
+.snip1217 .current a {
+         color: #b55cfd;
+}
+
+.snip1217 a:hover:before,
+.snip1217 .current a:before,
+.snip1217 a:hover:after,
+.snip1217 .current a:after {
+         width: 100%;
+}
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+         color: #3f51b5;
+}
+       

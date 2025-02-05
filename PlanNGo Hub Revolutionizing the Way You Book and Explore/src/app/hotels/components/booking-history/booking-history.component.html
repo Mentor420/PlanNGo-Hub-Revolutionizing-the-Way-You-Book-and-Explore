@@ -1,0 +1,134 @@
+<div class="booking-history">
+  <!-- <button class="back-button2" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> Back
+  </button> -->
+  <h2>Your Booking History</h2>
+
+  <ng-container *ngIf="isLoading; else bookingContent">
+    <div class="loading">Loading your bookings...</div>
+  </ng-container>
+
+  <ng-template #bookingContent>
+    <ng-container *ngIf="bookingHistory.length > 0; else noBookings">
+      <div class="booking-list">
+        <div class="booking-card" *ngFor="let booking of bookingHistory">
+          <div class="booking-card-inner">
+            <div class="booking-info">
+              <div class="booking-header">
+                <h3>{{ booking.hotelName }}</h3>
+                <span class="status {{ booking.status.toLowerCase() }}">
+                  {{ booking.status }}
+                </span>
+              </div>
+              <div class="booking-details">
+                <div class="card-item2 p-4">
+                  <img [src]="booking.hotelImage" alt="{{ booking.hotelName }} Image">
+                </div>
+                <div class="details">
+                  <p><strong>Room:</strong> {{ booking.roomDetails.type }}</p>
+                  <p><strong>Check-In:</strong> {{ booking.checkInDate | formatDate }}</p>
+                  <p><strong>Check-Out:</strong> {{ booking.checkOutDate | formatDate }}</p>
+                  <p><strong>Booking Date:</strong> {{ booking.bookingDate | formatDate }}</p>
+                  <p><strong>Rooms Booked:</strong> {{ booking.roomBooked }}</p>
+                  <p><strong>Price:</strong> {{ booking.price }}</p>
+                </div>
+                <span *ngIf="cancelledDueToRoomDeletion[booking.id]" class="cancellation-notice">
+                  <i class="bi bi-exclamation-triangle-fill" title="This booking was cancelled due to room unavailability. A refund will be processed."></i>
+                </span>
+              </div>
+              <div class="booking-actions">
+                <button class="details-btn" (click)="setSelectedBooking(booking)">More Details</button>
+                <button class="cancel-btn" *ngIf="booking.status === 'Booked'" (click)="onCancelBooking(booking.id)">
+                  Cancel Booking
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup for Cancel Booking -->
+      <div *ngIf="isPopupVisible" class="popup-container">
+        <div class="popup-content">
+          <h2>{{ popupTitle }}</h2>
+          <!-- <p>{{ popupMessage }}</p> -->
+          <button (click)="closePopup()" class="close-popup-button">Close</button>
+          <p *ngIf="popupMessage === 'Are you sure you want to cancel this booking?'"> </p>
+          <button *ngIf="isConfirmVisible && isreview" (click)="confirmAction()" class="confirm-popup-button">Confirm</button>
+        </div>
+      </div>
+
+      <!-- Dialog for Booking Details -->
+      <div class="dialog-overlay" *ngIf="selectedBooking" (click)="clearSelectedBooking()">
+        <div class="dialog" (click)="$event.stopPropagation()">
+          <div class="dialog-header">
+            <h2>Booking Details</h2>
+            <button class="close-dialog-btn" (click)="clearSelectedBooking()">×</button>
+          </div>
+          <div class="dialog-content">
+            <div class="dialog-item">
+              <span class="dialog-label">Booking ID:</span> {{ selectedBooking.id }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Name:</span> {{ selectedBooking.fullName }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-envelope"></i> {{ selectedBooking.email }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-telephone"></i> {{ selectedBooking.mobile }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-calendar-date"></i> Check-in: {{ selectedBooking.checkInDate | formatDate }}
+            </div>
+            <div class="dialog-item">
+              <i class="bi bi-calendar-date"></i> Check-out: {{ selectedBooking.checkOutDate | formatDate }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Room(s) Booked:</span> {{ selectedBooking.roomBooked }}
+            </div>
+            <div class="dialog-item">
+              <span class="dialog-label">Price:</span> ₹{{ selectedBooking.price }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #noBookings>
+    <div class="no-bookings">
+      <p>You haven't made any bookings yet.</p>
+      <a href="/hotel" class="search-btn">Find a Hotel</a>
+    </div>
+  </ng-template>
+
+  <!-- Review Popup -->
+  <div *ngIf="showReviewPopup" class="popup-container">
+    <div class="popup-content review-popup">
+      <h2>Review Your Stay</h2>
+      <p>How was your stay at {{ reviewBooking?.hotelName }}?</p>
+      <div class="rating">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="reviewRating = star" [class.filled]="star <= reviewRating">
+          ★
+        </span>
+      </div>
+      <!-- Input for Name -->
+      <div class="input-group">
+        <input id="author" [(ngModel)]="author" type="text" placeholder="Enter your name" class="input-field" />
+        <div *ngIf="nameError" class="error-message">{{ nameError }}</div>
+      </div>
+      <!-- Input for Comment -->
+      <div class="input-group">
+        <textarea [(ngModel)]="reviewComment" placeholder="Share your experience (optional)" rows="4"
+          class="input-field"></textarea>
+        <div *ngIf="commentError" class="error-message-comment">{{ commentError }}</div>
+      </div>
+      <div class="review-actions">
+        <button (click)="closeReviewPopup()" class="close-popup-button">Cancel</button>
+        <button (click)="submitReview()" class="confirm-popup-button" [disabled]="reviewRating === 0">Submit
+          Review</button>
+      </div>
+    </div>
+  </div>
+</div>

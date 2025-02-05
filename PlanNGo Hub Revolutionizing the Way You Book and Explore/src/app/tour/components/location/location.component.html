@@ -1,0 +1,11 @@
+<div class="tw-mx-20 tw-max-w-screen-2xl tw-mx-auto tw-overflow-hidden tw-bg-white">
+    <div class="tw-text-2xl tw-font-bold tw-py-4 tw-text-gray-900">Location</div>
+
+    <div *ngIf="selectedTour" class="tw-tour-card">
+        <div class="">
+            <div class="tw-mx-auto">
+                <div [id]="'map-' + selectedTour.id" class="tw-h-[300px] tw-map-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
