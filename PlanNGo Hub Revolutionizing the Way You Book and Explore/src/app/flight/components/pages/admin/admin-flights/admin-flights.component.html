@@ -1,0 +1,187 @@
+<nav class="tw-bg-white tw-shadow-lg tw-fixed tw-left-0 tw-top-0 tw-bottom-0 tw-w-64 tw-z-50"> 
+    <div class="tw-flex tw-flex-col tw-h-full"> <!-- Logo --> <div class="tw-p-4 tw-bg-gray-100"> 
+        <span class="tw-text-2xl tw-font-bold tw-text-blue-600">AdminPanel</span> 
+    </div> <!-- Navigation Menu --> 
+    <nav class="tw-flex-1 tw-overflow-y-auto">
+         <div class="tw-flex tw-flex-col tw-pt-4 tw-space-y-2">
+             <a href="/admin" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-text-blue-600 hover:tw-bg-gray-100 tw-transition-colors tw-duration-200">
+                 <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+
+                     </path> 
+                    </svg>
+                     Dashboard </a> 
+                     <a href="/ride-manage" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-text-blue-600 hover:tw-bg-gray-100 tw-transition-colors tw-duration-200"> 
+                        <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                         </svg> Rides </a> <a href="/customer" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-text-blue-600 hover:tw-bg-gray-100 tw-transition-colors tw-duration-200"> <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> 
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path> </svg> Customers </a> 
+                        <a href="/employee" class="tw-flex tw-items-center tw-px-4 tw-py-3 tw-text-gray-600 hover:tw-text-blue-600 hover:tw-bg-gray-100 tw-transition-colors tw-duration-200"> 
+                            <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path> 
+                            </svg> Employees </a> 
+                    </div> </nav> </div> </nav>
+<div class="tw-mt-32 tw-ml-64">
+    <nav class="tw-navbar tw-bg-white tw-shadow-sm tw-flex tw-justify-between tw-items-center tw-p-4">
+        <div class="tw-relative search-container">
+            <i class="fa-solid fa-magnifying-glass tw-absolute tw-left-3 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-400"></i>
+            <input
+                    type="text"
+                    class="tw-w-64 tw-px-4 tw-py-2 tw-rounded-lg tw-border tw-border-gray-300 tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-blue-500"
+                    [(ngModel)]="searchInput"
+                    (input)="onSearch()"
+                    placeholder="Enter airline or flight number"
+            />
+        </div>
+        <div class="tw-navbar-section">
+            <button
+                    (click)="onBookingAnalysis()"
+                    class="tw-bg-blue-500 tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-hover:bg-blue-600 tw-transition-colors"
+            >
+                Overall Analysis
+            </button>
+        </div>
+    </nav>
+
+    <div class=" tw-mx-auto tw-p-4">
+        <div class=" tw-bg-white tw-rounded-lg tw-shadow-sm">
+            <table class="tw-w-full flights-table">
+                <thead class="tw-bg-blue-50">
+                <tr>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Airline</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">FNO</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Departure</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Destination</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider"></th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Dept Date</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Dept Time</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Price $</th>
+                    <th class="tw-px-6 tw-py-3 tw-text-left tw-text-xs tw-font-medium tw-text-gray-500 tw-uppercase tw-tracking-wider">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="tw-bg-white tw-divide-y tw-divide-gray-200">
+                <tr *ngFor="let data of paginatedFlights" class="tw-hover:bg-gray-50">
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <div class="tw-flex tw-items-center">
+                            <img [src]="data.logo" alt="Logo" class="logo-img tw-w-8 tw-h-8 tw-rounded-full tw-object-cover tw-mr-2" />
+                            <p class="tw-text-sm tw-text-gray-900">{{ data.airline }}</p>
+                        </div>
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.flightNumber }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.departure.place }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.destination.place }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <button class="view-btn tw-bg-green-500 tw-text-white tw-px-3 tw-py-2 tw-rounded-lg tw-hover:bg-green-600 tw-transition-colors" (click)="onOpenDetails(data)">
+                            View Details
+                        </button>
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.departure.date }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.departure.time }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap tw-text-sm tw-text-gray-900">{{ data.price }}</td>
+                    <td class="tw-px-6 tw-py-4 tw-whitespace-nowrap">
+                        <button class="edit-btn tw-bg-blue-500 tw-text-white tw-p-2 tw-rounded-lg tw-hover:bg-blue-600 tw-transition-colors"
+                                [routerLink]="['/admin/flight/edit', data.id]"
+                                (mouseenter)="showPopup($event, 'edit', data)"
+                                (mouseleave)="hidePopup()">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="cancel-btn tw-bg-red-500 tw-text-white tw-px-3 tw-py-2 tw-rounded-lg tw-hover:bg-red-600 tw-transition-colors tw-ml-2"
+                                (click)="onCancelledToggle(data.id)"
+                                [disabled]="!data.isActive">
+                            Cancel
+                        </button>
+                        <button class="analysis-btn tw-bg-teal-500 tw-text-white tw-p-2 tw-rounded-lg tw-hover:bg-teal-600 tw-transition-colors tw-ml-2"
+                                (click)="onAnalysisView(data.id)"
+                                (mouseenter)="showPopup($event, 'analysis', data)"
+                                (mouseleave)="hidePopup()">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- No Results Found -->
+            <div *ngIf="filteredFlights.length <= 0" class="no-found tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-64">
+                <img alt="No Results" class="tw-w-32 tw-h-32 tw-text-gray-400" />
+                <h1 class="tw-text-2xl tw-font-bold tw-text-gray-600 tw-mt-4">No Results Found</h1>
+                <p class="tw-text-gray-500 tw-mt-2">We couldn't find what you searched for. Try searching again</p>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-controls tw-flex tw-justify-center tw-items-center tw-gap-4 tw-mt-6">
+            <button
+                    (click)="previousPage()"
+                    [disabled]="currentPage === 1"
+                    class="tw-p-2 tw-rounded-lg tw-hover:bg-gray-100 disabled:tw-opacity-50 disabled:tw-cursor-not-allowed"
+            >
+                <i class="fa-solid fa-chevron-left tw-text-lg"></i>
+            </button>
+            <span class="tw-text-gray-700">Page {{ currentPage }} of {{ getTotalPages() }}</span>
+            <button
+                    (click)="nextPage()"
+                    [disabled]="currentPage === getTotalPages()"
+                    class="tw-p-2 tw-rounded-lg tw-hover:bg-gray-100 disabled:tw-opacity-50 disabled:tw-cursor-not-allowed"
+            >
+                <i class="fa-solid fa-chevron-right tw-text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Flight Details Modal -->
+    <div class="modal tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-50 tw-flex tw-items-center tw-justify-center" *ngIf="isView">
+        <div class="modal-content tw-bg-white tw-rounded-lg tw-p-6 tw-max-w-md tw-w-full">
+            <span class="close tw-absolute tw-top-4 tw-right-4 tw-text-gray-500 hover:tw-text-gray-700 tw-cursor-pointer" (click)="onViewToggle()">&times;</span>
+            <h2 class="tw-text-2xl tw-font-bold tw-mb-4">Flight Details</h2>
+            <div class="details tw-space-y-4">
+                <img [src]="viewDetails?.logo" alt="Airline Logo" class="logo tw-w-32 tw-h-32 tw-rounded-full tw-object-cover tw-mx-auto" />
+                <p><strong class="tw-font-semibold">Airline:</strong> {{ viewDetails?.airline }}</p>
+                <p><strong class="tw-font-semibold">Flight Number:</strong> {{ viewDetails?.flightNumber }}</p>
+                <p><strong class="tw-font-semibold">Departure:</strong> {{ viewDetails?.departure.place }} on {{ viewDetails?.departure.date }} at {{ viewDetails?.departure.time }}</p>
+                <p><strong class="tw-font-semibold">Destination:</strong> {{ viewDetails?.destination.place }} on {{ viewDetails?.destination.date }} at {{ viewDetails?.destination.time }}</p>
+                <p><strong class="tw-font-semibold">Duration:</strong> {{ viewDetails?.duration }}</p>
+                <p><strong class="tw-font-semibold">Class:</strong> {{ viewDetails?.classType }}</p>
+                <p><strong class="tw-font-semibold">Price:</strong> ${{ viewDetails?.price }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Modal -->
+    <div class="modal tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-50 tw-flex tw-items-center tw-justify-center" *ngIf="isShowAnalysis">
+        <div class="modal-content tw-bg-white tw-rounded-lg tw-p-6 tw-max-w-md tw-w-full">
+            <span class="close tw-absolute tw-top-4 tw-right-4 tw-text-gray-500 hover:tw-text-gray-700 tw-cursor-pointer" (click)="onAnalysisToggle()">&times;</span>
+            <div class="booking-summary-card tw-space-y-6">
+                <h3 class="card-title tw-text-xl tw-font-bold">Analysis</h3>
+                <div class="summary-stat tw-space-y-4">
+                    <div class="summary-stat">
+                        <p class="stat-title tw-text-sm tw-font-medium tw-text-gray-500">Total Bookings</p>
+                        <p class="stat-value tw-text-2xl tw-font-bold tw-text-gray-900">{{ totalBookings }}</p>
+                    </div>
+                    <div class="summary-stat">
+                        <p class="stat-title tw-text-sm tw-font-medium tw-text-gray-500">Confirmed Bookings</p>
+                        <p class="stat-value tw-text-2xl tw-font-bold tw-text-gray-900">{{ confirmedBookings }}</p>
+                    </div>
+                    <div class="summary-stat">
+                        <p class="stat-title tw-text-sm tw-font-medium tw-text-gray-500">Canceled Bookings</p>
+                        <p class="stat-value tw-text-2xl tw-font-bold tw-text-gray-900">{{ canceledBookings }}</p>
+                    </div>
+                    <div class="summary-stat">
+                        <p class="stat-title tw-text-sm tw-font-medium tw-text-gray-500">Total Revenue</p>
+                        <p class="stat-value tw-text-2xl tw-font-bold tw-text-gray-900">{{ totalRevenue | currency }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Modal -->
+    <div class="modal modal1 tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-50 tw-flex tw-items-center tw-justify-center" *ngIf="isCancelled">
+        <div class="modal-content modal-content1 tw-bg-white tw-rounded-lg tw-p-6 tw-max-w-md tw-w-full">
+            <span class="close tw-absolute tw-top-4 tw-right-4 tw-text-gray-500 hover:tw-text-gray-700 tw-cursor-pointer" (click)="closeCancelpop()">&times;</span>
+            <h2 class="tw-text-xl tw-font-bold tw-mb-4">Are you sure you want to stop the service?</h2>
+            <div class="modal-buttons tw-flex tw-justify-end tw-gap-4">
+                <button class="cancel-btn tw-bg-gray-500 tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-transition-colors tw-hover:bg-gray-600" type="button" (click)="closeCancelpop()">Cancel</button>
+                <button class="view-btn tw-bg-red-500 tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-transition-colors tw-hover:bg-red-600" type="button" (click)="onCancelService()">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

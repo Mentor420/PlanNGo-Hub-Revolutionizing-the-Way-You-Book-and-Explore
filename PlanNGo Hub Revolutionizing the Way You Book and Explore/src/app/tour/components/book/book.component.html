@@ -1,0 +1,127 @@
+<div class="tw-min-h-screen tw-bg-gray-100 tw-py-8">
+    <div class="tw-max-w-7xl tw-mx-auto tw-px-4">
+        <div class="tw-flex tw-flex-col md:tw-flex-row tw-gap-8">
+            <!-- Tour Information Panel -->
+            <div class="md:tw-w-1/3 tw-bg-white tw-rounded-lg tw-shadow-lg tw-p-6 tw-h-fit tw-sticky tw-top-8">
+                <div class="tw-aspect-w-16 tw-aspect-h-9 tw-mb-4">
+                    <img src="{{tourImages}}" alt="Tour Image"
+                         class="tw-rounded-lg tw-object-cover tw-w-full tw-h-48">
+                </div>
+                <div class="tw-space-y-4">
+                    <h2 class="tw-text-2xl tw-font-bold tw-text-gray-800"></h2>
+                    <div class="tw-flex tw-items-center tw-justify-between">
+                        <span class="tw-text-xl tw-font-bold tw-text-blue-600">${{tourPrice}}</span>
+                        <span class="tw-text-gray-600">{{tourDuration}} </span>
+                    </div>
+                    <div class="tw-space-y-2">
+                        <div class="tw-flex tw-items-center tw-text-gray-600">
+                            <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>{{tourDeparture}}</span>
+                        </div>
+                        <div class="tw-flex tw-items-center tw-text-gray-600">
+                            <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Departure:{{tourDepartureTime}}</span>
+                        </div>
+                    </div>
+                    <div class="tw-border-t tw-pt-4"></div>
+                </div>
+            </div>
+
+            <!-- Booking Form Panel -->
+            <div class="md:tw-w-2/3 tw-bg-white tw-rounded-lg tw-shadow-lg tw-p-8">
+                <div class="tw-text-center tw-mb-8 tw-border-b tw-pb-6">
+                    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800">Complete Your Booking</h1>
+                    <p class="tw-text-gray-600 tw-mt-2">Please fill in your details to secure your tour reservation</p>
+                </div>
+
+                <form class="tw-space-y-6" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+                    <!-- Personal Information Section -->
+                    <div class="tw-bg-gray-50 tw-p-6 tw-rounded-lg">
+                        <h2 class="tw-text-xl tw-font-semibold tw-mb-4">Personal Information</h2>
+                        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+                            <div class="tw-flex tw-flex-col">
+                                <label for="name" class="tw-text-gray-700 tw-font-medium tw-mb-2">Full Name</label>
+                                <input id="name" formControlName="name" type="text"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                       placeholder="John Doe" />
+                                <div *ngIf="bookingForm.get('name')?.invalid && bookingForm.get('name')?.touched"
+                                     class="tw-text-red-500 tw-text-sm tw-mt-1">
+                                    Full name is required
+                                </div>
+                            </div>
+                            <div class="tw-flex tw-flex-col">
+                                <label for="phone" class="tw-text-gray-700 tw-font-medium tw-mb-2">Phone Number</label>
+                                <input id="phone" formControlName="phone" type="tel"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                       placeholder="+1 (234) 567-8900" />
+                                <div *ngIf="bookingForm.get('phone')?.invalid && bookingForm.get('phone')?.touched"
+                                     class="tw-text-red-500 tw-text-sm tw-mt-1">
+                                    <span *ngIf="bookingForm.get('phone')?.errors?.['required']">Phone number is required</span>
+                                    <span *ngIf="bookingForm.get('phone')?.errors?.['pattern']">Please enter a valid 10-digit phone number</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4 tw-mt-4">
+                            <div class="tw-flex tw-flex-col">
+                                <label for="email" class="tw-text-gray-700 tw-font-medium tw-mb-2">Email Address</label>
+                                <input id="email" formControlName="email" type="email"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                       placeholder="your@email.com" />
+                            </div>
+                            <div class="tw-flex tw-flex-col">
+                                <label for="confirm-email" class="tw-text-gray-700 tw-font-medium tw-mb-2">Confirm Email</label>
+                                <input id="confirm-email" formControlName="confirmEmail" type="email"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                       placeholder="your@email.com" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Details Section -->
+                    <div class="tw-bg-gray-50 tw-p-6 tw-rounded-lg">
+                        <h2 class="tw-text-xl tw-font-semibold tw-mb-4">Booking Details</h2>
+                        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+                            <div class="tw-flex tw-flex-col">
+                                <label for="date" class="tw-text-gray-700 tw-font-medium tw-mb-2">Travel Date</label>
+                                <input id="date" formControlName="date" type="date"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500" />
+                            </div>
+                            <div class="tw-flex tw-flex-col">
+                                <label for="tickets" class="tw-text-gray-700 tw-font-medium tw-mb-2">Number of Tickets</label>
+                                <input id="tickets" formControlName="tickets" type="number"
+                                       class="tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                       min="1" />
+                                <div *ngIf="bookingForm.get('tickets')?.invalid && bookingForm.get('tickets')?.touched"
+                                     class="tw-text-red-500 tw-text-sm tw-mt-1">
+                                    <span *ngIf="bookingForm.get('tickets')?.errors?.['required']">Number of tickets is required</span>
+                                    <span *ngIf="bookingForm.get('tickets')?.errors?.['min']">Minimum 1 ticket required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tw-mt-4">
+                            <label for="message" class="tw-text-gray-700 tw-font-medium tw-mb-2">Special Requests</label>
+                            <textarea id="message" formControlName="message"
+                                      class="tw-w-full tw-border tw-border-gray-300 tw-rounded-lg tw-p-3 focus:tw-ring-2 focus:tw-ring-blue-500"
+                                      rows="3" placeholder="Any special requirements or requests?"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="tw-flex tw-flex-col tw-items-center tw-space-y-4">
+                        <button type="submit"
+                                class="tw-bg-green-600 hover:tw-bg-green-700 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg tw-w-full tw-max-w-[300px] tw-font-medium tw-transition tw-duration-200">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

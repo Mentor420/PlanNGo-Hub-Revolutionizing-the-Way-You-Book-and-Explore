@@ -1,0 +1,150 @@
+/* General Styling */
+.service-provider-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f1f8e9; /* Light greenish background for separation */
+  animation: fadeIn 1s ease-in-out;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  background-color: #0d47a1; /* Deep blue background */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.header nav {
+  margin-top: 10px;
+}
+
+.header nav a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header nav a:hover {
+  color: #ffd740;
+}
+
+.header button {
+  background-color: #ff5722; /* Orange */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header button:hover {
+  background-color: #e64a19;
+}
+
+/* Service Section */
+.service-section {
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-section h2 {
+  font-size: 32px;
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+.service-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

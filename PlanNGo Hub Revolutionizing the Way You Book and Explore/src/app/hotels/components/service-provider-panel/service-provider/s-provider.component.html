@@ -1,0 +1,317 @@
+<div *ngIf="!isChildRoute">
+  <div class="container">
+    <h1 class="title">{{ providerData.name }} Dashboard</h1>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <i class="fa-solid fa-hotel"></i>
+        <h3>Total Hotels</h3>
+        <p>{{ providerData.totalHotels }}</p>
+      </div>
+      <div class="stat-card">
+        <i class="uil uil-bed"></i>
+        <h3>Total Bookings</h3>
+        <p>{{ providerData.totalBookings }}</p>
+      </div>
+      <div class="stat-card">
+        <i class="uil uil-rupee-sign"></i>
+        <h3>Total Revenue</h3>
+        <p>{{ providerData.totalRevenue | currency: 'INR':'symbol':'1.0-0' }}</p>
+      </div>
+    </div>
+
+    <div class="chart">
+      <div class="chart-card">
+        <h2>Bookings by Hotel</h2>
+        <div class="chart-container">
+          <canvas id="bookingsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card-2">
+        <h2>Revenue by Hotel</h2>
+        <div class="chart-container">
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <h2>Your Hotels</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Hotel Name</th>
+          <th>Total Bookings</th>
+          <th>Revenue</th>
+          <th>Action</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let hotel of providerData.hotels" [ngClass]="{ 'inactive-hotel': hotel.status === 'Inactive' }">
+        <tr>
+          <td>{{ hotel.name }}</td>
+          <td>{{ hotel.bookings.length }}</td>
+          <td>{{ getHotelRevenue(hotel) | currency: 'INR':'symbol':'1.0-0' }}</td>
+          <td>
+            <!-- Display warning message in the action column for inactive hotels -->
+            <div *ngIf="hotel.status === 'Inactive'">
+              <span class="warning-message">This hotel has been deleted by the admin.</span>
+            </div>
+            <div *ngIf="hotel.status !== 'Inactive'">
+              <span>N.A.</span>
+            </div>
+          </td>
+          <td>
+            <!-- Always show Details button in the Details column -->
+            <button class="details-btn" (click)="viewDetails(providerId, hotel.id)">
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Recent Bookings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Hotel</th>
+          <th>Guest</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of providerData.recentBookings">
+          <td>{{ booking.hotelName }}</td>
+          <td>{{ booking.fullName }}</td>
+          <td>{{ booking.checkInDate }}</td>
+          <td>{{ booking.checkOutDate }}</td>
+          <td>{{ booking.price| currency: 'INR':'symbol':'1.0-0' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Full-page outlet for child routes -->
+<div class="container">
+  <router-outlet *ngIf="isChildRoute"></router-outlet>
+</div>
+
+<!-- Floating Button -->
+<div class="floating-menu">
+  <button class="floating-btn" (click)="toggleMenu()">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+
+  <div *ngIf="showMenu" class="menu-options">
+    <button class="menu-option" (click)="openAddHotelPopup()">Add Hotel</button>
+    <button class="menu-option" (click)="openAddRoomPopup()">Add Room</button>
+  </div>
+</div>
+
+<!-- Hotel Add Popup -->
+<div class="hotel-add-popup" *ngIf="showAddHotelPopup">
+  <div class="popup-content-add-h" (click)="$event.stopPropagation()">
+    <h3>Add New Hotel</h3>
+    <form (ngSubmit)="addHotel()" #hotelForm="ngForm" novalidate>
+
+      <!-- Hotel Name -->
+      <br>
+      <label for="hotelName">Hotel Name</label>
+      <input type="text" id="hotelName" [(ngModel)]="newHotel.name" name="name" required />
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['name']?.valid">
+        <small class="error-message">Hotel name is required.</small>
+      </div>
+
+      <!-- Description -->
+      <label for="hotelDescription">Description</label>
+      <textarea id="hotelDescription" [(ngModel)]="newHotel.description" name="description" required></textarea>
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['description']?.valid">
+        <small class="error-message">Description is required.</small>
+      </div>
+
+      <!-- Price Per Night -->
+      <label for="hotelPricePerNight">Price Per Night</label>
+      <input type="number" id="hotelPricePerNight" [(ngModel)]="newHotel.pricePerNight" name="pricePerNight" required
+        [min]="1" />
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['pricePerNight']?.valid">
+        <small class="error-message">Price per night is required and should be a positive number.</small>
+      </div>
+
+      <!-- City -->
+      <label for="hotelCity">City</label>
+      <input type="text" id="hotelCity" [(ngModel)]="newHotel.city" name="city" required />
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['city']?.valid">
+        <small class="error-message">City is required.</small>
+      </div>
+
+      <!-- Rooms Available -->
+      <!-- <label for="roomsAvailable">Rooms Available</label>
+      <input type="number" id="roomsAvailable" [(ngModel)]="newHotel.roomsAvailable" name="roomsAvailable" required [min]="1" />
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['roomsAvailable']?.valid">
+        <small class="error-message">Rooms available is required and should be a positive number.</small>
+      </div> -->
+
+      <!-- Check-in Time -->
+      <label for="checkin">Check-in Time</label>
+      <div class="time-select">
+        <select id="checkinHour" [(ngModel)]="checkinHour" name="checkinHour" required>
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+        :
+        <select id="checkinMinute" [(ngModel)]="checkinMinute" name="checkinMinute" required>
+          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+        <select id="checkinPeriod" [(ngModel)]="checkinPeriod" name="checkinPeriod" required>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['checkinHour']?.valid">
+        <small class="error-message">Check-in time is required.</small>
+      </div>
+
+      <!-- Checkout Time -->
+      <br>
+      <label for="checkout">Checkout Time</label>
+      <div class="time-select">
+        <select id="checkoutHour" [(ngModel)]="checkoutHour" name="checkoutHour" required>
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+        :
+        <select id="checkoutMinute" [(ngModel)]="checkoutMinute" name="checkoutMinute" required>
+          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+        <select id="checkoutPeriod" [(ngModel)]="checkoutPeriod" name="checkoutPeriod" required>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['checkoutHour']?.valid">
+        <small class="error-message">Checkout time is required.</small>
+      </div>
+
+      <!-- Location -->
+      <br>
+      <label for="location">Location</label>
+      <input type="text" id="location" [(ngModel)]="newHotel.location" name="location"
+        placeholder="Share only the url of embeded map" required />
+      <div *ngIf="hotelForm.submitted && !hotelForm.controls['location']?.valid">
+        <small class="error-message">Location is required.</small>
+      </div>
+
+      <!-- Rules -->
+      <div class="changes">
+        <label for="rules">Rules</label>
+        <div class="dynamic-input" *ngFor="let rule of newHotel.rules; let i = index">
+          <input type="text" [(ngModel)]="newHotel.rules[i]" name="rules-{{i}}" placeholder="Enter a rule" required />
+          <div *ngIf="hotelForm.submitted && !hotelForm.controls['rules-' + i]?.valid">
+            <small class="error-message">Each rule is required.</small>
+          </div>
+          <button type="button" (click)="removeRule(i)">Remove</button> <br> <br>
+
+        </div>
+        <button type="button" (click)="addRule()">Add Rule</button>
+        <br>
+        <!-- Amenities -->
+        <label for="amenities">Amenities</label>
+        <div class="dynamic-input" *ngFor="let amenity of newHotel.amenities; let i = index">
+          <input type="text" [(ngModel)]="newHotel.amenities[i].name" name="amenity-name-{{i}}"
+            placeholder="Amenity Name" required />
+          <input type="text" [(ngModel)]="newHotel.amenities[i].description" name="amenity-description-{{i}}"
+            placeholder="Amenity Description" required />
+          <input type="text" [(ngModel)]="newHotel.amenities[i].icon" name="amenity-icon-{{i}}"
+            placeholder="Icon Class (e.g., 'fas fa-wifi')" />
+          <button type="button" (click)="removeAmenity(i)">Remove</button> <br> <br>
+
+        </div>
+        <button type="button" (click)="addAmenity()">Add Amenity</button>
+        <br>
+        <!-- Images -->
+        <label for="images">Hotel Images</label>
+        <div class="dynamic-input" *ngFor="let image of newHotel.images; let i = index">
+          <input type="url" [(ngModel)]="newHotel.images[i]" name="images-{{i}}" placeholder="Image URL" required />
+          <div *ngIf="hotelForm.submitted && !hotelForm.controls['images-' + i]?.valid">
+            <small class="error-message">Image URL is required.</small>
+          </div>
+          <button type="button" (click)="removeImage(i)">Remove</button>
+          <br> <br>
+        </div>
+        <button type="button" (click)="addImage()">Add Image</button>
+      </div>
+      <br>
+      <!-- Submit Button -->
+      <div id="space">
+        <button type="button" class="btn btn-danger" (click)="closeAddHotelPopup()">Cancel</button>
+        <button type="submit" class="btn btn-success" [disabled]="!hotelForm.valid || newHotel.pricePerNight <= 0">Add
+          Hotel</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Room Add Popup -->
+<div *ngIf="showAddRoomPopup" class="popup-overlay">
+  <div class="popup-content-add">
+    <h3>Add New Room</h3>
+    <form (ngSubmit)="addRoom()" class="form-horizontal">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hotel">Hotel</label>
+          <select id="hotel" [(ngModel)]="newRoom.hotelId" name="hotelId" required>
+            <option value="" disabled selected>Select a hotel</option>
+            <option *ngFor="let hotel of hotels" [value]="hotel.id">{{ hotel.name }}</option>
+          </select>
+        </div>
+        <!-- <div class="form-group">
+          <label for="roomId">Room ID</label>
+          <input type="text" id="roomId" [(ngModel)]="newRoom.roomId" name="roomId" placeholder="Add 'r0' at start. ex: r001" readonly
+            (ngModelChange)="checkRoomIdAvailability()" />
+          <div *ngIf="roomIdDuplicate" class="error-message">
+            This Room ID already exists for the selected hotel.
+          </div>
+        </div> -->
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input type="text" id="type" [(ngModel)]="newRoom.type" name="type" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" [(ngModel)]="newRoom.description" name="description" required></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pricePerNight">Price Per Night</label>
+          <input type="number" id="pricePerNight" [(ngModel)]="newRoom.pricePerNight" name="pricePerNight" required />
+        </div>
+        <div class="form-group">
+          <label for="availableRooms">Available Rooms</label>
+          <input type="number" id="availableRooms" [(ngModel)]="newRoom.availableRooms" name="availableRooms"
+            required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="benefits">Benefits</label>
+          <textarea id="benefits" [(ngModel)]="newRoom.benefits" name="benefits"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image">Image URL</label>
+          <input type="file" id="image" [(ngModel)]="newRoom.images" name="image" required />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" (click)="closeAddRoomPopup()">Cancel</button>
+        <button type="submit" class="btn btn-success">Add Room</button>
+      </div>
+    </form>
+  </div>
+</div>

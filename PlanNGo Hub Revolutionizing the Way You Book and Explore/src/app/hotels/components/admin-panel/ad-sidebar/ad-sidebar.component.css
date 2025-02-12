@@ -1,0 +1,149 @@
+/* ad-sidebar.component.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background: #161a2d;
+  padding: 15px 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #fff;
+  z-index: 100;
+}
+
+.sidebar.close {
+  width: 78px;
+}
+
+.logo_items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.logo_name {
+  font-size: 22px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close .logo_name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  height: calc(100% - 82px);
+}
+
+.menu_container::-webkit-scrollbar {
+  display: none;
+}
+
+.menu_items {
+  height: 100%;
+}
+
+.link {
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.link:hover {
+  color: #fff;
+  background-color: #4070f4;
+}
+
+.link span {
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+.sidebar.close .link span {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.link i {
+  font-size: 22px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.nav_image {
+  display: flex;
+  min-width: 55px;
+  justify-content: center;
+}
+
+.nav_image img {
+  /* height: 35px;
+  width: 35px; */
+  /* border-radius: 50%; */
+  /* object-fit: cover; */
+  height: 69px;
+  width: 228px;
+  margin-left: 0px;
+  border-radius: 10px;
+}
+
+.sidebar ul {
+  list-style: none; /* Removes the default bullet point */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar {
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close {
+  width: 90px; /* Adjust for collapsed state */
+}
+
+.dashboard {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.dashboard.expanded {
+  margin-left: 70px; /* Adjust for expanded state */
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+  }
+  
+  .sidebar.close {
+    left: 0;
+    width: 250px;
+  }
+}

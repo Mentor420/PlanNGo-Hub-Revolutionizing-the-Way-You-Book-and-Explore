@@ -1,0 +1,38 @@
+<div class="cancellation-container">
+  <div class="girl-img">
+    <img src="https://img.freepik.com/free-vector/yes-no-concept-illustration_114360-7564.jpg?t=st=1736698847~exp=1736702447~hmac=36259d73dfc0e5bcb48eb031ff3cadacdde2de140eb8a1aaad465af836d7d479&w=740" alt="notsure" width="76%">
+    <div class="text-block" style="width:100%;height:100%; overflow:hidden;">
+      <div class="heading">
+        <div></div>
+        <div></div>
+        <p class="container-title">Not sure about the ride<br>Cancle and Book again</p>
+      </div>
+  </div>
+  </div>
+  <div class="navbar-home">
+    <ul class="snip1217">
+      <li class="current-c"><a routerLink="/" routerLinkActive="active" class="tc" >Home</a></li>
+
+      <li><a routerLink="/search" routerLinkActive="active" class="tc" >Search And Book</a></li>
+
+      <li><a  routerLink="/history" routerLinkActive="active">History</a></li>
+      <li class="current" ><a routerLink="/cancellation" routerLinkActive="active">Cancel</a></li>
+      <li><a routerLink="/updates" routerLinkActive="active">Update</a></li>
+    </ul>
+    </div>
+    
+  <div *ngIf="cancellationError" class="error-message">{{ cancellationError }}</div>
+  <div *ngIf="isCancelled" class="confirmation-message">Your booking has been cancelled.</div>
+
+  <div *ngIf="bookedCabs.length > 0; else noBookings" class="cab-list">
+    <app-cabcards 
+      *ngFor="let cab of bookedCabs" 
+      [cabCardDetails]="cab"> 
+    </app-cabcards>
+  </div>
+
+  <ng-template #noBookings>
+    <div class="no-bookings-message">You have no active bookings to cancel.</div>
+  </ng-template>
+ 
+</div>

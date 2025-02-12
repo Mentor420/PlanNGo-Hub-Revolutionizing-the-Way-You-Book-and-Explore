@@ -1,0 +1,205 @@
+/* General Styling */
+.cab-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: #f4f6f9; /* Light grey background for contrast */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  background: linear-gradient(to right, #0073e6, #004494); /* Professional blue gradient */
+  color: white;
+  padding: 60px 20px;
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #f39c12;
+}
+
+/* Register Section */
+.register-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background: #ffffff;
+  color: #333;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form-container {
+  width: 50%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white form */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.driver-form .form-group {
+  margin-bottom: 25px;
+}
+
+.driver-form label {
+  font-size: 18px;
+  color: #0073e6; /* Blue color for labels */
+}
+
+.driver-form input,
+.driver-form select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.driver-form button {
+  width: 100%;
+  background: linear-gradient(to right, #0073e6, #004494);
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.driver-form button:hover {
+  background: linear-gradient(to right, #004494, #2c3e50);
+  transform: scale(1.05);
+}
+
+/* Image Section */
+.image-container {
+  width: 45%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #e3f2fd;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.features-section h2 {
+  font-size: 40px;
+  color: #0073e6;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-size: 18px;
+  color: #0073e6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Greeting Section */
+.greeting-section {
+  text-align: center;
+  background: #bbdefb;
+  padding: 60px 20px;
+  color: #333;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.greeting-section h2 {
+  font-size: 32px;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.greeting-section p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Footer Section */
+.footer {
+  background: #004494;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    width: 90%; /* Full-width form on mobile */
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+}

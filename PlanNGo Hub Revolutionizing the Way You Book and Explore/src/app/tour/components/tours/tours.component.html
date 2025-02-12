@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<div >
+    <section id="information"><app-info></app-info></section>
+
+    <nav class="tw-bg-white tw-border tw-border-gray-300 tw-w-full tw-mx-auto tw-p-4">
+        <ul class="tw-flex tw-flex-col tw-space-y-4 sm:tw-flex-row sm:tw-space-y-0 sm:tw-space-x-4 sm:tw-justify-center">
+            <li><a href="/tours/{{tourId}}/#tour-plan" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Tour Plan</a></li>
+            <li><a href="/tours/{{tourId}}#location" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Location</a></li>
+            <li><a href="/tours/{{tourId}}#gallery" class="tw-block tw-text-center tw-px-4 tw-py-2 tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded">Gallery</a></li>
+        </ul>
+    </nav>
+    <section id="tour-plan"><app-tour-plan></app-tour-plan></section>
+    <section id="gallery"><app-gallery></app-gallery></section>
+    <section id="location"><app-location></app-location></section>
+    <section id="description"><app-showcompany></app-showcompany></section>
+
+</div>

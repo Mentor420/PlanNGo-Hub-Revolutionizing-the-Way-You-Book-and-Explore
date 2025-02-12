@@ -1,0 +1,169 @@
+.main-content {
+  position: relative;
+  left: 250px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+  /* padding: 10px 14px; */
+  transition: all 0.3s ease;
+}
+
+.main-content.expanded {
+  left: 95px;
+  width: calc(100% - 100px);
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    display: flex;
+    width: calc(100% - 250px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    z-index: 10;
+    height: 60px;
+  }
+  
+  .main-content.expanded .top {
+    left: 90px;
+    width: calc(100% - 78px);
+  }
+  
+  .search_box {
+    position: relative;
+    height: 45px;
+    /* max-width: 600px; */
+    width: 100%;
+    margin: 0 15px 0 0;
+  }
+  
+  .search_box input {
+    position: absolute;
+    border: 1px solid #CCCCCC;
+    background-color: #F5F5F5;
+    padding: 0 25px 0 50px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    color: #161a2d;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+  }
+  
+  .search_box i {
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #161a2d;
+  }
+  
+  .toggle_btn {
+    font-size: 26px;
+    color: #161a2d;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  a.btn.btn-success.btn-sm {
+    margin-right: 10px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-view {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .popup-actions {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .btn-close {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .loading, .no-bookings {
+    text-align: center;
+    padding: 20px;
+  }
+
+  section.content {
+    margin: 15px;
+    padding-top: 10px;
+}
+
+.booking-details {
+  line-height: 15px;
+  margin-top: 20px;
+}
+

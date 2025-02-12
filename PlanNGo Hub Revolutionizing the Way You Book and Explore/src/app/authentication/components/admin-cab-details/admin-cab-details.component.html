@@ -1,0 +1,23 @@
+<div class="admin-service-details">
+    <h1>Cab Service Providers</h1>
+  
+    <!-- Table Headers -->
+    <div class="table-headers">
+      <span>User</span>
+      <span>Email</span>
+      <span>Actions</span>
+    </div>
+  
+    <!-- List of Service Providers -->
+    <div class="provider-row" *ngFor="let provider of serviceProviders">
+      <span>{{ provider.fullName }}</span>
+      <span>{{ provider.email }}</span>
+      <div class="actions">
+        <!-- Details Link -->
+        <a [routerLink]="['/service-provider-details', provider.id]" class="details-link">
+          Details
+        </a>
+      </div>
+    </div>
+  </div>
+  

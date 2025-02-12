@@ -1,0 +1,27 @@
+<div class="tw-container tw-mx-auto tw-px-4">
+
+
+    <div class="tw-flex tw-justify-evenly tw-gap-6 tw-py-8">
+        <div class="">
+            <div class="tw-space-y-4">
+                <div class="tw-flex tw-items-center tw-gap-4">
+                    <p class="tw-text-center tw-text-2xl tw-font-bold tw-text-[#353a61]">Tour Plan</p>
+                </div>
+                <div *ngIf="tourId" class="tw-grid tw-grid-cols-3 tw-gap-20">
+                    <div *ngFor="let day of tourPlans | keyvalue">
+                        <div class="tw-flex ">
+                            <h3 class="tw-py-4 tw-capitalize tw-text-orange-500 tw-text-2xl tw-w-1/4">{{day.key}}</h3>
+                            <h3 class="tw-py-4 tw-font-semibold tw-text-lg tw-w-3/4">{{ day.value }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,32 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    
+    display: none;  /* Changed from 'block' to 'none' */
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    left: -55px;
+    background: #fff;
+    
+    margin-top: 0;
+    min-width: 150px;
+    animation: dropdown 0.3s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes dropdown {
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
