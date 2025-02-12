@@ -1,0 +1,389 @@
+{
+  "flights": [
+    {
+      "airline": "Vistara",
+      "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
+      "flightNumber": "UK308",
+      "departure": {
+        "place": "Chennai",
+        "date": "2025-01-27",
+        "time": "12:30"
+      },
+      "destination": {
+        "place": "Malé",
+        "date": "2025-01-27",
+        "time": "16:00"
+      },
+      "duration": "3h 30m",
+      "price": 3100,
+      "classType": "Business",
+      "id": "FL12350"
+    },
+    {
+      "airline": "Air India",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
+      "flightNumber": "AI101",
+      "departure": {
+        "place": "Delhi",
+        "date": "2025-01-26",
+        "time": "09:00"
+      },
+      "destination": {
+        "place": "Dubai",
+        "date": "2025-01-26",
+        "time": "11:40"
+      },
+      "duration": "2h 40m",
+      "price": 4500,
+      "classType": "Business",
+      "id": "FL12346"
+    },
+    {
+      "id": "FL12347",
+      "airline": "SpiceJet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
+      "flightNumber": "SG405",
+      "departure": {
+        "place": "Hyderabad",
+        "date": "2025-01-27",
+        "time": "07:00"
+      },
+      "destination": {
+        "place": "Bangkok",
+        "date": "2025-01-27",
+        "time": "10:30"
+      },
+      "duration": "3h 30m",
+      "price": 5100,
+      "classType": "Economy"
+    },
+    {
+      "id": "FL12348",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "G8123",
+      "departure": {
+        "place": "Mumbai",
+        "date": "2025-01-28",
+        "time": "10:00"
+      },
+      "destination": {
+        "place": "Malé",
+        "date": "2025-01-28",
+        "time": "11:40"
+      },
+      "duration": "1h 40m",
+      "price": 3700,
+      "classType": "Economy"
+    },
+    {
+      "id": "FL12349",
+      "airline": "Vistara",
+      "logo": "https://seeklogo.com/images/V/vistara-logo-C07710BC2B-seeklogo.com.png",
+      "flightNumber": "UK402",
+      "departure": {
+        "place": "Bangalore",
+        "date": "2025-01-29",
+        "time": "06:15"
+      },
+      "destination": {
+        "place": "Colombo",
+        "date": "2025-01-29",
+        "time": "08:15"
+      },
+      "duration": "2h 00m",
+      "price": 2800,
+      "classType": "First Class"
+    },
+    {
+      "id": "FL12350",
+      "airline": "Indigo Airlines",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbzmxqWRyDLAwk_eOW3YPHhk8FYHP9oHn1xKRRtzyc7gPuCS8WtztHWOI&s",
+      "flightNumber": "6E503",
+      "departure": {
+        "place": "Ahmedabad",
+        "date": "2025-01-30",
+        "time": "11:30"
+      },
+      "destination": {
+        "place": "Kathmandu",
+        "date": "2025-01-30",
+        "time": "13:20"
+      },
+      "duration": "1h 50m",
+      "price": 3300,
+      "classType": "Economy"
+    },
+    {
+      "id": "FL12345",
+      "airline": "Indigo Airlines",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbzmxqWRyDLAwk_eOW3YPHhk8FYHP9oHn1xKRRtzyc7gPuCS8WtztHWOI&s",
+      "flightNumber": "6E203",
+      "departure": {
+        "place": "Chennai",
+        "date": "2025-01-25",
+        "time": "08:30"
+      },
+      "destination": {
+        "place": "Singapore",
+        "date": "2025-01-25",
+        "time": "11:50"
+      },
+      "duration": "3h 20m",
+      "price": 3200,
+      "classType": "First Class"
+    },
+    {
+      "id": "FL12351",
+      "airline": "Air India",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRWdMJRkVX3xT4FCenWUNKX0CQjwCZYyO-w&s",
+      "flightNumber": "AI202",
+      "departure": {
+        "place": "Pune",
+        "date": "2025-01-31",
+        "time": "03:00"
+      },
+      "destination": {
+        "place": "Doha",
+        "date": "2025-01-31",
+        "time": "04:30"
+      },
+      "duration": "1h 30m",
+      "price": 2500,
+      "classType": "Business"
+    },
+    {
+      "id": "FL12352",
+      "airline": "SpiceJet",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbFFT6RAtKfrF9nxGcCdDJh5uCFfJAEuqxw&s",
+      "flightNumber": "SG101",
+      "departure": {
+        "place": "Lucknow",
+        "date": "2025-01-24",
+        "time": "05:45"
+      },
+      "destination": {
+        "place": "Hanoi",
+        "date": "2025-01-24",
+        "time": "09:30"
+      },
+      "duration": "3h 45m",
+      "price": 3000,
+      "classType": "Business"
+    },
+    {
+      "id": "FL12353",
+      "airline": "GoAir",
+      "logo": "https://mir-s3-cdn-cf.behance.net/projects/404/79baea121704737.Y3JvcCw5MTIsNzEzLDgzLDE4Mg.png",
+      "flightNumber": "G805",
+      "departure": {
+        "place": "Delhi",
+        "date": "2025-01-26",
+        "time": "02:30"
+      },
+      "destination": {
+        "place": "Kuala Lumpur",
+        "date": "2025-01-26",
+        "time": "07:00"
+      },
+      "duration": "4h 30m",
+      "price": 2200,
+      "classType": "Economy"
+    },
+    {
+      "id": "FL12354",
+      "airline": "Singapore Airlines",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOLRegYOA__sKata15h1iA-GptN6P7cGdeVg&s",
+      "flightNumber": "SQ507",
+      "departure": {
+        "place": "Mumbai",
+        "date": "2025-02-01",
+        "time": "08:00"
+      },
+      "destination": {
+        "place": "Singapore",
+        "date": "2025-02-01",
+        "time": "02:00"
+      },
+      "duration": "6h 00m",
+      "price": 7200,
+      "classType": "Business"
+    },
+    {
+      "id": "FL12355",
+      "airline": "Qatar Airways",
+      "logo": "https://crystalpng.com/wp-content/uploads/2023/09/Qatar-airways-animal-logo.png",
+      "flightNumber": "QR702",
+      "departure": {
+        "place": "Kolkata",
+        "date": "2025-01-29",
+        "time": "10:30"
+      },
+      "destination": {
+        "place": "Doha",
+        "date": "2025-01-30",
+        "time": "13:45"
+      },
+      "duration": "3h 15m",
+      "price": 6800,
+      "classType": "First Class"
+    },
+    {
+      "id": "FL12356",
+      "airline": "Emirates",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/967px-Emirates_logo.svg.png",
+      "flightNumber": "EK501",
+      "departure": {
+        "place": "Hyderabad",
+        "date": "2025-01-28",
+        "time": "09:15"
+      },
+      "destination": {
+        "place": "Dubai",
+        "date": "2025-01-28",
+        "time": "12:45"
+      },
+      "duration": "3h 30m",
+      "price": 5200,
+      "classType": "Economy"
+    },
+    {
+      "id": "FL12357",
+      "airline": "Cathay Pacific",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEw74x_mijpXH1a0TBbsBqsTftU3wfxIw1Ig&s",
+      "flightNumber": "CX660",
+      "departure": {
+        "place": "Delhi",
+        "date": "2025-02-02",
+        "time": "12:00"
+      },
+      "destination": {
+        "place": "Hong Kong",
+        "date": "2025-02-02",
+        "time": "18:15"
+      },
+      "duration": "6h 15m",
+      "price": 8300,
+      "classType": "Business"
+    },
+    {
+      "id": "FL12358",
+      "airline": "Air Asia",
+      "logo": "https://images.squarespace-cdn.com/content/v1/5a5dbe4632601eb31977f947/1629703651716-J8RVOTD1XO3SDINHP2RG/unnamed+%281%29.png",
+      "flightNumber": "AK123",
+      "departure": {
+        "place": "Chennai",
+        "date": "2025-01-27",
+        "time": "10:15"
+      },
+      "destination": {
+        "place": "Kuala Lumpur",
+        "date": "2025-01-28",
+        "time": "15:45"
+      },
+      "duration": "5h 30m",
+      "price": 3100,
+      "classType": "Economy"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "B1736155558640",
+      "flightID": "FL12346",
+      "userID": "U1001",
+      "totalAmount": 4500,
+      "bookingStatus": "Confirmed",
+      "date": "01/06/2025, 14:55:58",
+      "passengers": [
+        {
+          "id": "P1736155548566",
+          "name": "RANKESH",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    },
+    {
+      "id": "B1736249127949",
+      "flightID": "FL12350",
+      "userID": "U1001",
+      "totalAmount": 3100,
+      "bookingStatus": "Confirmed",
+      "date": "01/07/2025, 16:55:27",
+      "passengers": [
+        {
+          "id": "P1736249115261",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    },
+    {
+      "id": "B1736249168907",
+      "flightID": "FL12347",
+      "userID": "U1001",
+      "totalAmount": 10200,
+      "bookingStatus": "Confirmed",
+      "date": "01/07/2025, 16:56:08",
+      "passengers": [
+        {
+          "id": "P1736249144408",
+          "name": "RANKESH",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        },
+        {
+          "id": "P1736249147398",
+          "name": "siva",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "94875646"
+        }
+      ]
+    },
+    {
+      "id": "B1737190191612",
+      "flightID": "FL12352",
+      "userID": "U1001",
+      "totalAmount": 3000,
+      "bookingStatus": "Confirmed",
+      "date": "01/18/2025, 14:19:51",
+      "passengers": [
+        {
+          "id": "P1737190172626",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "7823642475"
+        }
+      ]
+    },
+    {
+      "id": "B1737383106642",
+      "flightID": "FL12350",
+      "userID": "U1001",
+      "totalAmount": 3100,
+      "bookingStatus": "Confirmed",
+      "date": "01/20/2025, 19:55:06",
+      "passengers": [
+        {
+          "id": "P1737383075647",
+          "name": "RANKESH ",
+          "age": 20,
+          "gender": "Male",
+          "passportNumber": "23719352476",
+          "phoneNumber": "7823642475"
+        }
+      ]
+    }
+  ]
+}

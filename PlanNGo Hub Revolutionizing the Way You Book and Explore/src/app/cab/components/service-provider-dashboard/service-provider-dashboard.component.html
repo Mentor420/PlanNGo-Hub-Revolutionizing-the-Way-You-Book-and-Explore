@@ -1,0 +1,111 @@
+<!-- service-provider-dashboard.component.html -->
+<div class="dashboard-container">
+  <!-- Header -->
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1>Service Provider Dashboard</h1>
+      <button class="notification-btn">
+        <i class="fas fa-bell"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Stats Section -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon-container blue">
+        <i class="fas fa-car"></i>
+      </div>
+      <div class="stat-info">
+        <h3>Active Rides</h3>
+        <p>{{activeRidesCount}}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon-container green">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="stat-info">
+        <h3>Pending Requests</h3>
+        <p>{{pendingRequestsCount}}</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon-container purple">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="stat-info">
+        <h3>Completed Today</h3>
+        <p>{{completedRidesCount}}</p>
+      </div>
+    </div>
+
+    <!-- New Rejected Stats Card -->
+    <div class="stat-card">
+      <div class="stat-icon-container red">
+        <i class="fas fa-times-circle"></i>
+      </div>
+      <div class="stat-info">
+        <h3>Rejected Requests</h3>
+        <p>{{rejectedRequestsCount}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs-container">
+    <nav class="tabs-nav">
+      <button 
+        *ngFor="let tab of tabs"
+        [class.active]="activeTab === tab"
+        (click)="setActiveTab(tab)">
+        {{tab | titlecase}}
+      </button>
+    </nav>
+  </div>
+
+  <!-- Booking List -->
+  <div class="bookings-container">
+    <div class="booking-list">
+      <div class="booking-card" *ngFor="let booking of filteredBookings">
+        <div class="booking-info">
+          <h3>{{booking.user.name}}</h3>
+          <div class="booking-details">
+            <p>From: {{booking.cab.pickupLocation}}</p>
+            <p>To: {{booking.cab.dropoffLocation}}</p>
+            <p>Price: ₹{{booking.cab.price}}</p>
+            <p>Status: {{ booking.status | titlecase }}</p>
+          </div>
+        </div>
+        
+        <div class="booking-actions">
+          <!-- Pending Actions -->
+          <ng-container *ngIf="activeTab === 'pending'">
+            <button class="accept-btn" (click)="handleAccept(booking.id)">
+              <i class="fas fa-check-circle"></i>
+              Accept
+            </button>
+            <button class="reject-btn" (click)="handleReject(booking.id)">
+              <i class="fas fa-times-circle"></i>
+              Reject
+            </button>
+          </ng-container>
+
+          <!-- Accepted Actions -->
+          <ng-container *ngIf="activeTab === 'accepted'">
+            <button class="complete-btn" (click)="handleComplete(booking.id)">
+              <i class="fas fa-flag-checkered"></i>
+              Complete
+            </button>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="empty-state" *ngIf="filteredBookings.length === 0">
+        <p>No {{activeTab}} bookings found</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="tw-px-20 tw-w-full tw-max-w-screen-2xl tw-mx-auto tw-bg-white tw-overflow-hidden">
+
+    <div class="tw-py-8">
+        <h2 class="tw-text-[28px] tw-font-bold tw-text-[#181e4b] tw-mb-8">From our gallery</h2>
+        <div *ngIf="tourImages && tourImages.length > 0" class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
+            <div *ngFor="let image of tourImages">
+                <img [src]="image" alt="Tour Image" class="tw-h-80 tw-w-100 tw-object-cover tw-rounded-lg">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<app-dashboard></app-dashboard>
+<div class="tw-ml-40 min-h-screen bg-gray-50">
+  <!-- Navigation -->
+  
+
+  <!-- Main Content -->
+  <main class="max-w-3xl tw-mx-auto tw-px-80 py-8">
+    <h2 class="tw-text-3xl tw-text-center tw-font-semibold text-gray-800 mb-6">Booking History</h2>
+
+    <div class="" *ngIf="userBookings.length > 0; else noBookings">
+      <div class="space-y-4">
+        <div *ngFor="let booking of paginatedBookings" class="bg-white rounded-lg shadow-sm p-4">
+          <div class="border-b border-gray-100 ">
+            
+
+
+  
+            <app-cabcards [cabCardDetails]="booking.cab"></app-cabcards>
+            </div>
+            <div class="mt-4">
+              <p class="text-sm text-gray-500">
+                <i class="fas fa-calendar mr-2 text-gray-400"></i>
+                Booked on: {{ booking.timestamp | date:'medium' }}
+              </p>
+            </div>
+          </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center space-x-4 mt-6">
+          <button
+            [disabled]="currentPage === 1"
+            (click)="previousPage()"
+            class="px-4 py-2 text-gray-600 hover:text-gray-800 disabled:opacity-50"
+          >
+            Previous
+          </button>
+
+          <div class="flex space-x-2">
+            <button
+              *ngFor="let page of getPageNumbers()"
+              (click)="goToPage(page)"
+              class="px-3 py-1 rounded-md text-gray-600 hover:text-gray-800"
+              [class.active]="currentPage === page"
+            >
+              {{ page }}
+            </button>
+          </div>
+
+          <button
+            [disabled]="currentPage === totalPages"
+            (click)="nextPage()"
+            class="px-4 py-2 text-gray-600 hover:text-gray-800 disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Bookings Message -->
+    <ng-template #noBookings>
+      <div class="flex flex-col items-center justify-center h-64 space-y-4">
+        <i class="fas fa-calendar-times text-4xl text-gray-400"></i>
+        <p class="text-gray-600">No past bookings found.</p>
+      </div>
+    </ng-template>
+  </main>
+</div>

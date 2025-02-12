@@ -1,0 +1,208 @@
+<app-header></app-header>
+<ngx-spinner bdColor="white" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <div class="spinner"></div>
+    <p style="color: rgb(0, 0, 0)"> Loading... </p>
+</ngx-spinner>
+
+<div class="passenger-container" *ngIf="!isFailure">
+    <div class="passenger-flight-details">
+        <div class="flight-details-bg-container">
+            <img
+                    class="passenger-booking-img"
+                    src="https://www.cnib.ca/sites/default/files/styles/banner_image_wide/public/images/2020-01/Airport%20Banner.jpg?h=7acbc861&itok=04D3SWly."
+                    alt="airport"
+            />
+            <div class="logo-fl-number">
+                <img class="logo-img" [src]="flights?.logo" alt="Airline Logo" />
+                <div>
+                    <h2>{{ flights.airline }}</h2>
+                    <p class="flight-no">
+                        <strong>Flight Number:</strong> {{ flights.flightNumber }}
+                    </p>
+                </div>
+            </div>
+            <div class="flight-details-container">
+                <h2>Flight Details</h2>
+                <div class="flight-details-section">
+                    <p id="place">
+                        <strong>Departure:</strong> {{ flights?.departure?.place }}
+                    </p>
+                    |
+                    <p id="date">
+                        <strong>Date:</strong> {{ flights?.departure?.date }}
+                    </p>
+                    |
+                    <p class="time">
+                        <strong>Time:</strong> {{ flights?.departure?.time }}
+                    </p>
+                </div>
+
+                <div class="flight-details-section">
+                    <p id="place">
+                        <strong>Destination:</strong> {{ flights?.destination?.place }}
+                    </p>
+                    |
+                    <p id="date">
+                        <strong>Date:</strong> {{ flights?.destination?.date }}
+                    </p>
+                    |
+                    <p class="time">
+                        <strong>Time:</strong> {{ flights?.destination?.time }}
+                    </p>
+                </div>
+
+                <div class="flight-details-section">
+                    <p class="price-duration">
+                        <strong>Duration:</strong> {{ flights?.duration }}
+                    </p>
+                    |
+                    <p class="price-duration">
+                        <strong>Price:</strong> ${{ flights?.price }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Similar Flights Section -->
+            <ul class="similar-flight-container" *ngIf="similerFlights.length > 0">
+                <h1>Similar Flights</h1>
+                <li *ngFor="let data of similerFlights" class="booking-item">
+                    <div class="route-details">
+                        <div class="departure">
+                            <h1 class="place">{{ data.departure.place }}</h1>
+                            <p class="label">Departure</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        <div class="destination">
+                            <h1 class="place">{{ data.destination.place }}</h1>
+                            <p class="label">Destination</p>
+                        </div>
+                    </div>
+                    <hr class="divider" />
+                    <div class="flight-details">
+                        <div class="airline-card">
+                            <img class="airline-img" [src]="data.logo" [alt]="data.airline" />
+                            <p class="airline-name">{{ data.airline }}</p>
+                            <p class="flight-number">FNO: {{ data.flightNumber }}</p>
+                        </div>
+                        <div class="flight-details-cards">
+                            <div class="flight-details-card">
+                                <div class="airline-card">
+                                    <p class="label">Date</p>
+                                    <p class="value">{{ data.departure.date }}</p>
+                                </div>
+                                <div class="airline-card">
+                                    <p class="label">Time</p>
+                                    <p class="value">{{ data.departure.time }}</p>
+                                </div>
+                            </div>
+                            <div class="flight-details-card">
+                                <div class="airline-card">
+                                    <p class="label">Duration</p>
+                                    <p class="value">{{ data.duration }}</p>
+                                </div>
+                                <div class="airline-card">
+                                    <p class="label">Price</p>
+                                    <p class="value">$ {{ data.price }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-btn-container">
+                        <button class="book-btn" (click)="navigateToFlight(data.id)">Book Flight</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="passenger-form-container">
+            <h1>Booking Form</h1>
+            <form [formGroup]="flightBookingForm" (ngSubmit)="onSubmit()">
+                <div formArrayName="passengers">
+                    <div
+                            class="passenger-card"
+                            *ngFor="let passenger of passengers.controls; let i = index"
+                            [formGroupName]="i"
+                    >
+                        <h3>Passenger {{ i + 1 }}</h3>
+                        <div class="input-group">
+                            <label for="name-{{ i }}">Name:</label>
+                            <input id="name-{{ i }}" formControlName="name" />
+                            <div *ngIf="passenger.get('name')?.invalid && passenger.get('name')?.touched" class="error">
+                                Name is required.
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="age-{{ i }}">Age:</label>
+                            <input id="age-{{ i }}" type="number" formControlName="age" />
+                            <div *ngIf="passenger.get('age')?.invalid && passenger.get('age')?.touched" class="error">
+                                Age is required and must be greater than 0.
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <label>Gender:</label>
+                            <div class="gender-options">
+                                <input type="radio" value="Male" formControlName="gender" id="male-{{ i }}" />
+                                <label for="male-{{ i }}">Male</label>
+                                <input type="radio" value="Female" formControlName="gender" id="female-{{ i }}" />
+                                <label for="female-{{ i }}">Female</label>
+                                <input type="radio" value="Others" formControlName="gender" id="others-{{ i }}" />
+                                <label for="others-{{ i }}">Others</label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="passportNumber-{{ i }}">Passport Number:</label>
+                            <input id="passportNumber-{{ i }}" formControlName="passportNumber" />
+                            <div *ngIf="passenger.get('passportNumber')?.invalid && passenger.get('passportNumber')?.touched" class="error">
+                                Passport Number is required.
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="phoneNumber-{{ i }}">Phone Number:</label>
+                            <input id="phoneNumber-{{ i }}" formControlName="phoneNumber" />
+                            <div *ngIf="passenger.get('phoneNumber')?.invalid && passenger.get('phoneNumber')?.touched" class="error">
+                                Phone Number is required.
+                            </div>
+                        </div>
+
+                        <button type="button" (click)="removePassenger(i)" class="remove-btn" *ngIf="passengers.length > 1">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-btn">
+                    <button type="button" class="add-btn" (click)="addPassenger()">
+                        <span>+</span> Add
+                    </button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Failure View -->
+<div class="failure-container" *ngIf="isFailure">
+    <img src="https://forum.hestiacp.com/uploads/default/original/2X/9/9aae76309a614c85f880512d8fe7df158fec52cc.png" alt="failure view"/>
+    <button (click)="onRetry()">Retry</button>
+</div>
+
+<!-- Success Modal -->
+<div class="modal modal1" *ngIf="isBooked">
+    <div class="modal-content modal-success">
+        <p>Successfully Booked!</p>
+    </div>
+</div>
+
+<!-- Failure Modal -->
+<div class="modal modal1" *ngIf="isBookingFailure">
+    <div class="modal-content modal-failure">
+        <span class="close" (click)="onBookingToggle()">&times;</span>
+        <p>Check all the credentials.</p>
+    </div>
+</div>

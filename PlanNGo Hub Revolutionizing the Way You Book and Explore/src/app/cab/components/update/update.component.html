@@ -1,0 +1,48 @@
+<div class="map-container">
+         <div class="search-box">
+                  <input type="text" placeholder="Search location..." [(ngModel)]="searchQuery"
+                           (keyup.enter)="searchLocation()" class="search-input">
+                  <button (click)="searchLocation()" class="search-button">Search</button>
+         </div>
+
+         <div class="layer-controls">
+                  <button (click)="switchLayer('osm')" class="map-button">Standard</button>
+                  <button (click)="switchLayer('satellite')" class="map-button">Satellite</button>
+                  <button (click)="switchLayer('topo')" class="map-button">Topographic</button>
+         </div>
+
+         <div class="routing-controls">
+                  <button (click)="startRouting()" class="map-button">
+                           Draw Route
+                  </button>
+                  <button (click)="clearRoute()" class="map-button">
+                           Clear Route
+                  </button>
+         </div>
+
+         <div id="map" class="map"></div>
+
+         <div id="popup" class="ol-popup">
+                  <a href="#" id="popup-closer" class="ol-popup-closer">×</a>
+                  <div id="popup-content"></div>
+         </div>
+
+         <div *ngIf="routeInstructions.length" class="route-instructions">
+                  <h3>Navigation Instructions</h3>
+                  <div *ngFor="let instruction of routeInstructions" class="instruction"
+                       [class.error]="instruction.startsWith('Error:')">
+                    {{ instruction }}
+                  </div>
+                  <div *ngIf="routeDistance" class="route-summary">
+                    Total Distance: {{ routeDistance }}
+                    Estimated Time: {{ routeTime }}
+                  </div>
+                </div>
+         <button (click)="getCurrentLocation()" class="location-button">
+                  <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrHFIwJrI072B_Xn8Z8yLmZhRv0XOctNcNkA&s"
+                  style="width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                  alt=""
+                  >
+         </button>
+</div>

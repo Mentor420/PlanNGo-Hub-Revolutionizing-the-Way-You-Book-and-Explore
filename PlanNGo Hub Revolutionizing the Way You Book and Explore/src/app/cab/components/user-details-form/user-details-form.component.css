@@ -1,0 +1,99 @@
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-popup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://example.com/your-background-image.jpg');
+  /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,186 @@
+<div class="tw-flex tw-justify-center tw-items-center tw-bg-gray-100 tw-min-h-screen">
+    <div class="tw-bg-white tw-shadow-xl tw-rounded-lg tw-p-8 tw-w-full tw-max-w-md tw-transform tw-transition-all tw-duration-300 hover:tw-shadow-2xl">
+        <h2 class="tw-text-3xl tw-font-extrabold tw-mb-6 tw-text-center tw-text-gray-800">Register</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <!-- Previous form fields remain unchanged until the Type selection -->
+            <!-- Full Name -->
+            <div class="tw-mb-5">
+                <label for="fullName" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Full Name</label>
+                <input
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="fullName"
+                        formControlName="fullName"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+                >
+                    Full name is required
+                </small>
+            </div>
+
+            <!-- Email -->
+            <div class="tw-mb-5">
+                <label for="email" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Email</label>
+                <input
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="email"
+                        formControlName="email"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="email.invalid && (email.dirty || email.touched)"
+                >
+                    <span *ngIf="email.hasError('required')">Email is required</span>
+                    <span *ngIf="email.hasError('pattern')">Email is invalid</span>
+                </small>
+            </div>
+
+            <!-- Password -->
+            <div class="tw-mb-5">
+                <label for="password" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Password</label>
+                <p-password
+                        formControlName="password"
+                        [feedback]="false"
+                        [toggleMask]="true"
+                        inputId="password"
+                        inputStyleClass="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        styleClass="tw-w-full"
+                ></p-password>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="password.invalid && (password.dirty || password.touched)"
+                >
+                    Password is required
+                </small>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="tw-mb-5">
+                <label for="confirmPassword" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Confirm Password</label>
+                <p-password
+                        formControlName="confirmPassword"
+                        [feedback]="false"
+                        [toggleMask]="true"
+                        inputId="confirmPassword"
+                        inputStyleClass="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        styleClass="tw-w-full"
+                ></p-password>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+                >
+                    Confirm Password is required
+                </small>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="
+            registerForm.hasError('passwordMismatch') &&
+            password.valid &&
+            confirmPassword.valid
+          "
+                >
+                    Password mismatch
+                </small>
+            </div>
+
+            <!-- Gender & type of Dashboard -->
+
+            <div class="tw-mb-5">
+                <label for="gender" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Gender</label>
+                <div class="tw-flex tw-space-x-4 tw-mt-2">
+                    <p-radioButton
+                            name="gender"
+                            value="Male"
+                            formControlName="gender"
+                            label="Male"
+                    ></p-radioButton>
+                    <p-radioButton
+                            name="gender"
+                            value="Female"
+                            formControlName="gender"
+                            label="Female"
+                    ></p-radioButton>
+                </div>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="gender.invalid && (gender.dirty || gender.touched)"
+                >
+                    Please select a gender
+                </small>
+            </div>
+
+            <!-- Age -->
+            <div class="tw-mb-5">
+                <label for="age" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Age</label>
+                <input
+                        type="number"
+                        pInputText
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="age"
+                        formControlName="age"
+                />
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="age.invalid && (age.dirty || age.touched)"
+                >
+                    <span *ngIf="age.hasError('required')">Age is required</span>
+                    <span *ngIf="age.hasError('min')">Age must be at least 18</span>
+                    <span *ngIf="age.hasError('max')">Age must be below 100</span>
+                </small>
+            </div>
+
+            <!-- Description -->
+            <div class="tw-mb-5">
+                <label for="description" class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Description</label>
+                <textarea
+                        pInputTextarea
+                        class="tw-mt-1 tw-block tw-w-full tw-border tw-border-gray-300 tw-rounded-md tw-shadow-sm focus:tw-ring-purple-500 focus:tw-border-purple-500"
+                        id="description"
+                        formControlName="description"
+                        rows="4"
+                ></textarea>
+                <small
+                        class="tw-text-red-500"
+                        *ngIf="description.invalid && (description.dirty || description.touched)"
+                >
+                    <span *ngIf="description.hasError('required')">Description is required</span>
+                    <span *ngIf="description.hasError('maxlength')">Description must be less than 500 characters</span>
+                </small>
+            </div>
+
+
+            <!-- Image Upload -->
+            <div class="tw-mb-5">
+                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700">Profile Image</label>
+                <input
+                        type="file"
+                        accept="image/*"
+                        (change)="onFileSelected($event)"
+                        class="tw-mt-1 tw-block tw-w-full"
+                />
+                <small class="tw-text-gray-500">Supported formats: JPG, PNG, GIF (Max 5MB)</small>
+            </div>
+
+
+
+            <!-- Submit Button -->
+            <p-button
+                    type="submit"
+                    label="Register"
+                    styleClass="tw-w-full tw-bg-purple-600 tw-text-white tw-py-2 tw-rounded-md hover:tw-bg-purple-700 tw-transition-colors tw-duration-300"
+                    [disabled]="registerForm.invalid"
+            ></p-button>
+            <div class="">
+                <div class="tw-mt-4 tw-text-center">
+                    Already a member? <a routerLink="/login" class="tw-text-purple-600 hover:tw-underline">Login</a>
+                </div>
+                <div class="tw-mt-4 tw-text-center">
+                     <a routerLink="/provider-register" class="tw-text-purple-600 hover:tw-underline">Register as a Service Provider</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

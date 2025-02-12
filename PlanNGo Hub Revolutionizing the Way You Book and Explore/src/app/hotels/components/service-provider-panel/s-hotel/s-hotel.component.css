@@ -1,0 +1,134 @@
+.card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .card-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  th {
+    font-weight: 600;
+    color: #4a5568;
+  }
+  
+  .icon-bed,
+  .icon-users,
+  .icon-dollar,
+  .icon-percent {
+    width: 1rem;
+    height: 1rem;
+    color: #718096;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .h-\[300px\] {
+    height: 300px;
+  }
+  
+  .back-button2 {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: blueviolet;
+    border-bottom: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    background: #fff;
+    padding: 0.7rem 1.5rem;
+    /* margin-left: -20%; */
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-top: -11px;
+    /* position: absolute; */
+   }
+   
+   .back-button2 i {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+   }
+   
+  .back-button2:hover i {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+   }
+   
+  .back-button2:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+   }

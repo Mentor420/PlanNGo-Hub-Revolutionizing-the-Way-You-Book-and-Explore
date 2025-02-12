@@ -1,0 +1,53 @@
+<app-header></app-header>
+<ngx-spinner bdColor = "white" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><div class="spinner"></div><p style="color: rgb(0, 0, 0)" > Loading... </p></ngx-spinner>
+
+<div class="container" *ngIf="isFetched && !isFailure">
+<div class="booking-container">
+    <h1 class="title">Cancel Booking</h1>
+    <hr class="main-divider" />
+    <div class="no-result-found" *ngIf="combinedData.length < 1">
+        <img
+          src="https://cdni.iconscout.com/illustration/premium/thumb/error-404-illustration-download-in-svg-png-gif-file-formats--no-results-service-landing-page-security-empty-state-pack-design-development-illustrations-3613889.png?f=webp"
+          alt="No Results Found"
+          class="no-results-image"
+        />
+        <h2>Cancel Booking Empty</h2>
+      </div>
+    <ul class="booking-list" *ngIf="combinedData.length > 0">
+        <li *ngFor="let data of combinedData" class="booking-item">
+
+            <button 
+          type="button"
+          class="button"
+          [disabled]="data.bookingStatus === 'Cancelled'||data.bookingStatus === 'Travel Ended'"
+          (click)="onCancellingBooking(data.id)">
+          {{
+            data.bookingStatus === 'Cancelled'
+              ? 'Cancelled'
+              : data.bookingStatus === 'Travel Ended'
+              ? 'Travel Ended'
+              : 'Cancel Booking'
+          }}
+              </button>
+
+              </li>
+          </ul>
+</div>
+</div>
+
+<div class="failure-container" *ngIf="isFailure">
+  <img src="https://forum.hestiacp.com/uploads/default/original/2X/9/9aae76309a614c85f880512d8fe7df158fec52cc.png" alt="failure view"/>
+  <button (click)="onRetry()">Retry</button>
+</div>
+
+<div class="modal modal1" *ngIf="isCancelledBooking">
+    <div class="modal-content modal-content1">
+      <span class="close" (click)="onCloseView()">&times;</span>
+      <h2>Are you sure you want to cancel the booking?</h2>
+      <div class="modal-buttons">
+        <button class="cancel-btn" type="button" (click)="onCloseView()">Cancel</button>
+        <button class="confirm-btn" type="button" (click)="changeBookingStatus()">Confirm</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,125 @@
+.booking-confirmation-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  width: 500px;
+  border: 2px solid #cccccc; /* Added border to the content */
+}
+
+.checkmark {
+  font-size: 50px;
+  color: #4caf50; /* Green checkmark */
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.cab-features ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.cab-features ul li {
+  margin-bottom: 8px;
+}
+
+.driver-details {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.driver-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.contact {
+  margin-top: 20px;
+}
+
+.contact .number {
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.closebtn {
+  background-color: #075811;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closebtn:hover {
+  background: linear-gradient(45deg, #390103, #9a0c1a); /* Reversed gradient */
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.driverlogo {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100px;
+}
+
+/* Adding a proper header with gray and white gradient */
+.header {
+  background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Gray to white gradient */
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 1.5rem;
+  color: #333; /* Dark gray text */
+  font-weight: bold;
+  border-bottom: 2px solid #cccccc; /* Added border to the header */
+}
+
+/* Example HTML structure for the header */
+.confirmation-content::before {
+  content: 'Booking Confirmation';
+  display: block;
+  background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Gray to white gradient */
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 1.5rem;
+  color: #333; /* Dark gray text */
+  font-weight: bold;
+  border-bottom: 2px solid #cccccc; /* Added border to the header */
+  margin-bottom: 10px;
+}

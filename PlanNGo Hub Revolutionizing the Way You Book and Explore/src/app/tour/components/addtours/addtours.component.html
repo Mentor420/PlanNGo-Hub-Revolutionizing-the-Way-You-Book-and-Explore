@@ -1,0 +1,145 @@
+<form [formGroup]="tourForm" (ngSubmit)="onSubmit($event)" class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center">Add a New Tour</h2>
+
+    <!-- ID -->
+    <div class="mb-4">
+        <label for="id" class="block text-sm font-medium text-gray-700">Tour ID</label>
+        <input id="id" type="text" formControlName="id" placeholder="Enter Tour ID"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    <!-- Name -->
+    <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Tour Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter Tour Name"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['name'].invalid && tourForm.controls['name'].touched" class="text-sm text-red-600 mt-1">
+            Name is required.
+        </div>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-4">
+        <label for="price" class="block text-sm font-medium text-gray-700">Tour Price</label>
+        <input id="price" type="number" formControlName="price" placeholder="Enter Price"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['price'].invalid && tourForm.controls['price'].touched" class="text-sm text-red-600 mt-1">
+            Price is required and must be 0 or above.
+        </div>
+    </div>
+
+    <!-- Duration -->
+    <div class="mb-4">
+        <label for="duration" class="block text-sm font-medium text-gray-700">Duration</label>
+        <input id="duration" type="text" formControlName="duration" placeholder="Enter Duration (e.g., 7 days)"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['duration'].invalid && tourForm.controls['duration'].touched" class="text-sm text-red-600 mt-1">
+            Duration is required.
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+        <textarea id="description" formControlName="description" rows="3" placeholder="Enter a brief description"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+        <div *ngIf="tourForm.controls['description'].invalid && tourForm.controls['description'].touched" class="text-sm text-red-600 mt-1">
+            Description is required.
+        </div>
+    </div>
+
+    <!-- Description2 -->
+    <div class="mb-4">
+        <label for="description2" class="block text-sm font-medium text-gray-700">Additional Description</label>
+        <textarea id="description2" formControlName="description2" rows="2" placeholder="Extra info (optional)"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+    </div>
+
+    <!-- Main Image -->
+    <div class="mb-4">
+        <label for="image" class="block text-sm font-medium text-gray-700">Main Image URL</label>
+        <input id="image" type="text" formControlName="image" placeholder="Enter main image URL"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    <!-- Image Array -->
+    <div class="mb-4">
+        <label for="images" class="block text-sm font-medium text-gray-700">Additional Images (comma-separated)</label>
+        <input id="images" type="text" formControlName="images" placeholder="Enter image URLs separated by commas"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    <!-- Destination -->
+    <div class="mb-4">
+        <label for="destination" class="block text-sm font-medium text-gray-700">Destination</label>
+        <input id="destination" type="text" formControlName="destination" placeholder="Enter Destination"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['destination'].invalid && tourForm.controls['destination'].touched" class="text-sm text-red-600 mt-1">
+            Destination is required.
+        </div>
+    </div>
+
+    <!-- Departure -->
+    <div class="mb-4">
+        <label for="departure" class="block text-sm font-medium text-gray-700">Departure</label>
+        <input id="departure" type="text" formControlName="departure" placeholder="Enter Departure Location"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['departure'].invalid && tourForm.controls['departure'].touched" class="text-sm text-red-600 mt-1">
+            Departure location is required.
+        </div>
+    </div>
+
+    <!-- Departure Time -->
+    <div class="mb-4">
+        <label for="departureTime" class="block text-sm font-medium text-gray-700">Departure Time</label>
+        <input id="departureTime" type="datetime-local" formControlName="departureTime"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['departureTime'].invalid && tourForm.controls['departureTime'].touched" class="text-sm text-red-600 mt-1">
+            Departure time is required.
+        </div>
+    </div>
+
+    <!-- Return Time -->
+    <div class="mb-4">
+        <label for="returnTime" class="block text-sm font-medium text-gray-700">Return Time</label>
+        <input id="returnTime" type="datetime-local" formControlName="returnTime"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+        <div *ngIf="tourForm.controls['returnTime'].invalid && tourForm.controls['returnTime'].touched" class="text-sm text-red-600 mt-1">
+            Return time is required.
+        </div>
+    </div>
+
+    <!-- Dress Code -->
+    <div class="mb-4">
+        <label for="dressCode" class="block text-sm font-medium text-gray-700">Dress Code</label>
+        <input id="dressCode" type="text" formControlName="dressCode" placeholder="Enter Dress Code (optional)"
+               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+    </div>
+
+    
+
+    <!-- Tour Plan Entry -->
+    <div class="mb-4">
+        <label for="currentTourPlan" class="block text-sm font-medium text-gray-700">Add Day Plan</label>
+        <div class="flex gap-2">
+            <input id="currentTourPlan" type="text" [(ngModel)]="currentTourPlan" placeholder="Enter plan for this day"
+                   class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+            <button type="button" (click)="addTourPlan()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Add Tour Plan</button>
+        </div>
+    </div>
+
+    <!-- Display Added Plans -->
+    <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-2">Tour Plans</h3>
+        <ul class="list-disc pl-5">
+            <li *ngFor="let plan of tourplans; let i = index" class="mb-1">
+                <strong>Day {{ i + 1 }}:</strong> {{ plan }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="tourForm.invalid" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:bg-gray-400">
+        Submit Tour
+    </button>
+</form>

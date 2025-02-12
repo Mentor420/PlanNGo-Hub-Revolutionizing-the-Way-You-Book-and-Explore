@@ -1,0 +1,29 @@
+<div class="tw-cabcard-container tw-mx-auto tw-max-w-full tw-bg-gray-100 tw-border tw-border-gray-200 tw-shadow-sm tw-flex tw-gap-8 tw-min-h-screen tw-px-4">
+    <div class="tw-sidebar-container tw-flex">
+        <app-sidebar></app-sidebar>
+    </div>
+    
+    <div class="tw-main-content tw-flex-1 tw-flex tw-flex-col">
+        <div class="tw-search-container tw-mt-40 tw-max-w-4xl mx-auto">
+            <app-searchbar (searchEvent)="handleSearch($event)" class="tw-shadow-md"></app-searchbar>
+        </div>
+
+        <div class="tw-cards-container  tw-mx-auto tw-flex-1 tw-grid tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-6 tw-p-4">
+            @if (errorMessage) {
+                <div class="tw-mx-auto tw-text-center tw-p-8 tw-text-green-600 tw-font-large tw-bg-white tw-rounded-lg tw-shadow-sm tw-animate-fadeIn">
+                    {{ errorMessage }}
+                </div>
+            } @else if (filteredDetailsList.length > 0) {
+                <app-cabcards
+                    *ngFor="let cabCardDetails of filteredDetailsList"
+                    [cabCardDetails]="cabCardDetails">
+                </app-cabcards>
+            } @else {
+                <div class="tw-mx-auto tw-text-center tw-p-8 tw-text-green-600 tw-font-large  tw-rounded-lg tw-shadow-sm">
+
+                    {{ !hasSearched ? 'Search for available cabs' : 'No cabs found matching your criteria' }}
+                </div>
+            }
+        </div>
+    </div>
+</div>

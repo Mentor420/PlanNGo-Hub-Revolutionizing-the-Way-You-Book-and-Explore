@@ -1,0 +1,189 @@
+.girl-img{
+  justify-content: center;
+  text-align: center;
+  display: absolute;
+  z-index: 0.5;
+}
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  font-size: 40px;
+  color: #292a36;
+  font-weight: 600;
+  line-height: 60px;
+}
+.text-block {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  right: 0px;
+
+  height: 100%;
+
+
+}
+.heading {
+  font-size: 30px;
+  padding-left: 60px;
+  /* padding-top: 300px;  */
+  font-family: 'Roboto';
+  display: grid;
+  grid-template-rows: 2fr 2fr 0.5fr;
+}
+
+.snip1217 {
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.snip1217 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.snip1217 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1.5em;
+  padding: 0;
+}
+
+.snip1217 a {
+  padding: 0.1em 0;
+  color: rgba(255, 255, 255, 0.607);
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.snip1217 a:before,
+.snip1217 a:after {
+  height: 1px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #3b80f8;
+  width: 0;
+}
+
+.snip1217 a:before {
+  top: 0;
+  left: 0;
+}
+
+.snip1217 a:after {
+  bottom: 0;
+  right: 0;
+}
+
+.snip1217 a:hover,
+.snip1217 .current a {
+  color: #ffffff;
+}
+
+.snip1217 a:hover:before,
+.snip1217 .current a:before,
+.snip1217 a:hover:after,
+.snip1217 .current a:after {
+  width: 100%;
+}
+
+.navbar-home {
+  background-color: rgb(29, 20, 44);
+}
+.cancellation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.cancel-button {
+  /* Style your cancel button */
+  background-color: #dc3545; /* Red color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.confirmation-message,
+.error-message {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.confirmation-message {
+  color: green; 
+}
+
+.error-message {
+  color: red;
+}
+
+/* ... your existing styles ... */
+
+.cab-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  gap: 20px; 
+}
+
+.no-bookings-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888; /* Or any color you prefer */
+  margin-top: 20px; 
+}
+
+.navbar-home {
+  background-color: rgb(29, 20, 44);
+  width: 100%;
+}
+.down{
+  width: 100%;
+  background-color: #050721;
+}
+/*<!-- HTML !-->
+<button class="button-87" role="button">Button 87</button>
+ CSS */
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}

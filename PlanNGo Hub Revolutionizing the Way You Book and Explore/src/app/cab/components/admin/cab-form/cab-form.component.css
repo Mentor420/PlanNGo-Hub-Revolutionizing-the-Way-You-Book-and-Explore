@@ -1,0 +1,224 @@
+.container {
+  width: 800px;
+  min-height: 560px;
+  max-height: 90vh;
+  background: #0a0a0a;
+  border-radius: 20px;
+  border: 1px solid #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+  color: #01ac01;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #01ac01;
+}
+
+.form-columns {
+  display: flex;
+  gap: 2rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+.form-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 300px;
+}
+
+/* Merged .text-input styles */
+.text-input { 
+  margin-bottom: 15px; /* Adjusted for better spacing */
+  position: relative; 
+  z-index: 1;
+}
+
+.text-input label {
+  display: block;
+  margin-bottom: 0.5rem; /* Adjusted for better spacing */
+  font-size: 0.85rem; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #01ac01;
+}
+
+.text-input input,
+.text-input textarea,
+.text-input select {
+  padding: 8px 10px; /* Increased padding for usability */
+  display: block;
+  width: 100%;
+  border: solid 1px #363636;
+  border-radius: 4px; /* Adjusted border-radius for consistency */
+  background-image: linear-gradient(to right, rgb(96, 95, 95), rgb(52, 52, 52));
+}
+
+/* Removed redundant hover effects - if needed, add back with more specific selectors */
+/*.text-input input:hover,
+.text-input textarea:hover,
+.text-input select:hover {
+  background-image: linear-gradient(to right, rgb(96, 95, 95), rgb(95, 94, 94));
+}*/
+
+.text-input select {
+  -webkit-appearance: none; /* Customize select appearance (optional) */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-group .text-input {
+  flex: 1;
+}
+
+/* Merged button styles - removed redundant styles */
+.button-50 {
+  appearance: button;
+  background-color: #337703; /* Using an earlier instance of the color */ 
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif; 
+  font-size: 14px;
+  font-weight: 400; 
+  line-height: 20px; 
+  margin: 20px auto; /* Centering button, adjust margin as needed */
+  overflow: visible;
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* Media query for button - consider merging if possible */
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 10px 35px; 
+  }
+} 
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(110, 110, 110, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  margin: 10px;
+  background: white;
+  padding: 0rem; 
+  border-radius: 8px;
+  width: 70%;
+  height: 85%;
+  max-width: 470px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.time-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-picker select {
+  padding: 0.6rem;
+  background: #151515;
+  border: 2px solid #2a2a2a;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2301ac01'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1em;
+}
+
+.time-picker select:hover {
+  border-color: #01ac01;
+}
+
+.time-picker select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(1, 172, 1, 0.3);
+}
+
+.time-picker span {
+  color: #01ac01;
+  font-weight: bold;
+  margin: 0 0.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 850px) {
+  .container {
+    width: 95%;
+    min-height: auto;
+  }
+  
+  .form-columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-column {
+    min-width: auto;
+  }
+}

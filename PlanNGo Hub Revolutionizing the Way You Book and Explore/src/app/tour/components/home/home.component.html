@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+<div class="tw-bg-[#ffffff] tw-flex tw-flex-row tw-justify-center ">
+    <div class="tw-bg-[#ffffff] tw-overflow-hidden tw-w-full ">
+        <div class="  ">
+            <div class="  ">
+                <div class="tw-bg-cover tw-w-screen tw-h-[800px] tw-bg-[url('/assets/top.jpg')] tw-z-10">
+                    <div class="tw-font-normal tw-pt-48 tw-text-white tw-text-4xl md:tw-text-6xl lg:tw-text-[157.4px] tw-text-center tw-leading-tight">
+                        Our Packages
+                    </div>
+                    <app-search></app-search>
+                </div>
+            </div>
+            <div class="tw-flex tw-justify-evenly tw-z-20 tw-px-72 tw-w-full tw-text-right tw-items-center">
+                <div class="tw-w-1/2 tw-text-left tw-font-bold tw-text-4xl tw-mt-8 md:tw-mt-16 tw-items-center">
+                    Packages
+                </div>
+                <div class="tw-w-1/2 tw-mt-8 md:tw-mt-16">
+                    <select (change)="onSortChange($event)" class="tw-items-center tw-mt-10 tw-font-bold tw-text-[#343434] tw-border-2 tw-text-lg md:tw-text-xl tw-tracking-[2.00px]">
+                        <option value="" disabled selected>Sort By</option>
+                        <option value="date">Date</option>
+                        <option value="priceLow">Price Low To High</option>
+                        <option value="priceHigh">Price High To Low</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tw-w-full tw-px-4 md:tw-px-8 lg:tw-px-[277px] tw-mt-8 md:tw-mt-16">
+                <div class="tw-grid tw-grid-cols-3 tw-gap-4 md:tw-gap-8">
+                    <div *ngFor="let tour of items" class="tour-card tw-bg-white tw-rounded-[21px] tw-shadow-lg">
+                        <div>
+                            <img [src]="tour.image" class="tw-w-full tw-h-48 md:tw-h-64 tw-object-cover tw-rounded-t-[21px]" [alt]="tour.name"/>
+                            <div class="tw-p-4 md:tw-p-6">
+                                <h3 class="tw-text-2xl tw-font-bold tw-text-[#181e4b]">{{tour.name}}</h3>
+                                <p class="tw-pt-4 tw-text-sm md:tw-text-base tw-text-[#181e4b]">{{tour.description2}}</p>
+
+                                <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
+                                    <span class="tw-text-sm md:tw-text-base">₹ {{tour.price}}</span>
+                                    <button class="tw-bg-black tw-text-white tw-px-3 tw-py-2" [routerLink]="['/tour/tours', tour.id]">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tw-justify-center tw-items-center">
+    <div class="tw-my-10 tw-justify-center tw-items-center tw-text-center">
+        <mat-paginator [length]="totalItems" class="tw-bg-white tw-text-black tw-justify-center tw-text-center" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="pageChanged($event)"></mat-paginator>
+    </div>
+</div>
